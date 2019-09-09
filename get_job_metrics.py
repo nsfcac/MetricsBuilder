@@ -7,6 +7,7 @@ def main():
 
     session = requests.Session()
 
+    ## Dump file
     # job_info_list, err_info_list = get_hpcjob_data(conn_time_out, read_time_out, session)
     #
     # if job_info_list != None:
@@ -18,84 +19,53 @@ def main():
     #     print(err_info_list)
 
     # Get job list
-    job_list, err_info = get_job_list(conn_time_out, read_time_out, session)
-    if job_list != None:
-        # print(job_list)
-        jobs_num = len(job_list)
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    if uge_info != None:
+        # print(uge_info)
+        jobs_num = len(uge_info)
         print("Jobs numbers: "),
         print(jobs_num)
     else:
         print(err_info)
 
-    # Get project list
-    project_list, err_info = get_project_list(conn_time_out, read_time_out, session)
-    if project_list != None:
-        print(project_list)
-        projects_num = len(project_list)
-        print("Projects numbers: "),
+    # Get user list
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    if uge_info != None:
+        # print(uge_info)
+        projects_num = len(uge_info)
+        print("Users numbers: "),
         print(projects_num)
     else:
         print(err_info)
 
-    # Get user list
-    user_list, err_info = get_user_list(conn_time_out, read_time_out, session)
-    if user_list != None:
-        print(user_list)
-        users_num = len(user_list)
-        print("Users numbers: "),
-        print(users_num)
+    # Get host summary list
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    if uge_info != None:
+        # print(uge_info)
+        hostsummary_num = len(uge_info)
+        print("Host summary numbers: "),
+        print(hostsummary_num)
     else:
         print(err_info)
 
+def get_uge_info(conn_time_out, read_time_out, session, type):
 
-def get_job_list(conn_time_out, read_time_out, session):
+    passwordUrl = "http://129.118.104.35:8182/"
+    if type == "jobs":
+        url = passwordUrl + type
+    elif type == "users":
+        url = passwordUrl + type
+    elif type == "hostsummary":
+        url = passwordUrl + "hostsummary/1/500"
+    else:
+        return None, "UGE API ERROR"
+
     try:
-        url = "http://129.118.104.35:8182/jobs"
         response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
-
         response.raise_for_status()
         data = response.json()
-
         return data, str(None)
-    except requests.exceptions.RequestException as e:
-        print("Request Error")
-        return None, str(e)
 
-def get_project_list(conn_time_out, read_time_out, session):
-    try:
-        url = "http://129.118.104.35:8182/projects"
-        response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
-
-        response.raise_for_status()
-        data = response.json()
-
-        return data, str(None)
-    except requests.exceptions.RequestException as e:
-        print("Request Error")
-        return None, str(e)
-
-def get_user_list(conn_time_out, read_time_out, session):
-    try:
-        url = "http://129.118.104.35:8182/users"
-        response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
-
-        response.raise_for_status()
-        data = response.json()
-
-        return data, str(None)
-    except requests.exceptions.RequestException as e:
-        print("Request Error")
-        return None, str(e)
-
-def get_hpcjob_data(conn_time_out, read_time_out, session):
-    try:
-        url = "http://129.118.104.35:8182/hostsummary/1/500"
-        response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
-
-        response.raise_for_status()
-        data = response.json()
-
-        return data, str(None)
     except requests.exceptions.RequestException as e:
         print("Request Error")
         return None, str(e)
