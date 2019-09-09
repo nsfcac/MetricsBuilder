@@ -7,18 +7,7 @@ def main():
 
     session = requests.Session()
 
-    ## Dump file
-    # job_info_list, err_info_list = get_hpcjob_data(conn_time_out, read_time_out, session, "hostsummary")
-    #
-    # if job_info_list != None:
-    #     # print(job_info_list)
-    #     with open("hpcjobs.json", "wb") as outfile:
-    #         json.dump(job_info_list, outfile, indent = 4)
-    #     print("Writing to file succeed")
-    # else:
-    #     print(err_info_list)
-
-    # Get job list
+    # Get job set
     uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
     if uge_info != None:
         # print(uge_info)
@@ -31,38 +20,8 @@ def main():
     else:
         print(err_info)
 
-    # # Get user list
-    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
-    # if uge_info != None:
-    #     print(uge_info)
-    #     users_num = len(uge_info)
-    #     print("Users numbers: "),
-    #     print(users_num)
-    # else:
-    #     print(err_info)
-
-    # # Get cluster queue
-    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "clusterqueues")
-    # if uge_info != None:
-    #     print(uge_info)
-    #     clusterqueues = len(uge_info)
-    #     print("Cluster queues numbers: "),
-    #     print(clusterqueues)
-    # else:
-    #     print(err_info)
-
-    ## Get host summary list
-    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-    # if uge_info != None:
-    #     # print(uge_info)
-    #     hostsummary_num = len(uge_info)
-    #     print("Host summary numbers: "),
-    #     print(hostsummary_num)
-    # else:
-    #     print(err_info)
-
     # Get Exec Host list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
     if uge_info != None:
         # print(uge_info)
         with open("exechosts.json", "wb") as outfile:
