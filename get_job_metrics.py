@@ -26,6 +26,7 @@ def get_hpcjob_data(conn_time_out, read_time_out, session):
 
         return data, str(None)
     except requests.exceptions.RequestException as e:
+        print("Request Error")
         return None, str(e)
 
 if __name__ == "__main__":
