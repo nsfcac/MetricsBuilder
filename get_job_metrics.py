@@ -28,12 +28,12 @@ def main():
         print(err_info)
 
     # Get job class list
-    jobClass_list, err_info = get_jobClass_list(conn_time_out, read_time_out, session)
-    if jobClass_list != None:
-        print(jobClass_list)
-        jobs_classes = len(jobClass_list)
-        print("Job classes numbers: "),
-        print(jobs_classes)
+    project_list, err_info = get_project_list(conn_time_out, read_time_out, session)
+    if project_list != None:
+        print(project_list)
+        projects_num = len(project_list)
+        print("Projects numbers: "),
+        print(projects_num)
     else:
         print(err_info)
 
@@ -51,9 +51,9 @@ def get_job_list(conn_time_out, read_time_out, session):
         print("Request Error")
         return None, str(e)
 
-def get_jobClass_list(conn_time_out, read_time_out, session):
+def get_project_list(conn_time_out, read_time_out, session):
     try:
-        url = "http://129.118.104.35:8182/jobclasses"
+        url = "http://129.118.104.35:8182/projects"
         response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
 
         response.raise_for_status()
