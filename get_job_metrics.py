@@ -7,35 +7,47 @@ def main():
 
     session = requests.Session()
 
-    # Get job list
+    # Get job list, exechosts, host summary
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    if job_list != None:
-        # print(uge_info)
-        with open("joblist.json", "wb") as outfile:
-            json.dump(job_list, outfile, indent = 4)
-        print("Writing file succeed")
-    else:
-        print(err_info)
-
-    # Get Exec Host list
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-    if exec_hosts != None:
-        # print(uge_info)
-        with open("exechosts.json", "wb") as outfile:
-            json.dump(exec_hosts, outfile, indent = 4)
-        print("Writing file succeed")
+    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+
+    if job_list != None and exec_hosts != None and host_summary != None:
+        job_set = get_job_set(job_list)
+        job_node_match = match_job_node(job_set, host_summary)
+        print(job_node_match)
     else:
         print(err_info)
 
-    # Get Host Summary
-    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-    if host_summary != None:
-        # print(uge_info)
-        with open("hostsummary.json", "wb") as outfile:
-            json.dump(host_summary, outfile, indent = 4)
-        print("Writing file succeed")
-    else:
-        print(err_info)
+# Get job set
+def get_job_set(joblist):
+    jobset = []
+    for job in joblist:
+        jobId = job.split('.')[0]
+        if jobId not in jobset:
+            jobset.append(jobId)
+
+    return jobset
+
+def match_job_node(jobset, exechosts):
+    job_node_match = []
+    for jobId in jobset:
+        jobId_int = int(jobId)
+        job_node_dict = {'jobId': jobId_int, 'user': None, 'exechosts':[]}
+        for host in exechosts:
+            if host['jobList'] and jobId_int == host['jobList'][0]['id']:
+                job_node_dict.update({'user': host['jobList'][0]['user']})
+                host_ip = get_hostip(host['hostname'].split('.')[0])
+                job_node_dict['exechosts'].append(host_ip)
+        if len(job_node_dict['exechosts']) != 0:
+            job_node_match.append(job_node_dict)
+    return job_node_match
+
+def get_hostip(hostname):
+    if '-' in hostname:
+        n, h2, h1 = hostname.split('-')
+        return '10.101.' + h2 + "." + h1
+    return None
 
 def get_uge_info(conn_time_out, read_time_out, session, type):
 
