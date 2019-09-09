@@ -10,7 +10,10 @@ def main():
     job_info_list, err_info_list = get_hpcjob_data(conn_time_out, read_time_out, session)
 
     if job_info_list != None:
-        print(job_info_list)
+        # print(job_info_list)
+        with open("hpcjobs_json.json", "wb") as outfile:
+            json.dump(job_info_list, outfile, indent = 1)
+        print("Writing to file succeed")
     else:
         print(err_info_list)
 
