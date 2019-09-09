@@ -15,7 +15,10 @@ def main():
     if job_list != None and exec_hosts != None and host_summary != None:
         job_set = get_job_set(job_list)
         job_node_match = match_job_node(job_set, host_summary)
-        print(job_node_match)
+
+        with open("jobnode.json", "wb") as outfile:
+                json.dump(job_node_match, outfile, indent = 4)
+        # print(job_node_match)
     else:
         print(err_info)
 
