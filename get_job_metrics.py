@@ -29,7 +29,7 @@ def get_exechosts_ip(exechosts):
     exechost_list = []
     for exechost in exechosts:
         host_ip = get_hostip(exechost.split('.')[0])
-        exechost.append(host_ip)
+        exechost_list.append(host_ip)
     return exechost_list
 
 # Get job set
