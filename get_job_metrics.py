@@ -12,7 +12,7 @@ def main():
     if job_info_list != None:
         # print(job_info_list)
         with open("hpcjobs_json.json", "wb") as outfile:
-            json.dump(job_info_list, outfile, indent = 1)
+            json.dump(job_info_list, outfile, indent = 4)
         print("Writing to file succeed")
     else:
         print(err_info_list)
