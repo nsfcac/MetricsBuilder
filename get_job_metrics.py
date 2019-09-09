@@ -21,7 +21,10 @@ def main():
     # Get job list
     uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
     if uge_info != None:
-        print(uge_info)
+        # print(uge_info)
+        with open("jobs.json", "wb") as outfile:
+            json.dump(uge_info, outfile, indent = 4)
+        print("Writing to file succeed")
         jobs_num = len(uge_info)
         print("Jobs numbers: "),
         print(jobs_num)
