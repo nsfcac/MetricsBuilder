@@ -64,7 +64,10 @@ def main():
     # Get Exec Host list
     uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
     if uge_info != None:
-        print(uge_info)
+        # print(uge_info)
+        with open("exechosts.json", "wb") as outfile:
+            json.dump(uge_info, outfile, indent = 4)
+        print("Writing to file succeed")
         exechosts_num = len(uge_info)
         print("Exec Hosts numbers: "),
         print(exechosts_num)
