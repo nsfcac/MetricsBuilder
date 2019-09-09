@@ -20,7 +20,8 @@ def main():
     job_list, err_info = get_job_list(conn_time_out, read_time_out, session)
 
     if job_list != None:
-        print(job_list)
+        # print(job_list)
+        print(f"Jobs numbers: f{len(job_list)}")
     else:
         print(err_info)
 
