@@ -22,8 +22,8 @@ def main():
     if job_list != None:
         # print(job_list)
         jobs_num = len(job_list)
-        print(jobs_num)
-        # print(f"Jobs numbers: {jobs_num}")
+        # print(jobs_num)
+        print(f"Jobs numbers: {jobs_num}")
     else:
         print(err_info)
 
