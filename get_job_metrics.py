@@ -7,29 +7,33 @@ def main():
 
     session = requests.Session()
 
-    # Get job set
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    if uge_info != None:
+    # Get job list
+    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    if job_list != None:
         # print(uge_info)
-        with open("jobs.json", "wb") as outfile:
-            json.dump(uge_info, outfile, indent = 4)
-        print("Writing to file succeed")
-        jobs_num = len(uge_info)
-        print("Jobs numbers: "),
-        print(jobs_num)
+        with open("joblist.json", "wb") as outfile:
+            json.dump(job_list, outfile, indent = 4)
+        print("Writing file succeed")
     else:
         print(err_info)
 
     # Get Exec Host list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-    if uge_info != None:
+    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
+    if exec_hosts != None:
         # print(uge_info)
         with open("exechosts.json", "wb") as outfile:
-            json.dump(uge_info, outfile, indent = 4)
-        print("Writing to file succeed")
-        exechosts_num = len(uge_info)
-        print("Exec Hosts numbers: "),
-        print(exechosts_num)
+            json.dump(exec_hosts, outfile, indent = 4)
+        print("Writing file succeed")
+    else:
+        print(err_info)
+
+    # Get Host Summary
+    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    if host_summary != None:
+        # print(uge_info)
+        with open("hostsummary.json", "wb") as outfile:
+            json.dump(host_summary, outfile, indent = 4)
+        print("Writing file succeed")
     else:
         print(err_info)
 
@@ -39,8 +43,6 @@ def get_uge_info(conn_time_out, read_time_out, session, type):
     if type == "jobs":
         url = passwordUrl + type
     elif type == "users":
-        url = passwordUrl + type
-    elif type == "clusterqueues":
         url = passwordUrl + type
     elif type == "exechosts":
         url = passwordUrl + type

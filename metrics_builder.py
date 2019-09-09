@@ -1,9 +1,9 @@
 import json
 
 def main():
-    job_set = get_job_set("jobs.json")
-    exec_hosts = get_exec_hosts("exechosts.json")
-    job_node_match = match_job_node(job_set, exec_hosts)
+    job_set = get_job_set("joblist.json")
+    hostsummary = get_hostsummary("hostsummary.json")
+    job_node_match = match_job_node(job_set, hostsummary)
 
     print(job_node_match)
     print('Job node matches length:'),
@@ -21,18 +21,14 @@ def get_job_set(path):
         jobId = job.split('.')[0]
         if jobId not in jobset:
             jobset.append(jobId)
-    # job_list_len = len(joblist)
-    # job_set_len = len(jobset)
-    # print(f"Job list lenght: {job_list_len}")
-    # print(f"Job Set lenght: {job_set_len}")
 
     return jobset
 
 # Get job set
-def get_exec_hosts(path):
+def get_hostsummary(path):
     with open(path) as json_file:
-        exec_hosts = json.load(json_file)
-    return exec_hosts
+        hostsummary = json.load(json_file)
+    return hostsummary
 
 def match_job_node(jobset, exechosts):
     job_node_match = []
@@ -53,37 +49,6 @@ def get_hostip(hostname):
         n, h2, h1 = hostname.split('-')
         return '10.101.' + h2 + "." + h1
     return None
-#
-# def get_hpcjobs(path):
-#     with open(path) as json_file:
-#         hosts = json.load(json_file)
-#
-#     print(f"Total jobs: {len(hosts)}")
-#
-#     for host in hosts:
-#
-#         # host name
-#         print(f"hostname: {host['hostname'].split('.')[0]}")
-#         hostip = get_hostip(host['hostname'].split('.')[0])
-#         # host ip
-#         print(f"host IP: {hostip}")
-#
-#         # cpu average usage
-#         if host['resourceNumericValues'].get('np_load_avg') != None:
-#             print(f"CPU usage: {host['resourceNumericValues']['np_load_avg']}")
-#         # memory usage
-#         if host['resourceNumericValues'].get('m_mem_total') != None:
-#             print(f"Memory usage: {host['resourceNumericValues']['m_mem_free']}")
-#
-#         for job in host['jobList']:
-#             if (job['masterQueue'] == "MASTER"):
-#                 continue
-#             jobID = job['id']
-#
-#             if 'taskId' in job:
-#                 jobID = jobID + "-" + job['taskId']
-
-
 
 if __name__=="__main__":
     main()
