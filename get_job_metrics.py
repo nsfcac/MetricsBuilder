@@ -14,13 +14,23 @@ def main():
 
     if job_list != None and exec_hosts != None and host_summary != None:
         job_set = get_job_set(job_list)
+        exechost_list = get_exechosts_ip(exec_hosts)
         job_node_match = match_job_node(job_set, host_summary)
 
-        with open("jobnode.json", "wb") as outfile:
-                json.dump(job_node_match, outfile, indent = 4)
+        # with open("jobnode.json", "wb") as outfile:
+        #         json.dump(job_node_match, outfile, indent = 4)
         # print(job_node_match)
+        print(exechost_list)
     else:
         print(err_info)
+
+# Get exec hosts ip addr
+def get_exechosts_ip(exechosts):
+    exechost_list = []
+    for exechost in exechosts:
+        host_ip = get_hostip(exechost.split('.')[0])
+        exechost.append(host_ip)
+    return exechost_list
 
 # Get job set
 def get_job_set(joblist):
