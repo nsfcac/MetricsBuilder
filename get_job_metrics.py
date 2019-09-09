@@ -19,22 +19,32 @@ def main():
     #     print(err_info_list)
 
     # Get job list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    if uge_info != None:
-        # print(uge_info)
-        jobs_num = len(uge_info)
-        print("Jobs numbers: "),
-        print(jobs_num)
-    else:
-        print(err_info)
+    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    # if uge_info != None:
+    #     # print(uge_info)
+    #     jobs_num = len(uge_info)
+    #     print("Jobs numbers: "),
+    #     print(jobs_num)
+    # else:
+    #     print(err_info)
 
     # Get user list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    # if uge_info != None:
+    #     # print(uge_info)
+    #     projects_num = len(uge_info)
+    #     print("Users numbers: "),
+    #     print(projects_num)
+    # else:
+    #     print(err_info)
+
+    # Get cluster queue
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "clusterqueues")
     if uge_info != None:
-        # print(uge_info)
-        projects_num = len(uge_info)
-        print("Users numbers: "),
-        print(projects_num)
+        print(uge_info)
+        clusterqueues = len(uge_info)
+        print("Cluster queues numbers: "),
+        print(clusterqueues)
     else:
         print(err_info)
 
@@ -55,6 +65,8 @@ def get_uge_info(conn_time_out, read_time_out, session, type):
         url = passwordUrl + type
     elif type == "users":
         url = passwordUrl + type
+    elif type == "clusterqueues":
+        url = passwordUrl + passwordUrl + type
     elif type == "hostsummary":
         url = passwordUrl + "hostsummary/1/500"
     else:
