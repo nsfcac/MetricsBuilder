@@ -20,7 +20,7 @@ def main():
         # with open("jobnode.json", "wb") as outfile:
         #         json.dump(job_node_match, outfile, indent = 4)
         # print(job_node_match)
-        print(exechost_list)
+        print(len(exechost_list))
     else:
         print(err_info)
 
