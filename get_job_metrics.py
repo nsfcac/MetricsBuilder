@@ -8,7 +8,7 @@ def main():
     session = requests.Session()
 
     ## Dump file
-    # job_info_list, err_info_list = get_hpcjob_data(conn_time_out, read_time_out, session)
+    # job_info_list, err_info_list = get_hpcjob_data(conn_time_out, read_time_out, session, "hostsummary")
     #
     # if job_info_list != None:
     #     # print(job_info_list)
@@ -19,24 +19,24 @@ def main():
     #     print(err_info_list)
 
     # Get job list
-    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    # if uge_info != None:
-    #     # print(uge_info)
-    #     jobs_num = len(uge_info)
-    #     print("Jobs numbers: "),
-    #     print(jobs_num)
-    # else:
-    #     print(err_info)
-
-    # Get user list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
     if uge_info != None:
         print(uge_info)
-        users_num = len(uge_info)
-        print("Users numbers: "),
-        print(users_num)
+        jobs_num = len(uge_info)
+        print("Jobs numbers: "),
+        print(jobs_num)
     else:
         print(err_info)
+
+    # # Get user list
+    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    # if uge_info != None:
+    #     print(uge_info)
+    #     users_num = len(uge_info)
+    #     print("Users numbers: "),
+    #     print(users_num)
+    # else:
+    #     print(err_info)
 
     # # Get cluster queue
     # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "clusterqueues")
