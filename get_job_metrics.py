@@ -29,34 +29,34 @@ def main():
     #     print(err_info)
 
     # Get user list
-    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "users")
+    if uge_info != None:
+        print(uge_info)
+        users_num = len(uge_info)
+        print("Users numbers: "),
+        print(users_num)
+    else:
+        print(err_info)
+
+    # # Get cluster queue
+    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "clusterqueues")
     # if uge_info != None:
-    #     # print(uge_info)
-    #     projects_num = len(uge_info)
-    #     print("Users numbers: "),
-    #     print(projects_num)
+    #     print(uge_info)
+    #     clusterqueues = len(uge_info)
+    #     print("Cluster queues numbers: "),
+    #     print(clusterqueues)
     # else:
     #     print(err_info)
 
-    # Get cluster queue
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "clusterqueues")
-    if uge_info != None:
-        print(uge_info)
-        clusterqueues = len(uge_info)
-        print("Cluster queues numbers: "),
-        print(clusterqueues)
-    else:
-        print(err_info)
-
-    # Get host summary list
-    uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-    if uge_info != None:
-        # print(uge_info)
-        hostsummary_num = len(uge_info)
-        print("Host summary numbers: "),
-        print(hostsummary_num)
-    else:
-        print(err_info)
+    ## Get host summary list
+    # uge_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    # if uge_info != None:
+    #     # print(uge_info)
+    #     hostsummary_num = len(uge_info)
+    #     print("Host summary numbers: "),
+    #     print(hostsummary_num)
+    # else:
+    #     print(err_info)
 
 def get_uge_info(conn_time_out, read_time_out, session, type):
 
