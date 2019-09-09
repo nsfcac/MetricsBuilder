@@ -22,7 +22,7 @@ def main():
     if job_list != None:
         # print(job_list)
         jobs_num = len(job_list)
-        print("Jobs numbers: ")
+        print("Jobs numbers: "),
         print(jobs_num)
         # print(f"Jobs numbers: {jobs_num}")
     else:
