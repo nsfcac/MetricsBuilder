@@ -1,5 +1,6 @@
 import json
 import requests
+from  threading import Thread
 
 def main():
     conn_time_out = 15
@@ -7,24 +8,36 @@ def main():
 
     session = requests.Session()
 
-    # Get job list, exechosts, host summary
-    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    node_pwr_list = {}
+
+    # Get exec hosts and fetch corresponding power usuage
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-
-    if job_list != None and exec_hosts != None and host_summary != None:
-        job_set = get_job_set(job_list)
-        exechost_list = get_exechosts_ip(exec_hosts)
-        job_node_match = match_job_node(job_set, host_summary)
-
-        # with open("jobnode.json", "wb") as outfile:
-        #         json.dump(job_node_match, outfile, indent = 4)
-        # print(job_node_match)
-        print(len(exechost_list))
+    if exec_hosts != None:
+        # Power Redfish request
+        core_to_threads(exec_hosts, node_pwr_list, session)
+        print(node_pwr_list)
     else:
-        print(err_info)
+        print("No Executing Host")
+        return
 
-# Get exec hosts ip addr
+
+    # # Get job list, exechosts, host summary
+    # job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    # host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    #
+    # if job_list != None and host_summary != None:
+    #     job_set = get_job_set(job_list)
+    #     exechost_list = get_exechosts_ip(exec_hosts)
+    #     job_node_match = match_job_node(job_set, host_summary)
+    #
+    #     # with open("jobnode.json", "wb") as outfile:
+    #     #         json.dump(job_node_match, outfile, indent = 4)
+    #     # print(job_node_match)
+    #     print(len(exechost_list))
+    # else:
+    #     print(err_info)
+
+# Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
     exechost_list = []
     for exechost in exechosts:
@@ -43,6 +56,7 @@ def get_job_set(joblist):
 
     return jobset
 
+# Build job-node matches
 def match_job_node(jobset, exechosts):
     job_node_match = []
     for jobId in jobset:
@@ -57,20 +71,18 @@ def match_job_node(jobset, exechosts):
             job_node_match.append(job_node_dict)
     return job_node_match
 
+# Convert host name to ip address
 def get_hostip(hostname):
     if '-' in hostname:
         n, h2, h1 = hostname.split('-')
         return '10.101.' + h2 + "." + h1
     return None
 
+# Get UGE information
 def get_uge_info(conn_time_out, read_time_out, session, type):
 
     passwordUrl = "http://129.118.104.35:8182/"
-    if type == "jobs":
-        url = passwordUrl + type
-    elif type == "users":
-        url = passwordUrl + type
-    elif type == "exechosts":
+    if type == "jobs" or type == "users" or type == "exechosts":
         url = passwordUrl + type
     elif type == "hostsummary":
         url = passwordUrl + "hostsummary/1/500"
@@ -86,6 +98,34 @@ def get_uge_info(conn_time_out, read_time_out, session, type):
     except requests.exceptions.RequestException as e:
         print("Request Error")
         return None, str(e)
+
+# Get Power Usuage
+def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
+    try:
+        url = "https://" + host + "/redfish/v1/Chassis/System.Embedded.1/Power/"
+        response = session.get(url, verify = False, auth = ('password', 'monster'), timeout = (conn_time_out, read_time_out))
+        response.raise_for_status()
+        data = response.json()
+
+        node_pwr_list.update({host: data['PowerControl'][0]['PowerConsumedWatts']})
+
+    except requests.exceptions.RequestException as e:
+        print("Request Power Usage Error")
+        node_pwr_list.update({host: None})
+
+# Use multi-thread to fetch Power Usuage from each exec host
+def core_to_threads(exec_hosts, node_pwr_list, session):
+    warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
+    try:
+        threads = []
+        for host in exec_hosts:
+            a = Thread(target = get_powerusage, args = (host, node_pwr_list, conn_time_out, read_time_out, session, ))
+            threads.append(a)
+            a.start()
+        for index, thread in enumerate(threads):
+            thread.join()
+    except Exception as e:
+        print(e)
 
 if __name__ == "__main__":
     main()
