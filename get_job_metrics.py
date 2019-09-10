@@ -15,7 +15,7 @@ def main():
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
     if exec_hosts != None:
         # Power Redfish request
-        core_to_threads(exec_hosts, node_pwr_list, session)
+        core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session)
         print(node_pwr_list)
     else:
         print("No Executing Host")
@@ -115,7 +115,7 @@ def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
         node_pwr_list.update({host: None})
 
 # Use multi-thread to fetch Power Usuage from each exec host
-def core_to_threads(exec_hosts, node_pwr_list, session):
+def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session):
     warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
     try:
         threads = []
