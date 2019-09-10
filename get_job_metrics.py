@@ -44,7 +44,7 @@ def main():
             # print(node_pwr_list[exechost])
             if node_pwr_list[exechost] != None:
                 pwr_usage.append(node_pwr_list[exechost])
-                # pwr_usage_tot += int(node_pwr_list[exechost])
+                pwr_usage_tot = pwr_usage_tot + node_pwr_list[exechost]
             else:
                 pwr_usage.append(None)
                 pwr_usage_tot = None
