@@ -37,7 +37,7 @@ def main():
         pwr_usage = []
         for exechost in item['exechosts']:
             pwr_usage.append(node_pwr_list[exechost])
-            pwr_usage_tot += node_pwr_list[exechost]
+            pwr_usage_tot += int(node_pwr_list[exechost])
         item.update({'nodePowerUsage': pwr_usage, 'TotalPowerUsage': pwr_usage_tot})
 
     with open("jobNodePower.json", "wb") as outfile:
