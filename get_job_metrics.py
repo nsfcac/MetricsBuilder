@@ -4,6 +4,9 @@ import requests
 import warnings
 from  threading import Thread
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 def main():
     conn_time_out = 15
     read_time_out = 40
