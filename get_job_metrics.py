@@ -15,7 +15,8 @@ def main():
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
     if exec_hosts != None:
         # Power Redfish request
-        core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session)
+        exechost_list = get_exechosts_ip(exec_hosts)
+        core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
         print(node_pwr_list)
     else:
         print("No Executing Host")
