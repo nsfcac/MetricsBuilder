@@ -21,6 +21,8 @@ def main():
         print("No Executing Host")
         return
 
+    timestamp = time.time()
+
 
     # Get job list, exechosts, host summary
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
@@ -42,7 +44,7 @@ def main():
             else:
                 pwr_usage.append(None)
                 pwr_usage_tot = None
-        item.update({'nodePowerUsage': pwr_usage, 'totalPowerUsage': pwr_usage_tot})
+        item.update({'nodePowerUsage': pwr_usage, 'totalPowerUsage': pwr_usage_tot, 'timeStamp': timestamp})
 
     with open("jobNodePower.json", "wb") as outfile:
             json.dump(job_node_match, outfile, indent = 4)
