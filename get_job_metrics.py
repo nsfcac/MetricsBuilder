@@ -27,7 +27,6 @@ def main():
 
     timestamp = time.time()
 
-
     # Get job list, exechosts, host summary
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
@@ -42,6 +41,7 @@ def main():
         pwr_usage_tot = 0
         pwr_usage = []
         for exechost in item['execHosts']:
+            print(node_pwr_list[exechost])
             if node_pwr_list[exechost] != None:
                 pwr_usage.append(node_pwr_list[exechost])
                 pwr_usage_tot += int(node_pwr_list[exechost])
