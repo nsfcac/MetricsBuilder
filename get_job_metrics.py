@@ -14,30 +14,36 @@ def main():
     # Get exec hosts and fetch corresponding power usuage
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
     if exec_hosts != None:
-        # Power Redfish request
         exechost_list = get_exechosts_ip(exec_hosts)
         core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
-        print(node_pwr_list)
+        # print(node_pwr_list)
     else:
         print("No Executing Host")
         return
 
 
-    # # Get job list, exechosts, host summary
-    # job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    # host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-    #
-    # if job_list != None and host_summary != None:
-    #     job_set = get_job_set(job_list)
-    #     exechost_list = get_exechosts_ip(exec_hosts)
-    #     job_node_match = match_job_node(job_set, host_summary)
-    #
-    #     # with open("jobnode.json", "wb") as outfile:
-    #     #         json.dump(job_node_match, outfile, indent = 4)
-    #     # print(job_node_match)
-    #     print(len(exechost_list))
-    # else:
-    #     print(err_info)
+    # Get job list, exechosts, host summary
+    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+
+    if job_list != None and host_summary != None:
+        job_set = get_job_set(job_list)
+        job_node_match = match_job_node(job_set, host_summary)
+    else:
+        print(err_info)
+
+    for item in job_node_match:
+        pwr_usage_tot = 0
+        pwr_usage = []
+        for exechost in item['exechosts']:
+            pwr_usage.append(node_pwr_list[exechost])
+            pwr_usage_tot += node_pwr_list[exechost]
+        item.update({'nodePowerUsage': pwr_usage, 'TotalPowerUsage': pwr_usage_tot})
+
+    with open("jobNodePower.json", "wb") as outfile:
+            json.dump(job_node_match, outfile, indent = 4)
+    print(job_node_match)
+
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
