@@ -1,6 +1,20 @@
 [
     {
-        "totalPowerUsage": 2886, 
+        "totalPowerUsage": 2885, 
+        "user": "rafiisla", 
+        "nodePowerUsage": [
+            289, 
+            288, 
+            278, 
+            287, 
+            282, 
+            294, 
+            275, 
+            292, 
+            293, 
+            307
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.31", 
             "10.101.1.42", 
@@ -13,34 +27,100 @@
             "10.101.7.31", 
             "10.101.9.4"
         ], 
-        "user": "rafiisla", 
-        "nodePowerUsage": [
-            289, 
-            288, 
-            278, 
-            287, 
-            281, 
-            292, 
-            276, 
-            293, 
-            294, 
-            308
-        ], 
         "jobId": 819623
     }, 
     {
-        "totalPowerUsage": 138, 
-        "execHosts": [
-            "10.101.9.40"
-        ], 
+        "totalPowerUsage": 140, 
         "user": "rafiisla", 
         "nodePowerUsage": [
-            138
+            140
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.40"
         ], 
         "jobId": 909272
     }, 
     {
-        "totalPowerUsage": 13961, 
+        "totalPowerUsage": 141, 
+        "user": "rafiisla", 
+        "nodePowerUsage": [
+            141
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.13"
+        ], 
+        "jobId": 909273
+    }, 
+    {
+        "totalPowerUsage": 138, 
+        "user": "rafiisla", 
+        "nodePowerUsage": [
+            138
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.14"
+        ], 
+        "jobId": 909274
+    }, 
+    {
+        "totalPowerUsage": 13886, 
+        "user": "prkumar", 
+        "nodePowerUsage": [
+            263, 
+            268, 
+            279, 
+            275, 
+            276, 
+            279, 
+            263, 
+            261, 
+            279, 
+            285, 
+            267, 
+            282, 
+            290, 
+            244, 
+            286, 
+            267, 
+            280, 
+            271, 
+            271, 
+            280, 
+            287, 
+            257, 
+            266, 
+            287, 
+            276, 
+            277, 
+            247, 
+            288, 
+            278, 
+            286, 
+            263, 
+            280, 
+            292, 
+            290, 
+            259, 
+            298, 
+            295, 
+            295, 
+            282, 
+            286, 
+            276, 
+            273, 
+            281, 
+            269, 
+            304, 
+            286, 
+            292, 
+            283, 
+            277, 
+            290
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.17", 
             "10.101.1.20", 
@@ -93,63 +173,24 @@
             "10.101.9.53", 
             "10.101.9.59"
         ], 
-        "user": "prkumar", 
-        "nodePowerUsage": [
-            268, 
-            268, 
-            281, 
-            274, 
-            277, 
-            281, 
-            262, 
-            262, 
-            280, 
-            287, 
-            272, 
-            282, 
-            291, 
-            245, 
-            288, 
-            269, 
-            281, 
-            274, 
-            273, 
-            281, 
-            288, 
-            258, 
-            268, 
-            290, 
-            279, 
-            280, 
-            248, 
-            291, 
-            281, 
-            287, 
-            263, 
-            282, 
-            294, 
-            291, 
-            260, 
-            300, 
-            296, 
-            296, 
-            284, 
-            286, 
-            277, 
-            274, 
-            282, 
-            270, 
-            305, 
-            288, 
-            293, 
-            284, 
-            278, 
-            292
-        ], 
         "jobId": 912648
     }, 
     {
-        "totalPowerUsage": 2532, 
+        "totalPowerUsage": 2529, 
+        "user": "pnourian", 
+        "nodePowerUsage": [
+            258, 
+            248, 
+            249, 
+            242, 
+            255, 
+            264, 
+            260, 
+            250, 
+            255, 
+            248
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.10.41", 
             "10.101.2.58", 
@@ -162,23 +203,24 @@
             "10.101.8.18", 
             "10.101.8.9"
         ], 
-        "user": "pnourian", 
-        "nodePowerUsage": [
-            257, 
-            249, 
-            248, 
-            242, 
-            255, 
-            264, 
-            259, 
-            250, 
-            259, 
-            249
-        ], 
         "jobId": 912826
     }, 
     {
-        "totalPowerUsage": 2461, 
+        "totalPowerUsage": 2459, 
+        "user": "pnourian", 
+        "nodePowerUsage": [
+            236, 
+            239, 
+            254, 
+            245, 
+            248, 
+            241, 
+            242, 
+            269, 
+            248, 
+            237
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.19", 
             "10.101.1.38", 
@@ -191,23 +233,24 @@
             "10.101.8.22", 
             "10.101.8.24"
         ], 
-        "user": "pnourian", 
-        "nodePowerUsage": [
-            237, 
-            239, 
-            251, 
-            246, 
-            247, 
-            240, 
-            243, 
-            270, 
-            250, 
-            238
-        ], 
         "jobId": 912827
     }, 
     {
-        "totalPowerUsage": 2528, 
+        "totalPowerUsage": 2525, 
+        "user": "pnourian", 
+        "nodePowerUsage": [
+            244, 
+            248, 
+            246, 
+            251, 
+            249, 
+            251, 
+            256, 
+            255, 
+            259, 
+            266
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.27", 
             "10.101.10.25", 
@@ -220,56 +263,66 @@
             "10.101.9.49", 
             "10.101.9.56"
         ], 
-        "user": "pnourian", 
-        "nodePowerUsage": [
-            245, 
-            251, 
-            255, 
-            249, 
-            248, 
-            248, 
-            253, 
-            249, 
-            262, 
-            268
-        ], 
         "jobId": 912828
     }, 
     {
-        "totalPowerUsage": 146, 
-        "execHosts": [
-            "10.101.9.7"
-        ], 
+        "totalPowerUsage": 179, 
         "user": "npaulat", 
         "nodePowerUsage": [
-            146
+            179
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.7"
         ], 
         "jobId": 912995
     }, 
     {
-        "totalPowerUsage": 286, 
-        "execHosts": [
-            "10.101.4.11"
-        ], 
+        "totalPowerUsage": 280, 
         "user": "npaulat", 
         "nodePowerUsage": [
-            286
+            280
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.11"
         ], 
         "jobId": 913048
     }, 
     {
         "totalPowerUsage": 303, 
-        "execHosts": [
-            "10.101.2.33"
-        ], 
         "user": "hge", 
         "nodePowerUsage": [
             303
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.33"
+        ], 
         "jobId": 914011
     }, 
     {
-        "totalPowerUsage": 4370, 
+        "totalPowerUsage": 4399, 
+        "user": "srmani", 
+        "nodePowerUsage": [
+            272, 
+            269, 
+            281, 
+            272, 
+            272, 
+            270, 
+            274, 
+            273, 
+            267, 
+            276, 
+            283, 
+            272, 
+            281, 
+            280, 
+            283, 
+            274
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.23", 
             "10.101.1.46", 
@@ -288,29 +341,24 @@
             "10.101.8.37", 
             "10.101.9.20"
         ], 
-        "user": "srmani", 
-        "nodePowerUsage": [
-            271, 
-            268, 
-            279, 
-            269, 
-            270, 
-            268, 
-            272, 
-            268, 
-            265, 
-            273, 
-            284, 
-            269, 
-            280, 
-            279, 
-            282, 
-            273
-        ], 
         "jobId": 914599
     }, 
     {
-        "totalPowerUsage": 3150, 
+        "totalPowerUsage": 2955, 
+        "user": "hge", 
+        "nodePowerUsage": [
+            317, 
+            312, 
+            306, 
+            293, 
+            302, 
+            282, 
+            270, 
+            293, 
+            286, 
+            294
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.57", 
             "10.101.10.36", 
@@ -323,370 +371,384 @@
             "10.101.6.6", 
             "10.101.9.30"
         ], 
-        "user": "hge", 
-        "nodePowerUsage": [
-            332, 
-            327, 
-            321, 
-            317, 
-            314, 
-            301, 
-            319, 
-            300, 
-            310, 
-            309
-        ], 
         "jobId": 914637
     }, 
     {
-        "totalPowerUsage": 1258, 
+        "totalPowerUsage": 1239, 
+        "user": "wan39502", 
+        "nodePowerUsage": [
+            316, 
+            293, 
+            317, 
+            313
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.7.37", 
             "10.101.7.56", 
             "10.101.9.42", 
             "10.101.9.60"
         ], 
-        "user": "wan39502", 
-        "nodePowerUsage": [
-            313, 
-            319, 
-            304, 
-            322
-        ], 
         "jobId": 914658
     }, 
     {
-        "totalPowerUsage": 167, 
-        "execHosts": [
-            "10.101.9.50"
-        ], 
+        "totalPowerUsage": 141, 
         "user": "jjerke", 
         "nodePowerUsage": [
-            167
+            141
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.50"
         ], 
         "jobId": 914675
     }, 
     {
-        "totalPowerUsage": 300, 
-        "execHosts": [
-            "10.101.1.49"
-        ], 
+        "totalPowerUsage": 301, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            300
+            301
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.49"
         ], 
         "jobId": 914678
     }, 
     {
-        "totalPowerUsage": 303, 
-        "execHosts": [
-            "10.101.10.27"
-        ], 
+        "totalPowerUsage": 300, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            303
+            300
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.10.27"
         ], 
         "jobId": 914683
     }, 
     {
-        "totalPowerUsage": 298, 
-        "execHosts": [
-            "10.101.2.25"
-        ], 
+        "totalPowerUsage": 301, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            298
+            301
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.25"
         ], 
         "jobId": 914684
     }, 
     {
         "totalPowerUsage": 288, 
-        "execHosts": [
-            "10.101.2.29"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             288
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.29"
         ], 
         "jobId": 914688
     }, 
     {
         "totalPowerUsage": 299, 
-        "execHosts": [
-            "10.101.7.15"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             299
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.15"
+        ], 
         "jobId": 914689
     }, 
     {
-        "totalPowerUsage": 293, 
-        "execHosts": [
-            "10.101.7.33"
-        ], 
+        "totalPowerUsage": 291, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            293
+            291
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.33"
         ], 
         "jobId": 914693
     }, 
     {
-        "totalPowerUsage": 307, 
-        "execHosts": [
-            "10.101.1.59"
-        ], 
+        "totalPowerUsage": 308, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            307
+            308
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.59"
         ], 
         "jobId": 914694
     }, 
     {
-        "totalPowerUsage": 297, 
-        "execHosts": [
-            "10.101.8.20"
-        ], 
+        "totalPowerUsage": 300, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            297
+            300
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.20"
         ], 
         "jobId": 914696
     }, 
     {
-        "totalPowerUsage": 317, 
-        "execHosts": [
-            "10.101.8.60"
-        ], 
+        "totalPowerUsage": 315, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            317
+            315
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.60"
         ], 
         "jobId": 914701
     }, 
     {
-        "totalPowerUsage": 296, 
-        "execHosts": [
-            "10.101.9.13"
-        ], 
+        "totalPowerUsage": 295, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            296
+            295
         ], 
-        "jobId": 914702
-    }, 
-    {
-        "totalPowerUsage": 297, 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.10.39"
-        ], 
-        "user": "gpinesch", 
-        "nodePowerUsage": [
-            297
         ], 
         "jobId": 914703
     }, 
     {
-        "totalPowerUsage": 297, 
-        "execHosts": [
-            "10.101.8.15"
-        ], 
+        "totalPowerUsage": 298, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            297
+            298
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.15"
         ], 
         "jobId": 914705
     }, 
     {
         "totalPowerUsage": 299, 
-        "execHosts": [
-            "10.101.9.48"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             299
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.48"
         ], 
         "jobId": 914708
     }, 
     {
-        "totalPowerUsage": 311, 
-        "execHosts": [
-            "10.101.8.51"
-        ], 
+        "totalPowerUsage": 309, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            311
+            309
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.51"
         ], 
         "jobId": 914709
     }, 
     {
-        "totalPowerUsage": 299, 
-        "execHosts": [
-            "10.101.1.60"
-        ], 
+        "totalPowerUsage": 301, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            299
+            301
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.60"
         ], 
         "jobId": 914712
     }, 
     {
-        "totalPowerUsage": 302, 
-        "execHosts": [
-            "10.101.6.4"
-        ], 
+        "totalPowerUsage": 301, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            302
+            301
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.4"
         ], 
         "jobId": 914720
     }, 
     {
-        "totalPowerUsage": 283, 
-        "execHosts": [
-            "10.101.4.41"
-        ], 
+        "totalPowerUsage": 285, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            283
+            285
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.41"
         ], 
         "jobId": 914721
     }, 
     {
-        "totalPowerUsage": 297, 
-        "execHosts": [
-            "10.101.2.11"
-        ], 
+        "totalPowerUsage": 296, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            297
+            296
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.11"
         ], 
         "jobId": 914723
     }, 
     {
-        "totalPowerUsage": 282, 
-        "execHosts": [
-            "10.101.3.14"
-        ], 
+        "totalPowerUsage": 285, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            282
+            285
         ], 
-        "jobId": 914724
-    }, 
-    {
-        "totalPowerUsage": 283, 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.28"
-        ], 
-        "user": "gpinesch", 
-        "nodePowerUsage": [
-            283
         ], 
         "jobId": 914725
     }, 
     {
-        "totalPowerUsage": 286, 
-        "execHosts": [
-            "10.101.1.33"
-        ], 
+        "totalPowerUsage": 289, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            286
+            289
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.33"
         ], 
         "jobId": 914727
     }, 
     {
         "totalPowerUsage": 306, 
-        "execHosts": [
-            "10.101.8.40"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             306
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.40"
+        ], 
         "jobId": 914728
     }, 
     {
-        "totalPowerUsage": 293, 
-        "execHosts": [
-            "10.101.9.12"
-        ], 
+        "totalPowerUsage": 289, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            293
+            289
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.12"
         ], 
         "jobId": 914730
     }, 
     {
         "totalPowerUsage": 288, 
-        "execHosts": [
-            "10.101.1.7"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             288
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.7"
+        ], 
         "jobId": 914731
     }, 
     {
-        "totalPowerUsage": 301, 
-        "execHosts": [
-            "10.101.6.5"
-        ], 
+        "totalPowerUsage": 302, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            301
+            302
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.5"
         ], 
         "jobId": 914732
     }, 
     {
-        "totalPowerUsage": 309, 
-        "execHosts": [
-            "10.101.8.56"
-        ], 
+        "totalPowerUsage": 308, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            309
+            308
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.56"
         ], 
         "jobId": 914733
     }, 
     {
-        "totalPowerUsage": 298, 
-        "execHosts": [
-            "10.101.8.10"
-        ], 
+        "totalPowerUsage": 295, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            298
+            295
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.10"
         ], 
         "jobId": 914735
     }, 
     {
-        "totalPowerUsage": 299, 
-        "execHosts": [
-            "10.101.4.34"
-        ], 
+        "totalPowerUsage": 298, 
         "user": "gpinesch", 
         "nodePowerUsage": [
-            299
+            298
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.34"
         ], 
         "jobId": 914736
     }, 
     {
         "totalPowerUsage": 293, 
-        "execHosts": [
-            "10.101.2.50"
-        ], 
         "user": "gpinesch", 
         "nodePowerUsage": [
             293
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.50"
+        ], 
         "jobId": 914737
     }, 
     {
-        "totalPowerUsage": 3868, 
+        "totalPowerUsage": 3873, 
+        "user": "aschueth", 
+        "nodePowerUsage": [
+            239, 
+            232, 
+            253, 
+            231, 
+            239, 
+            239, 
+            240, 
+            240, 
+            258, 
+            236, 
+            251, 
+            236, 
+            254, 
+            243, 
+            247, 
+            235
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.25", 
             "10.101.1.41", 
@@ -705,51 +767,51 @@
             "10.101.9.18", 
             "10.101.9.37"
         ], 
-        "user": "aschueth", 
-        "nodePowerUsage": [
-            239, 
-            232, 
-            252, 
-            231, 
-            238, 
-            240, 
-            239, 
-            239, 
-            257, 
-            237, 
-            251, 
-            236, 
-            254, 
-            242, 
-            246, 
-            235
-        ], 
         "jobId": 915188
     }, 
     {
-        "totalPowerUsage": 313, 
-        "execHosts": [
-            "10.101.1.12"
-        ], 
+        "totalPowerUsage": 312, 
         "user": "lediaz", 
         "nodePowerUsage": [
-            313
+            312
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.12"
         ], 
         "jobId": 915192
     }, 
     {
-        "totalPowerUsage": 324, 
-        "execHosts": [
-            "10.101.7.25"
-        ], 
+        "totalPowerUsage": 325, 
         "user": "lediaz", 
         "nodePowerUsage": [
-            324
+            325
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.25"
         ], 
         "jobId": 915194
     }, 
     {
-        "totalPowerUsage": 3589, 
+        "totalPowerUsage": 3600, 
+        "user": "dsundara", 
+        "nodePowerUsage": [
+            279, 
+            275, 
+            287, 
+            268, 
+            268, 
+            269, 
+            271, 
+            281, 
+            278, 
+            280, 
+            285, 
+            268, 
+            291
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.30", 
             "10.101.1.53", 
@@ -765,389 +827,415 @@
             "10.101.7.9", 
             "10.101.8.57"
         ], 
-        "user": "dsundara", 
-        "nodePowerUsage": [
-            278, 
-            274, 
-            285, 
-            268, 
-            267, 
-            268, 
-            270, 
-            280, 
-            277, 
-            280, 
-            284, 
-            267, 
-            291
-        ], 
         "jobId": 915211
     }, 
     {
-        "totalPowerUsage": 222, 
-        "execHosts": [
-            "10.101.4.18"
-        ], 
+        "totalPowerUsage": 238, 
         "user": "christan", 
         "nodePowerUsage": [
-            222
+            238
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.18"
         ], 
         "jobId": 915230
     }, 
     {
-        "totalPowerUsage": 268, 
-        "execHosts": [
-            "10.101.8.45"
-        ], 
+        "totalPowerUsage": 304, 
         "user": "christan", 
         "nodePowerUsage": [
-            268
+            304
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.45"
         ], 
         "jobId": 915231
     }, 
     {
-        "totalPowerUsage": 251, 
-        "execHosts": [
-            "10.101.1.13"
-        ], 
+        "totalPowerUsage": 222, 
         "user": "christan", 
         "nodePowerUsage": [
-            251
+            222
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.13"
         ], 
         "jobId": 915232
     }, 
     {
-        "totalPowerUsage": 278, 
-        "execHosts": [
-            "10.101.8.7"
-        ], 
+        "totalPowerUsage": 245, 
         "user": "christan", 
         "nodePowerUsage": [
-            278
+            245
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.7"
         ], 
         "jobId": 915233
     }, 
     {
         "totalPowerUsage": 255, 
-        "execHosts": [
-            "10.101.8.2"
-        ], 
         "user": "christan", 
         "nodePowerUsage": [
             255
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.2"
+        ], 
         "jobId": 915234
     }, 
     {
-        "totalPowerUsage": 234, 
-        "execHosts": [
-            "10.101.2.46"
-        ], 
+        "totalPowerUsage": 237, 
         "user": "christan", 
         "nodePowerUsage": [
-            234
+            237
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.46"
         ], 
         "jobId": 915235
     }, 
     {
-        "totalPowerUsage": 287, 
-        "execHosts": [
-            "10.101.9.3"
-        ], 
+        "totalPowerUsage": 249, 
         "user": "christan", 
         "nodePowerUsage": [
-            287
+            249
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.3"
         ], 
         "jobId": 915236
     }, 
     {
-        "totalPowerUsage": 263, 
-        "execHosts": [
-            "10.101.6.14"
-        ], 
+        "totalPowerUsage": 238, 
         "user": "christan", 
         "nodePowerUsage": [
-            263
+            238
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.14"
         ], 
         "jobId": 915237
     }, 
     {
-        "totalPowerUsage": 280, 
-        "execHosts": [
-            "10.101.6.12"
-        ], 
+        "totalPowerUsage": 234, 
         "user": "christan", 
         "nodePowerUsage": [
-            280
+            234
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.12"
         ], 
         "jobId": 915238
     }, 
     {
-        "totalPowerUsage": 224, 
-        "execHosts": [
-            "10.101.4.5"
-        ], 
+        "totalPowerUsage": 225, 
         "user": "christan", 
         "nodePowerUsage": [
-            224
+            225
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.5"
         ], 
         "jobId": 915239
     }, 
     {
-        "totalPowerUsage": 246, 
-        "execHosts": [
-            "10.101.8.16"
-        ], 
+        "totalPowerUsage": 244, 
         "user": "christan", 
         "nodePowerUsage": [
-            246
+            244
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.16"
         ], 
         "jobId": 915240
     }, 
     {
-        "totalPowerUsage": 242, 
-        "execHosts": [
-            "10.101.1.32"
-        ], 
+        "totalPowerUsage": 249, 
         "user": "christan", 
         "nodePowerUsage": [
-            242
+            249
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.32"
         ], 
         "jobId": 915241
     }, 
     {
-        "totalPowerUsage": 239, 
-        "execHosts": [
-            "10.101.4.33"
-        ], 
+        "totalPowerUsage": 250, 
         "user": "christan", 
         "nodePowerUsage": [
-            239
+            250
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.33"
         ], 
         "jobId": 915242
     }, 
     {
-        "totalPowerUsage": 282, 
-        "execHosts": [
-            "10.101.9.29"
-        ], 
+        "totalPowerUsage": 291, 
         "user": "christan", 
         "nodePowerUsage": [
-            282
+            291
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.29"
         ], 
         "jobId": 915243
     }, 
     {
-        "totalPowerUsage": 251, 
-        "execHosts": [
-            "10.101.5.11"
-        ], 
+        "totalPowerUsage": 248, 
         "user": "christan", 
         "nodePowerUsage": [
-            251
+            248
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.5.11"
         ], 
         "jobId": 915244
     }, 
     {
-        "totalPowerUsage": 268, 
-        "execHosts": [
-            "10.101.3.15"
-        ], 
+        "totalPowerUsage": 235, 
         "user": "christan", 
         "nodePowerUsage": [
-            268
+            235
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.15"
         ], 
         "jobId": 915245
     }, 
     {
         "totalPowerUsage": 242, 
-        "execHosts": [
-            "10.101.2.56"
-        ], 
         "user": "christan", 
         "nodePowerUsage": [
             242
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.56"
+        ], 
         "jobId": 915246
     }, 
     {
-        "totalPowerUsage": 240, 
-        "execHosts": [
-            "10.101.3.37"
-        ], 
+        "totalPowerUsage": 238, 
         "user": "christan", 
         "nodePowerUsage": [
-            240
+            238
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.37"
         ], 
         "jobId": 915247
     }, 
     {
-        "totalPowerUsage": 235, 
-        "execHosts": [
-            "10.101.4.21"
-        ], 
+        "totalPowerUsage": 246, 
         "user": "christan", 
         "nodePowerUsage": [
-            235
+            246
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.21"
         ], 
         "jobId": 915248
     }, 
     {
-        "totalPowerUsage": 255, 
-        "execHosts": [
-            "10.101.5.8"
-        ], 
+        "totalPowerUsage": 269, 
         "user": "christan", 
         "nodePowerUsage": [
-            255
+            269
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.5.8"
         ], 
         "jobId": 915249
     }, 
     {
-        "totalPowerUsage": 255, 
-        "execHosts": [
-            "10.101.2.34"
-        ], 
+        "totalPowerUsage": 278, 
         "user": "christan", 
         "nodePowerUsage": [
-            255
+            278
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.34"
         ], 
         "jobId": 915250
     }, 
     {
-        "totalPowerUsage": 262, 
-        "execHosts": [
-            "10.101.8.3"
-        ], 
+        "totalPowerUsage": 252, 
         "user": "christan", 
         "nodePowerUsage": [
-            262
+            252
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.3"
         ], 
         "jobId": 915251
     }, 
     {
-        "totalPowerUsage": 254, 
-        "execHosts": [
-            "10.101.8.6"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            254
-        ], 
-        "jobId": 915252
-    }, 
-    {
-        "totalPowerUsage": 256, 
-        "execHosts": [
-            "10.101.9.21"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            256
-        ], 
-        "jobId": 915253
-    }, 
-    {
-        "totalPowerUsage": 281, 
-        "execHosts": [
-            "10.101.3.17"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            281
-        ], 
-        "jobId": 915254
-    }, 
-    {
-        "totalPowerUsage": 234, 
-        "execHosts": [
-            "10.101.3.16"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            234
-        ], 
-        "jobId": 915255
-    }, 
-    {
-        "totalPowerUsage": 245, 
-        "execHosts": [
-            "10.101.6.16"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            245
-        ], 
-        "jobId": 915256
-    }, 
-    {
-        "totalPowerUsage": 290, 
-        "execHosts": [
-            "10.101.7.39"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            290
-        ], 
-        "jobId": 915257
-    }, 
-    {
-        "totalPowerUsage": 237, 
-        "execHosts": [
-            "10.101.9.57"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            237
-        ], 
-        "jobId": 915258
-    }, 
-    {
-        "totalPowerUsage": 243, 
-        "execHosts": [
-            "10.101.8.28"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            243
-        ], 
-        "jobId": 915259
-    }, 
-    {
-        "totalPowerUsage": 257, 
-        "execHosts": [
-            "10.101.9.14"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            257
-        ], 
-        "jobId": 915260
-    }, 
-    {
-        "totalPowerUsage": 240, 
-        "execHosts": [
-            "10.101.3.1"
-        ], 
-        "user": "christan", 
-        "nodePowerUsage": [
-            240
-        ], 
-        "jobId": 915261
-    }, 
-    {
         "totalPowerUsage": 265, 
-        "execHosts": [
-            "10.101.8.53"
-        ], 
         "user": "christan", 
         "nodePowerUsage": [
             265
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.6"
+        ], 
+        "jobId": 915252
+    }, 
+    {
+        "totalPowerUsage": 241, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            241
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.21"
+        ], 
+        "jobId": 915253
+    }, 
+    {
+        "totalPowerUsage": 274, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            274
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.17"
+        ], 
+        "jobId": 915254
+    }, 
+    {
+        "totalPowerUsage": 239, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            239
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.16"
+        ], 
+        "jobId": 915255
+    }, 
+    {
+        "totalPowerUsage": 238, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            238
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.16"
+        ], 
+        "jobId": 915256
+    }, 
+    {
+        "totalPowerUsage": 255, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            255
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.39"
+        ], 
+        "jobId": 915257
+    }, 
+    {
+        "totalPowerUsage": 259, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            259
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.57"
+        ], 
+        "jobId": 915258
+    }, 
+    {
+        "totalPowerUsage": 250, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            250
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.28"
+        ], 
+        "jobId": 915259
+    }, 
+    {
+        "totalPowerUsage": 253, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            253
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.14"
+        ], 
+        "jobId": 915260
+    }, 
+    {
+        "totalPowerUsage": 238, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            238
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.1"
+        ], 
+        "jobId": 915261
+    }, 
+    {
+        "totalPowerUsage": 276, 
+        "user": "christan", 
+        "nodePowerUsage": [
+            276
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.53"
+        ], 
         "jobId": 915262
     }, 
     {
-        "totalPowerUsage": 1396, 
+        "totalPowerUsage": 1371, 
+        "user": "hge", 
+        "nodePowerUsage": [
+            306, 
+            266, 
+            272, 
+            246, 
+            281
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.24", 
             "10.101.2.55", 
@@ -1155,42 +1243,85 @@
             "10.101.6.18", 
             "10.101.7.28"
         ], 
-        "user": "hge", 
-        "nodePowerUsage": [
-            260, 
-            287, 
-            284, 
-            276, 
-            289
-        ], 
         "jobId": 915273
     }, 
     {
-        "totalPowerUsage": 563, 
+        "totalPowerUsage": 569, 
+        "user": "hge", 
+        "nodePowerUsage": [
+            280, 
+            289
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.3.55", 
             "10.101.4.9"
         ], 
-        "user": "hge", 
-        "nodePowerUsage": [
-            280, 
-            283
-        ], 
         "jobId": 915274
     }, 
     {
-        "totalPowerUsage": 317, 
-        "execHosts": [
-            "10.101.4.47"
-        ], 
+        "totalPowerUsage": 315, 
         "user": "sisadegh", 
         "nodePowerUsage": [
-            317
+            315
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.47"
         ], 
         "jobId": 915277
     }, 
     {
-        "totalPowerUsage": 13517, 
+        "totalPowerUsage": 13506, 
+        "user": "llindblo", 
+        "nodePowerUsage": [
+            280, 
+            315, 
+            305, 
+            298, 
+            292, 
+            293, 
+            305, 
+            303, 
+            297, 
+            291, 
+            297, 
+            303, 
+            279, 
+            301, 
+            310, 
+            301, 
+            297, 
+            285, 
+            297, 
+            299, 
+            301, 
+            316, 
+            296, 
+            304, 
+            295, 
+            303, 
+            301, 
+            291, 
+            310, 
+            306, 
+            300, 
+            306, 
+            300, 
+            304, 
+            294, 
+            290, 
+            307, 
+            307, 
+            304, 
+            307, 
+            313, 
+            308, 
+            303, 
+            298, 
+            294
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.10", 
             "10.101.10.28", 
@@ -1238,148 +1369,141 @@
             "10.101.9.58", 
             "10.101.9.6"
         ], 
-        "user": "llindblo", 
-        "nodePowerUsage": [
-            281, 
-            315, 
-            305, 
-            298, 
-            292, 
-            293, 
-            307, 
-            302, 
-            297, 
-            292, 
-            304, 
-            301, 
-            277, 
-            300, 
-            310, 
-            301, 
-            297, 
-            285, 
-            297, 
-            299, 
-            300, 
-            315, 
-            297, 
-            305, 
-            295, 
-            302, 
-            299, 
-            293, 
-            310, 
-            306, 
-            301, 
-            307, 
-            302, 
-            304, 
-            297, 
-            287, 
-            307, 
-            308, 
-            305, 
-            308, 
-            312, 
-            309, 
-            303, 
-            298, 
-            294
-        ], 
         "jobId": 915323
     }, 
     {
         "totalPowerUsage": 134, 
-        "execHosts": [
-            "10.101.2.4"
-        ], 
         "user": "andhingr", 
         "nodePowerUsage": [
             134
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.4"
         ], 
         "jobId": 915324
     }, 
     {
         "totalPowerUsage": 127, 
-        "execHosts": [
-            "10.101.1.29"
-        ], 
         "user": "andhingr", 
         "nodePowerUsage": [
             127
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.29"
+        ], 
         "jobId": 915325
     }, 
     {
-        "totalPowerUsage": 259, 
-        "execHosts": [
-            "10.101.2.7"
-        ], 
+        "totalPowerUsage": 256, 
         "user": "ewang", 
         "nodePowerUsage": [
-            259
+            256
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.7"
         ], 
         "jobId": 915725
     }, 
     {
-        "totalPowerUsage": 296, 
-        "execHosts": [
-            "10.101.4.2"
-        ], 
+        "totalPowerUsage": 295, 
         "user": "aucolema", 
         "nodePowerUsage": [
-            296
+            295
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.2"
         ], 
         "jobId": 915870
     }, 
     {
         "totalPowerUsage": 303, 
-        "execHosts": [
-            "10.101.9.1"
-        ], 
         "user": "aucolema", 
         "nodePowerUsage": [
             303
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.1"
+        ], 
         "jobId": 915871
     }, 
     {
-        "totalPowerUsage": 293, 
-        "execHosts": [
-            "10.101.8.46"
-        ], 
+        "totalPowerUsage": 292, 
         "user": "aucolema", 
         "nodePowerUsage": [
-            293
+            292
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.8.46"
         ], 
         "jobId": 915873
     }, 
     {
-        "totalPowerUsage": 255, 
-        "execHosts": [
-            "10.101.1.8", 
-            "10.101.9.41"
-        ], 
+        "totalPowerUsage": 256, 
         "user": "zha98475", 
         "nodePowerUsage": [
             129, 
-            126
+            127
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.8", 
+            "10.101.9.41"
         ], 
         "jobId": 915874
     }, 
     {
         "totalPowerUsage": 278, 
-        "execHosts": [
-            "10.101.6.19"
-        ], 
         "user": "aucolema", 
         "nodePowerUsage": [
             278
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.19"
+        ], 
         "jobId": 915875
     }, 
     {
-        "totalPowerUsage": 9192, 
+        "totalPowerUsage": 9222, 
+        "user": "fazhussa", 
+        "nodePowerUsage": [
+            347, 
+            321, 
+            317, 
+            316, 
+            341, 
+            303, 
+            312, 
+            324, 
+            320, 
+            316, 
+            250, 
+            315, 
+            314, 
+            324, 
+            310, 
+            330, 
+            332, 
+            317, 
+            314, 
+            317, 
+            325, 
+            321, 
+            322, 
+            326, 
+            321, 
+            316, 
+            326, 
+            310, 
+            315
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.16", 
             "10.101.1.3", 
@@ -1411,64 +1535,48 @@
             "10.101.9.28", 
             "10.101.9.54"
         ], 
-        "user": "fazhussa", 
-        "nodePowerUsage": [
-            330, 
-            331, 
-            330, 
-            333, 
-            336, 
-            318, 
-            330, 
-            322, 
-            318, 
-            317, 
-            225, 
-            312, 
-            318, 
-            314, 
-            312, 
-            322, 
-            324, 
-            317, 
-            313, 
-            318, 
-            321, 
-            316, 
-            315, 
-            319, 
-            315, 
-            316, 
-            327, 
-            311, 
-            312
-        ], 
         "jobId": 916019
     }, 
     {
-        "totalPowerUsage": 302, 
-        "execHosts": [
-            "10.101.10.29"
-        ], 
+        "totalPowerUsage": 301, 
         "user": "jjerke", 
         "nodePowerUsage": [
-            302
+            301
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.10.29"
         ], 
         "jobId": 916543
     }, 
     {
-        "totalPowerUsage": 269, 
-        "execHosts": [
-            "10.101.7.20"
-        ], 
+        "totalPowerUsage": 273, 
         "user": "daray", 
         "nodePowerUsage": [
-            269
+            273
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.20"
         ], 
         "jobId": 916548
     }, 
     {
-        "totalPowerUsage": 2496, 
+        "totalPowerUsage": 2498, 
+        "user": "shahrahm", 
+        "nodePowerUsage": [
+            248, 
+            252, 
+            237, 
+            246, 
+            251, 
+            263, 
+            251, 
+            250, 
+            247, 
+            253
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.2.2", 
             "10.101.2.3", 
@@ -1481,23 +1589,24 @@
             "10.101.9.38", 
             "10.101.9.51"
         ], 
-        "user": "shahrahm", 
-        "nodePowerUsage": [
-            248, 
-            251, 
-            238, 
-            245, 
-            251, 
-            263, 
-            251, 
-            250, 
-            246, 
-            253
-        ], 
         "jobId": 916550
     }, 
     {
         "totalPowerUsage": 2509, 
+        "user": "shahrahm", 
+        "nodePowerUsage": [
+            236, 
+            263, 
+            243, 
+            247, 
+            251, 
+            245, 
+            245, 
+            260, 
+            253, 
+            266
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.9", 
             "10.101.10.34", 
@@ -1510,23 +1619,24 @@
             "10.101.9.33", 
             "10.101.9.45"
         ], 
-        "user": "shahrahm", 
-        "nodePowerUsage": [
-            237, 
-            263, 
-            243, 
-            247, 
-            252, 
-            245, 
-            245, 
-            259, 
-            253, 
-            265
-        ], 
         "jobId": 916551
     }, 
     {
-        "totalPowerUsage": 2514, 
+        "totalPowerUsage": 2515, 
+        "user": "shahrahm", 
+        "nodePowerUsage": [
+            261, 
+            261, 
+            254, 
+            251, 
+            243, 
+            243, 
+            242, 
+            253, 
+            250, 
+            257
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.4", 
             "10.101.2.12", 
@@ -1539,107 +1649,124 @@
             "10.101.7.52", 
             "10.101.9.36"
         ], 
-        "user": "shahrahm", 
-        "nodePowerUsage": [
-            261, 
-            262, 
-            253, 
-            251, 
-            243, 
-            243, 
-            241, 
-            252, 
-            251, 
-            257
-        ], 
         "jobId": 916552
     }, 
     {
-        "totalPowerUsage": 182, 
-        "execHosts": [
-            "10.101.3.45"
-        ], 
+        "totalPowerUsage": 183, 
         "user": "obazgir", 
         "nodePowerUsage": [
-            182
+            183
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.45"
         ], 
         "jobId": 916645
     }, 
     {
-        "totalPowerUsage": 942, 
+        "totalPowerUsage": 941, 
+        "user": "nayshah", 
+        "nodePowerUsage": [
+            227, 
+            233, 
+            239, 
+            242
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.43", 
             "10.101.2.53", 
             "10.101.4.46", 
             "10.101.8.5"
         ], 
-        "user": "nayshah", 
-        "nodePowerUsage": [
-            228, 
-            233, 
-            238, 
-            243
-        ], 
         "jobId": 916769
     }, 
     {
-        "totalPowerUsage": 977, 
+        "totalPowerUsage": 976, 
+        "user": "nayshah", 
+        "nodePowerUsage": [
+            244, 
+            249, 
+            238, 
+            245
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.51", 
             "10.101.1.58", 
             "10.101.3.19", 
             "10.101.5.7"
         ], 
-        "user": "nayshah", 
-        "nodePowerUsage": [
-            245, 
-            249, 
-            238, 
-            245
-        ], 
         "jobId": 916770
     }, 
     {
-        "totalPowerUsage": 978, 
+        "totalPowerUsage": 981, 
+        "user": "nayshah", 
+        "nodePowerUsage": [
+            235, 
+            249, 
+            254, 
+            243
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.2.9", 
             "10.101.3.52", 
             "10.101.5.1", 
             "10.101.7.18"
         ], 
-        "user": "nayshah", 
-        "nodePowerUsage": [
-            235, 
-            247, 
-            253, 
-            243
-        ], 
         "jobId": 916784
     }, 
     {
-        "totalPowerUsage": 328, 
-        "execHosts": [
-            "10.101.4.37"
-        ], 
+        "totalPowerUsage": 326, 
         "user": "lediaz", 
         "nodePowerUsage": [
-            328
+            326
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.37"
         ], 
         "jobId": 916788
     }, 
     {
-        "totalPowerUsage": 320, 
-        "execHosts": [
-            "10.101.4.28"
-        ], 
+        "totalPowerUsage": 333, 
         "user": "lediaz", 
         "nodePowerUsage": [
-            320
+            333
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.28"
         ], 
         "jobId": 916789
     }, 
     {
-        "totalPowerUsage": 5577, 
+        "totalPowerUsage": 5557, 
+        "user": "ankipand", 
+        "nodePowerUsage": [
+            290, 
+            273, 
+            281, 
+            274, 
+            272, 
+            261, 
+            273, 
+            270, 
+            272, 
+            280, 
+            282, 
+            285, 
+            272, 
+            289, 
+            281, 
+            278, 
+            279, 
+            279, 
+            282, 
+            284
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.2", 
             "10.101.1.54", 
@@ -1662,33 +1789,34 @@
             "10.101.8.35", 
             "10.101.8.49"
         ], 
-        "user": "ankipand", 
-        "nodePowerUsage": [
-            279, 
-            271, 
-            275, 
-            268, 
-            268, 
-            255, 
-            273, 
-            287, 
-            286, 
-            274, 
-            289, 
-            285, 
-            274, 
-            291, 
-            287, 
-            281, 
-            290, 
-            280, 
-            281, 
-            283
-        ], 
         "jobId": 916805
     }, 
     {
-        "totalPowerUsage": 5405, 
+        "totalPowerUsage": 5362, 
+        "user": "ankipand", 
+        "nodePowerUsage": [
+            279, 
+            262, 
+            280, 
+            273, 
+            261, 
+            266, 
+            265, 
+            258, 
+            261, 
+            276, 
+            256, 
+            252, 
+            282, 
+            287, 
+            266, 
+            272, 
+            290, 
+            265, 
+            260, 
+            251
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.15", 
             "10.101.1.21", 
@@ -1711,50 +1839,61 @@
             "10.101.9.19", 
             "10.101.9.25"
         ], 
-        "user": "ankipand", 
-        "nodePowerUsage": [
-            259, 
-            261, 
-            276, 
-            264, 
-            270, 
-            278, 
-            268, 
-            267, 
-            276, 
-            275, 
-            274, 
-            246, 
-            269, 
-            286, 
-            276, 
-            265, 
-            288, 
-            276, 
-            259, 
-            272
-        ], 
         "jobId": 916806
     }, 
     {
-        "totalPowerUsage": 978, 
+        "totalPowerUsage": 979, 
+        "user": "nayshah", 
+        "nodePowerUsage": [
+            240, 
+            245, 
+            250, 
+            244
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.47", 
             "10.101.7.13", 
             "10.101.7.29", 
             "10.101.7.35"
         ], 
-        "user": "nayshah", 
-        "nodePowerUsage": [
-            240, 
-            245, 
-            249, 
-            244
-        ], 
         "jobId": 916811
     }, 
     {
         "totalPowerUsage": 6825, 
+        "user": "rosutton", 
+        "nodePowerUsage": [
+            231, 
+            225, 
+            234, 
+            228, 
+            241, 
+            247, 
+            234, 
+            235, 
+            231, 
+            234, 
+            230, 
+            240, 
+            226, 
+            235, 
+            239, 
+            235, 
+            230, 
+            242, 
+            236, 
+            228, 
+            234, 
+            233, 
+            235, 
+            244, 
+            239, 
+            235, 
+            244, 
+            238, 
+            242
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.14", 
             "10.101.1.39", 
@@ -1786,235 +1925,231 @@
             "10.101.9.47", 
             "10.101.9.8"
         ], 
-        "user": "rosutton", 
-        "nodePowerUsage": [
-            231, 
-            225, 
-            234, 
-            228, 
-            241, 
-            246, 
-            234, 
-            235, 
-            232, 
-            235, 
-            229, 
-            240, 
-            226, 
-            235, 
-            240, 
-            235, 
-            230, 
-            242, 
-            236, 
-            229, 
-            234, 
-            233, 
-            235, 
-            244, 
-            240, 
-            234, 
-            243, 
-            237, 
-            242
-        ], 
         "jobId": 916832
     }, 
     {
-        "totalPowerUsage": 316, 
-        "execHosts": [
-            "10.101.7.10"
-        ], 
+        "totalPowerUsage": 313, 
         "user": "sisadegh", 
         "nodePowerUsage": [
-            316
+            313
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.10"
         ], 
         "jobId": 916842
     }, 
     {
-        "totalPowerUsage": 142, 
-        "execHosts": [
-            "10.101.2.47"
-        ], 
+        "totalPowerUsage": 141, 
         "user": "esowell", 
         "nodePowerUsage": [
-            142
+            141
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.47"
         ], 
         "jobId": 916930
     }, 
     {
-        "totalPowerUsage": 313, 
-        "execHosts": [
-            "10.101.2.59"
-        ], 
+        "totalPowerUsage": 314, 
         "user": "ipandey", 
         "nodePowerUsage": [
-            313
+            314
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.59"
         ], 
         "jobId": 916934
     }, 
     {
         "totalPowerUsage": 318, 
-        "execHosts": [
-            "10.101.7.30"
-        ], 
         "user": "ipandey", 
         "nodePowerUsage": [
             318
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.30"
         ], 
         "jobId": 916937
     }, 
     {
         "totalPowerUsage": 558, 
+        "user": "hge", 
+        "nodePowerUsage": [
+            280, 
+            278
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.2.36", 
             "10.101.7.23"
         ], 
-        "user": "hge", 
-        "nodePowerUsage": [
-            283, 
-            275
-        ], 
         "jobId": 916976
     }, 
     {
-        "totalPowerUsage": 582, 
+        "totalPowerUsage": 583, 
+        "user": "hge", 
+        "nodePowerUsage": [
+            283, 
+            300
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.5.23", 
             "10.101.9.24"
         ], 
-        "user": "hge", 
-        "nodePowerUsage": [
-            283, 
-            299
-        ], 
         "jobId": 916977
     }, 
     {
-        "totalPowerUsage": 133, 
-        "execHosts": [
-            "10.101.4.40"
-        ], 
+        "totalPowerUsage": 134, 
         "user": "llindblo", 
         "nodePowerUsage": [
-            133
+            134
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.40"
         ], 
         "jobId": 916980
     }, 
     {
-        "totalPowerUsage": 173, 
-        "execHosts": [
-            "10.101.7.49"
-        ], 
+        "totalPowerUsage": 177, 
         "user": "scalandr", 
         "nodePowerUsage": [
-            173
+            177
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.49"
         ], 
         "jobId": 916992
     }, 
     {
-        "totalPowerUsage": 287, 
-        "execHosts": [
-            "10.101.9.34"
-        ], 
+        "totalPowerUsage": 292, 
         "user": "samoradi", 
         "nodePowerUsage": [
-            287
+            292
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.34"
         ], 
         "jobId": 917140
     }, 
     {
-        "totalPowerUsage": 284, 
-        "execHosts": [
-            "10.101.4.26"
-        ], 
+        "totalPowerUsage": 256, 
         "user": "ogecgel", 
         "nodePowerUsage": [
-            284
+            256
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.4.26"
         ], 
         "jobId": 917152
     }, 
     {
         "totalPowerUsage": 232, 
-        "execHosts": [
-            "10.101.6.13"
-        ], 
         "user": "jjerke", 
         "nodePowerUsage": [
             232
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.6.13"
         ], 
         "jobId": 917154
     }, 
     {
         "totalPowerUsage": 615, 
+        "user": "janfisch", 
+        "nodePowerUsage": [
+            296, 
+            319
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.6.15", 
             "10.101.7.40"
         ], 
-        "user": "janfisch", 
-        "nodePowerUsage": [
-            290, 
-            325
-        ], 
         "jobId": 917155
     }, 
     {
-        "totalPowerUsage": 291, 
-        "execHosts": [
-            "10.101.1.36"
-        ], 
+        "totalPowerUsage": 289, 
         "user": "rmanser", 
         "nodePowerUsage": [
-            291
+            289
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.36"
         ], 
         "jobId": 917159
     }, 
     {
-        "totalPowerUsage": 273, 
-        "execHosts": [
-            "10.101.9.9"
-        ], 
+        "totalPowerUsage": 275, 
         "user": "johruska", 
         "nodePowerUsage": [
-            273
+            275
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.9"
         ], 
         "jobId": 917163
     }, 
     {
-        "totalPowerUsage": 308, 
-        "execHosts": [
-            "10.101.7.51"
-        ], 
+        "totalPowerUsage": 309, 
         "user": "aucolema", 
         "nodePowerUsage": [
-            308
+            309
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.7.51"
         ], 
         "jobId": 917224
     }, 
     {
-        "totalPowerUsage": 281, 
-        "execHosts": [
-            "10.101.2.15"
-        ], 
+        "totalPowerUsage": 290, 
         "user": "qiu25856", 
         "nodePowerUsage": [
-            281
+            290
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.15"
         ], 
         "jobId": 917227
     }, 
     {
-        "totalPowerUsage": 237, 
-        "execHosts": [
-            "10.101.1.26"
-        ], 
+        "totalPowerUsage": 232, 
         "user": "rmanser", 
         "nodePowerUsage": [
-            237
+            232
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.26"
         ], 
         "jobId": 917229
     }, 
     {
-        "totalPowerUsage": 2021, 
+        "totalPowerUsage": 2009, 
+        "user": "ssami", 
+        "nodePowerUsage": [
+            281, 
+            275, 
+            290, 
+            287, 
+            287, 
+            286, 
+            303
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.44", 
             "10.101.3.28", 
@@ -2024,109 +2159,107 @@
             "10.101.8.52", 
             "10.101.8.59"
         ], 
-        "user": "ssami", 
-        "nodePowerUsage": [
-            276, 
-            273, 
-            294, 
-            288, 
-            292, 
-            289, 
-            309
-        ], 
         "jobId": 917230
     }, 
     {
-        "totalPowerUsage": 136, 
-        "execHosts": [
-            "10.101.10.32"
-        ], 
+        "totalPowerUsage": 137, 
         "user": "aaljadda", 
         "nodePowerUsage": [
-            136
+            137
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.10.32"
         ], 
         "jobId": 917282
     }, 
     {
         "totalPowerUsage": 608, 
-        "execHosts": [
-            "10.101.2.40", 
-            "10.101.6.3"
-        ], 
         "user": "msanati", 
         "nodePowerUsage": [
             307, 
             301
         ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.2.40", 
+            "10.101.6.3"
+        ], 
         "jobId": 917287
     }, 
     {
-        "totalPowerUsage": 244, 
-        "execHosts": [
-            "10.101.1.1"
-        ], 
+        "totalPowerUsage": 240, 
         "user": "wil14720", 
         "nodePowerUsage": [
-            244
+            240
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.1"
         ], 
         "jobId": 917289
     }, 
     {
         "totalPowerUsage": 887, 
+        "user": "cuqihong", 
+        "nodePowerUsage": [
+            307, 
+            305, 
+            275
+        ], 
+        "timeStamp": 1568132525.468359, 
         "execHosts": [
             "10.101.1.18", 
             "10.101.8.4", 
             "10.101.8.55"
         ], 
-        "user": "cuqihong", 
-        "nodePowerUsage": [
-            306, 
-            305, 
-            276
-        ], 
         "jobId": 917290
     }, 
     {
-        "totalPowerUsage": 308, 
-        "execHosts": [
-            "10.101.1.34"
-        ], 
+        "totalPowerUsage": 307, 
         "user": "liu96340", 
         "nodePowerUsage": [
-            308
+            307
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.34"
         ], 
         "jobId": 917295
     }, 
     {
-        "totalPowerUsage": 137, 
-        "execHosts": [
-            "10.101.1.11"
-        ], 
+        "totalPowerUsage": 200, 
         "user": "ruibzhan", 
         "nodePowerUsage": [
-            137
+            200
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.1.11"
         ], 
         "jobId": 917303
     }, 
     {
-        "totalPowerUsage": 143, 
-        "execHosts": [
-            "10.101.3.47"
-        ], 
+        "totalPowerUsage": 205, 
         "user": "ruibzhan", 
         "nodePowerUsage": [
-            143
+            205
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.3.47"
         ], 
         "jobId": 917304
     }, 
     {
-        "totalPowerUsage": 144, 
-        "execHosts": [
-            "10.101.9.2"
-        ], 
+        "totalPowerUsage": 212, 
         "user": "ruibzhan", 
         "nodePowerUsage": [
-            144
+            212
+        ], 
+        "timeStamp": 1568132525.468359, 
+        "execHosts": [
+            "10.101.9.2"
         ], 
         "jobId": 917305
     }
