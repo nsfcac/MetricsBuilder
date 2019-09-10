@@ -35,10 +35,10 @@ def main():
     for item in job_node_match:
         pwr_usage_tot = 0
         pwr_usage = []
-        for exechost in item['exechosts']:
+        for exechost in item['execHosts']:
             pwr_usage.append(node_pwr_list[exechost])
-            pwr_usage_tot += int(node_pwr_list[exechost])
-        item.update({'nodePowerUsage': pwr_usage, 'TotalPowerUsage': pwr_usage_tot})
+            pwr_usage_tot += int(node_pwr_list[exechost]
+        item.update({'nodePowerUsage': pwr_usage, 'totalPowerUsage': pwr_usage_tot})
 
     with open("jobNodePower.json", "wb") as outfile:
             json.dump(job_node_match, outfile, indent = 4)
@@ -65,17 +65,17 @@ def get_job_set(joblist):
     return jobset
 
 # Build job-node matches
-def match_job_node(jobset, exechosts):
+def match_job_node(jobset, host_summary):
     job_node_match = []
     for jobId in jobset:
         jobId_int = int(jobId)
-        job_node_dict = {'jobId': jobId_int, 'user': None, 'exechosts':[]}
-        for host in exechosts:
+        job_node_dict = {'jobId': jobId_int, 'user': None, 'execHosts':[]}
+        for host in host_summary:
             if host['jobList'] and jobId_int == host['jobList'][0]['id']:
                 job_node_dict.update({'user': host['jobList'][0]['user']})
                 host_ip = get_hostip(host['hostname'].split('.')[0])
-                job_node_dict['exechosts'].append(host_ip)
-        if len(job_node_dict['exechosts']) != 0:
+                job_node_dict['execHosts'].append(host_ip)
+        if len(job_node_dict['execHosts']) != 0:
             job_node_match.append(job_node_dict)
     return job_node_match
 
