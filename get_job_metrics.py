@@ -47,8 +47,8 @@ def main():
                 pwr_usage_tot = None
         item.update({'nodePowerUsage': pwr_usage, 'totalPowerUsage': pwr_usage_tot, 'timeStamp': timestamp})
 
-    # with open("jobNodePower.json", "wb") as outfile:
-    #         json.dump(job_node_match, outfile, indent = 4)
+    with open("jobNodePower.json", "wb") as outfile:
+            json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
     print(json.dumps(job_node_match, indent = 4, sort_keys = True))
 
