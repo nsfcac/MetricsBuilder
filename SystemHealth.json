@@ -1,1 +1,134 @@
-"400 Client Error: Bad Request"
+{
+    "BiosVersion": "2.9.1", 
+    "SKU": "2KTTHK2", 
+    "PowerState": "On", 
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/Processors"
+    }, 
+    "SerialNumber": "CN7475175G0154", 
+    "Boot": {
+        "BootSourceOverrideTarget": "None", 
+        "BootSourceOverrideTarget@Redfish.AllowableValues": [
+            "None", 
+            "Pxe", 
+            "Cd", 
+            "Floppy", 
+            "Hdd", 
+            "BiosSetup", 
+            "Utilities", 
+            "UefiTarget", 
+            "SDCard"
+        ], 
+        "BootSourceOverrideEnabled": "Once", 
+        "UefiTargetBootSourceOverride": ""
+    }, 
+    "Bios": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/Bios"
+    }, 
+    "Memory": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/Memory"
+    }, 
+    "PartNumber": "082F9MA05", 
+    "ProcessorSummary": {
+        "Count": 2, 
+        "Status": {
+            "HealthRollup": "OK", 
+            "State": "Enabled", 
+            "Health": "OK"
+        }, 
+        "Model": "Intel(R) Xeon(R) CPU E5-2695 v4 @ 2.10GHz"
+    }, 
+    "@odata.type": "#ComputerSystem.v1_4_0.ComputerSystem", 
+    "Description": "Computer System which represents a machine (physical or virtual) and the local resources such as memory, cpu and other devices that can be accessed from that machine.", 
+    "HostName": "bright73.cm.cluster", 
+    "@odata.context": "/redfish/v1/$metadata#ComputerSystem.ComputerSystem", 
+    "SimpleStorage": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/SimpleStorage/Controllers"
+    }, 
+    "NetworkInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/NetworkInterfaces"
+    }, 
+    "Status": {
+        "HealthRollup": "OK", 
+        "State": "Enabled", 
+        "Health": "OK"
+    }, 
+    "Name": "System", 
+    "AssetTag": "", 
+    "Storage": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/Storage"
+    }, 
+    "@odata.id": "/redfish/v1/Systems/System.Embedded.1", 
+    "IndicatorLED": "Off", 
+    "MemorySummary": {
+        "Status": {
+            "HealthRollup": "OK", 
+            "State": "Enabled", 
+            "Health": "OK"
+        }, 
+        "TotalSystemMemoryGiB": 178.814016
+    }, 
+    "Model": "PowerEdge C6320", 
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/EthernetInterfaces"
+    }, 
+    "UUID": "4c4c4544-004b-5410-8054-b2c04f484b32", 
+    "Links": {
+        "PoweredBy": [], 
+        "Chassis@odata.count": 1, 
+        "ManagedBy@odata.count": 1, 
+        "PoweredBy@odata.count": 0, 
+        "CooledBy": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Fans/0x17%7C%7CFan.Embedded._1"
+            }, 
+            {
+                "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Fans/0x17%7C%7CFan.Embedded._2"
+            }, 
+            {
+                "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Fans/0x17%7C%7CFan.Embedded._3"
+            }, 
+            {
+                "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Fans/0x17%7C%7CFan.Embedded._4"
+            }
+        ], 
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/iDRAC.Embedded.1"
+            }
+        ], 
+        "Chassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/System.Embedded.1"
+            }
+        ], 
+        "Oem": {
+            "DELL": {
+                "@odata.type": "#DellComputerSystem.v1_0_0.DellComputerSystem", 
+                "BootOrder": {
+                    "@odata.id": "/redfish/v1/Systems/System.Embedded.1/BootSources"
+                }
+            }
+        }, 
+        "CooledBy@odata.count": 4
+    }, 
+    "SecureBoot": {
+        "@odata.id": "/redfish/v1/Systems/System.Embedded.1/SecureBoot"
+    }, 
+    "SystemType": "Physical", 
+    "Actions": {
+        "#ComputerSystem.Reset": {
+            "ResetType@Redfish.AllowableValues": [
+                "On", 
+                "ForceOff", 
+                "GracefulRestart", 
+                "GracefulShutdown", 
+                "PushPowerButton", 
+                "Nmi"
+            ], 
+            "target": "/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset"
+        }
+    }, 
+    "Manufacturer": "Dell Inc.", 
+    "Id": "System.Embedded.1"
+}
