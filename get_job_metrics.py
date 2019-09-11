@@ -51,7 +51,7 @@ def main():
         for exechost in item['ExecHosts']:
             # print(node_pwr_list[exechost])
             # if node_pwr_list[exechost] != None:
-            if isinstance(node_pwr_list[exechost], int)
+            if isinstance(node_pwr_list[exechost], int):
                 pwr_usage.append(node_pwr_list[exechost])
                 pwr_usage_tot = pwr_usage_tot + node_pwr_list[exechost]
             else:
