@@ -107,10 +107,10 @@ def match_job_node(jobset, host_summary):
     job_node_match = []
     for jobId in jobset:
         jobId_int = int(jobId)
-        job_node_dict = {'JobId': jobId_int, 'User': None, 'ExecHosts':[]}
+        job_node_dict = {'JobId': jobId_int, 'User': None, 'StartTime': None, 'ExecHosts':[], "MemUsed": None}
         for host in host_summary:
             if host['jobList'] and jobId_int == host['jobList'][0]['id']:
-                job_node_dict.update({'User': host['jobList'][0]['user']})
+                job_node_dict.update({'User': host['jobList'][0]['user'], 'StartTime': host['jobList'][0]['startTime'], "MemUsed": host['hostValues']['mem_used']})
                 host_ip = get_hostip(host['hostname'].split('.')[0])
                 job_node_dict['ExecHosts'].append(host_ip)
         if len(job_node_dict['ExecHosts']) != 0:
