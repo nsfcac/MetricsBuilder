@@ -49,7 +49,10 @@ def main():
     job_list = uge_results['jobs']
     host_summary = uge_results['hostsummary']
 
-    with open("HostSummary.json", "w") as outfile_hostsum:
+    with open("./uge/JobList.json", "w") as outfile_joblist:
+            json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
+
+    with open("./uge/HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
 
     print("Interleaving Metrics ...")
