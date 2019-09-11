@@ -29,7 +29,7 @@ def main():
         print("No Executing Host")
         return
 
-    timestamp = datetime.datetime.now().isoformat()
+    timestamp = datetime.datetime.now().ctime()
 
     print("Pulling Metrics From UGE...")
 
