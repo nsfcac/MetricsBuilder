@@ -33,18 +33,26 @@ def main():
 
     print("Pulling Metrics From UGE...")
 
+    uge_tasklist = ["jobs", "hostsummary"]
+    uge_results = {"jobs": None, "hostsummary": None}
+    uge_errors = {"jobs": None, "hostsummary": None}
+
     # For progress bar
-    task_len = 2
+    task_len = len(uge_tasklist)
     printProgressBar(0, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     # Get job list, exechosts, host summary
-    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
-    printProgressBar(0 + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
-    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-    printProgressBar(1 + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    for index, task in enumerate(uge_tasklist):
+        uge_results{task}, uge_errors{task} = get_uge_info(conn_time_out, read_time_out, session, task)
+        printProgressBar(index + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+
+    job_list = uge_results{"jobs"}
+    host_summary = uge_results{"hostsummary"}
 
     with open("HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
+
+    print("Interleaving Metrics ...")
 
     if job_list != None and host_summary != None:
         job_set = get_job_set(job_list)
@@ -52,12 +60,6 @@ def main():
     else:
         print(err_info)
         return
-
-    print("Interleaving Metrics ...")
-
-    # For progress bar
-    inter_len = len(job_node_match)
-    printProgressBar(0, inter_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     # Get exec hosts power usage for each job
     for i, item in enumerate(job_node_match):
@@ -74,7 +76,6 @@ def main():
                 pwr_usage_tot = None
 
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
-        printProgressBar(i + 1, inter_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     with open("jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
@@ -105,8 +106,13 @@ def get_job_set(joblist):
 
 # Build job-node matches
 def match_job_node(jobset, host_summary):
+
+    # For progress bar
+    jobset_len = len(jobset)
+    printProgressBar(0, jobset_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+
     job_node_match = []
-    for jobId in jobset:
+    for index, jobId in enumerate(jobset):
         jobId_int = int(jobId)
         job_node_dict = {'JobId': jobId_int, 'User': None, 'StartTime': None, 'ExecHosts':[], 'LoadAvg':[], 'MemUsed': [], 'TotalMemUsed': None }
         mem_total = 0
@@ -123,6 +129,7 @@ def match_job_node(jobset, host_summary):
             job_node_match.append(job_node_dict)
         mem_total_str = str(round(mem_total,1)) + 'G'
         job_node_dict.update({'TotalMemUsed': mem_total_str})
+        printProgressBar(index + 1, jobset_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     return job_node_match
 
 # Convert host name to ip address
@@ -171,8 +178,8 @@ def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
 def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session):
 
     # For progress bar
-    l = len(exec_hosts)
-    printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    exec_hosts_len = len(exec_hosts)
+    printProgressBar(0, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
     try:
@@ -184,7 +191,7 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
         for index, thread in enumerate(threads):
             thread.join()
             # Update Progress Bar
-            printProgressBar(index + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
+            printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
 
