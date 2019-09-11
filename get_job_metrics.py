@@ -58,12 +58,12 @@ def main():
                 pwr_usage_tot = None
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
 
-    print("Done...")
-
     with open("jobNodePower.json", "wb") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
-    print(json.dumps(job_node_match, indent = 4, sort_keys = True))
+    print("Done...")
+    
+    # print(json.dumps(job_node_match, indent = 4, sort_keys = True))
 
 
 # Get exec hosts list of ip addresses
