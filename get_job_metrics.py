@@ -33,9 +33,9 @@ def main():
 
     print("Pulling Metrics From UGE...")
 
-    uge_tasklist = ["jobs", "hostsummary"]
-    uge_results = {"jobs": None, "hostsummary": None}
-    uge_errors = {"jobs": None, "hostsummary": None}
+    uge_tasklist = ['jobs', 'hostsummary']
+    uge_results = {'jobs': None, 'hostsummary': None}
+    uge_errors = {'jobs': None, 'hostsummary': None}
 
     # For progress bar
     task_len = len(uge_tasklist)
@@ -43,11 +43,11 @@ def main():
 
     # Get job list, exechosts, host summary
     for index, task in enumerate(uge_tasklist):
-        uge_results.task, uge_errors.task = get_uge_info(conn_time_out, read_time_out, session, task)
+        uge_results[task], uge_errors[task] = get_uge_info(conn_time_out, read_time_out, session, task)
         printProgressBar(index + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
-    job_list = uge_results{"jobs"}
-    host_summary = uge_results{"hostsummary"}
+    job_list = uge_results['jobs']
+    host_summary = uge_results['hostsummary']
 
     with open("HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
