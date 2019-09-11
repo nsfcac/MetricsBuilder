@@ -49,12 +49,6 @@ def main():
     job_list = uge_results['jobs']
     host_summary = uge_results['hostsummary']
 
-    with open("./uge/JobList.json", "w") as outfile_joblist:
-            json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
-
-    with open("./uge/HostSummary.json", "w") as outfile_hostsum:
-            json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
-
     print("Interleaving Metrics ...")
 
     if job_list != None and host_summary != None:
@@ -78,6 +72,12 @@ def main():
                 pwr_usage_tot = None
 
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
+
+    with open("./uge/JobList.json", "w") as outfile_joblist:
+            json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
+
+    with open("./uge/HostSummary.json", "w") as outfile_hostsum:
+            json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
 
     with open("jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
