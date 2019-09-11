@@ -57,6 +57,8 @@ def main():
     else:
         print(err_info)
         return
+    print("Job list length: ")
+    print(len(job_set))
 
     # Get exec hosts power usage for each job
     for i, item in enumerate(job_node_match):
@@ -74,7 +76,7 @@ def main():
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
 
     print("Writing log files...")
-    
+
     with open("./uge/JobList.json", "w") as outfile_joblist:
             json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
 
