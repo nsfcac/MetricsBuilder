@@ -81,6 +81,9 @@ def main():
     with open("./uge/JobList.json", "w") as outfile_joblist:
             json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
 
+    with open("./uge/JobSetSorted.json", "w") as outfile_jobset:
+            json.dump(sorted(job_set), outfile_joblist, indent = 4, sort_keys = True)
+
     with open("./uge/HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
 
