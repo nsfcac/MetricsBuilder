@@ -15,6 +15,9 @@ def main():
 
     node_pwr_list = {}
 
+
+    print("Pulling Metrics From BMC...")
+
     # Get exec hosts and fetch corresponding power usuage
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
     if exec_hosts != None:
@@ -25,8 +28,9 @@ def main():
         print("No Executing Host")
         return
 
-    timestamp = time.time()
+    timestamp = time.time().isoformat()
 
+    print("Pulling Metrics From UGE...")
     # Get job list, exechosts, host summary
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
@@ -38,6 +42,7 @@ def main():
         print(err_info)
         return
 
+    print("Interleaving Metrics ...")
     # Get exec hosts power usage for each job
     for item in job_node_match:
         pwr_usage_tot = 0
@@ -51,6 +56,8 @@ def main():
                 pwr_usage.append(None)
                 pwr_usage_tot = None
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
+
+    print("Done...")
 
     with open("jobNodePower.json", "wb") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
