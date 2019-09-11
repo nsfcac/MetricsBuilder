@@ -32,9 +32,16 @@ def main():
     timestamp = datetime.datetime.now().isoformat()
 
     print("Pulling Metrics From UGE...")
+
+    # For progress bar
+    task_len = 2
+    printProgressBar(0, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+
     # Get job list, exechosts, host summary
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    printProgressBar(0 + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    printProgressBar(1 + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     if job_list != None and host_summary != None:
         job_set = get_job_set(job_list)
