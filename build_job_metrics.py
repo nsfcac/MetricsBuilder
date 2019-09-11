@@ -57,8 +57,9 @@ def main():
     else:
         print(err_info)
         return
-    print("Job list length: ")
-    print(len(job_set))
+
+    # print("Job list length: ")，
+    # print(len(job_set))
 
     # Get exec hosts power usage for each job
     for i, item in enumerate(job_node_match):
