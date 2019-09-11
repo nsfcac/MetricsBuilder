@@ -68,11 +68,10 @@ def main():
         for exechost in item['ExecHosts']:
             # print(node_pwr_list[exechost])
             # if node_pwr_list[exechost] != None:
-            if isinstance(node_pwr_list[exechost], int):
-                pwr_usage.append(node_pwr_list[exechost])
+            pwr_usage.append(node_pwr_list[exechost])
+            try:
                 pwr_usage_tot = pwr_usage_tot + node_pwr_list[exechost]
-            else:
-                pwr_usage.append(None)
+            except TypeError:
                 pwr_usage_tot = None
 
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
