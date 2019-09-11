@@ -121,7 +121,7 @@ def match_job_node(jobset, host_summary):
         if len(job_node_dict['ExecHosts']) != 0:
             job_node_match.append(job_node_dict)
         mem_total_str = str(round(mem_total,1)) + 'G'
-        job_node_dict.update({'TotalMem': mem_total})
+        job_node_dict.update({'TotalMem': mem_total_str})
     return job_node_match
 
 # Convert host name to ip address
