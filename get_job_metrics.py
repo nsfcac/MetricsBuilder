@@ -43,6 +43,9 @@ def main():
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
     printProgressBar(1 + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
+    with open("HostSummary.json", "w") as outfile_hostsum:
+            json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
+
     if job_list != None and host_summary != None:
         job_set = get_job_set(job_list)
         job_node_match = match_job_node(job_set, host_summary)
