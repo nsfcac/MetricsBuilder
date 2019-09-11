@@ -79,7 +79,7 @@ def main():
     with open("./uge/HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
 
-    with open("jobNodePower.json", "w") as outfile:
+    with open("./interleaved/jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
     print("Done!")
