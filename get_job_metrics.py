@@ -28,7 +28,7 @@ def main():
         print("No Executing Host")
         return
 
-    timestamp = time.time().isoformat()
+    timestamp = datetime.datetime.now().isoformat()
 
     print("Pulling Metrics From UGE...")
     # Get job list, exechosts, host summary
