@@ -59,7 +59,7 @@ def main():
                 pwr_usage_tot = None
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
 
-    with open("jobNodePower.json", "wb") as outfile:
+    with open("jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
     print("Done...")
