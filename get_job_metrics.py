@@ -117,9 +117,10 @@ def match_job_node(jobset, host_summary):
                 mem_used = host['hostValues']['mem_used']
                 job_node_dict['ExecHosts'].append(host_ip)
                 job_node_dict['MemUsed'].append(mem_used)
-                mem_total = mem_total + mem_used
+                mem_total = mem_total + float(mem_used.split('G')[0])
         if len(job_node_dict['ExecHosts']) != 0:
             job_node_match.append(job_node_dict)
+        mem_total_str = str(round(mem_total,1)) + 'G'
         job_node_dict.update({'TotalMem': mem_total})
     return job_node_match
 
