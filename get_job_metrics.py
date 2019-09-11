@@ -43,7 +43,7 @@ def main():
 
     # Get job list, exechosts, host summary
     for index, task in enumerate(uge_tasklist):
-        uge_results{task}, uge_errors{task} = get_uge_info(conn_time_out, read_time_out, session, task)
+        uge_results.task, uge_errors.task = get_uge_info(conn_time_out, read_time_out, session, task)
         printProgressBar(index + 1, task_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     job_list = uge_results{"jobs"}
