@@ -14,16 +14,16 @@
         ],
         "JobId": 871889,
         "LoadAvg": [
+            "36.14",
+            "36.07",
             "36.04",
+            "35.99",
+            "36.00",
+            "35.96",
+            "36.03",
             "36.01",
             "36.00",
-            "36.04",
-            "36.01",
-            "35.95",
-            "35.99",
-            "35.98",
-            "35.97",
-            "35.97"
+            "36.00"
         ],
         "MemUsed": [
             "5.6G",
@@ -38,21 +38,21 @@
             "4.9G"
         ],
         "PowerConsumedWatts": [
-            284,
-            276,
+            285,
+            277,
             273,
-            283,
             284,
-            304,
+            284,
+            305,
             281,
-            280,
-            306,
+            283,
+            305,
             286
         ],
         "StartTime": "Tue Sep 10 14:14:31 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "56.2G",
-        "TotalPowerConsumedWatts": 2857,
+        "TotalPowerConsumedWatts": 2863,
         "User": "rafiisla"
     },
     {
@@ -70,15 +70,15 @@
         ],
         "JobId": 871945,
         "LoadAvg": [
+            "36.04",
+            "36.06",
+            "36.00",
+            "35.96",
+            "36.03",
+            "35.99",
             "35.99",
             "36.00",
-            "36.07",
-            "36.04",
-            "35.99",
-            "35.96",
-            "36.01",
-            "35.99",
-            "36.03",
+            "36.00",
             "36.03"
         ],
         "MemUsed": [
@@ -94,21 +94,21 @@
             "6.5G"
         ],
         "PowerConsumedWatts": [
-            268,
-            290,
-            277,
-            279,
-            281,
-            284,
+            270,
             291,
-            281,
+            278,
+            276,
+            282,
+            284,
             290,
-            271
+            280,
+            289,
+            270
         ],
         "StartTime": "Tue Sep 10 14:51:10 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "61.5G",
-        "TotalPowerConsumedWatts": 2812,
+        "TotalPowerConsumedWatts": 2810,
         "User": "rafiisla"
     },
     {
@@ -126,16 +126,16 @@
         ],
         "JobId": 871980,
         "LoadAvg": [
+            "36.06",
             "36.04",
-            "36.02",
-            "35.98",
             "35.99",
             "36.02",
-            "36.00",
             "36.01",
-            "36.04",
+            "35.99",
+            "35.99",
+            "36.00",
             "36.03",
-            "36.02"
+            "36.06"
         ],
         "MemUsed": [
             "6.7G",
@@ -150,21 +150,21 @@
             "5.7G"
         ],
         "PowerConsumedWatts": [
-            300,
-            291,
-            305,
-            300,
-            295,
+            303,
             294,
+            null,
+            298,
+            294,
+            292,
             301,
-            297,
-            306,
-            300
+            296,
+            308,
+            305
         ],
         "StartTime": "Tue Sep 10 18:40:53 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "57.0G",
-        "TotalPowerConsumedWatts": 2989,
+        "TotalPowerConsumedWatts": null,
         "User": "rafiisla"
     },
     {
@@ -182,16 +182,16 @@
         ],
         "JobId": 887650,
         "LoadAvg": [
-            "35.99",
-            "36.00",
-            "36.02",
-            "36.01",
-            "36.04",
-            "36.03",
             "36.05",
-            "36.03",
+            "36.05",
             "36.01",
-            "36.03"
+            "36.10",
+            "36.07",
+            "35.99",
+            "36.04",
+            "36.02",
+            "36.03",
+            "36.04"
         ],
         "MemUsed": [
             "5.2G",
@@ -206,21 +206,21 @@
             "7.4G"
         ],
         "PowerConsumedWatts": [
-            291,
-            299,
-            296,
+            287,
+            293,
+            298,
             297,
             298,
-            299,
-            296,
-            291,
             298,
-            310
+            297,
+            292,
+            295,
+            309
         ],
         "StartTime": "Tue Sep 10 18:48:41 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "60.6G",
-        "TotalPowerConsumedWatts": 2975,
+        "TotalPowerConsumedWatts": 2964,
         "User": "rafiisla"
     },
     {
@@ -278,55 +278,55 @@
         ],
         "JobId": 912648,
         "LoadAvg": [
+            "36.10",
+            "36.11",
+            "36.09",
+            "36.05",
+            "36.10",
+            "36.02",
             "36.04",
+            "36.09",
             "36.07",
-            "36.04",
             "36.10",
             "36.04",
-            "36.01",
-            "36.09",
-            "36.04",
+            "36.06",
+            "36.08",
             "36.05",
+            "36.01",
+            "36.01",
+            "36.06",
+            "36.04",
+            "36.04",
             "36.07",
             "36.05",
+            "36.03",
+            "36.05",
+            "36.04",
+            "36.07",
+            "36.04",
+            "36.01",
+            "36.04",
+            "36.01",
+            "36.01",
+            "36.02",
             "36.06",
             "36.05",
             "36.01",
             "36.01",
-            "36.02",
-            "36.04",
-            "36.01",
-            "36.01",
-            "36.11",
-            "36.07",
-            "36.03",
-            "36.03",
-            "36.09",
-            "36.11",
-            "36.07",
-            "36.06",
             "36.01",
             "36.04",
             "36.03",
-            "36.03",
-            "36.10",
-            "36.01",
-            "36.02",
-            "36.02",
-            "36.03",
-            "36.09",
-            "36.03",
-            "36.01",
-            "36.02",
-            "36.03",
+            "36.04",
             "36.04",
             "36.05",
             "36.05",
             "36.02",
-            "36.03",
+            "36.05",
+            "36.02",
             "36.04",
-            "36.01",
-            "36.01",
+            "36.04",
+            "36.00",
+            "36.03",
             "36.02"
         ],
         "MemUsed": [
@@ -349,10 +349,10 @@
             "37.4G",
             "38.4G",
             "37.5G",
-            "37.4G",
+            "37.5G",
             "41.6G",
             "12.3G",
-            "38.2G",
+            "38.1G",
             "37.5G",
             "38.7G",
             "38.0G",
@@ -362,7 +362,7 @@
             "37.6G",
             "13.0G",
             "37.1G",
-            "37.6G",
+            "37.7G",
             "39.4G",
             "14.4G",
             "40.4G",
@@ -377,66 +377,66 @@
             "38.3G",
             "38.3G",
             "38.2G",
-            "46.0G",
+            "46.1G",
             "41.3G",
             "37.2G"
         ],
         "PowerConsumedWatts": [
-            266,
-            272,
-            283,
+            268,
+            270,
+            282,
+            279,
             275,
-            274,
-            281,
-            262,
+            283,
+            263,
             261,
-            281,
+            278,
             286,
-            267,
-            280,
+            271,
             284,
+            288,
             244,
             285,
             265,
-            279,
-            273,
-            271,
             280,
-            288,
+            270,
+            271,
+            279,
+            286,
             256,
-            265,
-            288,
-            277,
-            275,
-            246,
-            285,
+            266,
+            287,
+            274,
             276,
-            285,
+            246,
+            284,
+            275,
+            284,
             261,
             278,
-            287,
+            285,
+            290,
+            257,
+            291,
+            288,
             289,
-            258,
-            295,
-            293,
-            294,
-            281,
             279,
+            275,
             276,
             274,
-            282,
-            272,
-            304,
+            279,
+            270,
+            306,
             286,
             285,
-            286,
-            278,
-            301
+            277,
+            273,
+            294
         ],
         "StartTime": "Tue Sep 10 08:59:12 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "1725.1G",
-        "TotalPowerConsumedWatts": 13869,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "1725.3G",
+        "TotalPowerConsumedWatts": 13829,
         "User": "prkumar"
     },
     {
@@ -454,14 +454,14 @@
         ],
         "JobId": 912829,
         "LoadAvg": [
+            "36.10",
             "36.02",
-            "36.04",
-            "36.02",
-            "36.05",
-            "36.11",
-            "36.05",
-            "36.04",
-            "36.02",
+            "36.03",
+            "36.01",
+            "36.07",
+            "36.06",
+            "36.03",
+            "36.03",
             "36.04",
             "36.01"
         ],
@@ -471,28 +471,28 @@
             "5.5G",
             "5.6G",
             "5.8G",
-            "5.7G",
+            "5.6G",
             "6.2G",
             "6.3G",
             "4.8G",
             "5.4G"
         ],
         "PowerConsumedWatts": [
-            247,
+            245,
             253,
-            246,
-            241,
-            235,
-            240,
-            250,
-            258,
-            263,
+            244,
+            243,
+            237,
+            242,
+            249,
+            259,
+            266,
             248
         ],
         "StartTime": "Wed Sep 11 00:23:21 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "56.4G",
-        "TotalPowerConsumedWatts": 2481,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "56.3G",
+        "TotalPowerConsumedWatts": 2486,
         "User": "pnourian"
     },
     {
@@ -510,45 +510,45 @@
         ],
         "JobId": 914637,
         "LoadAvg": [
-            "35.33",
+            "36.09",
+            "36.01",
+            "36.00",
+            "36.02",
+            "35.96",
+            "36.00",
             "35.93",
-            "36.07",
-            "35.94",
-            "35.94",
-            "36.03",
             "35.99",
-            "35.90",
-            "35.94",
-            "35.94"
+            "35.99",
+            "35.98"
         ],
         "MemUsed": [
             "134.4G",
-            "129.8G",
-            "132.7G",
-            "129.8G",
             "129.7G",
-            "131.2G",
-            "133.7G",
+            "132.8G",
+            "129.8G",
+            "129.6G",
+            "131.4G",
+            "133.6G",
             "130.7G",
             "129.9G",
             "129.6G"
         ],
         "PowerConsumedWatts": [
-            299,
-            288,
-            279,
-            294,
-            296,
-            278,
-            321,
+            329,
+            271,
+            315,
             314,
-            307,
+            304,
+            280,
+            null,
+            290,
+            299,
             250
         ],
         "StartTime": "Tue Sep 10 08:24:10 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "1311.5G",
-        "TotalPowerConsumedWatts": 2926,
+        "TotalPowerConsumedWatts": null,
         "User": "hge"
     },
     {
@@ -557,7 +557,7 @@
         ],
         "JobId": 914737,
         "LoadAvg": [
-            "35.60"
+            "35.47"
         ],
         "MemUsed": [
             "11.7G"
@@ -566,7 +566,7 @@
             293
         ],
         "StartTime": "Tue Sep 10 11:09:16 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.7G",
         "TotalPowerConsumedWatts": 293,
         "User": "gpinesch"
@@ -577,7 +577,7 @@
         ],
         "JobId": 914738,
         "LoadAvg": [
-            "35.59"
+            "35.44"
         ],
         "MemUsed": [
             "9.6G"
@@ -586,7 +586,7 @@
             310
         ],
         "StartTime": "Tue Sep 10 11:33:29 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.6G",
         "TotalPowerConsumedWatts": 310,
         "User": "gpinesch"
@@ -597,7 +597,7 @@
         ],
         "JobId": 914739,
         "LoadAvg": [
-            "35.80"
+            "35.69"
         ],
         "MemUsed": [
             "9.7G"
@@ -606,7 +606,7 @@
             306
         ],
         "StartTime": "Tue Sep 10 11:33:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.7G",
         "TotalPowerConsumedWatts": 306,
         "User": "gpinesch"
@@ -617,7 +617,7 @@
         ],
         "JobId": 914740,
         "LoadAvg": [
-            "35.49"
+            "35.59"
         ],
         "MemUsed": [
             "20.1G"
@@ -626,7 +626,7 @@
             278
         ],
         "StartTime": "Tue Sep 10 11:34:59 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "20.1G",
         "TotalPowerConsumedWatts": 278,
         "User": "gpinesch"
@@ -637,18 +637,18 @@
         ],
         "JobId": 914741,
         "LoadAvg": [
-            "35.83"
+            "35.68"
         ],
         "MemUsed": [
             "11.0G"
         ],
         "PowerConsumedWatts": [
-            290
+            291
         ],
         "StartTime": "Tue Sep 10 13:04:11 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.0G",
-        "TotalPowerConsumedWatts": 290,
+        "TotalPowerConsumedWatts": 291,
         "User": "gpinesch"
     },
     {
@@ -657,18 +657,18 @@
         ],
         "JobId": 914742,
         "LoadAvg": [
-            "35.40"
+            "35.73"
         ],
         "MemUsed": [
             "11.7G"
         ],
         "PowerConsumedWatts": [
-            289
+            292
         ],
         "StartTime": "Tue Sep 10 13:05:21 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.7G",
-        "TotalPowerConsumedWatts": 289,
+        "TotalPowerConsumedWatts": 292,
         "User": "gpinesch"
     },
     {
@@ -677,18 +677,18 @@
         ],
         "JobId": 914743,
         "LoadAvg": [
-            "35.68"
+            "35.82"
         ],
         "MemUsed": [
             "11.4G"
         ],
         "PowerConsumedWatts": [
-            295
+            294
         ],
         "StartTime": "Tue Sep 10 13:20:31 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.4G",
-        "TotalPowerConsumedWatts": 295,
+        "TotalPowerConsumedWatts": 294,
         "User": "gpinesch"
     },
     {
@@ -697,18 +697,18 @@
         ],
         "JobId": 914744,
         "LoadAvg": [
-            "35.57"
+            "35.67"
         ],
         "MemUsed": [
             "9.3G"
         ],
         "PowerConsumedWatts": [
-            291
+            295
         ],
         "StartTime": "Tue Sep 10 13:21:43 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.3G",
-        "TotalPowerConsumedWatts": 291,
+        "TotalPowerConsumedWatts": 295,
         "User": "gpinesch"
     },
     {
@@ -717,18 +717,18 @@
         ],
         "JobId": 914745,
         "LoadAvg": [
-            "35.65"
+            "35.68"
         ],
         "MemUsed": [
             "10.6G"
         ],
         "PowerConsumedWatts": [
-            295
+            294
         ],
         "StartTime": "Tue Sep 10 13:21:43 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.6G",
-        "TotalPowerConsumedWatts": 295,
+        "TotalPowerConsumedWatts": 294,
         "User": "gpinesch"
     },
     {
@@ -737,18 +737,18 @@
         ],
         "JobId": 914746,
         "LoadAvg": [
-            "35.78"
+            "35.76"
         ],
         "MemUsed": [
             "11.0G"
         ],
         "PowerConsumedWatts": [
-            291
+            289
         ],
         "StartTime": "Tue Sep 10 13:23:26 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.0G",
-        "TotalPowerConsumedWatts": 291,
+        "TotalPowerConsumedWatts": 289,
         "User": "gpinesch"
     },
     {
@@ -757,18 +757,18 @@
         ],
         "JobId": 914747,
         "LoadAvg": [
-            "35.55"
+            "35.71"
         ],
         "MemUsed": [
             "12.0G"
         ],
         "PowerConsumedWatts": [
-            280
+            281
         ],
         "StartTime": "Tue Sep 10 23:36:17 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "12.0G",
-        "TotalPowerConsumedWatts": 280,
+        "TotalPowerConsumedWatts": 281,
         "User": "gpinesch"
     },
     {
@@ -777,18 +777,18 @@
         ],
         "JobId": 914748,
         "LoadAvg": [
-            "35.09"
+            "35.67"
         ],
         "MemUsed": [
             "10.6G"
         ],
         "PowerConsumedWatts": [
-            291
+            293
         ],
         "StartTime": "Wed Sep 11 00:23:27 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.6G",
-        "TotalPowerConsumedWatts": 291,
+        "TotalPowerConsumedWatts": 293,
         "User": "gpinesch"
     },
     {
@@ -797,18 +797,18 @@
         ],
         "JobId": 914749,
         "LoadAvg": [
-            "35.68"
+            "35.74"
         ],
         "MemUsed": [
             "10.0G"
         ],
         "PowerConsumedWatts": [
-            303
+            304
         ],
         "StartTime": "Wed Sep 11 01:42:14 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.0G",
-        "TotalPowerConsumedWatts": 303,
+        "TotalPowerConsumedWatts": 304,
         "User": "gpinesch"
     },
     {
@@ -817,18 +817,18 @@
         ],
         "JobId": 914750,
         "LoadAvg": [
-            "35.61"
+            "35.57"
         ],
         "MemUsed": [
             "12.9G"
         ],
         "PowerConsumedWatts": [
-            284
+            283
         ],
         "StartTime": "Wed Sep 11 03:04:15 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "12.9G",
-        "TotalPowerConsumedWatts": 284,
+        "TotalPowerConsumedWatts": 283,
         "User": "gpinesch"
     },
     {
@@ -837,7 +837,7 @@
         ],
         "JobId": 914751,
         "LoadAvg": [
-            "35.73"
+            "35.47"
         ],
         "MemUsed": [
             "9.7G"
@@ -846,7 +846,7 @@
             290
         ],
         "StartTime": "Wed Sep 11 03:39:58 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.7G",
         "TotalPowerConsumedWatts": 290,
         "User": "gpinesch"
@@ -857,18 +857,18 @@
         ],
         "JobId": 914752,
         "LoadAvg": [
-            "35.82"
+            "35.76"
         ],
         "MemUsed": [
             "10.3G"
         ],
         "PowerConsumedWatts": [
-            288
+            289
         ],
         "StartTime": "Wed Sep 11 05:50:29 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.3G",
-        "TotalPowerConsumedWatts": 288,
+        "TotalPowerConsumedWatts": 289,
         "User": "gpinesch"
     },
     {
@@ -877,18 +877,18 @@
         ],
         "JobId": 914753,
         "LoadAvg": [
-            "35.72"
+            "35.57"
         ],
         "MemUsed": [
             "10.0G"
         ],
         "PowerConsumedWatts": [
-            300
+            306
         ],
         "StartTime": "Wed Sep 11 06:35:45 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.0G",
-        "TotalPowerConsumedWatts": 300,
+        "TotalPowerConsumedWatts": 306,
         "User": "gpinesch"
     },
     {
@@ -897,18 +897,18 @@
         ],
         "JobId": 914754,
         "LoadAvg": [
-            "35.70"
+            "35.85"
         ],
         "MemUsed": [
             "9.3G"
         ],
         "PowerConsumedWatts": [
-            298
+            299
         ],
         "StartTime": "Wed Sep 11 06:36:27 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.3G",
-        "TotalPowerConsumedWatts": 298,
+        "TotalPowerConsumedWatts": 299,
         "User": "gpinesch"
     },
     {
@@ -929,19 +929,19 @@
         ],
         "JobId": 915211,
         "LoadAvg": [
-            "36.00",
-            "36.00",
+            "36.06",
+            "35.90",
+            "36.04",
+            "35.95",
             "36.01",
+            "35.90",
+            "36.02",
             "35.98",
-            "36.05",
+            "35.93",
+            "35.96",
             "35.99",
             "35.96",
-            "35.97",
-            "36.00",
-            "36.00",
-            "36.00",
-            "36.00",
-            "36.03"
+            "36.01"
         ],
         "MemUsed": [
             "6.5G",
@@ -952,31 +952,31 @@
             "5.9G",
             "6.1G",
             "6.9G",
+            "6.4G",
+            "5.9G",
+            "5.9G",
             "6.5G",
-            "5.9G",
-            "5.9G",
-            "6.6G",
             "6.0G"
         ],
         "PowerConsumedWatts": [
             277,
-            266,
-            282,
-            259,
-            261,
+            271,
+            285,
+            264,
+            268,
             267,
-            269,
+            270,
             278,
             277,
-            275,
-            281,
-            253,
-            283
+            276,
+            286,
+            264,
+            295
         ],
         "StartTime": "Tue Sep 10 09:21:42 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "87.8G",
-        "TotalPowerConsumedWatts": 3528,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "87.6G",
+        "TotalPowerConsumedWatts": 3578,
         "User": "dsundara"
     },
     {
@@ -985,18 +985,18 @@
         ],
         "JobId": 915263,
         "LoadAvg": [
-            "36.00"
+            "36.02"
         ],
         "MemUsed": [
-            "9.5G"
+            "9.4G"
         ],
         "PowerConsumedWatts": [
-            238
+            237
         ],
         "StartTime": "Tue Sep 10 22:02:41 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "9.5G",
-        "TotalPowerConsumedWatts": 238,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.4G",
+        "TotalPowerConsumedWatts": 237,
         "User": "christan"
     },
     {
@@ -1005,18 +1005,18 @@
         ],
         "JobId": 915264,
         "LoadAvg": [
-            "36.00"
+            "35.95"
         ],
         "MemUsed": [
-            "9.4G"
+            "9.5G"
         ],
         "PowerConsumedWatts": [
-            251
+            253
         ],
         "StartTime": "Tue Sep 10 22:06:38 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "9.4G",
-        "TotalPowerConsumedWatts": 251,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.5G",
+        "TotalPowerConsumedWatts": 253,
         "User": "christan"
     },
     {
@@ -1031,12 +1031,12 @@
             "9.0G"
         ],
         "PowerConsumedWatts": [
-            258
+            251
         ],
         "StartTime": "Tue Sep 10 22:10:37 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.0G",
-        "TotalPowerConsumedWatts": 258,
+        "TotalPowerConsumedWatts": 251,
         "User": "christan"
     },
     {
@@ -1045,18 +1045,18 @@
         ],
         "JobId": 915266,
         "LoadAvg": [
-            "35.98"
+            "35.99"
         ],
         "MemUsed": [
-            "9.6G"
+            "9.4G"
         ],
         "PowerConsumedWatts": [
-            245
+            276
         ],
         "StartTime": "Tue Sep 10 22:16:50 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "9.6G",
-        "TotalPowerConsumedWatts": 245,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.4G",
+        "TotalPowerConsumedWatts": 276,
         "User": "christan"
     },
     {
@@ -1068,15 +1068,15 @@
             "35.96"
         ],
         "MemUsed": [
-            "7.9G"
+            "8.0G"
         ],
         "PowerConsumedWatts": [
-            260
+            271
         ],
         "StartTime": "Tue Sep 10 22:38:00 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "7.9G",
-        "TotalPowerConsumedWatts": 260,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.0G",
+        "TotalPowerConsumedWatts": 271,
         "User": "christan"
     },
     {
@@ -1085,18 +1085,18 @@
         ],
         "JobId": 915268,
         "LoadAvg": [
-            "36.05"
+            "36.03"
         ],
         "MemUsed": [
-            "8.7G"
+            "8.5G"
         ],
         "PowerConsumedWatts": [
-            235
+            272
         ],
         "StartTime": "Tue Sep 10 23:25:18 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "8.7G",
-        "TotalPowerConsumedWatts": 235,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.5G",
+        "TotalPowerConsumedWatts": 272,
         "User": "christan"
     },
     {
@@ -1105,18 +1105,18 @@
         ],
         "JobId": 915269,
         "LoadAvg": [
-            "36.00"
+            "36.05"
         ],
         "MemUsed": [
-            "9.1G"
+            "9.0G"
         ],
         "PowerConsumedWatts": [
-            242
+            228
         ],
         "StartTime": "Tue Sep 10 23:58:28 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "9.1G",
-        "TotalPowerConsumedWatts": 242,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.0G",
+        "TotalPowerConsumedWatts": 228,
         "User": "christan"
     },
     {
@@ -1133,42 +1133,42 @@
         ],
         "JobId": 915323,
         "LoadAvg": [
-            "34.00",
-            "34.30",
-            "34.94",
-            "34.66",
-            "35.10",
-            "34.60",
-            "35.38",
-            "34.86",
-            "35.43"
+            "34.78",
+            "34.57",
+            "35.09",
+            "34.62",
+            "34.96",
+            "34.63",
+            "35.15",
+            "34.29",
+            "35.30"
         ],
         "MemUsed": [
-            "11.1G",
+            "11.0G",
             "13.7G",
             "5.7G",
-            "5.7G",
-            "12.9G",
+            "5.6G",
+            "12.8G",
             "8.2G",
             "6.9G",
-            "8.2G",
+            "8.3G",
             "6.4G"
         ],
         "PowerConsumedWatts": [
-            293,
-            286,
-            292,
-            288,
             296,
+            287,
             292,
-            307,
-            294,
+            292,
+            298,
+            293,
+            309,
+            298,
             299
         ],
         "StartTime": "Wed Sep 11 07:37:31 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "78.8G",
-        "TotalPowerConsumedWatts": 2647,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "78.6G",
+        "TotalPowerConsumedWatts": 2664,
         "User": "llindblo"
     },
     {
@@ -1205,35 +1205,35 @@
         ],
         "JobId": 916019,
         "LoadAvg": [
-            "56.57",
-            "54.81",
-            "58.38",
-            "58.33",
-            "60.54",
-            "56.28",
-            "59.62",
-            "51.50",
-            "60.14",
-            "56.56",
-            "21.08",
-            "63.19",
-            "63.26",
-            "60.26",
-            "55.86",
-            "54.09",
-            "53.70",
-            "57.71",
-            "56.11",
-            "55.89",
-            "54.04",
-            "51.97",
-            "57.27",
-            "58.11",
-            "53.33",
-            "54.68",
-            "55.16",
-            "64.26",
-            "55.23"
+            "52.81",
+            "54.74",
+            "55.47",
+            "59.51",
+            "52.04",
+            "56.35",
+            "57.78",
+            "59.79",
+            "58.21",
+            "58.04",
+            "22.99",
+            "55.46",
+            "58.46",
+            "59.42",
+            "56.37",
+            "58.29",
+            "59.76",
+            "54.49",
+            "55.81",
+            "61.09",
+            "60.11",
+            "54.29",
+            "58.05",
+            "56.84",
+            "57.04",
+            "54.86",
+            "58.69",
+            "56.52",
+            "57.34"
         ],
         "MemUsed": [
             "64.3G",
@@ -1245,7 +1245,7 @@
             "63.2G",
             "63.3G",
             "63.7G",
-            "66.4G",
+            "66.5G",
             "32.1G",
             "63.9G",
             "65.6G",
@@ -1267,40 +1267,40 @@
             "63.5G"
         ],
         "PowerConsumedWatts": [
-            349,
-            333,
-            326,
-            330,
-            335,
-            306,
-            316,
-            325,
-            317,
-            331,
-            246,
-            321,
-            328,
-            327,
             324,
-            330,
-            329,
-            320,
-            314,
-            316,
             326,
-            318,
+            324,
             323,
-            325,
-            324,
-            317,
-            321,
+            332,
+            305,
             314,
-            335
+            322,
+            320,
+            344,
+            286,
+            336,
+            314,
+            329,
+            343,
+            324,
+            338,
+            319,
+            312,
+            318,
+            326,
+            317,
+            322,
+            325,
+            317,
+            329,
+            332,
+            302,
+            315
         ],
         "StartTime": "Tue Sep 10 08:59:24 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "1822.8G",
-        "TotalPowerConsumedWatts": 9326,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "1822.9G",
+        "TotalPowerConsumedWatts": 9338,
         "User": "fazhussa"
     },
     {
@@ -1318,16 +1318,16 @@
         ],
         "JobId": 916550,
         "LoadAvg": [
-            "35.98",
-            "36.01",
             "36.02",
-            "35.98",
-            "35.96",
-            "36.00",
-            "35.96",
             "35.99",
+            "35.98",
+            "35.95",
+            "35.97",
+            "35.97",
+            "35.98",
+            "36.05",
             "36.01",
-            "35.98"
+            "35.99"
         ],
         "MemUsed": [
             "9.9G",
@@ -1342,21 +1342,21 @@
             "5.2G"
         ],
         "PowerConsumedWatts": [
-            246,
+            247,
             250,
-            238,
+            237,
             244,
-            251,
-            265,
+            250,
+            264,
             250,
             249,
             245,
             252
         ],
         "StartTime": "Mon Sep 09 15:59:23 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "69.3G",
-        "TotalPowerConsumedWatts": 2490,
+        "TotalPowerConsumedWatts": 2488,
         "User": "shahrahm"
     },
     {
@@ -1374,16 +1374,16 @@
         ],
         "JobId": 916551,
         "LoadAvg": [
-            "36.07",
-            "36.02",
-            "36.00",
-            "36.01",
-            "36.02",
-            "35.99",
-            "36.03",
-            "36.00",
+            "36.06",
+            "36.04",
+            "35.97",
             "35.96",
-            "35.98"
+            "36.02",
+            "36.03",
+            "36.01",
+            "35.99",
+            "35.99",
+            "36.02"
         ],
         "MemUsed": [
             "5.4G",
@@ -1391,7 +1391,7 @@
             "5.3G",
             "9.0G",
             "5.8G",
-            "5.6G",
+            "5.5G",
             "5.6G",
             "6.2G",
             "5.0G",
@@ -1402,17 +1402,17 @@
             262,
             243,
             247,
-            248,
-            244,
-            242,
+            250,
+            245,
+            243,
             257,
-            251,
+            253,
             256
         ],
         "StartTime": "Mon Sep 09 16:31:33 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "59.5G",
-        "TotalPowerConsumedWatts": 2486,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "59.4G",
+        "TotalPowerConsumedWatts": 2492,
         "User": "shahrahm"
     },
     {
@@ -1430,16 +1430,16 @@
         ],
         "JobId": 916552,
         "LoadAvg": [
-            "36.03",
-            "36.01",
-            "35.99",
-            "35.97",
+            "36.06",
             "36.01",
             "35.96",
-            "36.04",
+            "36.01",
+            "35.96",
             "35.99",
+            "35.98",
             "35.97",
-            "35.99"
+            "35.96",
+            "35.97"
         ],
         "MemUsed": [
             "9.1G",
@@ -1455,20 +1455,20 @@
         ],
         "PowerConsumedWatts": [
             260,
-            261,
+            264,
             253,
             251,
             242,
-            242,
+            244,
             240,
             252,
             250,
-            255
+            257
         ],
         "StartTime": "Mon Sep 09 23:00:25 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "68.5G",
-        "TotalPowerConsumedWatts": 2506,
+        "TotalPowerConsumedWatts": 2513,
         "User": "shahrahm"
     },
     {
@@ -1480,10 +1480,10 @@
         ],
         "JobId": 916769,
         "LoadAvg": [
-            "36.01",
-            "36.04",
-            "36.04",
-            "36.05"
+            "36.05",
+            "36.03",
+            "36.02",
+            "36.03"
         ],
         "MemUsed": [
             "15.6G",
@@ -1493,12 +1493,12 @@
         ],
         "PowerConsumedWatts": [
             228,
-            234,
+            233,
             239,
-            240
+            241
         ],
         "StartTime": "Mon Sep 09 15:46:46 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "61.7G",
         "TotalPowerConsumedWatts": 941,
         "User": "nayshah"
@@ -1512,27 +1512,27 @@
         ],
         "JobId": 916770,
         "LoadAvg": [
-            "36.05",
-            "36.01",
-            "36.03",
-            "36.03"
+            "36.15",
+            "36.04",
+            "36.04",
+            "36.01"
         ],
         "MemUsed": [
-            "14.9G",
+            "15.0G",
             "14.8G",
             "15.2G",
             "15.6G"
         ],
         "PowerConsumedWatts": [
-            245,
-            251,
+            244,
+            249,
             238,
-            244
+            243
         ],
         "StartTime": "Mon Sep 09 15:46:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "60.5G",
-        "TotalPowerConsumedWatts": 978,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "60.6G",
+        "TotalPowerConsumedWatts": 974,
         "User": "nayshah"
     },
     {
@@ -1544,10 +1544,10 @@
         ],
         "JobId": 916784,
         "LoadAvg": [
-            "36.03",
+            "36.01",
             "36.05",
-            "36.02",
-            "36.03"
+            "36.03",
+            "36.07"
         ],
         "MemUsed": [
             "15.3G",
@@ -1556,15 +1556,15 @@
             "16.3G"
         ],
         "PowerConsumedWatts": [
-            234,
+            237,
             245,
-            253,
-            243
+            252,
+            244
         ],
         "StartTime": "Mon Sep 09 15:46:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "63.1G",
-        "TotalPowerConsumedWatts": 975,
+        "TotalPowerConsumedWatts": 978,
         "User": "nayshah"
     },
     {
@@ -1573,18 +1573,18 @@
         ],
         "JobId": 916793,
         "LoadAvg": [
-            "35.18"
+            "35.15"
         ],
         "MemUsed": [
             "27.9G"
         ],
         "PowerConsumedWatts": [
-            306
+            309
         ],
         "StartTime": "Wed Sep 11 12:08:22 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "27.9G",
-        "TotalPowerConsumedWatts": 306,
+        "TotalPowerConsumedWatts": 309,
         "User": "lediaz"
     },
     {
@@ -1612,26 +1612,26 @@
         ],
         "JobId": 916805,
         "LoadAvg": [
-            "36.00",
+            "36.07",
             "36.15",
-            "36.06",
+            "36.15",
+            "36.07",
+            "36.02",
             "36.03",
+            "35.98",
             "35.96",
-            "36.04",
+            "35.97",
+            "36.01",
+            "36.08",
+            "35.99",
             "36.06",
             "36.05",
+            "36.16",
+            "36.02",
             "35.99",
-            "36.03",
-            "36.11",
-            "35.99",
-            "36.01",
-            "36.26",
-            "36.13",
-            "36.21",
-            "35.97",
-            "36.04",
-            "36.08",
-            "36.12"
+            "35.95",
+            "36.09",
+            "36.13"
         ],
         "MemUsed": [
             "47.3G",
@@ -1656,31 +1656,31 @@
             "47.4G"
         ],
         "PowerConsumedWatts": [
-            292,
-            272,
-            275,
-            276,
-            277,
-            256,
-            270,
-            275,
-            267,
-            275,
+            287,
             269,
-            274,
-            284,
-            284,
-            263,
-            275,
+            277,
             272,
-            276,
+            272,
+            257,
+            264,
+            265,
+            278,
+            256,
+            275,
+            278,
+            277,
+            283,
+            267,
+            278,
+            277,
             282,
-            288
+            290,
+            282
         ],
         "StartTime": "Mon Sep 09 16:09:55 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "949.3G",
-        "TotalPowerConsumedWatts": 5502,
+        "TotalPowerConsumedWatts": 5486,
         "User": "ankipand"
     },
     {
@@ -1708,26 +1708,26 @@
         ],
         "JobId": 916806,
         "LoadAvg": [
-            "36.01",
+            "35.98",
             "36.15",
-            "36.01",
-            "36.08",
-            "36.12",
-            "36.10",
-            "36.12",
-            "36.02",
-            "36.11",
-            "36.11",
-            "36.01",
-            "36.07",
-            "36.13",
-            "36.08",
+            "35.96",
             "36.14",
+            "36.09",
+            "36.11",
+            "36.16",
+            "36.05",
+            "36.08",
+            "36.05",
+            "36.01",
+            "36.06",
+            "36.01",
+            "36.06",
+            "36.04",
             "36.03",
-            "36.05",
-            "35.95",
-            "36.05",
-            "36.17"
+            "36.04",
+            "36.07",
+            "36.06",
+            "36.07"
         ],
         "MemUsed": [
             "43.5G",
@@ -1752,31 +1752,31 @@
             "44.3G"
         ],
         "PowerConsumedWatts": [
-            265,
-            258,
-            278,
-            254,
-            276,
-            284,
-            268,
-            266,
-            280,
-            279,
-            269,
-            258,
-            283,
-            287,
-            283,
             281,
-            296,
+            272,
+            279,
+            279,
+            274,
+            278,
+            265,
+            278,
+            278,
+            280,
+            270,
             266,
-            266,
-            269
+            282,
+            290,
+            276,
+            278,
+            300,
+            268,
+            252,
+            272
         ],
         "StartTime": "Tue Sep 10 00:15:26 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "941.7G",
-        "TotalPowerConsumedWatts": 5466,
+        "TotalPowerConsumedWatts": 5518,
         "User": "ankipand"
     },
     {
@@ -1788,27 +1788,27 @@
         ],
         "JobId": 916811,
         "LoadAvg": [
+            "36.06",
             "36.05",
-            "36.02",
-            "36.01",
-            "36.02"
+            "36.05",
+            "36.03"
         ],
         "MemUsed": [
             "15.6G",
-            "18.4G",
+            "18.5G",
             "14.7G",
             "14.9G"
         ],
         "PowerConsumedWatts": [
-            237,
-            245,
-            249,
-            243
+            239,
+            271,
+            262,
+            244
         ],
         "StartTime": "Mon Sep 09 15:49:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "63.6G",
-        "TotalPowerConsumedWatts": 974,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "63.7G",
+        "TotalPowerConsumedWatts": 1016,
         "User": "nayshah"
     },
     {
@@ -1817,18 +1817,18 @@
         ],
         "JobId": 916842,
         "LoadAvg": [
-            "36.05"
+            "36.06"
         ],
         "MemUsed": [
-            "65.0G"
+            "90.6G"
         ],
         "PowerConsumedWatts": [
-            313
+            278
         ],
         "StartTime": "Mon Sep 09 16:54:09 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "65.0G",
-        "TotalPowerConsumedWatts": 313,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "90.6G",
+        "TotalPowerConsumedWatts": 278,
         "User": "sisadegh"
     },
     {
@@ -1837,18 +1837,18 @@
         ],
         "JobId": 916934,
         "LoadAvg": [
-            "35.98"
+            "35.94"
         ],
         "MemUsed": [
-            "49.4G"
+            "49.5G"
         ],
         "PowerConsumedWatts": [
-            313
+            317
         ],
         "StartTime": "Mon Sep 09 17:54:15 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "49.4G",
-        "TotalPowerConsumedWatts": 313,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "49.5G",
+        "TotalPowerConsumedWatts": 317,
         "User": "ipandey"
     },
     {
@@ -1857,18 +1857,18 @@
         ],
         "JobId": 916937,
         "LoadAvg": [
-            "35.96"
+            "36.02"
         ],
         "MemUsed": [
-            "48.9G"
+            "49.0G"
         ],
         "PowerConsumedWatts": [
-            342
+            315
         ],
         "StartTime": "Mon Sep 09 17:58:37 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "48.9G",
-        "TotalPowerConsumedWatts": 342,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "49.0G",
+        "TotalPowerConsumedWatts": 315,
         "User": "ipandey"
     },
     {
@@ -1878,21 +1878,21 @@
         ],
         "JobId": 916976,
         "LoadAvg": [
-            "36.00",
-            "36.05"
+            "36.01",
+            "36.04"
         ],
         "MemUsed": [
             "22.6G",
             "32.1G"
         ],
         "PowerConsumedWatts": [
-            239,
-            288
+            283,
+            238
         ],
         "StartTime": "Tue Sep 10 08:10:47 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "54.7G",
-        "TotalPowerConsumedWatts": 527,
+        "TotalPowerConsumedWatts": 521,
         "User": "hge"
     },
     {
@@ -1903,20 +1903,20 @@
         "JobId": 916977,
         "LoadAvg": [
             "35.93",
-            "36.00"
+            "35.93"
         ],
         "MemUsed": [
             "26.3G",
             "24.3G"
         ],
         "PowerConsumedWatts": [
-            280,
-            296
+            276,
+            297
         ],
         "StartTime": "Tue Sep 10 08:15:39 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "50.6G",
-        "TotalPowerConsumedWatts": 576,
+        "TotalPowerConsumedWatts": 573,
         "User": "hge"
     },
     {
@@ -1925,17 +1925,17 @@
         ],
         "JobId": 916992,
         "LoadAvg": [
-            "8.03"
+            "8.07"
         ],
         "MemUsed": [
-            "33.2G"
+            "16.9G"
         ],
         "PowerConsumedWatts": [
             183
         ],
         "StartTime": "Tue Sep 10 02:13:46 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "33.2G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "16.9G",
         "TotalPowerConsumedWatts": 183,
         "User": "scalandr"
     },
@@ -1945,7 +1945,7 @@
         ],
         "JobId": 917150,
         "LoadAvg": [
-            "34.85"
+            "34.65"
         ],
         "MemUsed": [
             "9.1G"
@@ -1954,7 +1954,7 @@
             304
         ],
         "StartTime": "Tue Sep 10 13:16:34 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.1G",
         "TotalPowerConsumedWatts": 304,
         "User": "hge"
@@ -1984,26 +1984,26 @@
         ],
         "JobId": 917228,
         "LoadAvg": [
-            "35.76",
-            "35.79",
-            "35.78",
-            "35.77",
-            "35.85",
             "35.84",
-            "35.78",
-            "35.73",
-            "35.66",
-            "35.63",
-            "35.74",
-            "35.72",
-            "35.61",
-            "35.76",
-            "35.70",
-            "35.63",
             "35.89",
-            "35.67",
-            "35.66",
-            "35.81"
+            "35.79",
+            "35.85",
+            "35.76",
+            "35.78",
+            "35.79",
+            "35.81",
+            "35.59",
+            "35.82",
+            "35.75",
+            "35.80",
+            "35.75",
+            "35.79",
+            "35.73",
+            "35.78",
+            "35.78",
+            "35.65",
+            "35.71",
+            "35.80"
         ],
         "MemUsed": [
             "21.1G",
@@ -2014,7 +2014,7 @@
             "24.6G",
             "22.7G",
             "21.1G",
-            "22.2G",
+            "22.1G",
             "21.4G",
             "22.1G",
             "23.0G",
@@ -2025,34 +2025,34 @@
             "22.4G",
             "21.0G",
             "22.9G",
-            "26.0G"
+            "25.9G"
         ],
         "PowerConsumedWatts": [
             317,
-            309,
+            304,
+            323,
+            313,
+            323,
+            317,
+            318,
+            308,
+            321,
+            333,
             322,
             311,
-            324,
             319,
-            318,
-            312,
             320,
-            327,
-            325,
-            309,
-            316,
-            318,
-            320,
-            322,
-            307,
+            323,
             324,
+            308,
+            325,
             317,
-            318
+            319
         ],
         "StartTime": "Tue Sep 10 13:02:15 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "446.6G",
-        "TotalPowerConsumedWatts": 6355,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "446.4G",
+        "TotalPowerConsumedWatts": 6365,
         "User": "jimchun"
     },
     {
@@ -2061,18 +2061,18 @@
         ],
         "JobId": 917285,
         "LoadAvg": [
-            "34.02"
+            "34.06"
         ],
         "MemUsed": [
-            "5.6G"
+            "5.5G"
         ],
         "PowerConsumedWatts": [
-            300
+            297
         ],
         "StartTime": "Tue Sep 10 10:50:00 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.6G",
-        "TotalPowerConsumedWatts": 300,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.5G",
+        "TotalPowerConsumedWatts": 297,
         "User": "aschueth"
     },
     {
@@ -2081,7 +2081,7 @@
         ],
         "JobId": 917288,
         "LoadAvg": [
-            "0.02"
+            "0.01"
         ],
         "MemUsed": [
             "4.4G"
@@ -2090,7 +2090,7 @@
             128
         ],
         "StartTime": "Tue Sep 10 14:05:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "4.4G",
         "TotalPowerConsumedWatts": 128,
         "User": "aschueth"
@@ -2104,27 +2104,27 @@
         ],
         "JobId": 917313,
         "LoadAvg": [
-            "36.08",
-            "36.10",
-            "36.02",
-            "36.02"
+            "36.06",
+            "36.07",
+            "36.04",
+            "36.04"
         ],
         "MemUsed": [
-            "12.8G",
+            "12.9G",
             "11.9G",
-            "13.6G",
+            "13.7G",
             "12.5G"
         ],
         "PowerConsumedWatts": [
-            252,
-            233,
-            271,
-            244
+            253,
+            234,
+            272,
+            243
         ],
         "StartTime": "Tue Sep 10 11:33:10 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "50.8G",
-        "TotalPowerConsumedWatts": 1000,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "51.0G",
+        "TotalPowerConsumedWatts": 1002,
         "User": "nayshah"
     },
     {
@@ -2133,18 +2133,18 @@
         ],
         "JobId": 917319,
         "LoadAvg": [
-            "35.06"
+            "34.81"
         ],
         "MemUsed": [
-            "5.9G"
+            "5.8G"
         ],
         "PowerConsumedWatts": [
-            237
+            232
         ],
         "StartTime": "Tue Sep 10 11:40:52 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.9G",
-        "TotalPowerConsumedWatts": 237,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.8G",
+        "TotalPowerConsumedWatts": 232,
         "User": "matapatt"
     },
     {
@@ -2154,21 +2154,21 @@
         ],
         "JobId": 917745,
         "LoadAvg": [
-            "0.01",
-            "19.05"
+            "0.08",
+            "4.81"
         ],
         "MemUsed": [
             "3.4G",
-            "10.9G"
+            "15.6G"
         ],
         "PowerConsumedWatts": [
-            132,
-            143
+            128,
+            262
         ],
         "StartTime": "Tue Sep 10 13:19:49 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "14.3G",
-        "TotalPowerConsumedWatts": 275,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "19.0G",
+        "TotalPowerConsumedWatts": 390,
         "User": "jchundur"
     },
     {
@@ -2186,7 +2186,7 @@
             135
         ],
         "StartTime": "Wed Sep 11 12:32:05 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.4G",
         "TotalPowerConsumedWatts": 135,
         "User": "esowell"
@@ -2197,18 +2197,38 @@
         ],
         "JobId": 917835,
         "LoadAvg": [
-            "0.99"
+            "1.00"
         ],
         "MemUsed": [
             "7.6G"
         ],
         "PowerConsumedWatts": [
-            137
+            141
         ],
         "StartTime": "Wed Sep 11 12:53:40 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.6G",
-        "TotalPowerConsumedWatts": 137,
+        "TotalPowerConsumedWatts": 141,
+        "User": "esowell"
+    },
+    {
+        "ExecHosts": [
+            "10.101.7.14"
+        ],
+        "JobId": 917836,
+        "LoadAvg": [
+            "15.20"
+        ],
+        "MemUsed": [
+            "5.7G"
+        ],
+        "PowerConsumedWatts": [
+            132
+        ],
+        "StartTime": "Wed Sep 11 14:38:29 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.7G",
+        "TotalPowerConsumedWatts": 132,
         "User": "esowell"
     },
     {
@@ -2223,13 +2243,13 @@
         ],
         "JobId": 917926,
         "LoadAvg": [
-            "36.05",
-            "36.05",
+            "36.03",
+            "36.06",
+            "36.03",
             "36.01",
-            "36.02",
-            "36.01",
+            "36.04",
             "36.05",
-            "36.06"
+            "36.04"
         ],
         "MemUsed": [
             "5.2G",
@@ -2242,17 +2262,17 @@
         ],
         "PowerConsumedWatts": [
             278,
-            286,
+            288,
             277,
-            275,
+            276,
             292,
             290,
             286
         ],
         "StartTime": "Tue Sep 10 13:53:52 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "45.6G",
-        "TotalPowerConsumedWatts": 1984,
+        "TotalPowerConsumedWatts": 1987,
         "User": "srmani"
     },
     {
@@ -2268,12 +2288,12 @@
         "JobId": 917928,
         "LoadAvg": [
             "36.05",
-            "36.04",
-            "36.05",
-            "36.08",
-            "36.04",
             "36.03",
-            "36.05"
+            "36.05",
+            "36.06",
+            "36.02",
+            "36.02",
+            "36.04"
         ],
         "MemUsed": [
             "5.4G",
@@ -2291,12 +2311,12 @@
             279,
             286,
             293,
-            295
+            294
         ],
         "StartTime": "Wed Sep 11 00:50:30 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "40.5G",
-        "TotalPowerConsumedWatts": 1985,
+        "TotalPowerConsumedWatts": 1984,
         "User": "srmani"
     },
     {
@@ -2305,18 +2325,18 @@
         ],
         "JobId": 917967,
         "LoadAvg": [
-            "35.04"
+            "35.06"
         ],
         "MemUsed": [
             "6.2G"
         ],
         "PowerConsumedWatts": [
-            302
+            301
         ],
         "StartTime": "Tue Sep 10 14:51:00 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.2G",
-        "TotalPowerConsumedWatts": 302,
+        "TotalPowerConsumedWatts": 301,
         "User": "mgurusam"
     },
     {
@@ -2328,27 +2348,27 @@
         ],
         "JobId": 917974,
         "LoadAvg": [
-            "36.01",
-            "36.01",
-            "36.06",
-            "36.03"
+            "36.04",
+            "36.03",
+            "36.04",
+            "36.01"
         ],
         "MemUsed": [
             "10.8G",
-            "10.1G",
-            "10.8G",
+            "10.2G",
+            "10.9G",
             "10.2G"
         ],
         "PowerConsumedWatts": [
-            249,
-            235,
-            231,
-            245
+            248,
+            237,
+            230,
+            280
         ],
         "StartTime": "Tue Sep 10 17:21:55 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "41.9G",
-        "TotalPowerConsumedWatts": 960,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "42.1G",
+        "TotalPowerConsumedWatts": 995,
         "User": "nayshah"
     },
     {
@@ -2357,18 +2377,18 @@
         ],
         "JobId": 917983,
         "LoadAvg": [
-            "1.04"
+            "1.03"
         ],
         "MemUsed": [
-            "156.5G"
+            "159.7G"
         ],
         "PowerConsumedWatts": [
-            132
+            137
         ],
         "StartTime": "Tue Sep 10 16:18:08 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "156.5G",
-        "TotalPowerConsumedWatts": 132,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "159.7G",
+        "TotalPowerConsumedWatts": 137,
         "User": "andhingr"
     },
     {
@@ -2377,18 +2397,18 @@
         ],
         "JobId": 917987,
         "LoadAvg": [
-            "1.08"
+            "1.04"
         ],
         "MemUsed": [
-            "153.6G"
+            "154.2G"
         ],
         "PowerConsumedWatts": [
-            112
+            107
         ],
         "StartTime": "Tue Sep 10 17:05:41 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "153.6G",
-        "TotalPowerConsumedWatts": 112,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "154.2G",
+        "TotalPowerConsumedWatts": 107,
         "User": "andhingr"
     },
     {
@@ -2397,18 +2417,18 @@
         ],
         "JobId": 918005,
         "LoadAvg": [
-            "0.98"
+            "1.04"
         ],
         "MemUsed": [
-            "114.2G"
+            "112.3G"
         ],
         "PowerConsumedWatts": [
-            136
+            138
         ],
         "StartTime": "Wed Sep 11 02:03:03 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "114.2G",
-        "TotalPowerConsumedWatts": 136,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "112.3G",
+        "TotalPowerConsumedWatts": 138,
         "User": "andhingr"
     },
     {
@@ -2417,18 +2437,18 @@
         ],
         "JobId": 918007,
         "LoadAvg": [
-            "0.99"
+            "0.96"
         ],
         "MemUsed": [
-            "81.3G"
+            "83.4G"
         ],
         "PowerConsumedWatts": [
-            144
+            142
         ],
         "StartTime": "Wed Sep 11 06:19:39 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "81.3G",
-        "TotalPowerConsumedWatts": 144,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "83.4G",
+        "TotalPowerConsumedWatts": 142,
         "User": "andhingr"
     },
     {
@@ -2437,7 +2457,7 @@
         ],
         "JobId": 918493,
         "LoadAvg": [
-            "35.78"
+            "35.30"
         ],
         "MemUsed": [
             "8.9G"
@@ -2446,7 +2466,7 @@
             320
         ],
         "StartTime": "Tue Sep 10 16:49:33 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.9G",
         "TotalPowerConsumedWatts": 320,
         "User": "mgurusam"
@@ -2457,18 +2477,18 @@
         ],
         "JobId": 918529,
         "LoadAvg": [
-            "34.73"
+            "34.96"
         ],
         "MemUsed": [
             "5.6G"
         ],
         "PowerConsumedWatts": [
-            304
+            309
         ],
         "StartTime": "Tue Sep 10 16:49:34 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "5.6G",
-        "TotalPowerConsumedWatts": 304,
+        "TotalPowerConsumedWatts": 309,
         "User": "mgurusam"
     },
     {
@@ -2477,18 +2497,18 @@
         ],
         "JobId": 918544,
         "LoadAvg": [
-            "35.54"
+            "35.56"
         ],
         "MemUsed": [
             "8.3G"
         ],
         "PowerConsumedWatts": [
-            318
+            319
         ],
         "StartTime": "Tue Sep 10 16:49:49 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.3G",
-        "TotalPowerConsumedWatts": 318,
+        "TotalPowerConsumedWatts": 319,
         "User": "mgurusam"
     },
     {
@@ -2497,7 +2517,7 @@
         ],
         "JobId": 918580,
         "LoadAvg": [
-            "35.20"
+            "35.60"
         ],
         "MemUsed": [
             "7.2G"
@@ -2506,7 +2526,7 @@
             308
         ],
         "StartTime": "Tue Sep 10 16:49:50 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.2G",
         "TotalPowerConsumedWatts": 308,
         "User": "mgurusam"
@@ -2517,18 +2537,18 @@
         ],
         "JobId": 918695,
         "LoadAvg": [
-            "34.17"
+            "33.99"
         ],
         "MemUsed": [
             "35.8G"
         ],
         "PowerConsumedWatts": [
-            301
+            298
         ],
         "StartTime": "Tue Sep 10 17:01:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "35.8G",
-        "TotalPowerConsumedWatts": 301,
+        "TotalPowerConsumedWatts": 298,
         "User": "mgurusam"
     },
     {
@@ -2537,7 +2557,7 @@
         ],
         "JobId": 918696,
         "LoadAvg": [
-            "35.47"
+            "35.08"
         ],
         "MemUsed": [
             "10.5G"
@@ -2546,7 +2566,7 @@
             318
         ],
         "StartTime": "Tue Sep 10 17:02:05 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.5G",
         "TotalPowerConsumedWatts": 318,
         "User": "mgurusam"
@@ -2557,7 +2577,7 @@
         ],
         "JobId": 918732,
         "LoadAvg": [
-            "35.22"
+            "35.49"
         ],
         "MemUsed": [
             "7.7G"
@@ -2566,7 +2586,7 @@
             318
         ],
         "StartTime": "Tue Sep 10 17:02:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.7G",
         "TotalPowerConsumedWatts": 318,
         "User": "mgurusam"
@@ -2577,18 +2597,18 @@
         ],
         "JobId": 918768,
         "LoadAvg": [
-            "35.16"
+            "34.99"
         ],
         "MemUsed": [
             "9.7G"
         ],
         "PowerConsumedWatts": [
-            320
+            319
         ],
         "StartTime": "Tue Sep 10 17:02:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.7G",
-        "TotalPowerConsumedWatts": 320,
+        "TotalPowerConsumedWatts": 319,
         "User": "mgurusam"
     },
     {
@@ -2597,7 +2617,7 @@
         ],
         "JobId": 918800,
         "LoadAvg": [
-            "34.61"
+            "34.18"
         ],
         "MemUsed": [
             "11.6G"
@@ -2606,7 +2626,7 @@
             304
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.6G",
         "TotalPowerConsumedWatts": 304,
         "User": "mgurusam"
@@ -2617,17 +2637,17 @@
         ],
         "JobId": 918801,
         "LoadAvg": [
-            "34.10"
+            "34.27"
         ],
         "MemUsed": [
-            "5.8G"
+            "5.7G"
         ],
         "PowerConsumedWatts": [
             312
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.8G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.7G",
         "TotalPowerConsumedWatts": 312,
         "User": "mgurusam"
     },
@@ -2637,18 +2657,18 @@
         ],
         "JobId": 918803,
         "LoadAvg": [
-            "34.91"
+            "34.66"
         ],
         "MemUsed": [
             "6.7G"
         ],
         "PowerConsumedWatts": [
-            295
+            296
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.7G",
-        "TotalPowerConsumedWatts": 295,
+        "TotalPowerConsumedWatts": 296,
         "User": "mgurusam"
     },
     {
@@ -2657,17 +2677,17 @@
         ],
         "JobId": 918806,
         "LoadAvg": [
-            "34.40"
+            "33.78"
         ],
         "MemUsed": [
-            "6.7G"
+            "6.8G"
         ],
         "PowerConsumedWatts": [
             297
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "6.7G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "6.8G",
         "TotalPowerConsumedWatts": 297,
         "User": "mgurusam"
     },
@@ -2677,17 +2697,17 @@
         ],
         "JobId": 918812,
         "LoadAvg": [
-            "33.33"
+            "35.04"
         ],
         "MemUsed": [
-            "32.5G"
+            "33.3G"
         ],
         "PowerConsumedWatts": [
             314
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "32.5G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "33.3G",
         "TotalPowerConsumedWatts": 314,
         "User": "mgurusam"
     },
@@ -2697,17 +2717,17 @@
         ],
         "JobId": 918819,
         "LoadAvg": [
-            "35.20"
+            "35.53"
         ],
         "MemUsed": [
-            "5.8G"
+            "5.9G"
         ],
         "PowerConsumedWatts": [
             319
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.8G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.9G",
         "TotalPowerConsumedWatts": 319,
         "User": "mgurusam"
     },
@@ -2717,7 +2737,7 @@
         ],
         "JobId": 918838,
         "LoadAvg": [
-            "34.75"
+            "34.77"
         ],
         "MemUsed": [
             "11.9G"
@@ -2726,7 +2746,7 @@
             307
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "11.9G",
         "TotalPowerConsumedWatts": 307,
         "User": "mgurusam"
@@ -2737,7 +2757,7 @@
         ],
         "JobId": 918848,
         "LoadAvg": [
-            "35.41"
+            "35.33"
         ],
         "MemUsed": [
             "6.4G"
@@ -2746,7 +2766,7 @@
             316
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.4G",
         "TotalPowerConsumedWatts": 316,
         "User": "mgurusam"
@@ -2757,18 +2777,18 @@
         ],
         "JobId": 918884,
         "LoadAvg": [
-            "35.23"
+            "35.46"
         ],
         "MemUsed": [
             "6.5G"
         ],
         "PowerConsumedWatts": [
-            303
+            304
         ],
         "StartTime": "Tue Sep 10 17:07:51 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.5G",
-        "TotalPowerConsumedWatts": 303,
+        "TotalPowerConsumedWatts": 304,
         "User": "mgurusam"
     },
     {
@@ -2777,18 +2797,18 @@
         ],
         "JobId": 918901,
         "LoadAvg": [
-            "34.35"
+            "33.97"
         ],
         "MemUsed": [
             "5.4G"
         ],
         "PowerConsumedWatts": [
-            299
+            295
         ],
         "StartTime": "Tue Sep 10 17:12:33 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "5.4G",
-        "TotalPowerConsumedWatts": 299,
+        "TotalPowerConsumedWatts": 295,
         "User": "mgurusam"
     },
     {
@@ -2797,17 +2817,17 @@
         ],
         "JobId": 918902,
         "LoadAvg": [
-            "34.89"
+            "34.96"
         ],
         "MemUsed": [
-            "7.9G"
+            "8.0G"
         ],
         "PowerConsumedWatts": [
             312
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "7.9G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.0G",
         "TotalPowerConsumedWatts": 312,
         "User": "mgurusam"
     },
@@ -2817,18 +2837,18 @@
         ],
         "JobId": 918903,
         "LoadAvg": [
-            "34.81"
+            "33.99"
         ],
         "MemUsed": [
             "8.2G"
         ],
         "PowerConsumedWatts": [
-            308
+            309
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.2G",
-        "TotalPowerConsumedWatts": 308,
+        "TotalPowerConsumedWatts": 309,
         "User": "mgurusam"
     },
     {
@@ -2837,18 +2857,18 @@
         ],
         "JobId": 918906,
         "LoadAvg": [
-            "35.14"
+            "34.71"
         ],
         "MemUsed": [
             "6.1G"
         ],
         "PowerConsumedWatts": [
-            312
+            314
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.1G",
-        "TotalPowerConsumedWatts": 312,
+        "TotalPowerConsumedWatts": 314,
         "User": "mgurusam"
     },
     {
@@ -2857,7 +2877,7 @@
         ],
         "JobId": 918915,
         "LoadAvg": [
-            "35.03"
+            "35.04"
         ],
         "MemUsed": [
             "9.4G"
@@ -2866,7 +2886,7 @@
             314
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.4G",
         "TotalPowerConsumedWatts": 314,
         "User": "mgurusam"
@@ -2877,18 +2897,18 @@
         ],
         "JobId": 918925,
         "LoadAvg": [
-            "34.98"
+            "35.23"
         ],
         "MemUsed": [
-            "7.5G"
+            "7.6G"
         ],
         "PowerConsumedWatts": [
-            313
+            315
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "7.5G",
-        "TotalPowerConsumedWatts": 313,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "7.6G",
+        "TotalPowerConsumedWatts": 315,
         "User": "mgurusam"
     },
     {
@@ -2897,7 +2917,7 @@
         ],
         "JobId": 918935,
         "LoadAvg": [
-            "34.52"
+            "35.17"
         ],
         "MemUsed": [
             "8.9G"
@@ -2906,7 +2926,7 @@
             309
         ],
         "StartTime": "Tue Sep 10 17:12:48 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.9G",
         "TotalPowerConsumedWatts": 309,
         "User": "mgurusam"
@@ -2917,7 +2937,7 @@
         ],
         "JobId": 918955,
         "LoadAvg": [
-            "35.17"
+            "35.16"
         ],
         "MemUsed": [
             "14.0G"
@@ -2926,7 +2946,7 @@
             317
         ],
         "StartTime": "Tue Sep 10 17:12:54 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "14.0G",
         "TotalPowerConsumedWatts": 317,
         "User": "mgurusam"
@@ -2937,7 +2957,7 @@
         ],
         "JobId": 918985,
         "LoadAvg": [
-            "34.71"
+            "34.82"
         ],
         "MemUsed": [
             "9.2G"
@@ -2946,7 +2966,7 @@
             319
         ],
         "StartTime": "Tue Sep 10 17:12:54 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "9.2G",
         "TotalPowerConsumedWatts": 319,
         "User": "mgurusam"
@@ -2958,21 +2978,21 @@
         ],
         "JobId": 919010,
         "LoadAvg": [
-            "35.06",
-            "35.23"
+            "34.98",
+            "35.19"
         ],
         "MemUsed": [
-            "18.7G",
-            "22.7G"
+            "25.4G",
+            "29.4G"
         ],
         "PowerConsumedWatts": [
-            322,
-            322
+            323,
+            323
         ],
         "StartTime": "Tue Sep 10 17:35:59 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "41.4G",
-        "TotalPowerConsumedWatts": 644,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "54.8G",
+        "TotalPowerConsumedWatts": 646,
         "User": "msanati"
     },
     {
@@ -2981,18 +3001,18 @@
         ],
         "JobId": 919020,
         "LoadAvg": [
-            "34.10"
+            "32.87"
         ],
         "MemUsed": [
-            "15.0G"
+            "15.2G"
         ],
         "PowerConsumedWatts": [
-            292
+            138
         ],
         "StartTime": "Tue Sep 10 17:58:53 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "15.0G",
-        "TotalPowerConsumedWatts": 292,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "15.2G",
+        "TotalPowerConsumedWatts": 138,
         "User": "wan39502"
     },
     {
@@ -3001,17 +3021,17 @@
         ],
         "JobId": 919072,
         "LoadAvg": [
-            "36.07"
+            "36.09"
         ],
         "MemUsed": [
-            "104.9G"
+            "69.1G"
         ],
         "PowerConsumedWatts": [
             331
         ],
         "StartTime": "Tue Sep 10 20:44:55 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "104.9G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "69.1G",
         "TotalPowerConsumedWatts": 331,
         "User": "sisadegh"
     },
@@ -3021,7 +3041,7 @@
         ],
         "JobId": 919089,
         "LoadAvg": [
-            "30.32"
+            "31.81"
         ],
         "MemUsed": [
             "3.9G"
@@ -3030,7 +3050,7 @@
             251
         ],
         "StartTime": "Tue Sep 10 22:04:38 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "3.9G",
         "TotalPowerConsumedWatts": 251,
         "User": "rfariasc"
@@ -3041,18 +3061,18 @@
         ],
         "JobId": 919091,
         "LoadAvg": [
-            "14.03"
+            "13.99"
         ],
         "MemUsed": [
-            "16.4G"
+            "19.3G"
         ],
         "PowerConsumedWatts": [
-            187
+            188
         ],
         "StartTime": "Tue Sep 10 22:29:50 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "16.4G",
-        "TotalPowerConsumedWatts": 187,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "19.3G",
+        "TotalPowerConsumedWatts": 188,
         "User": "johruska"
     },
     {
@@ -3061,18 +3081,18 @@
         ],
         "JobId": 919096,
         "LoadAvg": [
-            "34.70"
+            "35.06"
         ],
         "MemUsed": [
             "4.3G"
         ],
         "PowerConsumedWatts": [
-            231
+            232
         ],
         "StartTime": "Tue Sep 10 22:50:00 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "4.3G",
-        "TotalPowerConsumedWatts": 231,
+        "TotalPowerConsumedWatts": 232,
         "User": "luccorte"
     },
     {
@@ -3081,18 +3101,18 @@
         ],
         "JobId": 919102,
         "LoadAvg": [
-            "16.02"
+            "16.00"
         ],
         "MemUsed": [
-            "19.7G"
+            "20.2G"
         ],
         "PowerConsumedWatts": [
-            200
+            201
         ],
         "StartTime": "Tue Sep 10 23:22:45 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "19.7G",
-        "TotalPowerConsumedWatts": 200,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "20.2G",
+        "TotalPowerConsumedWatts": 201,
         "User": "scalandr"
     },
     {
@@ -3103,24 +3123,24 @@
         ],
         "JobId": 919110,
         "LoadAvg": [
-            "34.22",
-            "33.81",
-            "33.13"
+            "33.91",
+            "33.38",
+            "32.90"
         ],
         "MemUsed": [
-            "46.1G",
-            "49.1G",
+            "47.0G",
+            "49.6G",
             "47.0G"
         ],
         "PowerConsumedWatts": [
-            198,
-            226,
-            270
+            274,
+            275,
+            268
         ],
         "StartTime": "Wed Sep 11 11:13:28 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "142.2G",
-        "TotalPowerConsumedWatts": 694,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "143.6G",
+        "TotalPowerConsumedWatts": 817,
         "User": "aaljadda"
     },
     {
@@ -3129,163 +3149,19 @@
         ],
         "JobId": 919112,
         "LoadAvg": [
-            "19.82"
+            "24.20"
         ],
         "MemUsed": [
-            "5.2G"
+            "5.3G"
         ],
         "PowerConsumedWatts": [
-            239
+            169
         ],
         "StartTime": "Wed Sep 11 06:44:19 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.2G",
-        "TotalPowerConsumedWatts": 239,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.3G",
+        "TotalPowerConsumedWatts": 169,
         "User": "jjerke"
-    },
-    {
-        "ExecHosts": [
-            "10.101.1.8",
-            "10.101.9.41"
-        ],
-        "JobId": 919129,
-        "LoadAvg": [
-            "38.97",
-            "39.07"
-        ],
-        "MemUsed": [
-            "34.1G",
-            "31.5G"
-        ],
-        "PowerConsumedWatts": [
-            239,
-            232
-        ],
-        "StartTime": "Wed Sep 11 12:25:53 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "65.6G",
-        "TotalPowerConsumedWatts": 471,
-        "User": "uozuguze"
-    },
-    {
-        "ExecHosts": [
-            "10.101.7.14",
-            "10.101.8.59"
-        ],
-        "JobId": 919130,
-        "LoadAvg": [
-            "39.10",
-            "39.46"
-        ],
-        "MemUsed": [
-            "31.7G",
-            "31.4G"
-        ],
-        "PowerConsumedWatts": [
-            251,
-            286
-        ],
-        "StartTime": "Wed Sep 11 12:31:56 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "63.1G",
-        "TotalPowerConsumedWatts": 537,
-        "User": "uozuguze"
-    },
-    {
-        "ExecHosts": [
-            "10.101.1.6",
-            "10.101.2.11"
-        ],
-        "JobId": 919131,
-        "LoadAvg": [
-            "38.84",
-            "39.21"
-        ],
-        "MemUsed": [
-            "30.8G",
-            "30.5G"
-        ],
-        "PowerConsumedWatts": [
-            309,
-            291
-        ],
-        "StartTime": "Wed Sep 11 12:31:56 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "61.3G",
-        "TotalPowerConsumedWatts": 600,
-        "User": "uozuguze"
-    },
-    {
-        "ExecHosts": [
-            "10.101.2.4",
-            "10.101.3.15"
-        ],
-        "JobId": 919132,
-        "LoadAvg": [
-            "38.89",
-            "39.31"
-        ],
-        "MemUsed": [
-            "31.7G",
-            "31.1G"
-        ],
-        "PowerConsumedWatts": [
-            263,
-            259
-        ],
-        "StartTime": "Wed Sep 11 12:32:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "62.8G",
-        "TotalPowerConsumedWatts": 522,
-        "User": "uozuguze"
-    },
-    {
-        "ExecHosts": [
-            "10.101.8.55",
-            "10.101.9.60"
-        ],
-        "JobId": 919133,
-        "LoadAvg": [
-            "37.99",
-            "38.70"
-        ],
-        "MemUsed": [
-            "30.2G",
-            "31.1G"
-        ],
-        "PowerConsumedWatts": [
-            289,
-            307
-        ],
-        "StartTime": "Wed Sep 11 12:32:05 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "61.3G",
-        "TotalPowerConsumedWatts": 596,
-        "User": "uozuguze"
-    },
-    {
-        "ExecHosts": [
-            "10.101.2.34",
-            "10.101.5.8"
-        ],
-        "JobId": 919134,
-        "LoadAvg": [
-            "39.96",
-            "38.46"
-        ],
-        "MemUsed": [
-            "29.5G",
-            "33.6G"
-        ],
-        "PowerConsumedWatts": [
-            247,
-            268
-        ],
-        "StartTime": "Wed Sep 11 12:32:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "63.1G",
-        "TotalPowerConsumedWatts": 515,
-        "User": "uozuguze"
     },
     {
         "ExecHosts": [
@@ -3294,21 +3170,21 @@
         ],
         "JobId": 919135,
         "LoadAvg": [
-            "38.44",
-            "38.14"
+            "37.80",
+            "38.47"
         ],
         "MemUsed": [
-            "24.6G",
-            "25.5G"
+            "26.0G",
+            "26.8G"
         ],
         "PowerConsumedWatts": [
             290,
-            307
+            314
         ],
         "StartTime": "Wed Sep 11 13:16:42 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "50.1G",
-        "TotalPowerConsumedWatts": 597,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "52.8G",
+        "TotalPowerConsumedWatts": 604,
         "User": "uozuguze"
     },
     {
@@ -3318,21 +3194,21 @@
         ],
         "JobId": 919136,
         "LoadAvg": [
-            "39.02",
-            "39.10"
+            "38.48",
+            "39.76"
         ],
         "MemUsed": [
-            "28.0G",
-            "26.9G"
+            "29.5G",
+            "28.4G"
         ],
         "PowerConsumedWatts": [
-            328,
-            245
+            330,
+            244
         ],
         "StartTime": "Wed Sep 11 13:17:46 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "54.9G",
-        "TotalPowerConsumedWatts": 573,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "57.9G",
+        "TotalPowerConsumedWatts": 574,
         "User": "uozuguze"
     },
     {
@@ -3342,21 +3218,21 @@
         ],
         "JobId": 919137,
         "LoadAvg": [
-            "38.84",
-            "39.00"
+            "38.46",
+            "38.74"
         ],
         "MemUsed": [
-            "25.4G",
-            "24.0G"
+            "27.2G",
+            "25.8G"
         ],
         "PowerConsumedWatts": [
-            321,
-            294
+            334,
+            316
         ],
         "StartTime": "Wed Sep 11 13:19:56 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "49.4G",
-        "TotalPowerConsumedWatts": 615,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "53.0G",
+        "TotalPowerConsumedWatts": 650,
         "User": "uozuguze"
     },
     {
@@ -3366,21 +3242,21 @@
         ],
         "JobId": 919138,
         "LoadAvg": [
-            "38.78",
-            "39.70"
+            "38.47",
+            "38.74"
         ],
         "MemUsed": [
-            "18.3G",
-            "19.1G"
+            "19.7G",
+            "20.9G"
         ],
         "PowerConsumedWatts": [
-            247,
-            251
+            326,
+            295
         ],
         "StartTime": "Wed Sep 11 13:47:23 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "37.4G",
-        "TotalPowerConsumedWatts": 498,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "40.6G",
+        "TotalPowerConsumedWatts": 621,
         "User": "uozuguze"
     },
     {
@@ -3390,21 +3266,21 @@
         ],
         "JobId": 919139,
         "LoadAvg": [
-            "38.28",
-            "37.98"
+            "39.53",
+            "39.50"
         ],
         "MemUsed": [
-            "16.7G",
-            "28.9G"
+            "18.5G",
+            "30.2G"
         ],
         "PowerConsumedWatts": [
-            288,
-            246
+            243,
+            270
         ],
         "StartTime": "Wed Sep 11 13:57:43 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "45.6G",
-        "TotalPowerConsumedWatts": 534,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "48.7G",
+        "TotalPowerConsumedWatts": 513,
         "User": "uozuguze"
     },
     {
@@ -3414,21 +3290,237 @@
         ],
         "JobId": 919140,
         "LoadAvg": [
-            "38.78",
-            "39.08"
+            "38.46",
+            "39.72"
         ],
         "MemUsed": [
-            "14.7G",
+            "16.4G",
+            "17.9G"
+        ],
+        "PowerConsumedWatts": [
+            303,
+            234
+        ],
+        "StartTime": "Wed Sep 11 14:04:13 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "34.3G",
+        "TotalPowerConsumedWatts": 537,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.1.8",
+            "10.101.3.15"
+        ],
+        "JobId": 919141,
+        "LoadAvg": [
+            "36.34",
+            "39.54"
+        ],
+        "MemUsed": [
+            "16.5G",
+            "13.3G"
+        ],
+        "PowerConsumedWatts": [
+            303,
+            276
+        ],
+        "StartTime": "Wed Sep 11 14:31:10 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "29.8G",
+        "TotalPowerConsumedWatts": 579,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.2.4",
+            "10.101.5.8"
+        ],
+        "JobId": 919142,
+        "LoadAvg": [
+            "38.01",
+            "38.13"
+        ],
+        "MemUsed": [
+            "16.3G",
+            "15.2G"
+        ],
+        "PowerConsumedWatts": [
+            330,
+            290
+        ],
+        "StartTime": "Wed Sep 11 14:31:28 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "31.5G",
+        "TotalPowerConsumedWatts": 620,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.2.34",
+            "10.101.7.43"
+        ],
+        "JobId": 919143,
+        "LoadAvg": [
+            "34.39",
+            "34.09"
+        ],
+        "MemUsed": [
+            "13.8G",
             "16.2G"
         ],
         "PowerConsumedWatts": [
-            284,
-            306
+            287,
+            321
         ],
-        "StartTime": "Wed Sep 11 14:04:13 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "StartTime": "Wed Sep 11 14:33:27 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "30.0G",
+        "TotalPowerConsumedWatts": 608,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.10.32",
+            "10.101.8.2"
+        ],
+        "JobId": 919144,
+        "LoadAvg": [
+            "36.41",
+            "34.06"
+        ],
+        "MemUsed": [
+            "14.5G",
+            "14.8G"
+        ],
+        "PowerConsumedWatts": [
+            299,
+            319
+        ],
+        "StartTime": "Wed Sep 11 14:33:17 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "29.3G",
+        "TotalPowerConsumedWatts": 618,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.1.1",
+            "10.101.3.28"
+        ],
+        "JobId": 919145,
+        "LoadAvg": [
+            "34.10",
+            "34.22"
+        ],
+        "MemUsed": [
+            "13.9G",
+            "17.0G"
+        ],
+        "PowerConsumedWatts": [
+            315,
+            276
+        ],
+        "StartTime": "Wed Sep 11 14:33:51 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "30.9G",
-        "TotalPowerConsumedWatts": 590,
+        "TotalPowerConsumedWatts": 591,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.4.47",
+            "10.101.8.45"
+        ],
+        "JobId": 919146,
+        "LoadAvg": [
+            "32.04",
+            "31.03"
+        ],
+        "MemUsed": [
+            "13.4G",
+            "16.6G"
+        ],
+        "PowerConsumedWatts": [
+            270,
+            292
+        ],
+        "StartTime": "Wed Sep 11 14:34:12 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "30.0G",
+        "TotalPowerConsumedWatts": 562,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.1.29",
+            "10.101.6.14"
+        ],
+        "JobId": 919147,
+        "LoadAvg": [
+            "30.17",
+            "29.61"
+        ],
+        "MemUsed": [
+            "14.5G",
+            "13.3G"
+        ],
+        "PowerConsumedWatts": [
+            231,
+            242
+        ],
+        "StartTime": "Wed Sep 11 14:34:56 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "27.8G",
+        "TotalPowerConsumedWatts": 473,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.10.43",
+            "10.101.9.60"
+        ],
+        "JobId": 919148,
+        "LoadAvg": [
+            "12.66",
+            "14.81"
+        ],
+        "MemUsed": [
+            "10.5G",
+            "3.4G"
+        ],
+        "PowerConsumedWatts": [
+            337,
+            282
+        ],
+        "StartTime": "Wed Sep 11 14:38:12 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "13.9G",
+        "TotalPowerConsumedWatts": 619,
+        "User": "uozuguze"
+    },
+    {
+        "ExecHosts": [
+            "10.101.1.6",
+            "10.101.8.55"
+        ],
+        "JobId": 919149,
+        "LoadAvg": [
+            "17.16",
+            "16.81"
+        ],
+        "MemUsed": [
+            "9.4G",
+            "10.3G"
+        ],
+        "PowerConsumedWatts": [
+            325,
+            319
+        ],
+        "StartTime": "Wed Sep 11 14:38:29 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "19.7G",
+        "TotalPowerConsumedWatts": 644,
         "User": "uozuguze"
     },
     {
@@ -3437,18 +3529,18 @@
         ],
         "JobId": 919530,
         "LoadAvg": [
-            "34.37"
+            "34.31"
         ],
         "MemUsed": [
             "7.8G"
         ],
         "PowerConsumedWatts": [
-            290
+            291
         ],
         "StartTime": "Wed Sep 11 08:27:11 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.8G",
-        "TotalPowerConsumedWatts": 290,
+        "TotalPowerConsumedWatts": 291,
         "User": "aosmansk"
     },
     {
@@ -3457,18 +3549,18 @@
         ],
         "JobId": 920045,
         "LoadAvg": [
-            "34.26"
+            "34.65"
         ],
         "MemUsed": [
             "7.0G"
         ],
         "PowerConsumedWatts": [
-            298
+            296
         ],
         "StartTime": "Wed Sep 11 09:29:07 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.0G",
-        "TotalPowerConsumedWatts": 298,
+        "TotalPowerConsumedWatts": 296,
         "User": "johruska"
     },
     {
@@ -3477,18 +3569,18 @@
         ],
         "JobId": 920046,
         "LoadAvg": [
-            "13.98"
+            "13.99"
         ],
         "MemUsed": [
             "4.8G"
         ],
         "PowerConsumedWatts": [
-            198
+            197
         ],
         "StartTime": "Wed Sep 11 09:36:03 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "4.8G",
-        "TotalPowerConsumedWatts": 198,
+        "TotalPowerConsumedWatts": 197,
         "User": "johruska"
     },
     {
@@ -3497,18 +3589,18 @@
         ],
         "JobId": 920048,
         "LoadAvg": [
-            "14.09"
+            "14.00"
         ],
         "MemUsed": [
-            "26.6G"
+            "35.2G"
         ],
         "PowerConsumedWatts": [
-            199
+            197
         ],
         "StartTime": "Wed Sep 11 09:52:02 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "26.6G",
-        "TotalPowerConsumedWatts": 199,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "35.2G",
+        "TotalPowerConsumedWatts": 197,
         "User": "johruska"
     },
     {
@@ -3520,23 +3612,23 @@
         "JobId": 920094,
         "LoadAvg": [
             "27.68",
-            "34.47",
-            "35.07"
+            "34.99",
+            "34.60"
         ],
         "MemUsed": [
-            "17.5G",
-            "22.9G",
-            "21.8G"
+            "18.1G",
+            "23.7G",
+            "22.5G"
         ],
         "PowerConsumedWatts": [
-            228,
-            258,
-            264
+            246,
+            277,
+            281
         ],
         "StartTime": "Wed Sep 11 11:43:23 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "62.2G",
-        "TotalPowerConsumedWatts": 750,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "64.3G",
+        "TotalPowerConsumedWatts": 804,
         "User": "vicesali"
     },
     {
@@ -3545,18 +3637,18 @@
         ],
         "JobId": 920097,
         "LoadAvg": [
-            "34.11"
+            "33.60"
         ],
         "MemUsed": [
-            "8.3G"
+            "8.2G"
         ],
         "PowerConsumedWatts": [
-            304
+            300
         ],
         "StartTime": "Wed Sep 11 10:05:15 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "8.3G",
-        "TotalPowerConsumedWatts": 304,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.2G",
+        "TotalPowerConsumedWatts": 300,
         "User": "qiu25856"
     },
     {
@@ -3565,7 +3657,7 @@
         ],
         "JobId": 920142,
         "LoadAvg": [
-            "33.84"
+            "34.33"
         ],
         "MemUsed": [
             "12.4G"
@@ -3574,7 +3666,7 @@
             298
         ],
         "StartTime": "Wed Sep 11 10:12:20 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "12.4G",
         "TotalPowerConsumedWatts": 298,
         "User": "aucolema"
@@ -3585,18 +3677,18 @@
         ],
         "JobId": 920143,
         "LoadAvg": [
-            "34.29"
+            "34.08"
         ],
         "MemUsed": [
-            "13.0G"
+            "12.9G"
         ],
         "PowerConsumedWatts": [
-            321
+            317
         ],
         "StartTime": "Wed Sep 11 10:13:20 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "13.0G",
-        "TotalPowerConsumedWatts": 321,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "12.9G",
+        "TotalPowerConsumedWatts": 317,
         "User": "aucolema"
     },
     {
@@ -3605,18 +3697,18 @@
         ],
         "JobId": 920144,
         "LoadAvg": [
-            "33.15"
+            "33.12"
         ],
         "MemUsed": [
-            "21.5G"
+            "21.6G"
         ],
         "PowerConsumedWatts": [
-            309
+            308
         ],
         "StartTime": "Wed Sep 11 10:13:50 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "21.5G",
-        "TotalPowerConsumedWatts": 309,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "21.6G",
+        "TotalPowerConsumedWatts": 308,
         "User": "aucolema"
     },
     {
@@ -3626,21 +3718,45 @@
         ],
         "JobId": 920149,
         "LoadAvg": [
-            "22.09",
-            "43.70"
+            "22.89",
+            "46.27"
         ],
         "MemUsed": [
-            "5.8G",
-            "10.3G"
+            "5.9G",
+            "10.1G"
         ],
         "PowerConsumedWatts": [
-            156,
-            196
+            161,
+            190
         ],
         "StartTime": "Wed Sep 11 11:12:50 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "16.1G",
-        "TotalPowerConsumedWatts": 352,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "16.0G",
+        "TotalPowerConsumedWatts": 351,
+        "User": "juandomi"
+    },
+    {
+        "ExecHosts": [
+            "10.101.2.11",
+            "10.101.8.59"
+        ],
+        "JobId": 920150,
+        "LoadAvg": [
+            "15.03",
+            "17.67"
+        ],
+        "MemUsed": [
+            "4.8G",
+            "4.4G"
+        ],
+        "PowerConsumedWatts": [
+            165,
+            197
+        ],
+        "StartTime": "Wed Sep 11 14:38:29 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.2G",
+        "TotalPowerConsumedWatts": 362,
         "User": "juandomi"
     },
     {
@@ -3649,18 +3765,18 @@
         ],
         "JobId": 920202,
         "LoadAvg": [
-            "34.38"
+            "34.37"
         ],
         "MemUsed": [
-            "10.2G"
+            "10.1G"
         ],
         "PowerConsumedWatts": [
-            305
+            304
         ],
         "StartTime": "Wed Sep 11 11:11:32 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "10.2G",
-        "TotalPowerConsumedWatts": 305,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "10.1G",
+        "TotalPowerConsumedWatts": 304,
         "User": "rmanser"
     },
     {
@@ -3669,18 +3785,18 @@
         ],
         "JobId": 920203,
         "LoadAvg": [
-            "35.80"
+            "35.87"
         ],
         "MemUsed": [
             "33.2G"
         ],
         "PowerConsumedWatts": [
-            313
+            316
         ],
         "StartTime": "Wed Sep 11 11:18:24 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "33.2G",
-        "TotalPowerConsumedWatts": 313,
+        "TotalPowerConsumedWatts": 316,
         "User": "rmanser"
     },
     {
@@ -3689,18 +3805,18 @@
         ],
         "JobId": 920204,
         "LoadAvg": [
-            "35.83"
+            "35.88"
         ],
         "MemUsed": [
-            "33.1G"
+            "33.2G"
         ],
         "PowerConsumedWatts": [
-            328
+            329
         ],
         "StartTime": "Wed Sep 11 11:27:24 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "33.1G",
-        "TotalPowerConsumedWatts": 328,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "33.2G",
+        "TotalPowerConsumedWatts": 329,
         "User": "rmanser"
     },
     {
@@ -3709,17 +3825,17 @@
         ],
         "JobId": 920216,
         "LoadAvg": [
-            "35.25"
+            "35.34"
         ],
         "MemUsed": [
-            "8.4G"
+            "8.3G"
         ],
         "PowerConsumedWatts": [
             296
         ],
         "StartTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "8.4G",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.3G",
         "TotalPowerConsumedWatts": 296,
         "User": "mgurusam"
     },
@@ -3729,7 +3845,7 @@
         ],
         "JobId": 920242,
         "LoadAvg": [
-            "35.44"
+            "35.75"
         ],
         "MemUsed": [
             "6.8G"
@@ -3738,7 +3854,7 @@
             313
         ],
         "StartTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.8G",
         "TotalPowerConsumedWatts": 313,
         "User": "mgurusam"
@@ -3749,7 +3865,7 @@
         ],
         "JobId": 920260,
         "LoadAvg": [
-            "34.49"
+            "35.05"
         ],
         "MemUsed": [
             "7.5G"
@@ -3758,7 +3874,7 @@
             326
         ],
         "StartTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "7.5G",
         "TotalPowerConsumedWatts": 326,
         "User": "mgurusam"
@@ -3769,18 +3885,18 @@
         ],
         "JobId": 920300,
         "LoadAvg": [
-            "35.44"
+            "35.14"
         ],
         "MemUsed": [
             "5.9G"
         ],
         "PowerConsumedWatts": [
-            319
+            320
         ],
         "StartTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "5.9G",
-        "TotalPowerConsumedWatts": 319,
+        "TotalPowerConsumedWatts": 320,
         "User": "mgurusam"
     },
     {
@@ -3789,7 +3905,7 @@
         ],
         "JobId": 920340,
         "LoadAvg": [
-            "35.26"
+            "35.01"
         ],
         "MemUsed": [
             "6.6G"
@@ -3798,7 +3914,7 @@
             320
         ],
         "StartTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.6G",
         "TotalPowerConsumedWatts": 320,
         "User": "mgurusam"
@@ -3809,7 +3925,7 @@
         ],
         "JobId": 920365,
         "LoadAvg": [
-            "35.36"
+            "35.27"
         ],
         "MemUsed": [
             "6.7G"
@@ -3818,7 +3934,7 @@
             313
         ],
         "StartTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.7G",
         "TotalPowerConsumedWatts": 313,
         "User": "mgurusam"
@@ -3829,18 +3945,18 @@
         ],
         "JobId": 920390,
         "LoadAvg": [
-            "35.11"
+            "35.05"
         ],
         "MemUsed": [
             "8.8G"
         ],
         "PowerConsumedWatts": [
-            286
+            288
         ],
         "StartTime": "Wed Sep 11 11:23:57 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.8G",
-        "TotalPowerConsumedWatts": 286,
+        "TotalPowerConsumedWatts": 288,
         "User": "mgurusam"
     },
     {
@@ -3849,18 +3965,18 @@
         ],
         "JobId": 920394,
         "LoadAvg": [
-            "34.57"
+            "34.85"
         ],
         "MemUsed": [
-            "15.5G"
+            "15.6G"
         ],
         "PowerConsumedWatts": [
-            298
+            302
         ],
         "StartTime": "Wed Sep 11 11:42:07 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "15.5G",
-        "TotalPowerConsumedWatts": 298,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "15.6G",
+        "TotalPowerConsumedWatts": 302,
         "User": "mgurusam"
     },
     {
@@ -3869,18 +3985,18 @@
         ],
         "JobId": 920395,
         "LoadAvg": [
-            "35.07"
+            "34.89"
         ],
         "MemUsed": [
-            "13.1G"
+            "13.0G"
         ],
         "PowerConsumedWatts": [
-            299
+            298
         ],
         "StartTime": "Wed Sep 11 11:42:57 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "13.1G",
-        "TotalPowerConsumedWatts": 299,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "13.0G",
+        "TotalPowerConsumedWatts": 298,
         "User": "mgurusam"
     },
     {
@@ -3889,7 +4005,7 @@
         ],
         "JobId": 920396,
         "LoadAvg": [
-            "34.31"
+            "33.80"
         ],
         "MemUsed": [
             "13.8G"
@@ -3898,7 +4014,7 @@
             305
         ],
         "StartTime": "Wed Sep 11 11:48:05 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "13.8G",
         "TotalPowerConsumedWatts": 305,
         "User": "mgurusam"
@@ -3909,18 +4025,18 @@
         ],
         "JobId": 920399,
         "LoadAvg": [
-            "26.17"
+            "25.88"
         ],
         "MemUsed": [
-            "21.2G"
+            "21.9G"
         ],
         "PowerConsumedWatts": [
-            269
+            267
         ],
         "StartTime": "Wed Sep 11 11:50:40 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "21.2G",
-        "TotalPowerConsumedWatts": 269,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "21.9G",
+        "TotalPowerConsumedWatts": 267,
         "User": "mgurusam"
     },
     {
@@ -3929,18 +4045,18 @@
         ],
         "JobId": 920406,
         "LoadAvg": [
-            "33.65"
+            "34.49"
         ],
         "MemUsed": [
-            "11.4G"
+            "10.9G"
         ],
         "PowerConsumedWatts": [
-            311
+            312
         ],
         "StartTime": "Wed Sep 11 11:24:49 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "11.4G",
-        "TotalPowerConsumedWatts": 311,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "10.9G",
+        "TotalPowerConsumedWatts": 312,
         "User": "rmanser"
     },
     {
@@ -3949,18 +4065,18 @@
         ],
         "JobId": 920408,
         "LoadAvg": [
-            "34.96"
+            "34.55"
         ],
         "MemUsed": [
-            "12.9G"
+            "13.0G"
         ],
         "PowerConsumedWatts": [
-            307
+            310
         ],
         "StartTime": "Wed Sep 11 12:15:06 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "12.9G",
-        "TotalPowerConsumedWatts": 307,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "13.0G",
+        "TotalPowerConsumedWatts": 310,
         "User": "mgurusam"
     },
     {
@@ -3969,18 +4085,18 @@
         ],
         "JobId": 920410,
         "LoadAvg": [
-            "34.13"
+            "35.08"
         ],
         "MemUsed": [
             "16.5G"
         ],
         "PowerConsumedWatts": [
-            303
+            308
         ],
         "StartTime": "Wed Sep 11 12:20:09 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "16.5G",
-        "TotalPowerConsumedWatts": 303,
+        "TotalPowerConsumedWatts": 308,
         "User": "mgurusam"
     },
     {
@@ -3989,18 +4105,18 @@
         ],
         "JobId": 920411,
         "LoadAvg": [
-            "17.06"
+            "18.42"
         ],
         "MemUsed": [
-            "27.3G"
+            "27.2G"
         ],
         "PowerConsumedWatts": [
-            239
+            228
         ],
         "StartTime": "Wed Sep 11 12:20:19 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "27.3G",
-        "TotalPowerConsumedWatts": 239,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "27.2G",
+        "TotalPowerConsumedWatts": 228,
         "User": "mgurusam"
     },
     {
@@ -4009,18 +4125,18 @@
         ],
         "JobId": 920413,
         "LoadAvg": [
-            "17.93"
+            "18.76"
         ],
         "MemUsed": [
-            "20.9G"
+            "22.4G"
         ],
         "PowerConsumedWatts": [
-            225
+            244
         ],
         "StartTime": "Wed Sep 11 12:20:38 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "20.9G",
-        "TotalPowerConsumedWatts": 225,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "22.4G",
+        "TotalPowerConsumedWatts": 244,
         "User": "mgurusam"
     },
     {
@@ -4029,18 +4145,18 @@
         ],
         "JobId": 920414,
         "LoadAvg": [
-            "35.15"
+            "34.71"
         ],
         "MemUsed": [
             "13.0G"
         ],
         "PowerConsumedWatts": [
-            295
+            296
         ],
         "StartTime": "Wed Sep 11 12:20:46 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "13.0G",
-        "TotalPowerConsumedWatts": 295,
+        "TotalPowerConsumedWatts": 296,
         "User": "mgurusam"
     },
     {
@@ -4049,18 +4165,18 @@
         ],
         "JobId": 920416,
         "LoadAvg": [
-            "20.90"
+            "17.69"
         ],
         "MemUsed": [
-            "25.0G"
+            "22.6G"
         ],
         "PowerConsumedWatts": [
-            220
+            207
         ],
         "StartTime": "Wed Sep 11 12:20:57 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "25.0G",
-        "TotalPowerConsumedWatts": 220,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "22.6G",
+        "TotalPowerConsumedWatts": 207,
         "User": "mgurusam"
     },
     {
@@ -4069,18 +4185,38 @@
         ],
         "JobId": 920437,
         "LoadAvg": [
-            "33.18"
+            "32.38"
         ],
         "MemUsed": [
-            "9.2G"
+            "8.5G"
         ],
         "PowerConsumedWatts": [
-            302
+            306
         ],
         "StartTime": "Wed Sep 11 12:27:19 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "9.2G",
-        "TotalPowerConsumedWatts": 302,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "8.5G",
+        "TotalPowerConsumedWatts": 306,
+        "User": "mgurusam"
+    },
+    {
+        "ExecHosts": [
+            "10.101.2.56"
+        ],
+        "JobId": 920438,
+        "LoadAvg": [
+            "29.56"
+        ],
+        "MemUsed": [
+            "9.6G"
+        ],
+        "PowerConsumedWatts": [
+            287
+        ],
+        "StartTime": "Wed Sep 11 12:32:05 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "9.6G",
+        "TotalPowerConsumedWatts": 287,
         "User": "mgurusam"
     },
     {
@@ -4089,18 +4225,18 @@
         ],
         "JobId": 920445,
         "LoadAvg": [
-            "34.76"
+            "34.60"
         ],
         "MemUsed": [
             "8.4G"
         ],
         "PowerConsumedWatts": [
-            304
+            307
         ],
         "StartTime": "Wed Sep 11 12:40:01 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "8.4G",
-        "TotalPowerConsumedWatts": 304,
+        "TotalPowerConsumedWatts": 307,
         "User": "mgurusam"
     },
     {
@@ -4109,7 +4245,7 @@
         ],
         "JobId": 920446,
         "LoadAvg": [
-            "35.42"
+            "35.01"
         ],
         "MemUsed": [
             "13.7G"
@@ -4118,7 +4254,7 @@
             317
         ],
         "StartTime": "Wed Sep 11 12:40:25 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "13.7G",
         "TotalPowerConsumedWatts": 317,
         "User": "mgurusam"
@@ -4129,18 +4265,18 @@
         ],
         "JobId": 920469,
         "LoadAvg": [
-            "34.83"
+            "34.61"
         ],
         "MemUsed": [
             "14.0G"
         ],
         "PowerConsumedWatts": [
-            298
+            300
         ],
         "StartTime": "Wed Sep 11 13:11:17 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "14.0G",
-        "TotalPowerConsumedWatts": 298,
+        "TotalPowerConsumedWatts": 300,
         "User": "mgurusam"
     },
     {
@@ -4149,7 +4285,7 @@
         ],
         "JobId": 920532,
         "LoadAvg": [
-            "35.43"
+            "35.31"
         ],
         "MemUsed": [
             "10.5G"
@@ -4158,7 +4294,7 @@
             307
         ],
         "StartTime": "Wed Sep 11 13:22:15 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "10.5G",
         "TotalPowerConsumedWatts": 307,
         "User": "mgurusam"
@@ -4169,18 +4305,18 @@
         ],
         "JobId": 920566,
         "LoadAvg": [
-            "34.74"
+            "34.34"
         ],
         "MemUsed": [
             "12.6G"
         ],
         "PowerConsumedWatts": [
-            299
+            302
         ],
         "StartTime": "Wed Sep 11 13:31:26 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "12.6G",
-        "TotalPowerConsumedWatts": 299,
+        "TotalPowerConsumedWatts": 302,
         "User": "mgurusam"
     },
     {
@@ -4189,18 +4325,18 @@
         ],
         "JobId": 920579,
         "LoadAvg": [
-            "35.33"
+            "35.88"
         ],
         "MemUsed": [
             "6.3G"
         ],
         "PowerConsumedWatts": [
-            318
+            319
         ],
         "StartTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.3G",
-        "TotalPowerConsumedWatts": 318,
+        "TotalPowerConsumedWatts": 319,
         "User": "mgurusam"
     },
     {
@@ -4209,7 +4345,7 @@
         ],
         "JobId": 920616,
         "LoadAvg": [
-            "34.99"
+            "34.35"
         ],
         "MemUsed": [
             "14.8G"
@@ -4218,7 +4354,7 @@
             307
         ],
         "StartTime": "Wed Sep 11 13:34:57 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "14.8G",
         "TotalPowerConsumedWatts": 307,
         "User": "mgurusam"
@@ -4229,18 +4365,18 @@
         ],
         "JobId": 920638,
         "LoadAvg": [
-            "34.65"
+            "34.43"
         ],
         "MemUsed": [
             "14.7G"
         ],
         "PowerConsumedWatts": [
-            303
+            302
         ],
         "StartTime": "Wed Sep 11 13:40:07 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "14.7G",
-        "TotalPowerConsumedWatts": 303,
+        "TotalPowerConsumedWatts": 302,
         "User": "mgurusam"
     },
     {
@@ -4249,18 +4385,18 @@
         ],
         "JobId": 920648,
         "LoadAvg": [
-            "34.47"
+            "34.69"
         ],
         "MemUsed": [
             "5.4G"
         ],
         "PowerConsumedWatts": [
-            289
+            285
         ],
         "StartTime": "Wed Sep 11 13:42:26 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "5.4G",
-        "TotalPowerConsumedWatts": 289,
+        "TotalPowerConsumedWatts": 285,
         "User": "mgurusam"
     },
     {
@@ -4269,18 +4405,18 @@
         ],
         "JobId": 920654,
         "LoadAvg": [
-            "34.51"
+            "34.47"
         ],
         "MemUsed": [
             "13.7G"
         ],
         "PowerConsumedWatts": [
-            304
+            305
         ],
         "StartTime": "Wed Sep 11 13:43:19 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "13.7G",
-        "TotalPowerConsumedWatts": 304,
+        "TotalPowerConsumedWatts": 305,
         "User": "mgurusam"
     },
     {
@@ -4289,7 +4425,7 @@
         ],
         "JobId": 920688,
         "LoadAvg": [
-            "34.98"
+            "35.73"
         ],
         "MemUsed": [
             "6.3G"
@@ -4298,7 +4434,7 @@
             316
         ],
         "StartTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "6.3G",
         "TotalPowerConsumedWatts": 316,
         "User": "mgurusam"
@@ -4309,95 +4445,19 @@
         ],
         "JobId": 920769,
         "LoadAvg": [
-            "15.11"
+            "14.36"
         ],
         "MemUsed": [
-            "23.1G"
+            "23.5G"
         ],
         "PowerConsumedWatts": [
-            236
+            215
         ],
         "StartTime": "Wed Sep 11 13:00:41 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "23.1G",
-        "TotalPowerConsumedWatts": 236,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "23.5G",
+        "TotalPowerConsumedWatts": 215,
         "User": "rmanser"
-    },
-    {
-        "ExecHosts": [
-            "10.101.1.1",
-            "10.101.1.19",
-            "10.101.1.29",
-            "10.101.10.32",
-            "10.101.10.43",
-            "10.101.2.56",
-            "10.101.3.28",
-            "10.101.4.47",
-            "10.101.6.14",
-            "10.101.7.43",
-            "10.101.7.44",
-            "10.101.7.54",
-            "10.101.8.2",
-            "10.101.8.45",
-            "10.101.8.7"
-        ],
-        "JobId": 920773,
-        "LoadAvg": [
-            "33.72",
-            "33.20",
-            "33.47",
-            "32.63",
-            "33.40",
-            "32.27",
-            "34.18",
-            "32.92",
-            "33.11",
-            "33.03",
-            "33.15",
-            "33.65",
-            "33.16",
-            "32.82",
-            "33.00"
-        ],
-        "MemUsed": [
-            "7.5G",
-            "7.8G",
-            "8.5G",
-            "8.1G",
-            "8.6G",
-            "11.3G",
-            "11.6G",
-            "7.4G",
-            "8.3G",
-            "10.6G",
-            "8.6G",
-            "10.2G",
-            "9.4G",
-            "11.5G",
-            "8.1G"
-        ],
-        "PowerConsumedWatts": [
-            267,
-            285,
-            308,
-            315,
-            298,
-            272,
-            282,
-            290,
-            272,
-            311,
-            317,
-            307,
-            301,
-            308,
-            320
-        ],
-        "StartTime": "Wed Sep 11 12:31:56 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "137.5G",
-        "TotalPowerConsumedWatts": 4453,
-        "User": "benjowen"
     },
     {
         "ExecHosts": [
@@ -4405,18 +4465,18 @@
         ],
         "JobId": 920799,
         "LoadAvg": [
-            "24.29"
+            "16.80"
         ],
         "MemUsed": [
-            "24.1G"
+            "23.6G"
         ],
         "PowerConsumedWatts": [
-            204
+            225
         ],
         "StartTime": "Wed Sep 11 13:14:37 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "24.1G",
-        "TotalPowerConsumedWatts": 204,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "23.6G",
+        "TotalPowerConsumedWatts": 225,
         "User": "matapatt"
     },
     {
@@ -4425,18 +4485,18 @@
         ],
         "JobId": 920801,
         "LoadAvg": [
-            "6.24"
+            "7.63"
         ],
         "MemUsed": [
-            "16.1G"
+            "32.2G"
         ],
         "PowerConsumedWatts": [
-            169
+            256
         ],
         "StartTime": "Wed Sep 11 13:16:23 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "16.1G",
-        "TotalPowerConsumedWatts": 169,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "32.2G",
+        "TotalPowerConsumedWatts": 256,
         "User": "daray"
     },
     {
@@ -4445,18 +4505,18 @@
         ],
         "JobId": 920802,
         "LoadAvg": [
-            "15.94"
+            "18.11"
         ],
         "MemUsed": [
-            "23.1G"
+            "27.2G"
         ],
         "PowerConsumedWatts": [
-            191
+            208
         ],
         "StartTime": "Wed Sep 11 13:17:38 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "23.1G",
-        "TotalPowerConsumedWatts": 191,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "27.2G",
+        "TotalPowerConsumedWatts": 208,
         "User": "bancell"
     },
     {
@@ -4465,18 +4525,18 @@
         ],
         "JobId": 920845,
         "LoadAvg": [
-            "40.25"
+            "33.73"
         ],
         "MemUsed": [
-            "93.2G"
+            "93.1G"
         ],
         "PowerConsumedWatts": [
-            326
+            324
         ],
         "StartTime": "Wed Sep 11 13:21:41 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "93.2G",
-        "TotalPowerConsumedWatts": 326,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "93.1G",
+        "TotalPowerConsumedWatts": 324,
         "User": "roshang"
     },
     {
@@ -4485,18 +4545,18 @@
         ],
         "JobId": 920857,
         "LoadAvg": [
-            "30.77"
+            "30.91"
         ],
         "MemUsed": [
-            "18.7G"
+            "18.9G"
         ],
         "PowerConsumedWatts": [
-            292
+            289
         ],
         "StartTime": "Wed Sep 11 13:44:26 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "18.7G",
-        "TotalPowerConsumedWatts": 292,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "18.9G",
+        "TotalPowerConsumedWatts": 289,
         "User": "aucolema"
     },
     {
@@ -4505,18 +4565,38 @@
         ],
         "JobId": 920876,
         "LoadAvg": [
-            "35.07"
+            "36.04"
         ],
         "MemUsed": [
             "4.2G"
         ],
         "PowerConsumedWatts": [
-            288
+            289
         ],
         "StartTime": "Wed Sep 11 14:08:34 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
         "TotalMemUsed": "4.2G",
-        "TotalPowerConsumedWatts": 288,
+        "TotalPowerConsumedWatts": 289,
+        "User": "liu96340"
+    },
+    {
+        "ExecHosts": [
+            "10.101.9.41"
+        ],
+        "JobId": 920877,
+        "LoadAvg": [
+            "35.87"
+        ],
+        "MemUsed": [
+            "4.0G"
+        ],
+        "PowerConsumedWatts": [
+            298
+        ],
+        "StartTime": "Wed Sep 11 14:28:52 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "4.0G",
+        "TotalPowerConsumedWatts": 298,
         "User": "liu96340"
     },
     {
@@ -4525,18 +4605,38 @@
         ],
         "JobId": 920878,
         "LoadAvg": [
-            "35.28"
+            "35.13"
         ],
         "MemUsed": [
-            "5.1G"
+            "5.4G"
         ],
         "PowerConsumedWatts": [
-            308
+            306
         ],
         "StartTime": "Wed Sep 11 14:14:46 CDT 2019",
-        "TimeStamp": "Wed Sep 11 14:27:05 2019",
-        "TotalMemUsed": "5.1G",
-        "TotalPowerConsumedWatts": 308,
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "5.4G",
+        "TotalPowerConsumedWatts": 306,
         "User": "brajbhan"
+    },
+    {
+        "ExecHosts": [
+            "10.101.8.7"
+        ],
+        "JobId": 920879,
+        "LoadAvg": [
+            "8.53"
+        ],
+        "MemUsed": [
+            "4.6G"
+        ],
+        "PowerConsumedWatts": [
+            139
+        ],
+        "StartTime": "Wed Sep 11 14:38:10 CDT 2019",
+        "TimeStamp": "Wed Sep 11 14:39:27 2019",
+        "TotalMemUsed": "4.6G",
+        "TotalPowerConsumedWatts": 139,
+        "User": "daray"
     }
 ]
