@@ -50,7 +50,8 @@ def main():
         pwr_usage = []
         for exechost in item['ExecHosts']:
             # print(node_pwr_list[exechost])
-            if node_pwr_list[exechost] != None:
+            # if node_pwr_list[exechost] != None:
+            if isinstance(node_pwr_list[exechost], int)
                 pwr_usage.append(node_pwr_list[exechost])
                 pwr_usage_tot = pwr_usage_tot + node_pwr_list[exechost]
             else:
@@ -139,7 +140,7 @@ def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
         node_pwr_list.update({host: data['PowerControl'][0]['PowerConsumedWatts']})
 
     except requests.exceptions.RequestException as e:
-        print("Request Power Usage Error")
+        # print("Request Power Usage Error")
         node_pwr_list.update({host: None})
 
 # Use multi-thread to fetch Power Usuage from each exec host
