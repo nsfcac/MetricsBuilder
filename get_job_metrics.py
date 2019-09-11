@@ -159,7 +159,7 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
         for index, thread in enumerate(threads):
             thread.join()
             # Update Progress Bar
-            printProgressBar(i + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
+            printProgressBar(index + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
 
