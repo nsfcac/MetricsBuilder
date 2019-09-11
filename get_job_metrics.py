@@ -44,8 +44,13 @@ def main():
         return
 
     print("Interleaving Metrics ...")
+
+    # For progress bar
+    inter_len = len(job_node_match)
+    printProgressBar(0, inter_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+
     # Get exec hosts power usage for each job
-    for item in job_node_match:
+    for i, item in enumerate(job_node_match):
         pwr_usage_tot = 0
         pwr_usage = []
         for exechost in item['ExecHosts']:
@@ -58,6 +63,7 @@ def main():
                 pwr_usage.append(None)
                 pwr_usage_tot = None
         item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
+        printProgressBar(i + 1, inter_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     with open("jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
