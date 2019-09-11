@@ -62,7 +62,7 @@ def main():
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
     print("Done...")
-    
+
     # print(json.dumps(job_node_match, indent = 4, sort_keys = True))
 
 
@@ -144,6 +144,11 @@ def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
 
 # Use multi-thread to fetch Power Usuage from each exec host
 def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session):
+
+    # For progress bar
+    l = len(exec_hosts)
+    printProgressBar(0, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
+
     warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
     try:
         threads = []
@@ -153,8 +158,31 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
             a.start()
         for index, thread in enumerate(threads):
             thread.join()
+            # Update Progress Bar
+            printProgressBar(i + 1, l, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
+
+# Print iterations progress
+def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+    # Print New Line on Complete
+    if iteration == total:
+        print()
 
 if __name__ == "__main__":
     main()
