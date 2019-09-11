@@ -75,7 +75,7 @@ def main():
     with open("jobNodePower.json", "w") as outfile:
             json.dump(job_node_match, outfile, indent = 4, sort_keys = True)
 
-    print("Done...")
+    print("Done!")
 
     # print(json.dumps(job_node_match, indent = 4, sort_keys = True))
 
