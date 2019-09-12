@@ -129,7 +129,7 @@ def match_host_job(host_summary):
         host_job.update({'HostIp': get_hostip(host['hostname'].split('.')[0]), 'JobList': [], 'Counting': None})
         for job in host['jobList']:
             host_job['JobList'].append(job['id'])
-            if job['id'] no in job_set:
+            if job['id'] not in job_set:
                 job_set.append(job['id'])
         host_job.update({'Counting': Counter(host_job['JobList'])})
     host_job_match.append(host_job)
