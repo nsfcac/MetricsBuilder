@@ -59,8 +59,8 @@ def main():
 
     job_pwr_list = calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time_stamp)
 
-    job_list_len = len(job_pwr_list)
-    print(f"-Total Running Jobs on Qunanh Cluster: {job_list_len}")
+    print("-Total Running Jobs on Qunanh Cluster: ", end =" ")
+    print(len(job_pwr_list))
 
     ######################
     # Write logs #
