@@ -128,12 +128,16 @@ def match_host_job(host_summary):
     for host in host_summary:
         host_job = {}
         job_list = []
+        core_used = 0
         host_job.update({'HostIp': get_hostip(host['hostname'].split('.')[0]), 'Counting': None})
         for job in host['jobList']:
             job_list.append(job['id'])
             if job['id'] not in job_set:
                 job_set.append(job['id'])
         host_job.update({'Counting': Counter(job_list).most_common()})
+        for item in host_job['Counting']:
+            core_used += item[1]
+        host_job.update({'CoreUsed': core_used})
         host_job_match.append(host_job)
     return host_job_match, job_set
 
