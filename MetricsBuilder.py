@@ -157,8 +157,8 @@ def match_job_user_time(job_set, host_summary):
         for host in host_summary:
             flag = 0
             for job in host['jobList']:
-                if jobId == host['jobList']['id']:
-                    job_user_time_dic[job] = {'user': host['jobList']['user'], 'startTime': host['jobList']['startTime']}
+                if jobId == job['id']:
+                    job_user_time_dic[job] = {'user': job['user'], 'startTime': job['startTime']}
                     flag = 1
                     continue
             if flag == 1:
