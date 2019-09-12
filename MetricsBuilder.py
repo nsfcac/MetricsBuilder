@@ -17,8 +17,8 @@ def main():
 
     node_pwr_list = {}
 
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    print("+------------------------- Monitoring Quanah Cluster -------------------------+")
+    print("+-----------------------------------------------------------------------------+")
+    print("|------------------------- Monitoring Quanah Cluster -------------------------|")
 
     #######################
     # Get exection hosts #
@@ -32,7 +32,6 @@ def main():
     else:
         exechost_list = get_exechosts_ip(exec_hosts)
 
-        print("-Pulling Metrics From BMC...")
         core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
         # print(node_pwr_list)
 
@@ -77,8 +76,8 @@ def main():
     with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
             json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
 
-    print("+----------------------------------- Done! -----------------------------------+")
-    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("|----------------------------------- Done! -----------------------------------|")
+    print("+-----------------------------------------------------------------------------+")
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
@@ -111,7 +110,7 @@ def match_node_job(host_summary):
 
 def match_job_user_time(job_set, host_summary):
 
-    print("Preprocessing UGE Metrics ...")
+    print("--Preprocessing UGE Metrics ...")
     # For progress bar
     job_set_len = len(job_set)
     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
@@ -136,7 +135,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
 
     job_pwr_list = []
 
-    print("Interleaving Power Metrics ...")
+    print("--Interleaving Power Metrics ...")
     # For progress bar
     job_set_len = len(job_set)
     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
@@ -208,6 +207,7 @@ def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
 # Use multi-thread to fetch Power Usuage from each exec host
 def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session):
 
+    print("--Pulling Metrics From BMC...")
     # For progress bar
     exec_hosts_len = len(exec_hosts)
     printProgressBar(0, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
