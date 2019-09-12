@@ -23,14 +23,14 @@ def main():
     #######################################################
     # Get exec hosts and fetch corresponding power usuage #
     #######################################################
-    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-    if exec_hosts != None:
-        exechost_list = get_exechosts_ip(exec_hosts)
-        core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
-        # print(node_pwr_list)
-    else:
-        print("No Execution Host")
-        return
+    # exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
+    # if exec_hosts != None:
+    #     exechost_list = get_exechosts_ip(exec_hosts)
+    #     core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
+    #     # print(node_pwr_list)
+    # else:
+    #     print("No Execution Host")
+    #     return
 
     #########################
     # Get current timestamp #
@@ -40,6 +40,8 @@ def main():
     print("Pulling Metrics From UGE...")
 
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+
+    print(host_summary)
 
     if host_summary != None:
         host_job_match, job_set = match_host_job(host_summary)
