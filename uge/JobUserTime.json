@@ -91,10 +91,6 @@
         "startTime": "Thu Sep 12 09:48:31 CDT 2019",
         "user": "srmani"
     },
-    "919020": {
-        "startTime": "Tue Sep 10 17:58:53 CDT 2019",
-        "user": "wan39502"
-    },
     "919023": {
         "startTime": "Wed Sep 11 22:53:49 CDT 2019",
         "user": "wan39502"
@@ -640,10 +636,6 @@
         "user": "mgurusam"
     },
     "920335": {
-        "startTime": "Wed Sep 11 11:23:26 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920336": {
         "startTime": "Wed Sep 11 11:23:26 CDT 2019",
         "user": "mgurusam"
     },
@@ -1336,10 +1328,6 @@
         "user": "mgurusam"
     },
     "920519": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920520": {
         "startTime": "Wed Sep 11 13:21:58 CDT 2019",
         "user": "mgurusam"
     },
@@ -2327,10 +2315,6 @@
         "startTime": "Thu Sep 12 11:35:17 CDT 2019",
         "user": "rmanser"
     },
-    "921676": {
-        "startTime": "Thu Sep 12 11:40:53 CDT 2019",
-        "user": "juandomi"
-    },
     "921788": {
         "startTime": "Thu Sep 12 13:08:29 CDT 2019",
         "user": "sabaty"
@@ -2603,25 +2587,13 @@
         "startTime": "Thu Sep 12 14:02:05 CDT 2019",
         "user": "emilwrig"
     },
-    "922152": {
-        "startTime": "Thu Sep 12 14:35:35 CDT 2019",
-        "user": "gufeng"
-    },
     "922153": {
         "startTime": "Thu Sep 12 14:35:47 CDT 2019",
-        "user": "gufeng"
-    },
-    "922157": {
-        "startTime": "Thu Sep 12 14:41:51 CDT 2019",
         "user": "gufeng"
     },
     "922158": {
         "startTime": "Thu Sep 12 15:00:16 CDT 2019",
         "user": "luccorte"
-    },
-    "922160": {
-        "startTime": "Thu Sep 12 14:46:29 CDT 2019",
-        "user": "gufeng"
     },
     "922205": {
         "startTime": "Thu Sep 12 15:09:03 CDT 2019",
@@ -2637,6 +2609,18 @@
     },
     "922208": {
         "startTime": "Thu Sep 12 16:09:42 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922209": {
+        "startTime": "Thu Sep 12 17:28:19 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922210": {
+        "startTime": "Thu Sep 12 17:59:33 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922211": {
+        "startTime": "Thu Sep 12 18:00:00 CDT 2019",
         "user": "gpinesch"
     },
     "923013": {
@@ -2658,10 +2642,6 @@
     "923104": {
         "startTime": "Thu Sep 12 17:22:27 CDT 2019",
         "user": "msanati"
-    },
-    "923106": {
-        "startTime": "Thu Sep 12 16:30:56 CDT 2019",
-        "user": "sisadegh"
     },
     "923107": {
         "startTime": "Thu Sep 12 16:57:28 CDT 2019",
@@ -2687,14 +2667,6 @@
         "startTime": "Thu Sep 12 16:43:01 CDT 2019",
         "user": "ada99346"
     },
-    "923124": {
-        "startTime": "Thu Sep 12 17:24:32 CDT 2019",
-        "user": "jjerke"
-    },
-    "923125": {
-        "startTime": "Thu Sep 12 16:55:06 CDT 2019",
-        "user": "matapatt"
-    },
     "923126": {
         "startTime": "Thu Sep 12 17:22:27 CDT 2019",
         "user": "obazgir"
@@ -2711,8 +2683,12 @@
         "startTime": "Thu Sep 12 17:22:15 CDT 2019",
         "user": "gcapodag"
     },
-    "923135": {
-        "startTime": "Thu Sep 12 17:25:15 CDT 2019",
-        "user": "brajbhan"
+    "923136": {
+        "startTime": "Thu Sep 12 17:33:06 CDT 2019",
+        "user": "juandomi"
+    },
+    "923137": {
+        "startTime": "Thu Sep 12 17:38:40 CDT 2019",
+        "user": "jchundur"
     }
 }
