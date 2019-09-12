@@ -47,8 +47,8 @@ def main():
         print("Get Host Summary Error")
         return
 
-    # print(host_job_match)
-    print(len(job_set))
+    print(host_job_match)
+    # print(len(job_set))
 
     # uge_tasklist = ['jobs', 'hostsummary']
     # uge_results = {'jobs': None, 'hostsummary': None}
@@ -127,12 +127,13 @@ def match_host_job(host_summary):
     job_set = []
     for host in host_summary:
         host_job = {}
-        host_job.update({'HostIp': get_hostip(host['hostname'].split('.')[0]), 'JobList': [], 'Counting': None})
+        job_list = []
+        host_job.update({'HostIp': get_hostip(host['hostname'].split('.')[0]), 'Counting': None})
         for job in host['jobList']:
-            host_job['JobList'].append(job['id'])
+            job_list.append(job['id'])
             if job['id'] not in job_set:
                 job_set.append(job['id'])
-        host_job.update({'Counting': Counter(host_job['JobList']).most_common()})
+        host_job.update({'Counting': Counter(job_list).most_common()})
         host_job_match.append(host_job)
     return host_job_match, job_set
 
