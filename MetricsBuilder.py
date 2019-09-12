@@ -96,6 +96,10 @@ def main():
     #     item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
     #
     # print("Writing log files...")
+
+    with open("./uge/JobPwr.json", "w") as outfile_jobpwr:
+            json.dump(job_pwr_list, outfile_jobpwr, indent = 4, sort_keys = True)
+
     # with open("./uge/HostJob.json", "w") as outfile_hostjob:
     #         json.dump(node_job_match, outfile_hostjob, indent = 4, sort_keys = True)
     #
