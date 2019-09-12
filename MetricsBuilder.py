@@ -126,7 +126,7 @@ def match_job_user_time(job_set, host_summary):
                     continue
             if flag == 1:
                 continue
-        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        printProgressBar(index + 1, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
     return job_user_time_dic
 
 
@@ -158,7 +158,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
                     job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
         job_pwr_dict.update({'TotalPowerConsumedWatts': round(total_pwr, 2)})
         job_pwr_list.append(job_pwr_dict)
-        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        printProgressBar(index + 1, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
 
     return job_pwr_list
 
@@ -222,7 +222,7 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
         for index, thread in enumerate(threads):
             thread.join()
             # Update Progress Bar
-            printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+            printProgressBar(index + 1, exec_hosts_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
 
