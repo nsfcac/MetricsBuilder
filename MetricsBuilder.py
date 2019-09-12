@@ -159,7 +159,10 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list):
                 if job == i[0]:
                     node_ip = node['HostIp']
                     pwr_pct = round(i[1]/node['CoreUsed'], 2)
-                    pwr_each = round(pwr_pct * node_pwr_list[node_ip], 2)
+                    try:
+                        pwr_each = round(pwr_pct * node_pwr_list[node_ip], 2)
+                    except TypeError:
+                        pwr_each = 0
                     total_pwr += pwr_each
                     job_pwr_dict['ExecHosts'].append(node_ip)
                     job_pwr_dict['OccupationPct'].append(pwr_pct)
