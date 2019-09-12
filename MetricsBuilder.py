@@ -47,8 +47,8 @@ def main():
         print("Get Host Summary Error")
         return
 
-    print(host_job_match)
-    print(len(job_set))
+    print(json.dumps(host_job_match, indent = 4, sort_keys = True))
+    # print(len(job_set))
 
     # uge_tasklist = ['jobs', 'hostsummary']
     # uge_results = {'jobs': None, 'hostsummary': None}
@@ -94,6 +94,8 @@ def main():
     #     item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
     #
     # print("Writing log files...")
+    with open("./uge/HostJob.json", "w") as outfile_hostjob:
+            json.dump(host_job_match, outfile_hostjob, indent = 4, sort_keys = True)
     #
     # with open("./uge/JobList.json", "w") as outfile_joblist:
     #         json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
