@@ -164,7 +164,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list):
                     job_pwr_dict['ExecHosts'].append(node_ip)
                     job_pwr_dict['OccupationPct'].append(pwr_pct)
                     job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
-        job_pwr_dict.update({'TotalPowerConsumedWatts': total_pwr})
+        job_pwr_dict.update({'TotalPowerConsumedWatts': round(total_pwr, 2)})
         job_pwr_list.append(job_pwr_dict)
 
     return job_pwr_list
