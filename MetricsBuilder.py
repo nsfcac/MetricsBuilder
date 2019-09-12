@@ -41,8 +41,6 @@ def main():
 
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
 
-    print(host_summary)
-
     if host_summary != None:
         host_job_match, job_set = match_host_job(host_summary)
     else:
@@ -134,7 +132,7 @@ def match_host_job(host_summary):
             if job['id'] not in job_set:
                 job_set.append(job['id'])
         host_job.update({'Counting': Counter(host_job['JobList'])})
-    host_job_match.append(host_job)
+        host_job_match.append(host_job)
     return host_job_match, job_set
 
 # Get job set
