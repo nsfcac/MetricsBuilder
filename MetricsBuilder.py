@@ -47,9 +47,9 @@ def main():
         print("Get Host Summary Error")
         return
 
-    job_pwr_list = calc_job_pwr(node_job_match, job_set)
+    job_pwr_list = calc_job_pwr(node_job_match, job_set, node_pwr_list)
 
-    print(json.dumps(job_pwr_list, indent = 4, sort_keys = True))
+    # print(json.dumps(job_pwr_list, indent = 4, sort_keys = True))
     # print(len(job_set))
 
     # uge_tasklist = ['jobs', 'hostsummary']
