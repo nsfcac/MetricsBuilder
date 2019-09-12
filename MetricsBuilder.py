@@ -48,7 +48,7 @@ def main():
         return
 
     print(host_job_match)
-    # print(len(job_set))
+    print(len(job_set))
 
     # uge_tasklist = ['jobs', 'hostsummary']
     # uge_results = {'jobs': None, 'hostsummary': None}
