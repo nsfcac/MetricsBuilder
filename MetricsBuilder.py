@@ -42,12 +42,14 @@ def main():
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
 
     if host_summary != None:
-        host_job_match, job_set = match_host_job(host_summary)
+        node_job_match, job_set = match_node_job(host_summary)
     else:
         print("Get Host Summary Error")
         return
 
-    print(json.dumps(host_job_match, indent = 4, sort_keys = True))
+    job_pwr_list = calc_job_pwr(node_job_match, jobset)
+
+    print(json.dumps(job_pwr_list, indent = 4, sort_keys = True))
     # print(len(job_set))
 
     # uge_tasklist = ['jobs', 'hostsummary']
@@ -94,8 +96,8 @@ def main():
     #     item.update({'PowerConsumedWatts': pwr_usage, 'TotalPowerConsumedWatts': pwr_usage_tot, 'TimeStamp': timestamp})
     #
     # print("Writing log files...")
-    with open("./uge/HostJob.json", "w") as outfile_hostjob:
-            json.dump(host_job_match, outfile_hostjob, indent = 4, sort_keys = True)
+    # with open("./uge/HostJob.json", "w") as outfile_hostjob:
+    #         json.dump(node_job_match, outfile_hostjob, indent = 4, sort_keys = True)
     #
     # with open("./uge/JobList.json", "w") as outfile_joblist:
     #         json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
@@ -124,8 +126,8 @@ def get_exechosts_ip(exechosts):
     return exechost_list
 
 # Match host and jobs
-def match_host_job(host_summary):
-    host_job_match = []
+def match_node_job(host_summary):
+    node_job_match = []
     job_set = []
     for host in host_summary:
         host_job = {}
@@ -140,18 +142,22 @@ def match_host_job(host_summary):
         for item in host_job['Counting']:
             core_used += item[1]
         host_job.update({'CoreUsed': core_used})
-        host_job_match.append(host_job)
-    return host_job_match, job_set
+        node_job_match.append(host_job)
+    return node_job_match, job_set
 
-# Get job set
-def get_job_set(joblist):
-    jobset = []
-    for job in joblist:
-        jobId = job.split('.')[0]
-        if jobId not in jobset:
-            jobset.append(jobId)
+def calc_job_pwr(node_job_match, jobset):
+    job_pwr_list = []
+    for index, job in enumerate(jobset):
+        job_pwr_dict = {'JobId': job, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        for node in node_job_match:
+            for i in node['Counting']:
+                if job == i[0]:
+                    job_pwr_dict['ExecHosts'].append(node['HostIp'])
+                    job_pwr_dict['OccupationPct'].append(round(i[1]/node['CoreUsed'],2))
+        job_pwr_list.append(job_pwr_dict)
 
-    return jobset
+    return job_pwr_list
+
 
 # Build job-node matches
 def match_job_node(jobset, host_summary):
