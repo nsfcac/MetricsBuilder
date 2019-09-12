@@ -17,10 +17,12 @@ def main():
 
     node_pwr_list = {}
 
+    print("-------------------- Monitoring Quanah Cluster --------------------")
+
     #######################
     # Get exection hosts #
     #######################
-    print("Getting Exection Host List...")
+    print("-Getting Exection Host List...")
     exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
 
     if exec_hosts == None:
@@ -29,7 +31,7 @@ def main():
     else:
         exechost_list = get_exechosts_ip(exec_hosts)
 
-        print("Pulling Metrics From BMC...")
+        print("-Pulling Metrics From BMC...")
         core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
         # print(node_pwr_list)
 
@@ -39,7 +41,7 @@ def main():
     #########################
     time_stamp = datetime.datetime.now().ctime()
 
-    print("Pulling Metrics From UGE...")
+    print("-Pulling Metrics From UGE...")
 
     host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
 
@@ -60,7 +62,10 @@ def main():
     # Write logs #
     ######################
 
-    print("Writing log files...")
+    print("-Total Running Jobs on Qunanh Cluster: "),
+    print(len(job_pwr_list))
+
+    print("-Writing log files...")
 
     with open("./interleaved/JobNodePwr.json", "w") as outfile_jobpwr:
             json.dump(job_pwr_list, outfile_jobpwr, indent = 4, sort_keys = True)
@@ -71,7 +76,7 @@ def main():
     with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
             json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
 
-    print("Done!")
+    print("------------------------------ Done! ------------------------------")
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
