@@ -47,7 +47,7 @@ def main():
         print("Get Host Summary Error")
         return
 
-    job_pwr_list = calc_job_pwr(node_job_match, jobset)
+    job_pwr_list = calc_job_pwr(node_job_match, job_set)
 
     print(json.dumps(job_pwr_list, indent = 4, sort_keys = True))
     # print(len(job_set))
@@ -145,9 +145,9 @@ def match_node_job(host_summary):
         node_job_match.append(host_job)
     return node_job_match, job_set
 
-def calc_job_pwr(node_job_match, jobset):
+def calc_job_pwr(node_job_match, job_set):
     job_pwr_list = []
-    for index, job in enumerate(jobset):
+    for index, job in enumerate(job_set):
         job_pwr_dict = {'JobId': job, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
         for node in node_job_match:
             for i in node['Counting']:
@@ -160,14 +160,14 @@ def calc_job_pwr(node_job_match, jobset):
 
 
 # Build job-node matches
-def match_job_node(jobset, host_summary):
+def match_job_node(job_set, host_summary):
 
     # For progress bar
-    jobset_len = len(jobset)
-    printProgressBar(0, jobset_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    job_set_len = len(job_set)
+    printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     job_node_match = []
-    for index, jobId in enumerate(jobset):
+    for index, jobId in enumerate(job_set):
         jobId_int = int(jobId)
         job_node_dict = {'JobId': jobId_int, 'User': None, 'StartTime': None, 'ExecHosts':[], 'LoadAvg':[], 'MemUsed': [], 'TotalMemUsed': None }
         mem_total = 0
@@ -184,7 +184,7 @@ def match_job_node(jobset, host_summary):
             job_node_match.append(job_node_dict)
         mem_total_str = str(round(mem_total,1)) + 'G'
         job_node_dict.update({'TotalMemUsed': mem_total_str})
-        printProgressBar(index + 1, jobset_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     return job_node_match
 
 # Convert host name to ip address
