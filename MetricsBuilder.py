@@ -17,7 +17,8 @@ def main():
 
     node_pwr_list = {}
 
-    print("-------------------- Monitoring Quanah Cluster --------------------")
+    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    print("+------------------------- Monitoring Quanah Cluster -------------------------+")
 
     #######################
     # Get exection hosts #
@@ -62,8 +63,7 @@ def main():
     # Write logs #
     ######################
 
-    print("-Total Running Jobs on Qunanh Cluster: "),
-    print(len(job_pwr_list))
+    print(f"-Total Running Jobs on Qunanh Cluster: {len(job_pwr_list)}")
 
     print("-Writing log files...")
 
@@ -76,7 +76,8 @@ def main():
     with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
             json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
 
-    print("------------------------------ Done! ------------------------------")
+    print("+----------------------------------- Done! -----------------------------------+")
+    print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
