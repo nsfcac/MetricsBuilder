@@ -47,7 +47,9 @@ def main():
         print("Get Host Summary Error")
         return
 
-    job_pwr_list = calc_job_pwr(node_job_match, job_set, node_pwr_list)
+    job_user_time_dic = match_job_user_time(job_set, host_summary)
+
+    job_pwr_list = calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic)
 
     # print(json.dumps(job_pwr_list, indent = 4, sort_keys = True))
     # print(len(job_set))
@@ -149,10 +151,21 @@ def match_node_job(host_summary):
         node_job_match.append(host_job)
     return node_job_match, job_set
 
-def calc_job_pwr(node_job_match, job_set, node_pwr_list):
+def match_job_user_time(job_set, host_summary):
+    job_user_time_dic = {}
+    for index, job in enumerate(job_set):
+        for host in host_summary:
+            if job == host['jobList']['id']:
+                job_user_time_dic[job] = {'user': host['jobList']['user'], 'startTime': host['jobList']['startTime']}
+                continue
+    return job_user_time_dic
+
+
+# Calculate PowerConsumedWatts for each Job
+def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic):
     job_pwr_list = []
     for index, job in enumerate(job_set):
-        job_pwr_dict = {'JobId': job, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        job_pwr_dict = {'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
         total_pwr = 0
         for node in node_job_match:
             for i in node['Counting']:
@@ -173,33 +186,33 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list):
     return job_pwr_list
 
 
-# Build job-node matches
-def match_job_node(job_set, host_summary):
-
-    # For progress bar
-    job_set_len = len(job_set)
-    printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
-
-    job_node_match = []
-    for index, jobId in enumerate(job_set):
-        jobId_int = int(jobId)
-        job_node_dict = {'JobId': jobId_int, 'User': None, 'StartTime': None, 'ExecHosts':[], 'LoadAvg':[], 'MemUsed': [], 'TotalMemUsed': None }
-        mem_total = 0
-        for host in host_summary:
-            if host['jobList'] and jobId_int == host['jobList'][0]['id']:
-                job_node_dict.update({'User': host['jobList'][0]['user'], 'StartTime': host['jobList'][0]['startTime']})
-                host_ip = get_hostip(host['hostname'].split('.')[0])
-                mem_used = host['hostValues']['mem_used']
-                job_node_dict['ExecHosts'].append(host_ip)
-                job_node_dict['LoadAvg'].append(host['hostValues']['load_avg'])
-                job_node_dict['MemUsed'].append(mem_used)
-                mem_total = mem_total + float(mem_used.split('G')[0])
-        if len(job_node_dict['ExecHosts']) != 0:
-            job_node_match.append(job_node_dict)
-        mem_total_str = str(round(mem_total,1)) + 'G'
-        job_node_dict.update({'TotalMemUsed': mem_total_str})
-        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
-    return job_node_match
+# # Build job-node matches
+# def match_job_node(job_set, host_summary):
+#
+#     # For progress bar
+#     job_set_len = len(job_set)
+#     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+#
+#     job_node_match = []
+#     for index, jobId in enumerate(job_set):
+#         jobId_int = int(jobId)
+#         job_node_dict = {'JobId': jobId_int, 'User': None, 'StartTime': None, 'ExecHosts':[], 'LoadAvg':[], 'MemUsed': [], 'TotalMemUsed': None }
+#         mem_total = 0
+#         for host in host_summary:
+#             if host['jobList'] and jobId_int == host['jobList'][0]['id']:
+#                 job_node_dict.update({'User': host['jobList'][0]['user'], 'StartTime': host['jobList'][0]['startTime']})
+#                 host_ip = get_hostip(host['hostname'].split('.')[0])
+#                 mem_used = host['hostValues']['mem_used']
+#                 job_node_dict['ExecHosts'].append(host_ip)
+#                 job_node_dict['LoadAvg'].append(host['hostValues']['load_avg'])
+#                 job_node_dict['MemUsed'].append(mem_used)
+#                 mem_total = mem_total + float(mem_used.split('G')[0])
+#         if len(job_node_dict['ExecHosts']) != 0:
+#             job_node_match.append(job_node_dict)
+#         mem_total_str = str(round(mem_total,1)) + 'G'
+#         job_node_dict.update({'TotalMemUsed': mem_total_str})
+#         printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+#     return job_node_match
 
 # Convert host name to ip address
 def get_hostip(hostname):
