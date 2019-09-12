@@ -73,6 +73,10 @@ def main():
     with open("./uge/HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
 
+    with open("./uge/NodeJob.json", "w") as outfile_nodejob:
+            json.dump(node_job_match, outfile_nodejob, indent = 4, sort_keys = True)
+
+
     with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
             json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
 
@@ -135,7 +139,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
 
     job_pwr_list = []
 
-    print("--Interleaving Power Metrics ...")
+    print("-Interleaving Power Metrics ...")
     # For progress bar
     job_set_len = len(job_set)
     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
