@@ -161,7 +161,7 @@ def match_job_user_time(job_set, host_summary):
                     job_user_time_dic[job] = {'user': host['jobList']['user'], 'startTime': host['jobList']['startTime']}
                     flag = 1
                     continue
-            if flag = 1:
+            if flag == 1:
                 continue
     return job_user_time_dic
 
