@@ -23,14 +23,14 @@ def main():
     #######################################################
     # Get exec hosts and fetch corresponding power usuage #
     #######################################################
-    # exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-    # if exec_hosts != None:
-    #     exechost_list = get_exechosts_ip(exec_hosts)
-    #     core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
-    #     # print(node_pwr_list)
-    # else:
-    #     print("No Execution Host")
-    #     return
+    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
+    if exec_hosts != None:
+        exechost_list = get_exechosts_ip(exec_hosts)
+        core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
+        # print(node_pwr_list)
+    else:
+        print("No Execution Host")
+        return
 
     #########################
     # Get current timestamp #
@@ -100,8 +100,8 @@ def main():
     with open("./uge/JobPwr.json", "w") as outfile_jobpwr:
             json.dump(job_pwr_list, outfile_jobpwr, indent = 4, sort_keys = True)
 
-    # with open("./uge/HostJob.json", "w") as outfile_hostjob:
-    #         json.dump(node_job_match, outfile_hostjob, indent = 4, sort_keys = True)
+    with open("./uge/HostJob.json", "w") as outfile_hostjob:
+            json.dump(node_job_match, outfile_hostjob, indent = 4, sort_keys = True)
     #
     # with open("./uge/JobList.json", "w") as outfile_joblist:
     #         json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
@@ -149,15 +149,22 @@ def match_node_job(host_summary):
         node_job_match.append(host_job)
     return node_job_match, job_set
 
-def calc_job_pwr(node_job_match, job_set):
+def calc_job_pwr(node_job_match, job_set, node_pwr_list):
     job_pwr_list = []
     for index, job in enumerate(job_set):
         job_pwr_dict = {'JobId': job, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        total_pwr = 0
         for node in node_job_match:
             for i in node['Counting']:
                 if job == i[0]:
-                    job_pwr_dict['ExecHosts'].append(node['HostIp'])
-                    job_pwr_dict['OccupationPct'].append(round(i[1]/node['CoreUsed'],2))
+                    node_ip = node['HostIp']
+                    pwr_pct = round(i[1]/node['CoreUsed'], 2)
+                    pwr_each = round(pwr_pct * node_pwr_list[node_ip], 2)
+                    total_pwr += pwr_each
+                    job_pwr_dict['ExecHosts'].append(node_ip)
+                    job_pwr_dict['OccupationPct'].append(pwr_pct)
+                    job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
+        job_pwr_dict.update({'TotalPowerConsumedWatts': total_pwr})
         job_pwr_list.append(job_pwr_dict)
 
     return job_pwr_list
