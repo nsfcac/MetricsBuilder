@@ -113,7 +113,7 @@ def match_job_user_time(job_set, host_summary):
     print("-Preprocessing UGE Metrics ...")
     # For progress bar
     job_set_len = len(job_set)
-    printProgressBar(0, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+    printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     job_user_time_dic = {}
     for index, jobId in enumerate(job_set):
@@ -126,7 +126,7 @@ def match_job_user_time(job_set, host_summary):
                     continue
             if flag == 1:
                 continue
-        printProgressBar(index + 1, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     return job_user_time_dic
 
 
@@ -138,7 +138,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
     print("--Interleaving Power Metrics ...")
     # For progress bar
     job_set_len = len(job_set)
-    printProgressBar(0, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+    printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     for index, job in enumerate(job_set):
         job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
@@ -158,7 +158,7 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
                     job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
         job_pwr_dict.update({'TotalPowerConsumedWatts': round(total_pwr, 2)})
         job_pwr_list.append(job_pwr_dict)
-        printProgressBar(index + 1, job_set_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     return job_pwr_list
 
@@ -210,7 +210,7 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
     print("-Pulling Metrics From BMC...")
     # For progress bar
     exec_hosts_len = len(exec_hosts)
-    printProgressBar(0, exec_hosts_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+    printProgressBar(0, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
     try:
@@ -222,7 +222,7 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
         for index, thread in enumerate(threads):
             thread.join()
             # Update Progress Bar
-            printProgressBar(index + 1, exec_hosts_len, prefix = '--Progress:', suffix = 'Complete', length = 50)
+            printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
 
