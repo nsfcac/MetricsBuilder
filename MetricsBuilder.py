@@ -47,7 +47,8 @@ def main():
         print("Get Host Summary Error")
         return
 
-    print(host_job_match)
+    # print(host_job_match)
+    print(job_set)
 
     # uge_tasklist = ['jobs', 'hostsummary']
     # uge_results = {'jobs': None, 'hostsummary': None}
