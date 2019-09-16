@@ -10,12 +10,26 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def main():
+    record_list = []
+    for i in range(0, 2):
+        ts, result = interleave()
+        record = {"TimeStamp":ts, "JobDetails": result}
+        record_list.append(record)
+        time.sleep(60)
+
+    with open("./pyplot/recordTS.json", "w") as outfile:
+            json.dump(record, outfile, indent = 4, sort_keys = True)
+
+
+def interleave():
+
+    result = {"TimeStamp": None, "JobList": []}
 
     #########################
     # Get current timestamp #
     #########################
     time_stamp = datetime.datetime.now().ctime()
-    
+
     conn_time_out = 15
     read_time_out = 40
 
@@ -60,34 +74,10 @@ def main():
     print("-Total Running Jobs on Qunanh Cluster: ", end =" ")
     print(len(job_pwr_list))
 
-    ######################
-    # Write logs #
-    ######################
+    job_core_pwr = build_job_core_pwr(job_pwr_list)
 
-    print("-Writing log files...")
+    return time_stamp, job_core_pwr
 
-    with open("./interleaved/JobNodePwr.json", "w") as outfile_jobpwr:
-            json.dump(job_pwr_list, outfile_jobpwr, indent = 4, sort_keys = True)
-
-    with open("./uge/HostSummary.json", "w") as outfile_hostsum:
-            json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
-
-    with open("./uge/NodeJob.json", "w") as outfile_nodejob:
-            json.dump(node_job_match, outfile_nodejob, indent = 4, sort_keys = True)
-
-    with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
-            json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
-
-    print("-Done!")
-
-    ######################
-    # Py plot #
-    ######################
-    job_id, job_no_nodes, job_pwr = pyplot(job_pwr_list)
-    with open("./pyplot/pyplot.txt", "w") as plotfile:
-        plotfile.write("job_id=" + str(job_id) + "\n")
-        plotfile.write("job_no_nodes=" + str(job_no_nodes) + "\n")
-        plotfile.write("job_pwr=" + str(job_pwr) + "\n")
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
@@ -235,6 +225,14 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
             printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
+
+# Build job-core-power dict
+def build_job_core_pwr(job_pwr_list):
+    result_list = []
+    for job in job_pwr_list:
+        job_core_pwr_dict = {"JobId": job['JobId'], "Hosts": len(job['ExecHosts'], "Power": job['TotalPowerConsumedWatts']}
+        result_list.append(job_core_pwr_dict)
+    return result_list
 
 # Export data for pyplot
 def pyplot(job_pwr_list):
