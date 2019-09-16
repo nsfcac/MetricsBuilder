@@ -29,6 +29,8 @@ def interleave():
     #########################
     # Get current timestamp #
     #########################
+    
+    time_stamp = datetime.datetime.now().ctime()
 
     conn_time_out = 15
     read_time_out = 40
