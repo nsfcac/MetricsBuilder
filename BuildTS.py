@@ -230,7 +230,8 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
 def build_job_core_pwr(job_pwr_list):
     result_list = []
     for job in job_pwr_list:
-        job_core_pwr_dict = {"JobId": job['JobId'], "Hosts": len(job['ExecHosts'], "Power": job['TotalPowerConsumedWatts']}
+        host_len = len(job['ExecHosts']
+        job_core_pwr_dict = {"JobId": job['JobId'], "HostsLen": host_len, "Power": job['TotalPowerConsumedWatts']}
         result_list.append(job_core_pwr_dict)
     return result_list
 
