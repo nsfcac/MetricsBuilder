@@ -11,18 +11,14 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def main():
     record_list = []
-    for i in range(0, 2):
-        time_stamp = datetime.datetime.now().ctime()
-        result = interleave()
-        record = {"TimeStamp":time_stamp, "JobDetails": result}
-        record_list.append(record)
-        time.sleep(60)
+    time_end = time.time() + 60* 3
+    while time.time() < time_end:
+        t = threading.Timer(60.0, interleave(record_list)).start()
 
     with open("./pyplot/recordTS.json", "w") as outfile:
             json.dump(record_list, outfile, indent = 4, sort_keys = True)
 
-
-def interleave():
+def interleave(record_list):
 
     result = {"TimeStamp": None, "JobList": []}
 
@@ -78,7 +74,10 @@ def interleave():
 
     job_core_pwr = build_job_core_pwr(job_pwr_list)
 
-    return time_stamp, job_core_pwr
+    result.update({"TimeStamp": time_stamp, "JobList": job_core_pwr})
+
+    result_list.append(result)
+
 
 
 # Get exec hosts list of ip addresses
