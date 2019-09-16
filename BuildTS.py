@@ -77,7 +77,7 @@ def interleave(record_list):
 
     result.update({"TimeStamp": time_stamp, "JobList": job_core_pwr})
 
-    result_list.append(result)
+    record_list.append(result)
 
 
 
