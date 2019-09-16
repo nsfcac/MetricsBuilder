@@ -75,11 +75,19 @@ def main():
     with open("./uge/NodeJob.json", "w") as outfile_nodejob:
             json.dump(node_job_match, outfile_nodejob, indent = 4, sort_keys = True)
 
-
     with open("./uge/JobUserTime.json", "w") as outfile_jobusertime:
             json.dump(job_user_time_dic, outfile_jobusertime, indent = 4, sort_keys = True)
 
     print("-Done!")
+
+    ######################
+    # Py plot #
+    ######################
+    job_id, job_no_nodes, job_pwr = pyplot(job_pwr_list)
+    with open("./pyplot.txt", "w") as plotfile:
+        plotfile.write("job_id=" + job_id + "\n")
+        plotfile.write("job_no_nodes=" + job_no_nodes + "\n")
+        plotfile.write("job_pwr=" + job_pwr + "\n")
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
@@ -227,6 +235,17 @@ def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, ses
             printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
     except Exception as e:
         print(e)
+
+# Export data for pyplot
+def pyplot(job_pwr_list):
+    job_id = []
+    job_no_nodes = []
+    job_pwr = []
+    for job in job_pwr_list:
+        job_id.append(job['JobId'])
+        job_no_nodes.append(len(job['ExecHosts']))
+        job_pwr.append(job['TotalPowerConsumedWatts'])
+    return job_id, job_no_nodes, job_pwr
 
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
