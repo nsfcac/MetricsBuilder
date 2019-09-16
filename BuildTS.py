@@ -13,8 +13,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def main():
     record_list = []
     time_end = time.time() + 60* 3
-    while time.time() < time_end:
-        t = threading.Timer(60.0, interleave(record_list)).start()
+    t = threading.Timer(60.0, interleave(record_list)).start()
+    if time.time() > time_end:
+        t.cancel()
 
     with open("./pyplot/recordTS.json", "w") as outfile:
             json.dump(record_list, outfile, indent = 4, sort_keys = True)
