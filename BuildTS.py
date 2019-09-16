@@ -13,7 +13,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def main():
     record_list = []
     time_end = time.time() + 60* 3
-    t = threading.Timer(60.0, interleave(record_list)).start()
+    t = threading.Timer(60.0, interleave(record_list))
+    t.start()
     if time.time() > time_end:
         t.cancel()
 
