@@ -12,13 +12,14 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 def main():
     record_list = []
     for i in range(0, 2):
-        ts, result = interleave()
-        record = {"TimeStamp":ts, "JobDetails": result}
+        time_stamp = datetime.datetime.now().ctime()
+        result = interleave()
+        record = {"TimeStamp":time_stamp, "JobDetails": result}
         record_list.append(record)
         time.sleep(60)
 
     with open("./pyplot/recordTS.json", "w") as outfile:
-            json.dump(record, outfile, indent = 4, sort_keys = True)
+            json.dump(record_list, outfile, indent = 4, sort_keys = True)
 
 
 def interleave():
@@ -28,7 +29,6 @@ def interleave():
     #########################
     # Get current timestamp #
     #########################
-    time_stamp = datetime.datetime.now().ctime()
 
     conn_time_out = 15
     read_time_out = 40
@@ -76,7 +76,7 @@ def interleave():
 
     job_core_pwr = build_job_core_pwr(job_pwr_list)
 
-    return time_stamp, job_core_pwr
+    return job_core_pwr
 
 
 # Get exec hosts list of ip addresses
@@ -141,8 +141,9 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     for index, job in enumerate(job_set):
-        job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecCores':None, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
         total_pwr = 0
+        total_cores = 0
         for node in node_job_match:
             for i in node['Counting']:
                 if job == i[0]:
@@ -153,10 +154,11 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
                     except TypeError:
                         pwr_each = 0
                     total_pwr += pwr_each
+                    total_cores += i[1]
                     job_pwr_dict['ExecHosts'].append(node_ip)
                     job_pwr_dict['OccupationPct'].append(pwr_pct)
                     job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
-        job_pwr_dict.update({'TotalPowerConsumedWatts': round(total_pwr, 2)})
+        job_pwr_dict.update({'ExecCores':total_cores, 'TotalPowerConsumedWatts': round(total_pwr, 2)})
         job_pwr_list.append(job_pwr_dict)
         printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
@@ -231,7 +233,7 @@ def build_job_core_pwr(job_pwr_list):
     result_list = []
     for job in job_pwr_list:
         host_len = len(job['ExecHosts'])
-        job_core_pwr_dict = {"JobId": job['JobId'], "HostsLen": host_len, "Power": job['TotalPowerConsumedWatts']}
+        job_core_pwr_dict = {"JobId": job['JobId'], "ExecCores": job['ExecCores'], "HostsLen": host_len, "Power": job['TotalPowerConsumedWatts']}
         result_list.append(job_core_pwr_dict)
     return result_list
 
