@@ -1,1370 +1,574 @@
 {
-    "819625": {
-        "startTime": "Fri Sep 13 09:14:02 CDT 2019",
+    "819668": {
+        "startTime": "Mon Sep 16 08:05:21 CDT 2019",
         "user": "rafiisla"
     },
-    "912652": {
-        "startTime": "Fri Sep 13 07:56:59 CDT 2019",
-        "user": "jieyao"
+    "819710": {
+        "startTime": "Sun Sep 15 20:10:30 CDT 2019",
+        "user": "rafiisla"
     },
-    "912833": {
-        "startTime": "Fri Sep 13 01:10:26 CDT 2019",
-        "user": "pnourian"
+    "871891": {
+        "startTime": "Mon Sep 16 07:50:47 CDT 2019",
+        "user": "rafiisla"
     },
-    "912834": {
-        "startTime": "Fri Sep 13 01:50:06 CDT 2019",
-        "user": "pnourian"
-    },
-    "915213": {
-        "startTime": "Thu Sep 12 08:06:06 CDT 2019",
+    "915220": {
+        "startTime": "Mon Sep 16 02:20:52 CDT 2019",
         "user": "dsundara"
     },
-    "915214": {
-        "startTime": "Thu Sep 12 10:59:09 CDT 2019",
-        "user": "dsundara"
-    },
-    "916952": {
-        "startTime": "Thu Sep 12 08:15:53 CDT 2019",
-        "user": "fazhussa"
-    },
-    "917310": {
-        "startTime": "Wed Sep 11 23:01:17 CDT 2019",
-        "user": "shahrahm"
-    },
-    "917312": {
-        "startTime": "Thu Sep 12 08:31:18 CDT 2019",
-        "user": "shahrahm"
-    },
-    "917757": {
-        "startTime": "Thu Sep 12 09:08:35 CDT 2019",
-        "user": "aschueth"
-    },
-    "917931": {
-        "startTime": "Fri Sep 13 06:44:24 CDT 2019",
+    "917947": {
+        "startTime": "Sun Sep 15 09:57:04 CDT 2019",
         "user": "srmani"
-    },
-    "917933": {
-        "startTime": "Fri Sep 13 07:48:56 CDT 2019",
-        "user": "srmani"
-    },
-    "917935": {
-        "startTime": "Fri Sep 13 09:06:36 CDT 2019",
-        "user": "srmani"
-    },
-    "917940": {
-        "startTime": "Fri Sep 13 08:16:01 CDT 2019",
-        "user": "srmani"
-    },
-    "919023": {
-        "startTime": "Wed Sep 11 22:53:49 CDT 2019",
-        "user": "wan39502"
-    },
-    "919049": {
-        "startTime": "Wed Sep 11 20:29:06 CDT 2019",
-        "user": "hge"
-    },
-    "920046": {
-        "startTime": "Wed Sep 11 09:36:03 CDT 2019",
-        "user": "johruska"
-    },
-    "920048": {
-        "startTime": "Wed Sep 11 09:52:02 CDT 2019",
-        "user": "johruska"
     },
     "920049": {
         "startTime": "Thu Sep 12 12:13:42 CDT 2019",
         "user": "johruska"
     },
-    "920201": {
-        "startTime": "Thu Sep 12 08:31:18 CDT 2019",
-        "user": "wan39502"
-    },
-    "920209": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920214": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920228": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920233": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920236": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920237": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920238": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920240": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920243": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920248": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920255": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920258": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920260": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920261": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920268": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920271": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920273": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920276": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920279": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920281": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920288": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920289": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920291": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920294": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920295": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920296": {
-        "startTime": "Wed Sep 11 11:22:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920307": {
-        "startTime": "Wed Sep 11 11:23:08 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920312": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920315": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920318": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920320": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920325": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920328": {
-        "startTime": "Wed Sep 11 11:23:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920330": {
-        "startTime": "Wed Sep 11 11:23:24 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920335": {
-        "startTime": "Wed Sep 11 11:23:26 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920338": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920340": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920343": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920344": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920348": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920349": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920355": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920357": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920360": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920365": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920367": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920369": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920373": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920375": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920379": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920386": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920388": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920389": {
-        "startTime": "Wed Sep 11 11:23:35 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920394": {
-        "startTime": "Wed Sep 11 11:42:07 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920399": {
-        "startTime": "Wed Sep 11 11:50:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920401": {
-        "startTime": "Wed Sep 11 11:56:01 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920404": {
-        "startTime": "Wed Sep 11 12:10:17 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920431": {
-        "startTime": "Wed Sep 11 12:22:17 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920437": {
-        "startTime": "Wed Sep 11 12:27:19 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920442": {
-        "startTime": "Wed Sep 11 12:35:21 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920448": {
-        "startTime": "Wed Sep 11 12:43:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920464": {
-        "startTime": "Wed Sep 11 13:07:00 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920465": {
-        "startTime": "Wed Sep 11 13:08:11 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920472": {
-        "startTime": "Wed Sep 11 13:12:32 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920477": {
-        "startTime": "Wed Sep 11 13:13:09 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920486": {
-        "startTime": "Wed Sep 11 13:14:54 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920488": {
-        "startTime": "Wed Sep 11 13:16:04 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920489": {
-        "startTime": "Wed Sep 11 13:16:41 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920492": {
-        "startTime": "Wed Sep 11 13:17:56 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920495": {
-        "startTime": "Wed Sep 11 13:19:06 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920499": {
-        "startTime": "Wed Sep 11 13:20:29 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920500": {
-        "startTime": "Wed Sep 11 13:20:47 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920502": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920503": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920504": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920506": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920510": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920512": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920513": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920519": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920521": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920524": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920525": {
-        "startTime": "Wed Sep 11 13:21:58 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920531": {
-        "startTime": "Wed Sep 11 13:22:15 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920539": {
-        "startTime": "Wed Sep 11 13:24:00 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920540": {
-        "startTime": "Wed Sep 11 13:24:17 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920541": {
-        "startTime": "Wed Sep 11 13:24:17 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920545": {
-        "startTime": "Wed Sep 11 13:25:23 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920548": {
-        "startTime": "Wed Sep 11 13:27:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920555": {
-        "startTime": "Wed Sep 11 13:29:26 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920561": {
-        "startTime": "Wed Sep 11 13:30:50 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920563": {
-        "startTime": "Wed Sep 11 13:31:08 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920572": {
-        "startTime": "Wed Sep 11 13:33:14 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920573": {
-        "startTime": "Wed Sep 11 13:33:14 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920574": {
-        "startTime": "Wed Sep 11 13:33:31 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920576": {
-        "startTime": "Wed Sep 11 13:34:23 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920577": {
-        "startTime": "Wed Sep 11 13:34:23 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920579": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920580": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920581": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920582": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920587": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920588": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920595": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920596": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920597": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920604": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920608": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920614": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920615": {
-        "startTime": "Wed Sep 11 13:34:40 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920617": {
-        "startTime": "Wed Sep 11 13:34:57 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920621": {
-        "startTime": "Wed Sep 11 13:35:30 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920624": {
-        "startTime": "Wed Sep 11 13:36:07 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920628": {
-        "startTime": "Wed Sep 11 13:37:00 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920635": {
-        "startTime": "Wed Sep 11 13:39:20 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920636": {
-        "startTime": "Wed Sep 11 13:39:36 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920639": {
-        "startTime": "Wed Sep 11 13:40:24 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920642": {
-        "startTime": "Wed Sep 11 13:41:34 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920646": {
-        "startTime": "Wed Sep 11 13:42:11 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920647": {
-        "startTime": "Wed Sep 11 13:42:26 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920650": {
-        "startTime": "Wed Sep 11 13:42:26 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920651": {
-        "startTime": "Wed Sep 11 13:43:01 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920653": {
-        "startTime": "Wed Sep 11 13:43:01 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920654": {
-        "startTime": "Wed Sep 11 13:43:19 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920657": {
-        "startTime": "Wed Sep 11 13:43:53 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920662": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920663": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920664": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920665": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920666": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920668": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920669": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920676": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920677": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920678": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920680": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920681": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920686": {
-        "startTime": "Wed Sep 11 13:45:00 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920691": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920693": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920694": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920701": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920702": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920704": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920705": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920707": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920708": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920709": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920710": {
-        "startTime": "Wed Sep 11 13:45:16 CDT 2019",
-        "user": "mgurusam"
-    },
-    "920801": {
-        "startTime": "Wed Sep 11 13:16:23 CDT 2019",
-        "user": "daray"
-    },
-    "920854": {
-        "startTime": "Wed Sep 11 13:43:37 CDT 2019",
-        "user": "aucolema"
-    },
-    "920858": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "aucolema"
-    },
-    "920860": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "aucolema"
-    },
-    "920862": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "aucolema"
-    },
-    "920863": {
-        "startTime": "Wed Sep 11 13:44:43 CDT 2019",
-        "user": "aucolema"
-    },
-    "920970": {
-        "startTime": "Wed Sep 11 16:34:48 CDT 2019",
-        "user": "lancolli"
-    },
-    "921027": {
-        "startTime": "Wed Sep 11 16:43:34 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921029": {
-        "startTime": "Wed Sep 11 18:51:04 CDT 2019",
-        "user": "doguo"
-    },
-    "921035": {
-        "startTime": "Wed Sep 11 17:16:46 CDT 2019",
-        "user": "tivincen"
-    },
-    "921038": {
-        "startTime": "Wed Sep 11 17:19:32 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921039": {
-        "startTime": "Wed Sep 11 17:32:28 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921046": {
-        "startTime": "Thu Sep 12 13:16:53 CDT 2019",
+    "921785": {
+        "startTime": "Sat Sep 14 13:17:01 CDT 2019",
         "user": "hge"
     },
-    "921048": {
-        "startTime": "Thu Sep 12 08:15:47 CDT 2019",
+    "922397": {
+        "startTime": "Sun Sep 15 20:27:11 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922402": {
+        "startTime": "Sun Sep 15 20:51:55 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922404": {
+        "startTime": "Sun Sep 15 20:57:19 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922408": {
+        "startTime": "Sun Sep 15 21:15:00 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922409": {
+        "startTime": "Sun Sep 15 21:16:56 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922410": {
+        "startTime": "Sun Sep 15 21:18:14 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922411": {
+        "startTime": "Sun Sep 15 21:19:35 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922412": {
+        "startTime": "Sun Sep 15 21:27:20 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922413": {
+        "startTime": "Sun Sep 15 21:28:00 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922414": {
+        "startTime": "Sun Sep 15 21:37:08 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922415": {
+        "startTime": "Sun Sep 15 22:05:44 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922416": {
+        "startTime": "Sun Sep 15 22:15:54 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922417": {
+        "startTime": "Sun Sep 15 22:16:42 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922418": {
+        "startTime": "Sun Sep 15 22:22:22 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922419": {
+        "startTime": "Sun Sep 15 22:24:32 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922420": {
+        "startTime": "Sun Sep 15 22:36:35 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922421": {
+        "startTime": "Sun Sep 15 22:38:22 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922422": {
+        "startTime": "Sun Sep 15 22:59:29 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922423": {
+        "startTime": "Sun Sep 15 22:59:29 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922424": {
+        "startTime": "Sun Sep 15 23:28:45 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922425": {
+        "startTime": "Sun Sep 15 23:50:10 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922426": {
+        "startTime": "Mon Sep 16 00:00:49 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922427": {
+        "startTime": "Mon Sep 16 00:04:24 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922428": {
+        "startTime": "Mon Sep 16 00:14:17 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922429": {
+        "startTime": "Mon Sep 16 00:17:42 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922430": {
+        "startTime": "Mon Sep 16 00:23:26 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922431": {
+        "startTime": "Mon Sep 16 00:51:38 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922432": {
+        "startTime": "Mon Sep 16 01:01:36 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922433": {
+        "startTime": "Mon Sep 16 01:41:31 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922434": {
+        "startTime": "Mon Sep 16 01:41:31 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922435": {
+        "startTime": "Mon Sep 16 01:41:32 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922436": {
+        "startTime": "Mon Sep 16 01:41:32 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922437": {
+        "startTime": "Mon Sep 16 02:44:45 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922438": {
+        "startTime": "Mon Sep 16 02:57:14 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922439": {
+        "startTime": "Mon Sep 16 03:38:25 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922440": {
+        "startTime": "Mon Sep 16 03:48:41 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922441": {
+        "startTime": "Mon Sep 16 05:51:54 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922442": {
+        "startTime": "Mon Sep 16 09:23:38 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922443": {
+        "startTime": "Mon Sep 16 09:30:18 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922444": {
+        "startTime": "Mon Sep 16 09:33:04 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922445": {
+        "startTime": "Mon Sep 16 09:36:10 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922446": {
+        "startTime": "Mon Sep 16 09:43:16 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922447": {
+        "startTime": "Mon Sep 16 09:46:40 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922448": {
+        "startTime": "Mon Sep 16 10:14:25 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922449": {
+        "startTime": "Mon Sep 16 10:14:31 CDT 2019",
+        "user": "gpinesch"
+    },
+    "922450": {
+        "startTime": "Mon Sep 16 10:14:31 CDT 2019",
+        "user": "gpinesch"
+    },
+    "923140": {
+        "startTime": "Sat Sep 14 13:07:45 CDT 2019",
         "user": "hge"
     },
-    "921120": {
-        "startTime": "Wed Sep 11 19:44:29 CDT 2019",
-        "user": "aaljadda"
+    "923377": {
+        "startTime": "Sun Sep 15 10:51:53 CDT 2019",
+        "user": "christan"
     },
-    "921169": {
-        "startTime": "Wed Sep 11 21:20:19 CDT 2019",
-        "user": "rfariasc"
+    "923379": {
+        "startTime": "Sun Sep 15 10:52:33 CDT 2019",
+        "user": "christan"
     },
-    "921170": {
-        "startTime": "Wed Sep 11 21:27:05 CDT 2019",
-        "user": "sisadegh"
+    "923380": {
+        "startTime": "Sun Sep 15 10:56:38 CDT 2019",
+        "user": "christan"
     },
-    "921221": {
-        "startTime": "Wed Sep 11 22:57:11 CDT 2019",
-        "user": "hge"
+    "923382": {
+        "startTime": "Sun Sep 15 10:56:57 CDT 2019",
+        "user": "christan"
     },
-    "921236": {
-        "startTime": "Thu Sep 12 02:41:07 CDT 2019",
+    "923384": {
+        "startTime": "Sun Sep 15 10:57:33 CDT 2019",
+        "user": "christan"
+    },
+    "923386": {
+        "startTime": "Sun Sep 15 10:58:11 CDT 2019",
+        "user": "christan"
+    },
+    "923388": {
+        "startTime": "Sun Sep 15 10:59:49 CDT 2019",
+        "user": "christan"
+    },
+    "923390": {
+        "startTime": "Sun Sep 15 10:59:49 CDT 2019",
+        "user": "christan"
+    },
+    "923391": {
+        "startTime": "Sun Sep 15 10:59:49 CDT 2019",
+        "user": "christan"
+    },
+    "923392": {
+        "startTime": "Sun Sep 15 10:59:49 CDT 2019",
+        "user": "christan"
+    },
+    "923393": {
+        "startTime": "Sun Sep 15 11:00:02 CDT 2019",
+        "user": "christan"
+    },
+    "923394": {
+        "startTime": "Sun Sep 15 12:26:00 CDT 2019",
+        "user": "christan"
+    },
+    "923395": {
+        "startTime": "Sun Sep 15 21:18:35 CDT 2019",
+        "user": "christan"
+    },
+    "923396": {
+        "startTime": "Sun Sep 15 21:18:38 CDT 2019",
+        "user": "christan"
+    },
+    "923397": {
+        "startTime": "Sun Sep 15 21:25:36 CDT 2019",
+        "user": "christan"
+    },
+    "923398": {
+        "startTime": "Sun Sep 15 22:05:28 CDT 2019",
+        "user": "christan"
+    },
+    "923399": {
+        "startTime": "Sun Sep 15 22:12:02 CDT 2019",
+        "user": "christan"
+    },
+    "923400": {
+        "startTime": "Sun Sep 15 22:16:56 CDT 2019",
+        "user": "christan"
+    },
+    "923401": {
+        "startTime": "Sun Sep 15 22:27:13 CDT 2019",
+        "user": "christan"
+    },
+    "923402": {
+        "startTime": "Sun Sep 15 22:27:14 CDT 2019",
+        "user": "christan"
+    },
+    "923403": {
+        "startTime": "Sun Sep 15 22:27:15 CDT 2019",
+        "user": "christan"
+    },
+    "923404": {
+        "startTime": "Sun Sep 15 22:27:16 CDT 2019",
+        "user": "christan"
+    },
+    "923405": {
+        "startTime": "Sun Sep 15 22:29:58 CDT 2019",
+        "user": "christan"
+    },
+    "923406": {
+        "startTime": "Sun Sep 15 22:42:51 CDT 2019",
+        "user": "christan"
+    },
+    "923407": {
+        "startTime": "Sun Sep 15 22:59:34 CDT 2019",
+        "user": "christan"
+    },
+    "923408": {
+        "startTime": "Sun Sep 15 23:28:44 CDT 2019",
+        "user": "christan"
+    },
+    "923409": {
+        "startTime": "Sun Sep 15 23:42:13 CDT 2019",
+        "user": "christan"
+    },
+    "923410": {
+        "startTime": "Sun Sep 15 23:50:35 CDT 2019",
+        "user": "christan"
+    },
+    "923411": {
+        "startTime": "Mon Sep 16 00:04:22 CDT 2019",
+        "user": "christan"
+    },
+    "923412": {
+        "startTime": "Mon Sep 16 00:39:04 CDT 2019",
+        "user": "christan"
+    },
+    "924449": {
+        "startTime": "Mon Sep 16 08:23:32 CDT 2019",
         "user": "aschueth"
     },
-    "921251": {
-        "startTime": "Fri Sep 13 01:26:22 CDT 2019",
+    "924460": {
+        "startTime": "Mon Sep 16 02:34:47 CDT 2019",
         "user": "lediaz"
     },
-    "921252": {
-        "startTime": "Fri Sep 13 06:34:39 CDT 2019",
+    "924462": {
+        "startTime": "Mon Sep 16 07:32:11 CDT 2019",
         "user": "lediaz"
     },
-    "921253": {
-        "startTime": "Fri Sep 13 07:49:53 CDT 2019",
-        "user": "lediaz"
+    "924477": {
+        "startTime": "Mon Sep 16 00:39:04 CDT 2019",
+        "user": "fazhussa"
     },
-    "921254": {
-        "startTime": "Thu Sep 12 08:06:07 CDT 2019",
-        "user": "samoradi"
-    },
-    "921259": {
-        "startTime": "Thu Sep 12 08:41:12 CDT 2019",
+    "924794": {
+        "startTime": "Sat Sep 14 18:59:07 CDT 2019",
         "user": "hge"
     },
-    "921262": {
-        "startTime": "Thu Sep 12 08:58:54 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921263": {
-        "startTime": "Thu Sep 12 09:09:16 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921265": {
-        "startTime": "Thu Sep 12 09:12:55 CDT 2019",
-        "user": "aaljadda"
-    },
-    "921485": {
-        "startTime": "Thu Sep 12 13:02:22 CDT 2019",
-        "user": "jimchun"
-    },
-    "921546": {
-        "startTime": "Thu Sep 12 11:33:21 CDT 2019",
-        "user": "nayshah"
-    },
-    "921606": {
-        "startTime": "Thu Sep 12 20:15:27 CDT 2019",
-        "user": "jsarka"
-    },
-    "921788": {
-        "startTime": "Thu Sep 12 13:08:21 CDT 2019",
-        "user": "sabaty"
-    },
-    "921831": {
-        "startTime": "Fri Sep 13 00:10:17 CDT 2019",
-        "user": "jimchun"
-    },
-    "922034": {
-        "startTime": "Fri Sep 13 07:44:06 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922035": {
-        "startTime": "Fri Sep 13 07:44:42 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922036": {
-        "startTime": "Fri Sep 13 07:44:52 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922037": {
-        "startTime": "Fri Sep 13 07:45:50 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922038": {
-        "startTime": "Fri Sep 13 07:46:16 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922039": {
-        "startTime": "Fri Sep 13 07:46:53 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922040": {
-        "startTime": "Fri Sep 13 07:47:28 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922041": {
-        "startTime": "Fri Sep 13 07:47:40 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922042": {
-        "startTime": "Fri Sep 13 07:47:51 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922043": {
-        "startTime": "Fri Sep 13 07:48:02 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922044": {
-        "startTime": "Fri Sep 13 07:48:13 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922045": {
-        "startTime": "Fri Sep 13 07:48:35 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922046": {
-        "startTime": "Fri Sep 13 07:49:30 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922047": {
-        "startTime": "Fri Sep 13 07:49:53 CDT 2019",
-        "user": "uozuguze"
-    },
-    "922095": {
-        "startTime": "Thu Sep 12 13:46:32 CDT 2019",
-        "user": "ipandey"
-    },
-    "922096": {
-        "startTime": "Thu Sep 12 13:49:43 CDT 2019",
-        "user": "ipandey"
-    },
-    "922158": {
-        "startTime": "Thu Sep 12 15:00:16 CDT 2019",
-        "user": "luccorte"
-    },
-    "922205": {
-        "startTime": "Fri Sep 13 07:49:59 CDT 2019",
-        "user": "bravhill"
-    },
-    "922212": {
-        "startTime": "Thu Sep 12 18:09:35 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922221": {
-        "startTime": "Thu Sep 12 18:42:18 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922224": {
-        "startTime": "Thu Sep 12 22:52:54 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922225": {
-        "startTime": "Fri Sep 13 00:10:27 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922226": {
-        "startTime": "Fri Sep 13 01:23:22 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922227": {
-        "startTime": "Fri Sep 13 02:03:55 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922228": {
-        "startTime": "Fri Sep 13 04:43:53 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922229": {
-        "startTime": "Fri Sep 13 04:45:35 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922230": {
-        "startTime": "Fri Sep 13 06:27:00 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922231": {
-        "startTime": "Fri Sep 13 06:34:29 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922232": {
-        "startTime": "Fri Sep 13 06:34:39 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922233": {
-        "startTime": "Fri Sep 13 06:34:39 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922234": {
-        "startTime": "Fri Sep 13 06:40:08 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922235": {
-        "startTime": "Fri Sep 13 06:44:33 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922236": {
-        "startTime": "Fri Sep 13 06:46:13 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922237": {
-        "startTime": "Fri Sep 13 06:53:56 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922238": {
-        "startTime": "Fri Sep 13 07:01:12 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922239": {
-        "startTime": "Fri Sep 13 07:05:10 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922240": {
-        "startTime": "Fri Sep 13 07:09:16 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922241": {
-        "startTime": "Fri Sep 13 07:20:49 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922242": {
-        "startTime": "Fri Sep 13 07:21:42 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922243": {
-        "startTime": "Fri Sep 13 07:33:10 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922244": {
-        "startTime": "Fri Sep 13 07:49:59 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922245": {
-        "startTime": "Fri Sep 13 07:50:48 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922246": {
-        "startTime": "Fri Sep 13 07:51:21 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922247": {
-        "startTime": "Fri Sep 13 07:51:27 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922248": {
-        "startTime": "Fri Sep 13 07:57:01 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922249": {
-        "startTime": "Fri Sep 13 07:57:01 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922250": {
-        "startTime": "Fri Sep 13 08:01:22 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922251": {
-        "startTime": "Fri Sep 13 08:17:03 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922252": {
-        "startTime": "Fri Sep 13 08:17:53 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922253": {
-        "startTime": "Fri Sep 13 08:19:01 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922254": {
-        "startTime": "Fri Sep 13 08:21:33 CDT 2019",
-        "user": "gpinesch"
-    },
-    "922255": {
-        "startTime": "Fri Sep 13 08:25:32 CDT 2019",
-        "user": "gpinesch"
-    },
-    "923013": {
-        "startTime": "Thu Sep 12 15:38:21 CDT 2019",
-        "user": "liu96340"
-    },
-    "923014": {
-        "startTime": "Thu Sep 12 15:58:23 CDT 2019",
-        "user": "liu96340"
-    },
-    "923015": {
-        "startTime": "Thu Sep 12 15:59:20 CDT 2019",
-        "user": "liu96340"
-    },
-    "923107": {
-        "startTime": "Thu Sep 12 16:57:28 CDT 2019",
+    "925193": {
+        "startTime": "Sat Sep 14 20:09:27 CDT 2019",
         "user": "sisadegh"
     },
-    "923108": {
-        "startTime": "Thu Sep 12 17:05:12 CDT 2019",
-        "user": "sisadegh"
+    "925227": {
+        "startTime": "Sat Sep 14 21:22:11 CDT 2019",
+        "user": "aaljadda"
     },
-    "923117": {
-        "startTime": "Thu Sep 12 16:37:19 CDT 2019",
-        "user": "johdahl"
+    "925228": {
+        "startTime": "Sat Sep 14 21:23:08 CDT 2019",
+        "user": "aaljadda"
     },
-    "923136": {
-        "startTime": "Thu Sep 12 17:33:06 CDT 2019",
-        "user": "juandomi"
+    "925229": {
+        "startTime": "Sat Sep 14 21:27:14 CDT 2019",
+        "user": "aaljadda"
     },
-    "923137": {
-        "startTime": "Thu Sep 12 17:38:40 CDT 2019",
-        "user": "jchundur"
+    "925231": {
+        "startTime": "Sat Sep 14 21:27:41 CDT 2019",
+        "user": "aaljadda"
     },
-    "923143": {
-        "startTime": "Thu Sep 12 19:26:57 CDT 2019",
-        "user": "andhingr"
-    },
-    "923147": {
-        "startTime": "Thu Sep 12 19:35:13 CDT 2019",
-        "user": "jjerke"
-    },
-    "923151": {
-        "startTime": "Fri Sep 13 00:58:30 CDT 2019",
+    "925260": {
+        "startTime": "Sun Sep 15 22:11:29 CDT 2019",
         "user": "doguo"
     },
-    "923162": {
-        "startTime": "Thu Sep 12 20:47:28 CDT 2019",
-        "user": "obazgir"
+    "925261": {
+        "startTime": "Sun Sep 15 22:27:16 CDT 2019",
+        "user": "doguo"
     },
-    "923177": {
-        "startTime": "Thu Sep 12 22:10:24 CDT 2019",
-        "user": "rmuthuku"
-    },
-    "923181": {
-        "startTime": "Thu Sep 12 22:23:52 CDT 2019",
+    "925275": {
+        "startTime": "Sun Sep 15 00:59:16 CDT 2019",
         "user": "msanati"
     },
-    "923192": {
-        "startTime": "Fri Sep 13 09:00:22 CDT 2019",
-        "user": "llindblo"
+    "925298": {
+        "startTime": "Sun Sep 15 11:48:01 CDT 2019",
+        "user": "srmani"
     },
-    "923193": {
-        "startTime": "Fri Sep 13 00:02:13 CDT 2019",
-        "user": "andhingr"
+    "925300": {
+        "startTime": "Sun Sep 15 23:42:12 CDT 2019",
+        "user": "srmani"
     },
-    "923194": {
-        "startTime": "Fri Sep 13 00:02:57 CDT 2019",
-        "user": "msanati"
+    "925302": {
+        "startTime": "Mon Sep 16 02:36:31 CDT 2019",
+        "user": "srmani"
     },
-    "923200": {
-        "startTime": "Fri Sep 13 04:27:02 CDT 2019",
-        "user": "ssami"
+    "925304": {
+        "startTime": "Mon Sep 16 04:16:31 CDT 2019",
+        "user": "srmani"
     },
-    "923204": {
-        "startTime": "Fri Sep 13 04:28:16 CDT 2019",
-        "user": "scalandr"
-    },
-    "923205": {
-        "startTime": "Fri Sep 13 04:28:33 CDT 2019",
-        "user": "scalandr"
-    },
-    "923206": {
-        "startTime": "Fri Sep 13 04:33:15 CDT 2019",
-        "user": "scalandr"
-    },
-    "923208": {
-        "startTime": "Fri Sep 13 03:25:29 CDT 2019",
-        "user": "gcapodag"
-    },
-    "923209": {
-        "startTime": "Fri Sep 13 08:18:36 CDT 2019",
-        "user": "lediaz"
-    },
-    "923222": {
-        "startTime": "Fri Sep 13 07:10:09 CDT 2019",
-        "user": "jjerke"
-    },
-    "923223": {
-        "startTime": "Fri Sep 13 07:49:50 CDT 2019",
-        "user": "daray"
-    },
-    "923225": {
-        "startTime": "Fri Sep 13 09:00:09 CDT 2019",
+    "925322": {
+        "startTime": "Sun Sep 15 10:02:36 CDT 2019",
         "user": "aaljadda"
     },
-    "923281": {
-        "startTime": "Fri Sep 13 09:14:44 CDT 2019",
+    "925343": {
+        "startTime": "Sun Sep 15 11:06:15 CDT 2019",
+        "user": "npaulat"
+    },
+    "925351": {
+        "startTime": "Mon Sep 16 09:08:12 CDT 2019",
+        "user": "npaulat"
+    },
+    "925371": {
+        "startTime": "Sun Sep 15 23:34:33 CDT 2019",
+        "user": "pnourian"
+    },
+    "925372": {
+        "startTime": "Mon Sep 16 02:43:12 CDT 2019",
+        "user": "pnourian"
+    },
+    "925373": {
+        "startTime": "Mon Sep 16 06:08:24 CDT 2019",
+        "user": "pnourian"
+    },
+    "925374": {
+        "startTime": "Mon Sep 16 07:12:13 CDT 2019",
+        "user": "pnourian"
+    },
+    "925376": {
+        "startTime": "Mon Sep 16 09:05:08 CDT 2019",
+        "user": "pnourian"
+    },
+    "925399": {
+        "startTime": "Mon Sep 16 05:12:47 CDT 2019",
+        "user": "fazhussa"
+    },
+    "925432": {
+        "startTime": "Sun Sep 15 14:18:01 CDT 2019",
+        "user": "aucolema"
+    },
+    "925442": {
+        "startTime": "Sun Sep 15 18:39:57 CDT 2019",
+        "user": "npaulat"
+    },
+    "925457": {
+        "startTime": "Sun Sep 15 15:20:29 CDT 2019",
+        "user": "scalandr"
+    },
+    "925462": {
+        "startTime": "Sun Sep 15 17:11:48 CDT 2019",
+        "user": "ssami"
+    },
+    "925463": {
+        "startTime": "Sun Sep 15 17:35:34 CDT 2019",
+        "user": "ssami"
+    },
+    "925528": {
+        "startTime": "Sun Sep 15 21:02:38 CDT 2019",
+        "user": "hge"
+    },
+    "925535": {
+        "startTime": "Sun Sep 15 17:21:56 CDT 2019",
+        "user": "jjerke"
+    },
+    "925557": {
+        "startTime": "Sun Sep 15 20:15:46 CDT 2019",
+        "user": "andhingr"
+    },
+    "925558": {
+        "startTime": "Sun Sep 15 20:15:59 CDT 2019",
+        "user": "andhingr"
+    },
+    "925559": {
+        "startTime": "Sun Sep 15 20:22:56 CDT 2019",
+        "user": "andhingr"
+    },
+    "925562": {
+        "startTime": "Mon Sep 16 08:09:18 CDT 2019",
+        "user": "lediaz"
+    },
+    "925563": {
+        "startTime": "Mon Sep 16 08:09:20 CDT 2019",
+        "user": "lediaz"
+    },
+    "925580": {
+        "startTime": "Sun Sep 15 21:37:06 CDT 2019",
+        "user": "jjerke"
+    },
+    "925585": {
+        "startTime": "Sun Sep 15 22:03:00 CDT 2019",
+        "user": "gcapodag"
+    },
+    "925590": {
+        "startTime": "Sun Sep 15 23:55:03 CDT 2019",
+        "user": "llindblo"
+    },
+    "925592": {
+        "startTime": "Mon Sep 16 01:37:56 CDT 2019",
+        "user": "scalandr"
+    },
+    "925974": {
+        "startTime": "Mon Sep 16 09:21:38 CDT 2019",
+        "user": "vicesali"
+    },
+    "925975": {
+        "startTime": "Mon Sep 16 09:28:52 CDT 2019",
         "user": "qiu25856"
     },
-    "923282": {
-        "startTime": "Fri Sep 13 09:18:28 CDT 2019",
-        "user": "christan"
+    "925977": {
+        "startTime": "Mon Sep 16 09:31:28 CDT 2019",
+        "user": "samoradi"
     },
-    "923283": {
-        "startTime": "Fri Sep 13 09:18:32 CDT 2019",
-        "user": "christan"
+    "925979": {
+        "startTime": "Mon Sep 16 09:45:36 CDT 2019",
+        "user": "sisadegh"
     },
-    "923284": {
-        "startTime": "Fri Sep 13 09:23:06 CDT 2019",
-        "user": "christan"
+    "925980": {
+        "startTime": "Mon Sep 16 09:46:55 CDT 2019",
+        "user": "johdahl"
     },
-    "923285": {
-        "startTime": "Fri Sep 13 09:43:40 CDT 2019",
-        "user": "christan"
+    "925981": {
+        "startTime": "Mon Sep 16 10:04:31 CDT 2019",
+        "user": "johruska"
     },
-    "923286": {
-        "startTime": "Fri Sep 13 09:43:44 CDT 2019",
-        "user": "christan"
-    },
-    "923287": {
-        "startTime": "Fri Sep 13 09:44:23 CDT 2019",
-        "user": "christan"
-    },
-    "923288": {
-        "startTime": "Fri Sep 13 09:45:01 CDT 2019",
-        "user": "christan"
-    },
-    "923289": {
-        "startTime": "Fri Sep 13 09:45:09 CDT 2019",
-        "user": "christan"
-    },
-    "923290": {
-        "startTime": "Fri Sep 13 09:46:00 CDT 2019",
-        "user": "christan"
-    },
-    "923291": {
-        "startTime": "Fri Sep 13 09:46:36 CDT 2019",
-        "user": "christan"
-    },
-    "923292": {
-        "startTime": "Fri Sep 13 09:46:40 CDT 2019",
-        "user": "christan"
-    },
-    "923293": {
-        "startTime": "Fri Sep 13 09:47:38 CDT 2019",
-        "user": "christan"
-    },
-    "923294": {
-        "startTime": "Fri Sep 13 09:53:53 CDT 2019",
-        "user": "christan"
-    },
-    "923295": {
-        "startTime": "Fri Sep 13 09:55:49 CDT 2019",
-        "user": "christan"
-    },
-    "923296": {
-        "startTime": "Fri Sep 13 09:57:05 CDT 2019",
-        "user": "christan"
-    },
-    "923297": {
-        "startTime": "Fri Sep 13 10:00:29 CDT 2019",
-        "user": "christan"
-    },
-    "923413": {
-        "startTime": "Fri Sep 13 09:35:01 CDT 2019",
-        "user": "bancell"
-    },
-    "923456": {
-        "startTime": "Fri Sep 13 09:50:16 CDT 2019",
-        "user": "bancell"
-    },
-    "923457": {
-        "startTime": "Fri Sep 13 09:50:20 CDT 2019",
-        "user": "bancell"
-    },
-    "923458": {
-        "startTime": "Fri Sep 13 09:50:24 CDT 2019",
-        "user": "bancell"
-    },
-    "923459": {
-        "startTime": "Fri Sep 13 09:50:24 CDT 2019",
-        "user": "bancell"
-    },
-    "923460": {
-        "startTime": "Fri Sep 13 09:50:24 CDT 2019",
-        "user": "bancell"
-    },
-    "923461": {
-        "startTime": "Fri Sep 13 09:50:25 CDT 2019",
-        "user": "bancell"
-    },
-    "923462": {
-        "startTime": "Fri Sep 13 09:50:29 CDT 2019",
-        "user": "bancell"
-    },
-    "923463": {
-        "startTime": "Fri Sep 13 09:50:29 CDT 2019",
-        "user": "bancell"
-    },
-    "923464": {
-        "startTime": "Fri Sep 13 09:50:29 CDT 2019",
-        "user": "bancell"
-    },
-    "923465": {
-        "startTime": "Fri Sep 13 09:50:29 CDT 2019",
-        "user": "bancell"
-    },
-    "923466": {
-        "startTime": "Fri Sep 13 09:50:34 CDT 2019",
-        "user": "bancell"
-    },
-    "923467": {
-        "startTime": "Fri Sep 13 09:50:34 CDT 2019",
-        "user": "bancell"
-    },
-    "923468": {
-        "startTime": "Fri Sep 13 09:50:34 CDT 2019",
-        "user": "bancell"
-    },
-    "923469": {
-        "startTime": "Fri Sep 13 09:50:34 CDT 2019",
-        "user": "bancell"
-    },
-    "923470": {
-        "startTime": "Fri Sep 13 09:50:38 CDT 2019",
-        "user": "bancell"
-    },
-    "923471": {
-        "startTime": "Fri Sep 13 09:50:38 CDT 2019",
-        "user": "bancell"
-    },
-    "923472": {
-        "startTime": "Fri Sep 13 09:50:38 CDT 2019",
-        "user": "bancell"
-    },
-    "923473": {
-        "startTime": "Fri Sep 13 09:50:39 CDT 2019",
-        "user": "bancell"
-    },
-    "923474": {
-        "startTime": "Fri Sep 13 09:50:43 CDT 2019",
-        "user": "bancell"
-    },
-    "923475": {
-        "startTime": "Fri Sep 13 09:50:43 CDT 2019",
-        "user": "bancell"
-    },
-    "923476": {
-        "startTime": "Fri Sep 13 09:50:43 CDT 2019",
-        "user": "bancell"
-    },
-    "923477": {
-        "startTime": "Fri Sep 13 09:50:43 CDT 2019",
-        "user": "bancell"
-    },
-    "923478": {
-        "startTime": "Fri Sep 13 09:50:44 CDT 2019",
-        "user": "bancell"
-    },
-    "923479": {
-        "startTime": "Fri Sep 13 09:50:48 CDT 2019",
-        "user": "bancell"
-    },
-    "923480": {
-        "startTime": "Fri Sep 13 09:50:48 CDT 2019",
-        "user": "bancell"
-    },
-    "923481": {
-        "startTime": "Fri Sep 13 09:50:48 CDT 2019",
-        "user": "bancell"
-    },
-    "923482": {
-        "startTime": "Fri Sep 13 09:50:49 CDT 2019",
-        "user": "bancell"
-    },
-    "923483": {
-        "startTime": "Fri Sep 13 09:50:53 CDT 2019",
-        "user": "bancell"
-    },
-    "923484": {
-        "startTime": "Fri Sep 13 09:50:53 CDT 2019",
-        "user": "bancell"
-    },
-    "923485": {
-        "startTime": "Fri Sep 13 09:50:53 CDT 2019",
-        "user": "bancell"
-    },
-    "923486": {
-        "startTime": "Fri Sep 13 09:50:53 CDT 2019",
-        "user": "bancell"
-    },
-    "923487": {
-        "startTime": "Fri Sep 13 09:50:54 CDT 2019",
-        "user": "bancell"
-    },
-    "923488": {
-        "startTime": "Fri Sep 13 09:50:58 CDT 2019",
-        "user": "bancell"
-    },
-    "923489": {
-        "startTime": "Fri Sep 13 09:50:58 CDT 2019",
-        "user": "bancell"
-    },
-    "923490": {
-        "startTime": "Fri Sep 13 09:50:58 CDT 2019",
-        "user": "bancell"
-    },
-    "923491": {
-        "startTime": "Fri Sep 13 09:50:59 CDT 2019",
-        "user": "bancell"
-    },
-    "923492": {
-        "startTime": "Fri Sep 13 09:51:03 CDT 2019",
-        "user": "bancell"
-    },
-    "923493": {
-        "startTime": "Fri Sep 13 09:51:03 CDT 2019",
-        "user": "bancell"
-    },
-    "923494": {
-        "startTime": "Fri Sep 13 09:51:03 CDT 2019",
-        "user": "bancell"
-    },
-    "923495": {
-        "startTime": "Fri Sep 13 09:51:04 CDT 2019",
-        "user": "bancell"
-    },
-    "923496": {
-        "startTime": "Fri Sep 13 09:51:08 CDT 2019",
-        "user": "bancell"
-    },
-    "923497": {
-        "startTime": "Fri Sep 13 09:51:08 CDT 2019",
-        "user": "bancell"
-    },
-    "923499": {
-        "startTime": "Fri Sep 13 09:55:45 CDT 2019",
+    "925986": {
+        "startTime": "Mon Sep 16 10:12:33 CDT 2019",
         "user": "aucolema"
     },
-    "923500": {
-        "startTime": "Fri Sep 13 09:56:20 CDT 2019",
-        "user": "aucolema"
+    "925987": {
+        "startTime": "Mon Sep 16 10:12:33 CDT 2019",
+        "user": "johruska"
     },
-    "923501": {
-        "startTime": "Fri Sep 13 09:57:56 CDT 2019",
-        "user": "roshang"
+    "925988": {
+        "startTime": "Mon Sep 16 10:14:19 CDT 2019",
+        "user": "password"
+    },
+    "925998": {
+        "startTime": "Mon Sep 16 10:50:38 CDT 2019",
+        "user": "llindblo"
+    },
+    "926022": {
+        "startTime": "Mon Sep 16 10:37:12 CDT 2019",
+        "user": "esowell"
+    },
+    "926166": {
+        "startTime": "Mon Sep 16 10:49:36 CDT 2019",
+        "user": "aschueth"
+    },
+    "926168": {
+        "startTime": "Mon Sep 16 10:50:38 CDT 2019",
+        "user": "benjowen"
+    },
+    "926171": {
+        "startTime": "Mon Sep 16 11:04:06 CDT 2019",
+        "user": "qiu25856"
+    },
+    "926172": {
+        "startTime": "Mon Sep 16 10:52:29 CDT 2019",
+        "user": "bravhill"
+    },
+    "926173": {
+        "startTime": "Mon Sep 16 11:04:22 CDT 2019",
+        "user": "qiu25856"
+    },
+    "926225": {
+        "startTime": "Mon Sep 16 11:08:46 CDT 2019",
+        "user": "shahrahm"
     }
 }
