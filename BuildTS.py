@@ -29,7 +29,7 @@ def interleave():
     #########################
     # Get current timestamp #
     #########################
-    
+
     time_stamp = datetime.datetime.now().ctime()
 
     conn_time_out = 15
@@ -78,7 +78,7 @@ def interleave():
 
     job_core_pwr = build_job_core_pwr(job_pwr_list)
 
-    return job_core_pwr
+    return time_stamp, job_core_pwr
 
 
 # Get exec hosts list of ip addresses
@@ -235,7 +235,7 @@ def build_job_core_pwr(job_pwr_list):
     result_list = []
     for job in job_pwr_list:
         host_len = len(job['ExecHosts'])
-        job_core_pwr_dict = {"JobId": job['JobId'], "ExecCores": job['ExecCores'], "HostsLen": host_len, "Power": job['TotalPowerConsumedWatts']}
+        job_core_pwr_dict = {"JobId": job['JobId'], "ExecCores": job['ExecCores'], "ExecHosts": host_len, "Power": job['TotalPowerConsumedWatts']}
         result_list.append(job_core_pwr_dict)
     return result_list
 
@@ -272,11 +272,11 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         print()
 
 def printlogo():
-    print("""     __  ___     __       _      ____        _ __    __          """)
-    print("""    /  |/  /__  / /______(_)____/ __ )__  __(_) /___/ /__  _____ """)
-    print("""   / /|_/ / _ \/ __/ ___/ / ___/ __  / / / / / / __  / _ \/ ___/ """)
-    print("""  / /  / /  __/ /_/ /  / / /__/ /_/ / /_/ / / / /_/ /  __/ /     """)
-    print(""" /_/  /_/\___/\__/_/  /_/\___/_____/\__,_/_/_/\__,_/\___/_/      """)
+    print("""    __  ___     __       _           ____        _ __    __          """)
+    print("""   /  |/  /__  / /______(_)_________/ __ )__  __(_) /___/ /__  _____ """)
+    print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
+    print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
+    print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
 
 
 if __name__ == "__main__":

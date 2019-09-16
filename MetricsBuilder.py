@@ -15,7 +15,7 @@ def main():
     # Get current timestamp #
     #########################
     time_stamp = datetime.datetime.now().ctime()
-    
+
     conn_time_out = 15
     read_time_out = 40
 
@@ -151,8 +151,9 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
     printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     for index, job in enumerate(job_set):
-        job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecCores':None, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
         total_pwr = 0
+        total_cores = 0
         for node in node_job_match:
             for i in node['Counting']:
                 if job == i[0]:
@@ -163,10 +164,11 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
                     except TypeError:
                         pwr_each = 0
                     total_pwr += pwr_each
+                    total_cores += i[1]
                     job_pwr_dict['ExecHosts'].append(node_ip)
                     job_pwr_dict['OccupationPct'].append(pwr_pct)
                     job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
-        job_pwr_dict.update({'TotalPowerConsumedWatts': round(total_pwr, 2)})
+        job_pwr_dict.update({'ExecCores':total_cores, 'TotalPowerConsumedWatts': round(total_pwr, 2)})
         job_pwr_list.append(job_pwr_dict)
         printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
