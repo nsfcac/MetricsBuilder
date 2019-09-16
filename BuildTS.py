@@ -3,20 +3,47 @@ import time
 import datetime
 import requests
 import warnings
-import threading
 from collections import Counter
 from  threading import Thread
+from threading import Timer
 
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+class RepeatedTimer(object):
+    def __init__(self, interval, function, *args, **kwargs):
+        self._timer     = None
+        self.interval   = interval
+        self.function   = function
+        self.args       = args
+        self.kwargs     = kwargs
+        self.is_running = False
+        self.start()
+
+    def _run(self):
+        self.is_running = False
+        self.start()
+        self.function(*self.args, **self.kwargs)
+
+    def start(self):
+        if not self.is_running:
+            self._timer = Timer(self.interval, self._run)
+            self._timer.start()
+            self.is_running = True
+
+    def stop(self):
+        self._timer.cancel()
+        self.is_running = False
+
 def main():
     record_list = []
-    # time_end = time.time() + 60* 3
-    # t = threading.Timer(60.0, interleave(record_list))
-    # t.start()
-    for i in range(0, 30):
-        interleave(record_list)
+
+    rt = RepeatedTimer(60, interleave, record_list)
+
+    try:
+        sleep(120) # your long-running job goes here...
+    finally:
+        rt.stop() # better in a try/finally block to make sure the program ends!
 
     with open("./pyplot/recordTS.json", "w") as outfile:
             json.dump(record_list, outfile, indent = 4, sort_keys = True)
