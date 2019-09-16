@@ -84,7 +84,7 @@ def main():
     # Py plot #
     ######################
     job_id, job_no_nodes, job_pwr = pyplot(job_pwr_list)
-    with open("./pyplot.txt", "w") as plotfile:
+    with open("./pyplot/pyplot.txt", "w") as plotfile:
         plotfile.write("job_id=" + str(job_id) + "\n")
         plotfile.write("job_no_nodes=" + str(job_no_nodes) + "\n")
         plotfile.write("job_pwr=" + str(job_pwr) + "\n")
