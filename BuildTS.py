@@ -42,7 +42,8 @@ def main():
     rt = RepeatedTimer(60, interleave, record_list)
 
     try:
-        sleep(120) # your long-running job goes here...
+        interleave(record_list)
+        sleep(180) # your long-running job goes here...
     finally:
         rt.stop() # better in a try/finally block to make sure the program ends!
 

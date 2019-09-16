@@ -33,6 +33,7 @@ def hello(name):
 print("starting...")
 rt = RepeatedTimer(1, hello, "World") # it auto-starts, no need of rt.start()
 try:
+    print("starting...")
     sleep(10) # your long-running job goes here...
 finally:
     rt.stop() # better in a try/finally block to make sure the program ends!
