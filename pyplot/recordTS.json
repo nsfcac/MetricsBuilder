@@ -1,0 +1,710 @@
+{
+    "JobDetails": [
+        {
+            "HostsLen": 2,
+            "JobId": 924460,
+            "Power": 639.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922415,
+            "Power": 280.0
+        },
+        {
+            "HostsLen": 14,
+            "JobId": 915220,
+            "Power": 3697.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925562,
+            "Power": 304.0
+        },
+        {
+            "HostsLen": 59,
+            "JobId": 925590,
+            "Power": 18081.27
+        },
+        {
+            "HostsLen": 29,
+            "JobId": 925399,
+            "Power": 9089.0
+        },
+        {
+            "HostsLen": 36,
+            "JobId": 925998,
+            "Power": 6674.79
+        },
+        {
+            "HostsLen": 20,
+            "JobId": 925462,
+            "Power": 5734.0
+        },
+        {
+            "HostsLen": 7,
+            "JobId": 917947,
+            "Power": 1974.0
+        },
+        {
+            "HostsLen": 7,
+            "JobId": 925300,
+            "Power": 2021.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 819710,
+            "Power": 2984.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925371,
+            "Power": 2618.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923380,
+            "Power": 235.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923393,
+            "Power": 276.0
+        },
+        {
+            "HostsLen": 20,
+            "JobId": 925463,
+            "Power": 5620.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925373,
+            "Power": 2503.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925351,
+            "Power": 268.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 819668,
+            "Power": 2974.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 871891,
+            "Power": 2880.0
+        },
+        {
+            "HostsLen": 7,
+            "JobId": 925304,
+            "Power": 1979.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923396,
+            "Power": 243.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925374,
+            "Power": 2588.0
+        },
+        {
+            "HostsLen": 16,
+            "JobId": 924449,
+            "Power": 4528.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923390,
+            "Power": 232.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925557,
+            "Power": 131.0
+        },
+        {
+            "HostsLen": 20,
+            "JobId": 923140,
+            "Power": 5187.0
+        },
+        {
+            "HostsLen": 15,
+            "JobId": 924477,
+            "Power": 4689.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922426,
+            "Power": 292.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922444,
+            "Power": 295.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922445,
+            "Power": 273.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922424,
+            "Power": 282.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922430,
+            "Power": 285.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925261,
+            "Power": 2900.0
+        },
+        {
+            "HostsLen": 7,
+            "JobId": 925302,
+            "Power": 2001.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922437,
+            "Power": 298.0
+        },
+        {
+            "HostsLen": 5,
+            "JobId": 924794,
+            "Power": 1354.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922446,
+            "Power": 283.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925986,
+            "Power": 9.72
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922413,
+            "Power": 307.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922435,
+            "Power": 307.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922421,
+            "Power": 306.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923384,
+            "Power": 239.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925260,
+            "Power": 2888.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923406,
+            "Power": 233.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925592,
+            "Power": 128.0
+        },
+        {
+            "HostsLen": 7,
+            "JobId": 925298,
+            "Power": 2001.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925559,
+            "Power": 132.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925979,
+            "Power": 313.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925372,
+            "Power": 2600.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923410,
+            "Power": 243.0
+        },
+        {
+            "HostsLen": 10,
+            "JobId": 925376,
+            "Power": 2609.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 920049,
+            "Power": 42.84
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925343,
+            "Power": 12.24
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922427,
+            "Power": 300.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925227,
+            "Power": 9.6
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925228,
+            "Power": 9.6
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925231,
+            "Power": 9.6
+        },
+        {
+            "HostsLen": 2,
+            "JobId": 924462,
+            "Power": 624.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925322,
+            "Power": 9.63
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922439,
+            "Power": 297.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925229,
+            "Power": 9.54
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925980,
+            "Power": 9.54
+        },
+        {
+            "HostsLen": 3,
+            "JobId": 925974,
+            "Power": 827.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923395,
+            "Power": 250.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922442,
+            "Power": 289.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925981,
+            "Power": 9.27
+        },
+        {
+            "HostsLen": 4,
+            "JobId": 926225,
+            "Power": 1046.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922449,
+            "Power": 289.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 926166,
+            "Power": 8.52
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 926172,
+            "Power": 11.36
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923404,
+            "Power": 246.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923412,
+            "Power": 241.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 926022,
+            "Power": 50.16
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925975,
+            "Power": 9.78
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925432,
+            "Power": 12.72
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923409,
+            "Power": 239.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923401,
+            "Power": 269.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922418,
+            "Power": 286.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922409,
+            "Power": 300.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923377,
+            "Power": 244.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923397,
+            "Power": 243.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923394,
+            "Power": 237.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922447,
+            "Power": 299.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922397,
+            "Power": 286.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922434,
+            "Power": 304.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923408,
+            "Power": 287.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922436,
+            "Power": 292.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925977,
+            "Power": 21.98
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923386,
+            "Power": 248.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922443,
+            "Power": 306.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922428,
+            "Power": 279.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923388,
+            "Power": 246.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925558,
+            "Power": 54.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925563,
+            "Power": 314.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922410,
+            "Power": 284.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922420,
+            "Power": 304.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922438,
+            "Power": 302.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925528,
+            "Power": 307.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922431,
+            "Power": 316.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922412,
+            "Power": 310.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923391,
+            "Power": 234.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922411,
+            "Power": 293.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923402,
+            "Power": 237.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922433,
+            "Power": 305.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923403,
+            "Power": 230.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922423,
+            "Power": 302.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922419,
+            "Power": 301.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925457,
+            "Power": 155.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922440,
+            "Power": 291.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925580,
+            "Power": 274.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925275,
+            "Power": 277.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922402,
+            "Power": 284.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925443,
+            "Power": 139.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922432,
+            "Power": 316.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922416,
+            "Power": 290.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923379,
+            "Power": 281.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923399,
+            "Power": 250.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925193,
+            "Power": 324.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922404,
+            "Power": 294.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925535,
+            "Power": 188.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923398,
+            "Power": 264.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923405,
+            "Power": 252.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 926228,
+            "Power": 315.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922414,
+            "Power": 306.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922429,
+            "Power": 303.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925987,
+            "Power": 43.68
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925988,
+            "Power": 12.48
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923407,
+            "Power": 249.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923411,
+            "Power": 230.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922422,
+            "Power": 293.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 925585,
+            "Power": 181.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922417,
+            "Power": 287.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923392,
+            "Power": 261.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922448,
+            "Power": 291.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922408,
+            "Power": 301.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922425,
+            "Power": 294.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922450,
+            "Power": 308.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 922441,
+            "Power": 298.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923400,
+            "Power": 251.0
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 921785,
+            "Power": 11.12
+        },
+        {
+            "HostsLen": 1,
+            "JobId": 923382,
+            "Power": 240.0
+        }
+    ],
+    "TimeStamp": "Mon Sep 16 11:46:06 2019"
+}
