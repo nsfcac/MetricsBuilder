@@ -40,5 +40,11 @@ with open("./pyplot/recordTS.json") as json_file:
 # print(f"Jobs Length: {len(job_set)}")
 # print(f"Dataset Length: {len(sorted_data)}")
 #
-with open("./pyplot/dataset.json", "w") as plotfile:
-    json.dump(sorted_data, plotfile, indent = 4, sort_keys = True)
+# with open("./pyplot/dataset.json", "w") as dataset:
+#     json.dump(sorted_data, dataset, indent = 4, sort_keys = True)
+#
+# with open("./pyplot/timestamp.json", "w") as timestamp:
+#     json.dump(time_stamp, timestamp, indent = 4, sort_keys = True)
+#
+# with open("./pyplot/totalpower.json", "w") as totalpower:
+#     json.dump(power_val, totalpower, indent = 4, sort_keys = True)
