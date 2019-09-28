@@ -1,124 +1,127 @@
-{
-  "timeStamp": "Mon Sep 16 12:18:12 2019",
-  "timeInterval": 300,
-  "userList": [
-    {
-      "userId": "lediaz",
-      "jobList": [
+
+[
+      {
+      "timeStamp": "Mon Sep 16 12:18:12 2019",
+      "timeInterval": 300,
+      "userList": [
         {
-          "jobId": 924460,
-          "execHost": [
+          "userId": "lediaz",
+          "jobList": [
             {
-              "hostIp": "compute-1-1.localdomain",
-              "hostName": "10.101.1.1",
-              "fans": [
+              "jobId": 924460,
+              "execHost": [
                 {
-                  "name": "FAN_1",
-                  "health": "OK",
-                  "speedReading": 9310
-                },
-                {
-                  "name": "FAN_2",
-                  "health": "OK",
-                  "speedReading": 8210
-                },
-                {
-                  "name": "FAN_3",
-                  "health": "OK",
-                  "speedReading": 9210
-                },
-                {
-                  "name": "FAN_4",
-                  "health": "OK",
-                  "speedReading": 6210
-                }
-              ],
-              "cpus": {
-                "numberOfProcessors": 72,
-                "loadAvg": "35.35",
-                "tempCelsius": [
-                  {
-                    "name": "CPU1 Temp",
-                    "tempReading": 47
+                  "hostIp": "compute-1-1.localdomain",
+                  "hostName": "10.101.1.1",
+                  "fans": [
+                    {
+                      "name": "FAN_1",
+                      "health": "OK",
+                      "speedReading": 9310
+                    },
+                    {
+                      "name": "FAN_2",
+                      "health": "OK",
+                      "speedReading": 8210
+                    },
+                    {
+                      "name": "FAN_3",
+                      "health": "OK",
+                      "speedReading": 9210
+                    },
+                    {
+                      "name": "FAN_4",
+                      "health": "OK",
+                      "speedReading": 6210
+                    }
+                  ],
+                  "cpus": {
+                    "numberOfProcessors": 72,
+                    "loadAvg": "35.35",
+                    "tempCelsius": [
+                      {
+                        "name": "CPU1 Temp",
+                        "tempReading": 47
+                      },
+                      {
+                        "name": "CPU2 Temp",
+                        "tempReading": 64
+                      }
+                    ]
                   },
-                  {
-                    "name": "CPU2 Temp",
-                    "tempReading": 64
+                  "memory": {
+                    "memTotal": "188.8G",
+                    "memUsed": "54.9G"
+                  },
+                  "inlet": {
+                    "health": "OK",
+                    "tempCelsius": 20
                   }
-                ]
-              },
-              "memory": {
-                "memTotal": "188.8G",
-                "memUsed": "54.9G"
-              },
-              "inlet": {
-                "health": "OK",
-                "tempCelsius": 20
-              }
+                },
+              ],
+              "startTime": "Mon Sep 16 02:34:47 CDT 2019",
+              "finishTime": "Mon Sep 16 02:44:47 CDT 2019",
+              "powerConsumedWatts": 266.0,
             },
-          ],
-          "startTime": "Mon Sep 16 02:34:47 CDT 2019",
-          "finishTime": "Mon Sep 16 02:44:47 CDT 2019",
-          "powerConsumedWatts": 266.0,
-        },
-        {
-          "jobId": 924461,
-          "execHost": [
             {
-              "hostIp": "compute-1-2.localdomain",
-              "hostName": "10.101.1.2",
-              "fans": [
+              "jobId": 924461,
+              "execHost": [
                 {
-                  "name": "FAN_1",
-                  "health": "OK",
-                  "speedReading": 9310
-                },
-                {
-                  "name": "FAN_2",
-                  "health": "OK",
-                  "speedReading": 8210
-                },
-                {
-                  "name": "FAN_3",
-                  "health": "OK",
-                  "speedReading": 9210
-                },
-                {
-                  "name": "FAN_4",
-                  "health": "OK",
-                  "speedReading": 6210
-                }
-              ],
-              "cpus": {
-                "numberOfProcessors": 72,
-                "loadAvg": "35.35",
-                "tempCelsius": [
-                  {
-                    "name": "CPU1 Temp",
-                    "tempReading": 47
+                  "hostIp": "compute-1-2.localdomain",
+                  "hostName": "10.101.1.2",
+                  "fans": [
+                    {
+                      "name": "FAN_1",
+                      "health": "OK",
+                      "speedReading": 9310
+                    },
+                    {
+                      "name": "FAN_2",
+                      "health": "OK",
+                      "speedReading": 8210
+                    },
+                    {
+                      "name": "FAN_3",
+                      "health": "OK",
+                      "speedReading": 9210
+                    },
+                    {
+                      "name": "FAN_4",
+                      "health": "OK",
+                      "speedReading": 6210
+                    }
+                  ],
+                  "cpus": {
+                    "numberOfProcessors": 72,
+                    "loadAvg": "35.35",
+                    "tempCelsius": [
+                      {
+                        "name": "CPU1 Temp",
+                        "tempReading": 47
+                      },
+                      {
+                        "name": "CPU2 Temp",
+                        "tempReading": 64
+                      }
+                    ]
                   },
-                  {
-                    "name": "CPU2 Temp",
-                    "tempReading": 64
+                  "memory": {
+                    "memTotal": "188.8G",
+                    "memUsed": "54.9G"
+                  },
+                  "inlet": {
+                    "health": "OK",
+                    "tempCelsius": 20
                   }
-                ]
-              },
-              "memory": {
-                "memTotal": "188.8G",
-                "memUsed": "54.9G"
-              },
-              "inlet": {
-                "health": "OK",
-                "tempCelsius": 20
-              }
-            },
+                },
+              ],
+              "startTime": "Mon Sep 16 02:44:47 CDT 2019",
+              "finishTime": "None",
+              "powerConsumedWatts": 134.0,
+            }
           ],
-          "startTime": "Mon Sep 16 02:44:47 CDT 2019",
-          "finishTime": "None",
-          "powerConsumedWatts": 134.0,
+          "TotalPowerConsumedWatts": 400.0
         }
-      ],
-      "TotalPowerConsumedWatts": 400.0
+      ]
     }
-  ]
-}
+]
