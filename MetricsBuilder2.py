@@ -28,7 +28,7 @@ def query_db(client, measurement, startTime, endTime):
              + " WHERE time >= " + startTime 
              + "AND time <= " + endTime)
     
-    print(f"Querying data: ", end= " ")
+    print("Querying data: ", end= " ")
     print(measurement)
     result = client.query(query)
 
