@@ -11,7 +11,7 @@ def main():
     endTime = "2019-04-26T00:10:00Z"
 
     result = query_db(client, "node_job_info", startTime, endTime)
-    print(json.dumps(result, indent=4)
+    print(json.dumps(result, indent=4))
 
 def query_db(client, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
