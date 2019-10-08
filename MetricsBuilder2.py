@@ -22,24 +22,23 @@ def main():
                     "Memory_Health", "Fan_Health", "Node_LED_Indicator", 
                 ]
 
-    for measurement in measure_list:
-        result = query_db(client, hostIp, measurement, startTime, endTime)
-        for item in result:
-            print(item)
+    # for measurement in measure_list:
+    #     result = query_db(client, hostIp, measurement, startTime, endTime)
+    #     for item in result:
+    #         print(item)
+    measurements = client.query("SHOW MEASUREMENTS")
+
+    print(measurements)
 
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
     """
-    # query = ("SELECT * FROM " + measurement 
-    #          + " WHERE host='" + hostIp 
-    #          + "' AND time >= '" + startTime 
-    #          + "' AND time <= '" + endTime + "' LIMIT 1")
-    
-    query = ("SELECT * FROM * "
-             + " WHERE time >= '" + startTime 
-             + "' AND time <= '" + endTime + "' LIMIT 5")
+    query = ("SELECT * FROM " + measurement 
+             + " WHERE host='" + hostIp 
+             + "' AND time >= '" + startTime 
+             + "' AND time <= '" + endTime + "' LIMIT 1")
 
     # print(query)
     print("Querying data: " + measurement)
