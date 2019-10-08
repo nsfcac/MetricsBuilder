@@ -28,10 +28,10 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     CPU_Usage, Memory_Usage, Fan_Speed, CPU_Temperature, Inlet_Temperature
     Node_LED_Indicator
     """
-    query = ("SELECT * FROM " + measurement 
-             + " WHERE host=" + hostIp 
-             + " AND time >= " + startTime 
-             + "AND time <= " + endTime + " LIMIT 1")
+    query = ("SELECT * FROM '" + measurement 
+             + "' WHERE host='" + hostIp 
+             + "' AND time >= '" + startTime 
+             + "'AND time <= '" + endTime + "' LIMIT 1")
     
     print(query)
     # print("Querying data: " + measurement)
