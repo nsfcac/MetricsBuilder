@@ -8,9 +8,9 @@ def main():
         port=8086, 
         database='hpcc_monitoring_db')
 
-    hostIp = "10.101.3.53"
-    startTime = "2019-04-26T00:00:00Z"
-    endTime = "2019-04-26T05:00:00Z"
+    hostIp = '10.101.3.53'
+    startTime = '2019-04-26T00:00:00Z'
+    endTime = '2019-04-26T05:00:00Z'
 
     result = query_db(client, hostIp, "CPU_Temperature", startTime, endTime)
     print(result)
