@@ -8,7 +8,7 @@ def main():
         database='hpcc_monitoring_db')
 
     startTime = "2019-04-26T00:00:00Z"
-    endTime = "2019-04-26T00:10:00Z"
+    endTime = "2019-04-26T05:00:00Z"
 
     result = query_db(client, "node_job_info", startTime, endTime)
     print(json.dumps(result, indent=4))
@@ -28,8 +28,7 @@ def query_db(client, measurement, startTime, endTime):
              + " WHERE time >= " + startTime 
              + "AND time <= " + endTime)
     
-    print("Querying data: ", end= " ")
-    print(measurement)
+    print("Querying data: " + measurement)
     result = client.query(query)
 
     return result
