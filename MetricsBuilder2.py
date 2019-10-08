@@ -27,8 +27,8 @@ def main():
     #     for item in result:
     #         print(item)
     measurements = client.query("SHOW MEASUREMENTS")
-
-    print(measurements)
+    print("Measurement length: ", len(measurements))
+    # print(measurements)
 
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
