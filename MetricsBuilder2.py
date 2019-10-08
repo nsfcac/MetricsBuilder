@@ -16,7 +16,7 @@ def main():
     print(result)
     # print(json.dumps(result, indent=4))
 
-def query_db(client, hostIP, measurement, startTime, endTime):
+def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
