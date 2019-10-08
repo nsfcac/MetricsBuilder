@@ -33,10 +33,11 @@ def query_db(client, hostIp, measurement, startTime, endTime):
              + " AND time >= " + startTime 
              + "AND time <= " + endTime + " LIMIT 1")
     
-    print("Querying data: " + measurement)
-    result = client.query(query)
+    print(query)
+    # print("Querying data: " + measurement)
+    # result = client.query(query)
 
-    return result
+    # return result
 
 if __name__ == "__main__":
     main()
