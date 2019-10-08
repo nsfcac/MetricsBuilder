@@ -27,7 +27,9 @@ def main():
     #     for item in result:
     #         print(item)
     measurements = client.query("SHOW MEASUREMENTS")
-    print("Measurement length: ", len(measurements))
+    with open("./measurements.txt", "w") as outfile:
+        outfile.write(measurements)
+
     # print(measurements)
 
 def query_db(client, hostIp, measurement, startTime, endTime):
