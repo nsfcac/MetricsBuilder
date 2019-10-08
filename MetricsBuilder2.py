@@ -1,3 +1,4 @@
+import json
 from influxdb import InfluxDBClient
 
 def main():
