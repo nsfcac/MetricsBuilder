@@ -32,7 +32,7 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     #          + "' WHERE host='" + hostIp 
     #          + "' AND time >= '" + startTime 
     #          + "' AND time <= '" + endTime + "' LIMIT 1")
-    query = "SELECT * FROM 'BMC_Health' WHERE host='10.101.3.53' AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z'"
+    query = "SELECT * FROM 'BMC_Health' WHERE host='10.101.3.53' AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
     print(query)
     print("Querying data: " + measurement)
     result = client.query(query)
