@@ -11,7 +11,6 @@ def main():
     hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
-    # Another measurement jID(jobID)
     measure_list = ["Current_Jobs_ID", "Current_Users", 
                     "Job_Info", "node_job_info", 
                     "system_metrics", "Cluster_Nodes_Jobs_PWR_Usage", 
