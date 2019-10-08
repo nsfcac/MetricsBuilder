@@ -8,14 +8,15 @@ def main():
         port=8086, 
         database='hpcc_monitoring_db')
 
+    hostIp = "10.101.3.53"
     startTime = "2019-04-26T00:00:00Z"
     endTime = "2019-04-26T05:00:00Z"
 
-    result = query_db(client, "BMC_Health", startTime, endTime)
+    result = query_db(client, "CPU_Temperature", startTime, endTime)
     print(result)
     # print(json.dumps(result, indent=4))
 
-def query_db(client, measurement, startTime, endTime):
+def query_db(client, hostIP, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
@@ -26,17 +27,10 @@ def query_db(client, measurement, startTime, endTime):
     CPU_Usage, Memory_Usage, Fan_Speed, CPU_Temperature, Inlet_Temperature
     Node_LED_Indicator
     """
-    # query = ("SELECT * FROM " + measurement 
-    #          + " WHERE time >= " + startTime 
-    #          + "AND time <= " + endTime)
-
-    # query = ("SELECT * FROM " + measurement 
-    #          + " LIMIT 1")
-
-    # query = ("SELECT last(*) FROM " + measurement 
-    #          + " LIMIT 1")
-
-    query = "SELECT * FROM Memory_Usage WHERE time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
+    query = ("SELECT * FROM " + measurement 
+             + " WHERE host=" + hostIp +
+             + " AND time >= " + startTime 
+             + "AND time <= " + endTime + " LIMIT 5")
     
     print("Querying data: " + measurement)
     result = client.query(query)
