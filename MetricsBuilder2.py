@@ -9,7 +9,7 @@ def main():
         database='hpcc_monitoring_db')
 
     hostIp = '10.101.3.53'
-    measurement = "CPU_Temperature"
+    measurement = "BMC_Health"
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
 
