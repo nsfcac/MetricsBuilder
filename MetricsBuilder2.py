@@ -36,7 +36,7 @@ def query_db(client, measurement, startTime, endTime):
     # query = ("SELECT last(*) FROM " + measurement 
     #          + " LIMIT 1")
 
-    query = "SELECT * FROM Memory_Usage WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"
+    query = "SELECT * FROM Memory_Usage WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z',* SLIMIT 1"
     
     print("Querying data: " + measurement)
     result = client.query(query)
