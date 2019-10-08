@@ -33,7 +33,7 @@ def query_db(client, measurement, startTime, endTime):
     # query = ("SELECT * FROM " + measurement 
     #          + " LIMIT 1")
 
-    query = ("SELECT first(*) FROM " + measurement 
+    query = ("SELECT last(*) FROM " + measurement 
              + " LIMIT 1")
     
     print("Querying data: " + measurement)
