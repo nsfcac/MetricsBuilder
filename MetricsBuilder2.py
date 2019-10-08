@@ -31,9 +31,9 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     query = ("SELECT * FROM '" + measurement 
              + "' WHERE host='" + hostIp 
              + "' AND time >= '" + startTime 
-             + "'AND time <= '" + endTime + "' LIMIT 1")
+             + "' AND time <= '" + endTime + "' LIMIT 1")
     
-    # print(query)
+    print(query)
     print("Querying data: " + measurement)
     result = client.query(query)
 
