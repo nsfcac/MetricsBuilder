@@ -27,7 +27,7 @@ def main():
     #     for item in result:
     #         print(item)
     measurements = client.query("SHOW MEASUREMENTS")
-    with open("./measurements.txt", "w") as outfile:
+    with open("./influxdb/measurements.txt", "w") as outfile:
         outfile.write(measurements)
 
     # print(measurements)
