@@ -11,7 +11,7 @@ def main():
     startTime = "2019-04-26T00:00:00Z"
     endTime = "2019-04-26T05:00:00Z"
 
-    result = query_db(client, "node_job_info", startTime, endTime)
+    result = query_db(client, "BMC_Health", startTime, endTime)
     print(result)
     # print(json.dumps(result, indent=4))
 
