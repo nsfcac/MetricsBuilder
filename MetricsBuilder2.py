@@ -24,9 +24,12 @@ def query_db(client, measurement, startTime, endTime):
     CPU_Usage, Memory_Usage, Fan_Speed, CPU_Temperature, Inlet_Temperature
     Node_LED_Indicator
     """
+    # query = ("SELECT * FROM " + measurement 
+    #          + " WHERE time >= " + startTime 
+    #          + "AND time <= " + endTime)
+
     query = ("SELECT * FROM " + measurement 
-             + " WHERE time >= " + startTime 
-             + "AND time <= " + endTime)
+             + " LIMIT 1")
     
     print("Querying data: " + measurement)
     result = client.query(query)
