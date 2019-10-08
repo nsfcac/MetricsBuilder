@@ -30,7 +30,10 @@ def query_db(client, measurement, startTime, endTime):
     #          + " WHERE time >= " + startTime 
     #          + "AND time <= " + endTime)
 
-    query = ("SELECT * FROM " + measurement 
+    # query = ("SELECT * FROM " + measurement 
+    #          + " LIMIT 1")
+
+    query = ("SELECT first(*) FROM " + measurement 
              + " LIMIT 1")
     
     print("Querying data: " + measurement)
