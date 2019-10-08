@@ -29,15 +29,14 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     Node_LED_Indicator
     """
     query = ("SELECT * FROM " + measurement 
-             + " WHERE host=" + hostIp +
+             + " WHERE host=" + hostIp 
              + " AND time >= " + startTime 
              + "AND time <= " + endTime + " LIMIT 5")
     
-    print(query)
     print("Querying data: " + measurement)
-    # result = client.query(query)
+    result = client.query(query)
 
-    # return result
+    return result
 
 if __name__ == "__main__":
     main()
