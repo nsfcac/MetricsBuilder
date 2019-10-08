@@ -14,7 +14,9 @@ def main():
     endTime = '2019-04-26T05:00:00Z'
 
     result = query_db(client, hostIp, measurement, startTime, endTime)
-    print(result)
+
+    for item in result:
+        print(item)
     # print(json.dumps(result, indent=4))
 
 def query_db(client, hostIp, measurement, startTime, endTime):
