@@ -9,10 +9,11 @@ def main():
         database='hpcc_monitoring_db')
 
     hostIp = '10.101.3.53'
+    measurement = "CPU_Temperature"
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
 
-    result = query_db(client, hostIp, "CPU_Temperature", startTime, endTime)
+    result = query_db(client, hostIp, measurement, startTime, endTime)
     print(result)
     # print(json.dumps(result, indent=4))
 
@@ -32,10 +33,11 @@ def query_db(client, hostIp, measurement, startTime, endTime):
              + " AND time >= " + startTime 
              + "AND time <= " + endTime + " LIMIT 5")
     
+    print(query)
     print("Querying data: " + measurement)
-    result = client.query(query)
+    # result = client.query(query)
 
-    return result
+    # return result
 
 if __name__ == "__main__":
     main()
