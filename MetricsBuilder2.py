@@ -28,11 +28,11 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     CPU_Usage, Memory_Usage, Fan_Speed, CPU_Temperature, Inlet_Temperature
     Node_LED_Indicator
     """
-    query = ("SELECT * FROM '" + measurement 
-             + "' WHERE host='" + hostIp 
-             + "' AND time >= '" + startTime 
-             + "' AND time <= '" + endTime + "'")
-    
+    # query = ("SELECT * FROM '" + measurement 
+    #          + "' WHERE host='" + hostIp 
+    #          + "' AND time >= '" + startTime 
+    #          + "' AND time <= '" + endTime + "' LIMIT 1")
+    query = "SELECT * FROM 'BMC_Health' WHERE host='10.101.3.53' AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z'"
     print(query)
     print("Querying data: " + measurement)
     result = client.query(query)
