@@ -24,16 +24,18 @@ def query_db(client, hostIp, measurement, startTime, endTime):
     measurement: 
     node_job_info, Node_Power_State,
     Node_Power_Usage, Cluster_Nodes_Jobs_PWR_Usage
-    BMC_Health, Inlet_Health, Node_Health, CPU_Health, Memory_Health, Fan_Health
-    CPU_Usage, Memory_Usage, Fan_Speed, CPU_Temperature, Inlet_Temperature
+    BMC_Health, Inlet_Health, Node_Health, 
+    CPU_Health, Memory_Health, Fan_Health
+    CPU_Usage, Memory_Usage, Fan_Speed, 
+    CPU_Temperature, Inlet_Temperature
     Node_LED_Indicator
     """
     query = ("SELECT * FROM " + measurement 
              + " WHERE host='" + hostIp 
              + "' AND time >= '" + startTime 
-             + "' AND time <= '" + endTime + "' LIMIT 1")
+             + "' AND time <= '" + endTime + "' LIMIT 5")
 
-    print(query)
+    # print(query)
     print("Querying data: " + measurement)
     result = client.query(query)
 
