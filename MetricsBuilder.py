@@ -50,6 +50,8 @@ def main():
         print("Get Host Summary Error")
         return
 
+    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+
     ######################
     # Interleave metrics #
     ######################
@@ -71,6 +73,9 @@ def main():
 
     with open("./uge/HostSummary.json", "w") as outfile_hostsum:
             json.dump(host_summary, outfile_hostsum, indent = 4, sort_keys = True)
+
+    with open("./uge/Joblist.json", "w") as outfile_joblist:
+            json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
 
     with open("./uge/NodeJob.json", "w") as outfile_nodejob:
             json.dump(node_job_match, outfile_nodejob, indent = 4, sort_keys = True)

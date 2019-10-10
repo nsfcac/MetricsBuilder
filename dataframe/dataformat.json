@@ -3,18 +3,13 @@
   "timeRange": ["Mon Sep 16 12:18:12 2019", "Mon Sep 19 12:18:12 2019"],
   "timeInterval": "1d",
   "timeSteps": 3,
-  "healthStatus": {
-    "OK": 0,
-    "Critical": 1,
-    "Warning": -1
-  },
   "groupList": [
     {
-      "name": "Group 1",
+      "cluster": "Group 1",
       "feature": "High Memory Usage"
     },
     {
-      "name": "Group 2",
+      "cluster": "Group 2",
       "feature": "High CPU Usage"
     }
   ],
@@ -23,134 +18,130 @@
       {
         "jobId": 924461,
         "execHost": ["10.101.1.1", "10.101.1.2"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "average": 252.0
-        }
+        "powerMax": 266.0,
+        "powerMin": 240.0,
+        "powerAvg": 252.0
       },
       {
         "jobId": 924462,
         "execHost": ["10.101.1.2"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "average": 252.0
-        }
+        "powerMax": 278.0,
+        "powerMin": 260.0,
+        "powerAvg": 266.0
       }
     ],
     [
       {
         "jobId": 924462,
         "execHost": ["10.101.1.2"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "average": 252.0
-        }
+        "powerMax": 256.0,
+        "powerMin": 240.0,
+        "powerAvg": 248.0
       }
     ],
     [
       {
         "jobId": 924463,
         "execHost": ["10.101.1.2"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "average": 252.0
-        }
+        "powerMax": 268.0,
+        "powerMin": 242.0,
+        "powerAvg": 256.0
       },
       {
         "jobId": 924464,
         "execHost": ["10.101.1.2", "10.101.1.3"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "average": 252.0
-        }
+        "powerMax": 266.0,
+        "powerMin": 240.0,
+        "powerAvg": 252.0
       },
       {
         "jobId": 924465,
         "execHost": ["10.101.1.3"],
-        "submitTime": "Sat Sep 14 10:44:14 2019",
-        "startTime": "Mon Sep 16 02:34:47 2019",
-        "finishTime": "Mon Sep 16 02:44:47 2019",
-        "powerConsumedWatts": {
-          "max": 266.0,
-          "min": 240.0,
-          "avg": 252.0
-        }
+        "powerMax": 220.0,
+        "powerMin": 240.0,
+        "powerAvg": 230.0
       }
     ]
   ],
   "userJob": {
-    "username_1": [924461, 924464],
-    "username_2": [924462, 924463, 924465]
+    "username_1": [
+      {"924461": 
+        {
+          "submitTime": "Sat Sep 14 10:44:14 2019",
+          "startTime": "Mon Sep 16 02:34:47 2019",
+          "finishTime": "None"
+        }
+      }, 
+      {"924464":
+        {
+          "submitTime": "Sat Sep 15 8:44:14 2019",
+          "startTime": "Mon Sep 16 01:34:47 2019",
+          "finishTime": "Mon Sep 16 02:44:47 2019"
+        }
+      }
+    ],
+    "username_2": [
+      {"924462":
+        {
+          "submitTime": "Sat Sep 14 10:44:14 2019",
+          "startTime": "Mon Sep 16 02:34:47 2019",
+          "finishTime": "None"
+        }
+      }, 
+      {"924463":
+        {
+          "submitTime": "Sat Sep 14 10:44:14 2019",
+          "startTime": "Mon Sep 16 02:34:47 2019",
+          "finishTime": "None"
+        }
+      }, 
+      {"924465":
+        {
+          "submitTime": "Sat Sep 14 10:44:14 2019",
+          "startTime": "Mon Sep 16 02:34:47 2019",
+          "finishTime": "None"
+        }
+      }
+    ]
   },
   "hostDetail": [
     {
       "10.101.1.1": {
-        "hostName": "compute-1-1.localdomain",
         "fans": [
           {
             "name": "FAN_1",
             "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
+            "speedMax": 9310,
+            "speedMin": 9280,
+            "speedAvg": 9300
           },
           {
             "name": "FAN_2",
             "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
+            "speedMax": 9210,
+            "speedMin": 9100,
+            "speedAvg": 9130
           },
           {
             "name": "FAN_3",
             "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
+            "speedMax": 9410,
+            "speedMin": 9300,
+            "speedAvg": 9340
           },
           {
             "name": "FAN_4",
             "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
+            "speedMax": 9300,
+            "speedMin": 9200,
+            "speedAvg": 9250
           }
         ],
         "cpus": {
           "numberOfProcessors": 72,
-          "loadUsage": {
-            "max": 33.77,
-            "min": 32.66,
-            "avg": 33.20
-          },
+          "loadMax": 33.77,
+          "loadMin": 32.66,
+          "loadAvg": 33.20,
           "tempCelsius": [
             {
               "name": "CPU1 Temp",
@@ -172,321 +163,25 @@
         },
         "inlet": {
           "health": 0,
-          "tempCelsius": {
-            "max": 64.00,
-            "min": 58.00,
-            "avg": 62.00
-          }
-        },
-        "group": 1
+          "tempMin": 58.00,
+          "tempAvg": 62.00
+        }
       },
       "10.101.1.2": {
-        "hostName": "compute-1-2.localdomain",
-        "fans": [
-          {
-            "name": "FAN_1",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_2",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_3",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_4",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          }
-        ],
-        "cpus": {
-          "numberOfProcessors": 72,
-          "loadUsage": {
-            "max": 33.77,
-            "min": 32.66,
-            "avg": 33.20
-          },
-          "tempCelsius": [
-            {
-              "name": "CPU1 Temp",
-              "max": 47.00,
-              "min": 42.00,
-              "avg": 43.00
-            },
-            {
-              "name": "CPU2 Temp",
-              "max": 64.00,
-              "min": 58.00,
-              "avg": 62.00
-            }
-          ]
-        },
-        "memory": {
-          "memTotal": "188.8G",
-          "memUsed": "54.9G"
-        },
-        "inlet": {
-          "health": 0,
-          "tempCelsius": {
-            "max": 64.00,
-            "min": 58.00,
-            "avg": 62.00
-          }
-        },
-        "group": 1
+
       }
     },
     {
       "10.101.1.2": {
-        "hostName": "compute-1-2.localdomain",
-        "fans": [
-          {
-            "name": "FAN_1",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_2",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_3",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_4",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          }
-        ],
-        "cpus": {
-          "numberOfProcessors": 72,
-          "loadUsage": {
-            "max": 33.77,
-            "min": 32.66,
-            "avg": 33.20
-          },
-          "tempCelsius": [
-            {
-              "name": "CPU1 Temp",
-              "max": 47.00,
-              "min": 42.00,
-              "avg": 43.00
-            },
-            {
-              "name": "CPU2 Temp",
-              "max": 64.00,
-              "min": 58.00,
-              "avg": 62.00
-            }
-          ]
-        },
-        "memory": {
-          "memTotal": "188.8G",
-          "memUsed": "54.9G"
-        },
-        "inlet": {
-          "health": 0,
-          "tempCelsius": {
-            "max": 64.00,
-            "min": 58.00,
-            "avg": 62.00
-          }
-        },
-        "group": 2
+
       }
     },
     {
       "10.101.1.2": {
-        "hostName": "compute-1-2.localdomain",
-        "fans": [
-          {
-            "name": "FAN_1",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_2",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_3",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_4",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          }
-        ],
-        "cpus": {
-          "numberOfProcessors": 72,
-          "loadUsage": {
-            "max": 33.77,
-            "min": 32.66,
-            "avg": 33.20
-          },
-          "tempCelsius": [
-            {
-              "name": "CPU1 Temp",
-              "max": 47.00,
-              "min": 42.00,
-              "avg": 43.00
-            },
-            {
-              "name": "CPU2 Temp",
-              "max": 64.00,
-              "min": 58.00,
-              "avg": 62.00
-            }
-          ]
-        },
-        "memory": {
-          "memTotal": "188.8G",
-          "memUsed": "54.9G"
-        },
-        "inlet": {
-          "health": 0,
-          "tempCelsius": {
-            "max": 64.00,
-            "min": 58.00,
-            "avg": 62.00
-          }
-        },
-        "group": 2
+        
       },
       "10.101.1.3": {
-        "hostName": "compute-1-2.localdomain",
-        "fans": [
-          {
-            "name": "FAN_1",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_2",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_3",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          },
-          {
-            "name": "FAN_4",
-            "health": 0,
-            "speed": {
-              "max": 9310,
-              "min": 9280,
-              "avg": 9300
-            }
-          }
-        ],
-        "cpus": {
-          "numberOfProcessors": 72,
-          "loadUsage": {
-            "max": 33.77,
-            "min": 32.66,
-            "avg": 33.20
-          },
-          "tempCelsius": [
-            {
-              "name": "CPU1 Temp",
-              "max": 47.00,
-              "min": 42.00,
-              "avg": 43.00
-            },
-            {
-              "name": "CPU2 Temp",
-              "max": 64.00,
-              "min": 58.00,
-              "avg": 62.00
-            }
-          ]
-        },
-        "memory": {
-          "memTotal": "188.8G",
-          "memUsed": "54.9G"
-        },
-        "inlet": {
-          "health": 0,
-          "tempCelsius": {
-            "max": 64.00,
-            "min": 58.00,
-            "avg": 62.00
-          }
-        },
-        "group": 1
+
       }
     }
   ]
