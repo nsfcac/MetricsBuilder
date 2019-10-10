@@ -9,11 +9,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            154.0
+            150.0
         ],
         "StartTime": "Thu Oct 10 14:09:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 154.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 150.0,
         "User": "aaljadda"
     },
     {
@@ -30,13 +30,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            273.0,
-            244.0,
-            233.0
+            229.0,
+            212.0,
+            227.0
         ],
         "StartTime": "Wed Oct 09 12:03:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 750.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 668.0,
         "User": "bjayee"
     },
     {
@@ -49,11 +49,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.91
         ],
         "StartTime": "Wed Oct 09 20:10:05 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.91,
         "User": "abdumali"
     },
     {
@@ -66,11 +66,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.91
         ],
         "StartTime": "Wed Oct 09 20:10:05 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.91,
         "User": "abdumali"
     },
     {
@@ -83,11 +83,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.91
         ],
         "StartTime": "Wed Oct 09 20:37:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.91,
         "User": "abdumali"
     },
     {
@@ -100,11 +100,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.91
         ],
         "StartTime": "Wed Oct 09 21:32:58 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.91,
         "User": "abdumali"
     },
     {
@@ -123,14 +123,14 @@
             0.06
         ],
         "PowerConsumedWatts": [
-            8.94,
-            34.21,
+            8.91,
+            33.77,
             33.99,
-            18.24
+            18.18
         ],
         "StartTime": "Thu Oct 10 09:27:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 95.38,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 94.85,
         "User": "gufeng"
     },
     {
@@ -341,110 +341,110 @@
             0.44
         ],
         "PowerConsumedWatts": [
-            65.56,
+            65.34,
             9.57,
-            146.49,
-            243.0,
-            146.28,
-            171.81,
-            15.1,
-            102.63,
-            274.48,
-            143.64,
-            219.75,
-            9.51,
-            58.52,
-            96.41,
-            259.0,
-            133.01,
-            159.12,
-            9.6,
-            234.09,
-            242.0,
-            237.9,
-            284.0,
-            25.2,
-            98.27,
-            258.5,
-            9.42,
-            32.16,
+            144.21,
             244.0,
-            95.54,
-            126.84,
-            154.38,
-            99.05,
-            93.0,
-            113.82,
-            168.97,
-            242.0,
-            204.44,
-            275.0,
-            157.8,
-            276.0,
-            8.55,
-            15.84,
-            52.36,
+            147.87,
+            169.74,
+            15.0,
+            101.31,
+            280.12,
+            139.65,
+            219.0,
+            9.51,
+            58.33,
+            96.1,
             260.0,
-            228.0,
+            133.01,
+            157.59,
+            9.57,
+            213.03,
+            230.0,
+            206.7,
+            283.0,
+            25.2,
+            96.1,
+            255.68,
+            9.48,
+            32.4,
+            243.0,
+            91.12,
+            120.54,
+            154.38,
+            98.0,
+            87.9,
+            112.14,
+            167.14,
+            247.0,
+            201.4,
+            278.0,
+            148.8,
+            263.0,
+            8.75,
+            15.93,
+            52.7,
+            253.0,
+            225.0,
             222.95,
             33.99,
-            72.96,
-            94.55,
-            38.85,
-            121.26,
+            72.72,
+            90.52,
+            39.06,
+            117.03,
             60.4,
-            174.6,
-            148.93,
-            218.24,
-            160.17,
-            104.94,
-            159.3,
-            256.62,
-            188.0,
-            172.71,
-            256.0,
-            167.94,
-            82.35,
-            96.72,
-            118.36,
-            103.32,
-            117.0,
-            232.0,
-            237.65,
-            98.34,
-            147.16,
-            156.52,
-            156.75,
-            162.6,
-            172.28,
-            85.12,
-            52.36,
-            246.82,
-            99.66,
-            208.03,
-            232.44,
-            182.85,
-            291.0,
-            113.22,
-            175.2,
-            156.35,
-            174.2,
-            263.0,
-            254.0,
-            91.8,
+            176.4,
+            142.04,
+            242.88,
+            154.47,
+            104.28,
+            158.71,
+            254.74,
+            180.0,
+            168.72,
             247.0,
-            162.96,
-            258.0,
-            193.05,
-            218.94,
+            161.46,
+            81.0,
+            96.1,
+            117.48,
+            103.32,
+            113.88,
+            223.0,
+            230.86,
+            98.67,
+            148.72,
+            156.52,
+            150.15,
+            162.6,
+            168.15,
+            84.56,
+            52.19,
+            244.24,
+            99.99,
+            198.09,
+            233.22,
+            185.61,
+            286.0,
+            112.11,
+            171.6,
+            152.64,
+            170.95,
+            260.0,
+            267.0,
+            91.12,
+            242.0,
+            152.88,
+            249.0,
+            187.85,
+            226.06,
             135.96,
-            126.72,
-            161.66,
+            127.2,
+            156.35,
             132.88
         ],
         "StartTime": "Thu Oct 10 14:30:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 15297.29,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 15076.63,
         "User": "rmanser"
     },
     {
@@ -673,119 +673,119 @@
             0.56
         ],
         "PowerConsumedWatts": [
-            190.72,
-            299.0,
+            190.08,
+            298.0,
             309.43,
-            110.51,
-            239.46,
-            110.4,
-            77.19,
-            130.62,
-            312.0,
-            17.52,
-            75.6,
-            55.67,
+            108.79,
+            238.68,
+            111.6,
+            76.26,
+            128.94,
+            311.0,
+            17.88,
+            73.5,
+            55.48,
             318.0,
             307.49,
-            206.36,
-            214.59,
+            205.69,
+            213.9,
             149.99,
-            115.44,
-            294.4,
-            54.91,
+            114.33,
+            293.48,
+            49.97,
             307.49,
-            303.61,
-            57.95,
-            24.15,
-            305.55,
-            319.0,
+            304.58,
+            50.35,
+            24.0,
+            306.52,
+            318.0,
             289.8,
             245.7,
-            193.37,
-            16.5,
+            189.1,
+            16.32,
             316.0,
             317.0,
             313.0,
-            279.46,
-            155.44,
-            132.07,
-            175.16,
+            281.24,
+            156.6,
+            125.96,
+            166.46,
             77.19,
             304.58,
-            183.95,
-            226.48,
-            170.5,
-            121.95,
-            108.03,
-            64.56,
-            157.59,
-            42.72,
-            86.79,
+            182.0,
+            227.24,
+            161.15,
+            120.15,
+            106.86,
+            63.6,
+            159.63,
+            42.96,
+            81.84,
             314.0,
-            25.65,
-            33.44,
-            212.52,
+            26.25,
+            33.63,
+            213.9,
             22.05,
             292.94,
             231.75,
-            135.24,
-            307.0,
-            7.25,
-            170.24,
-            164.7,
-            316.0,
-            103.2,
+            135.93,
+            308.0,
+            7.3,
+            169.68,
+            157.68,
+            315.0,
+            99.6,
             199.32,
-            98.94,
-            123.64,
-            17.36,
-            103.97,
-            203.52,
-            110.7,
-            16.38,
-            47.0,
-            112.11,
-            143.06,
-            204.35,
-            137.28,
-            99.53,
+            99.96,
+            117.92,
+            19.32,
+            100.27,
+            202.24,
+            110.29,
+            16.26,
+            45.0,
+            109.52,
+            137.54,
+            201.0,
+            136.4,
+            98.79,
             157.85,
-            165.0,
+            160.6,
             241.8,
             175.1,
             290.03,
-            172.84,
-            118.86,
+            173.42,
+            120.12,
             144.48,
-            128.25,
+            122.85,
             89.43,
-            61.32,
-            176.32,
-            175.56,
-            40.18,
-            184.22,
-            84.97,
-            176.96,
-            313.0,
-            65.56,
-            74.2,
-            140.76,
-            116.8,
-            129.8,
-            85.76,
-            108.0,
-            229.5,
-            128.04,
-            95.04,
-            27.06,
+            59.85,
+            175.16,
+            174.99,
+            39.76,
+            184.83,
+            80.91,
+            176.4,
+            310.0,
+            65.78,
+            75.32,
+            139.38,
+            114.4,
+            126.72,
+            84.16,
+            107.2,
+            230.25,
+            120.12,
+            92.48,
+            27.94,
             173.04,
-            87.12,
-            104.12,
+            87.45,
+            100.7,
             169.12
         ],
         "StartTime": "Thu Oct 10 14:48:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 17468.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 17340.99,
         "User": "llindblo"
     },
     {
@@ -854,39 +854,39 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            295.0,
-            306.0,
-            307.0,
-            244.0,
-            322.0,
-            313.0,
-            318.0,
+            309.0,
             314.0,
-            306.0,
-            304.0,
-            327.0,
-            307.0,
-            321.0,
-            321.0,
-            324.0,
-            321.0,
-            216.0,
-            325.0,
+            320.0,
+            242.0,
+            340.0,
             319.0,
-            313.0,
-            294.0,
+            332.0,
+            332.0,
+            320.0,
+            317.0,
+            320.0,
+            302.0,
+            304.0,
             312.0,
-            300.0,
-            299.0,
+            306.0,
+            313.0,
+            213.0,
+            311.0,
+            301.0,
+            311.0,
+            296.0,
+            316.0,
+            301.0,
+            301.0,
+            334.0,
+            317.0,
             324.0,
-            322.0,
-            325.0,
-            308.0,
-            328.0
+            311.0,
+            325.0
         ],
         "StartTime": "Thu Oct 10 09:26:17 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8935.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8963.0,
         "User": "fazhussa"
     },
     {
@@ -955,39 +955,39 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            317.0,
-            325.0,
-            317.0,
-            333.0,
-            336.0,
-            328.0,
-            258.0,
-            328.0,
-            308.0,
-            314.0,
-            313.0,
-            318.0,
-            333.0,
-            316.0,
-            320.0,
-            321.0,
-            327.0,
-            323.0,
-            310.0,
-            324.0,
-            308.0,
-            318.0,
-            339.0,
             319.0,
+            330.0,
+            323.0,
+            332.0,
+            326.0,
+            326.0,
+            187.0,
+            331.0,
+            306.0,
+            311.0,
+            315.0,
+            322.0,
             328.0,
-            328.0,
-            334.0,
-            327.0,
-            318.0
+            319.0,
+            310.0,
+            313.0,
+            329.0,
+            340.0,
+            315.0,
+            330.0,
+            308.0,
+            319.0,
+            332.0,
+            325.0,
+            319.0,
+            326.0,
+            332.0,
+            329.0,
+            321.0
         ],
         "StartTime": "Wed Oct 09 03:17:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9288.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9223.0,
         "User": "jieyao"
     },
     {
@@ -1012,17 +1012,17 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            264.0,
+            257.0,
             258.0,
-            261.0,
-            261.0,
+            260.0,
+            259.0,
             276.0,
-            267.0,
-            281.0
+            266.0,
+            275.0
         ],
         "StartTime": "Thu Oct 10 10:26:58 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1868.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1851.0,
         "User": "aaljadda"
     },
     {
@@ -1043,15 +1043,15 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            309.0,
-            309.0,
-            317.0,
-            317.0,
-            318.0
+            307.0,
+            316.0,
+            333.0,
+            322.0,
+            324.0
         ],
         "StartTime": "Wed Oct 09 23:00:08 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1570.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1602.0,
         "User": "rmuthuku"
     },
     {
@@ -1068,13 +1068,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            339.0,
-            333.0,
-            324.0
+            338.0,
+            279.0,
+            271.0
         ],
         "StartTime": "Thu Oct 10 12:47:33 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 996.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 888.0,
         "User": "lediaz"
     },
     {
@@ -1091,13 +1091,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            189.0,
-            300.0,
-            202.0
+            233.0,
+            302.0,
+            251.0
         ],
         "StartTime": "Thu Oct 10 14:48:59 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 691.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 786.0,
         "User": "gufeng"
     },
     {
@@ -1129,19 +1129,19 @@
         ],
         "PowerConsumedWatts": [
             263.0,
-            278.0,
-            268.0,
+            277.0,
             271.0,
-            280.0,
-            265.0,
+            275.0,
+            279.0,
+            267.0,
             261.0,
             249.0,
-            266.0,
-            257.0
+            265.0,
+            258.0
         ],
         "StartTime": "Thu Oct 10 11:24:23 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2658.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2665.0,
         "User": "rafiisla"
     },
     {
@@ -1160,14 +1160,14 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            240.0,
-            247.0,
-            257.0,
-            242.0
+            238.0,
+            246.0,
+            256.0,
+            244.0
         ],
         "StartTime": "Thu Oct 10 05:51:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 986.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 984.0,
         "User": "nayshah"
     },
     {
@@ -1183,7 +1183,7 @@
             138.0
         ],
         "StartTime": "Wed Oct 09 15:50:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 138.0,
         "User": "snafees"
     },
@@ -1205,15 +1205,15 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            291.0,
+            290.0,
             277.0,
             295.0,
             288.0,
-            289.0
+            288.0
         ],
         "StartTime": "Wed Oct 09 20:40:49 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1440.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1438.0,
         "User": "thongle"
     },
     {
@@ -1240,18 +1240,18 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            251.0,
+            249.0,
+            262.0,
+            248.0,
+            246.0,
             263.0,
-            260.0,
-            247.0,
-            254.0,
-            265.0,
+            264.0,
             242.0,
-            280.0
+            267.0
         ],
         "StartTime": "Thu Oct 10 04:28:30 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2062.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2041.0,
         "User": "tivincen"
     },
     {
@@ -1276,17 +1276,17 @@
             0.25
         ],
         "PowerConsumedWatts": [
-            67.54,
+            67.32,
             69.3,
-            132.87,
-            29.4,
+            134.59,
+            29.55,
             68.2,
-            139.04,
-            76.5
+            138.6,
+            76.75
         ],
         "StartTime": "Thu Oct 10 11:42:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 582.85,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 584.31,
         "User": "briasand"
     },
     {
@@ -1306,13 +1306,13 @@
         ],
         "PowerConsumedWatts": [
             244.0,
-            246.0,
-            241.0,
-            260.0
+            244.0,
+            243.0,
+            261.0
         ],
         "StartTime": "Thu Oct 10 06:41:28 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 991.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 992.0,
         "User": "nayshah"
     },
     {
@@ -1332,13 +1332,13 @@
         ],
         "PowerConsumedWatts": [
             242.0,
-            239.0,
+            240.0,
             238.0,
             237.0
         ],
         "StartTime": "Thu Oct 10 06:41:28 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 956.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 957.0,
         "User": "nayshah"
     },
     {
@@ -1351,11 +1351,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.28
+            8.37
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.28,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.37,
         "User": "abdumali"
     },
     {
@@ -1368,11 +1368,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.28
+            8.37
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.28,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.37,
         "User": "abdumali"
     },
     {
@@ -1403,20 +1403,20 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            266.0,
-            257.0,
-            251.0,
-            267.0,
-            295.0,
+            268.0,
+            260.0,
+            255.0,
+            262.0,
+            290.0,
             256.0,
             268.0,
-            278.0,
-            266.0,
-            275.0
+            281.0,
+            269.0,
+            274.0
         ],
         "StartTime": "Thu Oct 10 07:36:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2679.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2683.0,
         "User": "rafiisla"
     },
     {
@@ -1447,20 +1447,20 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            271.0,
-            283.0,
+            275.0,
+            284.0,
             251.0,
-            259.0,
-            263.0,
-            273.0,
-            256.0,
+            260.0,
+            266.0,
+            269.0,
+            253.0,
             264.0,
-            262.0,
-            277.0
+            258.0,
+            275.0
         ],
         "StartTime": "Wed Oct 09 08:13:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2659.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2655.0,
         "User": "rafiisla"
     },
     {
@@ -1473,11 +1473,11 @@
             0.9
         ],
         "PowerConsumedWatts": [
-            135.9
+            135.0
         ],
         "StartTime": "Tue Oct 08 15:28:26 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 135.9,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 135.0,
         "User": "andhingr"
     },
     {
@@ -1508,20 +1508,20 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            263.0,
-            266.0,
-            280.0,
-            272.0,
+            261.0,
+            267.0,
+            278.0,
+            271.0,
             260.0,
             282.0,
-            266.0,
-            276.0,
-            284.0,
-            265.0
+            267.0,
+            271.0,
+            281.0,
+            262.0
         ],
         "StartTime": "Thu Oct 10 10:36:42 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2714.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2700.0,
         "User": "rafiisla"
     },
     {
@@ -1540,14 +1540,14 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            268.0,
-            272.0,
-            267.0,
-            276.0
+            283.0,
+            277.0,
+            275.0,
+            275.0
         ],
         "StartTime": "Thu Oct 10 09:24:35 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1083.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1110.0,
         "User": "hge"
     },
     {
@@ -1564,13 +1564,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            271.0,
-            215.0,
-            267.0
+            245.0,
+            236.0,
+            217.0
         ],
         "StartTime": "Wed Oct 09 11:16:14 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 753.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 698.0,
         "User": "bjayee"
     },
     {
@@ -1583,11 +1583,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            133.0
+            134.0
         ],
         "StartTime": "Mon Oct 07 15:24:40 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 133.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 134.0,
         "User": "ssukumar"
     },
     {
@@ -1600,11 +1600,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.33
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.33,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -1617,11 +1617,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.33
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.33,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -1634,11 +1634,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.33
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.33,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -1651,11 +1651,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.33
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.33,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -1668,11 +1668,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.33
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.33,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -1689,13 +1689,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            306.0,
-            318.0,
-            325.0
+            305.0,
+            309.0,
+            330.0
         ],
         "StartTime": "Wed Oct 09 05:23:20 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 949.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 944.0,
         "User": "lediaz"
     },
     {
@@ -1727,19 +1727,19 @@
         ],
         "PowerConsumedWatts": [
             261.0,
-            271.0,
-            282.0,
-            281.0,
-            269.0,
-            256.0,
-            274.0,
+            272.0,
+            283.0,
+            278.0,
             266.0,
-            264.0,
-            271.0
+            252.0,
+            270.0,
+            265.0,
+            269.0,
+            274.0
         ],
         "StartTime": "Thu Oct 10 09:59:56 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2695.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2690.0,
         "User": "rafiisla"
     },
     {
@@ -1752,11 +1752,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.56
+            7.35
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.56,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.35,
         "User": "abdumali"
     },
     {
@@ -1777,15 +1777,15 @@
             0.5
         ],
         "PowerConsumedWatts": [
-            25.2,
-            14.05,
-            12.4,
-            13.45,
+            24.5,
+            13.4,
+            13.8,
+            13.35,
             110.5
         ],
         "StartTime": "Thu Oct 10 14:12:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 175.6,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 175.55,
         "User": "aucolema"
     },
     {
@@ -1804,14 +1804,14 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            240.0,
+            238.0,
             242.0,
-            240.0,
-            249.0
+            238.0,
+            248.0
         ],
         "StartTime": "Thu Oct 10 04:28:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 971.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 966.0,
         "User": "nayshah"
     },
     {
@@ -1828,13 +1828,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            219.0,
-            247.0,
-            253.0
+            245.0,
+            236.0,
+            294.0
         ],
         "StartTime": "Wed Oct 09 11:16:14 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 719.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 775.0,
         "User": "bjayee"
     },
     {
@@ -1847,11 +1847,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.79
+            8.76
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.79,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -1864,11 +1864,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.79
+            8.76
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.79,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -1887,14 +1887,14 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            235.0,
-            238.0,
-            225.0,
-            247.0
+            234.0,
+            239.0,
+            226.0,
+            248.0
         ],
         "StartTime": "Thu Oct 10 05:51:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 945.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 947.0,
         "User": "nayshah"
     },
     {
@@ -1935,25 +1935,25 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            305.0,
-            326.0,
-            302.0,
-            311.0,
-            306.0,
-            305.0,
-            334.0,
-            310.0,
-            177.0,
-            314.0,
             309.0,
-            307.0,
+            326.0,
+            310.0,
+            315.0,
+            308.0,
+            302.0,
+            324.0,
+            312.0,
+            176.0,
             313.0,
-            321.0,
-            312.0
+            306.0,
+            306.0,
+            322.0,
+            322.0,
+            314.0
         ],
         "StartTime": "Wed Oct 09 02:57:57 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 4552.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 4565.0,
         "User": "fazhussa"
     },
     {
@@ -1972,13 +1972,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            246.0,
+            244.0,
             234.0,
-            235.0,
+            237.0,
             234.0
         ],
         "StartTime": "Thu Oct 10 06:41:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 949.0,
         "User": "nayshah"
     },
@@ -1992,11 +1992,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 19:51:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -2009,11 +2009,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:02:02 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -2026,11 +2026,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:02:30 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -2043,11 +2043,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:10:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -2060,11 +2060,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:30:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -2079,12 +2079,12 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            277.0,
+            278.0,
             283.0
         ],
         "StartTime": "Thu Oct 10 10:29:13 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 560.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 561.0,
         "User": "shahrahm"
     },
     {
@@ -2097,11 +2097,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.27
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.27,
         "User": "abdumali"
     },
     {
@@ -2114,11 +2114,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.27
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.27,
         "User": "abdumali"
     },
     {
@@ -2131,11 +2131,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.27
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.27,
         "User": "abdumali"
     },
     {
@@ -2148,11 +2148,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.27
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.27,
         "User": "abdumali"
     },
     {
@@ -2165,11 +2165,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.6
+            9.57
         ],
         "StartTime": "Tue Oct 08 17:28:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.6,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.57,
         "User": "abdumali"
     },
     {
@@ -2182,11 +2182,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.6
+            9.57
         ],
         "StartTime": "Tue Oct 08 17:28:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.6,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.57,
         "User": "abdumali"
     },
     {
@@ -2207,15 +2207,15 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            282.0,
-            284.0,
-            297.0,
+            283.0,
+            289.0,
+            298.0,
             290.0,
-            284.0
+            283.0
         ],
         "StartTime": "Thu Oct 10 04:28:19 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1437.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1443.0,
         "User": "thongle"
     },
     {
@@ -2231,7 +2231,7 @@
             9.51
         ],
         "StartTime": "Wed Oct 09 22:11:26 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.51,
         "User": "abdumali"
     },
@@ -2247,12 +2247,12 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            160.0,
-            163.0
+            159.0,
+            161.0
         ],
         "StartTime": "Thu Oct 10 10:02:57 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 323.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 320.0,
         "User": "dtarter"
     },
     {
@@ -2273,15 +2273,15 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            275.0,
-            281.0,
-            289.0,
-            298.0,
-            295.0
+            279.0,
+            278.0,
+            286.0,
+            297.0,
+            297.0
         ],
         "StartTime": "Thu Oct 10 04:11:33 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1438.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1437.0,
         "User": "thongle"
     },
     {
@@ -2294,11 +2294,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.39
+            9.42
         ],
         "StartTime": "Thu Oct 10 13:14:08 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.39,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.42,
         "User": "bancell"
     },
     {
@@ -2325,18 +2325,18 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            260.0,
-            241.0,
-            262.0,
-            240.0,
-            241.0,
-            293.0,
-            284.0,
-            279.0
+            261.0,
+            261.0,
+            245.0,
+            258.0,
+            259.0,
+            271.0,
+            256.0,
+            258.0
         ],
         "StartTime": "Thu Oct 10 04:28:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2100.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2069.0,
         "User": "tivincen"
     },
     {
@@ -2349,11 +2349,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            7.95
         ],
         "StartTime": "Thu Oct 10 09:27:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "aaljadda"
     },
     {
@@ -2366,11 +2366,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            305.0
+            303.0
         ],
         "StartTime": "Thu Oct 10 07:54:59 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 305.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 303.0,
         "User": "malooney"
     },
     {
@@ -2397,18 +2397,18 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            243.0,
+            246.0,
+            241.0,
+            266.0,
+            260.0,
+            252.0,
+            253.0,
             248.0,
-            261.0,
-            254.0,
-            254.0,
-            270.0,
-            270.0,
-            254.0
+            233.0
         ],
         "StartTime": "Thu Oct 10 04:28:42 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2054.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1999.0,
         "User": "tivincen"
     },
     {
@@ -2421,11 +2421,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            314.0
+            288.0
         ],
         "StartTime": "Thu Oct 10 14:23:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 314.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 288.0,
         "User": "sisadegh"
     },
     {
@@ -2452,18 +2452,18 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            235.0,
-            259.0,
+            227.0,
+            264.0,
             263.0,
-            250.0,
+            238.0,
+            255.0,
+            265.0,
             260.0,
-            272.0,
-            257.0,
-            254.0
+            264.0
         ],
         "StartTime": "Thu Oct 10 05:51:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 2050.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 2036.0,
         "User": "tivincen"
     },
     {
@@ -2476,11 +2476,11 @@
             0.85
         ],
         "PowerConsumedWatts": [
-            136.85
+            136.0
         ],
         "StartTime": "Tue Oct 08 15:29:11 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 136.85,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 136.0,
         "User": "andhingr"
     },
     {
@@ -2493,11 +2493,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.45
+            9.48
         ],
         "StartTime": "Wed Oct 09 19:49:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.45,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.48,
         "User": "abdumali"
     },
     {
@@ -2517,13 +2517,13 @@
         ],
         "PowerConsumedWatts": [
             239.0,
-            246.0,
-            252.0,
-            234.0
+            247.0,
+            251.0,
+            235.0
         ],
         "StartTime": "Thu Oct 10 04:28:53 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 971.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 972.0,
         "User": "nayshah"
     },
     {
@@ -2536,11 +2536,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.51
+            9.3
         ],
         "StartTime": "Wed Oct 09 20:10:31 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.51,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -2553,11 +2553,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.51
+            9.3
         ],
         "StartTime": "Wed Oct 09 20:17:04 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.51,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -2570,11 +2570,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.51
+            9.3
         ],
         "StartTime": "Wed Oct 09 20:31:39 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.51,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -2591,13 +2591,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            321.0,
-            327.0,
-            316.0
+            322.0,
+            335.0,
+            304.0
         ],
         "StartTime": "Wed Oct 09 23:47:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 964.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 961.0,
         "User": "lediaz"
     },
     {
@@ -2616,14 +2616,14 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            237.0,
+            236.0,
             244.0,
             253.0,
             246.0
         ],
         "StartTime": "Thu Oct 10 00:48:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 980.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 979.0,
         "User": "nayshah"
     },
     {
@@ -2636,11 +2636,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.42
+            9.48
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.42,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.48,
         "User": "abdumali"
     },
     {
@@ -2653,11 +2653,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.42
+            9.48
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.42,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.48,
         "User": "abdumali"
     },
     {
@@ -2670,11 +2670,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.42
+            9.48
         ],
         "StartTime": "Thu Oct 10 12:07:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.42,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.48,
         "User": "aaljadda"
     },
     {
@@ -2687,11 +2687,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.04
+            8.1
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.04,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.1,
         "User": "abdumali"
     },
     {
@@ -2704,11 +2704,11 @@
             0.08
         ],
         "PowerConsumedWatts": [
-            21.44
+            21.6
         ],
         "StartTime": "Thu Oct 10 07:32:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 21.44,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 21.6,
         "User": "samoradi"
     },
     {
@@ -2725,13 +2725,13 @@
             0.5
         ],
         "PowerConsumedWatts": [
-            48.24,
-            12.9,
+            48.6,
+            12.45,
             110.5
         ],
         "StartTime": "Thu Oct 10 14:13:20 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 171.64,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 171.55,
         "User": "aucolema"
     },
     {
@@ -2744,11 +2744,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:54:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -2761,11 +2761,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:58:32 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -2778,11 +2778,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.04
         ],
         "StartTime": "Wed Oct 09 20:11:02 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -2795,11 +2795,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.04
         ],
         "StartTime": "Wed Oct 09 20:19:50 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -2816,13 +2816,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            241.0,
-            250.0,
-            244.0
+            242.0,
+            269.0,
+            262.0
         ],
         "StartTime": "Wed Oct 09 11:16:11 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 735.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 773.0,
         "User": "bjayee"
     },
     {
@@ -2838,7 +2838,7 @@
             300.0
         ],
         "StartTime": "Thu Oct 10 14:47:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 300.0,
         "User": "janfisch"
     },
@@ -2855,7 +2855,7 @@
             7.47
         ],
         "StartTime": "Wed Oct 09 22:55:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 7.47,
         "User": "abdumali"
     },
@@ -2872,7 +2872,7 @@
             7.47
         ],
         "StartTime": "Wed Oct 09 22:55:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 7.47,
         "User": "abdumali"
     },
@@ -2889,7 +2889,7 @@
             9.42
         ],
         "StartTime": "Thu Oct 10 14:35:40 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.42,
         "User": "nramanat"
     },
@@ -2903,11 +2903,11 @@
             0.17
         ],
         "PowerConsumedWatts": [
-            50.66
+            50.83
         ],
         "StartTime": "Wed Oct 09 11:51:57 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 50.66,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 50.83,
         "User": "gufeng"
     },
     {
@@ -2920,11 +2920,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.97
         ],
         "StartTime": "Wed Oct 09 22:12:55 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.97,
         "User": "abdumali"
     },
     {
@@ -2937,11 +2937,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.97
         ],
         "StartTime": "Wed Oct 09 23:23:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.97,
         "User": "abdumali"
     },
     {
@@ -2954,11 +2954,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.3
+            8.79
         ],
         "StartTime": "Wed Oct 09 20:07:41 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.3,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.79,
         "User": "abdumali"
     },
     {
@@ -2971,11 +2971,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.3
+            8.79
         ],
         "StartTime": "Wed Oct 09 20:09:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.3,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.79,
         "User": "abdumali"
     },
     {
@@ -2988,11 +2988,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.3
+            8.79
         ],
         "StartTime": "Wed Oct 09 20:12:27 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.3,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.79,
         "User": "abdumali"
     },
     {
@@ -3005,11 +3005,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.3
+            8.79
         ],
         "StartTime": "Wed Oct 09 20:17:04 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.3,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.79,
         "User": "abdumali"
     },
     {
@@ -3022,11 +3022,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.3
+            8.79
         ],
         "StartTime": "Wed Oct 09 20:18:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.3,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.79,
         "User": "abdumali"
     },
     {
@@ -3047,15 +3047,15 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            293.0,
-            286.0,
-            291.0,
             294.0,
-            292.0
+            285.0,
+            292.0,
+            295.0,
+            291.0
         ],
         "StartTime": "Thu Oct 10 02:25:14 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1456.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1457.0,
         "User": "thongle"
     },
     {
@@ -3068,11 +3068,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.13
+            8.01
         ],
         "StartTime": "Wed Oct 09 20:59:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.13,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -3085,11 +3085,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.13
+            8.01
         ],
         "StartTime": "Wed Oct 09 21:04:15 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.13,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -3102,11 +3102,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.13
+            8.01
         ],
         "StartTime": "Wed Oct 09 21:04:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.13,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -3119,11 +3119,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.13
+            8.01
         ],
         "StartTime": "Wed Oct 09 21:13:31 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.13,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -3139,7 +3139,7 @@
             129.0
         ],
         "StartTime": "Wed Oct 09 14:44:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 129.0,
         "User": "yuxyao"
     },
@@ -3153,11 +3153,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.27
+            9.39
         ],
         "StartTime": "Thu Oct 10 10:03:07 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.27,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.39,
         "User": "aaljadda"
     },
     {
@@ -3170,11 +3170,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.27
+            9.39
         ],
         "StartTime": "Thu Oct 10 11:26:05 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.27,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.39,
         "User": "bithapal"
     },
     {
@@ -3187,11 +3187,11 @@
             0.76
         ],
         "PowerConsumedWatts": [
-            135.28
+            136.04
         ],
         "StartTime": "Tue Oct 08 15:42:43 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 135.28,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 136.04,
         "User": "andhingr"
     },
     {
@@ -3204,11 +3204,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.89
+            7.44
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.89,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.44,
         "User": "abdumali"
     },
     {
@@ -3221,11 +3221,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.89
+            7.44
         ],
         "StartTime": "Thu Oct 10 10:46:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.89,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.44,
         "User": "password"
     },
     {
@@ -3242,13 +3242,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            329.0,
-            323.0,
-            324.0
+            318.0,
+            320.0,
+            325.0
         ],
         "StartTime": "Wed Oct 09 23:34:04 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 976.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 963.0,
         "User": "lediaz"
     },
     {
@@ -3263,12 +3263,12 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            277.0,
-            302.0
+            298.0,
+            305.0
         ],
         "StartTime": "Wed Oct 09 19:15:15 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 579.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 603.0,
         "User": "zha98475"
     },
     {
@@ -3292,12 +3292,12 @@
             297.0,
             303.0,
             290.0,
-            291.0,
+            292.0,
             303.0
         ],
         "StartTime": "Wed Oct 09 20:40:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 1484.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 1485.0,
         "User": "thongle"
     },
     {
@@ -3310,11 +3310,11 @@
             0.8
         ],
         "PowerConsumedWatts": [
-            136.8
+            140.0
         ],
         "StartTime": "Tue Oct 08 15:34:30 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 136.8,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 140.0,
         "User": "andhingr"
     },
     {
@@ -3339,7 +3339,7 @@
             261.0
         ],
         "StartTime": "Thu Oct 10 00:26:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 981.0,
         "User": "nayshah"
     },
@@ -3353,11 +3353,11 @@
             0.72
         ],
         "PowerConsumedWatts": [
-            126.72
+            127.44
         ],
         "StartTime": "Tue Oct 08 15:35:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 126.72,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 127.44,
         "User": "andhingr"
     },
     {
@@ -3374,13 +3374,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            278.0,
-            230.0,
-            210.0
+            258.0,
+            203.0,
+            246.0
         ],
         "StartTime": "Wed Oct 09 20:40:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 718.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 707.0,
         "User": "bjayee"
     },
     {
@@ -3393,11 +3393,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            305.0
+            278.0
         ],
         "StartTime": "Thu Oct 10 14:26:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 305.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 278.0,
         "User": "sisadegh"
     },
     {
@@ -3412,12 +3412,12 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            238.0,
+            242.0,
             238.0
         ],
         "StartTime": "Tue Oct 08 22:14:56 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 476.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 480.0,
         "User": "hge"
     },
     {
@@ -3434,13 +3434,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            266.0,
-            241.0,
-            237.0
+            296.0,
+            226.0,
+            200.0
         ],
         "StartTime": "Wed Oct 09 12:05:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 744.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 722.0,
         "User": "bjayee"
     },
     {
@@ -3457,13 +3457,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            208.0,
-            266.0,
-            238.0
+            254.0,
+            293.0,
+            217.0
         ],
         "StartTime": "Wed Oct 09 16:50:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 712.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 764.0,
         "User": "bjayee"
     },
     {
@@ -3480,13 +3480,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            241.0,
-            255.0,
-            285.0
+            208.0,
+            213.0,
+            264.0
         ],
         "StartTime": "Wed Oct 09 12:04:33 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 781.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 685.0,
         "User": "bjayee"
     },
     {
@@ -3499,11 +3499,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -3516,11 +3516,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -3533,11 +3533,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -3550,11 +3550,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:42:40 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -3567,11 +3567,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.3
         ],
         "StartTime": "Thu Oct 10 11:53:50 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "aaljadda"
     },
     {
@@ -3591,13 +3591,13 @@
         ],
         "PowerConsumedWatts": [
             238.0,
-            240.0,
-            240.0,
-            241.0
+            241.0,
+            241.0,
+            242.0
         ],
         "StartTime": "Thu Oct 10 02:26:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 959.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 962.0,
         "User": "nayshah"
     },
     {
@@ -3619,11 +3619,11 @@
             243.0,
             241.0,
             241.0,
-            250.0
+            253.0
         ],
         "StartTime": "Thu Oct 10 05:51:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 975.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 978.0,
         "User": "nayshah"
     },
     {
@@ -3641,12 +3641,12 @@
         ],
         "PowerConsumedWatts": [
             305.0,
-            318.0,
+            317.0,
             319.0
         ],
         "StartTime": "Wed Oct 09 23:35:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 942.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 941.0,
         "User": "lediaz"
     },
     {
@@ -3663,13 +3663,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            269.0,
-            243.0,
-            229.0
+            276.0,
+            244.0,
+            227.0
         ],
         "StartTime": "Wed Oct 09 20:40:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 741.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 747.0,
         "User": "bjayee"
     },
     {
@@ -3686,13 +3686,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            321.0,
-            306.0,
-            322.0
+            323.0,
+            305.0,
+            318.0
         ],
         "StartTime": "Wed Oct 09 23:42:25 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 949.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 946.0,
         "User": "lediaz"
     },
     {
@@ -3709,13 +3709,13 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            249.0,
-            223.0,
-            302.0
+            203.0,
+            221.0,
+            256.0
         ],
         "StartTime": "Wed Oct 09 14:36:50 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 774.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 680.0,
         "User": "bjayee"
     },
     {
@@ -3728,11 +3728,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            150.0
+            151.0
         ],
         "StartTime": "Thu Oct 10 10:36:42 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 150.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 151.0,
         "User": "jjerke"
     },
     {
@@ -3745,11 +3745,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            262.0
+            261.0
         ],
         "StartTime": "Tue Oct 08 22:19:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 262.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 261.0,
         "User": "nayshah"
     },
     {
@@ -3765,7 +3765,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 17:47:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "roshang"
     },
@@ -3779,11 +3779,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            287.0
+            280.0
         ],
         "StartTime": "Thu Oct 10 12:15:07 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 287.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 280.0,
         "User": "npaulat"
     },
     {
@@ -3799,7 +3799,7 @@
             9.27
         ],
         "StartTime": "Wed Oct 09 23:23:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.27,
         "User": "abdumali"
     },
@@ -3813,11 +3813,11 @@
             0.08
         ],
         "PowerConsumedWatts": [
-            15.68
+            15.76
         ],
         "StartTime": "Tue Oct 08 17:28:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 15.68,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 15.76,
         "User": "abdumali"
     },
     {
@@ -3830,11 +3830,11 @@
             0.08
         ],
         "PowerConsumedWatts": [
-            15.68
+            15.76
         ],
         "StartTime": "Thu Oct 10 09:17:35 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 15.68,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 15.76,
         "User": "kmursi"
     },
     {
@@ -3847,11 +3847,11 @@
             0.95
         ],
         "PowerConsumedWatts": [
-            137.75
+            138.7
         ],
         "StartTime": "Tue Oct 08 15:38:22 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 137.75,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 138.7,
         "User": "andhingr"
     },
     {
@@ -3864,11 +3864,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:13:30 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -3881,11 +3881,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:16:53 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -3898,11 +3898,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:20:19 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -3915,11 +3915,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:23:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -3932,11 +3932,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:24:37 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -3949,11 +3949,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            8.76
         ],
         "StartTime": "Wed Oct 09 20:46:49 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -3966,11 +3966,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            8.76
         ],
         "StartTime": "Wed Oct 09 20:47:39 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -3983,11 +3983,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            8.76
         ],
         "StartTime": "Wed Oct 09 20:48:19 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -4000,11 +4000,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            8.76
         ],
         "StartTime": "Wed Oct 09 20:49:36 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -4017,11 +4017,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            8.76
         ],
         "StartTime": "Wed Oct 09 21:09:30 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -4034,11 +4034,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            236.0
+            234.0
         ],
         "StartTime": "Tue Oct 08 22:19:22 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 236.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 234.0,
         "User": "nayshah"
     },
     {
@@ -4051,11 +4051,11 @@
             0.79
         ],
         "PowerConsumedWatts": [
-            146.15
+            146.94
         ],
         "StartTime": "Thu Oct 10 14:45:27 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 146.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 146.94,
         "User": "sabaty"
     },
     {
@@ -4068,11 +4068,11 @@
             0.04
         ],
         "PowerConsumedWatts": [
-            10.32
+            9.96
         ],
         "StartTime": "Wed Oct 09 23:10:33 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 10.32,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.96,
         "User": "abdumali"
     },
     {
@@ -4085,11 +4085,11 @@
             0.04
         ],
         "PowerConsumedWatts": [
-            10.32
+            9.96
         ],
         "StartTime": "Wed Oct 09 23:17:33 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 10.32,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.96,
         "User": "abdumali"
     },
     {
@@ -4102,11 +4102,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            83.0
+            82.0
         ],
         "StartTime": "Thu Oct 10 12:49:57 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 83.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 82.0,
         "User": "aaljadda"
     },
     {
@@ -4122,7 +4122,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 19:55:25 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
@@ -4139,7 +4139,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 20:28:31 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
@@ -4156,7 +4156,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 20:34:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
@@ -4173,7 +4173,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 20:47:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
@@ -4190,7 +4190,7 @@
             9.06
         ],
         "StartTime": "Wed Oct 09 21:12:26 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
@@ -4204,11 +4204,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.73
+            8.82
         ],
         "StartTime": "Tue Oct 08 17:30:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.73,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.82,
         "User": "abdumali"
     },
     {
@@ -4221,11 +4221,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.73
+            8.82
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.73,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.82,
         "User": "abdumali"
     },
     {
@@ -4238,11 +4238,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.04
         ],
         "StartTime": "Wed Oct 09 22:55:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -4255,11 +4255,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.13
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.13,
         "User": "abdumali"
     },
     {
@@ -4272,11 +4272,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.43
+            8.13
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.43,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.13,
         "User": "abdumali"
     },
     {
@@ -4289,11 +4289,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            171.0
+            169.0
         ],
         "StartTime": "Thu Oct 10 13:07:27 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 171.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 169.0,
         "User": "gcapodag"
     },
     {
@@ -4306,11 +4306,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.54
+            9.48
         ],
         "StartTime": "Tue Oct 08 17:28:51 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.54,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.48,
         "User": "abdumali"
     },
     {
@@ -4326,7 +4326,7 @@
             261.0
         ],
         "StartTime": "Tue Oct 08 22:19:08 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 261.0,
         "User": "nayshah"
     },
@@ -4340,11 +4340,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            140.0
+            289.0
         ],
         "StartTime": "Thu Oct 10 10:38:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 140.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 289.0,
         "User": "jjerke"
     },
     {
@@ -4357,11 +4357,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.09
+            8.88
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.09,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.88,
         "User": "abdumali"
     },
     {
@@ -4374,11 +4374,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.09
+            8.88
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.09,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.88,
         "User": "abdumali"
     },
     {
@@ -4391,11 +4391,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            160.0
+            170.0
         ],
         "StartTime": "Wed Oct 09 09:42:28 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 160.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 170.0,
         "User": "malooney"
     },
     {
@@ -4408,11 +4408,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            319.0
+            320.0
         ],
         "StartTime": "Thu Oct 10 14:34:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 319.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 320.0,
         "User": "sisadegh"
     },
     {
@@ -4425,11 +4425,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            9.0
         ],
         "StartTime": "Wed Oct 09 19:40:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.0,
         "User": "abdumali"
     },
     {
@@ -4442,11 +4442,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.15
+            9.0
         ],
         "StartTime": "Wed Oct 09 20:28:21 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.15,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.0,
         "User": "abdumali"
     },
     {
@@ -4459,11 +4459,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            249.0
+            248.0
         ],
         "StartTime": "Tue Oct 08 22:19:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 249.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 248.0,
         "User": "nayshah"
     },
     {
@@ -4476,11 +4476,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4493,11 +4493,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4510,11 +4510,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4527,11 +4527,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4544,11 +4544,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4561,11 +4561,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4578,11 +4578,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4595,11 +4595,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4612,11 +4612,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.36
+            9.3
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.36,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.3,
         "User": "abdumali"
     },
     {
@@ -4629,11 +4629,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.07
+            8.01
         ],
         "StartTime": "Wed Oct 09 20:03:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.07,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -4646,11 +4646,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.07
+            8.01
         ],
         "StartTime": "Wed Oct 09 20:19:16 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.07,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -4663,11 +4663,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.07
+            8.01
         ],
         "StartTime": "Wed Oct 09 20:20:19 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.07,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -4680,11 +4680,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.07
+            8.01
         ],
         "StartTime": "Wed Oct 09 20:38:54 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.07,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.01,
         "User": "abdumali"
     },
     {
@@ -4697,11 +4697,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            254.0
+            255.0
         ],
         "StartTime": "Tue Oct 08 22:20:00 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 254.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 255.0,
         "User": "nayshah"
     },
     {
@@ -4714,11 +4714,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            321.0
+            322.0
         ],
         "StartTime": "Thu Oct 10 14:34:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 321.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 322.0,
         "User": "sisadegh"
     },
     {
@@ -4734,7 +4734,7 @@
             8.61
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.61,
         "User": "abdumali"
     },
@@ -4751,7 +4751,7 @@
             8.61
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.61,
         "User": "abdumali"
     },
@@ -4768,7 +4768,7 @@
             8.61
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.61,
         "User": "abdumali"
     },
@@ -4782,11 +4782,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.0
+            8.76
         ],
         "StartTime": "Tue Oct 08 17:30:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -4799,11 +4799,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.0
+            8.76
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.76,
         "User": "abdumali"
     },
     {
@@ -4816,11 +4816,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.35
+            7.14
         ],
         "StartTime": "Thu Oct 10 14:12:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.35,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.14,
         "User": "password"
     },
     {
@@ -4836,7 +4836,7 @@
             16.48
         ],
         "StartTime": "Thu Oct 10 09:18:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 16.48,
         "User": "kmursi"
     },
@@ -4853,7 +4853,7 @@
             16.48
         ],
         "StartTime": "Thu Oct 10 09:31:00 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 16.48,
         "User": "johruska"
     },
@@ -4870,7 +4870,7 @@
             8.97
         ],
         "StartTime": "Thu Oct 10 12:15:57 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.97,
         "User": "wang41"
     },
@@ -4884,11 +4884,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.97
         ],
         "StartTime": "Wed Oct 09 20:34:17 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.97,
         "User": "abdumali"
     },
     {
@@ -4901,11 +4901,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.97
         ],
         "StartTime": "Wed Oct 09 20:34:54 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.97,
         "User": "abdumali"
     },
     {
@@ -4918,11 +4918,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.94
+            8.97
         ],
         "StartTime": "Wed Oct 09 20:35:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.94,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.97,
         "User": "abdumali"
     },
     {
@@ -4935,11 +4935,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.49
+            8.58
         ],
         "StartTime": "Wed Oct 09 20:10:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.49,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.58,
         "User": "abdumali"
     },
     {
@@ -4952,11 +4952,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.49
+            8.58
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.49,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.58,
         "User": "abdumali"
     },
     {
@@ -4969,11 +4969,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            272.0
+            266.0
         ],
         "StartTime": "Thu Oct 10 14:05:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 272.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 266.0,
         "User": "roshang"
     },
     {
@@ -4989,7 +4989,7 @@
             8.13
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.13,
         "User": "abdumali"
     },
@@ -5006,7 +5006,7 @@
             8.13
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 8.13,
         "User": "abdumali"
     },
@@ -5020,11 +5020,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5037,11 +5037,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5054,11 +5054,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5071,11 +5071,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5088,11 +5088,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Wed Oct 09 21:08:45 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5105,11 +5105,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5122,11 +5122,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.76
+            8.55
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.76,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.55,
         "User": "abdumali"
     },
     {
@@ -5139,11 +5139,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.06
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
     {
@@ -5156,11 +5156,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.06
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
     {
@@ -5173,11 +5173,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.06
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
     {
@@ -5190,11 +5190,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.06
         ],
         "StartTime": "Wed Oct 09 19:42:38 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
     {
@@ -5207,11 +5207,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.12
+            9.06
         ],
         "StartTime": "Wed Oct 09 19:56:09 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.12,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.06,
         "User": "abdumali"
     },
     {
@@ -5224,11 +5224,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:07:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5241,11 +5241,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:07:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5258,11 +5258,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:07:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5275,11 +5275,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5292,11 +5292,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:06 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5309,11 +5309,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5326,11 +5326,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5343,11 +5343,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5360,11 +5360,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.24
+            9.21
         ],
         "StartTime": "Wed Oct 09 20:08:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.24,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.21,
         "User": "abdumali"
     },
     {
@@ -5377,11 +5377,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            298.0
+            297.0
         ],
         "StartTime": "Thu Oct 10 09:27:36 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 298.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 297.0,
         "User": "hge"
     },
     {
@@ -5397,7 +5397,7 @@
             263.0
         ],
         "StartTime": "Tue Oct 08 22:19:35 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 263.0,
         "User": "nayshah"
     },
@@ -5411,11 +5411,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.06
+            9.09
         ],
         "StartTime": "Wed Oct 09 21:27:32 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.06,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5428,11 +5428,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.06
+            9.09
         ],
         "StartTime": "Wed Oct 09 21:31:50 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.06,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5448,7 +5448,7 @@
             242.0
         ],
         "StartTime": "Tue Oct 08 22:19:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 242.0,
         "User": "nayshah"
     },
@@ -5462,11 +5462,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.95
+            8.07
         ],
         "StartTime": "Tue Oct 08 17:29:10 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.95,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.07,
         "User": "abdumali"
     },
     {
@@ -5482,7 +5482,7 @@
             148.0
         ],
         "StartTime": "Thu Oct 10 11:38:23 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 148.0,
         "User": "npaulat"
     },
@@ -5499,7 +5499,7 @@
             257.0
         ],
         "StartTime": "Tue Oct 08 22:20:00 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 257.0,
         "User": "nayshah"
     },
@@ -5516,7 +5516,7 @@
             256.0
         ],
         "StartTime": "Tue Oct 08 22:19:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 256.0,
         "User": "nayshah"
     },
@@ -5530,11 +5530,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            139.0
+            138.0
         ],
         "StartTime": "Wed Oct 09 22:58:44 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 139.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 138.0,
         "User": "jjerke"
     },
     {
@@ -5547,11 +5547,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:51:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5564,11 +5564,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:56:55 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5581,11 +5581,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 20:59:13 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5598,11 +5598,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 21:02:32 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5615,11 +5615,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 21:09:18 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5632,11 +5632,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            9.18
+            9.09
         ],
         "StartTime": "Wed Oct 09 21:21:19 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 9.18,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 9.09,
         "User": "abdumali"
     },
     {
@@ -5649,11 +5649,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.85
+            8.64
         ],
         "StartTime": "Tue Oct 08 17:30:03 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.85,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.64,
         "User": "abdumali"
     },
     {
@@ -5666,11 +5666,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.04
+            7.89
         ],
         "StartTime": "Wed Oct 09 10:22:27 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.04,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.89,
         "User": "aaljadda"
     },
     {
@@ -5683,11 +5683,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            148.0
+            147.0
         ],
         "StartTime": "Thu Oct 10 12:14:26 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 148.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 147.0,
         "User": "npaulat"
     },
     {
@@ -5700,11 +5700,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            258.0
+            255.0
         ],
         "StartTime": "Tue Oct 08 22:19:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 258.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 255.0,
         "User": "nayshah"
     },
     {
@@ -5717,11 +5717,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5734,11 +5734,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5751,11 +5751,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5768,11 +5768,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5785,11 +5785,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5802,11 +5802,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 19:40:24 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5819,11 +5819,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.1
+            8.04
         ],
         "StartTime": "Wed Oct 09 20:03:47 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.1,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.04,
         "User": "abdumali"
     },
     {
@@ -5836,11 +5836,11 @@
             0.05
         ],
         "PowerConsumedWatts": [
-            13.5
+            13.4
         ],
         "StartTime": "Thu Oct 10 13:18:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 13.5,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 13.4,
         "User": "sabaty"
     },
     {
@@ -5856,7 +5856,7 @@
             308.0
         ],
         "StartTime": "Thu Oct 10 14:34:52 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 308.0,
         "User": "sisadegh"
     },
@@ -5870,11 +5870,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.91
+            8.67
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.91,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 8.67,
         "User": "abdumali"
     },
     {
@@ -5887,11 +5887,11 @@
             1.0
         ],
         "PowerConsumedWatts": [
-            251.0
+            254.0
         ],
         "StartTime": "Tue Oct 08 22:19:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 251.0,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 254.0,
         "User": "nayshah"
     },
     {
@@ -5907,7 +5907,7 @@
             327.0
         ],
         "StartTime": "Thu Oct 10 14:27:40 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
         "TotalPowerConsumedWatts": 327.0,
         "User": "sisadegh"
     },
@@ -5921,11 +5921,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     },
     {
@@ -5938,11 +5938,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Tue Oct 08 17:29:46 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     },
     {
@@ -5955,11 +5955,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     },
     {
@@ -5972,11 +5972,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Wed Oct 09 19:39:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     },
     {
@@ -5989,11 +5989,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Wed Oct 09 21:35:34 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     },
     {
@@ -6006,11 +6006,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            7.92
+            7.95
         ],
         "StartTime": "Thu Oct 10 09:56:27 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 7.92,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "aaljadda"
     },
     {
@@ -6023,11 +6023,11 @@
             0.03
         ],
         "PowerConsumedWatts": [
-            8.22
+            7.95
         ],
         "StartTime": "Tue Oct 08 17:29:29 CDT 2019",
-        "TimeStamp": "Thu Oct 10 14:58:32 2019",
-        "TotalPowerConsumedWatts": 8.22,
+        "TimeStamp": "Thu Oct 10 15:00:35 2019",
+        "TotalPowerConsumedWatts": 7.95,
         "User": "abdumali"
     }
 ]
