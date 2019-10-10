@@ -141,21 +141,7 @@
           "numberOfProcessors": 72,
           "loadMax": 33.77,
           "loadMin": 32.66,
-          "loadAvg": 33.20,
-          "tempCelsius": [
-            {
-              "name": "CPU1 Temp",
-              "max": 47.00,
-              "min": 42.00,
-              "avg": 43.00
-            },
-            {
-              "name": "CPU2 Temp",
-              "max": 64.00,
-              "min": 58.00,
-              "avg": 62.00
-            }
-          ]
+          "loadAvg": 33.20
         },
         "memory": {
           "memTotal": "188.8G",
@@ -163,9 +149,24 @@
         },
         "inlet": {
           "health": 0,
+          "tempMax": 68.00,
           "tempMin": 58.00,
           "tempAvg": 62.00
-        }
+        },
+        "cpuTemp": [
+          {
+            "name": "CPU1 Temp",
+            "tempMax": 47.00,
+            "tempMin": 42.00,
+            "tempAvg": 43.00
+          },
+          {
+            "name": "CPU2 Temp",
+            "tempMax": 64.00,
+            "tempMin": 58.00,
+            "tempAvg": 62.00
+          }
+        ]
       },
       "10.101.1.2": {
 
