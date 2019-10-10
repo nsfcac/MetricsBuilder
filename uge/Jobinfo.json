@@ -1,9 +1,10 @@
 {
     "account": "sge",
     "checkpointEnv": null,
-    "command": "script_quanah.sh",
+    "command": "submit.sh",
     "contextVars": [],
     "department": "defaultdepartment",
+    "grantedPE": "sm",
     "hardRequestedQueues": [
         "omni"
     ],
@@ -11,11 +12,7 @@
     "jobEnvironment": [
         {
             "name": "PATH",
-            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
-        },
-        {
-            "name": "PKG_CONFIG_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/bin/pkgconfig"
+            "value": "/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
         },
         {
             "name": "HISTCONTROL",
@@ -26,16 +23,8 @@
             "value": "default"
         },
         {
-            "name": "TBBROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb"
-        },
-        {
             "name": "MODULEPATH",
-            "value": "/opt/ohpc/pub/moduledeps/intel:/opt/apps/nfs/module/modulefiles:/opt/ohpc/pub/modulefiles"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:1;/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:1;/export/uge/bin/lx-amd64:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1"
+            "value": "/opt/apps/nfs/module/modulefiles:/opt/ohpc/pub/modulefiles"
         },
         {
             "name": "SGE_ROOT",
@@ -46,44 +35,28 @@
             "value": "no"
         },
         {
-            "name": "_LMFILES_",
-            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:/opt/ohpc/pub/moduledeps/intel/gnuplot/5.2.2"
-        },
-        {
-            "name": "MPM_LAUNCHER",
-            "value": "/opt/intel/debugger_2018/mpm/mic/bin/start_mpm.sh"
-        },
-        {
             "name": "MAIL",
-            "value": "/var/spool/mail/jieyao"
+            "value": "/var/spool/mail/abdumali"
         },
         {
             "name": "KRB5CCNAME",
-            "value": "FILE:/tmp/krb5cc_98858_c0Ejfw"
+            "value": "FILE:/tmp/krb5cc_99021_Ky4gV3"
         },
         {
             "name": "LD_LIBRARY_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:/opt/intel/debugger_2018/iga/lib:/opt/intel/debugger_2018/libipt/intel64/lib"
+            "value": ":"
         },
         {
             "name": "LMOD_DIR",
             "value": "/opt/ohpc/admin/lmod/lmod/libexec"
         },
         {
-            "name": "__LMOD_REF_COUNT_CPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/include:2"
-        },
-        {
             "name": "LOGNAME",
-            "value": "jieyao"
+            "value": "abdumali"
         },
         {
             "name": "PWD",
-            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K/RUN13"
-        },
-        {
-            "name": "INFOPATH",
-            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:/opt/intel/documentation_2018/en/debugger/gdb-igfx/info"
+            "value": "/home/abdumali/amb5/CID/new39ev/traj339"
         },
         {
             "name": "LMOD_VERSION",
@@ -102,44 +75,20 @@
             "value": "||/usr/bin/lesspipe.sh %s"
         },
         {
-            "name": "__LMOD_REF_COUNT_MANPATH",
-            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/share/man:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man:1;/opt/intel/documentation_2018/en/debugger/gdb-ia/man:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:1;/export/uge/man:1;/usr/share/man:1;/usr/local/share/man:1"
-        },
-        {
             "name": "QT_GRAPHICSSYSTEM_CHECKED",
             "value": "1"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_CLASSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar:1"
         },
         {
             "name": "BASH_ENV",
             "value": "/opt/ohpc/admin/lmod/lmod/init/bash"
         },
         {
-            "name": "INTEL_PYTHONHOME",
-            "value": "/opt/intel/debugger_2018/python/intel64/"
-        },
-        {
-            "name": "_ModuleTable002_",
-            "value": "LjMuMjIyIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iaW50ZWwiLH0sfSxtcGF0aEE9eyIvb3B0L29ocGMvcHViL21vZHVsZWRlcHMvaW50ZWwiLCIvb3B0L2FwcHMvbmZzL21vZHVsZS9tb2R1bGVmaWxlcyIsIi9vcHQvb2hwYy9wdWIvbW9kdWxlZmlsZXMiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL29wdC9hcHBzL25mcy9tb2R1bGUvbW9kdWxlZmlsZXM6L29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcyIsfQ"
-        },
-        {
             "name": "OLDPWD",
-            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K"
-        },
-        {
-            "name": "LIBRARY_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1"
-        },
-        {
-            "name": "PSTLROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl"
+            "value": "/home/abdumali/amb5/CID/new39ev"
         },
         {
             "name": "__SGE_PREFIX__O_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+            "value": "/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
         },
         {
             "name": "__SGE_PREFIX__O_HOST",
@@ -149,28 +98,16 @@
             "name": "LS_COLORS"
         },
         {
-            "name": "CPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/include:/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl/include:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/include"
-        },
-        {
             "name": "SHLVL",
-            "value": "1"
-        },
-        {
-            "name": "MKLROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl"
+            "value": "2"
         },
         {
             "name": "__SGE_PREFIX__O_MAIL",
-            "value": "/var/spool/mail/jieyao"
-        },
-        {
-            "name": "LOADEDMODULES",
-            "value": "intel/18.0.3.222:gnuplot/5.2.2"
+            "value": "/var/spool/mail/abdumali"
         },
         {
             "name": "MANPATH",
-            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/share/man:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man:/opt/intel/documentation_2018/en/debugger/gdb-ia/man:/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:/export/uge/man:/usr/share/man:/usr/local/share/man"
+            "value": "/export/uge/man:/usr/share/man:/usr/local/share/man"
         },
         {
             "name": "SGE_QMASTER_PORT",
@@ -185,16 +122,12 @@
             "value": "no"
         },
         {
-            "name": "I_MPI_ROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi"
-        },
-        {
             "name": "__SGE_PREFIX__O_LOGNAME",
-            "value": "jieyao"
+            "value": "abdumali"
         },
         {
             "name": "_ModuleTable001_",
-            "value": "X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbImNvbXBpbGVyIl09ImludGVsIix9LG1UPXtnbnVwbG90PXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9pbnRlbC9nbnVwbG90LzUuMi4yIixbImZ1bGxOYW1lIl09ImdudXBsb3QvNS4yLjIiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJnbnVwbG90Iix9LGludGVsPXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZmlsZXMvaW50ZWwvMTguMC4zLjIyMiIsWyJmdWxsTmFtZSJdPSJpbnRlbC8xOC4w"
+            "value": "X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii9vcHQvYXBwcy9uZnMvbW9kdWxlL21vZHVsZWZpbGVzIiwiL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvb3B0L2FwcHMvbmZzL21vZHVsZS9tb2R1bGVmaWxlczovb3B0L29ocGMvcHViL21vZHVsZWZpbGVzIix9"
         },
         {
             "name": "SHOST",
@@ -210,11 +143,7 @@
         },
         {
             "name": "XDG_SESSION_ID",
-            "value": "45980"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_LD_LIBRARY_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:2;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:2;/opt/intel/debugger_2018/iga/lib:1;/opt/intel/debugger_2018/libipt/intel64/lib:1"
+            "value": "4496"
         },
         {
             "name": "LMOD_PKG",
@@ -225,36 +154,16 @@
             "value": "() {  eval $($LMOD_DIR/ml_cmd \"$@\")\n}"
         },
         {
-            "name": "DISPLAY",
-            "value": "10.100.7.4:20.0"
-        },
-        {
             "name": "_ModuleTable_Sz_",
-            "value": "2"
-        },
-        {
-            "name": "GDBSERVER_MIC",
-            "value": "/opt/intel/debugger_2018/gdb/targets/intel64/x200/bin/gdbserver"
+            "value": "1"
         },
         {
             "name": "SGE_EXECD_PORT",
             "value": "6555"
         },
         {
-            "name": "LMOD_FAMILY_COMPILER",
-            "value": "intel"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_NLSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/locale/%l_%t/%N:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:1;/opt/intel/debugger_2018/gdb/intel64/share/locale/%l_%t/%N:1"
-        },
-        {
             "name": "_",
             "value": "/export/uge/bin/lx-amd64/qsub"
-        },
-        {
-            "name": "LMOD_FAMILY_COMPILER_VERSION",
-            "value": "18.0.3.222"
         },
         {
             "name": "USE_SYSTEMD",
@@ -273,44 +182,24 @@
             "value": "p6554"
         },
         {
-            "name": "__LMOD_REF_COUNT_LIBRARY_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:2"
-        },
-        {
-            "name": "__LMOD_REF_COUNT__LMFILES_",
-            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:1;/opt/ohpc/pub/moduledeps/intel/gnuplot/5.2.2:1"
-        },
-        {
             "name": "SSH_CLIENT",
-            "value": "129.118.22.22 43252 22"
+            "value": "129.118.34.45 41736 22"
         },
         {
             "name": "SSH_TTY",
-            "value": "/dev/pts/3"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_PKG_CONFIG_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/bin/pkgconfig:1"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_LOADEDMODULES",
-            "value": "intel/18.0.3.222:1;gnuplot/5.2.2:1"
+            "value": "/dev/pts/59"
         },
         {
             "name": "USER",
-            "value": "jieyao"
+            "value": "abdumali"
         },
         {
             "name": "__SGE_PREFIX__O_HOME",
-            "value": "/home/jieyao"
-        },
-        {
-            "name": "CLASSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar"
+            "value": "/home/abdumali"
         },
         {
             "name": "SSH_CONNECTION",
-            "value": "129.118.22.22 43252 129.118.104.8 22"
+            "value": "129.118.34.45 41736 129.118.104.8 22"
         },
         {
             "name": "HOSTNAME",
@@ -325,14 +214,6 @@
             "value": "/opt/ohpc/admin/lmod/lmod"
         },
         {
-            "name": "NLSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/locale/%l_%t/%N:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:/opt/intel/debugger_2018/gdb/intel64/share/locale/%l_%t/%N"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_INFOPATH",
-            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/info:1"
-        },
-        {
             "name": "BASH_FUNC_module()",
             "value": "() {  eval $($LMOD_CMD bash \"$@\") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)\n}"
         },
@@ -342,39 +223,35 @@
         },
         {
             "name": "__SGE_PREFIX__O_WORKDIR",
-            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K/RUN13"
+            "value": "/home/abdumali/amb5/CID/new39ev/traj339"
         },
         {
             "name": "XDG_RUNTIME_DIR",
-            "value": "/run/user/98858"
-        },
-        {
-            "name": "GDB_CROSS",
-            "value": "/opt/intel/debugger_2018/gdb/intel64/bin/gdb-ia"
+            "value": "/run/user/99021"
         },
         {
             "name": "HOME",
-            "value": "/home/jieyao"
+            "value": "/home/abdumali"
         }
     ],
-    "jobid": 896993,
+    "jobid": 960936,
     "mailOpt": {
         "abort": false,
         "begin": false,
         "end": false,
         "suspend": false
     },
-    "name": "Re20K",
-    "npprior": 0,
-    "npri": 0,
-    "ntickets": 0,
-    "nurg": 0,
-    "parallelEnv": "mpi",
-    "parallelEnvRange": "2052",
+    "name": "cid39n_339",
+    "npprior": 0.5,
+    "npri": 5.000206976007374,
+    "ntickets": 2.066722238184602e-05,
+    "nurg": 0.3037835553520821,
+    "parallelEnv": "sm",
+    "parallelEnvRange": "1",
     "ppri": 0,
-    "priority": 0,
+    "priority": 5.000206976007374,
     "project": "quanah",
-    "queue": null,
+    "queue": "omni@compute-1-5.localdomain",
     "resources": {
         "hard": [
             {
@@ -392,17 +269,17 @@
         ],
         "soft": []
     },
-    "shares": 0.006804250351264155,
-    "slots": 2052,
+    "shares": 4.030902186143607e-06,
+    "slots": 1,
     "softRequestedQueues": [],
-    "state": "hqw",
+    "state": "r",
     "taskid": null,
     "tasks": [],
     "timeStamp": {
-        "start": "Wed Dec 31 18:00:00 CST 1969",
-        "startEpoch": 0,
-        "submit": "Sat Aug 24 17:02:36 CDT 2019",
-        "submitEpoch": 1566684156883
+        "start": "Tue Oct 08 17:29:10 CDT 2019",
+        "startEpoch": 1570573750988,
+        "submit": "Tue Oct 08 17:28:44 CDT 2019",
+        "submitEpoch": 1570573724589
     },
     "usage": {
         "cpu": 0,
@@ -414,5 +291,5 @@
         "vmem": 0,
         "wallclock": 0
     },
-    "user": "jieyao"
+    "user": "abdumali"
 }
