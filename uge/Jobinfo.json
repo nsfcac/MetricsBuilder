@@ -1,7 +1,7 @@
 {
     "account": "sge",
     "checkpointEnv": null,
-    "command": "Abyss.sh",
+    "command": "script_quanah.sh",
     "contextVars": [],
     "department": "defaultdepartment",
     "hardRequestedQueues": [
@@ -11,7 +11,7 @@
     "jobEnvironment": [
         {
             "name": "PATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/bin:/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/bin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin_ohpc:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/home/pmangat/gatk-4.0.4.0/gatk:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
         },
         {
             "name": "PKG_CONFIG_PATH",
@@ -20,6 +20,22 @@
         {
             "name": "HISTCONTROL",
             "value": "ignoredups"
+        },
+        {
+            "name": "SGE_CELL",
+            "value": "default"
+        },
+        {
+            "name": "TBBROOT",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb"
+        },
+        {
+            "name": "MODULEPATH",
+            "value": "/opt/ohpc/pub/moduledeps/intel:/opt/apps/nfs/module/modulefiles:/opt/ohpc/pub/modulefiles"
+        },
+        {
+            "name": "__LMOD_REF_COUNT_PATH",
+            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:1;/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:1;/export/uge/bin/lx-amd64:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1"
         },
         {
             "name": "SGE_ROOT",
@@ -31,39 +47,55 @@
         },
         {
             "name": "_LMFILES_",
-            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:/opt/ohpc/pub/moduledeps/intel/sparsehash/2.0.3:/opt/ohpc/pub/moduledeps/intel/impi/2018.3.222:/opt/ohpc/pub/moduledeps/intel-impi/boost/1.66.0:/opt/ohpc/pub/moduledeps/intel-impi/abyss/2.0.2"
+            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:/opt/ohpc/pub/moduledeps/intel/gnuplot/5.2.2"
         },
         {
             "name": "MPM_LAUNCHER",
             "value": "/opt/intel/debugger_2018/mpm/mic/bin/start_mpm.sh"
         },
         {
-            "name": "KRB5CCNAME",
-            "value": "FILE:/tmp/krb5cc_99323_iPpqUJ"
+            "name": "MAIL",
+            "value": "/var/spool/mail/jieyao"
         },
         {
-            "name": "_ModuleTable003_",
-            "value": "MC4zLjIyMiIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImludGVsIix9LHNwYXJzZWhhc2g9e1siZm4iXT0iL29wdC9vaHBjL3B1Yi9tb2R1bGVkZXBzL2ludGVsL3NwYXJzZWhhc2gvMi4wLjMiLFsiZnVsbE5hbWUiXT0ic3BhcnNlaGFzaC8yLjAuMyIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09InNwYXJzZWhhc2giLH0sfSxtcGF0aEE9eyIvb3B0L29ocGMvcHViL21vZHVsZWRlcHMvaW50ZWwtaW1waSIsIi9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9pbnRlbCIsIi9vcHQvYXBwcy9uZnMvbW9k"
+            "name": "KRB5CCNAME",
+            "value": "FILE:/tmp/krb5cc_98858_c0Ejfw"
         },
         {
             "name": "LD_LIBRARY_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:/opt/intel/debugger_2018/iga/lib:/opt/intel/debugger_2018/libipt/intel64/lib"
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:/opt/intel/debugger_2018/iga/lib:/opt/intel/debugger_2018/libipt/intel64/lib"
         },
         {
             "name": "LMOD_DIR",
             "value": "/opt/ohpc/admin/lmod/lmod/libexec"
         },
         {
-            "name": "PWD",
-            "value": "/lustre/work/rshim/Cotton/SC9023_WT"
+            "name": "__LMOD_REF_COUNT_CPATH",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/include:2"
         },
         {
-            "name": "INCLUDE",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/include:/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/include"
+            "name": "LOGNAME",
+            "value": "jieyao"
+        },
+        {
+            "name": "PWD",
+            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K/RUN13"
+        },
+        {
+            "name": "INFOPATH",
+            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:/opt/intel/documentation_2018/en/debugger/gdb-igfx/info"
         },
         {
             "name": "LMOD_VERSION",
             "value": "7.7.14"
+        },
+        {
+            "name": "SHELL",
+            "value": "/bin/bash"
+        },
+        {
+            "name": "LMOD_CMD",
+            "value": "/opt/ohpc/admin/lmod/lmod/libexec/lmod"
         },
         {
             "name": "LESSOPEN",
@@ -71,7 +103,7 @@
         },
         {
             "name": "__LMOD_REF_COUNT_MANPATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/share/man:1;/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/share/man:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man:2;/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/share/man:1;/opt/intel/documentation_2018/en/debugger/gdb-ia/man:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:1;/export/uge/man:1;/usr/share/man:1;/usr/local/share/man:1"
+            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/share/man:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man:1;/opt/intel/documentation_2018/en/debugger/gdb-ia/man:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:1;/export/uge/man:1;/usr/share/man:1;/usr/local/share/man:1"
         },
         {
             "name": "QT_GRAPHICSSYSTEM_CHECKED",
@@ -79,7 +111,11 @@
         },
         {
             "name": "__LMOD_REF_COUNT_CLASSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar:2"
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar:1"
+        },
+        {
+            "name": "BASH_ENV",
+            "value": "/opt/ohpc/admin/lmod/lmod/init/bash"
         },
         {
             "name": "INTEL_PYTHONHOME",
@@ -87,23 +123,30 @@
         },
         {
             "name": "_ModuleTable002_",
-            "value": "b3N0LzEuNjYuMCIsWyJmdWxsTmFtZSJdPSJib29zdC8xLjY2LjAiLFsibG9hZE9yZGVyIl09NCxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJib29zdCIsfSxpbXBpPXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9pbnRlbC9pbXBpLzIwMTguMy4yMjIiLFsiZnVsbE5hbWUiXT0iaW1waS8yMDE4LjMuMjIyIixbImxvYWRPcmRlciJdPTMscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iaW1waSIsfSxpbnRlbD17WyJmbiJdPSIvb3B0L29ocGMvcHViL21vZHVsZWZpbGVzL2ludGVsLzE4LjAuMy4yMjIiLFsiZnVsbE5hbWUiXT0iaW50ZWwvMTgu"
+            "value": "LjMuMjIyIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iaW50ZWwiLH0sfSxtcGF0aEE9eyIvb3B0L29ocGMvcHViL21vZHVsZWRlcHMvaW50ZWwiLCIvb3B0L2FwcHMvbmZzL21vZHVsZS9tb2R1bGVmaWxlcyIsIi9vcHQvb2hwYy9wdWIvbW9kdWxlZmlsZXMiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL29wdC9hcHBzL25mcy9tb2R1bGUvbW9kdWxlZmlsZXM6L29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcyIsfQ"
         },
         {
-            "name": "BOOST_DIR",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0"
+            "name": "OLDPWD",
+            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K"
+        },
+        {
+            "name": "LIBRARY_PATH",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1"
+        },
+        {
+            "name": "PSTLROOT",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl"
         },
         {
             "name": "__SGE_PREFIX__O_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/bin:/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/bin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin_ohpc:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/home/pmangat/gatk-4.0.4.0/gatk:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/bin:/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/libexec/gnuplot/5.0:/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
         },
         {
-            "name": "LMOD_FAMILY_BOOST_VERSION",
-            "value": "1.66.0"
+            "name": "__SGE_PREFIX__O_HOST",
+            "value": "quanah"
         },
         {
-            "name": "BOOST_LIB",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/lib"
+            "name": "LS_COLORS"
         },
         {
             "name": "CPATH",
@@ -114,12 +157,24 @@
             "value": "1"
         },
         {
+            "name": "MKLROOT",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl"
+        },
+        {
             "name": "__SGE_PREFIX__O_MAIL",
-            "value": "/var/spool/mail/rshim"
+            "value": "/var/spool/mail/jieyao"
         },
         {
             "name": "LOADEDMODULES",
-            "value": "intel/18.0.3.222:sparsehash/2.0.3:impi/2018.3.222:boost/1.66.0:abyss/2.0.2"
+            "value": "intel/18.0.3.222:gnuplot/5.2.2"
+        },
+        {
+            "name": "MANPATH",
+            "value": "/opt/ohpc/pub/libs/intel/gnuplot/5.2.2/share/man:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man:/opt/intel/documentation_2018/en/debugger/gdb-ia/man:/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:/export/uge/man:/usr/share/man:/usr/local/share/man"
+        },
+        {
+            "name": "SGE_QMASTER_PORT",
+            "value": "6554"
         },
         {
             "name": "HISTSIZE",
@@ -135,27 +190,47 @@
         },
         {
             "name": "__SGE_PREFIX__O_LOGNAME",
-            "value": "rshim"
+            "value": "jieyao"
         },
         {
             "name": "_ModuleTable001_",
-            "value": "X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbIk1QSSJdPSJpbXBpIixbImJvb3N0Il09ImJvb3N0IixbImNvbXBpbGVyIl09ImludGVsIix9LG1UPXthYnlzcz17WyJmbiJdPSIvb3B0L29ocGMvcHViL21vZHVsZWRlcHMvaW50ZWwtaW1waS9hYnlzcy8yLjAuMiIsWyJmdWxsTmFtZSJdPSJhYnlzcy8yLjAuMiIsWyJsb2FkT3JkZXIiXT01LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImFieXNzIix9LGJvb3N0PXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9pbnRlbC1pbXBpL2Jv"
+            "value": "X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbImNvbXBpbGVyIl09ImludGVsIix9LG1UPXtnbnVwbG90PXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9pbnRlbC9nbnVwbG90LzUuMi4yIixbImZ1bGxOYW1lIl09ImdudXBsb3QvNS4yLjIiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJnbnVwbG90Iix9LGludGVsPXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZmlsZXMvaW50ZWwvMTguMC4zLjIyMiIsWyJmdWxsTmFtZSJdPSJpbnRlbC8xOC4w"
+        },
+        {
+            "name": "SHOST",
+            "value": "quanah"
         },
         {
             "name": "TERM",
-            "value": "xterm"
+            "value": "xterm-256color"
+        },
+        {
+            "name": "LANG",
+            "value": "en_US.UTF-8"
         },
         {
             "name": "XDG_SESSION_ID",
-            "value": "93658"
+            "value": "45980"
         },
         {
             "name": "__LMOD_REF_COUNT_LD_LIBRARY_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:2;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:2;/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:2;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:2;/opt/intel/debugger_2018/iga/lib:1;/opt/intel/debugger_2018/libipt/intel64/lib:1"
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:2;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/mic/lib:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1:2;/opt/intel/debugger_2018/iga/lib:1;/opt/intel/debugger_2018/libipt/intel64/lib:1"
+        },
+        {
+            "name": "LMOD_PKG",
+            "value": "/opt/ohpc/admin/lmod/lmod"
+        },
+        {
+            "name": "BASH_FUNC_ml()",
+            "value": "() {  eval $($LMOD_DIR/ml_cmd \"$@\")\n}"
+        },
+        {
+            "name": "DISPLAY",
+            "value": "10.100.7.4:20.0"
         },
         {
             "name": "_ModuleTable_Sz_",
-            "value": "4"
+            "value": "2"
         },
         {
             "name": "GDBSERVER_MIC",
@@ -166,12 +241,12 @@
             "value": "6555"
         },
         {
-            "name": "LMOD_FAMILY_MPI_VERSION",
-            "value": "2018.3.222"
-        },
-        {
             "name": "LMOD_FAMILY_COMPILER",
             "value": "intel"
+        },
+        {
+            "name": "__LMOD_REF_COUNT_NLSPATH",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/locale/%l_%t/%N:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:1;/opt/intel/debugger_2018/gdb/intel64/share/locale/%l_%t/%N:1"
         },
         {
             "name": "_",
@@ -180,6 +255,14 @@
         {
             "name": "LMOD_FAMILY_COMPILER_VERSION",
             "value": "18.0.3.222"
+        },
+        {
+            "name": "USE_SYSTEMD",
+            "value": "false"
+        },
+        {
+            "name": "LMOD_COLORIZE",
+            "value": "no"
         },
         {
             "name": "LMOD_SETTARG_CMD",
@@ -195,39 +278,59 @@
         },
         {
             "name": "__LMOD_REF_COUNT__LMFILES_",
-            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:1;/opt/ohpc/pub/moduledeps/intel/sparsehash/2.0.3:1;/opt/ohpc/pub/moduledeps/intel/impi/2018.3.222:1;/opt/ohpc/pub/moduledeps/intel-impi/boost/1.66.0:1;/opt/ohpc/pub/moduledeps/intel-impi/abyss/2.0.2:1"
+            "value": "/opt/ohpc/pub/modulefiles/intel/18.0.3.222:1;/opt/ohpc/pub/moduledeps/intel/gnuplot/5.2.2:1"
         },
         {
             "name": "SSH_CLIENT",
-            "value": "129.118.62.76 60703 22"
+            "value": "129.118.22.22 43252 22"
         },
         {
             "name": "SSH_TTY",
-            "value": "/dev/pts/13"
+            "value": "/dev/pts/3"
+        },
+        {
+            "name": "__LMOD_REF_COUNT_PKG_CONFIG_PATH",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/bin/pkgconfig:1"
+        },
+        {
+            "name": "__LMOD_REF_COUNT_LOADEDMODULES",
+            "value": "intel/18.0.3.222:1;gnuplot/5.2.2:1"
+        },
+        {
+            "name": "USER",
+            "value": "jieyao"
         },
         {
             "name": "__SGE_PREFIX__O_HOME",
-            "value": "/home/rshim"
+            "value": "/home/jieyao"
         },
         {
-            "name": "__LMOD_REF_COUNT_INCLUDE",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/include:1;/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/include:1"
+            "name": "CLASSPATH",
+            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar"
         },
         {
             "name": "SSH_CONNECTION",
-            "value": "129.118.62.76 60703 129.118.104.8 22"
+            "value": "129.118.22.22 43252 129.118.104.8 22"
+        },
+        {
+            "name": "HOSTNAME",
+            "value": "quanah"
         },
         {
             "name": "__SGE_PREFIX__O_SHELL",
             "value": "/bin/bash"
         },
         {
-            "name": "SPARSE_DIR",
-            "value": "/opt/ohpc/pub/libs/intel/sparsehash/2.0.3"
+            "name": "MODULESHOME",
+            "value": "/opt/ohpc/admin/lmod/lmod"
         },
         {
             "name": "NLSPATH",
             "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/locale/%l_%t/%N:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:/opt/intel/debugger_2018/gdb/intel64/share/locale/%l_%t/%N"
+        },
+        {
+            "name": "__LMOD_REF_COUNT_INFOPATH",
+            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/info:1"
         },
         {
             "name": "BASH_FUNC_module()",
@@ -238,195 +341,36 @@
             "value": "normal"
         },
         {
+            "name": "__SGE_PREFIX__O_WORKDIR",
+            "value": "/lustre/scratch/jieyao/VR_S/NavierStokes3dVorticity/Re40K/RUN13"
+        },
+        {
+            "name": "XDG_RUNTIME_DIR",
+            "value": "/run/user/98858"
+        },
+        {
             "name": "GDB_CROSS",
             "value": "/opt/intel/debugger_2018/gdb/intel64/bin/gdb-ia"
         },
         {
-            "name": "SPARSE_LIB",
-            "value": "/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/lib"
-        },
-        {
-            "name": "SGE_CELL",
-            "value": "default"
-        },
-        {
-            "name": "TBBROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb"
-        },
-        {
-            "name": "MODULEPATH",
-            "value": "/opt/ohpc/pub/moduledeps/intel-impi:/opt/ohpc/pub/moduledeps/intel:/opt/apps/nfs/module/modulefiles:/opt/ohpc/pub/modulefiles"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_PATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/bin:1;/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/bin:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin_ohpc:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin:2;/opt/intel/compilers_and_libraries_2018.3.222/linux/bin/intel64:1;/home/pmangat/gatk-4.0.4.0/gatk:1;/export/uge/bin/lx-amd64:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1"
-        },
-        {
-            "name": "MAIL",
-            "value": "/var/spool/mail/rshim"
-        },
-        {
-            "name": "BOOST_INC",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/include"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_CPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl/include:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/include:2"
-        },
-        {
-            "name": "LOGNAME",
-            "value": "rshim"
-        },
-        {
-            "name": "LMOD_FAMILY_MPI",
-            "value": "impi"
-        },
-        {
-            "name": "INFOPATH",
-            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:/opt/intel/documentation_2018/en/debugger/gdb-igfx/info"
-        },
-        {
-            "name": "SHELL",
-            "value": "/bin/bash"
-        },
-        {
-            "name": "LMOD_CMD",
-            "value": "/opt/ohpc/admin/lmod/lmod/libexec/lmod"
-        },
-        {
-            "name": "BASH_ENV",
-            "value": "/opt/ohpc/admin/lmod/lmod/init/bash"
-        },
-        {
-            "name": "SPARSE_INC",
-            "value": "/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/inc"
-        },
-        {
-            "name": "OLDPWD",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/bin"
-        },
-        {
-            "name": "LIBRARY_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.1"
-        },
-        {
-            "name": "PSTLROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/pstl"
-        },
-        {
-            "name": "__SGE_PREFIX__O_HOST",
-            "value": "quanah"
-        },
-        {
-            "name": "LS_COLORS"
-        },
-        {
-            "name": "ABYSS_DIR",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2"
-        },
-        {
-            "name": "MKLROOT",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl"
-        },
-        {
-            "name": "MANPATH",
-            "value": "/opt/ohpc/pub/libs/intel/impi/abyss/2.0.2/share/man:/opt/ohpc/pub/libs/intel/impi/boost/1.66.0/share/man:/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/man::/opt/ohpc/pub/libs/intel/sparsehash/2.0.3/share/man:/opt/intel/documentation_2018/en/debugger/gdb-ia/man:/opt/intel/documentation_2018/en/debugger/gdb-igfx/man:/export/uge/man:/usr/share/man:/usr/local/share/man"
-        },
-        {
-            "name": "SGE_QMASTER_PORT",
-            "value": "6554"
-        },
-        {
-            "name": "SHOST",
-            "value": "quanah"
-        },
-        {
-            "name": "LMOD_PKG",
-            "value": "/opt/ohpc/admin/lmod/lmod"
-        },
-        {
-            "name": "BASH_FUNC_ml()",
-            "value": "() {  eval $($LMOD_DIR/ml_cmd \"$@\")\n}"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_NLSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64/locale/%l_%t/%N:1;/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:1;/opt/intel/debugger_2018/gdb/intel64/share/locale/%l_%t/%N:1"
-        },
-        {
-            "name": "USE_SYSTEMD",
-            "value": "false"
-        },
-        {
-            "name": "LMOD_COLORIZE",
-            "value": "no"
-        },
-        {
-            "name": "LMOD_FAMILY_BOOST",
-            "value": "boost"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_PKG_CONFIG_PATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl/bin/pkgconfig:1"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_LOADEDMODULES",
-            "value": "intel/18.0.3.222:1;sparsehash/2.0.3:1;impi/2018.3.222:1;boost/1.66.0:1;abyss/2.0.2:1"
-        },
-        {
-            "name": "USER",
-            "value": "rshim"
-        },
-        {
-            "name": "CLASSPATH",
-            "value": "/opt/intel/compilers_and_libraries_2018.3.222/linux/mpi/intel64/lib/mpi.jar"
-        },
-        {
-            "name": "HOSTNAME",
-            "value": "quanah"
-        },
-        {
-            "name": "MODULESHOME",
-            "value": "/opt/ohpc/admin/lmod/lmod"
-        },
-        {
-            "name": "_ModuleTable004_",
-            "value": "dWxlL21vZHVsZWZpbGVzIiwiL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvb3B0L2FwcHMvbmZzL21vZHVsZS9tb2R1bGVmaWxlczovb3B0L29ocGMvcHViL21vZHVsZWZpbGVzIix9"
-        },
-        {
-            "name": "__LMOD_REF_COUNT_INFOPATH",
-            "value": "/opt/intel/documentation_2018/en/debugger/gdb-ia/info:1;/opt/intel/documentation_2018/en/debugger/gdb-igfx/info:1"
-        },
-        {
-            "name": "BOOST_ROOT",
-            "value": "/opt/ohpc/pub/libs/intel/impi/boost/1.66.0"
-        },
-        {
-            "name": "__SGE_PREFIX__O_WORKDIR",
-            "value": "/lustre/work/rshim/Cotton/SC9023_WT"
-        },
-        {
-            "name": "XDG_RUNTIME_DIR",
-            "value": "/run/user/99323"
-        },
-        {
             "name": "HOME",
-            "value": "/home/rshim"
+            "value": "/home/jieyao"
         }
     ],
-    "jobid": 894323,
+    "jobid": 896993,
     "mailOpt": {
         "abort": false,
         "begin": false,
         "end": false,
         "suspend": false
     },
-    "name": "Abyss",
+    "name": "Re20K",
     "npprior": 0,
     "npri": 0,
     "ntickets": 0,
     "nurg": 0,
-    "parallelEnv": "sm",
-    "parallelEnvRange": "36",
+    "parallelEnv": "mpi",
+    "parallelEnvRange": "2052",
     "ppri": 0,
     "priority": 0,
     "project": "quanah",
@@ -448,17 +392,17 @@
         ],
         "soft": []
     },
-    "shares": 0.0032081878160872502,
-    "slots": 36,
+    "shares": 0.006804250351264155,
+    "slots": 2052,
     "softRequestedQueues": [],
-    "state": "Eqw",
+    "state": "hqw",
     "taskid": null,
     "tasks": [],
     "timeStamp": {
         "start": "Wed Dec 31 18:00:00 CST 1969",
         "startEpoch": 0,
-        "submit": "Fri Aug 23 15:56:53 CDT 2019",
-        "submitEpoch": 1566593813110
+        "submit": "Sat Aug 24 17:02:36 CDT 2019",
+        "submitEpoch": 1566684156883
     },
     "usage": {
         "cpu": 0,
@@ -470,5 +414,5 @@
         "vmem": 0,
         "wallclock": 0
     },
-    "user": "rshim"
+    "user": "jieyao"
 }

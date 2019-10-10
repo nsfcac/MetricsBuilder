@@ -52,7 +52,7 @@ def main():
 
     job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs", "None")
 
-    job_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobid", job_list[0])
+    job_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobid", job_list[1])
 
     ######################
     # Interleave metrics #

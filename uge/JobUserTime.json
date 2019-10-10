@@ -495,19 +495,11 @@
         "startTime": "Wed Oct 09 19:39:48 CDT 2019",
         "user": "abdumali"
     },
-    "963071": {
-        "startTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "user": "abdumali"
-    },
     "963083": {
         "startTime": "Wed Oct 09 19:39:48 CDT 2019",
         "user": "abdumali"
     },
     "963085": {
-        "startTime": "Wed Oct 09 19:39:48 CDT 2019",
-        "user": "abdumali"
-    },
-    "963098": {
         "startTime": "Wed Oct 09 19:39:48 CDT 2019",
         "user": "abdumali"
     },
@@ -931,10 +923,6 @@
         "startTime": "Thu Oct 10 09:27:36 CDT 2019",
         "user": "hge"
     },
-    "963962": {
-        "startTime": "Thu Oct 10 09:27:44 CDT 2019",
-        "user": "aaljadda"
-    },
     "963965": {
         "startTime": "Thu Oct 10 09:31:00 CDT 2019",
         "user": "johruska"
@@ -997,14 +985,6 @@
     },
     "964062": {
         "startTime": "Thu Oct 10 12:07:16 CDT 2019",
-        "user": "aaljadda"
-    },
-    "964066": {
-        "startTime": "Thu Oct 10 12:49:57 CDT 2019",
-        "user": "aaljadda"
-    },
-    "964067": {
-        "startTime": "Thu Oct 10 14:09:51 CDT 2019",
         "user": "aaljadda"
     },
     "964069": {
@@ -1071,10 +1051,6 @@
         "startTime": "Thu Oct 10 14:34:52 CDT 2019",
         "user": "sisadegh"
     },
-    "964117": {
-        "startTime": "Thu Oct 10 14:35:40 CDT 2019",
-        "user": "nramanat"
-    },
     "964120": {
         "startTime": "Thu Oct 10 14:47:24 CDT 2019",
         "user": "janfisch"
@@ -1084,7 +1060,19 @@
         "user": "sabaty"
     },
     "964125": {
-        "startTime": "Thu Oct 10 14:48:59 CDT 2019",
+        "startTime": "Thu Oct 10 14:58:50 CDT 2019",
         "user": "gufeng"
+    },
+    "964127": {
+        "startTime": "Thu Oct 10 14:57:35 CDT 2019",
+        "user": "aaljadda"
+    },
+    "964129": {
+        "startTime": "Thu Oct 10 14:53:52 CDT 2019",
+        "user": "abkenyon"
+    },
+    "964133": {
+        "startTime": "Thu Oct 10 15:00:23 CDT 2019",
+        "user": "aaljadda"
     }
 }
