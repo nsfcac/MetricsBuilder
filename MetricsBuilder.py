@@ -29,7 +29,7 @@ def main():
     # Get exection hosts #
     #######################
     print("-Getting Exection Host List...")
-    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
+    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts", "None")
 
     if exec_hosts == None:
         print("No Execution Host")
@@ -42,7 +42,7 @@ def main():
 
     print("-Pulling Metrics From UGE...")
 
-    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
+    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary", "None")
 
     if host_summary != None:
         node_job_match, job_set = match_node_job(host_summary)
@@ -50,7 +50,9 @@ def main():
         print("Get Host Summary Error")
         return
 
-    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs")
+    job_list, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs", "None")
+
+    job_info, err_info = get_uge_info(conn_time_out, read_time_out, session, "jobs", job_list[0])
 
     ######################
     # Interleave metrics #
@@ -76,6 +78,9 @@ def main():
 
     with open("./uge/Joblist.json", "w") as outfile_joblist:
             json.dump(job_list, outfile_joblist, indent = 4, sort_keys = True)
+
+    with open("./uge/Jobinfo.json", "w") as outfile_jobinfo:
+            json.dump(job_info, outfile_jobinfo, indent = 4, sort_keys = True)
 
     with open("./uge/NodeJob.json", "w") as outfile_nodejob:
             json.dump(node_job_match, outfile_nodejob, indent = 4, sort_keys = True)
@@ -187,13 +192,15 @@ def get_hostip(hostname):
     return None
 
 # Get UGE information
-def get_uge_info(conn_time_out, read_time_out, session, type):
+def get_uge_info(conn_time_out, read_time_out, session, type, id):
 
     passwordUrl = "http://129.118.104.35:8182/"
     if type == "jobs" or type == "users" or type == "exechosts":
         url = passwordUrl + type
     elif type == "hostsummary":
         url = passwordUrl + "hostsummary/1/500"
+    elif type == "jobid":
+        url = passwordUrl + "jobs/" + id
     else:
         return None, "UGE API ERROR"
 
