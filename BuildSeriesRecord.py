@@ -50,7 +50,7 @@ def main():
     #     rt.stop() # better in a try/finally block to make sure the program ends!
 
     with open("./records/records_10mins.json", "w") as outfile:
-            json.dump(all_record, outfile, indent = 4, sort_keys = True)
+            json.dump(all_record, outfile, indent = 4)
 
 def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
