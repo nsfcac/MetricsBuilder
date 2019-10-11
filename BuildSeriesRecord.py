@@ -75,7 +75,7 @@ def fetch_data(all_record):
     host_uge_detail = preprocess_uge(host_summary)
 
     ## Get all jobs running on the same node, get job set
-    node_job_match, job_set = match_node_job(host_summary)
+    node_job_match, job_set, usr_job = match_node_job(host_summary)
 
     # with open("./records/uge.json", "w") as ugefile:
     #         json.dump(host_uge_detail, ugefile, indent = 4)
@@ -109,7 +109,13 @@ def fetch_data(all_record):
     # Aggregate data
     hostDetail = merge(exechost_list, host_uge_detail, host_bmc_detail)
 
-    result.update({"jobHost": jobHost, "hostDetail": hostDetail})
+    result.update(
+        {
+            "jobHost": jobHost, 
+            "hostDetail": hostDetail, 
+            "userJob": usr_job
+        }
+    )
     return result
 
 def preprocess_uge(host_summary):
@@ -230,7 +236,7 @@ def preprocess_bmc(bmc_info):
             power = value["power"]['PowerControl'][0]['PowerConsumedWatts']
         except TypeError:
             print("Type Error")
-            
+
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
         host_pwr_list.update({key: power})
 
@@ -274,6 +280,7 @@ def get_exechosts_ip(exechosts):
 def match_node_job(host_summary):
     node_job_match = []
     job_set = []
+    usr_job = {}
     for host in host_summary:
         host_job = {}
         job_list = []
@@ -283,12 +290,23 @@ def match_node_job(host_summary):
             job_list.append(job['id'])
             if job['id'] not in job_set:
                 job_set.append(job['id'])
+                one_job = {
+                    job['id']: {
+                        "submitTime": job['submitTime'],
+                        "startTime": job['startTime']
+                    }
+                }
+                if job['user'] in usr_job:
+                    usr_job[job['user']].append(one_job)
+                else:
+                    usr_job.update({job['user']: [one_job]})                
+
         host_job.update({'Counting': Counter(job_list).most_common()})
         for item in host_job['Counting']:
             core_used += item[1]
         host_job.update({'CoreUsed': core_used})
         node_job_match.append(host_job)
-    return node_job_match, job_set
+    return node_job_match, job_set, usr_job
 
 def match_job_user_time(job_set, host_summary):
 
@@ -356,7 +374,10 @@ def get_uge_info(conn_time_out, read_time_out, session, type):
         return None, "UGE API ERROR"
 
     try:
-        response = session.get(url, verify = False, timeout = (conn_time_out, read_time_out))
+        response = session.get(
+            url, verify = False, 
+            timeout = (conn_time_out, read_time_out)
+        )
         response.raise_for_status()
         data = response.json()
         return data, str(None)
@@ -365,64 +386,11 @@ def get_uge_info(conn_time_out, read_time_out, session, type):
         print("Request Error")
         return None, str(e)
 
-# Get Power Usuage
-def get_powerusage(host, node_pwr_list, conn_time_out, read_time_out, session):
-    try:
-        url = "https://" + host + "/redfish/v1/Chassis/System.Embedded.1/Power/"
-        response = session.get(url, verify = False, auth = ('password', 'monster'), timeout = (conn_time_out, read_time_out))
-        response.raise_for_status()
-        data = response.json()
-
-        node_pwr_list.update({host: data['PowerControl'][0]['PowerConsumedWatts']})
-
-    except requests.exceptions.RequestException as e:
-        # print("Request Power Usage Error")
-        node_pwr_list.update({host: None})
-
-# Use multi-thread to fetch Power Usuage from each exec host
-def core_to_threads(exec_hosts, node_pwr_list, conn_time_out, read_time_out, session):
-
-    print("-Pulling Metrics From BMC...")
-    # For progress bar
-    exec_hosts_len = len(exec_hosts)
-    printProgressBar(0, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
-
-    warnings.filterwarnings('ignore', '.*', UserWarning,'warnings_filtering',)
-    try:
-        threads = []
-        for host in exec_hosts:
-            a = Thread(target = get_powerusage, args = (host, node_pwr_list, conn_time_out, read_time_out, session, ))
-            threads.append(a)
-            a.start()
-        for index, thread in enumerate(threads):
-            thread.join()
-            # Update Progress Bar
-            printProgressBar(index + 1, exec_hosts_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
-    except Exception as e:
-        print(e)
-
-# Build job-core-power dict
-def build_job_core_pwr(job_pwr_list):
-    result_list = []
-    for job in job_pwr_list:
-        host_len = len(job['ExecHosts'])
-        job_core_pwr_dict = {"JobId": job['JobId'], "ExecCores": job['ExecCores'], "ExecHosts": host_len, "Power": job['TotalPowerConsumedWatts']}
-        result_list.append(job_core_pwr_dict)
-    return result_list
-
-# Export data for pyplot
-def pyplot(job_pwr_list):
-    job_id = []
-    job_no_nodes = []
-    job_pwr = []
-    for job in job_pwr_list:
-        job_id.append(job['JobId'])
-        job_no_nodes.append(len(job['ExecHosts']))
-        job_pwr.append(job['TotalPowerConsumedWatts'])
-    return job_id, job_no_nodes, job_pwr
-
 # Print iterations progress
-def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+def printProgressBar (
+        iteration, total, prefix = '', suffix = '', 
+        decimals = 1, length = 100, fill = '█'
+    ):
     """
     Call in a loop to create terminal progress bar
     @params:
