@@ -219,10 +219,11 @@ def merge(host_uge_detail, host_bmc_detail):
     hostDetail = {}
     for key, value in host_uge_detail.items():
         host = {"fans": None, "cpus": None, "memory": None, "temperature": None}
-        host["fans"] = host_bmc_detail[key]["fans"]
-        host["cpus"] = value["cpus"]
-        host["memory"] = value["memory"]
-        host["temperature"] = host_bmc_detail[key]["temperature"]
+        if key in host_bmc_detail:
+            host["fans"] = host_bmc_detail[key]["fans"]
+            host["cpus"] = value["cpus"]
+            host["memory"] = value["memory"]
+            host["temperature"] = host_bmc_detail[key]["temperature"]
         hostDetail.update({key: host})
     return hostDetail
 
