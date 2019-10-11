@@ -167,7 +167,7 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
         return_data.update({"thermal": data})
 
         # Update bmc_info
-        print(f"BMC: ", host)
+        print("BMC: ", host)
         bmc_info.update({host: return_data})
 
     except requests.exceptions.RequestException as e:
