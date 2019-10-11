@@ -100,8 +100,7 @@ def preprocess_uge(host_summary):
         hostIp = get_hostip(host["hostname"].split('.')[0])
         cpus = round(float(host["hostValues"]["load_avg"]), 2)
         memory = round(float(host["hostValues"]["mem_used"].split('G')[0]), 2)
-        host_uge_detail[hostIp]["cpus"] = cpus 
-        host_uge_detail[hostIp]["memory"] = memory
+        host_uge_detail.update({hostIp: {"cpus": cpus}, {"memory": memory}})
     return host_uge_detail
 
 # Use multi-thread to fetch Power Usuage from each exec host
