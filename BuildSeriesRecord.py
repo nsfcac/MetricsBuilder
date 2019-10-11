@@ -53,14 +53,14 @@ def main():
     with open("./records/records.json", "w") as outfile:
             json.dump(all_record, outfile, indent = 4)
 
-    print("Record lenght: ", len(all_record))
+    # print("Record lenght: ", len(all_record))
     print("Done")
 
 def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
 
     result = {
-        "time": None, 
+        "timeStamp": None, 
         "jobHost": None, 
         "userJob": None, 
         "hostDetail": None
