@@ -69,7 +69,7 @@
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
-          "finishTime": "None"
+          "finishTime": null
         }
       }, 
       {"924464":
@@ -85,21 +85,21 @@
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
-          "finishTime": "None"
+          "finishTime": null
         }
       }, 
       {"924463":
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
-          "finishTime": "None"
+          "finishTime": null
         }
       }, 
       {"924465":
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
-          "finishTime": "None"
+          "finishTime": null
         }
       }
     ]

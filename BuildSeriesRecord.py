@@ -43,7 +43,7 @@ def main():
     oneEntry = fetch_data(all_record)
     all_record.append(oneEntry)
     with open("./records/records.json", "w") as outfile:
-            json.dump(all_record, outfile, indent = 4)
+            json.dump(all_record, outfile, indent = 4, sort_keys=True)
 
 
     # # Store 10 mins record
