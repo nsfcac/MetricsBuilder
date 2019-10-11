@@ -68,6 +68,10 @@ def fetch_data(all_record):
     host_summary, err_info = get_uge_info(
         conn_time_out, read_time_out, session, "hostsummary"
     )
+
+    with open("./records/uge.json", "w") as ugefile:
+            json.dump(host_summary, ugefile, indent = 4)
+
     ## UGE DETAILS
     host_uge_detail = preprocess_uge(host_summary)
 
@@ -87,7 +91,10 @@ def fetch_data(all_record):
             exechost_list, bmc_info, conn_time_out, read_time_out, session
         )
     ## BMC DETAILS
-    print(bmc_info)
+
+    with open("./records/bmc.json", "w") as bmcfile:
+            json.dump(bmc_info, bmcfile, indent = 4)
+
     host_bmc_detail = preprocess_bmc(bmc_info)
 
     # Aggregate data
