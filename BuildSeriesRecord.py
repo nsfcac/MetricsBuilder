@@ -98,7 +98,7 @@ def fetch_data(all_record):
     #         json.dump(host_bmc_detail, bmcfile, indent = 4)
 
     # Aggregate data
-    merge_data = merge(host_uge_detail, host_bmc_detail)
+    merge_data = merge(exechost_list, host_uge_detail, host_bmc_detail)
 
     return merge_data
 
@@ -224,16 +224,16 @@ def str_to_int(status):
     return value
 
 # Merge metrics from uge and bmc
-def merge(host_uge_detail, host_bmc_detail):
+def merge(exechost_list, host_uge_detail, host_bmc_detail):
     hostDetail = {}
-    for key, value in host_uge_detail.items():
-        host = {
-            "fans": host_bmc_detail[key]["fans"], 
-            "cpus": value["cpus"], 
-            "memory": value["memory"], 
-            "temperature": host_bmc_detail[key]["temperature"]
-        }
-        hostDetail.update({key: host})
+    for host in exechost_list:
+        host_detail = {"fans": None, "cpus": None, "memory": None, "temperature": None}
+        if host in host_uge_detail and host in host_bmc_detail:
+            host_detail["cpus"] = host_uge_detail["cpus"]
+            host_detail["memory"] = host_uge_detail["memory"]
+            host_detail["fans"] = host_bmc_detail["fans"]
+            host_detail["temperature"] = host_bmc_detail["temperature"]
+        hostDetail.update({host: host_detail})
     return hostDetail
 
 def interleave(record_list):
