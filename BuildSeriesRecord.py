@@ -315,7 +315,12 @@ def match_node_job(host_summary):
         host_job = {}
         job_list = []
         core_used = 0
-        host_job.update({'HostIp': get_hostip(host['hostname'].split('.')[0]), 'Counting': None})
+        host_job.update(
+            {
+                'HostIp': get_hostip(host['hostname'].split('.')[0]), 
+                'Counting': None
+            }
+        )
         for job in host['jobList']:
             job_list.append(job['id'])
             if job['id'] not in job_set:
@@ -368,7 +373,13 @@ def calc_job_host(node_job_match, job_set, node_pwr_list):
     job_set_len = len(job_set)
 
     for index, job in enumerate(job_set):
-        job_pwr_dict = {'jobId': job, 'execHost':[],'power': None}
+        job_pwr_dict = {
+            'jobId': job, 
+            'execHost':[],
+            'powerMax': None,
+            'powerMin': None,
+            'powerAvg': None,
+        }
         total_pwr = 0
         for node in node_job_match:
             for i in node['Counting']:
@@ -381,7 +392,14 @@ def calc_job_host(node_job_match, job_set, node_pwr_list):
                         pwr_each = 0
                     total_pwr += pwr_each
                     job_pwr_dict['execHost'].append(node_ip)
-        job_pwr_dict.update({'power': round(total_pwr, 2)})
+        total_pwr_float = round(total_pwr, 2)
+        job_pwr_dict.update(
+            {
+                'powerMax': total_pwr_float,
+                'powerMin': total_pwr_float,
+                'powerAvg': total_pwr_float
+            }
+        )
         jobHost.append(job_pwr_dict)
 
     return jobHost
