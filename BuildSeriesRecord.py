@@ -165,7 +165,7 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
         )
         response.raise_for_status()
         data = response.json()
-        return_data.update("thermal": data)
+        return_data.update({"thermal": data})
 
         # Update bmc_info
         bmc_info.update({host: return_data})
