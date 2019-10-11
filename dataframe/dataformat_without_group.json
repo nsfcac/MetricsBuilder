@@ -55,13 +55,13 @@
   ],
   "userJob": {
     "username_1": [
-      {"924461": 
+      {"924461":
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
           "finishTime": "None"
         }
-      }, 
+      },
       {"924464":
         {
           "submitTime": "Sat Sep 15 8:44:14 2019",
@@ -77,14 +77,14 @@
           "startTime": "Mon Sep 16 02:34:47 2019",
           "finishTime": "None"
         }
-      }, 
+      },
       {"924463":
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
           "startTime": "Mon Sep 16 02:34:47 2019",
           "finishTime": "None"
         }
-      }, 
+      },
       {"924465":
         {
           "submitTime": "Sat Sep 14 10:44:14 2019",
@@ -128,7 +128,6 @@
           }
         ],
         "cpus": {
-          "numberOfProcessors": 72,
           "loadMax": 33.77,
           "loadMin": 32.66,
           "loadAvg": 33.20

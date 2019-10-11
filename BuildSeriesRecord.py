@@ -56,8 +56,10 @@ def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
 
     result = {
-        "time": time_stamp, "jobHost": None, 
-        "userJob": None, "hostDetail": None
+        "time": time_stamp, 
+        "jobHost": None, 
+        "userJob": None, 
+        "hostDetail": None
     }
 
     conn_time_out = 15
@@ -71,6 +73,9 @@ def fetch_data(all_record):
 
     ## UGE DETAILS
     host_uge_detail = preprocess_uge(host_summary)
+
+    ## Get all jobs running on the same node, get job set
+    node_job_match, job_set = match_node_job(host_summary)
 
     # with open("./records/uge.json", "w") as ugefile:
     #         json.dump(host_uge_detail, ugefile, indent = 4)
@@ -90,17 +95,22 @@ def fetch_data(all_record):
         get_bmc_threads(
             exechost_list, bmc_info, conn_time_out, read_time_out, session
         )
-    ## BMC DETAILS
+    ## BMC DETAILS and HOST_PWR_LIST
+    host_bmc_detail, host_pwr_list = preprocess_bmc(bmc_info)
 
-    host_bmc_detail = preprocess_bmc(bmc_info)
+    ## Calculate jobHost
+    jobHost = calc_job_host(node_job_match, job_set, host_pwr_list)
+
+    result["jobHost"] = jobHost
 
     # with open("./records/bmc.json", "w") as bmcfile:
     #         json.dump(host_bmc_detail, bmcfile, indent = 4)
 
     # Aggregate data
-    merge_data = merge(exechost_list, host_uge_detail, host_bmc_detail)
+    hostDetail = merge(exechost_list, host_uge_detail, host_bmc_detail)
 
-    return merge_data
+    result.update({"jobHost": jobHost, "hostDetail": hostDetail})
+    return result
 
 def preprocess_uge(host_summary):
     host_uge_detail = {}
@@ -192,10 +202,12 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
 
 def preprocess_bmc(bmc_info):
     host_bmc_detail = {}
+    host_pwr_list = {}
 
     for key, value in bmc_info.items():
         fans = []
         temperature = []
+        power = None
         if value["thermal"]["Fans"] and value["thermal"]["Temperatures"]:
             for fan in value["thermal"]["Fans"]:
                 fan_detail = {}
@@ -214,10 +226,13 @@ def preprocess_bmc(bmc_info):
                     temp_detail.update({"health": health_status})
                     temp_detail.update({"temp": temp["ReadingCelsius"]})
                 temperature.append(temp_detail)
-
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
 
-    return host_bmc_detail
+        if value["power"]['PowerControl'][0]['PowerConsumedWatts']:
+            power = value["power"]['PowerControl'][0]['PowerConsumedWatts']
+        host_pwr_list.update({key: power})
+
+    return host_bmc_detail, host_pwr_list
 
 # Convert status string to intger
 def str_to_int(status):
@@ -242,69 +257,7 @@ def merge(exechost_list, host_uge_detail, host_bmc_detail):
             host_detail["fans"] = host_bmc_detail[host]["fans"]
             host_detail["temperature"] = host_bmc_detail[host]["temperature"]
         hostDetail.update({host: host_detail})
-    return hostDetail
-
-def interleave(record_list):
-
-    result = {"TimeStamp": None, "JobList": []}
-
-    #########################
-    # Get current timestamp #
-    #########################
-
-    time_stamp = datetime.datetime.now().ctime()
-
-    conn_time_out = 15
-    read_time_out = 40
-
-    session = requests.Session()
-
-    printlogo()
-
-    node_pwr_list = {}
-
-    #######################
-    # Get exection hosts #
-    #######################
-    print("-Getting Exection Host List...")
-    exec_hosts, err_info = get_uge_info(conn_time_out, read_time_out, session, "exechosts")
-
-    if exec_hosts == None:
-        print("No Execution Host")
-        return
-    else:
-        exechost_list = get_exechosts_ip(exec_hosts)
-
-        core_to_threads(exechost_list, node_pwr_list, conn_time_out, read_time_out, session)
-        # print(node_pwr_list)
-
-    print("-Pulling Metrics From UGE...")
-
-    host_summary, err_info = get_uge_info(conn_time_out, read_time_out, session, "hostsummary")
-
-    if host_summary != None:
-        node_job_match, job_set = match_node_job(host_summary)
-    else:
-        print("Get Host Summary Error")
-        return
-
-    ######################
-    # Interleave metrics #
-    ######################
-    job_user_time_dic = match_job_user_time(job_set, host_summary)
-
-    job_pwr_list = calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time_stamp)
-
-    print("-Total Running Jobs on Qunanh Cluster: ", end =" ")
-    print(len(job_pwr_list))
-
-    job_core_pwr = build_job_core_pwr(job_pwr_list)
-
-    result.update({"TimeStamp": time_stamp, "JobList": job_core_pwr})
-
-    record_list.append(result)
-
-
+    return hostDetail    
 
 # Get exec hosts list of ip addresses
 def get_exechosts_ip(exechosts):
@@ -358,19 +311,14 @@ def match_job_user_time(job_set, host_summary):
 
 
 # Calculate PowerConsumedWatts for each Job
-def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time_stamp):
+def calc_job_host(node_job_match, job_set, node_pwr_list):
 
-    job_pwr_list = []
-
-    print("-Interleaving Power Metrics ...")
-    # For progress bar
+    jobHost = []
     job_set_len = len(job_set)
-    printProgressBar(0, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
 
     for index, job in enumerate(job_set):
-        job_pwr_dict = {'TimeStamp': time_stamp,'User': job_user_time_dic[job]['user'],'JobId': job, 'StartTime': job_user_time_dic[job]['startTime'],'ExecCores':None, 'ExecHosts':[], 'OccupationPct': [], 'PowerConsumedWatts': [], 'TotalPowerConsumedWatts': None}
+        job_pwr_dict = {'jobId': job, 'execHost':[],'power': None}
         total_pwr = 0
-        total_cores = 0
         for node in node_job_match:
             for i in node['Counting']:
                 if job == i[0]:
@@ -381,15 +329,11 @@ def calc_job_pwr(node_job_match, job_set, node_pwr_list, job_user_time_dic, time
                     except TypeError:
                         pwr_each = 0
                     total_pwr += pwr_each
-                    total_cores += i[1]
-                    job_pwr_dict['ExecHosts'].append(node_ip)
-                    job_pwr_dict['OccupationPct'].append(pwr_pct)
-                    job_pwr_dict['PowerConsumedWatts'].append(pwr_each)
-        job_pwr_dict.update({'ExecCores':total_cores, 'TotalPowerConsumedWatts': round(total_pwr, 2)})
-        job_pwr_list.append(job_pwr_dict)
-        printProgressBar(index + 1, job_set_len, prefix = 'Progress:', suffix = 'Complete', length = 50)
+                    job_pwr_dict['execHost'].append(node_ip)
+        job_pwr_dict.update({'power': round(total_pwr, 2)})
+        jobHost.append(job_pwr_dict)
 
-    return job_pwr_list
+    return jobHost
 
 # Convert host name to ip address
 def get_hostip(hostname):
