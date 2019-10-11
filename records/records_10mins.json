@@ -1,2812 +1,2812 @@
 [
     {
-        "10.101.5.4": {
-            "cpus": "10.04",
-            "fans": [],
+        "10.101.7.16": {
             "temperature": [],
-            "memory": "8.9"
-        },
-        "10.101.7.42": {
-            "cpus": "35.98",
             "fans": [],
-            "temperature": [],
-            "memory": "6.1"
-        },
-        "10.101.5.3": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.4"
-        },
-        "10.101.2.25": {
-            "cpus": "33.74",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.9"
-        },
-        "10.101.9.20": {
-            "cpus": "34.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.5"
-        },
-        "10.101.10.31": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.7"
-        },
-        "10.101.2.41": {
-            "cpus": "33.73",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.3"
-        },
-        "10.101.3.1": {
-            "cpus": "35.11",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.7"
-        },
-        "10.101.2.10": {
-            "cpus": "27.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.3"
-        },
-        "10.101.8.56": {
-            "cpus": "14.21",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.2"
-        },
-        "10.101.9.8": {
-            "cpus": "15.86",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.7"
-        },
-        "10.101.3.5": {
-            "cpus": "35.22",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.3"
-        },
-        "10.101.7.36": {
-            "cpus": "33.76",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.7"
-        },
-        "10.101.9.6": {
-            "cpus": "22.45",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.3"
-        },
-        "10.101.7.34": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.9"
-        },
-        "10.101.3.46": {
-            "cpus": "26.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.4"
-        },
-        "10.101.8.11": {
-            "cpus": "12.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "64.3"
-        },
-        "10.101.9.1": {
-            "cpus": "34.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.7"
-        },
-        "10.101.4.18": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.0"
-        },
-        "10.101.7.18": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.4"
-        },
-        "10.101.10.29": {
-            "cpus": "-",
-            "fans": [],
-            "temperature": [],
-            "memory": "-"
-        },
-        "10.101.2.56": {
-            "cpus": "34.62",
-            "fans": [],
-            "temperature": [],
-            "memory": "67.5"
-        },
-        "10.101.3.45": {
-            "cpus": "21.89",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.5"
-        },
-        "10.101.8.28": {
-            "cpus": "35.56",
-            "fans": [],
-            "temperature": [],
-            "memory": "19.6"
-        },
-        "10.101.1.37": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.4"
-        },
-        "10.101.2.59": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.3"
-        },
-        "10.101.7.50": {
-            "cpus": "36.18",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.0"
-        },
-        "10.101.3.15": {
-            "cpus": "25.28",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.7"
-        },
-        "10.101.2.33": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.1"
-        },
-        "10.101.7.48": {
-            "cpus": "33.63",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.9"
-        },
-        "10.101.3.51": {
-            "cpus": "20.36",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.4"
-        },
-        "10.101.2.36": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.7"
-        },
-        "10.101.8.42": {
             "cpus": "36.08",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.9"
+            "memory": "75.4"
         },
-        "10.101.4.5": {
-            "cpus": "12.79",
-            "fans": [],
+        "10.101.4.25": {
             "temperature": [],
-            "memory": "12.4"
+            "fans": [],
+            "cpus": "33.94",
+            "memory": "19.5"
         },
-        "10.101.8.54": {
-            "cpus": "7.59",
-            "fans": [],
+        "10.101.3.47": {
             "temperature": [],
-            "memory": "4.0"
-        },
-        "10.101.1.54": {
-            "cpus": "36.01",
             "fans": [],
-            "temperature": [],
-            "memory": "17.4"
-        },
-        "10.101.8.33": {
-            "cpus": "33.33",
-            "fans": [],
-            "temperature": [],
-            "memory": "76.9"
-        },
-        "10.101.3.23": {
-            "cpus": "26.42",
-            "fans": [],
-            "temperature": [],
+            "cpus": "35.71",
             "memory": "14.3"
         },
-        "10.101.8.32": {
-            "cpus": "34.93",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.3"
-        },
-        "10.101.7.24": {
-            "cpus": "18.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.0"
-        },
-        "10.101.9.42": {
-            "cpus": "35.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.2"
-        },
-        "10.101.1.44": {
-            "cpus": "0.69",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.8.13": {
-            "cpus": "34.68",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.3"
-        },
-        "10.101.5.19": {
-            "cpus": "33.93",
-            "fans": [],
-            "temperature": [],
-            "memory": "43.6"
-        },
-        "10.101.1.39": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.4"
-        },
-        "10.101.1.23": {
-            "cpus": "1.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.0"
-        },
-        "10.101.3.44": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.2"
-        },
-        "10.101.9.13": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.6"
-        },
-        "10.101.2.11": {
-            "cpus": "33.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "77.0"
-        },
-        "10.101.7.3": {
-            "cpus": "34.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.1"
-        },
-        "10.101.8.5": {
-            "cpus": "34.62",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.0"
-        },
-        "10.101.3.55": {
-            "cpus": "33.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "78.8"
-        },
-        "10.101.3.29": {
-            "cpus": "32.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.0"
-        },
-        "10.101.2.7": {
-            "cpus": "31.81",
-            "fans": [],
-            "temperature": [],
-            "memory": "49.1"
-        },
-        "10.101.3.50": {
-            "cpus": "4.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.3"
-        },
-        "10.101.4.40": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.2"
-        },
-        "10.101.8.60": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.2"
-        },
-        "10.101.4.14": {
-            "cpus": "35.20",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.8"
-        },
-        "10.101.9.28": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.2"
-        },
-        "10.101.2.58": {
-            "cpus": "34.20",
-            "fans": [],
-            "temperature": [],
-            "memory": "41.5"
-        },
-        "10.101.7.21": {
-            "cpus": "35.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.8"
-        },
-        "10.101.7.38": {
-            "cpus": "23.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.4"
-        },
-        "10.101.2.12": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.0"
-        },
-        "10.101.6.15": {
-            "cpus": "0.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.0"
-        },
-        "10.101.3.26": {
-            "cpus": "34.75",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.1"
-        },
-        "10.101.5.17": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.6"
-        },
-        "10.101.9.32": {
-            "cpus": "-",
-            "fans": [],
-            "temperature": [],
-            "memory": "-"
-        },
-        "10.101.3.28": {
-            "cpus": "35.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.9.41": {
-            "cpus": "35.42",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.0"
-        },
-        "10.101.7.47": {
-            "cpus": "18.32",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.0"
-        },
-        "10.101.9.16": {
-            "cpus": "25.29",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.6"
-        },
-        "10.101.5.15": {
-            "cpus": "27.70",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.0"
-        },
-        "10.101.6.12": {
-            "cpus": "28.31",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.4"
-        },
-        "10.101.10.36": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.8"
-        },
-        "10.101.1.2": {
-            "cpus": "34.42",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.3"
-        },
-        "10.101.3.53": {
-            "cpus": "32.12",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.9"
-        },
-        "10.101.7.28": {
-            "cpus": "35.68",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.1"
-        },
-        "10.101.9.2": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.2"
-        },
-        "10.101.8.1": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.8"
-        },
-        "10.101.2.30": {
-            "cpus": "34.77",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.1"
-        },
-        "10.101.6.17": {
-            "cpus": "36.10",
-            "fans": [],
-            "temperature": [],
-            "memory": "21.3"
-        },
-        "10.101.4.29": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "18.6"
-        },
-        "10.101.6.2": {
-            "cpus": "26.91",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.5"
-        },
-        "10.101.8.27": {
-            "cpus": "25.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.0"
-        },
-        "10.101.3.20": {
-            "cpus": "34.88",
-            "fans": [],
-            "temperature": [],
-            "memory": "68.6"
-        },
-        "10.101.8.37": {
-            "cpus": "16.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.8"
-        },
-        "10.101.10.30": {
-            "cpus": "34.55",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.9"
-        },
-        "10.101.1.33": {
-            "cpus": "8.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.7.1": {
-            "cpus": "34.88",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.8"
-        },
-        "10.101.7.19": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.7"
-        },
-        "10.101.7.58": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.2"
-        },
-        "10.101.4.16": {
-            "cpus": "36.29",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.2"
-        },
-        "10.101.9.33": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.7"
-        },
-        "10.101.10.38": {
-            "cpus": "35.20",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.5"
-        },
-        "10.101.8.2": {
-            "cpus": "27.83",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.5"
-        },
-        "10.101.1.5": {
-            "cpus": "16.67",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.0"
-        },
-        "10.101.5.13": {
-            "cpus": "35.53",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.5"
-        },
-        "10.101.3.32": {
-            "cpus": "35.88",
-            "fans": [],
-            "temperature": [],
-            "memory": "51.3"
-        },
-        "10.101.4.38": {
-            "cpus": "35.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.0"
-        },
-        "10.101.4.45": {
-            "cpus": "33.45",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.5"
-        },
-        "10.101.1.48": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.6"
-        },
-        "10.101.4.30": {
-            "cpus": "34.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "48.2"
-        },
-        "10.101.9.9": {
-            "cpus": "29.70",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.4"
-        },
-        "10.101.7.45": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.1"
-        },
-        "10.101.1.42": {
-            "cpus": "35.36",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.2"
-        },
-        "10.101.9.40": {
-            "cpus": "1.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.4"
-        },
-        "10.101.3.16": {
-            "cpus": "19.93",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.7"
-        },
-        "10.101.7.2": {
-            "cpus": "3.78",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.6"
-        },
-        "10.101.1.34": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.6.10": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.9"
-        },
-        "10.101.4.26": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.1"
-        },
-        "10.101.8.52": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.6"
-        },
-        "10.101.5.23": {
-            "cpus": "7.92",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.6"
-        },
-        "10.101.4.7": {
-            "cpus": "25.67",
-            "fans": [],
-            "temperature": [],
-            "memory": "18.8"
-        },
-        "10.101.8.3": {
-            "cpus": "23.87",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.6"
-        },
-        "10.101.5.8": {
-            "cpus": "35.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.5"
-        },
-        "10.101.3.14": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "30.6"
-        },
-        "10.101.8.48": {
-            "cpus": "35.27",
-            "fans": [],
-            "temperature": [],
-            "memory": "21.0"
-        },
-        "10.101.9.7": {
-            "cpus": "21.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.9"
-        },
-        "10.101.8.45": {
-            "cpus": "20.71",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.9"
-        },
-        "10.101.2.27": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.5"
-        },
-        "10.101.6.6": {
-            "cpus": "26.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.5"
-        },
-        "10.101.1.24": {
-            "cpus": "33.09",
-            "fans": [],
-            "temperature": [],
-            "memory": "73.9"
-        },
-        "10.101.3.36": {
-            "cpus": "33.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.6"
-        },
-        "10.101.9.37": {
-            "cpus": "35.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "23.2"
-        },
-        "10.101.5.1": {
-            "cpus": "22.30",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.4"
-        },
-        "10.101.9.5": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "70.4"
-        },
-        "10.101.3.27": {
-            "cpus": "35.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "30.5"
-        },
-        "10.101.2.37": {
-            "cpus": "6.73",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.5"
-        },
-        "10.101.7.33": {
-            "cpus": "34.84",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.7"
-        },
-        "10.101.5.24": {
-            "cpus": "34.47",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.3"
-        },
-        "10.101.8.14": {
-            "cpus": "35.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "53.2"
-        },
-        "10.101.7.17": {
-            "cpus": "35.09",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.1"
-        },
-        "10.101.4.3": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.5"
-        },
-        "10.101.6.3": {
-            "cpus": "35.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "65.0"
-        },
-        "10.101.2.53": {
-            "cpus": "34.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.5"
-        },
-        "null": {
-            "cpus": null,
-            "fans": null,
-            "temperature": null,
-            "memory": null
-        },
-        "10.101.8.39": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "25.9"
-        },
-        "10.101.8.55": {
-            "cpus": "22.13",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.8"
-        },
-        "10.101.2.5": {
-            "cpus": "28.73",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.7.10": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.1"
-        },
-        "10.101.2.42": {
-            "cpus": "35.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.3"
-        },
-        "10.101.8.16": {
-            "cpus": "20.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.1"
-        },
-        "10.101.5.22": {
-            "cpus": "33.75",
-            "fans": [],
-            "temperature": [],
-            "memory": "79.1"
-        },
-        "10.101.4.47": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "24.0"
-        },
-        "10.101.9.15": {
-            "cpus": "-",
-            "fans": [],
-            "temperature": [],
-            "memory": "-"
-        },
-        "10.101.3.3": {
-            "cpus": "12.73",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.6"
-        },
-        "10.101.6.16": {
-            "cpus": "16.84",
-            "fans": [],
-            "temperature": [],
-            "memory": "22.9"
-        },
-        "10.101.5.14": {
-            "cpus": "8.08",
-            "fans": [],
-            "temperature": [],
-            "memory": "24.8"
-        },
-        "10.101.3.49": {
-            "cpus": "32.89",
-            "fans": [],
-            "temperature": [],
-            "memory": "76.4"
-        },
-        "10.101.10.25": {
-            "cpus": "34.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.8"
-        },
-        "10.101.7.41": {
-            "cpus": "35.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.1"
-        },
-        "10.101.9.58": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.0"
-        },
-        "10.101.7.25": {
-            "cpus": "28.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.6"
-        },
-        "10.101.2.3": {
-            "cpus": "32.66",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.1"
-        },
-        "10.101.2.55": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.1"
-        },
-        "10.101.1.1": {
-            "cpus": "28.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.7"
-        },
-        "10.101.1.52": {
-            "cpus": "18.75",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.9"
-        },
-        "10.101.6.18": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.7"
-        },
-        "10.101.7.27": {
-            "cpus": "8.70",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.3"
-        },
-        "10.101.10.35": {
-            "cpus": "34.92",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.5"
-        },
-        "10.101.6.8": {
-            "cpus": "33.58",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.5"
-        },
-        "10.101.4.46": {
-            "cpus": "36.25",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.2"
-        },
-        "10.101.9.53": {
-            "cpus": "32.47",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.9"
-        },
-        "10.101.3.25": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.5"
-        },
-        "10.101.4.27": {
-            "cpus": "33.48",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.6"
-        },
-        "10.101.4.36": {
-            "cpus": "27.86",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.6"
-        },
-        "10.101.7.40": {
-            "cpus": "27.64",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.0"
-        },
-        "10.101.1.60": {
-            "cpus": "18.21",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.9"
-        },
-        "10.101.8.30": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.0"
-        },
-        "10.101.3.11": {
-            "cpus": "2.79",
-            "fans": [],
-            "temperature": [],
-            "memory": "21.0"
-        },
-        "10.101.3.43": {
-            "cpus": "16.13",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.7"
-        },
-        "10.101.2.15": {
-            "cpus": "24.74",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.5"
-        },
-        "10.101.4.22": {
-            "cpus": "33.69",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.3"
-        },
-        "10.101.1.12": {
-            "cpus": "33.50",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.6"
-        },
-        "10.101.9.60": {
-            "cpus": "6.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "78.0"
-        },
-        "10.101.3.52": {
-            "cpus": "30.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.6"
-        },
-        "10.101.8.9": {
-            "cpus": "33.56",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.2"
-        },
-        "10.101.7.31": {
-            "cpus": "24.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.8"
-        },
-        "10.101.2.13": {
-            "cpus": "164.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "29.0"
-        },
-        "10.101.4.17": {
-            "cpus": "35.90",
-            "fans": [],
-            "temperature": [],
-            "memory": "78.7"
-        },
-        "10.101.1.26": {
-            "cpus": "33.51",
-            "fans": [],
-            "temperature": [],
-            "memory": "73.7"
-        },
-        "10.101.7.16": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.3"
-        },
-        "10.101.3.54": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.6"
-        },
-        "10.101.1.59": {
-            "cpus": "34.20",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.3"
-        },
-        "10.101.6.4": {
-            "cpus": "22.87",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.9"
-        },
         "10.101.7.52": {
-            "cpus": "14.14",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "14.12",
             "memory": "5.4"
         },
-        "10.101.3.33": {
-            "cpus": "36.04",
-            "fans": [],
+        "10.101.9.25": {
             "temperature": [],
-            "memory": "19.3"
+            "fans": [],
+            "cpus": "19.04",
+            "memory": "11.8"
         },
-        "10.101.2.21": {
-            "cpus": "-",
-            "fans": [],
+        "10.101.8.29": {
             "temperature": [],
-            "memory": "-"
+            "fans": [],
+            "cpus": "34.07",
+            "memory": "40.9"
+        },
+        "10.101.8.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.63",
+            "memory": "75.2"
+        },
+        "10.101.7.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.52",
+            "memory": "10.0"
+        },
+        "10.101.10.34": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "58.71",
+            "memory": "10.9"
         },
         "10.101.4.33": {
-            "cpus": "36.04",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
             "memory": "5.0"
         },
-        "10.101.4.15": {
-            "cpus": "36.03",
-            "fans": [],
+        "10.101.6.10": {
             "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
             "memory": "5.0"
         },
-        "10.101.2.44": {
-            "cpus": "36.04",
-            "fans": [],
+        "10.101.7.43": {
             "temperature": [],
-            "memory": "5.7"
-        },
-        "10.101.7.39": {
+            "fans": [],
             "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.8"
+            "memory": "60.6"
         },
-        "10.101.2.39": {
-            "cpus": "34.75",
-            "fans": [],
+        "10.101.10.25": {
             "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.9.12": {
-            "cpus": "36.09",
             "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.2.23": {
-            "cpus": "13.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.5"
-        },
-        "10.101.10.32": {
-            "cpus": "18.61",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.4"
-        },
-        "10.101.8.35": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.6"
-        },
-        "10.101.7.53": {
-            "cpus": "13.36",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.3"
-        },
-        "10.101.8.7": {
-            "cpus": "35.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.3"
-        },
-        "10.101.2.16": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.1"
-        },
-        "10.101.8.44": {
-            "cpus": "35.11",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.3"
-        },
-        "10.101.9.49": {
-            "cpus": "15.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.0"
-        },
-        "10.101.9.59": {
-            "cpus": "35.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "76.4"
-        },
-        "10.101.10.40": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.9"
-        },
-        "10.101.2.52": {
-            "cpus": "33.79",
-            "fans": [],
-            "temperature": [],
-            "memory": "41.9"
-        },
-        "10.101.4.10": {
-            "cpus": "23.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.9"
-        },
-        "10.101.9.50": {
-            "cpus": "2.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.5"
-        },
-        "10.101.4.13": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.7"
-        },
-        "10.101.9.26": {
-            "cpus": "23.90",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.2.1": {
-            "cpus": "16.83",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.1"
-        },
-        "10.101.9.19": {
-            "cpus": "33.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.9"
-        },
-        "10.101.2.38": {
-            "cpus": "16.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "29.2"
+            "cpus": "35.00",
+            "memory": "61.8"
         },
         "10.101.1.30": {
-            "cpus": "36.03",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
             "memory": "17.4"
         },
-        "10.101.8.21": {
-            "cpus": "36.06",
-            "fans": [],
+        "10.101.10.37": {
             "temperature": [],
-            "memory": "5.5"
+            "fans": [],
+            "cpus": "54.46",
+            "memory": "9.9"
         },
-        "10.101.8.19": {
-            "cpus": "22.80",
-            "fans": [],
+        "10.101.9.47": {
             "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "15.9"
+        },
+        "10.101.9.52": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "5.0"
+        },
+        "10.101.1.50": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "15.3"
+        },
+        "10.101.1.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "5.3"
+        },
+        "10.101.8.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.66",
+            "memory": "13.3"
+        },
+        "10.101.3.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "7.6"
+        },
+        "10.101.9.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "20.13",
+            "memory": "13.4"
+        },
+        "10.101.3.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.17",
+            "memory": "58.3"
+        },
+        "10.101.10.26": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "29.79",
+            "memory": "13.5"
+        },
+        "10.101.2.53": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.08",
+            "memory": "60.5"
+        },
+        "10.101.3.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "15.32",
+            "memory": "34.7"
+        },
+        "10.101.2.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.83",
             "memory": "12.1"
         },
-        "10.101.8.31": {
-            "cpus": "36.00",
-            "fans": [],
+        "10.101.7.20": {
             "temperature": [],
-            "memory": "8.2"
-        },
-        "10.101.8.41": {
-            "cpus": "36.05",
             "fans": [],
-            "temperature": [],
-            "memory": "15.5"
-        },
-        "10.101.5.6": {
-            "cpus": "27.83",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.6"
-        },
-        "10.101.7.15": {
-            "cpus": "34.77",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.2"
-        },
-        "10.101.4.23": {
-            "cpus": "27.32",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.4.2": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "25.1"
-        },
-        "10.101.7.11": {
-            "cpus": "27.55",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.1"
-        },
-        "10.101.10.27": {
-            "cpus": "34.21",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.5"
-        },
-        "10.101.6.19": {
-            "cpus": "40.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.7.46": {
-            "cpus": "35.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.8"
-        },
-        "10.101.2.17": {
             "cpus": "36.03",
-            "fans": [],
+            "memory": "11.6"
+        },
+        "10.101.9.50": {
             "temperature": [],
+            "fans": [],
+            "cpus": "2.72",
+            "memory": "4.5"
+        },
+        "10.101.6.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.57",
+            "memory": "76.7"
+        },
+        "10.101.7.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.13",
+            "memory": "17.2"
+        },
+        "10.101.2.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.66",
+            "memory": "60.3"
+        },
+        "10.101.7.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "5.2"
+        },
+        "10.101.3.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "44.16",
+            "memory": "15.7"
+        },
+        "10.101.8.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.07",
+            "memory": "64.4"
+        },
+        "10.101.3.53": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "32.52",
+            "memory": "15.9"
+        },
+        "10.101.8.58": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "61.9"
+        },
+        "10.101.2.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "15.3"
+        },
+        "10.101.1.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "4.3"
+        },
+        "10.101.9.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.06",
+            "memory": "81.1"
+        },
+        "10.101.2.59": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "4.3"
+        },
+        "10.101.8.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "5.5"
+        },
+        "10.101.9.53": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "31.39",
+            "memory": "15.0"
+        },
+        "10.101.3.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
             "memory": "5.8"
         },
-        "10.101.3.7": {
-            "cpus": "36.02",
-            "fans": [],
+        "10.101.1.19": {
             "temperature": [],
+            "fans": [],
+            "cpus": "60.99",
+            "memory": "10.6"
+        },
+        "10.101.7.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "48.16",
+            "memory": "11.1"
+        },
+        "10.101.10.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.55",
+            "memory": "12.4"
+        },
+        "10.101.2.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "5.8"
+        },
+        "10.101.3.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.34",
+            "memory": "7.2"
+        },
+        "10.101.3.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.34",
+            "memory": "14.7"
+        },
+        "10.101.3.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.94",
+            "memory": "28.6"
+        },
+        "10.101.10.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.45",
+            "memory": "6.5"
+        },
+        "10.101.8.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "11.97",
+            "memory": "12.4"
+        },
+        "10.101.2.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "4.9"
+        },
+        "10.101.2.45": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.31",
+            "memory": "75.3"
+        },
+        "10.101.7.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.10",
+            "memory": "13.1"
+        },
+        "10.101.8.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "1.02",
+            "memory": "8.3"
+        },
+        "10.101.6.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "7.2"
+        },
+        "10.101.4.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "59.48",
+            "memory": "9.8"
+        },
+        "10.101.3.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "20.00",
+            "memory": "13.7"
+        },
+        "10.101.7.47": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.08",
+            "memory": "14.1"
+        },
+        "10.101.8.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "15.5"
+        },
+        "10.101.4.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "15.7"
+        },
+        "10.101.6.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "11.33",
+            "memory": "15.7"
+        },
+        "10.101.7.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.94",
+            "memory": "17.1"
+        },
+        "10.101.4.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.81",
+            "memory": "9.6"
+        },
+        "10.101.7.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "56.53",
+            "memory": "9.7"
+        },
+        "10.101.6.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "4.6"
+        },
+        "10.101.9.58": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.51",
+            "memory": "16.0"
+        },
+        "10.101.3.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "30.5"
+        },
+        "10.101.2.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.85",
+            "memory": "42.7"
+        },
+        "10.101.4.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "29.7"
+        },
+        "10.101.4.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "5.6"
+        },
+        "10.101.3.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "2.70",
+            "memory": "21.2"
+        },
+        "10.101.2.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "16.5"
+        },
+        "10.101.4.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "10.0"
+        },
+        "10.101.5.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.09",
+            "memory": "5.1"
+        },
+        "10.101.8.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.28",
+            "memory": "22.5"
+        },
+        "10.101.7.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "17.4"
+        },
+        "10.101.2.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.79",
+            "memory": "14.2"
+        },
+        "10.101.9.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.28",
+            "memory": "40.5"
+        },
+        "10.101.7.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.84",
+            "memory": "60.8"
+        },
+        "10.101.9.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "25.33",
+            "memory": "25.3"
+        },
+        "10.101.7.49": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "60.4"
+        },
+        "10.101.1.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "32.93",
+            "memory": "75.6"
+        },
+        "10.101.8.45": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "20.65",
+            "memory": "15.9"
+        },
+        "10.101.10.44": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.36",
+            "memory": "61.8"
+        },
+        "10.101.3.26": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.21",
+            "memory": "61.1"
+        },
+        "10.101.4.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.35",
+            "memory": "18.8"
+        },
+        "10.101.8.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.83",
+            "memory": "14.5"
+        },
+        "10.101.1.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "4.8"
+        },
+        "10.101.4.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "5.0"
+        },
+        "10.101.4.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.60",
+            "memory": "20.7"
+        },
+        "10.101.8.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "16.0"
+        },
+        "10.101.10.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.97",
+            "memory": "5.0"
+        },
+        "10.101.1.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.61",
+            "memory": "73.9"
+        },
+        "10.101.3.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "23.88",
+            "memory": "20.2"
+        },
+        "10.101.6.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "20.46",
+            "memory": "14.9"
+        },
+        "10.101.6.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.04",
+            "memory": "12.3"
+        },
+        "10.101.1.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "6.9"
+        },
+        "10.101.3.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "0.07",
+            "memory": "3.1"
+        },
+        "10.101.9.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "49.36",
+            "memory": "13.1"
+        },
+        "10.101.3.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "30.9"
+        },
+        "10.101.7.25": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.67",
+            "memory": "11.6"
+        },
+        "10.101.8.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "58.78",
+            "memory": "11.5"
+        },
+        "10.101.4.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "16.5"
+        },
+        "10.101.4.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "1.82",
+            "memory": "5.1"
+        },
+        "10.101.1.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "14.82",
+            "memory": "13.7"
+        },
+        "10.101.2.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "13.92",
+            "memory": "14.5"
+        },
+        "10.101.1.47": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.58",
+            "memory": "7.3"
+        },
+        "10.101.7.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "15.8"
+        },
+        "10.101.9.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "0.50",
+            "memory": "4.3"
+        },
+        "10.101.1.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.80",
+            "memory": "21.7"
+        },
+        "10.101.7.53": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.81",
+            "memory": "5.3"
+        },
+        "10.101.7.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.49",
+            "memory": "14.9"
+        },
+        "10.101.1.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "6.5"
+        },
+        "10.101.2.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "60.28",
+            "memory": "10.5"
+        },
+        "10.101.9.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.40",
+            "memory": "10.2"
+        },
+        "10.101.5.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "3.58",
+            "memory": "7.9"
+        },
+        "10.101.6.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.20",
+            "memory": "10.4"
+        },
+        "10.101.1.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.04",
+            "memory": "5.0"
+        },
+        "10.101.9.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.20",
+            "memory": "17.3"
+        },
+        "10.101.7.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "10.07",
+            "memory": "6.6"
+        },
+        "10.101.8.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.73",
+            "memory": "66.1"
+        },
+        "10.101.6.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "23.97",
+            "memory": "12.9"
+        },
+        "10.101.6.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "0.01",
+            "memory": "7.0"
+        },
+        "10.101.3.52": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.32",
+            "memory": "9.9"
+        },
+        "10.101.3.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "19.4"
+        },
+        "10.101.1.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.67",
+            "memory": "12.0"
+        },
+        "10.101.1.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.87",
+            "memory": "60.8"
+        },
+        "10.101.1.49": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "10.03",
+            "memory": "18.2"
+        },
+        "10.101.5.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.99",
+            "memory": "61.5"
+        },
+        "10.101.5.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "29.93",
+            "memory": "14.4"
+        },
+        "10.101.3.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.02",
+            "memory": "68.6"
+        },
+        "10.101.5.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.89",
+            "memory": "10.0"
+        },
+        "10.101.4.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.18",
+            "memory": "14.2"
+        },
+        "10.101.5.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "9.4"
+        },
+        "10.101.4.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.17",
+            "memory": "40.3"
+        },
+        "10.101.3.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "51.55",
+            "memory": "10.8"
+        },
+        "10.101.3.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "24.48",
+            "memory": "12.5"
+        },
+        "10.101.10.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.75",
+            "memory": "61.8"
+        },
+        "10.101.2.34": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.82",
+            "memory": "74.5"
+        },
+        "10.101.5.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "16.6"
+        },
+        "10.101.3.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "5.1"
+        },
+        "10.101.2.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.67",
+            "memory": "75.2"
+        },
+        "10.101.8.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.90",
+            "memory": "12.1"
+        },
+        "10.101.8.49": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.68",
+            "memory": "9.8"
+        },
+        "10.101.8.43": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.60",
+            "memory": "10.5"
+        },
+        "10.101.2.58": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.08",
+            "memory": "41.5"
+        },
+        "10.101.3.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.75",
+            "memory": "12.2"
+        },
+        "10.101.2.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "17.5"
+        },
+        "10.101.6.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.46",
+            "memory": "75.5"
+        },
+        "10.101.1.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "16.2"
+        },
+        "10.101.5.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "7.83",
+            "memory": "14.6"
+        },
+        "10.101.8.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "23.03",
+            "memory": "13.5"
+        },
+        "10.101.7.60": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.98",
+            "memory": "7.5"
+        },
+        "10.101.8.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "6.1"
+        },
+        "10.101.7.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "17.8"
+        },
+        "10.101.3.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "16.6"
+        },
+        "10.101.3.51": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "19.47",
+            "memory": "12.4"
+        },
+        "10.101.5.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "24.92",
+            "memory": "19.4"
+        },
+        "10.101.4.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.93",
+            "memory": "61.6"
+        },
+        "10.101.2.44": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.13",
+            "memory": "5.7"
+        },
+        "10.101.7.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "9.61",
+            "memory": "18.7"
+        },
+        "10.101.5.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.52",
+            "memory": "61.3"
+        },
+        "10.101.4.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
             "memory": "5.0"
         },
         "10.101.2.46": {
-            "cpus": "36.03",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
             "memory": "15.9"
         },
-        "10.101.7.6": {
-            "cpus": "34.78",
-            "fans": [],
+        "10.101.3.23": {
             "temperature": [],
-            "memory": "47.1"
-        },
-        "10.101.1.47": {
-            "cpus": "32.35",
             "fans": [],
-            "temperature": [],
-            "memory": "7.3"
-        },
-        "10.101.10.44": {
-            "cpus": "35.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.9"
-        },
-        "10.101.9.17": {
-            "cpus": "29.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.3"
-        },
-        "10.101.8.24": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "18.8"
-        },
-        "10.101.2.60": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.2"
-        },
-        "10.101.3.30": {
-            "cpus": "30.74",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.0"
-        },
-        "10.101.3.17": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.1"
-        },
-        "10.101.3.9": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "19.2"
-        },
-        "10.101.1.17": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "58.6"
-        },
-        "10.101.10.41": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.8"
-        },
-        "10.101.8.58": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.8"
-        },
-        "10.101.1.28": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.3"
-        },
-        "10.101.7.30": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.8"
-        },
-        "10.101.6.14": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.3"
-        },
-        "10.101.2.31": {
-            "cpus": "34.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "64.3"
-        },
-        "10.101.7.60": {
-            "cpus": "35.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.5"
-        },
-        "10.101.7.55": {
-            "cpus": "35.18",
-            "fans": [],
-            "temperature": [],
+            "cpus": "26.55",
             "memory": "14.3"
         },
-        "10.101.9.48": {
-            "cpus": "22.26",
-            "fans": [],
+        "10.101.3.3": {
             "temperature": [],
-            "memory": "12.7"
-        },
-        "10.101.10.26": {
-            "cpus": "29.75",
             "fans": [],
-            "temperature": [],
-            "memory": "13.5"
+            "cpus": "12.67",
+            "memory": "16.6"
         },
-        "10.101.9.29": {
-            "cpus": "36.04",
+        "10.101.9.27": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "5.7"
-        },
-        "10.101.9.11": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.9.30": {
-            "cpus": "21.23",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.4"
-        },
-        "10.101.7.56": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.2"
-        },
-        "10.101.5.2": {
-            "cpus": "8.84",
-            "fans": [],
-            "temperature": [],
-            "memory": "31.3"
-        },
-        "10.101.6.5": {
-            "cpus": "12.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.7"
-        },
-        "10.101.2.32": {
-            "cpus": "33.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.1"
-        },
-        "10.101.4.8": {
-            "cpus": "34.70",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.6"
-        },
-        "10.101.1.57": {
-            "cpus": "34.42",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.5"
-        },
-        "10.101.3.21": {
             "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.6.11": {
-            "cpus": "34.82",
-            "fans": [],
-            "temperature": [],
             "memory": "5.1"
         },
-        "10.101.9.23": {
-            "cpus": "38.89",
-            "fans": [],
+        "10.101.9.51": {
             "temperature": [],
-            "memory": "10.7"
-        },
-        "10.101.10.34": {
-            "cpus": "21.49",
             "fans": [],
-            "temperature": [],
-            "memory": "10.5"
+            "cpus": "20.02",
+            "memory": "5.2"
         },
-        "10.101.4.34": {
-            "cpus": "34.12",
+        "10.101.4.17": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "41.6"
+            "cpus": "36.09",
+            "memory": "73.3"
         },
-        "10.101.7.8": {
+        "null": {
+            "temperature": null,
+            "fans": null,
+            "cpus": null,
+            "memory": null
+        },
+        "10.101.7.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "17.96",
+            "memory": "12.0"
+        },
+        "10.101.2.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "6.1"
+        },
+        "10.101.7.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.93",
+            "memory": "47.2"
+        },
+        "10.101.1.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "4.4"
+        },
+        "10.101.9.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "70.6"
+        },
+        "10.101.5.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.99",
+            "memory": "14.4"
+        },
+        "10.101.4.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.04",
+            "memory": "47.5"
+        },
+        "10.101.1.25": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.2"
+            "memory": "5.4"
         },
-        "10.101.9.46": {
-            "cpus": "36.02",
-            "fans": [],
+        "10.101.8.13": {
             "temperature": [],
-            "memory": "15.2"
+            "fans": [],
+            "cpus": "34.74",
+            "memory": "7.3"
         },
-        "10.101.1.31": {
+        "10.101.10.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.31",
+            "memory": "7.9"
+        },
+        "10.101.7.51": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.5"
+            "memory": "16.0"
         },
-        "10.101.2.19": {
-            "cpus": "36.05",
-            "fans": [],
+        "10.101.4.45": {
             "temperature": [],
+            "fans": [],
+            "cpus": "33.27",
+            "memory": "75.5"
+        },
+        "10.101.1.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "8.3"
+        },
+        "10.101.5.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.52",
+            "memory": "6.1"
+        },
+        "10.101.2.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.31",
+            "memory": "77.0"
+        },
+        "10.101.1.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.94",
+            "memory": "45.3"
+        },
+        "10.101.2.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.68",
+            "memory": "9.7"
+        },
+        "10.101.3.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.83",
             "memory": "74.5"
         },
-        "10.101.4.43": {
-            "cpus": "36.05",
-            "fans": [],
+        "10.101.5.18": {
             "temperature": [],
-            "memory": "5.6"
-        },
-        "10.101.1.36": {
-            "cpus": "2.02",
             "fans": [],
-            "temperature": [],
-            "memory": "3.0"
+            "cpus": "55.99",
+            "memory": "11.4"
         },
-        "10.101.2.54": {
+        "10.101.9.26": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.14",
+            "memory": "11.6"
+        },
+        "10.101.2.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "4.9"
+        },
+        "10.101.10.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "4.8"
+        },
+        "10.101.2.33": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.07",
-            "fans": [],
+            "memory": "7.1"
+        },
+        "10.101.3.15": {
             "temperature": [],
-            "memory": "15.3"
+            "fans": [],
+            "cpus": "32.37",
+            "memory": "9.1"
+        },
+        "10.101.7.59": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "5.4"
+        },
+        "10.101.2.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "5.8"
+        },
+        "10.101.8.44": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.99",
+            "memory": "42.4"
+        },
+        "10.101.8.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "4.8"
+        },
+        "10.101.8.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "24.01",
+            "memory": "19.9"
+        },
+        "10.101.4.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "7.3"
+        },
+        "10.101.7.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.06",
+            "memory": "14.5"
+        },
+        "10.101.8.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "54.24",
+            "memory": "12.5"
+        },
+        "10.101.1.52": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.73",
+            "memory": "13.9"
+        },
+        "10.101.7.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.99",
+            "memory": "6.1"
+        },
+        "10.101.9.49": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "14.70",
+            "memory": "11.9"
+        },
+        "10.101.2.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "6.9"
+        },
+        "10.101.7.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.68",
+            "memory": "61.6"
+        },
+        "10.101.5.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "61.3"
+        },
+        "10.101.9.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "7.2"
+        },
+        "10.101.2.50": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "8.2"
+        },
+        "10.101.7.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.01",
+            "memory": "11.3"
+        },
+        "10.101.2.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.28",
+            "memory": "5.5"
+        },
+        "10.101.7.50": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.22",
+            "memory": "14.0"
+        },
+        "10.101.4.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.90",
+            "memory": "45.8"
+        },
+        "10.101.7.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.30",
+            "memory": "74.7"
+        },
+        "10.101.7.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "56.22",
+            "memory": "9.3"
+        },
+        "10.101.8.51": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "15.4"
+        },
+        "10.101.8.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "51.29",
+            "memory": "12.2"
+        },
+        "10.101.1.59": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.64",
+            "memory": "5.3"
+        },
+        "10.101.7.34": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "14.8"
+        },
+        "10.101.3.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.38",
+            "memory": "78.8"
+        },
+        "10.101.8.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.12",
+            "memory": "58.2"
+        },
+        "10.101.7.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.12",
+            "memory": "75.9"
+        },
+        "10.101.1.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "8.5"
+        },
+        "10.101.5.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.66",
+            "memory": "43.6"
+        },
+        "10.101.10.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.53",
+            "memory": "76.7"
+        },
+        "10.101.8.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "6.63",
+            "memory": "4.0"
+        },
+        "10.101.4.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.21",
+            "memory": "13.2"
+        },
+        "10.101.7.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.97",
+            "memory": "61.6"
+        },
+        "10.101.9.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "5.2"
+        },
+        "10.101.3.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "48.63",
+            "memory": "10.8"
+        },
+        "10.101.2.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.95",
+            "memory": "40.3"
+        },
+        "10.101.9.34": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.12",
+            "memory": "18.8"
+        },
+        "10.101.6.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "21.3"
+        },
+        "10.101.6.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.07",
+            "memory": "20.5"
+        },
+        "10.101.3.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.10",
+            "memory": "61.3"
+        },
+        "10.101.4.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.83",
+            "memory": "60.9"
+        },
+        "10.101.9.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "10.4"
+        },
+        "10.101.2.49": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.62",
+            "memory": "5.1"
+        },
+        "10.101.8.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.09",
+            "memory": "4.6"
+        },
+        "10.101.7.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.50",
+            "memory": "24.4"
+        },
+        "10.101.9.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "6.8"
+        },
+        "10.101.2.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "-",
+            "memory": "-"
+        },
+        "10.101.2.60": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "11.2"
+        },
+        "10.101.4.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.56",
+            "memory": "13.5"
+        },
+        "10.101.1.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "1.01",
+            "memory": "17.0"
+        },
+        "10.101.10.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "17.9"
+        },
+        "10.101.4.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.65",
+            "memory": "11.0"
+        },
+        "10.101.6.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.47",
+            "memory": "10.8"
+        },
+        "10.101.8.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "58.8"
+        },
+        "10.101.1.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "10.4"
+        },
+        "10.101.5.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.50",
+            "memory": "10.6"
+        },
+        "10.101.2.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.52",
+            "memory": "19.0"
+        },
+        "10.101.5.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "56.27",
+            "memory": "13.7"
+        },
+        "10.101.1.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "51.16",
+            "memory": "10.0"
+        },
+        "10.101.10.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "17.99",
+            "memory": "12.3"
+        },
+        "10.101.2.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "6.0"
+        },
+        "10.101.2.47": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.06",
+            "memory": "7.5"
+        },
+        "10.101.7.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "53.1"
+        },
+        "10.101.9.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.55",
+            "memory": "9.6"
+        },
+        "10.101.9.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "-",
+            "memory": "-"
+        },
+        "10.101.7.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.00",
+            "memory": "7.8"
         },
         "10.101.8.53": {
-            "cpus": "36.09",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
             "memory": "16.1"
         },
-        "10.101.2.45": {
-            "cpus": "33.49",
-            "fans": [],
+        "10.101.7.19": {
             "temperature": [],
-            "memory": "75.3"
+            "fans": [],
+            "cpus": "36.11",
+            "memory": "5.7"
+        },
+        "10.101.10.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "5.8"
+        },
+        "10.101.8.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "60.7"
+        },
+        "10.101.8.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.10",
+            "memory": "8.2"
+        },
+        "10.101.4.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.96",
+            "memory": "5.4"
+        },
+        "10.101.8.47": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.11",
+            "memory": "59.1"
+        },
+        "10.101.3.25": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "7.5"
+        },
+        "10.101.2.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.27",
+            "memory": "9.8"
+        },
+        "10.101.8.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.65",
+            "memory": "6.0"
+        },
+        "10.101.3.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "32.91",
+            "memory": "14.3"
+        },
+        "10.101.7.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "51.42",
+            "memory": "11.4"
+        },
+        "10.101.7.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.11",
+            "memory": "5.3"
+        },
+        "10.101.4.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.98",
+            "memory": "70.8"
+        },
+        "10.101.9.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "5.0"
+        },
+        "10.101.4.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.30",
+            "memory": "15.3"
+        },
+        "10.101.4.5": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.12",
+            "memory": "12.4"
+        },
+        "10.101.5.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "1.94",
+            "memory": "24.0"
+        },
+        "10.101.9.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.86",
+            "memory": "9.7"
+        },
+        "10.101.10.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.98",
+            "memory": "7.9"
+        },
+        "10.101.4.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "25.2"
+        },
+        "10.101.10.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "-",
+            "memory": "-"
+        },
+        "10.101.7.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "16.1"
+        },
+        "10.101.9.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "-",
+            "memory": "-"
+        },
+        "10.101.1.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "7.6"
+        },
+        "10.101.9.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.17",
+            "memory": "42.9"
+        },
+        "10.101.1.53": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "13.7"
+        },
+        "10.101.9.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "56.11",
+            "memory": "11.0"
+        },
+        "10.101.4.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "17.2"
+        },
+        "10.101.2.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "15.96",
+            "memory": "29.2"
+        },
+        "10.101.7.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "46.26",
+            "memory": "11.5"
+        },
+        "10.101.9.59": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.94",
+            "memory": "74.4"
+        },
+        "10.101.4.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "2.19",
+            "memory": "20.5"
+        },
+        "10.101.1.60": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.21",
+            "memory": "6.9"
+        },
+        "10.101.8.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "61.42",
+            "memory": "10.7"
+        },
+        "10.101.1.54": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "17.4"
         },
         "10.101.3.19": {
-            "cpus": "34.64",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "34.30",
             "memory": "5.6"
         },
         "10.101.2.48": {
-            "cpus": "36.01",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
             "memory": "7.7"
         },
-        "10.101.8.34": {
-            "cpus": "36.06",
-            "fans": [],
+        "10.101.7.58": {
             "temperature": [],
-            "memory": "10.1"
-        },
-        "10.101.9.38": {
-            "cpus": "34.92",
             "fans": [],
-            "temperature": [],
-            "memory": "65.2"
-        },
-        "10.101.1.45": {
-            "cpus": "18.62",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.3"
-        },
-        "10.101.6.13": {
-            "cpus": "33.52",
-            "fans": [],
-            "temperature": [],
-            "memory": "76.7"
-        },
-        "10.101.1.16": {
-            "cpus": "35.91",
-            "fans": [],
-            "temperature": [],
-            "memory": "44.8"
-        },
-        "10.101.4.21": {
-            "cpus": "25.38",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.7.12": {
-            "cpus": "35.93",
-            "fans": [],
-            "temperature": [],
-            "memory": "52.3"
-        },
-        "10.101.10.39": {
-            "cpus": "34.16",
-            "fans": [],
-            "temperature": [],
-            "memory": "76.6"
-        },
-        "10.101.2.35": {
-            "cpus": "34.49",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.5"
-        },
-        "10.101.1.27": {
-            "cpus": "12.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.0"
-        },
-        "10.101.3.48": {
-            "cpus": "34.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "28.6"
-        },
-        "10.101.1.13": {
-            "cpus": "34.90",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.2"
-        },
-        "10.101.7.49": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.3"
-        },
-        "10.101.3.31": {
             "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.5"
-        },
-        "10.101.1.15": {
-            "cpus": "33.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "73.9"
-        },
-        "10.101.3.4": {
-            "cpus": "22.52",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.4"
-        },
-        "10.101.9.18": {
-            "cpus": "22.66",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.2"
-        },
-        "10.101.5.20": {
-            "cpus": "34.44",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.2.40": {
-            "cpus": "22.24",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.2"
-        },
-        "10.101.7.23": {
-            "cpus": "25.15",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.6"
-        },
-        "10.101.8.43": {
-            "cpus": "34.90",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.6"
-        },
-        "10.101.2.2": {
-            "cpus": "34.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.9"
-        },
-        "10.101.9.51": {
-            "cpus": "20.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.3"
-        },
-        "10.101.1.46": {
-            "cpus": "34.86",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.9.31": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.4"
-        },
-        "10.101.8.12": {
-            "cpus": "12.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.4"
-        },
-        "10.101.4.9": {
-            "cpus": "26.52",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.2"
-        },
-        "10.101.4.37": {
-            "cpus": "6.18",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.4.25": {
-            "cpus": "33.75",
-            "fans": [],
-            "temperature": [],
-            "memory": "19.7"
-        },
-        "10.101.8.29": {
-            "cpus": "34.21",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.9"
-        },
-        "10.101.7.5": {
-            "cpus": "27.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.0"
-        },
-        "10.101.2.22": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.8"
-        },
-        "10.101.3.38": {
-            "cpus": "27.95",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.7"
-        },
-        "10.101.9.4": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.1.22": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.1"
-        },
-        "10.101.3.24": {
-            "cpus": "33.59",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.3"
-        },
-        "10.101.7.14": {
-            "cpus": "26.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.2"
-        },
-        "10.101.8.50": {
-            "cpus": "26.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.2"
-        },
-        "10.101.3.40": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.8"
-        },
-        "10.101.2.8": {
-            "cpus": "33.70",
-            "fans": [],
-            "temperature": [],
-            "memory": "73.8"
-        },
-        "10.101.7.35": {
-            "cpus": "12.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.3"
-        },
-        "10.101.4.31": {
-            "cpus": "36.45",
-            "fans": [],
-            "temperature": [],
-            "memory": "29.4"
-        },
-        "10.101.7.7": {
-            "cpus": "34.15",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.9"
-        },
-        "10.101.5.16": {
-            "cpus": "34.89",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.1"
-        },
-        "10.101.8.47": {
-            "cpus": "35.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.4"
-        },
-        "10.101.1.14": {
-            "cpus": "34.80",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.8"
-        },
-        "10.101.3.37": {
-            "cpus": "0.30",
-            "fans": [],
-            "temperature": [],
-            "memory": "3.1"
-        },
-        "10.101.5.18": {
-            "cpus": "40.43",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.1"
-        },
-        "10.101.9.45": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.6"
-        },
-        "10.101.9.34": {
-            "cpus": "36.09",
-            "fans": [],
-            "temperature": [],
-            "memory": "18.8"
-        },
-        "10.101.3.39": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.1"
-        },
-        "10.101.1.21": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.8"
-        },
-        "10.101.7.51": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.0"
-        },
-        "10.101.6.9": {
-            "cpus": "18.12",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.3"
-        },
-        "10.101.10.43": {
-            "cpus": "35.67",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.8"
-        },
-        "10.101.9.3": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.6"
-        },
-        "10.101.9.24": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.8"
-        },
-        "10.101.9.44": {
-            "cpus": "11.99",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.4"
-        },
-        "10.101.3.56": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.1"
-        },
-        "10.101.8.25": {
-            "cpus": "21.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.6"
-        },
-        "10.101.1.35": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.4"
-        },
-        "10.101.4.12": {
-            "cpus": "36.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.1.38": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.4"
-        },
-        "10.101.8.6": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.8"
-        },
-        "10.101.8.8": {
-            "cpus": "1.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.3"
-        },
-        "10.101.1.55": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.9"
-        },
-        "10.101.1.29": {
-            "cpus": "35.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.6"
-        },
-        "10.101.4.24": {
-            "cpus": "28.24",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.7"
-        },
-        "10.101.1.20": {
-            "cpus": "15.90",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.7"
-        },
-        "10.101.4.6": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "45.4"
-        },
-        "10.101.8.15": {
-            "cpus": "12.08",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.3"
-        },
-        "10.101.4.28": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.3"
-        },
-        "10.101.2.43": {
-            "cpus": "35.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.6"
-        },
-        "10.101.1.18": {
-            "cpus": "35.80",
-            "fans": [],
-            "temperature": [],
-            "memory": "18.9"
-        },
-        "10.101.3.22": {
-            "cpus": "33.62",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.5"
-        },
-        "10.101.7.13": {
-            "cpus": "32.89",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.9"
-        },
-        "10.101.2.49": {
-            "cpus": "34.49",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.8.46": {
-            "cpus": "35.98",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.5"
-        },
-        "10.101.5.21": {
-            "cpus": "24.80",
-            "fans": [],
-            "temperature": [],
-            "memory": "19.4"
-        },
-        "10.101.1.53": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.7"
-        },
-        "10.101.2.9": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.9"
-        },
-        "10.101.7.57": {
-            "cpus": "26.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.7"
-        },
-        "10.101.7.44": {
-            "cpus": "34.85",
-            "fans": [],
-            "temperature": [],
-            "memory": "42.2"
-        },
-        "10.101.6.7": {
-            "cpus": "35.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.2"
-        },
-        "10.101.9.39": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.0"
-        },
-        "10.101.2.29": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.9"
-        },
-        "10.101.1.6": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.2"
-        },
-        "10.101.2.20": {
-            "cpus": "23.57",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.3"
-        },
-        "10.101.9.55": {
-            "cpus": "36.08",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.6"
-        },
-        "10.101.8.40": {
-            "cpus": "16.80",
-            "fans": [],
-            "temperature": [],
-            "memory": "13.3"
-        },
-        "10.101.1.11": {
-            "cpus": "34.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.4"
-        },
-        "10.101.9.36": {
-            "cpus": "33.88",
-            "fans": [],
-            "temperature": [],
-            "memory": "40.7"
-        },
-        "10.101.5.7": {
-            "cpus": "29.81",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.4"
-        },
-        "10.101.9.56": {
-            "cpus": "27.18",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.2"
-        },
-        "10.101.1.43": {
-            "cpus": "36.00",
-            "fans": [],
-            "temperature": [],
             "memory": "4.2"
         },
-        "10.101.8.57": {
-            "cpus": "26.54",
-            "fans": [],
+        "10.101.6.3": {
             "temperature": [],
-            "memory": "8.0"
+            "fans": [],
+            "cpus": "35.24",
+            "memory": "65.0"
         },
-        "10.101.2.50": {
-            "cpus": "36.04",
-            "fans": [],
+        "10.101.1.17": {
             "temperature": [],
-            "memory": "8.2"
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "59.9"
         },
-        "10.101.8.10": {
-            "cpus": "34.88",
-            "fans": [],
+        "10.101.4.34": {
             "temperature": [],
-            "memory": "66.1"
-        },
-        "10.101.3.35": {
-            "cpus": "24.55",
             "fans": [],
-            "temperature": [],
-            "memory": "12.5"
-        },
-        "10.101.10.42": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.9"
-        },
-        "10.101.4.1": {
-            "cpus": "22.82",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.5.10": {
-            "cpus": "2.87",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.9"
-        },
-        "10.101.4.41": {
-            "cpus": "2.10",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.4"
-        },
-        "10.101.3.47": {
-            "cpus": "36.19",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.3"
-        },
-        "10.101.4.44": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.6"
+            "cpus": "33.98",
+            "memory": "41.6"
         },
         "10.101.1.10": {
-            "cpus": "36.18",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.16",
             "memory": "14.5"
         },
-        "10.101.10.28": {
-            "cpus": "18.17",
-            "fans": [],
+        "10.101.2.31": {
             "temperature": [],
-            "memory": "12.3"
+            "fans": [],
+            "cpus": "34.88",
+            "memory": "64.3"
         },
-        "10.101.4.42": {
-            "cpus": "29.18",
-            "fans": [],
+        "10.101.9.45": {
             "temperature": [],
-            "memory": "9.4"
-        },
-        "10.101.9.52": {
-            "cpus": "36.05",
             "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.3.2": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.0"
-        },
-        "10.101.10.37": {
-            "cpus": "34.65",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.5"
-        },
-        "10.101.7.32": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.3"
-        },
-        "10.101.2.4": {
-            "cpus": "36.02",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.9"
-        },
-        "10.101.2.6": {
-            "cpus": "35.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.2"
-        },
-        "10.101.4.20": {
-            "cpus": "36.27",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.3"
-        },
-        "10.101.1.4": {
-            "cpus": "34.44",
-            "fans": [],
-            "temperature": [],
-            "memory": "78.7"
-        },
-        "10.101.3.13": {
-            "cpus": "36.10",
-            "fans": [],
-            "temperature": [],
-            "memory": "58.3"
-        },
-        "10.101.2.14": {
-            "cpus": "33.51",
-            "fans": [],
-            "temperature": [],
-            "memory": "75.2"
-        },
-        "10.101.8.36": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.5"
-        },
-        "10.101.7.9": {
-            "cpus": "16.60",
-            "fans": [],
-            "temperature": [],
-            "memory": "24.4"
-        },
-        "10.101.9.43": {
-            "cpus": "25.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "25.3"
-        },
-        "10.101.1.41": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "30.8"
-        },
-        "10.101.3.12": {
-            "cpus": "27.79",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.2"
-        },
-        "10.101.2.34": {
-            "cpus": "33.56",
-            "fans": [],
-            "temperature": [],
-            "memory": "74.5"
-        },
-        "10.101.9.54": {
-            "cpus": "26.52",
-            "fans": [],
-            "temperature": [],
+            "cpus": "36.11",
             "memory": "9.7"
         },
-        "10.101.5.11": {
-            "cpus": "36.07",
-            "fans": [],
+        "10.101.3.49": {
             "temperature": [],
-            "memory": "61.1"
-        },
-        "10.101.8.38": {
-            "cpus": "21.93",
             "fans": [],
-            "temperature": [],
-            "memory": "11.9"
+            "cpus": "33.37",
+            "memory": "76.4"
         },
-        "10.101.1.58": {
-            "cpus": "34.71",
+        "10.101.1.22": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "60.3"
+            "cpus": "36.05",
+            "memory": "16.1"
         },
-        "10.101.1.8": {
-            "cpus": "36.01",
+        "10.101.8.34": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "5.3"
+            "cpus": "36.12",
+            "memory": "10.3"
         },
-        "10.101.5.9": {
-            "cpus": "35.00",
+        "10.101.1.11": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "61.5"
+            "cpus": "35.18",
+            "memory": "6.4"
         },
-        "10.101.8.23": {
-            "cpus": "35.88",
+        "10.101.7.44": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "10.4"
+            "cpus": "34.91",
+            "memory": "42.3"
         },
-        "10.101.2.24": {
+        "10.101.8.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.16",
+            "memory": "15.6"
+        },
+        "10.101.3.40": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "10.0"
+            "memory": "15.8"
         },
-        "10.101.9.27": {
-            "cpus": "36.02",
-            "fans": [],
+        "10.101.9.14": {
             "temperature": [],
-            "memory": "5.1"
-        },
-        "10.101.8.59": {
-            "cpus": "36.18",
             "fans": [],
-            "temperature": [],
-            "memory": "15.9"
-        },
-        "10.101.9.21": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.8"
-        },
-        "10.101.2.57": {
-            "cpus": "32.81",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.6"
-        },
-        "10.101.10.33": {
-            "cpus": "36.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.0"
-        },
-        "10.101.7.59": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.4"
-        },
-        "10.101.1.40": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.3"
-        },
-        "10.101.1.50": {
-            "cpus": "36.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.3"
-        },
-        "10.101.8.4": {
-            "cpus": "24.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "19.9"
-        },
-        "10.101.1.25": {
-            "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.4"
-        },
-        "10.101.9.10": {
-            "cpus": "16.83",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.5"
-        },
-        "10.101.1.56": {
-            "cpus": "34.12",
-            "fans": [],
-            "temperature": [],
-            "memory": "43.6"
-        },
-        "10.101.7.54": {
-            "cpus": "12.01",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.3"
-        },
-        "10.101.3.6": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "14.7"
-        },
-        "10.101.9.25": {
-            "cpus": "19.97",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.8"
-        },
-        "10.101.3.42": {
-            "cpus": "15.36",
-            "fans": [],
-            "temperature": [],
-            "memory": "34.7"
-        },
-        "10.101.7.29": {
-            "cpus": "5.39",
-            "fans": [],
-            "temperature": [],
-            "memory": "8.3"
-        },
-        "10.101.9.47": {
-            "cpus": "36.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "15.9"
-        },
-        "10.101.9.35": {
-            "cpus": "33.63",
-            "fans": [],
-            "temperature": [],
-            "memory": "81.1"
-        },
-        "10.101.3.10": {
-            "cpus": "23.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.2"
-        },
-        "10.101.8.49": {
-            "cpus": "26.94",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.8"
-        },
-        "10.101.1.32": {
-            "cpus": "21.96",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.4"
-        },
-        "10.101.6.1": {
-            "cpus": "36.06",
-            "fans": [],
-            "temperature": [],
-            "memory": "17.5"
-        },
-        "10.101.7.22": {
-            "cpus": "34.95",
-            "fans": [],
-            "temperature": [],
-            "memory": "61.6"
-        },
-        "10.101.9.22": {
-            "cpus": "35.32",
-            "fans": [],
-            "temperature": [],
-            "memory": "20.9"
-        },
-        "10.101.5.5": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "9.4"
-        },
-        "10.101.6.20": {
-            "cpus": "24.00",
-            "fans": [],
-            "temperature": [],
-            "memory": "12.9"
-        },
-        "10.101.2.51": {
-            "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.9"
+            "cpus": "17.65",
+            "memory": "13.8"
         },
         "10.101.3.34": {
-            "cpus": "24.69",
-            "fans": [],
             "temperature": [],
-            "memory": "13.0"
-        },
-        "10.101.4.4": {
-            "cpus": "35.02",
             "fans": [],
-            "temperature": [],
-            "memory": "70.8"
+            "cpus": "24.25",
+            "memory": "12.9"
         },
-        "10.101.1.49": {
-            "cpus": "10.05",
+        "10.101.4.9": {
+            "temperature": [],
             "fans": [],
-            "temperature": [],
-            "memory": "18.2"
+            "cpus": "26.62",
+            "memory": "20.2"
         },
-        "10.101.8.22": {
+        "10.101.1.26": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.32",
+            "memory": "73.7"
+        },
+        "10.101.6.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "17.5"
+        },
+        "10.101.2.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "4.9"
+        },
+        "10.101.9.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "7.8"
+        },
+        "10.101.1.57": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.76",
+            "memory": "5.5"
+        },
+        "10.101.9.10": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.62",
+            "memory": "5.5"
+        },
+        "10.101.4.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "18.7"
+        },
+        "10.101.7.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "27.47",
+            "memory": "10.2"
+        },
+        "10.101.4.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.44",
+            "memory": "74.6"
+        },
+        "10.101.1.41": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.13",
+            "memory": "30.6"
+        },
+        "10.101.1.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "2.03",
+            "memory": "3.0"
+        },
+        "10.101.7.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.69",
+            "memory": "6.7"
+        },
+        "10.101.5.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "8.18",
+            "memory": "31.4"
+        },
+        "10.101.8.52": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.04",
-            "fans": [],
-            "temperature": [],
-            "memory": "6.1"
+            "memory": "6.6"
         },
-        "10.101.8.51": {
-            "cpus": "36.02",
-            "fans": [],
+        "10.101.2.26": {
             "temperature": [],
-            "memory": "15.4"
+            "fans": [],
+            "cpus": "23.10",
+            "memory": "4.3"
         },
-        "10.101.7.37": {
-            "cpus": "33.43",
-            "fans": [],
+        "10.101.7.45": {
             "temperature": [],
-            "memory": "74.7"
+            "fans": [],
+            "cpus": "35.96",
+            "memory": "7.1"
         },
-        "10.101.1.51": {
-            "cpus": "28.16",
-            "fans": [],
+        "10.101.9.8": {
             "temperature": [],
+            "fans": [],
+            "cpus": "14.86",
+            "memory": "4.7"
+        },
+        "10.101.9.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.11",
+            "memory": "8.6"
+        },
+        "10.101.3.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.94",
+            "memory": "52.1"
+        },
+        "10.101.9.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "22.59",
+            "memory": "16.4"
+        },
+        "10.101.8.57": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.97",
+            "memory": "8.2"
+        },
+        "10.101.9.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "22.10",
+            "memory": "14.1"
+        },
+        "10.101.6.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "54.36",
+            "memory": "10.1"
+        },
+        "10.101.9.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
             "memory": "9.8"
         },
-        "10.101.4.39": {
-            "cpus": "33.81",
-            "fans": [],
+        "10.101.3.43": {
             "temperature": [],
-            "memory": "11.0"
+            "fans": [],
+            "cpus": "16.07",
+            "memory": "12.7"
         },
-        "10.101.4.48": {
+        "10.101.2.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "153.17",
+            "memory": "26.0"
+        },
+        "10.101.2.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "10.0"
+        },
+        "10.101.8.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "14.05",
+            "memory": "13.2"
+        },
+        "10.101.8.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.44",
+            "memory": "76.9"
+        },
+        "10.101.4.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.96",
+            "memory": "10.7"
+        },
+        "10.101.3.17": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.11",
+            "memory": "7.1"
+        },
+        "10.101.8.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "61.1"
+        },
+        "10.101.2.52": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.46",
+            "memory": "41.9"
+        },
+        "10.101.7.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "5.72",
+            "memory": "8.3"
+        },
+        "10.101.2.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.58",
+            "memory": "74.9"
+        },
+        "10.101.3.39": {
+            "temperature": [],
+            "fans": [],
             "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.3"
-        },
-        "10.101.4.19": {
-            "cpus": "34.76",
-            "fans": [],
-            "temperature": [],
-            "memory": "60.9"
-        },
-        "10.101.7.20": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "11.6"
-        },
-        "10.101.3.18": {
-            "cpus": "36.03",
-            "fans": [],
-            "temperature": [],
-            "memory": "5.8"
-        },
-        "10.101.2.47": {
-            "cpus": "34.54",
-            "fans": [],
-            "temperature": [],
-            "memory": "7.5"
-        },
-        "10.101.8.20": {
-            "cpus": "12.07",
-            "fans": [],
-            "temperature": [],
-            "memory": "4.6"
+            "memory": "10.0"
         },
         "10.101.5.12": {
-            "cpus": "36.05",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
             "memory": "15.6"
         },
         "10.101.7.26": {
-            "cpus": "19.93",
-            "fans": [],
             "temperature": [],
-            "memory": "18.0"
+            "fans": [],
+            "cpus": "19.28",
+            "memory": "17.9"
         },
-        "10.101.4.32": {
-            "cpus": "2.88",
-            "fans": [],
+        "10.101.8.7": {
             "temperature": [],
-            "memory": "17.4"
+            "fans": [],
+            "cpus": "35.02",
+            "memory": "61.3"
         },
-        "10.101.4.11": {
-            "cpus": "35.96",
-            "fans": [],
+        "10.101.1.15": {
             "temperature": [],
-            "memory": "5.4"
+            "fans": [],
+            "cpus": "33.87",
+            "memory": "73.9"
         },
-        "10.101.8.17": {
-            "cpus": "22.33",
-            "fans": [],
+        "10.101.1.31": {
             "temperature": [],
-            "memory": "11.2"
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "15.5"
         },
-        "10.101.9.14": {
-            "cpus": "20.78",
-            "fans": [],
+        "10.101.8.25": {
             "temperature": [],
-            "memory": "13.8"
+            "fans": [],
+            "cpus": "19.01",
+            "memory": "13.6"
         },
-        "10.101.2.26": {
-            "cpus": "28.06",
-            "fans": [],
+        "10.101.1.38": {
             "temperature": [],
-            "memory": "4.6"
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "4.4"
         },
-        "10.101.3.41": {
-            "cpus": "24.16",
-            "fans": [],
+        "10.101.2.15": {
             "temperature": [],
-            "memory": "10.5"
+            "fans": [],
+            "cpus": "49.60",
+            "memory": "9.8"
         },
-        "10.101.1.9": {
-            "cpus": "36.05",
-            "fans": [],
+        "10.101.3.38": {
             "temperature": [],
-            "memory": "8.5"
+            "fans": [],
+            "cpus": "51.96",
+            "memory": "10.8"
+        },
+        "10.101.10.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.22",
+            "memory": "7.5"
         },
         "10.101.1.3": {
-            "cpus": "36.02",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
             "memory": "4.5"
         },
-        "10.101.4.35": {
-            "cpus": "34.55",
-            "fans": [],
+        "10.101.1.34": {
             "temperature": [],
-            "memory": "47.5"
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "5.1"
+        },
+        "10.101.6.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "74.5"
+        },
+        "10.101.6.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "14.80",
+            "memory": "23.2"
+        },
+        "10.101.1.35": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "7.4"
+        },
+        "10.101.2.20": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "58.07",
+            "memory": "9.7"
+        },
+        "10.101.4.21": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "28.00",
+            "memory": "9.8"
+        },
+        "10.101.1.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "8.78",
+            "memory": "5.0"
+        },
+        "10.101.9.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.72",
+            "memory": "40.7"
+        },
+        "10.101.3.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.38",
+            "memory": "61.7"
+        },
+        "10.101.8.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "12.04",
+            "memory": "4.2"
+        },
+        "10.101.1.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "21.87",
+            "memory": "12.5"
+        },
+        "10.101.3.28": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "9.8"
+        },
+        "10.101.8.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "26.0"
+        },
+        "10.101.5.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.99",
+            "memory": "79.1"
+        },
+        "10.101.2.25": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.05",
+            "memory": "9.4"
+        },
+        "10.101.9.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "21.94",
+            "memory": "11.8"
+        },
+        "10.101.7.57": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.95",
+            "memory": "9.7"
+        },
+        "10.101.1.51": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "25.58",
+            "memory": "9.7"
+        },
+        "10.101.8.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "20.47",
+            "memory": "13.0"
+        },
+        "10.101.2.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.82",
+            "memory": "11.6"
+        },
+        "10.101.3.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "8.1"
+        },
+        "10.101.8.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "18.8"
+        },
+        "10.101.9.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "24.0"
+        },
+        "10.101.4.26": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "10.1"
+        },
+        "10.101.8.14": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.98",
+            "memory": "54.0"
         },
         "10.101.8.26": {
-            "cpus": "17.06",
-            "fans": [],
             "temperature": [],
+            "fans": [],
+            "cpus": "16.20",
             "memory": "14.5"
         },
-        "10.101.1.7": {
-            "cpus": "34.99",
-            "fans": [],
+        "10.101.7.39": {
             "temperature": [],
-            "memory": "5.6"
-        },
-        "10.101.2.28": {
+            "fans": [],
             "cpus": "36.05",
-            "fans": [],
-            "temperature": [],
-            "memory": "16.5"
+            "memory": "5.8"
         },
-        "10.101.1.19": {
-            "cpus": "31.64",
-            "fans": [],
+        "10.101.2.37": {
             "temperature": [],
-            "memory": "10.2"
+            "fans": [],
+            "cpus": "7.69",
+            "memory": "18.9"
         },
-        "10.101.3.8": {
-            "cpus": "34.45",
-            "fans": [],
+        "10.101.1.27": {
             "temperature": [],
-            "memory": "7.2"
+            "fans": [],
+            "cpus": "11.99",
+            "memory": "12.0"
         },
-        "10.101.9.57": {
-            "cpus": "34.34",
-            "fans": [],
+        "10.101.8.59": {
             "temperature": [],
-            "memory": "40.2"
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "15.9"
         },
-        "10.101.2.18": {
-            "cpus": "36.01",
-            "fans": [],
+        "10.101.4.44": {
             "temperature": [],
+            "fans": [],
+            "cpus": "36.08",
+            "memory": "11.6"
+        },
+        "10.101.2.57": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "32.25",
+            "memory": "11.6"
+        },
+        "10.101.9.22": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.11",
+            "memory": "23.8"
+        },
+        "10.101.9.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "13.5"
+        },
+        "10.101.10.31": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "7.7"
+        },
+        "10.101.3.24": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.54",
+            "memory": "75.3"
+        },
+        "10.101.3.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.05",
+            "memory": "16.0"
+        },
+        "10.101.1.45": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "18.59",
+            "memory": "9.3"
+        },
+        "10.101.9.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.98",
+            "memory": "60.7"
+        },
+        "10.101.1.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.12",
+            "memory": "16.2"
+        },
+        "10.101.9.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
             "memory": "5.7"
         },
-        "10.101.8.18": {
-            "cpus": "35.94",
-            "fans": [],
+        "10.101.3.30": {
             "temperature": [],
-            "memory": "59.9"
+            "fans": [],
+            "cpus": "27.49",
+            "memory": "11.0"
         },
-        "10.101.7.43": {
-            "cpus": "36.04",
-            "fans": [],
+        "10.101.9.44": {
             "temperature": [],
-            "memory": "60.4"
+            "fans": [],
+            "cpus": "12.00",
+            "memory": "11.4"
+        },
+        "10.101.9.33": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "5.7"
+        },
+        "10.101.5.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.97",
+            "memory": "5.5"
+        },
+        "10.101.3.45": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "21.91",
+            "memory": "42.5"
+        },
+        "10.101.3.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.01",
+            "memory": "5.0"
+        },
+        "10.101.8.50": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "25.93",
+            "memory": "11.2"
+        },
+        "10.101.1.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.81",
+            "memory": "5.2"
+        },
+        "10.101.3.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.00",
+            "memory": "19.2"
+        },
+        "10.101.8.60": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "5.2"
+        },
+        "10.101.5.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "10.49",
+            "memory": "23.3"
+        },
+        "10.101.1.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.76",
+            "memory": "5.5"
+        },
+        "10.101.4.1": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "49.45",
+            "memory": "10.1"
+        },
+        "10.101.8.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.37",
+            "memory": "21.3"
+        },
+        "10.101.5.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.68",
+            "memory": "8.5"
+        },
+        "10.101.8.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.02",
+            "memory": "60.9"
+        },
+        "10.101.3.50": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "4.87",
+            "memory": "7.3"
+        },
+        "10.101.2.51": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.03",
+            "memory": "16.9"
+        },
+        "10.101.2.6": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.16",
+            "memory": "61.2"
+        },
+        "10.101.9.42": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.98",
+            "memory": "6.2"
+        },
+        "10.101.4.40": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "17.2"
+        },
+        "10.101.4.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.20",
+            "memory": "7.0"
+        },
+        "10.101.8.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.96",
+            "memory": "60.3"
+        },
+        "10.101.9.57": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.34",
+            "memory": "40.2"
+        },
+        "10.101.1.44": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "0.64",
+            "memory": "5.1"
+        },
+        "10.101.9.39": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "14.0"
+        },
+        "10.101.1.58": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.68",
+            "memory": "60.3"
+        },
+        "10.101.6.11": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.14",
+            "memory": "5.1"
+        },
+        "10.101.2.55": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "7.0"
+        },
+        "10.101.2.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.43",
+            "memory": "73.8"
+        },
+        "10.101.7.13": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "53.22",
+            "memory": "14.1"
+        },
+        "10.101.1.4": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.05",
+            "memory": "78.7"
+        },
+        "10.101.9.12": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "5.1"
+        },
+        "10.101.1.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.10",
+            "memory": "43.6"
+        },
+        "10.101.2.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.10",
+            "memory": "42.1"
+        },
+        "10.101.1.29": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.95",
+            "memory": "16.7"
+        },
+        "10.101.9.46": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "15.2"
+        },
+        "10.101.9.38": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.22",
+            "memory": "65.2"
+        },
+        "10.101.9.16": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "55.55",
+            "memory": "10.8"
+        },
+        "10.101.2.18": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "5.7"
+        },
+        "10.101.7.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "0.71",
+            "memory": "4.6"
+        },
+        "10.101.4.32": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "2.25",
+            "memory": "17.4"
+        },
+        "10.101.9.9": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "50.48",
+            "memory": "10.7"
+        },
+        "10.101.2.56": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.88",
+            "memory": "67.5"
+        },
+        "10.101.4.30": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.75",
+            "memory": "48.2"
+        },
+        "10.101.2.19": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "55.7"
+        },
+        "10.101.4.47": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.07",
+            "memory": "24.0"
+        },
+        "10.101.8.37": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "16.06",
+            "memory": "5.8"
+        },
+        "10.101.7.8": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.09",
+            "memory": "16.2"
+        },
+        "10.101.1.2": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.36",
+            "memory": "8.3"
+        },
+        "10.101.3.44": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.06",
+            "memory": "5.2"
+        },
+        "10.101.7.48": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.50",
+            "memory": "40.9"
+        },
+        "10.101.9.3": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "36.04",
+            "memory": "60.8"
+        },
+        "10.101.9.60": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "6.01",
+            "memory": "80.0"
+        },
+        "10.101.4.23": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "26.30",
+            "memory": "9.8"
+        },
+        "10.101.7.15": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "35.18",
+            "memory": "10.2"
+        },
+        "10.101.8.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "46.34",
+            "memory": "16.1"
+        },
+        "10.101.10.27": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "34.19",
+            "memory": "74.5"
+        },
+        "10.101.3.36": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "33.44",
+            "memory": "74.6"
+        },
+        "10.101.2.7": {
+            "temperature": [],
+            "fans": [],
+            "cpus": "32.06",
+            "memory": "50.1"
         }
     }
 ]
