@@ -181,19 +181,19 @@ def preprocess_bmc(bmc_info):
         fans = []
         for fan in value["thermal"]["Fans"]:
             fan_detail = {}
-            fan_detail{"name": fan["Name"]}
+            fan_detail.update({"name": fan["Name"]})
             health_status = str_to_int(fan["Status"]["Health"])
-            fan_detail{"health": health_status}
-            fan_detail{"speed": fan["Reading"]}
+            fan_detail.update({"health": health_status})
+            fan_detail.update({"speed": fan["Reading"]})
             fans.append(fan_detail)
         
         temperature = []
         for temp in value["thermal"]["Temperatures"]:
             temp_detail = {}
-            temp_detail{"name": temp["Name"]}
+            temp_detail.update({"name": temp["Name"]})
             health_status = str_to_int(temp["Status"]["Health"])
-            temp_detail{"health": health_status}
-            temp_detail("temp": temp["ReadingCelsius"])
+            temp_detail.update({"health": health_status})
+            temp_detail.update({"temp": temp["ReadingCelsius"]})
             temperature.append(temp_detail)
 
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
