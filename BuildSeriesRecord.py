@@ -229,8 +229,12 @@ def merge(exechost_list, host_uge_detail, host_bmc_detail):
     for host in exechost_list:
         host_detail = {"fans": None, "cpus": None, "memory": None, "temperature": None}
         if host in host_uge_detail and host in host_bmc_detail:
-            host_detail["cpus"] = host_uge_detail[host]["cpus"]
-            host_detail["memory"] = host_uge_detail[host]["memory"]
+            host_detail["cpus"] = round(
+                float(host_uge_detail[host]["cpus"]), 2
+                )
+            host_detail["memory"] = round(
+                float(host_uge_detail[host]["memory"]), 2
+                )
             host_detail["fans"] = host_bmc_detail[host]["fans"]
             host_detail["temperature"] = host_bmc_detail[host]["temperature"]
         hostDetail.update({host: host_detail})
