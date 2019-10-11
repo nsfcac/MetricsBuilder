@@ -208,7 +208,7 @@ def preprocess_bmc(bmc_info):
         fans = []
         temperature = []
         power = None
-        if value["thermal"]["Fans"] and value["thermal"]["Temperatures"]:
+        try:
             for fan in value["thermal"]["Fans"]:
                 fan_detail = {}
                 if "Name" in fan and "Status" in fan and "Reading" in fan:
@@ -226,6 +226,7 @@ def preprocess_bmc(bmc_info):
                     temp_detail.update({"health": health_status})
                     temp_detail.update({"temp": temp["ReadingCelsius"]})
                 temperature.append(temp_detail)
+        except TypeError:
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
 
         if value["power"]['PowerControl'][0]['PowerConsumedWatts']:
