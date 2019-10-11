@@ -138,31 +138,34 @@
           }
         ],
         "cpus": {
-          "numberOfProcessors": 72,
           "loadMax": 33.77,
           "loadMin": 32.66,
           "loadAvg": 33.20
         },
         "memory": {
-          "memTotal": "188.8G",
-          "memUsed": "54.9G"
+          "memUsedMax": 54.9,
+          "memUsedMix": 52.9,
+          "memUsedAvg": 53.9
         },
-        "inlet": {
-          "health": 0,
-          "tempMax": 68.00,
-          "tempMin": 58.00,
-          "tempAvg": 62.00
-        },
-        "cpuTemp": [
+        "temperature": [
           {
             "name": "CPU1 Temp",
+            "health": 0,
             "tempMax": 47.00,
             "tempMin": 42.00,
             "tempAvg": 43.00
           },
           {
             "name": "CPU2 Temp",
+            "health": 0,
             "tempMax": 64.00,
+            "tempMin": 58.00,
+            "tempAvg": 62.00
+          },
+          {
+            "name": "Inlet Temp",
+            "health": 0,
+            "tempMax": 68.00,
             "tempMin": 58.00,
             "tempAvg": 62.00
           }

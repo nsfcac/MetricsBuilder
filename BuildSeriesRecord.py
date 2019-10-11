@@ -37,18 +37,190 @@ class RepeatedTimer(object):
         self.is_running = False
 
 def main():
-    record_list = []
+    all_record = []
 
-    rt = RepeatedTimer(60, interleave, record_list)
+    oneEntry = fetch_data(all_record)
+    all_record.append(oneEntry)
+    # rt = RepeatedTimer(60, interleave, all_record)
 
+    # try:
+    #     fetch_data(all_record)
+    #     sleep(600) # your long-running job goes here...
+    # finally:
+    #     rt.stop() # better in a try/finally block to make sure the program ends!
+
+    with open("./records/records_10mins.json", "w") as outfile:
+            json.dump(all_record, outfile, indent = 4, sort_keys = True)
+
+def fetch_data(all_record):
+    time_stamp = datetime.datetime.now().ctime()
+
+    result = {
+        "time": time_stamp, "jobHost": None, 
+        "userJob": None, "hostDetail": None
+    }
+
+    conn_time_out = 15
+    read_time_out = 40
+    session = requests.Session()
+
+    # Get HostSummary metrics from UGE API
+    host_summary, err_info = get_uge_info(
+        conn_time_out, read_time_out, session, "hostsummary"
+    )
+    ## UGE DETAILS
+    host_uge_detail = preprocess_uge(host_summary)
+
+    # Get BMC metrics from redfish API
+    bmc_info = {}
+    exec_hosts, err_info = get_uge_info(
+        conn_time_out, read_time_out, session, "exechosts"
+    )
+
+    if exec_hosts == None:
+        print("No Execution Host")
+        return
+    else:
+        exechost_list = get_exechosts_ip(exec_hosts)
+
+        get_bmc_threads(
+            exechost_list, bmc_info, conn_time_out, read_time_out, session
+        )
+    ## BMC DETAILS
+    host_bmc_detail = preprocess_bmc(bmc_info)
+
+    # Aggregate data
+    merge_data = merge(host_uge_detail, host_bmc_detail)
+
+    return merge_data
+
+def preprocess_uge(host_summary):
+    host_uge_detail = {}
+    for host in host_summary:
+        hostIp = get_hostip(host["hostname"])
+        cpus = round(float(host["hostValues"]["load_avg"]), 2)
+        memory = round(float(host["hostValues"]["mem_used"].split('G').[0]), 2)
+        host_uge_detail[hostIp]["cpus"] = cpus 
+        host_uge_detail[hostIp]["memory"] = memory
+    return host_uge_detail
+
+# Use multi-thread to fetch Power Usuage from each exec host
+def get_bmc_threads(exec_hosts, bmc_info, conn_time_out, read_time_out, session):
+
+    print("-Pulling Metrics From BMC...")
+    # For progress bar
+    exec_hosts_len = len(exec_hosts)
+    printProgressBar(
+        0, exec_hosts_len, prefix = 'Progress:', 
+        suffix = 'Complete', length = 50
+    )
+
+    warnings.filterwarnings(
+        'ignore', '.*', UserWarning,'warnings_filtering',
+    )
     try:
-        interleave(record_list)
-        sleep(600) # your long-running job goes here...
-    finally:
-        rt.stop() # better in a try/finally block to make sure the program ends!
+        threads = []
+        for host in exec_hosts:
+            a = Thread(
+                target = get_bmc, 
+                args = (host, bmc_info, conn_time_out, read_time_out, session, )
+                )
+            threads.append(a)
+            a.start()
+        for index, thread in enumerate(threads):
+            thread.join()
+            # Update Progress Bar
+            printProgressBar(
+                index + 1, exec_hosts_len, 
+                prefix = 'Progress:', suffix = 'Complete', length = 50
+            )
+    except Exception as e:
+        print(e)
 
-    with open("./pyplot/recordTS.json", "w") as outfile:
-            json.dump(record_list, outfile, indent = 4, sort_keys = True)
+def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
+    try:
+        return_data = {"power": None, "thermal": None}
+
+        # Fetch power data
+        url = "https://" + host 
+              + "/redfish/v1/Chassis/System.Embedded.1/Power/"
+        response = session.get(
+            url, verify = False, 
+            auth = ('password', 'monster'), 
+            timeout = (conn_time_out, read_time_out)
+        )
+        response.raise_for_status()
+        data = response.json()
+        return_data.update("power": data)
+
+        # Fetch thermal data
+        url = "https://" + host 
+              + "/redfish/v1/Chassis/System.Embedded.1/Thermal/"
+        response = session.get(
+            url, verify = False, 
+            auth = ('password', 'monster'), 
+            timeout = (conn_time_out, read_time_out)
+        )
+        response.raise_for_status()
+        data = response.json()
+        return_data.update("thermal": data)
+
+        # Update bmc_info
+        bmc_info.update({host: return_data})
+
+    except requests.exceptions.RequestException as e:
+        # print("Request Power Usage Error")
+        bmc_info.update({host: {"power": None, "thermal": None}})
+
+def preprocess_bmc(bmc_info):
+    host_bmc_detail = {}
+    for key, value in bmc_info.items():
+
+        fans = []
+        for fan in value["thermal"]["Fans"]:
+            fan_detail = {}
+            fan_detail{"name": fan["Name"]}
+            health_status = str_to_int(fan["Status"]["Health"])
+            fan_detail{"health": health_status}
+            fan_detail{"speed": fan["Reading"]}
+            fans.append(fan_detail)
+        
+        temperature = []
+        for temp in value["thermal"]["Temperatures"]:
+            temp_detail = {}
+            temp_detail{"name": temp["Name"]}
+            health_status = str_to_int(temp["Status"]["Health"])
+            temp_detail{"health": health_status}
+            temp_detail("temp": temp["ReadingCelsius"])
+            temperature.append(temp_detail)
+
+        host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
+
+    return host_bmc_detail
+
+# Convert status string to intger
+def str_to_int(status):
+    value = 0
+    if status == "OK":
+        value = 0
+    elif status == "Cirtical":
+        value = 1
+    # Warning
+    else:
+        value = -1
+    return value
+
+# Merge metrics from uge and bmc
+def merge(host_uge_detail, host_bmc_detail):
+    hostDetail = {}
+    for key, value in host_uge_detail.items():
+        host = {}
+        host["fans"] = host_bmc_detail[key]["fans"]
+        host["cpus"] = value["cpus"]
+        host["memory"] = value["memory"]
+        host["temperature"] = host_bmc_detail[key]["temperature"]
+        hostDetail.update({key: host})
+    return hostDetail
 
 def interleave(record_list):
 
