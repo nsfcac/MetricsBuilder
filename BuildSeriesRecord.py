@@ -323,7 +323,8 @@ def match_node_job(host_summary):
                 one_job = {
                     job['id']: {
                         "submitTime": job['submitTime'],
-                        "startTime": job['startTime']
+                        "startTime": job['startTime'],
+                        "finishTime": None
                     }
                 }
                 if job['user'] in usr_job:
