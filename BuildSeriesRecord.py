@@ -94,8 +94,8 @@ def fetch_data(all_record):
 
     host_bmc_detail = preprocess_bmc(bmc_info)
 
-    with open("./records/bmc.json", "w") as bmcfile:
-            json.dump(host_bmc_detail, bmcfile, indent = 4)
+    # with open("./records/bmc.json", "w") as bmcfile:
+    #         json.dump(host_bmc_detail, bmcfile, indent = 4)
 
     # Aggregate data
     merge_data = merge(host_uge_detail, host_bmc_detail)
