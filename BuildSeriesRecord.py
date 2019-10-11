@@ -39,24 +39,28 @@ class RepeatedTimer(object):
 def main():
     all_record = []
 
-    oneEntry = fetch_data(all_record)
-    all_record.append(oneEntry)
-    # rt = RepeatedTimer(60, interleave, all_record)
+    # oneEntry = fetch_data(all_record)
+    # all_record.append(oneEntry)
 
-    # try:
-    #     fetch_data(all_record)
-    #     sleep(600) # your long-running job goes here...
-    # finally:
-    #     rt.stop() # better in a try/finally block to make sure the program ends!
+    rt = RepeatedTimer(60, fetch_data, all_record)
 
-    with open("./records/records_10mins.json", "w") as outfile:
+    try:
+        fetch_data(all_record)
+        sleep(120) # your long-running job goes here...
+    finally:
+        rt.stop() # better in a try/finally block to make sure the program ends!
+
+    with open("./records/records_2mins.json", "w") as outfile:
             json.dump(all_record, outfile, indent = 4)
 
+    print("Record lenght: ", len(all_record))
+    print("Done")
+    
 def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
 
     result = {
-        "time": time_stamp, 
+        "time": None, 
         "jobHost": None, 
         "userJob": None, 
         "hostDetail": None
@@ -110,13 +114,15 @@ def fetch_data(all_record):
     hostDetail = merge(exechost_list, host_uge_detail, host_bmc_detail)
 
     result.update(
-        {
+        {   
+            "timeStamp": time_stamp,
             "jobHost": jobHost, 
             "hostDetail": hostDetail, 
             "userJob": usr_job
         }
     )
-    return result
+    # return result
+    all_record.append(result)
 
 def preprocess_uge(host_summary):
     host_uge_detail = {}
