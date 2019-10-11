@@ -142,8 +142,9 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
         return_data = {"power": None, "thermal": None}
 
         # Fetch power data
-        url = "https://" + host 
-              + "/redfish/v1/Chassis/System.Embedded.1/Power/"
+        url = ( 
+            "https://" + host + "/redfish/v1/Chassis/System.Embedded.1/Power/"
+        )
         response = session.get(
             url, verify = False, 
             auth = ('password', 'monster'), 
@@ -154,8 +155,9 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
         return_data.update("power": data)
 
         # Fetch thermal data
-        url = "https://" + host 
-              + "/redfish/v1/Chassis/System.Embedded.1/Thermal/"
+        url = (
+            "https://" + host + "/redfish/v1/Chassis/System.Embedded.1/Thermal/"
+        )
         response = session.get(
             url, verify = False, 
             auth = ('password', 'monster'), 
