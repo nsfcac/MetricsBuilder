@@ -46,16 +46,16 @@ def main():
 
     try:
         fetch_data(all_record)
-        sleep(120) # your long-running job goes here...
+        sleep(600) # your long-running job goes here...
     finally:
         rt.stop() # better in a try/finally block to make sure the program ends!
 
-    with open("./records/records_2mins.json", "w") as outfile:
+    with open("./records/records_10mins.json", "w") as outfile:
             json.dump(all_record, outfile, indent = 4)
 
     print("Record lenght: ", len(all_record))
     print("Done")
-    
+
 def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
 
