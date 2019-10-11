@@ -226,12 +226,12 @@ def preprocess_bmc(bmc_info):
                     temp_detail.update({"health": health_status})
                     temp_detail.update({"temp": temp["ReadingCelsius"]})
                 temperature.append(temp_detail)
+
+            power = value["power"]['PowerControl'][0]['PowerConsumedWatts']
         except TypeError:
             print("Type Error")
+            
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
-
-        if value["power"]['PowerControl'][0]['PowerConsumedWatts']:
-            power = value["power"]['PowerControl'][0]['PowerConsumedWatts']
         host_pwr_list.update({key: power})
 
     return host_bmc_detail, host_pwr_list
