@@ -39,18 +39,18 @@ class RepeatedTimer(object):
 def main():
     all_record = []
 
-    # oneEntry = fetch_data(all_record)
-    # all_record.append(oneEntry)
+    oneEntry = fetch_data(all_record)
+    all_record.append(oneEntry)
 
-    rt = RepeatedTimer(60, fetch_data, all_record)
+    # rt = RepeatedTimer(60, fetch_data, all_record)
 
-    try:
-        fetch_data(all_record)
-        sleep(600) # your long-running job goes here...
-    finally:
-        rt.stop() # better in a try/finally block to make sure the program ends!
+    # try:
+    #     fetch_data(all_record)
+    #     sleep(600) # your long-running job goes here...
+    # finally:
+    #     rt.stop() # better in a try/finally block to make sure the program ends!
 
-    with open("./records/records_10mins.json", "w") as outfile:
+    with open("./records/records.json", "w") as outfile:
             json.dump(all_record, outfile, indent = 4)
 
     print("Record lenght: ", len(all_record))
