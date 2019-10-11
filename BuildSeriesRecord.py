@@ -106,8 +106,16 @@ def preprocess_uge(host_summary):
     host_uge_detail = {}
     for host in host_summary:
         hostIp = get_hostip(host["hostname"].split('.')[0])
-        cpus = host["hostValues"]["load_avg"]
-        memory = host["hostValues"]["mem_used"].split('G')[0]
+        try:
+            cpus = round(
+                float(host["hostValues"]["load_avg"]), 2
+            )
+            memory = round(
+                float(host["hostValues"]["mem_used"].split('G')[0]), 2
+            )
+        except ValueError:
+            cpus = None
+            memory = None
         host_uge_detail.update({hostIp: {"cpus": cpus, "memory": memory}})
     return host_uge_detail
 
@@ -229,12 +237,8 @@ def merge(exechost_list, host_uge_detail, host_bmc_detail):
     for host in exechost_list:
         host_detail = {"fans": None, "cpus": None, "memory": None, "temperature": None}
         if host in host_uge_detail and host in host_bmc_detail:
-            host_detail["cpus"] = round(
-                float(host_uge_detail[host]["cpus"]), 2
-                )
-            host_detail["memory"] = round(
-                float(host_uge_detail[host]["memory"]), 2
-                )
+            host_detail["cpus"] = host_uge_detail[host]["cpus"]
+            host_detail["memory"] = host_uge_detail[host]["memory"]
             host_detail["fans"] = host_bmc_detail[host]["fans"]
             host_detail["temperature"] = host_bmc_detail[host]["temperature"]
         hostDetail.update({host: host_detail})
