@@ -92,10 +92,10 @@ def fetch_data(all_record):
         )
     ## BMC DETAILS
 
-    # with open("./records/bmc.json", "w") as bmcfile:
-    #         json.dump(bmc_info, bmcfile, indent = 4)
-
     host_bmc_detail = preprocess_bmc(bmc_info)
+
+    with open("./records/bmc.json", "w") as bmcfile:
+            json.dump(host_bmc_detail, bmcfile, indent = 4)
 
     # Aggregate data
     merge_data = merge(host_uge_detail, host_bmc_detail)
@@ -185,10 +185,11 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
 def preprocess_bmc(bmc_info):
     host_bmc_detail = {}
 
-    for key in bmc_info:
+    for key, value in bmc_info.items():
+
         fans = []
         temperature = []
-        for fan in bmc_info[key]["thermal"]["Fans"]:
+        for fan in value["thermal"]["Fans"]:
             fan_detail = {}
             if "Name" in fan and "Status" in fan and "Reading" in fan:
                 fan_detail.update({"name": fan["Name"]})
@@ -197,7 +198,7 @@ def preprocess_bmc(bmc_info):
                 fan_detail.update({"speed": fan["Reading"]})
             fans.append(fan_detail)
         
-        for temp in bmc_info[key]["thermal"]["Temperatures"]:
+        for temp in value["thermal"]["Temperatures"]:
             temp_detail = {}
             if "Name" in temp and "Status" in temp and "ReadingCelsius" in temp:
                 temp_detail.update({"name": temp["Name"]})
@@ -206,29 +207,7 @@ def preprocess_bmc(bmc_info):
                 temp_detail.update({"temp": temp["ReadingCelsius"]})
             temperature.append(temp_detail)
 
-    # for key, value in bmc_info.items():
-
-    #     fans = []
-    #     temperature = []
-    #     for fan in value["thermal"]["Fans"]:
-    #         fan_detail = {}
-    #         if "Name" in fan and "Status" in fan and "Reading" in fan:
-    #             fan_detail.update({"name": fan["Name"]})
-    #             health_status = str_to_int(fan["Status"]["Health"])
-    #             fan_detail.update({"health": health_status})
-    #             fan_detail.update({"speed": fan["Reading"]})
-    #         fans.append(fan_detail)
-        
-    #     for temp in value["thermal"]["Temperatures"]:
-    #         temp_detail = {}
-    #         if "Name" in temp and "Status" in temp and "ReadingCelsius" in temp:
-    #             temp_detail.update({"name": temp["Name"]})
-    #             health_status = str_to_int(temp["Status"]["Health"])
-    #             temp_detail.update({"health": health_status})
-    #             temp_detail.update({"temp": temp["ReadingCelsius"]})
-    #         temperature.append(temp_detail)
-
-    #     host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
+        host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
 
     return host_bmc_detail
 
