@@ -87,6 +87,7 @@ def fetch_data(all_record):
             exechost_list, bmc_info, conn_time_out, read_time_out, session
         )
     ## BMC DETAILS
+    print(bmc_info)
     host_bmc_detail = preprocess_bmc(bmc_info)
 
     # Aggregate data
@@ -167,7 +168,7 @@ def get_bmc(host, bmc_info, conn_time_out, read_time_out, session):
         return_data.update({"thermal": data})
 
         # Update bmc_info
-        print("BMC: ", host)
+        # print("BMC: ", host)
         bmc_info.update({host: return_data})
 
     except requests.exceptions.RequestException as e:
