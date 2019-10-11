@@ -98,8 +98,8 @@ def preprocess_uge(host_summary):
     host_uge_detail = {}
     for host in host_summary:
         hostIp = get_hostip(host["hostname"].split('.')[0])
-        cpus = round(float(host["hostValues"]["load_avg"]), 2)
-        memory = round(float(host["hostValues"]["mem_used"].split('G')[0]), 2)
+        cpus = host["hostValues"]["load_avg"]
+        memory = host["hostValues"]["mem_used"].split('G')[0]
         host_uge_detail.update({hostIp: {"cpus": cpus, "memory": memory}})
     return host_uge_detail
 
