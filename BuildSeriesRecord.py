@@ -227,6 +227,7 @@ def preprocess_bmc(bmc_info):
                     temp_detail.update({"temp": temp["ReadingCelsius"]})
                 temperature.append(temp_detail)
         except TypeError:
+            print("Type Error")
         host_bmc_detail.update({key:{"fans": fans, "temperature": temperature}})
 
         if value["power"]['PowerControl'][0]['PowerConsumedWatts']:
