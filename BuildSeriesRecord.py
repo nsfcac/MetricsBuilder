@@ -69,11 +69,11 @@ def fetch_data(all_record):
         conn_time_out, read_time_out, session, "hostsummary"
     )
 
-    with open("./records/uge.json", "w") as ugefile:
-            json.dump(host_summary, ugefile, indent = 4)
-
     ## UGE DETAILS
     host_uge_detail = preprocess_uge(host_summary)
+
+    with open("./records/uge.json", "w") as ugefile:
+            json.dump(host_uge_detail, ugefile, indent = 4)
 
     # Get BMC metrics from redfish API
     bmc_info = {}
