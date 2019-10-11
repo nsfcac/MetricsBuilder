@@ -39,22 +39,22 @@ class RepeatedTimer(object):
 def main():
     all_record = []
 
-    ## Store one record
-    # oneEntry = fetch_data(all_record)
-    # all_record.append(oneEntry)
-    # with open("./records/records.json", "w") as outfile:
-    #         json.dump(all_record, outfile, indent = 4)
-
-
-    # Store 10 mins record
-    rt = RepeatedTimer(60, fetch_data, all_record)
-    try:
-        fetch_data(all_record)
-        sleep(600) # your long-running job goes here...
-    finally:
-        rt.stop() # better in a try/finally block to make sure the program ends!
-    with open("./records/records_10mins.json", "w") as outfile:
+    # Store one record
+    oneEntry = fetch_data(all_record)
+    all_record.append(oneEntry)
+    with open("./records/records.json", "w") as outfile:
             json.dump(all_record, outfile, indent = 4)
+
+
+    # # Store 10 mins record
+    # rt = RepeatedTimer(60, fetch_data, all_record)
+    # try:
+    #     fetch_data(all_record)
+    #     sleep(600) # your long-running job goes here...
+    # finally:
+    #     rt.stop() # better in a try/finally block to make sure the program ends!
+    # with open("./records/records_10mins.json", "w") as outfile:
+    #         json.dump(all_record, outfile, indent = 4)
 
     # print("Record lenght: ", len(all_record))
     print("Done")
@@ -145,7 +145,20 @@ def preprocess_uge(host_summary):
         except ValueError:
             cpus = None
             memory = None
-        host_uge_detail.update({hostIp: {"cpus": cpus, "memory": memory}})
+        host_uge_detail.update(
+            {hostIp: {
+                "cpus": {
+                    "loadMax": cpus,
+                    "loadMin": cpus,
+                    "loadAvg": cpus,
+                }, 
+                "memory": {
+                    "memUsedMax": memory,
+                    "memUsedMix": memory,
+                    "memUsedAvg": memory
+                }
+            }}
+        )
     return host_uge_detail
 
 # Use multi-thread to fetch Power Usuage from each exec host
@@ -234,7 +247,9 @@ def preprocess_bmc(bmc_info):
                     fan_detail.update({"name": fan["Name"]})
                     health_status = str_to_int(fan["Status"]["Health"])
                     fan_detail.update({"health": health_status})
-                    fan_detail.update({"speed": fan["Reading"]})
+                    fan_detail.update({"speedMax": fan["Reading"]})
+                    fan_detail.update({"speedMin": fan["Reading"]})
+                    fan_detail.update({"speedAvg": fan["Reading"]})
                 fans.append(fan_detail)
         
             for temp in value["thermal"]["Temperatures"]:
@@ -243,7 +258,9 @@ def preprocess_bmc(bmc_info):
                     temp_detail.update({"name": temp["Name"]})
                     health_status = str_to_int(temp["Status"]["Health"])
                     temp_detail.update({"health": health_status})
-                    temp_detail.update({"temp": temp["ReadingCelsius"]})
+                    temp_detail.update({"tempMax": temp["ReadingCelsius"]})
+                    temp_detail.update({"tempMin": temp["ReadingCelsius"]})
+                    temp_detail.update({"tempAvg": temp["ReadingCelsius"]})
                 temperature.append(temp_detail)
 
             power = value["power"]['PowerControl'][0]['PowerConsumedWatts']
