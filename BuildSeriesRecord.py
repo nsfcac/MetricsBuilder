@@ -60,7 +60,9 @@ def fetch_data(all_record):
     time_stamp = datetime.datetime.now().ctime()
 
     result = {
-        "timeStamp": None, 
+        "timeRange": [], 
+        "timeInterval": "1m",
+        "timeSteps": 1,
         "jobHost": None, 
         "userJob": None, 
         "hostDetail": None
@@ -115,7 +117,9 @@ def fetch_data(all_record):
 
     result.update(
         {   
-            "timeStamp": time_stamp,
+            "timeRange": [time_stamp, time_stamp], 
+            "timeInterval": "1m",
+            "timeSteps": 1,
             "jobHost": jobHost, 
             "hostDetail": hostDetail, 
             "userJob": usr_job
