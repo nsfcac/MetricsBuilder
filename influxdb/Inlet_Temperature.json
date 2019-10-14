@@ -1,0 +1,67 @@
+[
+    {
+        "GET_processing_time": 5.94,
+        "Inlet Temp": 19,
+        "cluster": "quanah",
+        "host": "10.101.3.53",
+        "inletLowerThresholdCritical": 0,
+        "inletLowerThresholdNonCritical": 3,
+        "inletUpperThresholdCritical": 47,
+        "inletUpperThresholdNonCritical": 42,
+        "location": "ESB",
+        "retry": 0,
+        "time": "2019-04-26T00:00:41.041022976Z"
+    },
+    {
+        "GET_processing_time": 5.78,
+        "Inlet Temp": 18,
+        "cluster": "quanah",
+        "host": "10.101.3.53",
+        "inletLowerThresholdCritical": 0,
+        "inletLowerThresholdNonCritical": 3,
+        "inletUpperThresholdCritical": 47,
+        "inletUpperThresholdNonCritical": 42,
+        "location": "ESB",
+        "retry": 0,
+        "time": "2019-04-26T00:01:52.840667136Z"
+    },
+    {
+        "GET_processing_time": 4.5,
+        "Inlet Temp": 18,
+        "cluster": "quanah",
+        "host": "10.101.3.53",
+        "inletLowerThresholdCritical": 0,
+        "inletLowerThresholdNonCritical": 3,
+        "inletUpperThresholdCritical": 47,
+        "inletUpperThresholdNonCritical": 42,
+        "location": "ESB",
+        "retry": 0,
+        "time": "2019-04-26T00:02:43.55392Z"
+    },
+    {
+        "GET_processing_time": 5.07,
+        "Inlet Temp": 18,
+        "cluster": "quanah",
+        "host": "10.101.3.53",
+        "inletLowerThresholdCritical": 0,
+        "inletLowerThresholdNonCritical": 3,
+        "inletUpperThresholdCritical": 47,
+        "inletUpperThresholdNonCritical": 42,
+        "location": "ESB",
+        "retry": 0,
+        "time": "2019-04-26T00:04:06.178593024Z"
+    },
+    {
+        "GET_processing_time": 4.6,
+        "Inlet Temp": 18,
+        "cluster": "quanah",
+        "host": "10.101.3.53",
+        "inletLowerThresholdCritical": 0,
+        "inletLowerThresholdNonCritical": 3,
+        "inletUpperThresholdCritical": 47,
+        "inletUpperThresholdNonCritical": 42,
+        "location": "ESB",
+        "retry": 0,
+        "time": "2019-04-26T00:04:59.455277824Z"
+    }
+]

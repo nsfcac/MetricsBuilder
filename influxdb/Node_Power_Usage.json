@@ -1,0 +1,67 @@
+[
+    {
+        "GET_processing_time": 4.42,
+        "PowerAvailableWatts": 0,
+        "PowerCapacityWatts": 560,
+        "PowerRequestedWatts": 430,
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "powerusage_watts": 303,
+        "retry": 0,
+        "time": "2019-04-26T00:00:23.919297024Z"
+    },
+    {
+        "GET_processing_time": 5.71,
+        "PowerAvailableWatts": 0,
+        "PowerCapacityWatts": 560,
+        "PowerRequestedWatts": 430,
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "powerusage_watts": 305,
+        "retry": 0,
+        "time": "2019-04-26T00:00:41.25625984Z"
+    },
+    {
+        "GET_processing_time": 5.23,
+        "PowerAvailableWatts": 0,
+        "PowerCapacityWatts": 560,
+        "PowerRequestedWatts": 430,
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "powerusage_watts": 304,
+        "retry": 0,
+        "time": "2019-04-26T00:01:48.68183808Z"
+    },
+    {
+        "GET_processing_time": 5.31,
+        "PowerAvailableWatts": 0,
+        "PowerCapacityWatts": 560,
+        "PowerRequestedWatts": 430,
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "powerusage_watts": 304,
+        "retry": 0,
+        "time": "2019-04-26T00:02:54.903702016Z"
+    },
+    {
+        "GET_processing_time": 5.05,
+        "PowerAvailableWatts": 0,
+        "PowerCapacityWatts": 560,
+        "PowerRequestedWatts": 430,
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "powerusage_watts": 302,
+        "retry": 0,
+        "time": "2019-04-26T00:03:48.654206976Z"
+    }
+]

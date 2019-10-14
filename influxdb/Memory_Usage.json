@@ -1,0 +1,52 @@
+[
+    {
+        "available_memory": "128.293G",
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "memoryusage": 63.615,
+        "time": "2019-04-26T00:00:32.10470784Z",
+        "total_memory": "191.908G"
+    },
+    {
+        "available_memory": "128.293G",
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "memoryusage": 63.615,
+        "time": "2019-04-26T00:01:44.909398016Z",
+        "total_memory": "191.908G"
+    },
+    {
+        "available_memory": "128.289G",
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "memoryusage": 63.619,
+        "time": "2019-04-26T00:02:37.110407168Z",
+        "total_memory": "191.908G"
+    },
+    {
+        "available_memory": "128.289G",
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "memoryusage": 63.619,
+        "time": "2019-04-26T00:03:59.024854016Z",
+        "total_memory": "191.908G"
+    },
+    {
+        "available_memory": "128.289G",
+        "cluster": "quanah",
+        "error": "None",
+        "host": "10.101.3.53",
+        "location": "ESB",
+        "memoryusage": 63.619,
+        "time": "2019-04-26T00:04:52.625788928Z",
+        "total_memory": "191.908G"
+    }
+]
