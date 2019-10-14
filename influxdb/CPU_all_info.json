@@ -1,0 +1,10 @@
+[
+    {
+        "cluster": "quanah",
+        "cpuusage": 0.499722,
+        "error": "None",
+        "host": "10.101.1.1",
+        "location": "ESB",
+        "time": "2019-04-26T00:00:32.082283008Z"
+    }
+]
