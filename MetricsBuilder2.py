@@ -67,7 +67,7 @@ def query_db(client, hostIp, measurement, startTime, endTime):
 
     # print(query)
     print("Querying data: " + measurement)
-    result = client.query(query).get_points()
+    result = list(client.query(query).get_points())
 
     return result
 
