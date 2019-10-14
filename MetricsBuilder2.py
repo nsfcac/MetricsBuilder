@@ -53,6 +53,16 @@ def main():
         with open(outfile_name, "w") as outfile:
             json.dump(metric, outfile, indent = 4, sort_keys = True)
 
+    query_str = (
+        "SELECT * FROM " + "CPU_Usage" 
+        + "' AND time >= '" + startTime 
+        + "' AND time <= '" + endTime + "' LIMIT 1"
+    )
+    metrics_all = list(client.query(query_str).get_points())
+
+    with open("./influxdb/CPU_all_info.json", "w") as outfile_all:
+            json.dump(metrics_all, outfile_all, indent = 4, sort_keys = True)
+
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
