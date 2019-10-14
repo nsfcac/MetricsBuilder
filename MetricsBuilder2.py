@@ -75,12 +75,12 @@ def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime 
-        + "GROUP BY " + timeInterval
+        + " GROUP BY " + timeInterval
     )
 
     # print(query)
     result = list(client.query(query).get_points())
-    
+
     print("Querying data: " + measurement)
     print("--length: " + len(result))
 
