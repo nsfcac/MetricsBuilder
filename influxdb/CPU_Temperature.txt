@@ -1,1 +1,1 @@
-<generator object get_points at 0x7f9d497e1cf0>
+[{'error': 'None', 'time': '2019-04-26T00:00:41.040976128Z', 'host': '10.101.3.53', 'CPU1 Temp': 75, 'GET_processing_time': 5.94, 'cpuUpperThresholdNonCritical': 93, 'cpuLowerThresholdNonCritical': 8, 'cpuLowerThresholdCritical': 3, 'cpuUpperThresholdCritical': 98, 'location': 'ESB', 'cluster': 'quanah', 'retry': 0, 'CPU2 Temp': 53}]

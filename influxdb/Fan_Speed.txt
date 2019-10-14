@@ -1,1 +1,1 @@
-<generator object get_points at 0x7f9d497e1e10>
+[{'error': 'None', 'time': '2019-04-26T00:00:41.041084928Z', 'host': '10.101.3.53', 'GET_processing_time': 5.94, 'FAN_2': 12460, 'FAN_4': 12460, 'cluster': 'quanah', 'location': 'ESB', 'fanUpperThresholdNonCritical': 'None', 'fanLowerThresholdNonCritical': 'None', 'fanUpperThresholdCritical': 17850, 'fanLowerThresholdCritical': 1050, 'retry': 0, 'FAN_1': 12460, 'FAN_3': 12460}]

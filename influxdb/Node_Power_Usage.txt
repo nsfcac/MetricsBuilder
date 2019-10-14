@@ -1,1 +1,1 @@
-<generator object get_points at 0x7f9d497e1d80>
+[{'error': 'None', 'time': '2019-04-26T00:00:23.919297024Z', 'host': '10.101.3.53', 'PowerRequestedWatts': 430, 'GET_processing_time': 4.42, 'PowerCapacityWatts': 560, 'powerusage_watts': 303, 'PowerAvailableWatts': 0, 'retry': 0, 'location': 'ESB', 'cluster': 'quanah'}]

@@ -1,1 +1,1 @@
-<generator object get_points at 0x7f9d497e1f30>
+[{'error': 'None', 'time': '2019-04-26T00:00:32.10470784Z', 'host': '10.101.3.53', 'available_memory': '128.293G', 'memoryusage': 63.615, 'location': 'ESB', 'total_memory': '191.908G', 'cluster': 'quanah'}]

@@ -1,1 +1,1 @@
-<generator object get_points at 0x7f9d497e1f78>
+[{'time': '2019-04-26T00:00:41.041022976Z', 'host': '10.101.3.53', 'GET_processing_time': 5.94, 'inletLowerThresholdCritical': 0, 'inletUpperThresholdCritical': 47, 'Inlet Temp': 19, 'retry': 0, 'location': 'ESB', 'inletUpperThresholdNonCritical': 42, 'inletLowerThresholdNonCritical': 3, 'cluster': 'quanah'}]
