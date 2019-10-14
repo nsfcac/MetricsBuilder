@@ -11,34 +11,42 @@ def main():
     hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
-    measure_list = [
-        "Current_Jobs_ID", "Current_Users", 
-        "Job_Info", "node_job_info", 
-        "system_metrics", "Cluster_Nodes_Jobs_PWR_Usage", 
-        "Node_Power_Usage", "Node_Power_State", 
-        "CPU_Usage", "Memory_Usage", 
-        "Fan_Speed", "CPU_Temperature", "Inlet_Temperature", 
-        "BMC_Health", "Inlet_Health", "Node_Health", "CPU_Health", 
-        "Memory_Health", "Fan_Health", "Node_LED_Indicator"
-    ]
+    # measure_list = [
+    #     "Current_Jobs_ID", "Current_Users", 
+    #     "Job_Info", "node_job_info", 
+    #     "system_metrics", "Cluster_Nodes_Jobs_PWR_Usage", 
+    #     "Node_Power_Usage", "Node_Power_State", 
+    #     "CPU_Usage", "Memory_Usage", 
+    #     "Fan_Speed", "CPU_Temperature", "Inlet_Temperature", 
+    #     "BMC_Health", "Inlet_Health", "Node_Health", "CPU_Health", 
+    #     "Memory_Health", "Fan_Health", "Node_LED_Indicator"
+    # ]
 
-    host_measure_list = [
-        "BMC_Health", "CPU_Health", "CPU_Temperature", 
-        "CPU_Usage", "Fan_Health", "Fan_Speed", "Inlet_Health",
-        "Inlet_Temperature", "Job_Info", "Memory_Health",
-        "Memory_Usage", "Node_Health", "Node_LED_Indicator",
-        "Node_Power_State", "Node_Power_Usage"
+    # host_measure_list = [
+    #     "BMC_Health", "CPU_Health", "CPU_Temperature", 
+    #     "CPU_Usage", "Fan_Health", "Fan_Speed", "Inlet_Health",
+    #     "Inlet_Temperature", "Job_Info", "Memory_Health",
+    #     "Memory_Usage", "Node_Health", "Node_LED_Indicator",
+    #     "Node_Power_State", "Node_Power_Usage"
+    # ]
+
+    measure_list_viz = [
+        "CPU_Temperature", "Inlet_Temperature", 
+        "CPU_Usage", "Memory_Usage",
+        "Fan_Speed", "Node_Power_Usage",
+        "Job_Info"
     ]
 
     # for measurement in measure_list:
     #     result = query_db(client, hostIp, measurement, startTime, endTime)
     #     for item in result:
     #         print(item)
-    measurements = client.query("SHOW MEASUREMENTS")
-    with open("./influxdb/measurements.txt", "w") as outfile:
-        outfile.write(str(measurements))
-
+    # measurements = client.query("SHOW MEASUREMENTS")
+    # with open("./influxdb/measurements.txt", "w") as outfile:
+    #     outfile.write(str(measurements))
     # print(measurements)
+
+    query_db(client, hostIp, measure_list_viz[0], startTime, endTime)
 
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
