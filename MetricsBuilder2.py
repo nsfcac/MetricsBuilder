@@ -56,7 +56,7 @@ def main():
     query_str = (
         "SELECT * FROM " + "CPU_Usage " 
         + "WHERE time >= '" + startTime 
-        + "' AND time <= '" + endTime + "' LIMIT 1"
+        + "' AND time <= '" + endTime + "'"
     )
     metrics_all = list(client.query(query_str).get_points())
 
