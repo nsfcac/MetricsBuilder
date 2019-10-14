@@ -45,8 +45,13 @@ def main():
     # with open("./influxdb/measurements.txt", "w") as outfile:
     #     outfile.write(str(measurements))
     # print(measurements)
-
-    query_db(client, hostIp, measure_list_viz[0], startTime, endTime)
+    for item in measure_list_viz:
+        metric = query_db(
+            client, hostIp, measure_list_viz[0], startTime, endTime
+        )
+        outfile_name = "./influxdb/" + item + ".txt"
+        with open(outfile_name, "w") as outfile:
+            outfile.write(str(metric))
 
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
