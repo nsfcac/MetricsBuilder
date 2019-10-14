@@ -11,6 +11,7 @@ def main():
     hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
+    timeInterval = '5m'
     # measure_list = [
     #     "Current_Jobs_ID", "Current_Users", 
     #     "Job_Info", "node_job_info", 
@@ -47,7 +48,7 @@ def main():
     # print(measurements)
     for item in measure_list_viz:
         metric = query_db(
-            client, hostIp, item, startTime, endTime
+            client, hostIp, item, startTime, endTime, timeInterval
         )
         outfile_name = "./influxdb/" + item + ".json"
         with open(outfile_name, "w") as outfile:
@@ -64,7 +65,7 @@ def main():
     # with open("./influxdb/CPU_all_info.json", "w") as outfile_all:
     #         json.dump(metrics_all, outfile_all, indent = 4, sort_keys = True)
 
-def query_db(client, hostIp, measurement, startTime, endTime):
+def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
@@ -73,12 +74,15 @@ def query_db(client, hostIp, measurement, startTime, endTime):
         "SELECT * FROM " + measurement 
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
-        + "' AND time <= '" + endTime + "' LIMIT 5"
+        + "' AND time <= '" + endTime 
+        + "GROUP BY " + timeInterval
     )
 
     # print(query)
-    print("Querying data: " + measurement)
     result = list(client.query(query).get_points())
+    
+    print("Querying data: " + measurement)
+    print("--length: " + len(result))
 
     return result
 
