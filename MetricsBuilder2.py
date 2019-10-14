@@ -54,8 +54,8 @@ def main():
             json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     query_str = (
-        "SELECT * FROM " + "CPU_Usage" 
-        + "' AND time >= '" + startTime 
+        "SELECT * FROM " + "CPU_Usage " 
+        + "WHERE time >= '" + startTime 
         + "' AND time <= '" + endTime + "' LIMIT 1"
     )
     metrics_all = list(client.query(query_str).get_points())
