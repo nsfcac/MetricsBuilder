@@ -49,9 +49,9 @@ def main():
         metric = query_db(
             client, hostIp, item, startTime, endTime
         )
-        outfile_name = "./influxdb/" + item + ".txt"
+        outfile_name = "./influxdb/" + item + ".json"
         with open(outfile_name, "w") as outfile:
-            outfile.write(str(metric))
+            json.dump(metric, outfile, indent = 4, sort_keys = True)
 
 def query_db(client, hostIp, measurement, startTime, endTime):
     """Generate query string based on the ip address, 
