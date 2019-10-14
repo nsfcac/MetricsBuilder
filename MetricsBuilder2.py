@@ -47,7 +47,7 @@ def main():
     # print(measurements)
     for item in measure_list_viz:
         metric = query_db(
-            client, hostIp, measure_list_viz[0], startTime, endTime
+            client, hostIp, item, startTime, endTime
         )
         outfile_name = "./influxdb/" + item + ".txt"
         with open(outfile_name, "w") as outfile:
