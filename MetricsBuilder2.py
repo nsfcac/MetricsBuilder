@@ -8,6 +8,10 @@ def main():
         port=8086, 
         database='hpcc_monitoring_db')
 
+    hostIp_list = parse_host()
+
+    print(hostIp_list)
+
     hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
@@ -29,12 +33,21 @@ def main():
     #     with open(outfile_name, "w") as outfile:
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
-    metric = query_uge(client, startTime, endTime, timeInterval)
-    processed_metric = preprocess_uge(metric)
+    # metric = query_uge(client, startTime, endTime, timeInterval)
+    # processed_metric = preprocess_uge(metric)
 
-    outfile_name = "./influxdb/userJob.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(processed_metric, outfile, indent = 4, sort_keys = True)
+    # outfile_name = "./influxdb/userJob.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(processed_metric, outfile, indent = 4, sort_keys = True)
+
+def parse_host():
+    hostIp_list = []
+    with open(./hostlist) as infile:
+        host_list = json.loads(infile)
+    for item in host_list:
+        hostIp = item.split(':')[0]
+        hostIp_list.append(hostIp)
+    return hostIp_list
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
