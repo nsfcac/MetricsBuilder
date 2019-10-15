@@ -46,7 +46,7 @@ def main():
     #     with open(outfile_name, "w") as outfile:
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
-    query = """SELECT MAX("CPU1 Temp") as "CPU1 Temp", "CPU2_Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T01:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
+    query = """SELECT MAX("CPU1 Temp") as "CPU1 Temp", "CPU2_Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
     result = list(client.query(query).get_points())
     with open("./influxdb/max_sample.json", "a") as outfile:
         json.dump(result, outfile, indent = 4, sort_keys = True)
