@@ -62,7 +62,7 @@ def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
     """
     if measurement == "CPU_Temperature":
-        select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp","host","error""""
+        # select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp","host","error" """
     elif measurement == "Inlet_Temperature":
         tag_name = "Inlet Temp"
     elif measurement == "CPU_Usage":
