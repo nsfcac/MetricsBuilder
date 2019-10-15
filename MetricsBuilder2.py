@@ -43,7 +43,9 @@ def main():
 def parse_host():
     hostIp_list = []
     with open("./hostlist") as infile:
-        for item in infile:
+        list_str = infile[1:-1]
+        list_arr = list_str.split(',')
+        for item in list_arr:
             hostIp = item.split(':')[0]
             hostIp_list.append(hostIp)
     
