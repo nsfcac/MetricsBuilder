@@ -89,7 +89,6 @@ def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, time
     result = list(client.query(query).get_points())
 
     print("Querying data: " + measurement)
-    print("--length: " + len(result))
 
     return result
 
