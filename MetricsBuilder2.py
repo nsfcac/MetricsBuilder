@@ -8,7 +8,7 @@ def main():
         port=8086, 
         database='hpcc_monitoring_db')
 
-    hostIp = '10.101.3.53'
+    hostIp = '10.101.3.52'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
     timeInterval = '5m'
@@ -72,7 +72,7 @@ def query_bmc(
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
     query = (
         "SELECT "
-        + "job_data FROM Job_Info"
+        + "DISTINCT(job_data) as job_data FROM Job_Info"
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
@@ -86,13 +86,13 @@ def preprocess_uge(ugeMetric):
     job_list = []
     usr_list = []
     job_user_time_dic = {}
+
     for item in ugeMetric:
         job_data = eval(item["job_data"])
         jobID = job_data["jobID"]
         user = job_data["user"]
         submitTime = job_data["submitTime"]
         startTime = job_data["startTime"]
-        # nodes = job_data["nodes"]
 
         if jobID not in job_list:
             job_list.append(jobID)
@@ -108,6 +108,7 @@ def preprocess_uge(ugeMetric):
                 job_user_time_dic.update({user:[job_time_dic]})
             else:
                 job_user_time_dic[user].append(job_time_dic)
+
     return job_user_time_dic
 
 if __name__ == "__main__":
