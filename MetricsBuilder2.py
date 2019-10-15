@@ -30,11 +30,11 @@ def main():
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     metric = query_uge(client, startTime, endTime, timeInterval)
-    processed_metric = preprocess_uge(metric)
+    # processed_metric = preprocess_uge(metric)
 
-    outfile_name = "./influxdb/userJob.json"
+    outfile_name = "./influxdb/job_info.json"
     with open(outfile_name, "w") as outfile:
-        json.dump(processed_metric, outfile, indent = 4, sort_keys = True)
+        json.dump(metric, outfile, indent = 4, sort_keys = True)
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
