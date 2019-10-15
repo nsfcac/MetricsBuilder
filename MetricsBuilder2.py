@@ -105,7 +105,7 @@ def preprocess_uge(ugeMetric):
                     }
             if user not in usr_list:
                 usr_list.append(jobID)
-                job_user_time_dic.update(user:[job_time_dic])
+                job_user_time_dic.update({user:[job_time_dic]})
             else:
                 job_user_time_dic[user].append(job_time_dic)
     return job_user_time_dic
