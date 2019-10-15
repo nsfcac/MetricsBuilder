@@ -46,9 +46,9 @@ def main():
     #     with open(outfile_name, "w") as outfile:
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
-    query = """SELECT MAX("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
+    query = """SELECT DISTINCT("job_data") as "job_data" FROM Job_Info WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
     result = list(client.query(query).get_points())
-    with open("./influxdb/max_sample.json", "w") as outfile:
+    with open("./influxdb/dist_sample.json", "w") as outfile:
         json.dump(result, outfile, indent = 4, sort_keys = True)
 
     # query = "SELECT * FROM Inlet_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
@@ -62,19 +62,19 @@ def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
     SELECT * FROM measurement WHERE time >= *** AND time <= ***
     """
     if measurement == "CPU_Temperature":
-        select_obj = """ ("CPU1 Temp") as "CPU1 Temp","CPU2 Temp","host","error" """
+        select_obj = """ ("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" """
     elif measurement == "Inlet_Temperature":
-        tag_name = "Inlet Temp"
+        select_obj = "Inlet Temp"
     elif measurement == "CPU_Usage":
-        tag_name = "cpuusage"
+        select_obj = "cpuusage"
     elif measurement == "Memory_Usage":
-        tag_name = "memoryusage"
+        select_obj = "memoryusage"
     elif measurement == "Fan_Speed":
-        tag_name = "FAN_1"
+        select_obj = """ ("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" """
     elif measurement == "Node_Power_Usage":
-        tag_name = "powerusage_watts"
+        select_obj = "powerusage_watts"
     else:
-        tag_name = "job_data"
+        select_obj = "job_data"
 
     query = (
         "SELECT * "
