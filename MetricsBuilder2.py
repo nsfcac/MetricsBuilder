@@ -43,7 +43,7 @@ def main():
 def parse_host():
     hostIp_list = []
     with open("./hostlist") as infile:
-        host_list = json.loads(infile)
+        host_list = eval(infile)
     for item in host_list:
         hostIp = item.split(':')[0]
         hostIp_list.append(hostIp)
