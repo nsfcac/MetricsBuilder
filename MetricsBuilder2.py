@@ -73,7 +73,7 @@ def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, time
     elif measurement == "Fan_Speed":
         select_obj = """("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" """
     else:
-        select_obj = "powerusage_watts"
+        select_obj = """("powerusage_watts")"""
 
     query = (
         "SELECT " + measureType + select_obj
