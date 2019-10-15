@@ -43,9 +43,9 @@ def main():
         metric = query_bmc(
             client, hostIp, item, "MAX", startTime, endTime, timeInterval
         )
-        # outfile_name = "./influxdb/" + item + ".json"
-        # with open(outfile_name, "w") as outfile:
-        #     json.dump(metric, outfile, indent = 4, sort_keys = True)
+        outfile_name = "./influxdb/" + item + ".json"
+        with open(outfile_name, "w") as outfile:
+            json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     # query = """SELECT DISTINCT("job_data") as "job_data" FROM Job_Info WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
     # result = list(client.query(query).get_points())
@@ -84,13 +84,13 @@ def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, time
         + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
     )
 
-    print(query)
-    # result = list(client.query(query).get_points())
+    # print(query)
+    result = list(client.query(query).get_points())
 
-    # print("Querying data: " + measurement)
-    # print("--length: " + len(result))
+    print("Querying data: " + measurement)
+    print("--length: " + len(result))
 
-    # return result
+    return result
 
 if __name__ == "__main__":
     main()
