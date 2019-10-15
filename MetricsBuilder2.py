@@ -65,11 +65,11 @@ def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, time
     if measurement == "CPU_Temperature":
         select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" """
     elif measurement == "Inlet_Temperature":
-        select_obj = "Inlet Temp"
+        select_obj = """("Inlet Temp")"""
     elif measurement == "CPU_Usage":
-        select_obj = "cpuusage"
+        select_obj = """("cpuusage")"""
     elif measurement == "Memory_Usage":
-        select_obj = "memoryusage"
+        select_obj = """("memoryusage")"""
     elif measurement == "Fan_Speed":
         select_obj = """("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" """
     else:
