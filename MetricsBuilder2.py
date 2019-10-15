@@ -30,9 +30,11 @@ def main():
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     metric = query_uge(client, hostIp, startTime, endTime, timeInterval)
-    outfile_name = "./influxdb/host.json"
+    processed_metric = preprocess_uge(metric)
+
+    outfile_name = "./influxdb/userJob.json"
     with open(outfile_name, "w") as outfile:
-        json.dump(metric, outfile, indent = 4, sort_keys = True)
+        json.dump(processed_metric, outfile, indent = 4, sort_keys = True)
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
@@ -80,8 +82,32 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
     print("Querying data: " + hostIp)
     return result
 
-# def preprocess_uge(ugeMetric):
+def preprocess_uge(ugeMetric):
+    job_list = []
+    usr_list = []
+    job_user_time_dic = {}
+    for item in ugeMetric:
+        job_data = json.loads(item["job_data"])
+        jobID = job_data["jobID"]
+        user = job_data["user"]
+        submitTime = job_data["submitTime"]
+        startTime = job_data["startTime"]
+        nodes = job_data["nodes"]
 
+        if user not in usr_list:
+            usr_list.append(jobID)
+            job_user_time_dic.update(user:[])
+            if jobID not in job_list:
+                job_time_dic = {
+                    jobID: {
+                        "submitTime": submitTime,
+                        "startTime": startTime,
+                        "finishTime": None
+                    }
+                }
+                job_list.append(jobID)
+                job_user_time_dic[user].append(job_time_dic)
+    return job_user_time_dic
 
 if __name__ == "__main__":
     main()
