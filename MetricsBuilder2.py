@@ -38,23 +38,23 @@ def main():
         "Job_Info"
     ]
 
-    # for item in measure_list_viz:
-    #     metric = query_db(
-    #         client, hostIp, item, startTime, endTime, timeInterval
-    #     )
-    #     outfile_name = "./influxdb/" + item + ".json"
-    #     with open(outfile_name, "w") as outfile:
-    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
+    for item in measure_list_viz:
+        metric = query_db(
+            client, hostIp, item, startTime, endTime, timeInterval
+        )
+        outfile_name = "./influxdb/" + item + ".json"
+        with open(outfile_name, "w") as outfile:
+            json.dump(metric, outfile, indent = 4, sort_keys = True)
 
-    query = "SELECT MAX('CPU1 Temp') FROM 'CPU_Temperature' WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) LIMIT 2"
-    result = list(client.query(query).get_points())
-    with open("./influxdb/sample.json", "a") as outfile:
-        json.dump(result, outfile, indent = 4, sort_keys = True)
+    # query = "SELECT MAX('CPU1 Temp') FROM 'CPU_Temperature' WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) LIMIT 2"
+    # result = list(client.query(query).get_points())
+    # with open("./influxdb/sample.json", "a") as outfile:
+    #     json.dump(result, outfile, indent = 4, sort_keys = True)
 
-    query = "SELECT MAX('Inlet Temp') as 'Inlet Temp', 'host', 'error' FROM 'Inlet_Temperature' WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"
-    result = list(client.query(query).get_points())
-    with open("./influxdb/sample.json", "a") as outfile:
-        json.dump(result, outfile, indent = 4, sort_keys = True)
+    # query = "SELECT MAX('Inlet Temp') as 'Inlet Temp', 'host', 'error' FROM 'Inlet_Temperature' WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"
+    # result = list(client.query(query).get_points())
+    # with open("./influxdb/sample.json", "a") as outfile:
+    #     json.dump(result, outfile, indent = 4, sort_keys = True)
 
 def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
@@ -77,8 +77,9 @@ def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
         tag_name = "job_data"
 
     query = (
-        "SELECT MAX("+ tag_name
-        + ") FROM " + measurement 
+        "SELECT * "
+        # + tag_name
+        + "FROM " + measurement 
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime 
