@@ -46,15 +46,15 @@ def main():
     #     with open(outfile_name, "w") as outfile:
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
-    # query = "SELECT MAX('CPU1 Temp') FROM 'CPU_Temperature' WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) LIMIT 2"
-    # result = list(client.query(query).get_points())
-    # with open("./influxdb/sample.json", "a") as outfile:
-    #     json.dump(result, outfile, indent = 4, sort_keys = True)
-
-    query = "SELECT * FROM Inlet_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
+    query = """SELECT MAX("CPU1 Temp") FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) LIMIT 2"""
     result = list(client.query(query).get_points())
     with open("./influxdb/sample.json", "a") as outfile:
         json.dump(result, outfile, indent = 4, sort_keys = True)
+
+    # query = "SELECT * FROM Inlet_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
+    # result = list(client.query(query).get_points())
+    # with open("./influxdb/sample.json", "a") as outfile:
+    #     json.dump(result, outfile, indent = 4, sort_keys = True)
 
 def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
