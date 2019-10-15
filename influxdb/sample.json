@@ -21,4 +21,66 @@
         "max": 76,
         "time": "2019-04-26T00:05:00Z"
     }
+][
+    {
+        "CPU1 Temp": 75,
+        "CPU2 Temp": 53,
+        "error": "None",
+        "host": "10.101.3.53",
+        "time": "2019-04-26T00:00:00Z"
+    },
+    {
+        "CPU1 Temp": 76,
+        "CPU2 Temp": 53,
+        "error": "None",
+        "host": "10.101.3.53",
+        "time": "2019-04-26T00:05:00Z"
+    },
+    {
+        "CPU1 Temp": 78,
+        "CPU2 Temp": 53,
+        "error": "None",
+        "host": "10.101.3.53",
+        "time": "2019-04-26T00:10:00Z"
+    },
+    {
+        "CPU1 Temp": 78,
+        "CPU2 Temp": 53,
+        "error": "None",
+        "host": "10.101.3.53",
+        "time": "2019-04-26T00:15:00Z"
+    },
+    {
+        "CPU1 Temp": 76,
+        "CPU2 Temp": 53,
+        "error": "None",
+        "host": "10.101.3.53",
+        "time": "2019-04-26T00:20:00Z"
+    }
+][
+    {
+        "CPU1 Temp": 53,
+        "CPU2 Temp": 53,
+        "time": "2019-04-26T00:00:00Z"
+    },
+    {
+        "CPU1 Temp": 53,
+        "CPU2 Temp": 53,
+        "time": "2019-04-26T00:05:00Z"
+    },
+    {
+        "CPU1 Temp": 53,
+        "CPU2 Temp": 53,
+        "time": "2019-04-26T00:10:00Z"
+    },
+    {
+        "CPU1 Temp": 53,
+        "CPU2 Temp": 53,
+        "time": "2019-04-26T00:15:00Z"
+    },
+    {
+        "CPU1 Temp": 53,
+        "CPU2 Temp": 53,
+        "time": "2019-04-26T00:20:00Z"
+    }
 ]
