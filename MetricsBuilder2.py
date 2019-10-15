@@ -37,25 +37,26 @@ def main():
         "Fan_Speed", "Node_Power_Usage",
         
     ]
+
     measure_uge_list = ["Job_Info"]
 
-    for item in measure_bmc_list:
-        metric = query_bmc(
-            client, hostIp, item, "MAX", startTime, endTime, timeInterval
-        )
-        outfile_name = "./influxdb/" + item + ".json"
-        with open(outfile_name, "w") as outfile:
-            json.dump(metric, outfile, indent = 4, sort_keys = True)
+    # for item in measure_bmc_list:
+    #     metric = query_bmc(
+    #         client, hostIp, item, "MAX", startTime, endTime, timeInterval
+    #     )
+    #     outfile_name = "./influxdb/" + item + ".json"
+    #     with open(outfile_name, "w") as outfile:
+    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     # query = """SELECT DISTINCT("job_data") as "job_data" FROM Job_Info WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY *, time(5m) SLIMIT 1"""
     # result = list(client.query(query).get_points())
     # with open("./influxdb/dist_sample.json", "w") as outfile:
     #     json.dump(result, outfile, indent = 4, sort_keys = True)
 
-    # query = "SELECT * FROM Inlet_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' LIMIT 1"
-    # result = list(client.query(query).get_points())
-    # with open("./influxdb/sample.json", "a") as outfile:
-    #     json.dump(result, outfile, indent = 4, sort_keys = True)
+    query = """SELECT MAX("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" FROM Fan_Speed WHERE host='10.101.3.53' AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z'' GROUP BY *, time(5m) SLIMIT 1"""
+    result = list(client.query(query).get_points())
+    with open("./influxdb/sample.json", "a") as outfile:
+        json.dump(result, outfile, indent = 4, sort_keys = True)
 
 def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
