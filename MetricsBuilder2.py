@@ -90,7 +90,7 @@ def query_bmc(client, hostIp, measurement, measureType, startTime, endTime, time
     # print("Querying data: " + measurement)
     # print("--length: " + len(result))
 
-    return result
+    # return result
 
 if __name__ == "__main__":
     main()
