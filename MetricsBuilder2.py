@@ -75,7 +75,7 @@ def query_uge(client, startTime, endTime, timeInterval):
         + "DISTINCT(job_data) as job_data FROM Job_Info"
         + " WHERE time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+        + "' SLIMIT 1"
     )
     result = list(client.query(query).get_points())
     return result
