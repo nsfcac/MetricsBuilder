@@ -30,11 +30,11 @@ def main():
     #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     metric = query_uge(client, startTime, endTime, timeInterval)
-    # processed_metric = preprocess_uge(metric)
+    processed_metric = preprocess_uge(metric)
 
-    outfile_name = "./influxdb/job_info.json"
+    outfile_name = "./influxdb/userJob.json"
     with open(outfile_name, "w") as outfile:
-        json.dump(metric, outfile, indent = 4, sort_keys = True)
+        json.dump(processed_metric, outfile, indent = 4, sort_keys = True)
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
@@ -75,7 +75,7 @@ def query_uge(client, startTime, endTime, timeInterval):
         + "DISTINCT(job_data) as job_data FROM Job_Info"
         + " WHERE time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' SLIMIT 1"
+        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
     )
     result = list(client.query(query).get_points())
     return result
