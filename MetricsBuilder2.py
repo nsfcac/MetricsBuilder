@@ -31,8 +31,8 @@ def main():
 
     metric = query_uge(client, hostIp, startTime, endTime, timeInterval)
     outfile_name = "./influxdb/host.json"
-        with open(outfile_name, "w") as outfile:
-            json.dump(metric, outfile, indent = 4, sort_keys = True)
+    with open(outfile_name, "w") as outfile:
+        json.dump(metric, outfile, indent = 4, sort_keys = True)
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
