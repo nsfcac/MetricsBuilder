@@ -78,7 +78,7 @@ def query_db(client, hostIp, measurement, startTime, endTime, timeInterval):
 
     query = (
         "SELECT MAX("+ tag_name
-        ") FROM " + measurement 
+        + ") FROM " + measurement 
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime 
