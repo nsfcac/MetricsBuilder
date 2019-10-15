@@ -1,1190 +1,1190 @@
 [
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T00:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:00:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T00:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T00:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T00:00:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T00:05:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T00:05:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:05:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:05:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T00:05:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T00:10:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T00:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T00:10:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T00:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T00:15:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:15:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T00:20:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T00:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T00:25:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T00:25:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T00:30:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:30:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:30:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:30:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:35:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:35:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T00:35:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:35:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:40:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:40:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:40:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:45:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T00:50:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T00:50:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:50:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T00:50:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T00:50:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T00:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T00:55:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T00:55:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:55:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T00:55:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T01:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T01:00:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:00:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:00:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T01:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:05:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:05:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:05:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:05:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:05:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T01:10:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T01:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T01:10:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T01:10:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:15:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:15:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T01:15:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T01:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:25:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T01:25:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T01:25:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T01:30:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:30:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:30:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:30:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T01:35:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:35:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:35:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:35:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:35:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:40:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:40:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:40:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T01:40:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T01:40:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T01:45:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T01:45:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T01:45:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:50:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T01:50:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:50:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T01:50:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T01:50:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T01:55:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T01:55:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T01:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:00:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:00:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T02:05:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:05:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:05:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T02:05:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:15:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:15:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T02:15:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:15:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:20:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:25:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:25:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:25:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T02:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T02:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T02:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:30:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T02:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T02:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:40:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:40:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T02:40:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:45:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136}",
         "time": "2019-04-26T02:50:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T02:50:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:50:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T02:50:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T02:50:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T02:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T02:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T02:55:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T02:55:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T02:55:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T03:00:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao'}",
         "time": "2019-04-26T03:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T03:00:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:00:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:05:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:05:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:05:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:05:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T03:05:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T03:10:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T03:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T03:10:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T03:10:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:15:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:15:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:15:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:15:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:15:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T03:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T03:25:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T03:25:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:25:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:25:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T03:30:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:30:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:30:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:30:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T03:35:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T03:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T03:35:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:35:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T03:40:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T03:45:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T03:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:45:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:45:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T03:50:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T03:50:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T03:50:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:50:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:55:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T03:55:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T03:55:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T03:55:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136}",
         "time": "2019-04-26T03:55:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:00:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T04:00:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:00:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:00:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T04:05:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T04:05:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r'}",
         "time": "2019-04-26T04:05:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:05:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:10:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:15:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:15:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:15:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r'}",
         "time": "2019-04-26T04:20:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T04:20:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:20:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:20:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:20:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T04:25:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:30:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:30:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T04:30:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'state': 'r', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:30:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:30:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r'}",
         "time": "2019-04-26T04:35:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:35:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:35:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T04:35:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'nodes': 'compute-3-53', 'user': 'jieyao', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:40:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'jobID': 756136, 'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T04:40:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136}",
         "time": "2019-04-26T04:40:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
+        "job_data": "{'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r'}",
         "time": "2019-04-26T04:40:00Z"
     },
     {
-        "distinct": "{'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136}",
+        "job_data": "{'nodes': 'compute-3-53', 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'jobID': 756136}",
         "time": "2019-04-26T04:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T04:45:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:45:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:45:00Z"
     },
     {
-        "distinct": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'jobID': 756136, 'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:45:00Z"
     },
     {
-        "distinct": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
+        "job_data": "{'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao', 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'user': 'jieyao'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
+        "job_data": "{'user': 'jieyao', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'jobID': 756136, 'nodes': 'compute-3-53'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'state': 'r', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:50:00Z"
     },
     {
-        "distinct": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
+        "job_data": "{'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'state': 'r', 'user': 'jieyao'}",
         "time": "2019-04-26T04:55:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'state': 'r', 'nodes': 'compute-3-53', 'jobID': 756136, 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019'}",
         "time": "2019-04-26T04:55:00Z"
     },
     {
-        "distinct": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
+        "job_data": "{'user': 'jieyao', 'jobID': 756136, 'state': 'r', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'nodes': 'compute-3-53', 'startTime': 'Wed Apr 24 10:37:54 CDT 2019'}",
         "time": "2019-04-26T04:55:00Z"
     },
     {
-        "distinct": "{'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
+        "job_data": "{'state': 'r', 'nodes': 'compute-3-53', 'submitTime': 'Mon Apr 22 20:04:01 CDT 2019', 'jobID': 756136, 'startTime': 'Wed Apr 24 10:37:54 CDT 2019', 'user': 'jieyao'}",
         "time": "2019-04-26T04:55:00Z"
     }
 ]
