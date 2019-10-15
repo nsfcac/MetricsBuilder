@@ -78,7 +78,6 @@ def query_uge(client, startTime, endTime, timeInterval):
         + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
     )
     result = list(client.query(query).get_points())
-    print("Querying data: " + hostIp)
     return result
 
 def preprocess_uge(ugeMetric):
