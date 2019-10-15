@@ -92,20 +92,21 @@ def preprocess_uge(ugeMetric):
         user = job_data["user"]
         submitTime = job_data["submitTime"]
         startTime = job_data["startTime"]
-        nodes = job_data["nodes"]
+        # nodes = job_data["nodes"]
 
-        if user not in usr_list:
-            usr_list.append(jobID)
-            job_user_time_dic.update(user:[])
-            if jobID not in job_list:
-                job_time_dic = {
-                    jobID: {
-                        "submitTime": submitTime,
-                        "startTime": startTime,
-                        "finishTime": None
+        if jobID not in job_list:
+            job_list.append(jobID)
+            job_time_dic = {
+                        jobID: {
+                            "submitTime": submitTime,
+                            "startTime": startTime,
+                            "finishTime": None
+                        }
                     }
-                }
-                job_list.append(jobID)
+            if user not in usr_list:
+                usr_list.append(jobID)
+                job_user_time_dic.update(user:[job_time_dic])
+            else:
                 job_user_time_dic[user].append(job_time_dic)
     return job_user_time_dic
 
