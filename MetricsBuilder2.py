@@ -70,7 +70,7 @@ def query_bmc(
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
     query = (
         "SELECT "
-        + "DISTINCT(job_data) FROM Job_Info"
+        + "DISTINCT(job_data) as job_data FROM Job_Info"
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
@@ -79,6 +79,9 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
     result = list(client.query(query).get_points())
     print("Querying data: " + hostIp)
     return result
+
+# def preprocess_uge(ugeMetric):
+
 
 if __name__ == "__main__":
     main()
