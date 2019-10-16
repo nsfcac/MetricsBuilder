@@ -26,15 +26,15 @@ def main():
 
     measure_uge_list = ["Job_Info"]
 
-    get_metrics(
-        client, hostIp, measure_bmc_list, 
-        userJob, hostDetail,
-        startTime, endTime, timeInterval
-    )
+    # get_metrics(
+    #     client, hostIp, measure_bmc_list, 
+    #     userJob, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
 
     for item in measure_bmc_list:
         metric = query_bmc(
-            client, hostIp, item, "MIN", startTime, endTime, timeInterval
+            client, hostIp, item, "MEAN", startTime, endTime, timeInterval
         )
         outfile_name = "./influxdb/" + item + ".json"
         with open(outfile_name, "w") as outfile:
