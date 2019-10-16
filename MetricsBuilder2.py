@@ -300,8 +300,8 @@ def core_to_threads(
                 index + 1, exec_hosts_len, 
                 prefix = 'Progress:', suffix = 'Complete', length = 50
             )
-    except Exception as e:
-        print(e)
+    except:
+        pass
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
     """
