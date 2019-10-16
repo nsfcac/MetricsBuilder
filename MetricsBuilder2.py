@@ -32,19 +32,19 @@ def main():
     #     startTime, endTime, timeInterval
     # )
 
-    query = """SELECT MEAN("CPU1 Temp") as "CPU1 Temp", MEAN("CPU2 Temp") as "CPU2 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"""
-    result = list(client.query(query).get_points())
+    # query = """SELECT MEAN("CPU1 Temp") as "CPU1 Temp", MEAN("CPU2 Temp") as "CPU2 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"""
+    # result = list(client.query(query).get_points())
 
-    with open("./influxdb/mean_test.json", "w") as outfile:
-        json.dump(result, outfile, indent = 4, sort_keys = True)
+    # with open("./influxdb/mean_test.json", "w") as outfile:
+    #     json.dump(result, outfile, indent = 4, sort_keys = True)
 
-    # for item in measure_bmc_list:
-    #     metric = query_bmc(
-    #         client, hostIp, item, "MIN", startTime, endTime, timeInterval
-    #     )
-    #     outfile_name = "./influxdb/" + item + ".json"
-    #     with open(outfile_name, "w") as outfile:
-    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
+    for item in measure_bmc_list:
+        metric = query_bmc(
+            client, hostIp, item, "MIN", startTime, endTime, timeInterval
+        )
+        outfile_name = "./influxdb/" + item + ".json"
+        with open(outfile_name, "w") as outfile:
+            json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     # metric = query_uge(client, startTime, endTime, timeInterval)
     # processed_metric = preprocess_uge(metric)
@@ -72,46 +72,31 @@ def query_bmc(
     startTime and endTime(time range)
     """
 
-    if measureType == "MIN" or measureType =="MAX":
-        if measurement == "CPU_Temperature":
-            select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" """
-        elif measurement == "Inlet_Temperature":
-            select_obj = """("Inlet Temp") as "Inlet Temp" """
-        elif measurement == "CPU_Usage":
-            select_obj = """("cpuusage") as "CPU Usage" """
-        elif measurement == "Memory_Usage":
-            select_obj = """("memoryusage") as "Memory Usage" """
-        elif measurement == "Fan_Speed":
-            select_obj = """("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" """
-        else:
-            select_obj = """("powerusage_watts") as "Power Usage" """
+    if measurement == "CPU_Temperature":
+        select_obj = measureType + """("CPU1 Temp") as "CPU1 Temp", """
+                    + measureType + """("CPU2 Temp") as "CPU2 Temp" """
+    elif measurement == "Inlet_Temperature":
+        select_obj = measureType + """("Inlet Temp") as "Inlet Temp" """
+    elif measurement == "CPU_Usage":
+        select_obj = measureType + """("cpuusage") as "CPU Usage" """
+    elif measurement == "Memory_Usage":
+        select_obj = measureType + """("memoryusage") as "Memory Usage" """
+    elif measurement == "Fan_Speed":
+        select_obj = measureType + """("FAN_1") as "FAN_1", """
+                   + measureType + """("FAN_2") as "FAN_2", """
+                   + measureType + """("FAN_3") as "FAN_3", """
+                   + measureType + """("FAN_4") as "FAN_4" """
+    else:
+        select_obj = measureType + """("powerusage_watts") as "Power Usage" """
 
-        query = (
-            "SELECT " + measureType + select_obj
-            + "FROM " + measurement 
-            + " WHERE host='" + hostIp 
-            + "' AND time >= '" + startTime 
-            + "' AND time <= '" + endTime
-            + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
-        )
-
-        result = list(client.query(query).get_points())
-        print("Querying data: " + measurement)
-        return result
-
-    # if measureType =="MEAN":
-    #     if measurement == "CPU_Temperature":
-    #         select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" """
-    #     elif measurement == "Inlet_Temperature":
-    #         select_obj = """("Inlet Temp") as "Inlet Temp" """
-    #     elif measurement == "CPU_Usage":
-    #         select_obj = """("cpuusage") as "CPU Usage" """
-    #     elif measurement == "Memory_Usage":
-    #         select_obj = """("memoryusage") as "Memory Usage" """
-    #     elif measurement == "Fan_Speed":
-    #         select_obj = """("FAN_1") as "FAN_1","FAN_2","FAN_3","FAN_4" """
-    #     else:
-    #         select_obj = """("powerusage_watts") as "Power Usage" """
+    query = (
+        "SELECT " + select_obj
+        + "FROM " + measurement 
+        + " WHERE host='" + hostIp 
+        + "' AND time >= '" + startTime 
+        + "' AND time <= '" + endTime
+        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+    )
 
     result = list(client.query(query).get_points())
     print("Querying data: " + measurement)
