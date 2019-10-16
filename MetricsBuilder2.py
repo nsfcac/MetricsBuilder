@@ -34,7 +34,7 @@ def main():
 
     for item in measure_bmc_list:
         metric = query_bmc(
-            client, hostIp, item, "MEAN", startTime, endTime, timeInterval
+            client, hostIp, item, "MIN", startTime, endTime, timeInterval
         )
         outfile_name = "./influxdb/" + item + ".json"
         with open(outfile_name, "w") as outfile:
