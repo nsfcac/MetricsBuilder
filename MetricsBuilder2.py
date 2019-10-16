@@ -40,7 +40,7 @@ def main():
 
     for item in measure_bmc_list:
         metric = query_bmc(
-            client, hostIp, item, "MIN", startTime, endTime, timeInterval
+            client, hostIp, item, "MEAN", startTime, endTime, timeInterval
         )
         outfile_name = "./influxdb/" + item + ".json"
         with open(outfile_name, "w") as outfile:
@@ -73,8 +73,8 @@ def query_bmc(
     """
 
     if measurement == "CPU_Temperature":
-        select_obj = measureType + """("CPU1 Temp") as "CPU1 Temp", """
-                    + measureType + """("CPU2 Temp") as "CPU2 Temp" """
+        select_obj = (measureType + """("CPU1 Temp") as "CPU1 Temp", """
+                    + measureType + """("CPU2 Temp") as "CPU2 Temp" """)
     elif measurement == "Inlet_Temperature":
         select_obj = measureType + """("Inlet Temp") as "Inlet Temp" """
     elif measurement == "CPU_Usage":
@@ -82,10 +82,10 @@ def query_bmc(
     elif measurement == "Memory_Usage":
         select_obj = measureType + """("memoryusage") as "Memory Usage" """
     elif measurement == "Fan_Speed":
-        select_obj = measureType + """("FAN_1") as "FAN_1", """
-                   + measureType + """("FAN_2") as "FAN_2", """
-                   + measureType + """("FAN_3") as "FAN_3", """
-                   + measureType + """("FAN_4") as "FAN_4" """
+        select_obj = (measureType + """("FAN_1") as "FAN_1", """
+                    + measureType + """("FAN_2") as "FAN_2", """
+                    + measureType + """("FAN_3") as "FAN_3", """
+                    + measureType + """("FAN_4") as "FAN_4" """)
     else:
         select_obj = measureType + """("powerusage_watts") as "Power Usage" """
 
