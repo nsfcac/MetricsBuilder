@@ -19,6 +19,8 @@ def main():
     endTime = '2019-04-26T05:00:00Z'
     timeInterval = '5m'
 
+    userJobRecord = {}
+
     userJob = {}
     hostDetail = {}
 
@@ -30,31 +32,26 @@ def main():
 
     measure_uge_list = ["Job_Info"]
 
-    # ugeMetrics = query_uge(client, hostIp_list[0], startTime, endTime, timeInterval)
-    # user_job_sample = preprocess_uge(ugeMetrics)
-
-    # outfile_name = "./influxdb/userJobSample.json"
-    # with open(outfile_name, "w") as outfile:
-    #     json.dump(user_job_sample, outfile, indent = 4, sort_keys = True)
-
-    # get_metrics(
-    #     client, hostIp, measure_bmc_list, 
-    #     userJob, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
-
     core_to_threads(
         hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
+        userJobRecord, hostDetail,
         startTime, endTime, timeInterval
     )
 
-    userJobResult = process_user_job(userJob)
+    userJob = process_user_job(userJobRecord)
 
-    outfile_name = "./influxdb/userJob.json"
+    returnData = {
+        "timeRange": [startTime, endTime],
+        "timeInterval": timeInterval,
+        "hostDetail": hostDetail,
+        "userJob": userJob
+    }
+
+    outfile_name = "./influxdb/returnData.json"
     with open(outfile_name, "w") as outfile:
-        json.dump(userJobResult, outfile, indent = 4, sort_keys = True)
+        json.dump(returnData, outfile, indent = 4, sort_keys = True)
 
+# Get all hosts ip address
 def parse_host():
     hostIp_list = []
     with open("./hostlist", 'r') as infile:
@@ -290,7 +287,6 @@ def get_metrics(
     uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_metrics = preprocess_uge(uge_raw)
 
-    # Process userJob
     for userId, jobInfo in uge_metrics.items():
         if userId in userJob:
             userJob[userId].extend(jobInfo)
