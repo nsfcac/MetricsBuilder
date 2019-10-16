@@ -1,11 +1,32 @@
 import json
+import flask
+from flask import request
 from  threading import Thread
 from influxdb import InfluxDBClient
 
-def main():
-    printlogo()
+app = flask.Flask(__name__)
+app.config["DEBUG"] = True
 
+@app.route('/api/v1/', methods=['GET'])
+def api_filter():
+
+    validTime = ['s', 'm', 'h', 'd', 'w']
+    query_parameters = request.args
+
+    startTime = query_parameters.get('starttime')
+    endTime = query_parameters.get('endtime')
+    timeInterval = query_parameters.get('interval')
+
+    timeVal = int(timeInterval[:-1])
+
+    # if startTime > endTime:
+    #     return "<h1>Invalid Time Range</h1>"
+    if timeInterval[-1] not in validTime and timeVal <= 0:
+        return "<h1>Invalid Time Interval</h1>"
+
+    printlogo()
     # Set up client
+    print("Set up influxDB client")
     client = InfluxDBClient(
         host='localhost', 
         port=8086, 
@@ -14,10 +35,10 @@ def main():
 
     hostIp_list = parse_host()
 
-    # hostIp = '10.101.3.53'
-    startTime = '2019-04-26T00:00:00Z'
-    endTime = '2019-04-27T00:00:00Z'
-    timeInterval = '1h'
+    # # hostIp = '10.101.3.53'
+    # startTime = '2019-04-26T00:00:00Z'
+    # endTime = '2019-04-27T00:00:00Z'
+    # timeInterval = '1h'
 
     userJobRecord = {}
 
@@ -47,9 +68,12 @@ def main():
         "userJob": userJob
     }
 
-    outfile_name = "./influxdb/returnData.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(returnData, outfile, indent = 4, sort_keys = True)
+    return returnData
+    # outfile_name = "./influxdb/returnData.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
+    
+app.run()
 
 # Get all hosts ip address
 def parse_host():
@@ -382,6 +406,3 @@ def printlogo():
     print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
     print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
     print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
-
-if __name__ == "__main__":
-    main()
