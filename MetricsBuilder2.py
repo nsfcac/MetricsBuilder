@@ -65,6 +65,13 @@ def parse_host():
             hostIp_list.append(hostIp)
     return hostIp_list
 
+# Convert host name to ip address
+def get_hostip(hostname):
+    if '-' in hostname:
+        n, h2, h1 = hostname.split('-')
+        return '10.101.' + h2 + "." + h1
+    return None
+
 def query_bmc(
         client, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
@@ -142,15 +149,23 @@ def preprocess_uge(ugeMetric):
         for item in ugeMetric:
             dataStr = item["job_data"].replace("'",'"')
             job_data = json.loads(dataStr)
+
+            nodesName = job_data["nodes"].split(",")
             jobID = job_data["jobID"]
             user = job_data["user"]
             submitTime = job_data["submitTime"]
             startTime = job_data["startTime"]
 
+            nodesIp = []
+            for node in nodesName:
+                nodeIp = get_hostip(node)
+                nodesIp.append(nodeIp)
+
             if jobID not in job_list:
                 job_list.append(jobID)
                 job_time_dic = {
                             jobID: {
+                                "nodes": nodesIp,
                                 "submitTime": submitTime,
                                 "startTime": startTime,
                                 "finishTime": None
