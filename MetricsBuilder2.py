@@ -26,32 +26,26 @@ def main():
 
     measure_uge_list = ["Job_Info"]
 
-    # get_metrics(
-    #     client, hostIp, measure_bmc_list, 
-    #     userJob, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
+    get_metrics(
+        client, hostIp, measure_bmc_list, 
+        userJob, hostDetail,
+        startTime, endTime, timeInterval
+    )
 
-    # query = """SELECT MEAN("CPU1 Temp") as "CPU1 Temp", MEAN("CPU2 Temp") as "CPU2 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"""
-    # result = list(client.query(query).get_points())
-
-    # with open("./influxdb/mean_test.json", "w") as outfile:
-    #     json.dump(result, outfile, indent = 4, sort_keys = True)
-
-    for item in measure_bmc_list:
-        metric = query_bmc(
-            client, hostIp, item, "MEAN", startTime, endTime, timeInterval
-        )
-        outfile_name = "./influxdb/" + item + ".json"
-        with open(outfile_name, "w") as outfile:
-            json.dump(metric, outfile, indent = 4, sort_keys = True)
+    # for item in measure_bmc_list:
+    #     metric = query_bmc(
+    #         client, hostIp, item, "MEAN", startTime, endTime, timeInterval
+    #     )
+    #     outfile_name = "./influxdb/" + item + ".json"
+    #     with open(outfile_name, "w") as outfile:
+    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     # metric = query_uge(client, startTime, endTime, timeInterval)
     # processed_metric = preprocess_uge(metric)
 
-    # outfile_name = "./influxdb/hostDetail.json"
-    # with open(outfile_name, "w") as outfile:
-    #     json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
+    outfile_name = "./influxdb/hostDetail.json"
+    with open(outfile_name, "w") as outfile:
+        json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
 
 def parse_host():
     hostIp_list = []
