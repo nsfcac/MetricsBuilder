@@ -16,8 +16,8 @@ def main():
 
     # hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
-    endTime = '2019-04-26T05:00:00Z'
-    timeInterval = '5m'
+    endTime = '2019-04-27T00:00:00Z'
+    timeInterval = '1h'
 
     userJobRecord = {}
 
