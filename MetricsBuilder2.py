@@ -308,7 +308,7 @@ def process_user_job(userJob):
         job_set = []
         agg_jobList = {}
         for job in jobList:
-            jobId = job.keys()
+            jobId = str(job.keys())
             jobInfo = job.values()
             if jobId not in job_set:
                 job_set.append(jobId)
