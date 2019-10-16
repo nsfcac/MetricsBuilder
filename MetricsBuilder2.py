@@ -2,6 +2,8 @@ import json
 from influxdb import InfluxDBClient
 
 def main():
+    printlogo()
+    
     # Set up client
     client = InfluxDBClient(
         host='localhost', 
@@ -10,7 +12,7 @@ def main():
 
     hostIp_list = parse_host()
 
-    hostIp = '10.101.3.53'
+    # hostIp = '10.101.3.53'
     startTime = '2019-04-26T00:00:00Z'
     endTime = '2019-04-26T05:00:00Z'
     timeInterval = '5m'
@@ -25,27 +27,19 @@ def main():
     ]
 
     measure_uge_list = ["Job_Info"]
+    hostIp_list = parse_host()
 
-    get_metrics(
-        client, hostIp, measure_bmc_list, 
+    # get_metrics(
+    #     client, hostIp, measure_bmc_list, 
+    #     userJob, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
+
+    core_to_threads(
+        hostIp_list, measure_bmc_list, client,
         userJob, hostDetail,
         startTime, endTime, timeInterval
     )
-
-    # for item in measure_bmc_list:
-    #     metric = query_bmc(
-    #         client, hostIp, item, "MEAN", startTime, endTime, timeInterval
-    #     )
-    #     outfile_name = "./influxdb/" + item + ".json"
-    #     with open(outfile_name, "w") as outfile:
-    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
-
-    # metric = query_uge(client, startTime, endTime, timeInterval)
-    # processed_metric = preprocess_uge(metric)
-
-    outfile_name = "./influxdb/hostDetail.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
 
     outfile_name = "./influxdb/userJob.json"
     with open(outfile_name, "w") as outfile:
@@ -260,18 +254,69 @@ def get_metrics(
             )
 # End of get_metrics
 
-def core_to_threads(hostIp_list):
+def core_to_threads(
+        hostIp_list, measure_bmc_list, client,
+        userJob, hostDetail,
+        startTime, endTime, timeInterval
+    ):
+    print("Pulling Metrics From InfluxDB...")
+
     hostIp_list_len = len(hostIp_list)
+    # For progress bar
+    printProgressBar(
+        0, hostIp_list_len, 
+        prefix = 'Progress:', suffix = 'Complete', length = 50
+    )
+
     try:
         threads = []
-        for host in hostIp_list:
-            a = Thread(target = get_metrics, args = (host, userJob, hostDetail))
+        for hostIp in hostIp_list:
+            a = Thread(
+                target = get_metrics, 
+                args = (
+                    client, hostIp, measure_bmc_list, 
+                    userJob, hostDetail,
+                    startTime, endTime, timeInterval
+                )
+            )
             threads.append(a)
             a.start()
         for index, thread in enumerate(threads):
             thread.join()
+            # Update Progress Bar
+            printProgressBar(
+                index + 1, exec_hosts_len, 
+                prefix = 'Progress:', suffix = 'Complete', length = 50
+            )
     except Exception as e:
         print(e)
+# Print iterations progress
+def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+    # Print New Line on Complete
+    if iteration == total:
+        print()
+
+def printlogo():
+    print("""    __  ___     __       _           ____        _ __    __          """)
+    print("""   /  |/  /__  / /______(_)_________/ __ )__  __(_) /___/ /__  _____ """)
+    print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
+    print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
+    print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
 
 if __name__ == "__main__":
     main()
