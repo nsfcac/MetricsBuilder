@@ -47,6 +47,10 @@ def main():
     with open(outfile_name, "w") as outfile:
         json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
 
+    outfile_name = "./influxdb/userJob.json"
+    with open(outfile_name, "w") as outfile:
+        json.dump(userJob, outfile, indent = 4, sort_keys = True)
+
 def parse_host():
     hostIp_list = []
     with open("./hostlist", 'r') as infile:
@@ -93,7 +97,7 @@ def query_bmc(
     )
 
     result = list(client.query(query).get_points())
-    print("Querying data: " + measurement)
+    # print("Querying " + measureType + "data: " + measurement)
     return result
 
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
@@ -241,9 +245,20 @@ def get_metrics(
         }
     )
 
-    # # Get UGE metrics
-    # uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
-    # uge_metrics = preprocess_uge(uge_raw)
+    # Get UGE metrics
+    uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
+    uge_metrics = preprocess_uge(uge_raw)
+
+    for key, value in uge_metrics.items():
+        if key in userJob:
+            userJob[key].extend(value)
+        else:
+            userJob.update(
+                {
+                    key: value
+                }
+            )
+# End of get_metrics
 
 def core_to_threads(hostIp_list):
     hostIp_list_len = len(hostIp_list)
