@@ -22,30 +22,9 @@
                 "startTime": "Wed Apr 24 16:07:48 CDT 2019",
                 "submitTime": "Wed Apr 24 15:08:46 CDT 2019"
             }
-        },
-        {
-            "757258": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:07:48 CDT 2019",
-                "submitTime": "Wed Apr 24 15:08:46 CDT 2019"
-            }
-        },
-        {
-            "757258": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:07:48 CDT 2019",
-                "submitTime": "Wed Apr 24 15:08:46 CDT 2019"
-            }
         }
     ],
     "christan": [
-        {
-            "757325": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 19:30:49 CDT 2019",
-                "submitTime": "Wed Apr 24 17:03:45 CDT 2019"
-            }
-        },
         {
             "757344": {
                 "finishTime": null,
@@ -66,30 +45,23 @@
                 "startTime": "Wed Apr 24 19:54:37 CDT 2019",
                 "submitTime": "Wed Apr 24 17:06:57 CDT 2019"
             }
+        },
+        {
+            "757318": {
+                "finishTime": null,
+                "startTime": "Wed Apr 24 18:18:00 CDT 2019",
+                "submitTime": "Wed Apr 24 17:03:42 CDT 2019"
+            }
+        },
+        {
+            "757325": {
+                "finishTime": null,
+                "startTime": "Wed Apr 24 19:30:49 CDT 2019",
+                "submitTime": "Wed Apr 24 17:03:45 CDT 2019"
+            }
         }
     ],
     "dsundara": [
-        {
-            "757394": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 23:04:13 CDT 2019",
-                "submitTime": "Wed Apr 24 22:08:12 CDT 2019"
-            }
-        },
-        {
-            "757394": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 23:04:13 CDT 2019",
-                "submitTime": "Wed Apr 24 22:08:12 CDT 2019"
-            }
-        },
-        {
-            "757294": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 20:57:52 CDT 2019",
-                "submitTime": "Wed Apr 24 16:30:01 CDT 2019"
-            }
-        },
         {
             "757394": {
                 "finishTime": null,
@@ -107,17 +79,10 @@
             }
         },
         {
-            "757241": {
+            "760291": {
                 "finishTime": null,
-                "startTime": "Wed Apr 24 15:47:15 CDT 2019",
-                "submitTime": "Wed Apr 24 13:46:55 CDT 2019"
-            }
-        },
-        {
-            "757241": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 15:47:15 CDT 2019",
-                "submitTime": "Wed Apr 24 13:46:55 CDT 2019"
+                "startTime": "Fri Apr 26 01:11:49 CDT 2019",
+                "submitTime": "Thu Apr 25 22:02:00 CDT 2019"
             }
         },
         {
@@ -125,13 +90,6 @@
                 "finishTime": null,
                 "startTime": "Thu Apr 25 00:33:55 CDT 2019",
                 "submitTime": "Wed Apr 24 22:37:52 CDT 2019"
-            }
-        },
-        {
-            "757241": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 15:47:15 CDT 2019",
-                "submitTime": "Wed Apr 24 13:46:55 CDT 2019"
             }
         },
         {
@@ -149,10 +107,17 @@
             }
         },
         {
-            "757406": {
+            "757241": {
                 "finishTime": null,
-                "startTime": "Thu Apr 25 00:33:55 CDT 2019",
-                "submitTime": "Wed Apr 24 22:37:52 CDT 2019"
+                "startTime": "Wed Apr 24 15:47:15 CDT 2019",
+                "submitTime": "Wed Apr 24 13:46:55 CDT 2019"
+            }
+        },
+        {
+            "760273": {
+                "finishTime": null,
+                "startTime": "Thu Apr 25 20:04:01 CDT 2019",
+                "submitTime": "Thu Apr 25 20:03:50 CDT 2019"
             }
         },
         {
@@ -170,36 +135,6 @@
                 "startTime": "Wed Apr 24 16:00:29 CDT 2019",
                 "submitTime": "Wed Apr 24 15:07:14 CDT 2019"
             }
-        },
-        {
-            "757256": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:00:29 CDT 2019",
-                "submitTime": "Wed Apr 24 15:07:14 CDT 2019"
-            }
-        },
-        {
-            "757256": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:00:29 CDT 2019",
-                "submitTime": "Wed Apr 24 15:07:14 CDT 2019"
-            }
-        },
-        {
-            "757256": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:00:29 CDT 2019",
-                "submitTime": "Wed Apr 24 15:07:14 CDT 2019"
-            }
-        }
-    ],
-    "mridley": [
-        {
-            "760085": {
-                "finishTime": null,
-                "startTime": "Thu Apr 25 14:11:06 CDT 2019",
-                "submitTime": "Thu Apr 25 13:56:42 CDT 2019"
-            }
         }
     ],
     "msanati": [
@@ -209,24 +144,10 @@
                 "startTime": "Thu Apr 25 22:43:41 CDT 2019",
                 "submitTime": "Thu Apr 25 22:35:39 CDT 2019"
             }
-        },
-        {
-            "760298": {
-                "finishTime": null,
-                "startTime": "Thu Apr 25 22:51:26 CDT 2019",
-                "submitTime": "Thu Apr 25 22:49:24 CDT 2019"
-            }
         }
     ],
     "pnourian": [
         {
-            "758616": {
-                "finishTime": null,
-                "startTime": "Fri Apr 26 03:16:49 CDT 2019",
-                "submitTime": "Thu Apr 25 11:21:40 CDT 2019"
-            }
-        },
-        {
             "756483": {
                 "finishTime": null,
                 "startTime": "Wed Apr 24 05:59:20 CDT 2019",
@@ -238,20 +159,6 @@
                 "finishTime": null,
                 "startTime": "Wed Apr 24 05:59:20 CDT 2019",
                 "submitTime": "Tue Apr 23 11:23:22 CDT 2019"
-            }
-        },
-        {
-            "758617": {
-                "finishTime": null,
-                "startTime": "Fri Apr 26 03:16:50 CDT 2019",
-                "submitTime": "Thu Apr 25 11:21:40 CDT 2019"
-            }
-        },
-        {
-            "758617": {
-                "finishTime": null,
-                "startTime": "Fri Apr 26 03:16:50 CDT 2019",
-                "submitTime": "Thu Apr 25 11:21:40 CDT 2019"
             }
         },
         {
@@ -260,30 +167,16 @@
                 "startTime": "Fri Apr 26 00:12:46 CDT 2019",
                 "submitTime": "Thu Apr 25 11:21:40 CDT 2019"
             }
+        },
+        {
+            "758617": {
+                "finishTime": null,
+                "startTime": "Fri Apr 26 03:16:50 CDT 2019",
+                "submitTime": "Thu Apr 25 11:21:40 CDT 2019"
+            }
         }
     ],
     "rafiisla": [
-        {
-            "756044": {
-                "finishTime": null,
-                "startTime": "Thu Apr 25 11:46:12 CDT 2019",
-                "submitTime": "Mon Apr 22 16:34:31 CDT 2019"
-            }
-        },
-        {
-            "755911": {
-                "finishTime": null,
-                "startTime": "Thu Apr 25 10:01:38 CDT 2019",
-                "submitTime": "Mon Apr 22 13:01:46 CDT 2019"
-            }
-        },
-        {
-            "755917": {
-                "finishTime": null,
-                "startTime": "Thu Apr 25 10:48:21 CDT 2019",
-                "submitTime": "Mon Apr 22 13:03:05 CDT 2019"
-            }
-        },
         {
             "756044": {
                 "finishTime": null,
@@ -319,52 +212,24 @@
     ],
     "shahrahm": [
         {
-            "757162": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 11:25:59 CDT 2019",
-                "submitTime": "Wed Apr 24 10:09:09 CDT 2019"
-            }
-        },
-        {
-            "757277": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:10:51 CDT 2019",
-                "submitTime": "Wed Apr 24 15:56:38 CDT 2019"
-            }
-        },
-        {
-            "757277": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:10:51 CDT 2019",
-                "submitTime": "Wed Apr 24 15:56:38 CDT 2019"
-            }
-        },
-        {
-            "757235": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 13:39:13 CDT 2019",
-                "submitTime": "Wed Apr 24 13:24:43 CDT 2019"
-            }
-        },
-        {
-            "757162": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 11:25:59 CDT 2019",
-                "submitTime": "Wed Apr 24 10:09:09 CDT 2019"
-            }
-        },
-        {
-            "757277": {
-                "finishTime": null,
-                "startTime": "Wed Apr 24 16:10:51 CDT 2019",
-                "submitTime": "Wed Apr 24 15:56:38 CDT 2019"
-            }
-        },
-        {
             "756689": {
                 "finishTime": null,
                 "startTime": "Wed Apr 24 07:22:51 CDT 2019",
                 "submitTime": "Tue Apr 23 15:59:02 CDT 2019"
+            }
+        },
+        {
+            "757277": {
+                "finishTime": null,
+                "startTime": "Wed Apr 24 16:10:51 CDT 2019",
+                "submitTime": "Wed Apr 24 15:56:38 CDT 2019"
+            }
+        },
+        {
+            "757162": {
+                "finishTime": null,
+                "startTime": "Wed Apr 24 11:25:59 CDT 2019",
+                "submitTime": "Wed Apr 24 10:09:09 CDT 2019"
             }
         }
     ]
