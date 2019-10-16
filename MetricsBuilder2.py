@@ -308,8 +308,8 @@ def process_user_job(userJob):
         job_set = []
         agg_jobList = {}
         for job in jobList:
-            jobId = str(job.keys())
-            jobInfo = job[jobId]
+            jobId = job.keys()[0]
+            jobInfo = job.values()[0]
             if jobId not in job_set:
                 job_set.append(jobId)
                 agg_jobList.update(
