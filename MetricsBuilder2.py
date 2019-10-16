@@ -315,7 +315,7 @@ def core_to_threads(
             thread.join()
             # Update Progress Bar
             printProgressBar(
-                index + 1, exec_hosts_len, 
+                index + 1, hostIp_list_len, 
                 prefix = 'Progress:', suffix = 'Complete', length = 50
             )
     except:
