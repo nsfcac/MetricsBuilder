@@ -121,7 +121,7 @@ def preprocess_uge(ugeMetric):
     job_user_time_dic = {}
 
     for item in ugeMetric:
-        string = item["job_data"]
+        string = str(item["job_data"])
         job_data = json.loads(string)
         jobID = job_data["jobID"]
         user = job_data["user"]
