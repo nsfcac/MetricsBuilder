@@ -120,29 +120,31 @@ def preprocess_uge(ugeMetric):
     usr_list = []
     job_user_time_dic = {}
 
-    for item in ugeMetric:
-        dataStr = item["job_data"].replace("'",'"')
-        job_data = json.loads(dataStr)
-        jobID = job_data["jobID"]
-        user = job_data["user"]
-        submitTime = job_data["submitTime"]
-        startTime = job_data["startTime"]
+    try:
+        for item in ugeMetric:
+            dataStr = item["job_data"].replace("'",'"')
+            job_data = json.loads(dataStr)
+            jobID = job_data["jobID"]
+            user = job_data["user"]
+            submitTime = job_data["submitTime"]
+            startTime = job_data["startTime"]
 
-        if jobID not in job_list:
-            job_list.append(jobID)
-            job_time_dic = {
-                        jobID: {
-                            "submitTime": submitTime,
-                            "startTime": startTime,
-                            "finishTime": None
+            if jobID not in job_list:
+                job_list.append(jobID)
+                job_time_dic = {
+                            jobID: {
+                                "submitTime": submitTime,
+                                "startTime": startTime,
+                                "finishTime": None
+                            }
                         }
-                    }
-            if user not in usr_list:
-                usr_list.append(jobID)
-                job_user_time_dic.update({user:[job_time_dic]})
-            else:
-                job_user_time_dic[user].append(job_time_dic)
-
+                if user not in usr_list:
+                    usr_list.append(jobID)
+                    job_user_time_dic.update({user:[job_time_dic]})
+                else:
+                    job_user_time_dic[user].append(job_time_dic)
+    except:
+        pass
     return job_user_time_dic
 
 def get_metrics(
@@ -253,13 +255,13 @@ def get_metrics(
     uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_metrics = preprocess_uge(uge_raw)
 
-    for key, value in uge_metrics.items():
-        if key in userJob:
+    for userName, jobIdArr in uge_metrics.items():
+        if userName in userJob:
             userJob[key].extend(value)
         else:
             userJob.update(
                 {
-                    key: value
+                    userName: jobIdArr
                 }
             )
 # End of get_metrics
