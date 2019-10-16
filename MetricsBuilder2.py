@@ -32,7 +32,7 @@ def main():
     #     startTime, endTime, timeInterval
     # )
 
-    query = """SELECT MEAN("CPU1 Temp") as "CPU1 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"""
+    query = """SELECT MEAN("CPU1 Temp") as "CPU1 Temp" MEAN("CPU2 Temp") as "CPU2 Temp" FROM CPU_Temperature WHERE host='10.101.3.53'AND time >= '2019-04-26T00:00:00Z' AND time <= '2019-04-26T05:00:00Z' GROUP BY time(5m),* SLIMIT 1"""
     result = list(client.query(query).get_points())
 
     with open("./influxdb/mean_test.json", "w") as outfile:
