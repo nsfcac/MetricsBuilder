@@ -30,21 +30,25 @@ def main():
     measure_uge_list = ["Job_Info"]
     hostIp_list = parse_host()
 
+    outfile_name = "./influxdb/host_list.json"
+    with open(outfile_name, "w") as outfile:
+        json.dump(hostIp_list, outfile, indent = 4, sort_keys = True)
+
     # get_metrics(
     #     client, hostIp, measure_bmc_list, 
     #     userJob, hostDetail,
     #     startTime, endTime, timeInterval
     # )
 
-    core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
-        startTime, endTime, timeInterval
-    )
+    # core_to_threads(
+    #     hostIp_list, measure_bmc_list, client,
+    #     userJob, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
 
-    outfile_name = "./influxdb/userJob.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(userJob, outfile, indent = 4, sort_keys = True)
+    # outfile_name = "./influxdb/userJob.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(userJob, outfile, indent = 4, sort_keys = True)
 
 def parse_host():
     hostIp_list = []
