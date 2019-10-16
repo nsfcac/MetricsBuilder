@@ -255,13 +255,13 @@ def get_metrics(
     uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_metrics = preprocess_uge(uge_raw)
 
-    for userName, jobIdArr in uge_metrics.items():
-        if userName in userJob:
+    for key, value in uge_metrics.items():
+        if key in userJob:
             userJob[key].extend(value)
         else:
             userJob.update(
                 {
-                    userName: jobIdArr
+                    userName: value
                 }
             )
 # End of get_metrics
