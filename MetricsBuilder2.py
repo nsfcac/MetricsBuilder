@@ -30,9 +30,12 @@ def main():
     measure_uge_list = ["Job_Info"]
     hostIp_list = parse_host()
 
-    # outfile_name = "./influxdb/host_list.json"
-    # with open(outfile_name, "w") as outfile:
-    #     json.dump(hostIp_list, outfile, indent = 4, sort_keys = True)
+    ugeMetrics = query_uge(client, hostIp_list[0], startTime, endTime, timeInterval)
+    user_job_sample = preprocess_uge(ugeMetrics)
+
+    outfile_name = "./influxdb/userJobSample.json"
+    with open(outfile_name, "w") as outfile:
+        json.dump(user_job_sample, outfile, indent = 4, sort_keys = True)
 
     # get_metrics(
     #     client, hostIp, measure_bmc_list, 
@@ -40,15 +43,15 @@ def main():
     #     startTime, endTime, timeInterval
     # )
 
-    core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
-        startTime, endTime, timeInterval
-    )
+    # core_to_threads(
+    #     hostIp_list, measure_bmc_list, client,
+    #     userJob, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
 
-    outfile_name = "./influxdb/userJob.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(userJob, outfile, indent = 4, sort_keys = True)
+    # outfile_name = "./influxdb/userJob.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(userJob, outfile, indent = 4, sort_keys = True)
 
 def parse_host():
     hostIp_list = []
@@ -118,7 +121,8 @@ def preprocess_uge(ugeMetric):
     job_user_time_dic = {}
 
     for item in ugeMetric:
-        job_data = eval(item["job_data"])
+        string = item["job_data"]
+        job_data = json.loads(string)
         jobID = job_data["jobID"]
         user = job_data["user"]
         submitTime = job_data["submitTime"]
