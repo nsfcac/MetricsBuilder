@@ -49,9 +49,11 @@ def main():
         startTime, endTime, timeInterval
     )
 
+    userJobResult = process_user_job(userJob)
+
     outfile_name = "./influxdb/userJob.json"
     with open(outfile_name, "w") as outfile:
-        json.dump(userJob, outfile, indent = 4, sort_keys = True)
+        json.dump(userJobResult, outfile, indent = 4, sort_keys = True)
 
 def parse_host():
     hostIp_list = []
@@ -288,16 +290,38 @@ def get_metrics(
     uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_metrics = preprocess_uge(uge_raw)
 
-    for key, value in uge_metrics.items():
-        if key in userJob:
-            userJob[key].extend(value)
+    # Process userJob
+    for userId, jobInfo in uge_metrics.items():
+        if userId in userJob:
+            userJob[userId].extend(jobInfo)
         else:
             userJob.update(
                 {
-                    key: value
+                    userId: jobInfo
                 }
             )
 # End of get_metrics
+
+def process_user_job(userJob):
+    userJobResult = {}
+    for userId, jobList in userJob.items():
+        job_set = []
+        agg_jobList = {}
+        for job in jobList:
+            jobId = job.keys()
+            jobInfo = job[jobId]
+            if jobId not in job_set:
+                job_set.append(jobId)
+                agg_jobList.update(
+                    {
+                        jobId: jobInfo
+                    }
+                )
+            else:
+                agg_jobList[jobId]["nodes"].extend(jobInfo["nodes"])
+        userJobResult.update({ userId: agg_jobList})
+    return userJobResult
+
 
 def core_to_threads(
         hostIp_list, measure_bmc_list, client,
