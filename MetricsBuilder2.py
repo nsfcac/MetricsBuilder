@@ -32,20 +32,20 @@ def main():
         startTime, endTime, timeInterval
     )
 
-    # for item in measure_bmc_list:
-    #     metric = query_bmc(
-    #         client, hostIp, item, "MAX", startTime, endTime, timeInterval
-    #     )
-    #     outfile_name = "./influxdb/" + item + ".json"
-    #     with open(outfile_name, "w") as outfile:
-    #         json.dump(metric, outfile, indent = 4, sort_keys = True)
+    for item in measure_bmc_list:
+        metric = query_bmc(
+            client, hostIp, item, "MEAN", startTime, endTime, timeInterval
+        )
+        outfile_name = "./influxdb/" + item + ".json"
+        with open(outfile_name, "w") as outfile:
+            json.dump(metric, outfile, indent = 4, sort_keys = True)
 
     # metric = query_uge(client, startTime, endTime, timeInterval)
     # processed_metric = preprocess_uge(metric)
 
-    outfile_name = "./influxdb/hostDetail.json"
-    with open(outfile_name, "w") as outfile:
-        json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
+    # outfile_name = "./influxdb/hostDetail.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(hostDetail, outfile, indent = 4, sort_keys = True)
 
 def parse_host():
     hostIp_list = []
