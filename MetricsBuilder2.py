@@ -72,7 +72,7 @@ def query_bmc(
     startTime and endTime(time range)
     """
 
-    if measureType == "MIN" or measureType =="MAX"
+    if measureType == "MIN" or measureType =="MAX":
         if measurement == "CPU_Temperature":
             select_obj = """("CPU1 Temp") as "CPU1 Temp","CPU2 Temp" """
         elif measurement == "Inlet_Temperature":
@@ -147,7 +147,7 @@ def get_metrics(
         userJob, hostDetail,
         startTime, endTime, timeInterval
     ):
-
+    # Get BMC metrics
     fans = []
     cpus = []
     memory = []
@@ -245,6 +245,10 @@ def get_metrics(
             }
         }
     )
+
+    # # Get UGE metrics
+    # uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
+    # uge_metrics = preprocess_uge(uge_raw)
 
 def core_to_threads(hostIp_list):
     hostIp_list_len = len(hostIp_list)
