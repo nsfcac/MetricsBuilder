@@ -59,7 +59,7 @@ def parse_host():
         for item in list_arr:
             hostName = item[1:-1]
             hostIp = hostName.split(":")[0]
-            hostIp_list.append(hostIp)
+            hostIp_list.append(hostName)
     return hostIp_list
 
 def query_bmc(
