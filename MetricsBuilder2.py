@@ -9,7 +9,8 @@ def main():
     client = InfluxDBClient(
         host='localhost', 
         port=8086, 
-        database='hpcc_monitoring_db')
+        database='hpcc_monitoring_db'
+    )
 
     hostIp_list = parse_host()
 
@@ -28,7 +29,6 @@ def main():
     ]
 
     measure_uge_list = ["Job_Info"]
-    hostIp_list = parse_host()
 
     # ugeMetrics = query_uge(client, hostIp_list[0], startTime, endTime, timeInterval)
     # user_job_sample = preprocess_uge(ugeMetrics)
@@ -72,6 +72,7 @@ def query_bmc(
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
+    result = []
 
     if measurement == "CPU_Temperature":
         select_obj = (measureType + """("CPU1 Temp") as "CPU1 Temp", """
@@ -90,7 +91,7 @@ def query_bmc(
     else:
         select_obj = measureType + """("powerusage_watts") as "Power Usage" """
 
-    query = (
+    queryStr = (
         "SELECT " + select_obj
         + "FROM " + measurement 
         + " WHERE host='" + hostIp 
@@ -99,12 +100,22 @@ def query_bmc(
         + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
     )
 
-    result = list(client.query(query).get_points())
-    # print("Querying " + measureType + "data: " + measurement)
+    try:
+        influxdbQuery = client.query(queryStr)
+        # print("Querying " + measureType + "data: " + measurement)
+        result = list(influxdbQuery.get_points())
+    except:
+        pass
+
     return result
 
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
-    query = (
+    """Generate query string based on the ip address, 
+    startTime and endTime(time range)
+    """
+    result = []
+
+    queryStr = (
         "SELECT "
         + "DISTINCT(job_data) as job_data FROM Job_Info"
         + " WHERE host='" + hostIp 
@@ -112,7 +123,14 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
         + "' AND time <= '" + endTime
         + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
     )
-    result = list(client.query(query).get_points())
+
+    try:
+        influxdbQuery = client.query(queryStr)
+        # print("Querying " + measureType + "data: " + measurement)
+        result = list(influxdbQuery.get_points())
+    except:
+        pass
+
     return result
 
 def preprocess_uge(ugeMetric):
