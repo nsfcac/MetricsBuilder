@@ -57,7 +57,8 @@ def parse_host():
         list_str = data[1:-1]
         list_arr = list_str.split(',')
         for item in list_arr:
-            hostIp = item.split(':')[0][1:]
+            hostName = item[1:-1]
+            hostIp = hostName.split(":")[0]
             hostIp_list.append(hostIp)
     return hostIp_list
 
