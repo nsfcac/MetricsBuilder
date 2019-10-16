@@ -1,9 +1,10 @@
 import json
+from  threading import Thread
 from influxdb import InfluxDBClient
 
 def main():
     printlogo()
-    
+
     # Set up client
     client = InfluxDBClient(
         host='localhost', 
