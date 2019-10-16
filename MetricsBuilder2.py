@@ -261,7 +261,7 @@ def get_metrics(
         else:
             userJob.update(
                 {
-                    userName: value
+                    key: value
                 }
             )
 # End of get_metrics
