@@ -360,17 +360,10 @@ def api_filter():
     endTime = query_parameters.get('endtime')
     timeInterval = query_parameters.get('interval')
 
-    print(startTime)
-    print(endTime)
-    print(timeInterval)
-
     # Validate start and end time
     st = validate_time(startTime)
     et = validate_time(endTime)
 
-    print(st)
-    print(et)
-    
     if not st or not et or st>et:
         return "Invalid start time and end time!\n"
 
@@ -379,9 +372,7 @@ def api_filter():
     if not time_valid.match(timeInterval):
         return "Invalid Time Interval!\n"
 
-    return "Run\n"
-
-    printlogo()
+    # printlogo()
     # Set up client
     print("Set up influxDB client")
     client = InfluxDBClient(
@@ -390,12 +381,8 @@ def api_filter():
         database='hpcc_monitoring_db'
     )
 
+    # Get hosts Ip
     hostIp_list = parse_host()
-
-    # # hostIp = '10.101.3.53'
-    # startTime = '2019-04-26T00:00:00Z'
-    # endTime = '2019-04-27T00:00:00Z'
-    # timeInterval = '1h'
 
     userJobRecord = {}
 
@@ -425,6 +412,7 @@ def api_filter():
         "userJob": userJob
     }
 
+    print("Return aggregated metrics!")
     return returnData
     # outfile_name = "./influxdb/returnData.json"
     # with open(outfile_name, "w") as outfile:
