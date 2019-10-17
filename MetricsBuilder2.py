@@ -359,6 +359,9 @@ def api_filter():
     endTime = query_parameters.get('endtime')
     timeInterval = query_parameters.get('interval')
 
+    print(startTime)
+    print(endTime)
+
     # Validate start and end time
     st = validate_time(startTime)
     et = validate_time(endTime)
