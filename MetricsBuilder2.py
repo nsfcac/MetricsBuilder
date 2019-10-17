@@ -26,7 +26,8 @@ def api_filter():
 
     # if startTime > endTime:
     #     return "<h1>Invalid Time Range</h1>"
-    return "Done"
+    return timeInterval
+    
     printlogo()
     # Set up client
     print("Set up influxDB client")
