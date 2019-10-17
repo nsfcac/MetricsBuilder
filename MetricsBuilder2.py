@@ -14,7 +14,7 @@ def validate_time(date_text):
     try:
         date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S%Z")
         return date
-    except ValueError:
+    except:
         return False
 
 # Get all hosts ip address
