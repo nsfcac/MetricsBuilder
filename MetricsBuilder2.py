@@ -12,7 +12,7 @@ app.config["DEBUG"] = True
 # Validate start and end time 
 def validate_time(date_text):
     try:
-        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S.%fZ")
+        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S%Z")
         return date
     except:
         return False
