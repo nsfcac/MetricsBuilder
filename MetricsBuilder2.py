@@ -3,10 +3,12 @@ import flask
 import re
 import datetime
 from flask import request, jsonify
+from flask_ors import CORS
 from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = False
 
 # Validate start and end time 
@@ -418,4 +420,4 @@ def api_filter():
     # with open(outfile_name, "w") as outfile:
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
 
-app.run(host = '0.0.0.0')
+app.run(host='0.0.0.0')
