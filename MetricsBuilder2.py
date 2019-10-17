@@ -361,6 +361,7 @@ def api_filter():
 
     print(startTime)
     print(endTime)
+    print(timeInterval)
 
     # Validate start and end time
     st = validate_time(startTime)
