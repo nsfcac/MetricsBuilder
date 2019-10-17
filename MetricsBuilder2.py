@@ -7,7 +7,6 @@ from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
-CORS(app)
 app.config["DEBUG"] = False
 
 # Validate start and end time 
