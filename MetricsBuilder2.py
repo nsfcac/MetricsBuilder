@@ -3,7 +3,7 @@ import flask
 import re
 import datetime
 from flask import request, jsonify
-from flask_ors import CORS
+from flask_cors import CORS
 from threading import Thread
 from influxdb import InfluxDBClient
 
