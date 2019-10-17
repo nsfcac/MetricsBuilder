@@ -372,14 +372,14 @@ def api_filter():
     print(et)
     
     if not st or not et or st>et:
-        return "Invalid start time and end time"
+        return "Invalid start time and end time!\n"
 
     # Validate time interval
     time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
     if not time_valid.match(timeInterval):
-        return "Invalid Time Interval"
+        return "Invalid Time Interval!\n"
 
-    return "Run"
+    return "Run\n"
 
     printlogo()
     # Set up client
