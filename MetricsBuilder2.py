@@ -374,7 +374,7 @@ def api_filter():
 
     # printlogo()
     # Set up client
-    print("Set up influxDB client")
+    print("Set up influxDB client...")
     client = InfluxDBClient(
         host='localhost', 
         port=8086, 
