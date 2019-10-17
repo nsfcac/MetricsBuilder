@@ -416,15 +416,16 @@ def api_filter():
         "hostDetail": hostDetail,
         "userJob": userJob
     }
-    response = app.response_class(
-        response=returnData,
-        status=200,
-        mimetype='appication/json'
-    )
+    
+    # response = app.response_class(
+    #     response=returnData,
+    #     status=200,
+    #     mimetype='appication/json'
+    # )
 
     print("Return aggregated metrics!")
     print("---%s seconds---" % (time.time() - start_time))
-    return response
+    return jsonify(returnData)
     # outfile_name = "./influxdb/returnData.json"
     # with open(outfile_name, "w") as outfile:
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
