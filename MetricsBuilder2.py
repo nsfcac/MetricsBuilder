@@ -19,7 +19,7 @@ def api_filter():
     timeInterval = query_parameters.get('interval')
 
     #[0-9]+[s, m, h, d, w]
-    time_valid = re.compile('[0-9]+[s, m, h, d, w]')
+    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
 
     if not time_valid.match(timeInterval):
         return "Invalid Time Interval"
@@ -27,7 +27,7 @@ def api_filter():
     # if startTime > endTime:
     #     return "<h1>Invalid Time Range</h1>"
     return timeInterval
-    
+
     printlogo()
     # Set up client
     print("Set up influxDB client")
