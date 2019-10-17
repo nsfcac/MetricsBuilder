@@ -366,6 +366,10 @@ def api_filter():
     # Validate start and end time
     st = validate_time(startTime)
     et = validate_time(endTime)
+
+    print(st)
+    print(et)
+    
     if not st or not et or st>et:
         return "Invalid start time and end time"
 
