@@ -2,7 +2,7 @@ import json
 import flask
 import re
 import datetime
-from flask import request
+from flask import request, jsonify
 from threading import Thread
 from influxdb import InfluxDBClient
 
