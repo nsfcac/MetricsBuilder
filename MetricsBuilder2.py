@@ -4,12 +4,12 @@ import re
 import datetime
 import time
 from flask import request, jsonify
-# from flask_cors import CORS
+from flask_cors import CORS
 from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
-# CORS(app)
+CORS(app)
 app.config["DEBUG"] = False
 
 # Validate start and end time 
@@ -416,12 +416,6 @@ def api_filter():
         "hostDetail": hostDetail,
         "userJob": userJob
     }
-    
-    # response = app.response_class(
-    #     response=returnData,
-    #     status=200,
-    #     mimetype='appication/json'
-    # )
 
     print("Return aggregated metrics!")
     print("---%s seconds---" % (time.time() - start_time))
