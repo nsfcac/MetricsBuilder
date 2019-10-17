@@ -2,11 +2,13 @@ import json
 import flask
 import re
 import datetime
+from flask_cors import CORS
 from flask import request, jsonify
 from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = False
 
 # Validate start and end time 
