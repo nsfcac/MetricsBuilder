@@ -2,6 +2,7 @@ import json
 import flask
 import re
 import datetime
+import time
 from flask import request, jsonify
 from flask_cors import CORS
 from threading import Thread
@@ -399,6 +400,8 @@ def api_filter():
 
     measure_uge_list = ["Job_Info"]
 
+    start_time = time.time()
+
     core_to_threads(
         hostIp_list, measure_bmc_list, client,
         userJobRecord, hostDetail,
@@ -415,6 +418,7 @@ def api_filter():
     }
 
     print("Return aggregated metrics!")
+    print("---%s seconds---" % (time.time() - start_time))
     return jsonify(returnData)
     # outfile_name = "./influxdb/returnData.json"
     # with open(outfile_name, "w") as outfile:
