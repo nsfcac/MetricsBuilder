@@ -1,8 +1,9 @@
 import json
 import flask
 import re
+import datetime
 from flask import request
-from  threading import Thread
+from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
@@ -18,15 +19,18 @@ def api_filter():
     endTime = query_parameters.get('endtime')
     timeInterval = query_parameters.get('interval')
 
-    #[0-9]+[s, m, h, d, w]
-    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
+    # Validate start and end time
+    st = validate_time(startTime)
+    et = validate_time(endTime)
+    if not st or not et or st>et:
+        return "Invalid start time and end time"
 
+    # Validate time interval
+    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
     if not time_valid.match(timeInterval):
         return "Invalid Time Interval"
 
-    # if startTime > endTime:
-    #     return "<h1>Invalid Time Range</h1>"
-    return timeInterval
+    return "Run"
 
     printlogo()
     # Set up client
@@ -78,6 +82,14 @@ def api_filter():
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
 
 app.run()
+
+# Validate start and end time 
+def validate_time(date_text):
+    try:
+        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S.%fZ")
+        return date
+    except ValueError:
+        return False
 
 # Get all hosts ip address
 def parse_host():
