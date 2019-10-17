@@ -7,7 +7,7 @@ from threading import Thread
 from influxdb import InfluxDBClient
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 
 # Validate start and end time 
 def validate_time(date_text):
