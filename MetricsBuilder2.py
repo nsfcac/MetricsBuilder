@@ -2,7 +2,6 @@ import json
 import flask
 import re
 import datetime
-from flask_cors import CORS
 from flask import request, jsonify
 from threading import Thread
 from influxdb import InfluxDBClient
@@ -420,4 +419,4 @@ def api_filter():
     # with open(outfile_name, "w") as outfile:
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
 
-app.run()
+app.run(host = '0.0.0.0')
