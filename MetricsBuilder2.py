@@ -419,7 +419,7 @@ def api_filter():
 
     print("Return aggregated metrics!")
     print("---%s seconds---" % (time.time() - start_time))
-    return Response(jsonify(returnData), mimetype='application/json')
+    return Response((returnData), mimetype='application/json')
     # outfile_name = "./influxdb/returnData.json"
     # with open(outfile_name, "w") as outfile:
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
