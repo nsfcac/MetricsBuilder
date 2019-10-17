@@ -12,9 +12,10 @@ app.config["DEBUG"] = True
 # Validate start and end time 
 def validate_time(date_text):
     try:
-        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S%Z")
+        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%S.%fZ")
         return date
-    except ValueError:
+    except ValueError as e:
+        print(e)
         return False
 
 # Get all hosts ip address
