@@ -9,80 +9,6 @@ from influxdb import InfluxDBClient
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
-@app.route('/api/v1/', methods=['GET'])
-def api_filter():
-
-    validTime = ['s', 'm', 'h', 'd', 'w']
-    query_parameters = request.args
-
-    startTime = query_parameters.get('starttime')
-    endTime = query_parameters.get('endtime')
-    timeInterval = query_parameters.get('interval')
-
-    # Validate start and end time
-    st = validate_time(startTime)
-    et = validate_time(endTime)
-    if not st or not et or st>et:
-        return "Invalid start time and end time"
-
-    # Validate time interval
-    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
-    if not time_valid.match(timeInterval):
-        return "Invalid Time Interval"
-
-    return "Run"
-
-    printlogo()
-    # Set up client
-    print("Set up influxDB client")
-    client = InfluxDBClient(
-        host='localhost', 
-        port=8086, 
-        database='hpcc_monitoring_db'
-    )
-
-    hostIp_list = parse_host()
-
-    # # hostIp = '10.101.3.53'
-    # startTime = '2019-04-26T00:00:00Z'
-    # endTime = '2019-04-27T00:00:00Z'
-    # timeInterval = '1h'
-
-    userJobRecord = {}
-
-    userJob = {}
-    hostDetail = {}
-
-    measure_bmc_list = [
-        "CPU_Temperature", "Inlet_Temperature", 
-        "CPU_Usage", "Memory_Usage",
-        "Fan_Speed", "Node_Power_Usage",
-    ]
-
-    measure_uge_list = ["Job_Info"]
-
-    core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJobRecord, hostDetail,
-        startTime, endTime, timeInterval
-    )
-
-    userJob = process_user_job(userJobRecord)
-
-    returnData = {
-        "timeRange": [startTime, endTime],
-        "timeInterval": timeInterval,
-        "hostDetail": hostDetail,
-        "userJob": userJob
-    }
-
-    return returnData
-    # outfile_name = "./influxdb/returnData.json"
-    # with open(outfile_name, "w") as outfile:
-    #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
-
-app.run()
-
 # Validate start and end time 
 def validate_time(date_text):
     try:
@@ -422,3 +348,77 @@ def printlogo():
     print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
     print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
     print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
+
+@app.route('/api/v1/', methods=['GET'])
+def api_filter():
+
+    validTime = ['s', 'm', 'h', 'd', 'w']
+    query_parameters = request.args
+
+    startTime = query_parameters.get('starttime')
+    endTime = query_parameters.get('endtime')
+    timeInterval = query_parameters.get('interval')
+
+    # Validate start and end time
+    st = validate_time(startTime)
+    et = validate_time(endTime)
+    if not st or not et or st>et:
+        return "Invalid start time and end time"
+
+    # Validate time interval
+    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
+    if not time_valid.match(timeInterval):
+        return "Invalid Time Interval"
+
+    return "Run"
+
+    printlogo()
+    # Set up client
+    print("Set up influxDB client")
+    client = InfluxDBClient(
+        host='localhost', 
+        port=8086, 
+        database='hpcc_monitoring_db'
+    )
+
+    hostIp_list = parse_host()
+
+    # # hostIp = '10.101.3.53'
+    # startTime = '2019-04-26T00:00:00Z'
+    # endTime = '2019-04-27T00:00:00Z'
+    # timeInterval = '1h'
+
+    userJobRecord = {}
+
+    userJob = {}
+    hostDetail = {}
+
+    measure_bmc_list = [
+        "CPU_Temperature", "Inlet_Temperature", 
+        "CPU_Usage", "Memory_Usage",
+        "Fan_Speed", "Node_Power_Usage",
+    ]
+
+    measure_uge_list = ["Job_Info"]
+
+    core_to_threads(
+        hostIp_list, measure_bmc_list, client,
+        userJobRecord, hostDetail,
+        startTime, endTime, timeInterval
+    )
+
+    userJob = process_user_job(userJobRecord)
+
+    returnData = {
+        "timeRange": [startTime, endTime],
+        "timeInterval": timeInterval,
+        "hostDetail": hostDetail,
+        "userJob": userJob
+    }
+
+    return returnData
+    # outfile_name = "./influxdb/returnData.json"
+    # with open(outfile_name, "w") as outfile:
+    #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
+
+app.run()
