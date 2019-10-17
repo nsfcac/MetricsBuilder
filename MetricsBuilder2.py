@@ -1,5 +1,6 @@
 import json
 import flask
+import re
 from flask import request
 from  threading import Thread
 from influxdb import InfluxDBClient
@@ -17,13 +18,15 @@ def api_filter():
     endTime = query_parameters.get('endtime')
     timeInterval = query_parameters.get('interval')
 
-    timeVal = int(timeInterval[:-1])
+    #[0-9]+[s, m, h, d, w]
+    time_valid = re.compile('[0-9]+[s, m, h, d, w]')
+
+    if not time_valid.match(timeInterval):
+        return "Invalid Time Interval"
 
     # if startTime > endTime:
     #     return "<h1>Invalid Time Range</h1>"
-    if timeInterval[-1] not in validTime and timeVal <= 0:
-        return "<h1>Invalid Time Interval</h1>"
-
+    return "Done"
     printlogo()
     # Set up client
     print("Set up influxDB client")
@@ -72,7 +75,7 @@ def api_filter():
     # outfile_name = "./influxdb/returnData.json"
     # with open(outfile_name, "w") as outfile:
     #     json.dump(returnData, outfile, indent = 4, sort_keys = True)
-    
+
 app.run()
 
 # Get all hosts ip address
