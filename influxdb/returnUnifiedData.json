@@ -1,5 +1,3275 @@
 {
-    "hostDetail": {},
+    "hostDetail": {
+        "10.101.1.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.57": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.58": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.59": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.60": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.1.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.10.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.57": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.58": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.59": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.60": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.2.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.3.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.4.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.5.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.6.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.57": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.58": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.59": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.60": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.7.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.57": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.58": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.59": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.60": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.8.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.1": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.10": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.11": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.12": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.13": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.14": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.15": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.16": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.17": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.18": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.19": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.2": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.20": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.21": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.22": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.23": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.24": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.25": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.26": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.27": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.28": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.29": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.3": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.30": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.31": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.32": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.33": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.34": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.35": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.36": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.37": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.38": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.39": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.4": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.40": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.41": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.42": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.43": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.44": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.45": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.46": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.47": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.48": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.49": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.5": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.50": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.51": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.52": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.53": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.54": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.55": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.56": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.57": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.58": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.59": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.6": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.60": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.7": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.8": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        },
+        "10.101.9.9": {
+            "cpu_temp": [],
+            "cpus": [],
+            "fans": [],
+            "inlet_temp": [],
+            "memory": []
+        }
+    },
     "timeInterval": "5m",
     "timeRange": [
         "2019-10-17T15:00:00Z",
