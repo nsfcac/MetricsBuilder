@@ -43,30 +43,30 @@ def main():
 
     start_time = time.time()
 
-    unified_result = query_bmc_unified(
-        client, "10.101.1.1", "MAX", 
-        startTime, endTime, timeInterval
-    )
-    print(unified_result)
-
-    # core_to_threads(
-    #     hostIp_list, client,
-    #     userJobRecord, hostDetail,
+    # unified_result = query_bmc_unified(
+    #     client, "10.101.1.1", "MAX", 
     #     startTime, endTime, timeInterval
     # )
+    # print(unified_result)
 
-    # userJob = process_user_job(userJobRecord)
+    core_to_threads(
+        hostIp_list, client,
+        userJobRecord, hostDetail,
+        startTime, endTime, timeInterval
+    )
 
-    # returnData = {
-    #     "timeRange": [startTime, endTime],
-    #     "timeInterval": timeInterval,
-    #     "hostDetail": hostDetail,
-    #     "userJob": userJob
-    # }
+    userJob = process_user_job(userJobRecord)
 
-    # print("Return aggregated metrics!")
-    # print("---%s seconds---" % (time.time() - start_time))
-    # # return jsonify(returnData)
+    returnData = {
+        "timeRange": [startTime, endTime],
+        "timeInterval": timeInterval,
+        "hostDetail": hostDetail,
+        "userJob": userJob
+    }
+
+    print("Return aggregated metrics!")
+    print("---%s seconds---" % (time.time() - start_time))
+    # return jsonify(returnData)
     outfile_name = "./influxdb/returnUnifiedData.json"
     with open(outfile_name, "w") as outfile:
         json.dump(returnData, outfile, indent = 4, sort_keys = True)
@@ -111,6 +111,7 @@ def query_bmc_unified(
                 + measureType + """("CPU2 Temp") as "CPU2 Temp", """
                 + measureType + """("Inlet Temp") as "Inlet Temp", """
                 + measureType + """("cpuusage") as "CPU Usage", """
+                + measureType + """("memoryusage") as "Memory Usage", """
                 + measureType + """("FAN_1") as "FAN_1", """
                 + measureType + """("FAN_2") as "FAN_2", """
                 + measureType + """("FAN_3") as "FAN_3", """
