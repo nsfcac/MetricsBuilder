@@ -43,11 +43,11 @@ def main():
 
     start_time = time.time()
 
-    # core_to_threads(
-    #     hostIp_list, measure_bmc_list, client,
-    #     userJobRecord, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
+    core_to_threads(
+        hostIp_list, client,
+        userJobRecord, hostDetail,
+        startTime, endTime, timeInterval
+    )
 
     userJob = process_user_job(userJobRecord)
 
@@ -372,7 +372,7 @@ def process_user_job(userJob):
 
 
 def core_to_threads(
-        hostIp_list, measure_bmc_list, client,
+        hostIp_list, client,
         userJob, hostDetail,
         startTime, endTime, timeInterval
     ):
