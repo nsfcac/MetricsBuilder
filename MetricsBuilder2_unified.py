@@ -43,24 +43,30 @@ def main():
 
     start_time = time.time()
 
-    core_to_threads(
-        hostIp_list, client,
-        userJobRecord, hostDetail,
+    unified_result = query_bmc_unified(
+        client, "10.101.1.1", "MAX", 
         startTime, endTime, timeInterval
     )
+    print(unified_result)
 
-    userJob = process_user_job(userJobRecord)
+    # core_to_threads(
+    #     hostIp_list, client,
+    #     userJobRecord, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
 
-    returnData = {
-        "timeRange": [startTime, endTime],
-        "timeInterval": timeInterval,
-        "hostDetail": hostDetail,
-        "userJob": userJob
-    }
+    # userJob = process_user_job(userJobRecord)
 
-    print("Return aggregated metrics!")
-    print("---%s seconds---" % (time.time() - start_time))
-    # return jsonify(returnData)
+    # returnData = {
+    #     "timeRange": [startTime, endTime],
+    #     "timeInterval": timeInterval,
+    #     "hostDetail": hostDetail,
+    #     "userJob": userJob
+    # }
+
+    # print("Return aggregated metrics!")
+    # print("---%s seconds---" % (time.time() - start_time))
+    # # return jsonify(returnData)
     outfile_name = "./influxdb/returnUnifiedData.json"
     with open(outfile_name, "w") as outfile:
         json.dump(returnData, outfile, indent = 4, sort_keys = True)
