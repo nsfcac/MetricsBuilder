@@ -15,7 +15,7 @@ app.config["DEBUG"] = False
 def main():
     startTime = '2019-10-17T21:00:00Z'
     endTime = '2019-10-17T22:00:00Z'
-    timeInterval = '5m'
+    timeInterval = '2m'
 
     # Set up client
     print("Set up influxDB client...")
