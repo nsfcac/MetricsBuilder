@@ -13,8 +13,8 @@ CORS(app)
 app.config["DEBUG"] = False
 
 def main():
-    startTime = '2019-10-17T15:00:00Z'
-    endTime = '2019-10-17T16:00:00Z'
+    startTime = '2019-10-17T21:00:00Z'
+    endTime = '2019-10-17T22:00:00Z'
     timeInterval = '5m'
 
     # Set up client
