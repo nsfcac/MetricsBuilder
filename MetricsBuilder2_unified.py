@@ -111,8 +111,8 @@ def query_bmc_unified(
                 + measureType + """("FAN_4") as "FAN_4", """
                 + measureType + """("powerusage_watts") as "Power Usage" """)
     queryStr = (
-        "SELECT " + "cluster_unified_metrics"
-        + " FROM " + measurement 
+        "SELECT " + select_obj
+        + "FROM " + "cluster_unified_metrics" 
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
