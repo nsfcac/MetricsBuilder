@@ -354,7 +354,7 @@ def main(argv):
 
     startTime = ""
     endTime = ""
-    interval = ""
+    timeInterval = ""
 
     try:
         opts, args = getopt.getopt(argv, "s:e:i:", ["startTime=", "endTime=", "intervla="])
@@ -372,7 +372,7 @@ def main(argv):
     
     print("Start time is: ", startTime)
     print("End time is: ", endTime)
-    print("Time interval is: ", interval)
+    print("Time interval is: ", timeInterval)
 
     # Validate start and end time
     st = validate_time(startTime)
