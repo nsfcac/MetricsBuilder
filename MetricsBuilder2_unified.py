@@ -106,6 +106,11 @@ def query_bmc_unified(
         startTime, endTime, timeInterval
     ):
     # measurement = "cluster_unified_metrics"
+    """
+    time                CPU1_temp CPU2_temp CPUCores bmc_health_status cpu_health_status cpuusage fan1_health fan1_speed fan2_health fan2_speed fan3_health fan3_speed fan4_health fan4_speed host       host_health_status inlet_health_status inlet_temp jobID     led_indicator memory_health_status memoryusage power_state powerusage_watts
+----                --------- --------- -------- ----------------- ----------------- -------- ----------- ---------- ----------- ---------- ----------- ---------- ----------- ---------- ----       ------------------ ------------------- ---------- -----     ------------- -------------------- ----------- ----------- ----------------
+1572264011742000000 60        48        36       OK                OK                0.499444 OK          10220      OK          10220      OK          10220      OK          10290      10.101.1.1 OK                 OK                  18         qu_972678 Off           OK                   12.51       On          312
+    """
 
     select_obj = (measureType + """("CPU1 Temp") as "CPU1 Temp", """
                 + measureType + """("CPU2 Temp") as "CPU2 Temp", """
