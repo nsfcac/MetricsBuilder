@@ -370,9 +370,9 @@ def main(argv):
         elif opt in ("-i", "--interval"):
             interval = arg
     
-    print("Start time is: " startTime)
-    print("End time is: " endTime)
-    print("Time interval is: " interval)
+    print("Start time is: ", startTime)
+    print("End time is: ", endTime)
+    print("Time interval is: ", interval)
 
     # Validate start and end time
     st = validate_time(startTime)
