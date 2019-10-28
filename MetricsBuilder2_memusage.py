@@ -368,7 +368,7 @@ def main(argv):
         elif opt in ("-e", "--endTime"):
             endTime = arg
         elif opt in ("-i", "--interval"):
-            interval = arg
+            timeInterval = arg
     
     print("Start time is: ", startTime)
     print("End time is: ", endTime)
