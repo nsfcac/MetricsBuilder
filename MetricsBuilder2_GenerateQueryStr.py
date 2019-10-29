@@ -86,6 +86,33 @@ def query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval):
 
     queryStrAll = queryStrAll + "; " + queryStr
 
+def get_metrics(
+        queryStrAll, hostIp, measure_bmc_list, 
+        startTime, endTime, timeInterval
+    ):
+    # Get BMC metrics
+    fans = []
+    cpus = []
+    memory = []
+    cpu_temp = []
+    inlet_temp = []
+
+    for item in measure_bmc_list:
+        query_bmc(
+            queryStrAll, hostIp, item, "MAX", startTime, endTime, timeInterval
+        )
+
+        query_bmc(
+            queryStrAll, hostIp, item, "MIN", startTime, endTime, timeInterval
+        )
+
+        query_bmc(
+            queryStrAll, hostIp, item, "MEAN", startTime, endTime, timeInterval
+        )
+
+    # Get UGE metrics
+    query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval)
+
 def core_to_threads(
         hostIp_list, measure_bmc_list, queryStrAll,
         startTime, endTime, timeInterval
