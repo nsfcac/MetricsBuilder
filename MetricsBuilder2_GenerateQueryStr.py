@@ -3,6 +3,7 @@ import json
 import re
 import datetime
 import time
+import os
 import sys, getopt
 from threading import Thread
 
@@ -41,22 +42,22 @@ def query_bmc(
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
-    if measurement == "CPU_Temperature":
-        select_obj = (measureType + """('CPU1 Temp') as 'CPU1 Temp', """
-                    + measureType + """('CPU2 Temp') as 'CPU2 Temp' """)
-    elif measurement == "Inlet_Temperature":
-        select_obj = measureType + """('Inlet Temp') as 'Inlet Temp' """
-    elif measurement == "CPU_Usage":
-        select_obj = measureType + """('cpuusage') as 'CPU Usage' """
-    elif measurement == "Memory_Usage":
-        select_obj = measureType + """('memoryusage') as 'Memory Usage' """
-    elif measurement == "Fan_Speed":
-        select_obj = (measureType + """('FAN_1') as 'FAN_1', """
-                    + measureType + """('FAN_2') as 'FAN_2', """
-                    + measureType + """('FAN_3') as 'FAN_3', """
-                    + measureType + """('FAN_4') as 'FAN_4' """)
-    else:
-        select_obj = measureType + """('powerusage_watts') as 'Power Usage' """
+    # if measurement == "CPU_Temperature":
+    #     select_obj = (measureType + """('CPU1 Temp'), """
+    #                 + measureType + """('CPU2 Temp') """)
+    # elif measurement == "Inlet_Temperature":
+    #     select_obj = measureType + """('Inlet Temp') """
+    # elif measurement == "CPU_Usage":
+    #     select_obj = measureType + """('cpuusage') """
+    # elif measurement == "Memory_Usage":
+    #     select_obj = measureType + """('memoryusage') """
+    # elif measurement == "Fan_Speed":
+    #     select_obj = (measureType + """('FAN_1'), """
+    #                 + measureType + """('FAN_2'), """
+    #                 + measureType + """('FAN_3'), """
+    #                 + measureType + """('FAN_4') """)
+
+    select_obj = measureType + """(*)"""
 
     queryStr = (
         "SELECT " + select_obj
@@ -75,7 +76,7 @@ def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
     """
     queryStr = (
         "SELECT "
-        + "DISTINCT(job_data) as job_data FROM Job_Info"
+        + "DISTINCT(job_data)"
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
@@ -174,6 +175,14 @@ def main(argv):
 
     queryStrings = ' '.join(queryList)
 
+    cmd = (
+        "#!/usr/bin/bash\n\n"
+        + "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
+        + "\""
+        + queryStrings
+        + "\""
+    ) 
+
     with open(bashfilename, "w") as bash_file:
         bashScript = (
             "#!/usr/bin/bash\n\n"
@@ -183,6 +192,8 @@ def main(argv):
             + "\""
         )
         bash_file.write(bashScript)
+    
+    os.system(cmd)
         
 if __name__ == "__main__":
     main(sys.argv[1:])
