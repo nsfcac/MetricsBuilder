@@ -175,22 +175,16 @@ def main(argv):
 
     queryStrings = ' '.join(queryList[0:9])
 
-    cmd = "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles " + "\"\"\" \" " + queryStrings + "\" \"\"\""
-
-
     with open(bashfilename, "w") as bash_file:
         bashScript = (
             "#!/usr/bin/bash\n\n"
-            + "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles "
+            + "QPROF=$HOME/go/bin/qprof\n\n"
+            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles "
             + "\""
             + queryStrings
             + "\""
         )
         bash_file.write(bashScript)
-    
-    # print(cmd)
-
-    # os.system(cmd)
         
 if __name__ == "__main__":
     main(sys.argv[1:])
