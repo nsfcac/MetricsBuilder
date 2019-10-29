@@ -1,1 +1,0 @@
-qprof -db hpcc_monitoring_db -host http://localhost:8086 
