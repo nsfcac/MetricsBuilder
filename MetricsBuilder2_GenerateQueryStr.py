@@ -180,8 +180,11 @@ def main(argv):
     )
     print(queryStrAll)
     
-    # with open("./qprofScripts.txt", "w") as queryStrings:
-    #     queryStrings.write(queryStrAll)
+    with open("./qprofScripts.txt", "w") as queryStrings:
+        queryStrings.write(
+            "qprof -db hpcc_monitoring_db -host http://localhost:8086 " 
+            + queryStrAll
+        )
 
     
 if __name__ == "__main__":
