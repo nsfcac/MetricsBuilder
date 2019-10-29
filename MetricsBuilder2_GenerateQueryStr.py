@@ -58,11 +58,11 @@ def query_bmc(
     #                 + measureType + """('FAN_3'), """
     #                 + measureType + """('FAN_4') """)
 
-    select_obj = measureType + """(*) """
+    select_obj = measureType + """(*)"""
 
     queryStr = (
         "SELECT " + select_obj
-        + "FROM " + measurement 
+        + " FROM " + measurement 
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
@@ -77,7 +77,7 @@ def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
     """
     queryStr = (
         "SELECT "
-        + "DISTINCT(job_data)"
+        + "*"
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
