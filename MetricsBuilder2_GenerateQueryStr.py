@@ -98,9 +98,9 @@ def get_metrics(
             queryList, hostIp, item, "MIN", startTime, endTime, timeInterval
         )
 
-        query_bmc(
-            queryList, hostIp, item, "MEAN", startTime, endTime, timeInterval
-        )
+        # query_bmc(
+        #     queryList, hostIp, item, "MEAN", startTime, endTime, timeInterval
+        # )
 
     query_uge(queryList, hostIp, startTime, endTime, timeInterval)
 
@@ -176,7 +176,7 @@ def main(argv):
 
     print("Query List Lenght: ", len(queryList))
 
-    selectedQuery = random.choices(queryList, k=22)
+    selectedQuery = random.choices(queryList, k=720)
     print("Selected Query List Lenght: ", len(selectedQuery))
 
     queryStrings = ' '.join(selectedQuery)
@@ -185,7 +185,7 @@ def main(argv):
         bashScript = (
             "#!/usr/bin/bash\n\n"
             + "QPROF=$HOME/go/bin/qprof\n\n"
-            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles "
+            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles -n 8"
             + "\""
             + queryStrings
             + "\""
