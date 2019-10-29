@@ -106,7 +106,7 @@ def get_metrics(
 
     # Get UGE metrics
     query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval)
-    print(queryStrAll)
+    # print(queryStrAll)
 
 def genQueryStr(
         hostIp_list, measure_bmc_list, queryStrAll,
@@ -178,9 +178,10 @@ def main(argv):
         hostIp_list, measure_bmc_list, queryStrAll,
         startTime, endTime, timeInterval
     )
+    print(queryStrAll)
     
-    with open("./qprofScripts.txt", "w") as queryStrings:
-        queryStrings.write(queryStrAll)
+    # with open("./qprofScripts.txt", "w") as queryStrings:
+    #     queryStrings.write(queryStrAll)
 
     
 if __name__ == "__main__":
