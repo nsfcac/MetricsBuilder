@@ -165,7 +165,7 @@ def main(argv):
     measure_uge_list = ["Job_Info"]
 
     queryList = []
-    bashfilename = "./bash/" + startTime + "-" + endTime + "-" + timeInterval + ".sh"
+    bashfilename = "./bash/" + startTime + "-" + endTime + "-" + timeInterval
 
     genQueryStr(
         hostIp_list, measure_bmc_list, queryList,
@@ -176,7 +176,7 @@ def main(argv):
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
-            "#!/usr/bin/bash\n"
+            "#!/usr/bin/bash\n\n"
             + "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
             + "\""
             + queryStrings
