@@ -176,8 +176,7 @@ def main(argv):
     queryStrings = ' '.join(queryList)
 
     cmd = (
-        "#!/usr/bin/bash\n\n"
-        + "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
+        "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
         + "\""
         + queryStrings
         + "\""
