@@ -192,6 +192,8 @@ def main(argv):
         )
         bash_file.write(bashScript)
     
+    print(cmd)
+    
     os.system(cmd)
         
 if __name__ == "__main__":
