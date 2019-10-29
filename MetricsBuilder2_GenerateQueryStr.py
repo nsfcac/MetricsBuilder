@@ -81,7 +81,7 @@ def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1;"
+        + "' GROUP BY *, time(" + timeInterval + ") fill(null) SLIMIT 1;"
     )
     queryList.append(queryStr)
 
@@ -98,9 +98,9 @@ def get_metrics(
             queryList, hostIp, item, "MIN", startTime, endTime, timeInterval
         )
 
-        # query_bmc(
-        #     queryList, hostIp, item, "MEAN", startTime, endTime, timeInterval
-        # )
+        query_bmc(
+            queryList, hostIp, item, "MEAN", startTime, endTime, timeInterval
+        )
 
     query_uge(queryList, hostIp, startTime, endTime, timeInterval)
 
