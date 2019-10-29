@@ -176,7 +176,7 @@ def main(argv):
 
     print("Query List Lenght: ", len(queryList))
 
-    selectedQuery = random.choices(queryList, k=100)
+    selectedQuery = random.choices(queryList, k=20)
     print("Selected Query List Lenght: ", len(selectedQuery))
 
     queryStrings = ' '.join(selectedQuery)
