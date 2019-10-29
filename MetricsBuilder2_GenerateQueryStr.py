@@ -66,7 +66,7 @@ def query_bmc(
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1;"
+        + "' GROUP BY *, time(" + timeInterval + ") fill(0) SLIMIT 1;"
     )
 
     queryList.append(queryStr)
