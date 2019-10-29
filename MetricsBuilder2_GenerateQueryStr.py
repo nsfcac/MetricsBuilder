@@ -35,30 +35,28 @@ def get_hostip(hostname):
     return None
 
 def query_bmc(
-        queryStrAll, hostIp, measurement, measureType, 
+        queryList, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
     ):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
-    result = []
-
     if measurement == "CPU_Temperature":
-        select_obj = (measureType + """("CPU1 Temp") as "CPU1 Temp", """
-                    + measureType + """("CPU2 Temp") as "CPU2 Temp" """)
+        select_obj = (measureType + """('CPU1 Temp') as 'CPU1 Temp', """
+                    + measureType + """('CPU2 Temp') as 'CPU2 Temp' """)
     elif measurement == "Inlet_Temperature":
-        select_obj = measureType + """("Inlet Temp") as "Inlet Temp" """
+        select_obj = measureType + """('Inlet Temp') as 'Inlet Temp' """
     elif measurement == "CPU_Usage":
-        select_obj = measureType + """("cpuusage") as "CPU Usage" """
+        select_obj = measureType + """('cpuusage') as 'CPU Usage' """
     elif measurement == "Memory_Usage":
-        select_obj = measureType + """("memoryusage") as "Memory Usage" """
+        select_obj = measureType + """('memoryusage') as 'Memory Usage' """
     elif measurement == "Fan_Speed":
-        select_obj = (measureType + """("FAN_1") as "FAN_1", """
-                    + measureType + """("FAN_2") as "FAN_2", """
-                    + measureType + """("FAN_3") as "FAN_3", """
-                    + measureType + """("FAN_4") as "FAN_4" """)
+        select_obj = (measureType + """('FAN_1') as 'FAN_1', """
+                    + measureType + """('FAN_2') as 'FAN_2', """
+                    + measureType + """('FAN_3') as 'FAN_3', """
+                    + measureType + """('FAN_4') as 'FAN_4' """)
     else:
-        select_obj = measureType + """("powerusage_watts") as "Power Usage" """
+        select_obj = measureType + """('powerusage_watts') as 'Power Usage' """
 
     queryStr = (
         "SELECT " + select_obj
@@ -66,13 +64,12 @@ def query_bmc(
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1;"
     )
 
-    queryStrAll = queryStrAll + "; " + queryStr
-    print(queryStrAll)
+    queryList.append(queryStr)
 
-def query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval):
+def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
@@ -82,34 +79,31 @@ def query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval):
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1;"
     )
-
-    queryStrAll = queryStrAll + "; " + queryStr
+    queryList.append(queryStr)
 
 def get_metrics(
-        queryStrAll, hostIp, measure_bmc_list, 
+        queryList, hostIp, measure_bmc_list, 
         startTime, endTime, timeInterval
     ):
     for item in measure_bmc_list:
         query_bmc(
-            queryStrAll, hostIp, item, "MAX", startTime, endTime, timeInterval
+            queryList, hostIp, item, "MAX", startTime, endTime, timeInterval
         )
 
         query_bmc(
-            queryStrAll, hostIp, item, "MIN", startTime, endTime, timeInterval
+            queryList, hostIp, item, "MIN", startTime, endTime, timeInterval
         )
 
         query_bmc(
-            queryStrAll, hostIp, item, "MEAN", startTime, endTime, timeInterval
+            queryList, hostIp, item, "MEAN", startTime, endTime, timeInterval
         )
 
-    # Get UGE metrics
-    query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval)
-    # print(queryStrAll)
+    query_uge(queryList, hostIp, startTime, endTime, timeInterval)
 
 def genQueryStr(
-        hostIp_list, measure_bmc_list, queryStrAll,
+        hostIp_list, measure_bmc_list, queryList,
         startTime, endTime, timeInterval
     ):
 
@@ -117,7 +111,7 @@ def genQueryStr(
 
     for hostIp in hostIp_list:
         get_metrics(
-            queryStrAll, hostIp, measure_bmc_list,
+            queryList, hostIp, measure_bmc_list,
             startTime, endTime, timeInterval
         )
 
@@ -159,12 +153,8 @@ def main(argv):
     if not time_valid.match(timeInterval):
         return "Invalid Time Interval!\n"
 
-    # printlogo()
-
     # Get hosts Ip
     hostIp_list = parse_host()
-
-    queryStrAll = ""
 
     measure_bmc_list = [
         "CPU_Temperature", "Inlet_Temperature", 
@@ -174,18 +164,24 @@ def main(argv):
 
     measure_uge_list = ["Job_Info"]
 
+    queryList = []
+    bashfilename = "./bash/" + startTime + "-" + endTime + "-" + timeInterval + ".sh"
+
     genQueryStr(
-        hostIp_list, measure_bmc_list, queryStrAll,
+        hostIp_list, measure_bmc_list, queryList,
         startTime, endTime, timeInterval
     )
-    print(queryStrAll)
-    
-    with open("./qprofScripts.txt", "w") as queryStrings:
-        queryStrings.write(
-            "qprof -db hpcc_monitoring_db -host http://localhost:8086 " 
-            + queryStrAll
-        )
 
-    
+    queryStrings = ' '.join(queryList)
+
+    with open(bashfilename, "w") as bash_file:
+        bashScript = (
+            "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
+            + "\""
+            + queryStrings
+            + "\""
+        )
+        bash_file.write(bashScript)
+        
 if __name__ == "__main__":
     main(sys.argv[1:])
