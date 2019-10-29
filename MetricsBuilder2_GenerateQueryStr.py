@@ -88,7 +88,6 @@ def query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval):
 
 def core_to_threads(
         hostIp_list, measure_bmc_list, queryStrAll,
-        userJob, hostDetail,
         startTime, endTime, timeInterval
     ):
     print("Pulling Metrics From InfluxDB...")
@@ -205,7 +204,6 @@ def main(argv):
 
     core_to_threads(
         hostIp_list, measure_bmc_list, queryStrAll,
-        userJobRecord, hostDetail,
         startTime, endTime, timeInterval
     )
     
