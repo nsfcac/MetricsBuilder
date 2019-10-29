@@ -5,6 +5,7 @@ import datetime
 import time
 import os
 import sys, getopt
+import random
 from threading import Thread
 
 def validate_time(date_text):
@@ -173,7 +174,12 @@ def main(argv):
         startTime, endTime, timeInterval
     )
 
-    queryStrings = ' '.join(queryList)
+    print("Query List Lenght: ", len(queryList))
+
+    selectedQuery = random.choices(queryList, k=720)
+    print("Selected Query List Lenght: ", len(selectedQuery))
+
+    queryStrings = ' '.join(selectedQuery)
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
