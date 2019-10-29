@@ -173,7 +173,7 @@ def main(argv):
         startTime, endTime, timeInterval
     )
 
-    queryStrings = ' '.join(queryList[0:9])
+    queryStrings = ' '.join(queryList)
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
