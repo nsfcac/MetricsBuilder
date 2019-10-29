@@ -113,41 +113,19 @@ def get_metrics(
     # Get UGE metrics
     query_uge(queryStrAll, hostIp, startTime, endTime, timeInterval)
 
-def core_to_threads(
+def genQueryStr(
         hostIp_list, measure_bmc_list, queryStrAll,
         startTime, endTime, timeInterval
     ):
-    print("Pulling Metrics From InfluxDB...")
 
     hostIp_list_len = len(hostIp_list)
-    # For progress bar
-    printProgressBar(
-        0, hostIp_list_len, 
-        prefix = 'Progress:', suffix = 'Complete', length = 50
-    )
 
-    try:
-        threads = []
-        for hostIp in hostIp_list:
-            a = Thread(
-                target = get_metrics, 
-                args = (
-                    queryStrAll, hostIp, measure_bmc_list, 
-                    userJob, hostDetail,
-                    startTime, endTime, timeInterval
-                )
-            )
-            threads.append(a)
-            a.start()
-        for index, thread in enumerate(threads):
-            thread.join()
-            # Update Progress Bar
-            printProgressBar(
-                index + 1, hostIp_list_len, 
-                prefix = 'Progress:', suffix = 'Complete', length = 50
-            )
-    except:
-        pass
+    for hostIp in hostIp_list:
+        get_metrics(
+            queryStrAll, hostIp, measure_bmc_list,
+            startTime, endTime, timeInterval
+        )
+
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
     """
@@ -229,7 +207,7 @@ def main(argv):
 
     measure_uge_list = ["Job_Info"]
 
-    core_to_threads(
+    genQueryStr(
         hostIp_list, measure_bmc_list, queryStrAll,
         startTime, endTime, timeInterval
     )
