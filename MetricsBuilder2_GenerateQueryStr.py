@@ -57,7 +57,7 @@ def query_bmc(
     #                 + measureType + """('FAN_3'), """
     #                 + measureType + """('FAN_4') """)
 
-    select_obj = measureType + """(*)"""
+    select_obj = measureType + """(*) """
 
     queryStr = (
         "SELECT " + select_obj
@@ -173,16 +173,15 @@ def main(argv):
         startTime, endTime, timeInterval
     )
 
-    queryStrings = ' '.join(queryList)
+    queryStrings = ' '.join(queryList[0:9])
 
-    cmd = "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./" + "\"\"\" \" " + queryStrings + "\" \"\"\""
+    cmd = "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles " + "\"\"\" \" " + queryStrings + "\" \"\"\""
 
-    # cmd = "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./" + """ "SELECT MAX(*)FROM CPU_Temperature WHERE host='10.101.1.1' AND time >= '2019-04-20T00:00:00Z' AND time <= '2019-04-20T23:59:59Z' GROUP BY *, time(1h) SLIMIT 1; SELECT MIN(*)FROM CPU_Temperature WHERE host='10.101.1.1' AND time >= '2019-04-20T00:00:00Z' AND time <= '2019-04-20T23:59:59Z' GROUP BY *, time(1h) SLIMIT 1; SELECT MEAN(*)FROM CPU_Temperature WHERE host='10.101.1.1' AND time >= '2019-04-20T00:00:00Z' AND time <= '2019-04-20T23:59:59Z' GROUP BY *, time(1h) SLIMIT 1; SELECT MAX(*)FROM Inlet_Temperature WHERE host='10.101.1.1' AND time >= '2019-04-20T00:00:00Z' AND time <= '2019-04-20T23:59:59Z' GROUP BY *, time(1h) SLIMIT 1;" """
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
             "#!/usr/bin/bash\n\n"
-            + "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
+            + "qprof -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles "
             + "\""
             + queryStrings
             + "\""
@@ -191,7 +190,7 @@ def main(argv):
     
     # print(cmd)
 
-    os.system(cmd)
+    # os.system(cmd)
         
 if __name__ == "__main__":
     main(sys.argv[1:])
