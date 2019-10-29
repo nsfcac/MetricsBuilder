@@ -176,7 +176,8 @@ def main(argv):
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
-            "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
+            "#!/bin/bash\n"
+            + "qprof -db hpcc_monitoring_db -host http://localhost:8086 "
             + "\""
             + queryStrings
             + "\""
