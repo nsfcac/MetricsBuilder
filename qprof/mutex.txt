@@ -1,0 +1,1284 @@
+--- mutex:
+cycles/second=2526954184
+sampling period=1
+224119477324 12741 @ 0x474c6a 0x47595e 0x8ec737 0x883d08 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99						/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d						/usr/local/go/src/sync/rwmutex.go:131
+#	0x8ec736	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery+0x416	/go/src/github.com/influxdata/influxdb/query/task_manager.go:220
+#	0x883d07	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x177	/go/src/github.com/influxdata/influxdb/query/executor.go:252
+
+176219322490 5764 @ 0x474c6a 0x750bd2 0x743af6 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99									/usr/local/go/src/sync/mutex.go:211
+#	0x750bd1	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*lockedWriteSyncer).Write+0x91	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/write_syncer.go:67
+#	0x743af5	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0x105		/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:90
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f				/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+147861719984 6856 @ 0x474c44 0x47595e 0x8ec737 0x883d08 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73						/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d						/usr/local/go/src/sync/rwmutex.go:131
+#	0x8ec736	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery+0x416	/go/src/github.com/influxdata/influxdb/query/task_manager.go:220
+#	0x883d07	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x177	/go/src/github.com/influxdata/influxdb/query/executor.go:252
+
+126647915715 3171 @ 0x474c44 0x750bd2 0x743af6 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x750bd1	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*lockedWriteSyncer).Write+0x91	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/write_syncer.go:67
+#	0x743af5	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0x105		/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:90
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f				/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+126250873262 11944 @ 0x474c6a 0x47595e 0x8ecb7b 0x8f53e3 0x884105 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99							/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d							/usr/local/go/src/sync/rwmutex.go:131
+#	0x8ecb7a	github.com/influxdata/influxdb/query.(*TaskManager).DetachQuery+0xda		/go/src/github.com/influxdata/influxdb/query/task_manager.go:250
+#	0x8f53e2	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery.func2+0x32	/go/src/github.com/influxdata/influxdb/query/task_manager.go:220
+#	0x884104	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x574		/go/src/github.com/influxdata/influxdb/query/executor.go:378
+
+85692255563 3119 @ 0x474c44 0x5172ef 0x51765a 0xd3e113 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x5172ee	log.(*Logger).Output+0x21e										/usr/local/go/src/log/log.go:173
+#	0x517659	log.(*Logger).Println+0x69										/usr/local/go/src/log/log.go:188
+#	0xd3e112	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0x392				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1721
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+72806220047 3274 @ 0x474c44 0x47595e 0x8ecb7b 0x8f53e3 0x884105 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d							/usr/local/go/src/sync/rwmutex.go:131
+#	0x8ecb7a	github.com/influxdata/influxdb/query.(*TaskManager).DetachQuery+0xda		/go/src/github.com/influxdata/influxdb/query/task_manager.go:250
+#	0x8f53e2	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery.func2+0x32	/go/src/github.com/influxdata/influxdb/query/task_manager.go:220
+#	0x884104	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x574		/go/src/github.com/influxdata/influxdb/query/executor.go:378
+
+44164992153 376 @ 0x474c6a 0x47595e 0xe5e535 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99									/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d									/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+43972888516 620 @ 0x47593b 0xe5e535 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+26521172700 630 @ 0x474c6a 0x5172ef 0x51765a 0xd3e113 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99										/usr/local/go/src/sync/mutex.go:211
+#	0x5172ee	log.(*Logger).Output+0x21e										/usr/local/go/src/log/log.go:173
+#	0x517659	log.(*Logger).Println+0x69										/usr/local/go/src/log/log.go:188
+#	0xd3e112	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0x392				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1721
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+11945803398 55 @ 0x474c44 0x47595e 0xe5e535 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d									/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+10217672127 226 @ 0x474c44 0x474e8a 0x740e21 0x740c94 0x743b21 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x474e89	sync.(*Pool).Put+0xe9										/usr/local/go/src/sync/pool.go:109
+#	0x740e20	github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer.Pool.put+0x40			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer/pool.go:48
+#	0x740c93	github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer.(*Buffer).Free+0x33		/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer/buffer.go:114
+#	0x743b20	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0x130		/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:91
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f				/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+7390204899 4208 @ 0x474c6a 0x47595e 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99										/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d										/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+5387525440 66 @ 0x474c44 0x4751bb 0x47507b 0x5030f1 0x502b16 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a										/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a											/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+4491772093 2 @ 0x474c44 0x474e8a 0x502bf7 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x474e89	sync.(*Pool).Put+0xe9											/usr/local/go/src/sync/pool.go:109
+#	0x502bf6	encoding/json.Marshal+0x106										/usr/local/go/src/encoding/json/encode.go:167
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6									/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81								/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3								/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51										/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+3824495138 24001 @ 0x474c44 0x47595e 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d										/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+3477289309 862 @ 0x474c44 0x472cbc 0x709af3 0x70e049 0x70ee47 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73			/usr/local/go/src/sync/mutex.go:201
+#	0x472cbb	sync.(*Cond).Wait+0x7b				/usr/local/go/src/sync/cond.go:55
+#	0x709af2	net/http.(*connReader).abortPendingRead+0xc2	/usr/local/go/src/net/http/server.go:724
+#	0x70e048	net/http.(*response).finishRequest+0x98		/usr/local/go/src/net/http/server.go:1569
+#	0x70ee46	net/http.(*conn).serve+0x686			/usr/local/go/src/net/http/server.go:1852
+
+2074862922 17 @ 0x47593b 0xe5e535 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+1957352442 74 @ 0x474c44 0x47510c 0x47507b 0x5030f1 0x502b16 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x47510b	sync.(*Pool).getSlow+0x5b										/usr/local/go/src/sync/pool.go:173
+#	0x47507a	sync.(*Pool).Get+0x12a											/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+1538187885 277 @ 0x475841 0xe5e229 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5e228	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x1e8	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:203
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+1197350738 29614 @ 0x47593b 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a										/usr/local/go/src/sync/rwmutex.go:128
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+980698075 45 @ 0x474c44 0x781683 0x77eec0 0x783661 0x785f74 0x7c6098 0xd382ce 0xd26b4a 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x781682	regexp.(*Regexp).get+0xd2										/usr/local/go/src/regexp/regexp.go:215
+#	0x77eebf	regexp.(*Regexp).doExecute+0x3f										/usr/local/go/src/regexp/exec.go:419
+#	0x783660	regexp.(*Regexp).allMatches+0x170									/usr/local/go/src/regexp/regexp.go:692
+#	0x785f73	regexp.(*Regexp).FindAllStringSubmatchIndex+0xa3							/usr/local/go/src/regexp/regexp.go:1136
+#	0x7c6097	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Sanitize+0xb7			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/sanitize.go:35
+#	0xd382cd	github.com/influxdata/influxdb/services/httpd.sanitize+0xad						/go/src/github.com/influxdata/influxdb/services/httpd/response_logger.go:164
+#	0xd26b49	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x2e9				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:446
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+797587127 11 @ 0x474c44 0x474e8a 0x70a2fb 0x70e370 0x70e3db 0x72eacf 0x70f371 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x474e89	sync.(*Pool).Put+0xe9			/usr/local/go/src/sync/pool.go:109
+#	0x70a2fa	net/http.putBufioReader+0xca		/usr/local/go/src/net/http/server.go:836
+#	0x70e36f	net/http.(*conn).finalFlush+0x8f	/usr/local/go/src/net/http/server.go:1625
+#	0x70e3da	net/http.(*conn).close+0x2a		/usr/local/go/src/net/http/server.go:1640
+#	0x72eace	net/http.(*conn).serve.func1+0x20e	/usr/local/go/src/net/http/server.go:1750
+#	0x70f370	net/http.(*conn).serve+0xbb0		/usr/local/go/src/net/http/server.go:1808
+
+469822344 1 @ 0x474c44 0x47510c 0x47507b 0x709f6f 0x70ebb4 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73	/usr/local/go/src/sync/mutex.go:201
+#	0x47510b	sync.(*Pool).getSlow+0x5b	/usr/local/go/src/sync/pool.go:173
+#	0x47507a	sync.(*Pool).Get+0x12a		/usr/local/go/src/sync/pool.go:141
+#	0x709f6e	net/http.newBufioReader+0x3e	/usr/local/go/src/net/http/server.go:824
+#	0x70ebb3	net/http.(*conn).serve+0x3f3	/usr/local/go/src/net/http/server.go:1784
+
+406225002 7 @ 0x474c44 0x7817ac 0x77f1b8 0x783661 0x785f74 0x7c6098 0xd382ce 0xd26b4a 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x7817ab	regexp.(*Regexp).put+0xfb										/usr/local/go/src/regexp/regexp.go:236
+#	0x77f1b7	regexp.(*Regexp).doExecute+0x337									/usr/local/go/src/regexp/exec.go:441
+#	0x783660	regexp.(*Regexp).allMatches+0x170									/usr/local/go/src/regexp/regexp.go:692
+#	0x785f73	regexp.(*Regexp).FindAllStringSubmatchIndex+0xa3							/usr/local/go/src/regexp/regexp.go:1136
+#	0x7c6097	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Sanitize+0xb7			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/sanitize.go:35
+#	0xd382cd	github.com/influxdata/influxdb/services/httpd.sanitize+0xad						/go/src/github.com/influxdata/influxdb/services/httpd/response_logger.go:164
+#	0xd26b49	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x2e9				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:446
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+356818768 11 @ 0x474c44 0x475059 0x5030f1 0x502b16 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108											/usr/local/go/src/sync/pool.go:139
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+308286328 26798 @ 0x475841 0xe5f099 0xe5e3f3 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80										/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5f098	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x498	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:303
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+258512315 2 @ 0x474c44 0x47cda4 0x47c9c9 0x92b230 0xe854b0 0xe8519b 0xe934c4 0xe92ec2 0xea1a5f 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x47cda3	syscall.(*mmapper).Mmap+0x1c3							/usr/local/go/src/syscall/syscall_unix.go:79
+#	0x47c9c8	syscall.Mmap+0x68								/usr/local/go/src/syscall/syscall_linux.go:998
+#	0x92b22f	github.com/influxdata/influxdb/pkg/mmap.Map+0x13f				/go/src/github.com/influxdata/influxdb/pkg/mmap/mmap_unix.go:35
+#	0xe854af	github.com/influxdata/influxdb/tsdb/index/tsi1.(*LogFile).open+0x2af		/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/log_file.go:143
+#	0xe8519a	github.com/influxdata/influxdb/tsdb/index/tsi1.(*LogFile).Open+0x2a		/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/log_file.go:110
+#	0xe934c3	github.com/influxdata/influxdb/tsdb/index/tsi1.(*Partition).openLogFile+0x73	/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/partition.go:254
+#	0xe92ec1	github.com/influxdata/influxdb/tsdb/index/tsi1.(*Partition).Open+0x7e1		/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/partition.go:193
+#	0xea1a5e	github.com/influxdata/influxdb/tsdb/index/tsi1.(*Index).Open.func1+0x3e		/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/index.go:286
+
+163728402 6 @ 0x474c44 0x474e8a 0x502bf7 0x8dd434 0x5040d7 0x50728c 0x510614 0x506ee1 0x510594 0x505e90 0x510494 0x5074a3 0x510694 0x5037c2 0x503274 0x502b42 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4
+#	0x474c43	sync.(*Mutex).Unlock+0x73								/usr/local/go/src/sync/mutex.go:201
+#	0x474e89	sync.(*Pool).Put+0xe9									/usr/local/go/src/sync/pool.go:109
+#	0x502bf6	encoding/json.Marshal+0x106								/usr/local/go/src/encoding/json/encode.go:167
+#	0x8dd433	github.com/influxdata/influxdb/query.(*Result).MarshalJSON+0xb3				/go/src/github.com/influxdata/influxdb/query/result.go:116
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x50728b	encoding/json.(*arrayEncoder).encode+0xdb						/usr/local/go/src/encoding/json/encode.go:769
+#	0x510613	encoding/json.(*arrayEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:776
+#	0x506ee0	encoding/json.(*sliceEncoder).encode+0x90						/usr/local/go/src/encoding/json/encode.go:743
+#	0x510593	encoding/json.(*sliceEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:755
+#	0x505e8f	encoding/json.(*structEncoder).encode+0x27f						/usr/local/go/src/encoding/json/encode.go:647
+#	0x510493	encoding/json.(*structEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:661
+#	0x5074a2	encoding/json.(*ptrEncoder).encode+0xb2							/usr/local/go/src/encoding/json/encode.go:788
+#	0x510693	encoding/json.(*ptrEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:793
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa	/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203			/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+
+147305590 1 @ 0x474c44 0x47510c 0x47507b 0x740d5f 0x7627b5 0x762880 0x743a99 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x47510b	sync.(*Pool).getSlow+0x5b											/usr/local/go/src/sync/pool.go:173
+#	0x47507a	sync.(*Pool).Get+0x12a												/usr/local/go/src/sync/pool.go:141
+#	0x740d5e	github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer.Pool.Get+0x2e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer/pool.go:41
+#	0x7627b4	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).clone+0x54		/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:269
+#	0x76287f	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).EncodeEntry+0x3f	/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:275
+#	0x743a98	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0xa8				/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:86
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f						/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+145428901 6 @ 0x474c44 0x781683 0x77eec0 0x77ee51 0x782315 0x7c5ca1 0x79ea57 0x7afc6c 0x7aecd4 0x7ae5f5 0x7ae51e 0x7ae32a 0x874eba 0x874c19 0x8dd6f0 0x8dd859 0xa7ab13 0xa79ea9 0xa77920 0x883ee5 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x781682	regexp.(*Regexp).get+0xd2											/usr/local/go/src/regexp/regexp.go:215
+#	0x77eebf	regexp.(*Regexp).doExecute+0x3f											/usr/local/go/src/regexp/exec.go:419
+#	0x77ee50	regexp.(*Regexp).doMatch+0xb0											/usr/local/go/src/regexp/exec.go:411
+#	0x782314	regexp.(*Regexp).MatchString+0x54										/usr/local/go/src/regexp/regexp.go:441
+#	0x7c5ca0	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.isDateTimeString+0x40			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/parser.go:3100
+#	0x79ea56	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*StringLiteral).IsTimeLiteral+0x36	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3596
+#	0x7afc6b	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.getTimeRange+0xa8b				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5721
+#	0x7aecd3	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0x8a3			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5681
+#	0x7ae5f4	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0x1c4			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5656
+#	0x7ae51d	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0xed				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5651
+#	0x7ae329	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.ConditionExpr+0x99				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5634
+#	0x874eb9	github.com/influxdata/influxdb/query.(*compiledStatement).preprocess+0x129					/go/src/github.com/influxdata/influxdb/query/compile.go:136
+#	0x874c18	github.com/influxdata/influxdb/query.Compile+0x88								/go/src/github.com/influxdata/influxdb/query/compile.go:109
+#	0x8dd6ef	github.com/influxdata/influxdb/query.Prepare+0x3f								/go/src/github.com/influxdata/influxdb/query/select.go:80
+#	0x8dd858	github.com/influxdata/influxdb/query.Select+0x88								/go/src/github.com/influxdata/influxdb/query/select.go:90
+#	0xa7ab12	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).createIterators+0x112				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:638
+#	0xa79ea8	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).executeSelectStatement+0x98			/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:542
+#	0xa7791f	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).ExecuteStatement+0x23ff				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:64
+#	0x883ee4	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x354						/go/src/github.com/influxdata/influxdb/query/executor.go:334
+
+133411766 2 @ 0x474c44 0x4751bb 0x47507b 0x5030f1 0x502b16 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a										/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a											/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6									/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81								/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3								/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51										/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+
+109896779 1 @ 0x47593b 0x909521 0xd4bbb5 0xd4b81f 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a								/usr/local/go/src/sync/rwmutex.go:128
+#	0x909520	github.com/influxdata/influxdb/services/meta.(*Client).PrecreateShardGroups+0x210	/go/src/github.com/influxdata/influxdb/services/meta/client.go:830
+#	0xd4bbb4	github.com/influxdata/influxdb/services/precreator.(*Service).precreate+0x104		/go/src/github.com/influxdata/influxdb/services/precreator/service.go:91
+#	0xd4b81e	github.com/influxdata/influxdb/services/precreator.(*Service).runPrecreation+0x19e	/go/src/github.com/influxdata/influxdb/services/precreator/service.go:78
+
+101606522 1 @ 0x474c44 0x475059 0x5030f1 0x502b16 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108											/usr/local/go/src/sync/pool.go:139
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6									/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81								/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3								/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51										/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+79937916 1741 @ 0x475841 0xe5ecfd 0xe5e3f3 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5ecfc	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0xfc	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:306
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+79490842 15 @ 0x474c44 0x781683 0x77eec0 0x783661 0x785f74 0x7c6042 0xd382ce 0xd26b4a 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x781682	regexp.(*Regexp).get+0xd2										/usr/local/go/src/regexp/regexp.go:215
+#	0x77eebf	regexp.(*Regexp).doExecute+0x3f										/usr/local/go/src/regexp/exec.go:419
+#	0x783660	regexp.(*Regexp).allMatches+0x170									/usr/local/go/src/regexp/regexp.go:692
+#	0x785f73	regexp.(*Regexp).FindAllStringSubmatchIndex+0xa3							/usr/local/go/src/regexp/regexp.go:1136
+#	0x7c6041	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Sanitize+0x61			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/sanitize.go:23
+#	0xd382cd	github.com/influxdata/influxdb/services/httpd.sanitize+0xad						/go/src/github.com/influxdata/influxdb/services/httpd/response_logger.go:164
+#	0xd26b49	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x2e9				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:446
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+75832159 2 @ 0x474c44 0x4751bb 0x47507b 0x5030f1 0x502b16 0x8dd434 0x5040d7 0x50728c 0x510614 0x506ee1 0x510594 0x505e90 0x510494 0x5074a3 0x510694 0x5037c2 0x503274 0x502b42 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4
+#	0x474c43	sync.(*Mutex).Unlock+0x73								/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a								/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a									/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30							/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25								/usr/local/go/src/encoding/json/encode.go:158
+#	0x8dd433	github.com/influxdata/influxdb/query.(*Result).MarshalJSON+0xb3				/go/src/github.com/influxdata/influxdb/query/result.go:116
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x50728b	encoding/json.(*arrayEncoder).encode+0xdb						/usr/local/go/src/encoding/json/encode.go:769
+#	0x510613	encoding/json.(*arrayEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:776
+#	0x506ee0	encoding/json.(*sliceEncoder).encode+0x90						/usr/local/go/src/encoding/json/encode.go:743
+#	0x510593	encoding/json.(*sliceEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:755
+#	0x505e8f	encoding/json.(*structEncoder).encode+0x27f						/usr/local/go/src/encoding/json/encode.go:647
+#	0x510493	encoding/json.(*structEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:661
+#	0x5074a2	encoding/json.(*ptrEncoder).encode+0xb2							/usr/local/go/src/encoding/json/encode.go:788
+#	0x510693	encoding/json.(*ptrEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:793
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa	/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+
+73048805 2 @ 0x474c6a 0x47595e 0xe5e535 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99									/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d									/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+64919919 15 @ 0x474c44 0x4751bb 0x47507b 0x740d5f 0x7627b5 0x762880 0x743a99 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a											/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a												/usr/local/go/src/sync/pool.go:141
+#	0x740d5e	github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer.Pool.Get+0x2e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/buffer/pool.go:41
+#	0x7627b4	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).clone+0x54		/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:269
+#	0x76287f	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).EncodeEntry+0x3f	/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:275
+#	0x743a98	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0xa8				/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:86
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f						/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+62410000 75 @ 0x474c44 0x8859c0 0x8ecb4a 0x8f53e3 0x884105 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x8859bf	github.com/influxdata/influxdb/query.(*Task).close+0x4f				/go/src/github.com/influxdata/influxdb/query/executor.go:461
+#	0x8ecb49	github.com/influxdata/influxdb/query.(*TaskManager).DetachQuery+0xa9		/go/src/github.com/influxdata/influxdb/query/task_manager.go:248
+#	0x8f53e2	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery.func2+0x32	/go/src/github.com/influxdata/influxdb/query/task_manager.go:220
+#	0x884104	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x574		/go/src/github.com/influxdata/influxdb/query/executor.go:378
+
+60887907 1 @ 0x475841 0xeed745 0x9b1b91 0x9c6fa2 0xa72e82 0xa83108 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0xeed744	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).WritePoints+0xe54			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1357
+#	0x9b1b90	github.com/influxdata/influxdb/tsdb.(*Shard).WritePoints+0x200					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:525
+#	0x9c6fa1	github.com/influxdata/influxdb/tsdb.(*Store).WriteToShard+0x231					/go/src/github.com/influxdata/influxdb/tsdb/store.go:1395
+#	0xa72e81	github.com/influxdata/influxdb/coordinator.(*PointsWriter).writeToShard+0x91			/go/src/github.com/influxdata/influxdb/coordinator/points_writer.go:370
+#	0xa83107	github.com/influxdata/influxdb/coordinator.(*PointsWriter).WritePointsPrivileged.func1+0xa7	/go/src/github.com/influxdata/influxdb/coordinator/points_writer.go:312
+
+49243769 1 @ 0x47593b 0x9092be 0xd4deb4 0xd4ed37 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a							/usr/local/go/src/sync/rwmutex.go:128
+#	0x9092bd	github.com/influxdata/influxdb/services/meta.(*Client).DeleteShardGroup+0x12d	/go/src/github.com/influxdata/influxdb/services/meta/client.go:774
+#	0xd4deb3	github.com/influxdata/influxdb/services/retention.(*Service).run+0x1623		/go/src/github.com/influxdata/influxdb/services/retention/service.go:108
+#	0xd4ed36	github.com/influxdata/influxdb/services/retention.(*Service).Open.func1+0x56	/go/src/github.com/influxdata/influxdb/services/retention/service.go:51
+
+49061101 37 @ 0x474c44 0x71394d 0x70e59f 0x72eafb 0x70f371 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x71394c	net/http.(*Server).trackConn+0xac	/usr/local/go/src/net/http/server.go:2932
+#	0x70e59e	net/http.(*conn).setState+0xee		/usr/local/go/src/net/http/server.go:1691
+#	0x72eafa	net/http.(*conn).serve.func1+0x23a	/usr/local/go/src/net/http/server.go:1751
+#	0x70f370	net/http.(*conn).serve+0xbb0		/usr/local/go/src/net/http/server.go:1808
+
+47220029 6 @ 0x474c44 0x7817ac 0x77f1b8 0x783661 0x785f74 0x7c6042 0xd382ce 0xd26b4a 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x7817ab	regexp.(*Regexp).put+0xfb										/usr/local/go/src/regexp/regexp.go:236
+#	0x77f1b7	regexp.(*Regexp).doExecute+0x337									/usr/local/go/src/regexp/exec.go:441
+#	0x783660	regexp.(*Regexp).allMatches+0x170									/usr/local/go/src/regexp/regexp.go:692
+#	0x785f73	regexp.(*Regexp).FindAllStringSubmatchIndex+0xa3							/usr/local/go/src/regexp/regexp.go:1136
+#	0x7c6041	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Sanitize+0x61			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/sanitize.go:23
+#	0xd382cd	github.com/influxdata/influxdb/services/httpd.sanitize+0xad						/go/src/github.com/influxdata/influxdb/services/httpd/response_logger.go:164
+#	0xd26b49	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x2e9				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:446
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+46065675 1 @ 0x474c44 0x475059 0x704551 0x704737 0x70b012 0x70ec5e 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108			/usr/local/go/src/sync/pool.go:139
+#	0x704550	net/http.newTextprotoReader+0x30	/usr/local/go/src/net/http/request.go:923
+#	0x704736	net/http.readRequest+0x56		/usr/local/go/src/net/http/request.go:953
+#	0x70b011	net/http.(*conn).readRequest+0x161	/usr/local/go/src/net/http/server.go:966
+#	0x70ec5d	net/http.(*conn).serve+0x49d		/usr/local/go/src/net/http/server.go:1788
+
+43062429 13 @ 0x475841 0xe5e229 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5e228	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x1e8	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:203
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+37898523 128 @ 0x47593b 0x9ba38c 0xee72a0 0x9b4c8c 0x9b73ed 0x9d64b4 0xa742c4 0x8f78b6 0x7a7a45 0x78f703 0x87ebbf 0x8dd779 0x8dd859 0xa7ab13 0xa79ea9 0xa77920 0x883ee5 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a											/usr/local/go/src/sync/rwmutex.go:128
+#	0x9ba38b	github.com/influxdata/influxdb/tsdb.(*MeasurementFieldSet).CreateFieldsIfNotExists+0xeb				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1662
+#	0xee729f	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).MeasurementFields+0x4f				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:581
+#	0x9b4c8b	github.com/influxdata/influxdb/tsdb.(*Shard).FieldDimensions+0x3fb						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:926
+#	0x9b73ec	github.com/influxdata/influxdb/tsdb.Shards.FieldDimensions+0x24c						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1264
+#	0xa742c3	github.com/influxdata/influxdb/coordinator.(*LocalShardMapping).FieldDimensions+0x133				/go/src/github.com/influxdata/influxdb/coordinator/shard_mapper.go:122
+#	0x7a7a44	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.FieldDimensions+0x454			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:4750
+#	0x78f702	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*SelectStatement).RewriteFields+0x242	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:1222
+#	0x87ebbe	github.com/influxdata/influxdb/query.(*compiledStatement).Prepare+0x1de						/go/src/github.com/influxdata/influxdb/query/compile.go:1144
+#	0x8dd778	github.com/influxdata/influxdb/query.Prepare+0xc8								/go/src/github.com/influxdata/influxdb/query/select.go:84
+#	0x8dd858	github.com/influxdata/influxdb/query.Select+0x88								/go/src/github.com/influxdata/influxdb/query/select.go:90
+#	0xa7ab12	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).createIterators+0x112				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:638
+#	0xa79ea8	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).executeSelectStatement+0x98			/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:542
+#	0xa7791f	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).ExecuteStatement+0x23ff				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:64
+#	0x883ee4	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x354						/go/src/github.com/influxdata/influxdb/query/executor.go:334
+
+28853696 1 @ 0x474c44 0x7817ac 0x77f062 0x77ee51 0x782315 0x7c5ca1 0x79eb05 0x7afce2 0x7aecd4 0x7ae5f5 0x7ae51e 0x7ae32a 0x874eba 0x874c19 0x8dd6f0 0x8dd859 0xa7ab13 0xa79ea9 0xa77920 0x883ee5 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x7817ab	regexp.(*Regexp).put+0xfb											/usr/local/go/src/regexp/regexp.go:236
+#	0x77f061	regexp.(*Regexp).doExecute+0x1e1										/usr/local/go/src/regexp/exec.go:456
+#	0x77ee50	regexp.(*Regexp).doMatch+0xb0											/usr/local/go/src/regexp/exec.go:411
+#	0x782314	regexp.(*Regexp).MatchString+0x54										/usr/local/go/src/regexp/regexp.go:441
+#	0x7c5ca0	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.isDateTimeString+0x40			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/parser.go:3100
+#	0x79eb04	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*StringLiteral).ToTimeLiteral+0x64	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3605
+#	0x7afce1	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.getTimeRange+0xb01				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5726
+#	0x7aecd3	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0x8a3			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5681
+#	0x7ae5f4	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0x1c4			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5656
+#	0x7ae51d	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.conditionExpr+0xed				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5651
+#	0x7ae329	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.ConditionExpr+0x99				/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:5634
+#	0x874eb9	github.com/influxdata/influxdb/query.(*compiledStatement).preprocess+0x129					/go/src/github.com/influxdata/influxdb/query/compile.go:136
+#	0x874c18	github.com/influxdata/influxdb/query.Compile+0x88								/go/src/github.com/influxdata/influxdb/query/compile.go:109
+#	0x8dd6ef	github.com/influxdata/influxdb/query.Prepare+0x3f								/go/src/github.com/influxdata/influxdb/query/select.go:80
+#	0x8dd858	github.com/influxdata/influxdb/query.Select+0x88								/go/src/github.com/influxdata/influxdb/query/select.go:90
+#	0xa7ab12	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).createIterators+0x112				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:638
+#	0xa79ea8	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).executeSelectStatement+0x98			/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:542
+#	0xa7791f	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).ExecuteStatement+0x23ff				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:64
+#	0x883ee4	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x354						/go/src/github.com/influxdata/influxdb/query/executor.go:334
+
+25336251 12 @ 0x474c6a 0x47595e 0xe62a9f 0xee98e1 0x9cd67d 0x9b100f 0x9ce987 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99							/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d							/usr/local/go/src/sync/rwmutex.go:131
+#	0xe62a9e	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).SetFieldSet+0x6e	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:850
+#	0xee98e0	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).Open+0x1f0		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:732
+#	0x9cd67c	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x36c			/go/src/github.com/influxdata/influxdb/tsdb/shard.go:340
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516		/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+24895887 2 @ 0x474c44 0x47595e 0xe62a9f 0xee98e1 0x9cd67d 0x9b100f 0x9ce987 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d							/usr/local/go/src/sync/rwmutex.go:131
+#	0xe62a9e	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).SetFieldSet+0x6e	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:850
+#	0xee98e0	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).Open+0x1f0		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:732
+#	0x9cd67c	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x36c			/go/src/github.com/influxdata/influxdb/tsdb/shard.go:340
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516		/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+23169306 1 @ 0x474c44 0x47510c 0x47507b 0x5030f1 0x502b16 0x8dd434 0x5040d7 0x50728c 0x510614 0x506ee1 0x510594 0x505e90 0x510494 0x5074a3 0x510694 0x5037c2 0x503274 0x502b42 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4
+#	0x474c43	sync.(*Mutex).Unlock+0x73								/usr/local/go/src/sync/mutex.go:201
+#	0x47510b	sync.(*Pool).getSlow+0x5b								/usr/local/go/src/sync/pool.go:173
+#	0x47507a	sync.(*Pool).Get+0x12a									/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30							/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25								/usr/local/go/src/encoding/json/encode.go:158
+#	0x8dd433	github.com/influxdata/influxdb/query.(*Result).MarshalJSON+0xb3				/go/src/github.com/influxdata/influxdb/query/result.go:116
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x50728b	encoding/json.(*arrayEncoder).encode+0xdb						/usr/local/go/src/encoding/json/encode.go:769
+#	0x510613	encoding/json.(*arrayEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:776
+#	0x506ee0	encoding/json.(*sliceEncoder).encode+0x90						/usr/local/go/src/encoding/json/encode.go:743
+#	0x510593	encoding/json.(*sliceEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:755
+#	0x505e8f	encoding/json.(*structEncoder).encode+0x27f						/usr/local/go/src/encoding/json/encode.go:647
+#	0x510493	encoding/json.(*structEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:661
+#	0x5074a2	encoding/json.(*ptrEncoder).encode+0xb2							/usr/local/go/src/encoding/json/encode.go:788
+#	0x510693	encoding/json.(*ptrEncoder).encode-fm+0x63						/usr/local/go/src/encoding/json/encode.go:793
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6							/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81						/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3						/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51								/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4	/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b		/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa	/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43							/usr/local/go/src/net/http/server.go:1964
+
+22319082 1 @ 0x474c44 0x47510c 0x47507b 0x5030f1 0x502b16 0xd32d51 0xd402b2 0x5040d7 0x5037c2 0x503274 0x502b42 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x47510b	sync.(*Pool).getSlow+0x5b										/usr/local/go/src/sync/pool.go:173
+#	0x47507a	sync.(*Pool).Get+0x12a											/usr/local/go/src/sync/pool.go:141
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6									/usr/local/go/src/encoding/json/encode.go:453
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81								/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3								/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51										/usr/local/go/src/encoding/json/encode.go:160
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+
+20599546 181 @ 0x474c44 0x47595e 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d										/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+19675675 1 @ 0x474c44 0x475059 0x76054d 0x762786 0x762880 0x743a99 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108												/usr/local/go/src/sync/pool.go:139
+#	0x76054c	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.getEncoder+0x2c				/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:36
+#	0x762785	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).clone+0x25		/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:267
+#	0x76287f	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).EncodeEntry+0x3f	/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:275
+#	0x743a98	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0xa8				/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:86
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f						/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+16731004 2 @ 0x474c44 0x47595e 0xe5e535 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d									/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5e534	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x4f4	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:291
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+16458608 1 @ 0x474c44 0x4751bb 0x47507b 0x4c9c61 0x4ca2d6 0x79e32c 0x79cea8 0x79cb74 0x793c7d 0x78a919 0x78a860 0x8ec46d 0x883d08 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a										/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a											/usr/local/go/src/sync/pool.go:141
+#	0x4c9c60	fmt.newPrinter+0x30											/usr/local/go/src/fmt/print.go:133
+#	0x4ca2d5	fmt.Sprintf+0x25											/usr/local/go/src/fmt/print.go:202
+#	0x79e32b	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*Call).String+0x1eb		/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3489
+#	0x79cea7	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*Field).String+0x47		/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3298
+#	0x79cb73	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Fields.String+0x73			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3260
+#	0x793c7c	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*SelectStatement).String+0x8c	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:1740
+#	0x78a918	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.Statements.String+0x88		/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:299
+#	0x78a85f	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*Query).String+0x3f		/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:290
+#	0x8ec46c	github.com/influxdata/influxdb/query.(*TaskManager).AttachQuery+0x14c					/go/src/github.com/influxdata/influxdb/query/task_manager.go:187
+#	0x883d07	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x177					/go/src/github.com/influxdata/influxdb/query/executor.go:252
+
+14526133 1 @ 0x474c44 0x47595e 0xf43a73 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d							/usr/local/go/src/sync/rwmutex.go:131
+#	0xf43a72	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*WAL).scheduleSync.func1+0x92	/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/wal.go:288
+
+12902624 1 @ 0x474c44 0x474e8a 0x502bf7 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x474e89	sync.(*Pool).Put+0xe9											/usr/local/go/src/sync/pool.go:109
+#	0x502bf6	encoding/json.Marshal+0x106										/usr/local/go/src/encoding/json/encode.go:167
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+11761644 9 @ 0x474c44 0x47595e 0xf43f4a 0xf2db77 0xf2d04a 0xeed777 0x9b1b91 0x9c6fa2 0xa72e82 0xa83108 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d									/usr/local/go/src/sync/rwmutex.go:131
+#	0xf43f49	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*WAL).writeToLog.func1+0x359			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/wal.go:449
+#	0xf2db76	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*WAL).writeToLog+0x236				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/wal.go:451
+#	0xf2d049	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*WAL).WriteMulti+0x69				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/wal.go:315
+#	0xeed776	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).WritePoints+0xe86			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1353
+#	0x9b1b90	github.com/influxdata/influxdb/tsdb.(*Shard).WritePoints+0x200					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:525
+#	0x9c6fa1	github.com/influxdata/influxdb/tsdb.(*Store).WriteToShard+0x231					/go/src/github.com/influxdata/influxdb/tsdb/store.go:1395
+#	0xa72e81	github.com/influxdata/influxdb/coordinator.(*PointsWriter).writeToShard+0x91			/go/src/github.com/influxdata/influxdb/coordinator/points_writer.go:370
+#	0xa83107	github.com/influxdata/influxdb/coordinator.(*PointsWriter).WritePointsPrivileged.func1+0xa7	/go/src/github.com/influxdata/influxdb/coordinator/points_writer.go:312
+
+11599822 20 @ 0x475841 0x9ba31e 0xee72a0 0x9b4c8c 0x9b73ed 0x9d64b4 0xa742c4 0x8f78b6 0x7a7a45 0x78f703 0x87ebbf 0x8dd779 0x8dd859 0xa7ab13 0xa79ea9 0xa77920 0x883ee5 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80											/usr/local/go/src/sync/rwmutex.go:76
+#	0x9ba31d	github.com/influxdata/influxdb/tsdb.(*MeasurementFieldSet).CreateFieldsIfNotExists+0x7d				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1650
+#	0xee729f	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).MeasurementFields+0x4f				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:581
+#	0x9b4c8b	github.com/influxdata/influxdb/tsdb.(*Shard).FieldDimensions+0x3fb						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:926
+#	0x9b73ec	github.com/influxdata/influxdb/tsdb.Shards.FieldDimensions+0x24c						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1264
+#	0xa742c3	github.com/influxdata/influxdb/coordinator.(*LocalShardMapping).FieldDimensions+0x133				/go/src/github.com/influxdata/influxdb/coordinator/shard_mapper.go:122
+#	0x7a7a44	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.FieldDimensions+0x454			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:4750
+#	0x78f702	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*SelectStatement).RewriteFields+0x242	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:1222
+#	0x87ebbe	github.com/influxdata/influxdb/query.(*compiledStatement).Prepare+0x1de						/go/src/github.com/influxdata/influxdb/query/compile.go:1144
+#	0x8dd778	github.com/influxdata/influxdb/query.Prepare+0xc8								/go/src/github.com/influxdata/influxdb/query/select.go:84
+#	0x8dd858	github.com/influxdata/influxdb/query.Select+0x88								/go/src/github.com/influxdata/influxdb/query/select.go:90
+#	0xa7ab12	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).createIterators+0x112				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:638
+#	0xa79ea8	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).executeSelectStatement+0x98			/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:542
+#	0xa7791f	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).ExecuteStatement+0x23ff				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:64
+#	0x883ee4	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x354						/go/src/github.com/influxdata/influxdb/query/executor.go:334
+
+10496914 386 @ 0x474c44 0x9d2f48 0x9d0438 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73						/usr/local/go/src/sync/mutex.go:201
+#	0x9d2f47	github.com/influxdata/influxdb/tsdb.(*Store).monitorShards.func2+0xa87	/go/src/github.com/influxdata/influxdb/tsdb/store.go:1937
+#	0x9d0437	github.com/influxdata/influxdb/tsdb.(*Store).walkShards.func1+0x47	/go/src/github.com/influxdata/influxdb/tsdb/store.go:984
+
+6143266 1337 @ 0x475841 0xe5f099 0xe5e3f3 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80										/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5f098	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x498	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:303
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+6015049 277 @ 0x47593b 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a										/usr/local/go/src/sync/rwmutex.go:128
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+5812702 42 @ 0x474c44 0x47595e 0x9ba38c 0xee72a0 0x9b4c8c 0x9b73ed 0x9d64b4 0xa742c4 0x8f78b6 0x7a7a45 0x78f703 0x87ebbf 0x8dd779 0x8dd859 0xa7ab13 0xa79ea9 0xa77920 0x883ee5 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d											/usr/local/go/src/sync/rwmutex.go:131
+#	0x9ba38b	github.com/influxdata/influxdb/tsdb.(*MeasurementFieldSet).CreateFieldsIfNotExists+0xeb				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1662
+#	0xee729f	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).MeasurementFields+0x4f				/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:581
+#	0x9b4c8b	github.com/influxdata/influxdb/tsdb.(*Shard).FieldDimensions+0x3fb						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:926
+#	0x9b73ec	github.com/influxdata/influxdb/tsdb.Shards.FieldDimensions+0x24c						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:1264
+#	0xa742c3	github.com/influxdata/influxdb/coordinator.(*LocalShardMapping).FieldDimensions+0x133				/go/src/github.com/influxdata/influxdb/coordinator/shard_mapper.go:122
+#	0x7a7a44	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.FieldDimensions+0x454			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:4750
+#	0x78f702	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*SelectStatement).RewriteFields+0x242	/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:1222
+#	0x87ebbe	github.com/influxdata/influxdb/query.(*compiledStatement).Prepare+0x1de						/go/src/github.com/influxdata/influxdb/query/compile.go:1144
+#	0x8dd778	github.com/influxdata/influxdb/query.Prepare+0xc8								/go/src/github.com/influxdata/influxdb/query/select.go:84
+#	0x8dd858	github.com/influxdata/influxdb/query.Select+0x88								/go/src/github.com/influxdata/influxdb/query/select.go:90
+#	0xa7ab12	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).createIterators+0x112				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:638
+#	0xa79ea8	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).executeSelectStatement+0x98			/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:542
+#	0xa7791f	github.com/influxdata/influxdb/coordinator.(*StatementExecutor).ExecuteStatement+0x23ff				/go/src/github.com/influxdata/influxdb/coordinator/statement_executor.go:64
+#	0x883ee4	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x354						/go/src/github.com/influxdata/influxdb/query/executor.go:334
+
+3599159 24 @ 0x474c6a 0x47595e 0xe5ed8c 0xe5e3f3 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x474c69	sync.(*Mutex).Unlock+0x99										/usr/local/go/src/sync/mutex.go:211
+#	0x47595d	sync.(*RWMutex).Unlock+0x7d										/usr/local/go/src/sync/rwmutex.go:131
+#	0xe5ed8b	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0x18b	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:322
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8			/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e							/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516					/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+1769155 50 @ 0x474c44 0x9d0638 0x9d0438 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73							/usr/local/go/src/sync/mutex.go:201
+#	0x9d0637	github.com/influxdata/influxdb/tsdb.(*Store).SeriesCardinality.func1+0xc7	/go/src/github.com/influxdata/influxdb/tsdb/store.go:1119
+#	0x9d0437	github.com/influxdata/influxdb/tsdb.(*Store).walkShards.func1+0x47		/go/src/github.com/influxdata/influxdb/tsdb/store.go:984
+
+1474315 2 @ 0x47593b 0xf3e14f 0xeef987 0xef0ec7 0xf3b4a1 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0xf3e14e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).WriteSnapshot.func2+0xce		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1826
+#	0xeef986	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).WriteSnapshot+0x136			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1827
+#	0xef0ec6	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).compactCache+0x316			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1929
+#	0xf3b4a0	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).enableSnapshotCompactions.func1+0x50	/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:499
+
+1189679 1 @ 0x474c44 0x750bd2 0x743af6 0x745449 0x75a80f 0xf3fc1f 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73									/usr/local/go/src/sync/mutex.go:201
+#	0x750bd1	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*lockedWriteSyncer).Write+0x91	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/write_syncer.go:67
+#	0x743af5	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0x105		/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:90
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8	/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0xf3fc1e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).Open.func1+0x42e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:536
+
+959936 50 @ 0x474c44 0x9d25f5 0x9d0438 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73						/usr/local/go/src/sync/mutex.go:201
+#	0x9d25f4	github.com/influxdata/influxdb/tsdb.(*Store).monitorShards.func2+0x134	/go/src/github.com/influxdata/influxdb/tsdb/store.go:1941
+#	0x9d0437	github.com/influxdata/influxdb/tsdb.(*Store).walkShards.func1+0x47	/go/src/github.com/influxdata/influxdb/tsdb/store.go:984
+
+901652 5 @ 0x47593b 0x9aa365 0x9cc21f 0x92aff7 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0x9aa364	github.com/influxdata/influxdb/tsdb.(*SeriesPartition).CreateSeriesListIfNotExists+0x7c4	/go/src/github.com/influxdata/influxdb/tsdb/series_partition.go:281
+#	0x9cc21e	github.com/influxdata/influxdb/tsdb.(*SeriesFile).CreateSeriesListIfNotExists.func1+0x7e	/go/src/github.com/influxdata/influxdb/tsdb/series_file.go:145
+#	0x92aff6	github.com/influxdata/influxdb/vendor/golang.org/x/sync/errgroup.(*Group).Go.func1+0x56		/go/src/github.com/influxdata/influxdb/vendor/golang.org/x/sync/errgroup/errgroup.go:58
+
+353050 1 @ 0x475841 0xe7deec 0xee7567 0x9b3a36 0x9d085a 0x9c56e0 0x9c5bf5 0x9bd685 0xf54c9e 0xa6cc25 0xa6c8fe 0xa6e4e2 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80								/usr/local/go/src/sync/rwmutex.go:76
+#	0xe7deeb	github.com/influxdata/influxdb/tsdb/index/tsi1.(*Index).MeasurementsSketches+0xeb	/go/src/github.com/influxdata/influxdb/tsdb/index/tsi1/index.go:849
+#	0xee7566	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).MeasurementsSketches+0x36	/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:605
+#	0x9b3a35	github.com/influxdata/influxdb/tsdb.(*Shard).MeasurementsSketches+0x75			/go/src/github.com/influxdata/influxdb/tsdb/shard.go:770
+#	0x9d0859	github.com/influxdata/influxdb/tsdb.(*Store).MeasurementsCardinality.func1+0x99		/go/src/github.com/influxdata/influxdb/tsdb/store.go:1153
+#	0x9c56df	github.com/influxdata/influxdb/tsdb.(*Store).sketchesForDatabase+0x10f			/go/src/github.com/influxdata/influxdb/tsdb/store.go:1080
+#	0x9c5bf4	github.com/influxdata/influxdb/tsdb.(*Store).MeasurementsCardinality+0x54		/go/src/github.com/influxdata/influxdb/tsdb/store.go:1149
+#	0x9bd684	github.com/influxdata/influxdb/tsdb.(*Store).Statistics+0x7b4				/go/src/github.com/influxdata/influxdb/tsdb/store.go:148
+#	0xf54c9d	github.com/influxdata/influxdb/cmd/influxd/run.(*Server).Statistics+0x45d		/go/src/github.com/influxdata/influxdb/cmd/influxd/run/server.go:239
+#	0xa6cc24	github.com/influxdata/influxdb/monitor.(*Monitor).gatherStatistics+0xc4			/go/src/github.com/influxdata/influxdb/monitor/service.go:354
+#	0xa6c8fd	github.com/influxdata/influxdb/monitor.(*Monitor).Statistics+0xc1d			/go/src/github.com/influxdata/influxdb/monitor/service.go:345
+#	0xa6e4e1	github.com/influxdata/influxdb/monitor.(*Monitor).storeStatistics+0xbf1			/go/src/github.com/influxdata/influxdb/monitor/service.go:443
+
+257212 1 @ 0x474c44 0x4751bb 0x47507b 0x709f6f 0x70ebb4 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73	/usr/local/go/src/sync/mutex.go:201
+#	0x4751ba	sync.(*Pool).getSlow+0x10a	/usr/local/go/src/sync/pool.go:170
+#	0x47507a	sync.(*Pool).Get+0x12a		/usr/local/go/src/sync/pool.go:141
+#	0x709f6e	net/http.newBufioReader+0x3e	/usr/local/go/src/net/http/server.go:824
+#	0x70ebb3	net/http.(*conn).serve+0x3f3	/usr/local/go/src/net/http/server.go:1784
+
+208557 1 @ 0x47593b 0xe5e967 0xe65b69 0xeec8ac 0xf3b60f 0xf0253f 0xeea01e 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0xe5e966	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x926	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:258
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xf3b60e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex.func1+0x13e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:820
+#	0xf0253e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*FileStore).WalkKeys+0x17e			/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/file_store.go:355
+#	0xeea01d	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x1fd		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:810
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+152506 2 @ 0x475841 0x9a9d52 0x9cc21f 0x92aff7 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0x9a9d51	github.com/influxdata/influxdb/tsdb.(*SeriesPartition).CreateSeriesListIfNotExists+0x1b1	/go/src/github.com/influxdata/influxdb/tsdb/series_partition.go:196
+#	0x9cc21e	github.com/influxdata/influxdb/tsdb.(*SeriesFile).CreateSeriesListIfNotExists.func1+0x7e	/go/src/github.com/influxdata/influxdb/tsdb/series_file.go:145
+#	0x92aff6	github.com/influxdata/influxdb/vendor/golang.org/x/sync/errgroup.(*Group).Go.func1+0x56		/go/src/github.com/influxdata/influxdb/vendor/golang.org/x/sync/errgroup/errgroup.go:58
+
+119064 9 @ 0x47593b 0xe62a9f 0xee98e1 0x9cd67d 0x9b100f 0x9ce987 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a							/usr/local/go/src/sync/rwmutex.go:128
+#	0xe62a9e	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).SetFieldSet+0x6e	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:850
+#	0xee98e0	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).Open+0x1f0		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:732
+#	0x9cd67c	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x36c			/go/src/github.com/influxdata/influxdb/tsdb/shard.go:340
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516		/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+113076 1 @ 0x47593b 0xee6eb1 0xee691f 0x9b185d 0x9b17b9 0x9bf446 0x9be25e 0xf5708d 0xf4f56d 0xf59f7f 0xf59d8f 0x42f907 0x45d971
+#	0x47593a	sync.(*RWMutex).Unlock+0x5a									/usr/local/go/src/sync/rwmutex.go:128
+#	0xee6eb0	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).disableSnapshotCompactions+0xa0	/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:522
+#	0xee691e	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).SetCompactionsEnabled+0x5e		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:382
+#	0x9b185c	github.com/influxdata/influxdb/tsdb.(*Shard).SetCompactionsEnabled+0x5c				/go/src/github.com/influxdata/influxdb/tsdb/shard.go:472
+#	0x9b17b8	github.com/influxdata/influxdb/tsdb.(*Shard).Free+0x78						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:461
+#	0x9bf445	github.com/influxdata/influxdb/tsdb.(*Store).loadShards+0x1065					/go/src/github.com/influxdata/influxdb/tsdb/store.go:449
+#	0x9be25d	github.com/influxdata/influxdb/tsdb.(*Store).Open+0x25d						/go/src/github.com/influxdata/influxdb/tsdb/store.go:221
+#	0xf5708c	github.com/influxdata/influxdb/cmd/influxd/run.(*Server).Open+0x84c				/go/src/github.com/influxdata/influxdb/cmd/influxd/run/server.go:436
+#	0xf4f56c	github.com/influxdata/influxdb/cmd/influxd/run.(*Command).Run+0xe2c				/go/src/github.com/influxdata/influxdb/cmd/influxd/run/command.go:149
+#	0xf59f7e	main.(*Main).Run+0x14e										/go/src/github.com/influxdata/influxdb/cmd/influxd/main.go:81
+#	0xf59d8e	main.main+0x12e											/go/src/github.com/influxdata/influxdb/cmd/influxd/main.go:45
+#	0x42f906	runtime.main+0x206										/usr/local/go/src/runtime/proc.go:201
+
+102873 23 @ 0x475841 0xe5ecfd 0xe5e3f3 0xe65b69 0xeec8ac 0xeea485 0x9cd6d6 0x9b100f 0x9ce987 0x45d971
+#	0x475840	sync.(*RWMutex).RUnlock+0x80									/usr/local/go/src/sync/rwmutex.go:76
+#	0xe5ecfc	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateMeasurementIndexIfNotExists+0xfc	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:306
+#	0xe5e3f2	github.com/influxdata/influxdb/tsdb/index/inmem.(*Index).CreateSeriesListIfNotExists+0x3b2	/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:228
+#	0xe65b68	github.com/influxdata/influxdb/tsdb/index/inmem.(*ShardIndex).InitializeSeries+0xd8		/go/src/github.com/influxdata/influxdb/tsdb/index/inmem/inmem.go:1228
+#	0xeec8ab	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).addToIndexFromKey+0x62b		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:1243
+#	0xeea484	github.com/influxdata/influxdb/tsdb/engine/tsm1.(*Engine).LoadMetadataIndex+0x664		/go/src/github.com/influxdata/influxdb/tsdb/engine/tsm1/engine.go:835
+#	0x9cd6d5	github.com/influxdata/influxdb/tsdb.(*Shard).Open.func1+0x3c5					/go/src/github.com/influxdata/influxdb/tsdb/shard.go:345
+#	0x9b100e	github.com/influxdata/influxdb/tsdb.(*Shard).Open+0x2e						/go/src/github.com/influxdata/influxdb/tsdb/shard.go:351
+#	0x9ce986	github.com/influxdata/influxdb/tsdb.(*Store).loadShards.func1+0x516				/go/src/github.com/influxdata/influxdb/tsdb/store.go:404
+
+48171 1 @ 0x474c44 0x473a18 0x5039c0 0x50734d 0x507040 0x503e27 0x503a10 0x5060ef 0x503de5 0x503a10 0x5075ed 0x503d61 0x503a10 0x50383c 0x50377f 0x503274 0x502b42 0x8dd434 0x5040d7 0x50728c 0x510614 0x506ee1 0x510594 0x505e90 0x510494 0x5074a3 0x510694 0x5037c2 0x503274 0x502b42 0xd32d51 0xd402b2
+#	0x474c43	sync.(*Mutex).Unlock+0x73						/usr/local/go/src/sync/mutex.go:201
+#	0x473a17	sync.(*Map).LoadOrStore+0x217						/usr/local/go/src/sync/map.go:233
+#	0x5039bf	encoding/json.typeEncoder+0x14f						/usr/local/go/src/encoding/json/encode.go:368
+#	0x50734c	encoding/json.newArrayEncoder+0x4c					/usr/local/go/src/encoding/json/encode.go:775
+#	0x50703f	encoding/json.newSliceEncoder+0x6f					/usr/local/go/src/encoding/json/encode.go:754
+#	0x503e26	encoding/json.newTypeEncoder+0x2f6					/usr/local/go/src/encoding/json/encode.go:429
+#	0x503a0f	encoding/json.typeEncoder+0x19f						/usr/local/go/src/encoding/json/encode.go:377
+#	0x5060ee	encoding/json.newStructEncoder+0x1ee					/usr/local/go/src/encoding/json/encode.go:659
+#	0x503de4	encoding/json.newTypeEncoder+0x2b4					/usr/local/go/src/encoding/json/encode.go:425
+#	0x503a0f	encoding/json.typeEncoder+0x19f						/usr/local/go/src/encoding/json/encode.go:377
+#	0x5075ec	encoding/json.newPtrEncoder+0x4c					/usr/local/go/src/encoding/json/encode.go:792
+#	0x503d60	encoding/json.newTypeEncoder+0x230					/usr/local/go/src/encoding/json/encode.go:433
+#	0x503a0f	encoding/json.typeEncoder+0x19f						/usr/local/go/src/encoding/json/encode.go:377
+#	0x50383b	encoding/json.valueEncoder+0x5b						/usr/local/go/src/encoding/json/encode.go:351
+#	0x50377e	encoding/json.(*encodeState).reflectValue+0x3e				/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3				/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51						/usr/local/go/src/encoding/json/encode.go:160
+#	0x8dd433	github.com/influxdata/influxdb/query.(*Result).MarshalJSON+0xb3		/go/src/github.com/influxdata/influxdb/query/result.go:116
+#	0x5040d6	encoding/json.marshalerEncoder+0xb6					/usr/local/go/src/encoding/json/encode.go:453
+#	0x50728b	encoding/json.(*arrayEncoder).encode+0xdb				/usr/local/go/src/encoding/json/encode.go:769
+#	0x510613	encoding/json.(*arrayEncoder).encode-fm+0x63				/usr/local/go/src/encoding/json/encode.go:776
+#	0x506ee0	encoding/json.(*sliceEncoder).encode+0x90				/usr/local/go/src/encoding/json/encode.go:743
+#	0x510593	encoding/json.(*sliceEncoder).encode-fm+0x63				/usr/local/go/src/encoding/json/encode.go:755
+#	0x505e8f	encoding/json.(*structEncoder).encode+0x27f				/usr/local/go/src/encoding/json/encode.go:647
+#	0x510493	encoding/json.(*structEncoder).encode-fm+0x63				/usr/local/go/src/encoding/json/encode.go:661
+#	0x5074a2	encoding/json.(*ptrEncoder).encode+0xb2					/usr/local/go/src/encoding/json/encode.go:788
+#	0x510693	encoding/json.(*ptrEncoder).encode-fm+0x63				/usr/local/go/src/encoding/json/encode.go:793
+#	0x5037c1	encoding/json.(*encodeState).reflectValue+0x81				/usr/local/go/src/encoding/json/encode.go:333
+#	0x503273	encoding/json.(*encodeState).marshal+0xf3				/usr/local/go/src/encoding/json/encode.go:305
+#	0x502b41	encoding/json.Marshal+0x51						/usr/local/go/src/encoding/json/encode.go:160
+#	0xd32d50	github.com/influxdata/influxdb/services/httpd.Response.MarshalJSON+0x80	/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1803
+#	0x0
+
+39651 1 @ 0x474c44 0x475059 0x709f6f 0x70ebb4 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73	/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108		/usr/local/go/src/sync/pool.go:139
+#	0x709f6e	net/http.newBufioReader+0x3e	/usr/local/go/src/net/http/server.go:824
+#	0x70ebb3	net/http.(*conn).serve+0x3f3	/usr/local/go/src/net/http/server.go:1784
+
+35929 1 @ 0x474c44 0x475396 0x475246 0x474f7f 0x70a495 0x70b5d2 0x70ec5e 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125		/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55			/usr/local/go/src/sync/pool.go:191
+#	0x474f7e	sync.(*Pool).Get+0x2e			/usr/local/go/src/sync/pool.go:128
+#	0x70a494	net/http.newBufioWriterSize+0x154	/usr/local/go/src/net/http/server.go:842
+#	0x70b5d1	net/http.(*conn).readRequest+0x721	/usr/local/go/src/net/http/server.go:1036
+#	0x70ec5d	net/http.(*conn).serve+0x49d		/usr/local/go/src/net/http/server.go:1788
+
+32478 1 @ 0x474c44 0x475396 0x475246 0x474f7f 0x704551 0x704737 0x70b012 0x70ec5e 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125		/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55			/usr/local/go/src/sync/pool.go:191
+#	0x474f7e	sync.(*Pool).Get+0x2e			/usr/local/go/src/sync/pool.go:128
+#	0x704550	net/http.newTextprotoReader+0x30	/usr/local/go/src/net/http/request.go:923
+#	0x704736	net/http.readRequest+0x56		/usr/local/go/src/net/http/request.go:953
+#	0x70b011	net/http.(*conn).readRequest+0x161	/usr/local/go/src/net/http/server.go:966
+#	0x70ec5d	net/http.(*conn).serve+0x49d		/usr/local/go/src/net/http/server.go:1788
+
+23927 1 @ 0x474c44 0x475396 0x475246 0x474f7f 0x5030f1 0x502b16 0xd38d6c 0xd389a5 0xd27122 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125										/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55											/usr/local/go/src/sync/pool.go:191
+#	0x474f7e	sync.(*Pool).Get+0x2e											/usr/local/go/src/sync/pool.go:128
+#	0x5030f0	encoding/json.newEncodeState+0x30									/usr/local/go/src/encoding/json/encode.go:282
+#	0x502b15	encoding/json.Marshal+0x25										/usr/local/go/src/encoding/json/encode.go:158
+#	0xd38d6b	github.com/influxdata/influxdb/services/httpd.(*jsonFormatter).WriteResponse+0x24b			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:100
+#	0xd389a4	github.com/influxdata/influxdb/services/httpd.(*responseWriter).WriteResponse+0xd4			/go/src/github.com/influxdata/influxdb/services/httpd/response_writer.go:71
+#	0xd27121	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x8c1				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:687
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+23099 1 @ 0x474c44 0x475396 0x475246 0x474ddd 0xd23ae1 0xd239cf 0xd3c925 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125										/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55											/usr/local/go/src/sync/pool.go:191
+#	0x474ddc	sync.(*Pool).Put+0x3c											/usr/local/go/src/sync/pool.go:100
+#	0xd23ae0	github.com/influxdata/influxdb/services/httpd.putGzipWriter+0x50					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:103
+#	0xd239ce	github.com/influxdata/influxdb/services/httpd.(*lazyGzipResponseWriter).Close+0x4e			/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:83
+#	0xd3c924	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x204					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:40
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+16865 1 @ 0x474c44 0x475396 0x475246 0x474f7f 0x4c9c61 0x4ca2d6 0x79f153 0x7942b3 0x746d54 0x76562e 0x7629d5 0x743a99 0x745449 0x75a80f 0x884400 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73											/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125											/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55												/usr/local/go/src/sync/pool.go:191
+#	0x474f7e	sync.(*Pool).Get+0x2e												/usr/local/go/src/sync/pool.go:128
+#	0x4c9c60	fmt.newPrinter+0x30												/usr/local/go/src/fmt/print.go:133
+#	0x4ca2d5	fmt.Sprintf+0x25												/usr/local/go/src/fmt/print.go:202
+#	0x79f152	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*BinaryExpr).String+0x192			/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:3659
+#	0x7942b2	github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql.(*SelectStatement).String+0x6c2		/go/src/github.com/influxdata/influxdb/vendor/github.com/influxdata/influxql/ast.go:1752
+#	0x746d53	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.Field.AddTo+0xbe3					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/field.go:163
+#	0x76562d	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.addFields+0x7d				/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:524
+#	0x7629d4	github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt.(*logfmtEncoder).EncodeEntry+0x194	/go/src/github.com/influxdata/influxdb/vendor/github.com/jsternberg/zap-logfmt/encoder.go:297
+#	0x743a98	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*ioCore).Write+0xa8				/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/core.go:86
+#	0x745448	github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore.(*CheckedEntry).Write+0xe8			/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/zapcore/entry.go:215
+#	0x75a80e	github.com/influxdata/influxdb/vendor/go.uber.org/zap.(*Logger).Info+0x7e					/go/src/github.com/influxdata/influxdb/vendor/go.uber.org/zap/logger.go:187
+#	0x8843ff	github.com/influxdata/influxdb/query.(*Executor).executeQuery+0x86f						/go/src/github.com/influxdata/influxdb/query/executor.go:330
+
+8613 1 @ 0x474c44 0x5edc8e 0x5ee504 0x608f0b 0x60a548 0x6387ea 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73			/usr/local/go/src/sync/mutex.go:201
+#	0x5edc8d	context.propagateCancel+0xed			/usr/local/go/src/context/context.go:257
+#	0x5ee503	context.WithDeadline+0x173			/usr/local/go/src/context/context.go:393
+#	0x608f0a	net.(*Resolver).exchange+0x20a			/usr/local/go/src/net/dnsclient_unix.go:128
+#	0x60a547	net.(*Resolver).tryOneName+0x367		/usr/local/go/src/net/dnsclient_unix.go:244
+#	0x6387e9	net.(*Resolver).goLookupIPCNAMEOrder.func1+0xb9	/usr/local/go/src/net/dnsclient_unix.go:560
+
+3521 1 @ 0x474c44 0x475059 0xd23a11 0xd237e2 0xd3f707 0xd2681f 0xd26eed 0xd3f7ec 0xd3d7d8 0x70fda4 0xd3e1eb 0x70fda4 0xd3c924 0x70fda4 0xd3d8e3 0x70fda4 0xd3dd09 0x70fda4 0xd3de5c 0x70fda4 0xd3e747 0x70fda4 0xc1ec55 0xd26697 0x712a8b 0x70ee06 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73										/usr/local/go/src/sync/mutex.go:201
+#	0x475058	sync.(*Pool).Get+0x108											/usr/local/go/src/sync/pool.go:139
+#	0xd23a10	github.com/influxdata/influxdb/services/httpd.getGzipWriter+0x30					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:96
+#	0xd237e1	github.com/influxdata/influxdb/services/httpd.(*lazyGzipResponseWriter).WriteHeader+0xe1		/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:53
+#	0xd2681e	github.com/influxdata/influxdb/services/httpd.(*Handler).writeHeader+0x7e				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:397
+#	0xd26eec	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery+0x68c				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:575
+#	0xd3f7eb	github.com/influxdata/influxdb/services/httpd.(*Handler).serveQuery-fm+0x5b				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:164
+#	0xd3d7d7	github.com/influxdata/influxdb/services/httpd.authenticate.func1+0x787					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1557
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e1ea	github.com/influxdata/influxdb/services/httpd.(*Handler).responseWriter.func1+0xaa			/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1737
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3c923	github.com/influxdata/influxdb/services/httpd.gzipFilter.func1+0x203					/go/src/github.com/influxdata/influxdb/services/httpd/gzip.go:39
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3d8e2	github.com/influxdata/influxdb/services/httpd.cors.func1+0xf2						/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1679
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3dd08	github.com/influxdata/influxdb/services/httpd.requestID.func1+0x178					/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1710
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3de5b	github.com/influxdata/influxdb/services/httpd.(*Handler).logging.func1+0xdb				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1718
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xd3e746	github.com/influxdata/influxdb/services/httpd.(*Handler).recovery.func1+0x146				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:1774
+#	0x70fda3	net/http.HandlerFunc.ServeHTTP+0x43									/usr/local/go/src/net/http/server.go:1964
+#	0xc1ec54	github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat.(*PatternServeMux).ServeHTTP+0x154	/go/src/github.com/influxdata/influxdb/vendor/github.com/bmizerany/pat/mux.go:117
+#	0xd26696	github.com/influxdata/influxdb/services/httpd.(*Handler).ServeHTTP+0x246				/go/src/github.com/influxdata/influxdb/services/httpd/handler.go:382
+#	0x712a8a	net/http.serverHandler.ServeHTTP+0xaa									/usr/local/go/src/net/http/server.go:2741
+#	0x70ee05	net/http.(*conn).serve+0x645										/usr/local/go/src/net/http/server.go:1847
+
+3034 1 @ 0x474c44 0x475396 0x475246 0x474ddd 0x70a616 0x70e33d 0x70e3db 0x72eacf 0x70f371 0x45d971
+#	0x474c43	sync.(*Mutex).Unlock+0x73		/usr/local/go/src/sync/mutex.go:201
+#	0x475395	sync.(*Pool).pinSlow+0x125		/usr/local/go/src/sync/pool.go:215
+#	0x475245	sync.(*Pool).pin+0x55			/usr/local/go/src/sync/pool.go:191
+#	0x474ddc	sync.(*Pool).Put+0x3c			/usr/local/go/src/sync/pool.go:100
+#	0x70a615	net/http.putBufioWriter+0x95		/usr/local/go/src/net/http/server.go:854
+#	0x70e33c	net/http.(*conn).finalFlush+0x5c	/usr/local/go/src/net/http/server.go:1633
+#	0x70e3da	net/http.(*conn).close+0x2a		/usr/local/go/src/net/http/server.go:1640
+#	0x72eace	net/http.(*conn).serve.func1+0x20e	/usr/local/go/src/net/http/server.go:1750
+#	0x70f370	net/http.(*conn).serve+0xbb0		/usr/local/go/src/net/http/server.go:1808
+
