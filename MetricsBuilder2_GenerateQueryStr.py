@@ -185,7 +185,7 @@ def main(argv):
         bashScript = (
             "#!/usr/bin/bash\n\n"
             + "QPROF=$HOME/go/bin/qprof\n\n"
-            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles -n 8"
+            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles -n 8 "
             + "\""
             + queryStrings
             + "\""
