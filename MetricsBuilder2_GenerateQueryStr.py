@@ -81,7 +81,7 @@ def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + ";"
+        + "';"
     )
     queryList.append(queryStr)
 
