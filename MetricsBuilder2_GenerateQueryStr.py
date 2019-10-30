@@ -76,7 +76,7 @@ def query_uge(queryList, hostIp, startTime, endTime, timeInterval):
     startTime and endTime(time range)
     """
     queryStr = (
-        "SELECT DISTINCT(*)"
+        "SELECT DISTINCT(job_data)"
         + " FROM Job_Info"
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
