@@ -109,13 +109,16 @@ def genQueryStr(
         startTime, endTime, timeInterval
     ):
 
-    hostIp_list_len = len(hostIp_list)
-
-    for hostIp in hostIp_list:
-        get_metrics(
-            queryList, hostIp, measure_bmc_list,
+    get_metrics(
+            queryList, hostIp_list[0], measure_bmc_list,
             startTime, endTime, timeInterval
         )
+
+    # for hostIp in hostIp_list:
+    #     get_metrics(
+    #         queryList, hostIp, measure_bmc_list,
+    #         startTime, endTime, timeInterval
+    #     )
 
 def main(argv):
 
@@ -174,18 +177,19 @@ def main(argv):
         startTime, endTime, timeInterval
     )
 
-    print("Query List Lenght: ", len(queryList))
+    # print("Query List Lenght: ", len(queryList))
 
-    selectedQuery = random.choices(queryList, k=10)
-    print("Selected Query List Lenght: ", len(selectedQuery))
+    # selectedQuery = random.choices(queryList, k=10)
+    # print("Selected Query List Lenght: ", len(selectedQuery))
 
-    queryStrings = ' '.join(selectedQuery)
+    # queryStrings = ' '.join(selectedQuery)
+    queryStrings = ' '.join(queryList)
 
     with open(bashfilename, "w") as bash_file:
         bashScript = (
             "#!/usr/bin/bash\n\n"
             + "QPROF=$HOME/go/bin/qprof\n\n"
-            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles -t 4m "
+            + "$QPROF -db hpcc_monitoring_db -host http://localhost:8086 -out ./profiles -n 467 "
             + "\""
             + queryStrings
             + "\""
