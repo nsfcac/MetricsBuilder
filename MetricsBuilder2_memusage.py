@@ -337,7 +337,7 @@ def run_get_metrics(
         0, hostIp_list_len, 
         prefix = 'Progress:', suffix = 'Complete', length = 50
     )
-    for hostIp in hostIp_list:
+    for index, hostIp in enumerate(hostIp_list):
         get_metrics(
             client, hostIp, measure_bmc_list, 
             userJob, hostDetail,
