@@ -37,7 +37,7 @@ def get_hostip(hostname):
         return '10.101.' + h2 + "." + h1
     return None
 
-@profile
+# @profile
 def query_bmc(
         client, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
@@ -82,7 +82,7 @@ def query_bmc(
 
     return result
 
-@profile
+# @profile
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
