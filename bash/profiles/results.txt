@@ -35,7 +35,7 @@ Showing nodes accounting for 11.54mins, 99.91% of 11.55mins total
 Dropped 41 nodes (cum <= 0.06mins)
 Showing top 10 nodes out of 23
       flat  flat%   sum%        cum   cum%
- 11.44mins 99.04% 99.04%  11.44mins 99.04%  runtime.selectgo
+ 11.44mins 99.04% 99.04%  11.44mins 99.04%  runtime.selectgo //selectgo returns the index of the chosen scase, which matches the ordinal position of its respective select call.
   0.10mins  0.87% 99.91%   0.10mins  0.87%  runtime.chanrecv1
          0     0% 99.91%   1.32mins 11.45%  github.com/influxdata/influxdb/monitor.(*Monitor).storeStatistics
          0     0% 99.91%   0.07mins  0.65%  github.com/influxdata/influxdb/query.(*ExecutionContext).watch.func1
