@@ -6,7 +6,7 @@ import time
 import sys, getopt
 from threading import Thread
 from influxdb import InfluxDBClient
-from memory_profiler import profile
+# from memory_profiler import profile
 
 
 def validate_time(date_text):
@@ -37,7 +37,7 @@ def get_hostip(hostname):
         return '10.101.' + h2 + "." + h1
     return None
 
-@profile(precision=4)
+# @profile(precision=4)
 def query_bmc(
         client, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
@@ -82,7 +82,7 @@ def query_bmc(
 
     return result
 
-@profile(precision=4)
+# @profile(precision=4)
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
@@ -107,7 +107,7 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
 
     return result
 
-@profile(precision=4)
+# @profile(precision=4)
 def preprocess_uge(ugeMetric):
     job_list = []
     usr_list = []
@@ -148,7 +148,7 @@ def preprocess_uge(ugeMetric):
         pass
     return job_user_time_dic
 
-@profile(precision=4)
+# @profile(precision=4)
 def get_metrics(
         client, hostIp, measure_bmc_list, 
         userJob, hostDetail,
@@ -289,7 +289,7 @@ def process_user_job(userJob):
         userJobResult.update({ userId: agg_jobList})
     return userJobResult
 
-
+@profile(precision=4)
 def core_to_threads(
         hostIp_list, measure_bmc_list, client,
         userJob, hostDetail,
