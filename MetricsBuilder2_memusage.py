@@ -465,10 +465,6 @@ def main(argv):
 
     print("---%s seconds---" % (time.time() - start_time))
 
-    startTime = ""
-    endTime = ""
-    timeInterval = ""
-
     print("Writing Processed into file...")
     outfile_name = (
         "./influxdb/" + startTime + "_" + endTime + "_" + timeInterval + ".json"
