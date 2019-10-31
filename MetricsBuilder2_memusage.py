@@ -463,8 +463,19 @@ def main(argv):
         "userJob": userJob
     }
 
-    print("Return aggregated metrics!")
     print("---%s seconds---" % (time.time() - start_time))
+
+    startTime = ""
+    endTime = ""
+    timeInterval = ""
+
+    print("Writing Processed into file...")
+    outfile_name = (
+        "./influxdb/" + startTime + "-" + endTime + "-" + timeInterval + ".json"
+    )
+    with open(outfile_name, "w") as outfile:
+       json.dump(returnData, outfile, indent = 4, sort_keys = True)
+    print("Done!")
     
 if __name__ == "__main__":
     main(sys.argv[1:])
