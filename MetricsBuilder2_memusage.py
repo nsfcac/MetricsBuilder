@@ -37,7 +37,7 @@ def get_hostip(hostname):
         return '10.101.' + h2 + "." + h1
     return None
 
-# @profile(precision=4)
+@profile
 def query_bmc(
         client, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
@@ -82,7 +82,7 @@ def query_bmc(
 
     return result
 
-# @profile(precision=4)
+@profile
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
@@ -268,7 +268,7 @@ def get_metrics(
             )
 # End of get_metrics
 
-@profile(precision=4)
+# @profile(precision=4)
 def process_user_job(userJob):
     userJobResult = {}
     for userId, jobList in userJob.items():
@@ -289,7 +289,7 @@ def process_user_job(userJob):
         userJobResult.update({ userId: agg_jobList})
     return userJobResult
 
-@profile(precision=4)
+# @profile(precision=4)
 def core_to_threads(
         hostIp_list, measure_bmc_list, client,
         userJob, hostDetail,
