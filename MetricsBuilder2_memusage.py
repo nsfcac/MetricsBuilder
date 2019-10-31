@@ -442,17 +442,17 @@ def main(argv):
 
     start_time = time.time()
 
-    # core_to_threads(
-    #     hostIp_list, measure_bmc_list, client,
-    #     userJobRecord, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
-
-    run_get_metrics(
+    core_to_threads(
         hostIp_list, measure_bmc_list, client,
         userJobRecord, hostDetail,
         startTime, endTime, timeInterval
     )
+
+    # run_get_metrics(
+    #     hostIp_list, measure_bmc_list, client,
+    #     userJobRecord, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
 
     userJob = process_user_job(userJobRecord)
 
