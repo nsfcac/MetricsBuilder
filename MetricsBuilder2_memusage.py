@@ -326,6 +326,32 @@ def core_to_threads(
             )
     except:
         pass
+
+def run_get_metrics(
+        hostIp_list, measure_bmc_list, client,
+        userJob, hostDetail,
+        startTime, endTime, timeInterval
+    ):
+    hostIp_list_len = len(hostIp_list)
+    printProgressBar(
+        0, hostIp_list_len, 
+        prefix = 'Progress:', suffix = 'Complete', length = 50
+    )
+    try:
+        for hostIp in hostIp_list:
+            get_metrics(
+                client, hostIp, measure_bmc_list, 
+                userJob, hostDetail,
+                startTime, endTime, timeInterval
+            )
+            # Update Progress Bar
+            printProgressBar(
+                index + 1, hostIp_list_len, 
+                prefix = 'Progress:', suffix = 'Complete', length = 50
+            )
+    except:
+        pass
+
 # Print iterations progress
 def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
     """
@@ -419,7 +445,13 @@ def main(argv):
 
     start_time = time.time()
 
-    core_to_threads(
+    # core_to_threads(
+    #     hostIp_list, measure_bmc_list, client,
+    #     userJobRecord, hostDetail,
+    #     startTime, endTime, timeInterval
+    # )
+
+    run_get_metrics(
         hostIp_list, measure_bmc_list, client,
         userJobRecord, hostDetail,
         startTime, endTime, timeInterval
