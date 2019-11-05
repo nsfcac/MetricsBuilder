@@ -6,7 +6,7 @@ import time
 import sys, getopt
 from threading import Thread
 from influxdb import InfluxDBClient
-from memory_profiler import profile
+# from memory_profiler import profile
 
 
 def validate_time(date_text):
