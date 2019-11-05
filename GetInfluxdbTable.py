@@ -24,7 +24,7 @@ def main():
     # measure_uge_list = ["Job_Info"]
 
     print("Writing result into file...")
-    with open("./influxdb/table.json") as outfile:
+    with open("./influxdb/table.json", "w") as outfile:
         # Query BMC metrics
         for m in measure_bmc_list:
             print("Get metric: {} from BMC...\n".format(m))
