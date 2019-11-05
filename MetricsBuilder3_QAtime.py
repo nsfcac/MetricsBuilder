@@ -176,29 +176,44 @@ def get_metrics(
 
         for i in range(length):
             if item == "CPU_Temperature":
-                cpu1_temp = round(float(metrics[i]["CPU1 Temp"]), 2)
-                cpu2_temp = round(float(metrics[i]["CPU2 Temp"]), 2)
-                record = [cpu1_temp, cpu2_temp]
+                if metrics[i]["CPU1 Temp"] and metrics[i]["CPU2 Temp"]:
+                    cpu1_temp = round(float(metrics[i]["CPU1 Temp"]), 2)
+                    cpu2_temp = round(float(metrics[i]["CPU2 Temp"]), 2)
+                    record = [cpu1_temp, cpu2_temp]
+                else:
+                    record = [None, None]
                 cpu_temp.append(record)
                 
             if item =="Inlet_Temperature":
-                record = round(float(metrics[i]["Inlet Temp"]), 2)
+                if metrics[i]["Inlet Temp"]:
+                    record = round(float(metrics[i]["Inlet Temp"]), 2)
+                else:
+                    record = None
                 inlet_temp.append(record)
 
             if item == "CPU_Usage":
-                record = round(float(metrics[i]["CPU Usage"]), 2)
+                if metrics[i]["CPU Usage"]:
+                    record = round(float(metrics[i]["CPU Usage"]), 2)
+                else:
+                    record = None
                 cpus.append(record)
 
             if item == "Memory_Usage":
-                record = round(float(metrics[i]["Memory Usage"]), 2)
+                if metrics[i]["Memory Usage"]:
+                    record = round(float(metrics[i]["Memory Usage"]), 2)
+                else:
+                    record = None
                 memory.append(record)
 
             if item == "Fan_Speed":
-                fan_1 = round(float(metrics[i]["FAN_1"]), 2)
-                fan_2 = round(float(metrics[i]["FAN_2"]), 2)
-                fan_3 = round(float(metrics[i]["FAN_3"]), 2)
-                fan_4 = round(float(metrics[i]["FAN_4"]), 2)
-                record = [fan_1, fan_2, fan_3, fan_4]
+                if metrics[i]["FAN_1"] and metrics[i]["FAN_2"] and metrics[i]["FAN_3"] and metrics[i]["FAN_4"]:
+                    fan_1 = round(float(metrics[i]["FAN_1"]), 2)
+                    fan_2 = round(float(metrics[i]["FAN_2"]), 2)
+                    fan_3 = round(float(metrics[i]["FAN_3"]), 2)
+                    fan_4 = round(float(metrics[i]["FAN_4"]), 2)
+                    record = [fan_1, fan_2, fan_3, fan_4]
+                else:
+                    record = [None, None, None, None]
                 fans.append(record)
     
     # Merge cpu_temp with inlet_temp
