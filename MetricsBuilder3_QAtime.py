@@ -134,9 +134,10 @@ def preprocess_uge(ugeMetric):
                 job_time_dic = {
                             jobID: {
                                 "nodes": nodesIp,
-                                "submitTime": submitTime,
-                                "startTime": startTime,
-                                "finishTime": None
+                                "time": [submitTime, startTime, None]
+                                # "submitTime": submitTime,
+                                # "startTime": startTime,
+                                # "finishTime": None
                             }
                         }
                 if user not in usr_list:
@@ -247,7 +248,7 @@ def process_user_job(userJob):
                 )
             else:
                 agg_jobList[jobId]["nodes"].extend(jobInfo["nodes"])
-        userJobResult.update({ userId: agg_jobList})
+        userJobResult.update({userId: agg_jobList})
     return userJobResult
 
 def core_to_threads(
