@@ -175,23 +175,29 @@ def get_metrics(
 
         for i in range(length):
             if item == "CPU_Temperature":
-                record = [metrics[i]["CPU1 Temp"], metrics[i]["CPU2 Temp"]]
+                cpu1_temp = round(metrics[i]["CPU1 Temp"], 2)
+                cpu2_temp = round(metrics[i]["CPU2 Temp"], 2)
+                record = [cpu1_temp, cpu2_temp]
                 cpu_temp.append(record)
                 
             if item =="Inlet_Temperature":
-                record = metrics[i]["Inlet Temp"]
+                record = round(metrics[i]["Inlet Temp"], 2)
                 inlet_temp.append(record)
 
             if item == "CPU_Usage":
-                record = metrics[i]["CPU Usage"]
+                record = round(metrics[i]["CPU Usage"], 2)
                 cpus.append(record)
 
             if item == "Memory_Usage":
-                record = metrics[i]["Memory Usage"]
+                record = round(metrics[i]["Memory Usage"], 2)
                 memory.append(record)
 
             if item == "Fan_Speed":
-                record = [metrics[i]["FAN_1"], metrics[i]["FAN_2"], metrics[i]["FAN_3"], metrics[i]["FAN_4"]]
+                fan_1 = round(metrics[i]["FAN_1"], 2)
+                fan_2 = round(metrics[i]["FAN_2"], 2)
+                fan_3 = round(metrics[i]["FAN_3"], 2)
+                fan_4 = round(metrics[i]["FAN_4"], 2)
+                record = [fan_1, fan_2, fan_3, fan_4]
                 fans.append(record)
     
     # Merge cpu_temp with inlet_temp
@@ -338,7 +344,7 @@ def main(argv):
     startTime = ""
     endTime = ""
     timeInterval = ""
-    valueType = "MEAN"
+    valueType = ""
     outfile = False
 
     try:
