@@ -384,7 +384,7 @@ def main(argv):
     timeInterval = ""
 
     try:
-        opts, args = getopt.getopt(argv, "s:e:i:", ["startTime=", "endTime=", "intervla="])
+        opts, args = getopt.getopt(argv, "s:e:i:", ["startTime=", "endTime=", "interval="])
     except getopt.GetoptError:
         print("Arguments Error!")
         sys.exit(2)
@@ -463,13 +463,6 @@ def main(argv):
     }
 
     print("---%s seconds---" % (time.time() - start_time))
-
-    # print("Writing Processed into file...")
-    # outfile_name = (
-    #     "./influxdb/" + startTime + "_" + endTime + "_" + timeInterval + ".json"
-    # )
-    # with open(outfile_name, "w") as outfile:
-    #    json.dump(returnData, outfile, indent = 4, sort_keys = True)
     print("Done!")
 
 if __name__ == "__main__":
