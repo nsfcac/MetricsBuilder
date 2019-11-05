@@ -371,19 +371,19 @@ def main(argv):
     et = validate_time(endTime)
 
     if not st or not et or st>et:
-        print("Invalid start time and end time!\n")
-        return
+        print("Invalid start time and end time!")
+        sys.exit(2)
 
     # Validate time interval
     time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
     if not time_valid.match(timeInterval):
-        print("Invalid Time Interval!\n")
-        return
+        print("Invalid Time Interval!")
+        sys.exit(2)
 
     # Validate value type
     if valueType not in ("MEAN", "MAX", "MIN"):
-        print("Invalid Value Type!\n")
-        return
+        print("Invalid Value Type!")
+        sys.exit(2)
 
     # printlogo()
     # Set up client
