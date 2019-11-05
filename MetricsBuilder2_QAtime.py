@@ -384,9 +384,10 @@ def main(argv):
     startTime = ""
     endTime = ""
     timeInterval = ""
+    file = False
 
     try:
-        opts, args = getopt.getopt(argv, "s:e:i:", ["startTime=", "endTime=", "intervla="])
+        opts, args = getopt.getopt(argv, "s:e:i:f:", ["startTime=", "endTime=", "interval=", "file="])
     except getopt.GetoptError:
         print("Arguments Error!")
         sys.exit(2)
@@ -398,6 +399,8 @@ def main(argv):
             endTime = arg
         elif opt in ("-i", "--interval"):
             timeInterval = arg
+        elif opt in ("-f", "--file"):
+            file = True
     
     print("Start time is: ", startTime)
     print("End time is: ", endTime)
@@ -465,13 +468,15 @@ def main(argv):
 
     print("---%s seconds---" % (time.time() - start_time))
 
-    print("Writing Processed into file...")
-    outfile_name = (
-        "./influxdb/" + startTime + "_" + endTime + "_" + timeInterval + ".json"
-    )
-    with open(outfile_name, "w") as outfile:
-       json.dump(returnData, outfile, indent = 4, sort_keys = True)
-    print("Done!")
+    if file:
+        print("Writing Processed into file...")
+        outfile_name = (
+            "./influxdb/" + startTime + "_" 
+            + endTime + "_" + timeInterval + ".json"
+        )
+        with open(outfile_name, "w") as outfile:
+        json.dump(returnData, outfile, indent = 4, sort_keys = True)
+        print("Done!")
 
 if __name__ == "__main__":
     main(sys.argv[1:])
