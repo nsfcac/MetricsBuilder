@@ -343,7 +343,7 @@ def main(argv):
 
     try:
         opts, args = getopt.getopt(
-            argv, "s:e:i:v:o:", 
+            argv, "s:e:i:v:o", 
             ["startTime=", "endTime=", "interval=", "valueType=", "outfile="]
         )
     except getopt.GetoptError:
