@@ -27,13 +27,13 @@ def main():
     with open("./influxdb/table.json") as outfile:
         # Query BMC metrics
         for m in measure_bmc_list:
-            print(f"Get metric: {m} from BMC...\n")
+            print("Get metric: {} from BMC...\n".format(m))
             bmc_metric = query_bmc(
                 client, hostIp, m, valueType, startTime, endTime, timeInterval
             )
             json.dump(bmc_metric[0], outfile)
         # Query UGE metrics
-        print(f"Get metric: Job_Info from UGE...\n")
+        print("Get metric: Job_Info from UGE...\n")
         uge_metric = query_uge(
             client, hostIp, startTime, endTime, timeInterval
         )
