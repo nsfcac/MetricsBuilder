@@ -175,28 +175,28 @@ def get_metrics(
 
         for i in range(length):
             if item == "CPU_Temperature":
-                cpu1_temp = round(metrics[i]["CPU1 Temp"], 2)
-                cpu2_temp = round(metrics[i]["CPU2 Temp"], 2)
+                cpu1_temp = round(float(metrics[i]["CPU1 Temp"]), 2)
+                cpu2_temp = round(float(metrics[i]["CPU2 Temp"]), 2)
                 record = [cpu1_temp, cpu2_temp]
                 cpu_temp.append(record)
                 
             if item =="Inlet_Temperature":
-                record = round(metrics[i]["Inlet Temp"], 2)
+                record = round(float(metrics[i]["Inlet Temp"]), 2)
                 inlet_temp.append(record)
 
             if item == "CPU_Usage":
-                record = round(metrics[i]["CPU Usage"], 2)
+                record = round(float(metrics[i]["CPU Usage"]), 2)
                 cpus.append(record)
 
             if item == "Memory_Usage":
-                record = round(metrics[i]["Memory Usage"], 2)
+                record = round(float(metrics[i]["Memory Usage"]), 2)
                 memory.append(record)
 
             if item == "Fan_Speed":
-                fan_1 = round(metrics[i]["FAN_1"], 2)
-                fan_2 = round(metrics[i]["FAN_2"], 2)
-                fan_3 = round(metrics[i]["FAN_3"], 2)
-                fan_4 = round(metrics[i]["FAN_4"], 2)
+                fan_1 = round(float(metrics[i]["FAN_1"]), 2)
+                fan_2 = round(float(metrics[i]["FAN_2"]), 2)
+                fan_3 = round(float(metrics[i]["FAN_3"]), 2)
+                fan_4 = round(float(metrics[i]["FAN_4"]), 2)
                 record = [fan_1, fan_2, fan_3, fan_4]
                 fans.append(record)
     
