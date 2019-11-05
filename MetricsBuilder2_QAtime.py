@@ -475,7 +475,7 @@ def main(argv):
             + endTime + "_" + timeInterval + ".json"
         )
         with open(outfile_name, "w") as outfile:
-        json.dump(returnData, outfile, indent = 4, sort_keys = True)
+            json.dump(returnData, outfile, indent = 4, sort_keys = True)
         print("Done!")
 
 if __name__ == "__main__":
