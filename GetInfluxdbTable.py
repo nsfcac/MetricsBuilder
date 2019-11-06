@@ -7,7 +7,7 @@ def main():
     # Initialization
     startTime = "2019-04-20T00:00:00Z"
     endTime = "2019-04-20T00:02:00Z"
-    timeInterval = "30m"
+    timeInterval = "5m"
     valueType = "MEAN"
     hostIp = "10.101.9.6"
     client = InfluxDBClient(
