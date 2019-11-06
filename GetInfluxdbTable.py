@@ -7,9 +7,9 @@ def main():
     # Initialization
     startTime = "2019-04-20T00:00:00Z"
     endTime = "2019-04-21T00:00:00Z"
-    timeInterval = "5m"
+    timeInterval = "30m"
     valueType = "MEAN"
-    hostIp = "10.101.9.6"
+    hostIp = "10.101.9.60"
     client = InfluxDBClient(
         host='localhost', 
         port=8086, 
@@ -38,7 +38,7 @@ def main():
         #    json.dump(bmc_metric[0], outfile)
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
-        uge_metric = test_query_uge(
+        uge_metric = query_uge(
             client, hostIp, startTime, endTime, timeInterval, measurement
         )
         json.dump(uge_metric, outfile)
