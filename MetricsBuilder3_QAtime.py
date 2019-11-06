@@ -110,22 +110,20 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
 def process_uge(ugeMetric):
     timeList = []
     record = []
-    try:
-        for i, item in enumerate(ugeMetric):
-            dataStr = item["job_data"].replace("'", '"')
-            job_data = json.loads(dataStr)
-            dataTime = item["time"]
+    for i, item in enumerate(ugeMetric):
+        dataStr = item["job_data"].replace("'", '"')
+        job_data = json.loads(dataStr)
+        dataTime = item["time"]
 
-            if dataTime not in timeList:
-                timeList.append(dataTime)
-                new_rec = [job_data["jobID"]]
-                record.append(new_rec)
-            else:
-                for t, time in enumerate(timeList):
-                    if dataTime == time and job_data["jobID"] not in record[t]:
-                        record[t].append(job_data["jobID"])
-    except:
-        pass
+        if dataTime not in timeList:
+            timeList.append(dataTime)
+            new_rec = [job_data["jobID"]]
+            record.append(new_rec)
+        else:
+            for t, time in enumerate(timeList):
+                if dataTime == time and job_data["jobID"] not in record[t]:
+                    record[t].append(job_data["jobID"])
+   
     return record
 
 # @profile(precision=4)
@@ -241,17 +239,6 @@ def get_metrics(
     for i, item in enumerate(cpu_temp):
         item.append(inlet_temp[i])
 
-    hostDetail.update(
-        {
-            hostIp: {
-                "arrFan_speed": fans,
-                "arrCPU_load": cpus,
-                "arrMemory_usage": memory,
-                "arrTemperature": cpu_temp
-            }
-        }
-    )
-
     # Get UGE metrics
     uge_metrics = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_record = process_uge(uge_metrics)
@@ -259,6 +246,10 @@ def get_metrics(
     hostDetail.update(
         {
             hostIp: {
+                "arrFan_speed": fans,
+                "arrCPU_load": cpus,
+                "arrMemory_usage": memory,
+                "arrTemperature": cpu_temp
                 "arrJob": uge_record
             }
         }

@@ -30,12 +30,12 @@ def main():
     print("Writing result into file...")
     with open(filename, "w") as outfile:
         # Query BMC metrics
-        # for m in measure_bmc_list:
-        #    print("Get metric: {} from BMC...\n".format(m))
-        #    bmc_metric = query_bmc(
-        #        client, hostIp, m, valueType, startTime, endTime, timeInterval
-        #    )
-        #    json.dump(bmc_metric[0], outfile)
+        for m in measure_bmc_list:
+           print("Get metric: {} from BMC...\n".format(m))
+           bmc_metric = query_bmc(
+               client, hostIp, m, valueType, startTime, endTime, timeInterval
+           )
+           json.dump(bmc_metric, outfile)
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
         uge_metric = query_uge(
