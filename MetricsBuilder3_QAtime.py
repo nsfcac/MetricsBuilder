@@ -234,7 +234,7 @@ def get_metrics(
     # Get UGE metrics
     uge_metrics = query_uge(client, hostIp, startTime, endTime, timeInterval)
     uge_length = len(uge_metrics)
-    for i in range(uge_length):
+    # for i in range(uge_length):
     # uge_metrics = preprocess_uge(uge_raw)
 
     # for userId, jobInfo in uge_metrics.items():
