@@ -6,7 +6,7 @@ from MetricsBuilder3_QAtime import query_bmc, query_uge
 def main():
     # Initialization
     startTime = "2019-04-20T00:00:00Z"
-    endTime = "2019-04-20T23:59:59Z"
+    endTime = "2019-04-21T00:00:00Z"
     timeInterval = "30m"
     valueType = "MEAN"
     hostIp = "10.101.9.6"
