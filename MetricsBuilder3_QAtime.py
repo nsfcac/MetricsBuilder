@@ -121,7 +121,7 @@ def process_uge(ugeMetric):
             record.append(new_rec)
         else:
             for t, time in enumerate(timeList):
-                if dataTime = time and job_data["jobID"] not in record[t]:
+                if dataTime == time and job_data["jobID"] not in record[t]:
                     record[t].append(job_data["jobID"])
     
     return record
