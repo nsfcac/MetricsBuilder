@@ -52,7 +52,7 @@ def test_query_uge(client, hostIp, startTime, endTime, timeInterval, measurement
 
     queryStr = (
         "SELECT "
-        + "* FROM " + measurement
+        + "DISTINCT(job_data) FROM " + measurement
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
