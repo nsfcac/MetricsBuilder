@@ -40,5 +40,29 @@ def main():
         json.dump(uge_metric, outfile)
     print("Done!")
 
+def query_uge(client, hostIp, startTime, endTime, timeInterval):
+    """Generate query string based on the ip address, 
+    startTime and endTime(time range)
+    """
+    result = []
+
+    queryStr = (
+        "SELECT "
+        + "* FROM Job_Info"
+        + " WHERE host='" + hostIp 
+        + "' AND time >= '" + startTime 
+        + "' AND time <= '" + endTime
+        + "' GROUP BY time(" + timeInterval + ") SLIMIT 1"
+    )
+
+    try:
+        influxdbQuery = client.query(queryStr)
+        # print("Querying " + measureType + "data: " + measurement)
+        result = list(influxdbQuery.get_points())
+    except:
+        pass
+
+    return result
+
 if __name__ == "__main__":
     main()
