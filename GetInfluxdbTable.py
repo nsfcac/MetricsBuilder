@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 import json
 from influxdb import InfluxDBClient
-from MetricsBuilder3_QAtime import query_bmc, query_uge
+from MetricsBuilder3_QAtime import query_bmc
 
 def main():
     # Initialization
@@ -34,11 +34,44 @@ def main():
         #    json.dump(bmc_metric[0], outfile)
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
-        uge_metric = query_uge(
+        uge_metric = test_query_uge(
             client, hostIp, startTime, endTime, timeInterval
         )
         json.dump(uge_metric, outfile)
     print("Done!")
-            
+
+def test_query_uge(client, hostIp, startTime, endTime, timeInterval):
+    """Generate query string based on the ip address, 
+    startTime and endTime(time range)
+    """
+    result = []
+
+    # queryStr = (
+    #     "SELECT "
+    #     + "DISTINCT(job_data) as job_data FROM Job_Info"
+    #     + " WHERE host='" + hostIp 
+    #     + "' AND time >= '" + startTime 
+    #     + "' AND time <= '" + endTime
+    #     + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+    # )
+
+    queryStr = (
+        "SELECT "
+        + "DISTINCT(*) FROM Job_Info"
+        + " WHERE host='" + hostIp 
+        + "' AND time >= '" + startTime 
+        + "' AND time <= '" + endTime
+        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+    )
+
+    try:
+        influxdbQuery = client.query(queryStr)
+        # print("Querying " + measureType + "data: " + measurement)
+        result = list(influxdbQuery.get_points())
+    except:
+        pass
+
+    return result
+
 if __name__ == "__main__":
     main()
