@@ -110,20 +110,28 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
 def process_uge(ugeMetric):
     timeList = []
     record = []
-    for i, item in enumerate(ugeMetric):
-        dataStr = item["job_data"].replace("'", '"')
-        job_data = json.loads(dataStr)
-        dataTime = item["time"]
 
+    for i, item in enumerate(ugeMetric):
+        dataTime = item["time"]
         if dataTime not in timeList:
-            timeList.append(dataTime)
-            new_rec = [job_data["jobID"]]
+            timeList.append(dataTime) 
+            try:
+                dataStr = item["job_data"].replace("'", '"')
+                job_data = json.loads(dataStr)
+                new_rec = [job_data["jobID"]]
+            except:
+                new_rec = [[]]
             record.append(new_rec)
         else:
             for t, time in enumerate(timeList):
-                if dataTime == time and job_data["jobID"] not in record[t]:
-                    record[t].append(job_data["jobID"])
-   
+                if dataTime == time:
+                    try:
+                        dataStr = item["job_data"].replace("'", '"')
+                        job_data = json.loads(dataStr)
+                        if job_data["jobID"] not in record[t]:
+                            record[t].append(job_data["jobID"])
+                    except:
+                        record[t].append([])
     return record
 
 # @profile(precision=4)
