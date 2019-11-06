@@ -475,13 +475,19 @@ def main(argv):
     #     startTime, endTime, timeInterval
     # )
 
-    userJob = process_user_job(userJobRecord)
+    # userJob = process_user_job(userJobRecord)
+
+    # returnData = {
+    #     "timeRange": [startTime, endTime],
+    #     "timeInterval": timeInterval,
+    #     "hostDetail": hostDetail,
+    #     "userJob": userJob
+    # }
 
     returnData = {
         "timeRange": [startTime, endTime],
         "timeInterval": timeInterval,
-        "hostDetail": hostDetail,
-        "userJob": userJob
+        "hostDetail": hostDetail
     }
 
     print("---%s seconds---" % (time.time() - start_time))
