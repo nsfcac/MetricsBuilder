@@ -56,8 +56,7 @@ def test_query_uge(client, hostIp, startTime, endTime, timeInterval, measurement
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
-        + "'"
-        # + "' GROUP BY time(" + timeInterval + ") SLIMIT 1"
+        + "' GROUP BY time(" + timeInterval + ") SLIMIT 1"
     )
 
     try:
