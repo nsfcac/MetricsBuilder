@@ -23,7 +23,7 @@ def main():
     ]
     # measure_uge_list = ["Job_Info"]
 
-    measurement = "node_job_info"
+    measurement = "Current_Jobs_ID"
 
     filename = "./influxdb/" + measurement + ".json"
 
