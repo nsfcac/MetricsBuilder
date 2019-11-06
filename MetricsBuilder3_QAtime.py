@@ -107,6 +107,25 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
 
     return result
 
+def process_uge(ugeMetric):
+    timeList = []
+    record = []
+    for i, item in enumerate(ugeMetric):
+        dataStr = item["job_data"].replace("'", '"')
+        job_data = json.loads(dataStr)
+        dataTime = item["time"]
+
+        if dataTime not in timeList:
+            timeList.append(dataTime)
+            new_rec = [job_data["jobID"]]
+            record.append(new_rec)
+        else:
+            for t, time in enumerate(timeList):
+                if dataTime = time and job_data["jobID"] not in record[t]:
+                    record[t].append(job_data["jobID"])
+    
+    return record
+
 # @profile(precision=4)
 def preprocess_uge(ugeMetric):
     job_list = []
@@ -233,7 +252,15 @@ def get_metrics(
 
     # Get UGE metrics
     uge_metrics = query_uge(client, hostIp, startTime, endTime, timeInterval)
-    uge_length = len(uge_metrics)
+    uge_record = process_uge(uge_metrics)
+
+    hostDetail.update(
+        {
+            hostIp: {
+                "arrJob": uge_record
+            }
+        }
+    )
     # for i in range(uge_length):
     # uge_metrics = preprocess_uge(uge_raw)
 
