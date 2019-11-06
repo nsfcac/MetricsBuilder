@@ -39,34 +39,10 @@ def main():
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
         uge_metric = query_uge(
-            client, hostIp, startTime, endTime, timeInterval, measurement
+            client, hostIp, startTime, endTime, timeInterval
         )
         json.dump(uge_metric, outfile)
     print("Done!")
-
-def test_query_uge(client, hostIp, startTime, endTime, timeInterval, measurement):
-    """Generate query string based on the ip address, 
-    startTime and endTime(time range)
-    """
-    result = []
-
-    queryStr = (
-        "SELECT "
-        + "DISTINCT(job_data) FROM " + measurement
-        + " WHERE host='" + hostIp 
-        + "' AND time >= '" + startTime 
-        + "' AND time <= '" + endTime
-        + "' GROUP BY time(" + timeInterval + ") SLIMIT 1"
-    )
-
-    try:
-        influxdbQuery = client.query(queryStr)
-        # print("Querying " + measureType + "data: " + measurement)
-        result = list(influxdbQuery.get_points())
-    except:
-        pass
-
-    return result
 
 if __name__ == "__main__":
     main()
