@@ -23,8 +23,12 @@ def main():
     ]
     # measure_uge_list = ["Job_Info"]
 
+    measurement = "node_job_info"
+
+    filename = "./influxdb/" + measurement + ".json"
+
     print("Writing result into file...")
-    with open("./influxdb/table.json", "w") as outfile:
+    with open(filename, "w") as outfile:
         # Query BMC metrics
         # for m in measure_bmc_list:
         #    print("Get metric: {} from BMC...\n".format(m))
@@ -35,12 +39,12 @@ def main():
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
         uge_metric = test_query_uge(
-            client, hostIp, startTime, endTime, timeInterval
+            client, hostIp, startTime, endTime, timeInterval, measurement
         )
         json.dump(uge_metric, outfile)
     print("Done!")
 
-def test_query_uge(client, hostIp, startTime, endTime, timeInterval):
+def test_query_uge(client, hostIp, startTime, endTime, timeInterval, measurement):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
@@ -48,7 +52,7 @@ def test_query_uge(client, hostIp, startTime, endTime, timeInterval):
 
     queryStr = (
         "SELECT "
-        + "* FROM Job_Info"
+        + "* FROM " + measurement
         + " WHERE host='" + hostIp 
         + "' AND time >= '" + startTime 
         + "' AND time <= '" + endTime
