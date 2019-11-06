@@ -114,7 +114,7 @@ def preprocess_uge(ugeMetric):
     job_user_time_dic = {}
 
     try:
-        for item in ugeMetric:
+        for i, item in enumerate(ugeMetric):
             dataStr = item["job_data"].replace("'",'"')
             job_data = json.loads(dataStr)
 
@@ -168,49 +168,49 @@ def get_metrics(
     # arrFan_speed = [FAN_1, FAN_2, FAN_3, FAN_4]
 
     for item in measure_bmc_list:
-        metrics = query_bmc(
+        bmc_metrics = query_bmc(
             client, hostIp, item, valueType, startTime, endTime, timeInterval
         )
 
-        length = len(metrics)
+        bmc_length = len(bmc_metrics)
 
-        for i in range(length):
+        for i in range(bmc_length):
             if item == "CPU_Temperature":
-                if metrics[i]["CPU1 Temp"] and metrics[i]["CPU2 Temp"]:
-                    cpu1_temp = round(float(metrics[i]["CPU1 Temp"]), 2)
-                    cpu2_temp = round(float(metrics[i]["CPU2 Temp"]), 2)
+                if bmc_metrics[i]["CPU1 Temp"] and bmc_metrics[i]["CPU2 Temp"]:
+                    cpu1_temp = round(float(bmc_metrics[i]["CPU1 Temp"]), 2)
+                    cpu2_temp = round(float(bmc_metrics[i]["CPU2 Temp"]), 2)
                     record = [cpu1_temp, cpu2_temp]
                 else:
                     record = [None, None]
                 cpu_temp.append(record)
                 
             if item =="Inlet_Temperature":
-                if metrics[i]["Inlet Temp"]:
-                    record = round(float(metrics[i]["Inlet Temp"]), 2)
+                if bmc_metrics[i]["Inlet Temp"]:
+                    record = round(float(bmc_metrics[i]["Inlet Temp"]), 2)
                 else:
                     record = None
                 inlet_temp.append(record)
 
             if item == "CPU_Usage":
-                if metrics[i]["CPU Usage"]:
-                    record = round(float(metrics[i]["CPU Usage"]), 2)
+                if bmc_metrics[i]["CPU Usage"]:
+                    record = round(float(bmc_metrics[i]["CPU Usage"]), 2)
                 else:
                     record = None
                 cpus.append(record)
 
             if item == "Memory_Usage":
-                if metrics[i]["Memory Usage"]:
-                    record = round(float(metrics[i]["Memory Usage"]), 2)
+                if bmc_metrics[i]["Memory Usage"]:
+                    record = round(float(bmc_metrics[i]["Memory Usage"]), 2)
                 else:
                     record = None
                 memory.append(record)
 
             if item == "Fan_Speed":
-                if metrics[i]["FAN_1"] and metrics[i]["FAN_2"] and metrics[i]["FAN_3"] and metrics[i]["FAN_4"]:
-                    fan_1 = round(float(metrics[i]["FAN_1"]), 2)
-                    fan_2 = round(float(metrics[i]["FAN_2"]), 2)
-                    fan_3 = round(float(metrics[i]["FAN_3"]), 2)
-                    fan_4 = round(float(metrics[i]["FAN_4"]), 2)
+                if bmc_metrics[i]["FAN_1"] and bmc_metrics[i]["FAN_2"] and bmc_metrics[i]["FAN_3"] and bmc_metrics[i]["FAN_4"]:
+                    fan_1 = round(float(bmc_metrics[i]["FAN_1"]), 2)
+                    fan_2 = round(float(bmc_metrics[i]["FAN_2"]), 2)
+                    fan_3 = round(float(bmc_metrics[i]["FAN_3"]), 2)
+                    fan_4 = round(float(bmc_metrics[i]["FAN_4"]), 2)
                     record = [fan_1, fan_2, fan_3, fan_4]
                 else:
                     record = [None, None, None, None]
@@ -232,18 +232,20 @@ def get_metrics(
     )
 
     # Get UGE metrics
-    uge_raw = query_uge(client, hostIp, startTime, endTime, timeInterval)
-    uge_metrics = preprocess_uge(uge_raw)
+    uge_metrics = query_uge(client, hostIp, startTime, endTime, timeInterval)
+    uge_length = len(uge_metrics)
+    for i in range(uge_length):
+    # uge_metrics = preprocess_uge(uge_raw)
 
-    for userId, jobInfo in uge_metrics.items():
-        if userId in userJob:
-            userJob[userId].extend(jobInfo)
-        else:
-            userJob.update(
-                {
-                    userId: jobInfo
-                }
-            )
+    # for userId, jobInfo in uge_metrics.items():
+    #     if userId in userJob:
+    #         userJob[userId].extend(jobInfo)
+    #     else:
+    #         userJob.update(
+    #             {
+    #                 userId: jobInfo
+    #             }
+    #         )
 # End of get_metrics
 
 def process_user_job(userJob):
