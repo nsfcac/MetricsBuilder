@@ -34,13 +34,13 @@ def main():
         #    json.dump(bmc_metric[0], outfile)
         # Query UGE metrics
         print("Get metric: Job_Info from UGE...\n")
-        uge_metric = query_uge(
+        uge_metric = test_query_uge(
             client, hostIp, startTime, endTime, timeInterval
         )
         json.dump(uge_metric, outfile)
     print("Done!")
 
-def query_uge(client, hostIp, startTime, endTime, timeInterval):
+def test_query_uge(client, hostIp, startTime, endTime, timeInterval):
     """Generate query string based on the ip address, 
     startTime and endTime(time range)
     """
