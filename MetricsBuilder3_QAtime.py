@@ -249,7 +249,7 @@ def get_metrics(
                 "arrFan_speed": fans,
                 "arrCPU_load": cpus,
                 "arrMemory_usage": memory,
-                "arrTemperature": cpu_temp
+                "arrTemperature": cpu_temp,
                 "arrJob": uge_record
             }
         }
