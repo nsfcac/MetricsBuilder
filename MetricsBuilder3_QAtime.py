@@ -7,8 +7,6 @@ import time
 import sys, getopt
 from threading import Thread
 from influxdb import InfluxDBClient
-# from memory_profiler import profile
-
 
 def validate_time(date_text):
     try:
@@ -471,27 +469,6 @@ def main(argv):
         startTime, endTime, timeInterval, valueType
     )
 
-    # run_get_metrics(
-    #     hostIp_list, measure_bmc_list, client,
-    #     userJobRecord, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
-
-    # userJob = process_user_job(userJobRecord)
-
-    # returnData = {
-    #     "timeRange": [startTime, endTime],
-    #     "timeInterval": timeInterval,
-    #     "hostDetail": hostDetail,
-    #     "userJob": userJob
-    # }
-
-    # returnData = {
-    #     "timeRange": [startTime, endTime],
-    #     "timeInterval": timeInterval,
-    #     "hostDetail": hostDetail
-    # }
-
     print("---%s seconds---" % (time.time() - start_time))
 
     if outfile:
@@ -514,7 +491,6 @@ def build_csv(json_data, outfile):
         # Write header
         for host in host_list:
             for feature in feature_list:
-                # print(feature, len(hostDetail[host][feature]))
                 header = host + "-" + feature
                 header_list.append(header)   
         
