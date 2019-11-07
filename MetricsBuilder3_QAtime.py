@@ -1,4 +1,4 @@
-#! /usr/bin/python3s
+#! /usr/bin/python3
 import json
 import re
 import datetime
@@ -78,7 +78,7 @@ def query_bmc(
         # print("Querying " + measureType + "data: " + measurement)
         result = list(influxdbQuery.get_points())
     except:
-        pass
+        result = []
 
     return result
 
@@ -103,7 +103,7 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
         # print("Querying " + measureType + "data: " + measurement)
         result = list(influxdbQuery.get_points())
     except:
-        pass
+        result
 
     return result
 
@@ -485,11 +485,11 @@ def main(argv):
     #     "userJob": userJob
     # }
 
-    returnData = {
-        "timeRange": [startTime, endTime],
-        "timeInterval": timeInterval,
-        "hostDetail": hostDetail
-    }
+    # returnData = {
+    #     "timeRange": [startTime, endTime],
+    #     "timeInterval": timeInterval,
+    #     "hostDetail": hostDetail
+    # }
 
     print("---%s seconds---" % (time.time() - start_time))
 
@@ -497,11 +497,40 @@ def main(argv):
         print("Writing Processed into file...")
         outfile_name = (
             "./influxdb/" + startTime + "_" 
-            + endTime + "_" + timeInterval + ".json"
+            + endTime + "_" + timeInterval + ".csv"
         )
-        with open(outfile_name, "w") as outfile:
-            json.dump(returnData, outfile, indent = 4, sort_keys = True)
-        print("Done!")
+        build_csv(hostDetail, outfile_name)
+
+def build_csv(json_data, outfile):
+    with open(outfile, "w") as csv_file:
+        hostDetail = json_data
+        header_list = []
+        host_list = list(hostDetail.keys())
+        feature_list = list(hostDetail[host_list[0]].keys())
+
+        csvwriter = csv.writer(csv_file)
+
+        # Write header
+        for host in host_list:
+            for feature in feature_list:
+                # print(feature, len(hostDetail[host][feature]))
+                header = host + "-" + feature
+                header_list.append(header)   
+        
+        csvwriter.writerow(header_list)
+
+        # Write value
+        timeStamp_len = len(hostDetail[host_list[0]][feature_list[0]]) - 1
+
+        for t in range(timeStamp_len):
+            each_row = []
+            for host in host_list:
+                for feature in feature_list:
+                    if len(hostDetail[host][feature]) != 0:
+                        each_row.append(hostDetail[host][feature][t])
+                    else:
+                        each_row.append(None)
+            csvwriter.writerow(each_row)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
