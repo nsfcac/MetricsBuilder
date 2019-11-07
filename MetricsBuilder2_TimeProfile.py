@@ -288,43 +288,6 @@ def process_user_job(userJob):
         userJobResult.update({ userId: agg_jobList})
     return userJobResult
 
-def core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
-        startTime, endTime, timeInterval
-    ):
-    print("Pulling Metrics From InfluxDB...")
-
-    hostIp_list_len = len(hostIp_list)
-    # For progress bar
-    printProgressBar(
-        0, hostIp_list_len, 
-        prefix = 'Progress:', suffix = 'Complete', length = 50
-    )
-
-    try:
-        threads = []
-        for hostIp in hostIp_list:
-            a = Thread(
-                target = get_metrics, 
-                args = (
-                    client, hostIp, measure_bmc_list, 
-                    userJob, hostDetail,
-                    startTime, endTime, timeInterval
-                )
-            )
-            threads.append(a)
-            a.start()
-        for index, thread in enumerate(threads):
-            thread.join()
-            # Update Progress Bar
-            printProgressBar(
-                index + 1, hostIp_list_len, 
-                prefix = 'Progress:', suffix = 'Complete', length = 50
-            )
-    except:
-        pass
-
 def run_get_metrics(
         hostIp_list, measure_bmc_list, client,
         userJob, hostDetail,
@@ -440,15 +403,9 @@ def main(argv):
 
     start_time = time.time()
 
-    # core_to_threads(
-    #     hostIp_list, measure_bmc_list, client,
-    #     userJobRecord, hostDetail,
-    #     startTime, endTime, timeInterval
-    # )
-
     # Used for profiling execution time of each function
     run_get_metrics(
-        hostIp_list[1], measure_bmc_list, client,
+        hostIp_list[0], measure_bmc_list, client,
         userJobRecord, hostDetail,
         startTime, endTime, timeInterval
     )
