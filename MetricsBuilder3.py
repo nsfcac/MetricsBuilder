@@ -503,9 +503,9 @@ def build_csv(json_data, outfile):
             each_row = []
             for host in host_list:
                 for feature in feature_list:
-                    if len(hostDetail[host][feature]) != 0:
+                    try:
                         each_row.append(hostDetail[host][feature][t])
-                    else:
+                    except:
                         each_row.append(None)
             csvwriter.writerow(each_row)
 
