@@ -22,7 +22,7 @@ $python3 MetricsBuilder3.py -S 2019-04-20T00:00:00Z -E 2019-04-26T23:59:59Z -I 5
 
 The output file will be saved in folder "csv", named with "2019-04-20T00:00:00Z_2019-04-27T00:00:00Z_5m.csv"
 
-## Files/folders description
+## Files/folders
 #### hostlist
 A file contains IP addresses of all the monitored nodes
 #### csv
@@ -37,6 +37,6 @@ A folder where samples of UGE metrics are saved
 ## To do list
 ### 1. Evaluate efficiency of different database design
 Build a tool that converts historical data to newly designed data structure
-### 2. Configuration file
+### 2. Add configuration file
 Users can set up configuration of MetricsBuilder in the configuration file, e.g. parameters for connecting to database, metrics needed by analytic tools etc.
 ### 3. Optimize the algorithm of the processing function
