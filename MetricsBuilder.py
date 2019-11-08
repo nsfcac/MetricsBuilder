@@ -1,14 +1,30 @@
 #! /usr/bin/python3
+# -*- coding: utf-8 -*-
+
 import json
 import csv
 import re
 import datetime
 import time
-import sys, getopt
+import sys
+import getopt
+
 from threading import Thread
 from influxdb import InfluxDBClient
 
+from helper import *
+
+__author__ = "Jie Li"
+__copyright__ = "Copyright 2019, Texas Tech University"
+__credits__ = ["Jie Li", "Ghazanfar Ali"]
+__license__ = "MIT"
+__version__ = "0.0.1"
+__maintainer__ = "Jie Li"
+__email__ = "jieli@ttu.edu"
+__status__ = "Dev"
+
 def validate_time(date_text):
+    """Validate time string format"""
     try:
         date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%SZ")
         return date
@@ -16,8 +32,11 @@ def validate_time(date_text):
         print(e)
         return False
 
-# Get all hosts ip address
 def parse_host():
+    """
+    Read hostlist file, extract IP addresses, 
+    and return an IP addr list of monitored hosts
+    """
     hostIp_list = []
     with open("./hostlist", 'r') as infile:
         data = infile.read()
@@ -29,20 +48,20 @@ def parse_host():
             hostIp_list.append(hostIp)
     return hostIp_list
 
-# Convert host name to ip address
 def get_hostip(hostname):
+    """Convert host name to IP address"""
     if '-' in hostname:
         n, h2, h1 = hostname.split('-')
         return '10.101.' + h2 + "." + h1
     return None
 
-# @profile
 def query_bmc(
         client, hostIp, measurement, measureType, 
         startTime, endTime, timeInterval
     ):
-    """Generate query string based on the ip address, 
-    startTime and endTime(time range)
+    """
+    Generate BMC query string based on the IP address, 
+    startTime, endTime, and timeInterval
     """
     result = []
 
@@ -74,17 +93,16 @@ def query_bmc(
 
     try:
         influxdbQuery = client.query(queryStr)
-        # print("Querying " + measureType + "data: " + measurement)
         result = list(influxdbQuery.get_points())
     except:
         result = []
 
     return result
 
-# @profile
 def query_uge(client, hostIp, startTime, endTime, timeInterval):
-    """Generate query string based on the ip address, 
-    startTime and endTime(time range)
+    """
+    Generate UGE query string based on the IP address, 
+    startTime, endTime, and timeInterval
     """
     result = []
 
@@ -99,7 +117,6 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
 
     try:
         influxdbQuery = client.query(queryStr)
-        # print("Querying " + measureType + "data: " + measurement)
         result = list(influxdbQuery.get_points())
     except:
         result
@@ -107,6 +124,7 @@ def query_uge(client, hostIp, startTime, endTime, timeInterval):
     return result
 
 def process_uge(ugeMetric):
+    """Process UGE metrics"""
     timeList = []
     record = []
 
@@ -133,8 +151,8 @@ def process_uge(ugeMetric):
                         record[t].append([])
     return record
 
-# @profile(precision=4)
 def preprocess_uge(ugeMetric):
+    """Process UGE metrics"""
     job_list = []
     usr_list = []
     job_user_time_dic = {}
@@ -175,13 +193,13 @@ def preprocess_uge(ugeMetric):
         pass
     return job_user_time_dic
 
-# @profile(precision=4)
 def get_metrics(
         client, hostIp, measure_bmc_list, 
         userJob, hostDetail,
         startTime, endTime, timeInterval, valueType
     ):
-    # Get BMC metrics
+    """Query BMC and UGE metrics from influxDB"""
+
     fans = []
     cpus = []
     memory = []
@@ -276,6 +294,7 @@ def get_metrics(
 # End of get_metrics
 
 def process_user_job(userJob):
+    """Process userJob information"""
     userJobResult = {}
     for userId, jobList in userJob.items():
         job_set = []
@@ -300,6 +319,8 @@ def core_to_threads(
         userJob, hostDetail,
         startTime, endTime, timeInterval, valueType
     ):
+    """Run get_metric in Multi-threads"""
+
     print("Pulling Metrics From InfluxDB...")
 
     hostIp_list_len = len(hostIp_list)
@@ -331,56 +352,6 @@ def core_to_threads(
             )
     except:
         pass
-
-def run_get_metrics(
-        hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
-        startTime, endTime, timeInterval
-    ):
-    hostIp_list_len = len(hostIp_list)
-    printProgressBar(
-        0, hostIp_list_len, 
-        prefix = 'Progress:', suffix = 'Complete', length = 50
-    )
-    for index, hostIp in enumerate(hostIp_list):
-        get_metrics(
-            client, hostIp, measure_bmc_list, 
-            userJob, hostDetail,
-            startTime, endTime, timeInterval
-        )
-        # Update Progress Bar
-        printProgressBar(
-            index + 1, hostIp_list_len, 
-            prefix = 'Progress:', suffix = 'Complete', length = 50
-        )
-
-# Print iterations progress
-def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
-    """
-    Call in a loop to create terminal progress bar
-    @params:
-        iteration   - Required  : current iteration (Int)
-        total       - Required  : total iterations (Int)
-        prefix      - Optional  : prefix string (Str)
-        suffix      - Optional  : suffix string (Str)
-        decimals    - Optional  : positive number of decimals in percent complete (Int)
-        length      - Optional  : character length of bar (Int)
-        fill        - Optional  : bar fill character (Str)
-    """
-    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
-    filledLength = int(length * iteration // total)
-    bar = fill * filledLength + '-' * (length - filledLength)
-    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
-    # Print New Line on Complete
-    if iteration == total:
-        print()
-
-def printlogo():
-    print("""    __  ___     __       _           ____        _ __    __          """)
-    print("""   /  |/  /__  / /______(_)_________/ __ )__  __(_) /___/ /__  _____ """)
-    print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
-    print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
-    print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
 
 def main(argv):
 
