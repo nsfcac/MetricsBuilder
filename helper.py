@@ -21,9 +21,23 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     if iteration == total:
         print()
 
-def printlogo():
+def printLogo():
     print("""    __  ___     __       _           ____        _ __    __          """)
     print("""   /  |/  /__  / /______(_)_________/ __ )__  __(_) /___/ /__  _____ """)
     print("""  / /|_/ / _ \/ __/ ___/ / ___/ ___/ __  / / / / / / __  / _ \/ ___/ """)
     print(""" / /  / /  __/ /_/ /  / / /__(__  ) /_/ / /_/ / / / /_/ /  __/ /     """)
     print("""/_/  /_/\___/\__/_/  /_/\___/____/_____/\__,_/_/_/\__,_/\___/_/      """)
+
+def printHelp():
+    print(
+        """
+        Options:
+            --version, -V       Show version number                             [boolean]
+            --startTime, -S     Specify start time of monitoring data           [string]
+            --endTime, -E       Specify end time of monitoring data             [string]
+            --interval, -I      Specify time interval of monitoring data        [string]
+            --dataType, -D      Specify value type, MAX, MIN, MEAN              [string]
+            --outfile, -O       Generate a dataframe CSV file for each requests [boolean]
+            --help, -H          Show help                                       [boolean]
+        """
+    )

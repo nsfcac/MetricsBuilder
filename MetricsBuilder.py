@@ -365,24 +365,27 @@ def main(argv):
 
     try:
         opts, args = getopt.getopt(
-            argv, "s:e:i:v:o", 
-            ["startTime=", "endTime=", "interval=", "valueType=", "outfile="]
+            argv, "S:E:I:D:O:H", 
+            ["startTime=", "endTime=", "interval=", "valueType=", "outfile=", "help="]
         )
     except getopt.GetoptError:
         print("Arguments Error!")
         sys.exit(2)
 
     for opt, arg in opts:
-        if opt in ("-s", "--startTime"):
+        if opt in ("-S", "--startTime"):
             startTime = arg
-        elif opt in ("-e", "--endTime"):
+        elif opt in ("-E", "--endTime"):
             endTime = arg
-        elif opt in ("-i", "--interval"):
+        elif opt in ("-I", "--interval"):
             timeInterval = arg
-        elif opt in ("-v", "--valueType"):
+        elif opt in ("-V", "--valueType"):
             valueType = arg
-        elif opt in ("-o", "--file"):
+        elif opt in ("-O", "--file"):
             outfile = True
+        elif opt in ("-H", "--help"):
+            printHelp()
+            return
     
     print("Start time is: ", startTime)
     print("End time is: ", endTime)
@@ -407,7 +410,7 @@ def main(argv):
         print("Invalid Value Type!")
         sys.exit(2)
 
-    # printlogo()
+    # printLogo()
     # Set up client
     print("Set up influxDB client...")
     client = InfluxDBClient(
