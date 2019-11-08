@@ -1,0 +1,295 @@
+{
+    "account": "sge",
+    "checkpointEnv": null,
+    "command": "submit.sh",
+    "contextVars": [],
+    "department": "defaultdepartment",
+    "grantedPE": "sm",
+    "hardRequestedQueues": [
+        "omni"
+    ],
+    "jc_name": null,
+    "jobEnvironment": [
+        {
+            "name": "PATH",
+            "value": "/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+        },
+        {
+            "name": "HISTCONTROL",
+            "value": "ignoredups"
+        },
+        {
+            "name": "SGE_CELL",
+            "value": "default"
+        },
+        {
+            "name": "MODULEPATH",
+            "value": "/opt/apps/nfs/module/modulefiles:/opt/ohpc/pub/modulefiles"
+        },
+        {
+            "name": "SGE_ROOT",
+            "value": "/export/uge"
+        },
+        {
+            "name": "LMOD_SETTARG_FULL_SUPPORT",
+            "value": "no"
+        },
+        {
+            "name": "MAIL",
+            "value": "/var/spool/mail/abdumali"
+        },
+        {
+            "name": "KRB5CCNAME",
+            "value": "FILE:/tmp/krb5cc_99021_Ky4gV3"
+        },
+        {
+            "name": "LD_LIBRARY_PATH",
+            "value": ":"
+        },
+        {
+            "name": "LMOD_DIR",
+            "value": "/opt/ohpc/admin/lmod/lmod/libexec"
+        },
+        {
+            "name": "LOGNAME",
+            "value": "abdumali"
+        },
+        {
+            "name": "PWD",
+            "value": "/home/abdumali/amb5/CID/new39ev/traj339"
+        },
+        {
+            "name": "LMOD_VERSION",
+            "value": "7.7.14"
+        },
+        {
+            "name": "SHELL",
+            "value": "/bin/bash"
+        },
+        {
+            "name": "LMOD_CMD",
+            "value": "/opt/ohpc/admin/lmod/lmod/libexec/lmod"
+        },
+        {
+            "name": "LESSOPEN",
+            "value": "||/usr/bin/lesspipe.sh %s"
+        },
+        {
+            "name": "QT_GRAPHICSSYSTEM_CHECKED",
+            "value": "1"
+        },
+        {
+            "name": "BASH_ENV",
+            "value": "/opt/ohpc/admin/lmod/lmod/init/bash"
+        },
+        {
+            "name": "OLDPWD",
+            "value": "/home/abdumali/amb5/CID/new39ev"
+        },
+        {
+            "name": "__SGE_PREFIX__O_PATH",
+            "value": "/export/uge/bin/lx-amd64:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+        },
+        {
+            "name": "__SGE_PREFIX__O_HOST",
+            "value": "quanah"
+        },
+        {
+            "name": "LS_COLORS"
+        },
+        {
+            "name": "SHLVL",
+            "value": "2"
+        },
+        {
+            "name": "__SGE_PREFIX__O_MAIL",
+            "value": "/var/spool/mail/abdumali"
+        },
+        {
+            "name": "MANPATH",
+            "value": "/export/uge/man:/usr/share/man:/usr/local/share/man"
+        },
+        {
+            "name": "SGE_QMASTER_PORT",
+            "value": "6554"
+        },
+        {
+            "name": "HISTSIZE",
+            "value": "1000"
+        },
+        {
+            "name": "LMOD_FULL_SETTARG_SUPPORT",
+            "value": "no"
+        },
+        {
+            "name": "__SGE_PREFIX__O_LOGNAME",
+            "value": "abdumali"
+        },
+        {
+            "name": "_ModuleTable001_",
+            "value": "X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii9vcHQvYXBwcy9uZnMvbW9kdWxlL21vZHVsZWZpbGVzIiwiL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvb3B0L2FwcHMvbmZzL21vZHVsZS9tb2R1bGVmaWxlczovb3B0L29ocGMvcHViL21vZHVsZWZpbGVzIix9"
+        },
+        {
+            "name": "SHOST",
+            "value": "quanah"
+        },
+        {
+            "name": "TERM",
+            "value": "xterm-256color"
+        },
+        {
+            "name": "LANG",
+            "value": "en_US.UTF-8"
+        },
+        {
+            "name": "XDG_SESSION_ID",
+            "value": "4496"
+        },
+        {
+            "name": "LMOD_PKG",
+            "value": "/opt/ohpc/admin/lmod/lmod"
+        },
+        {
+            "name": "BASH_FUNC_ml()",
+            "value": "() {  eval $($LMOD_DIR/ml_cmd \"$@\")\n}"
+        },
+        {
+            "name": "_ModuleTable_Sz_",
+            "value": "1"
+        },
+        {
+            "name": "SGE_EXECD_PORT",
+            "value": "6555"
+        },
+        {
+            "name": "_",
+            "value": "/export/uge/bin/lx-amd64/qsub"
+        },
+        {
+            "name": "USE_SYSTEMD",
+            "value": "false"
+        },
+        {
+            "name": "LMOD_COLORIZE",
+            "value": "no"
+        },
+        {
+            "name": "LMOD_SETTARG_CMD",
+            "value": ":"
+        },
+        {
+            "name": "SGE_CLUSTER_NAME",
+            "value": "p6554"
+        },
+        {
+            "name": "SSH_CLIENT",
+            "value": "129.118.34.45 41736 22"
+        },
+        {
+            "name": "SSH_TTY",
+            "value": "/dev/pts/59"
+        },
+        {
+            "name": "USER",
+            "value": "abdumali"
+        },
+        {
+            "name": "__SGE_PREFIX__O_HOME",
+            "value": "/home/abdumali"
+        },
+        {
+            "name": "SSH_CONNECTION",
+            "value": "129.118.34.45 41736 129.118.104.8 22"
+        },
+        {
+            "name": "HOSTNAME",
+            "value": "quanah"
+        },
+        {
+            "name": "__SGE_PREFIX__O_SHELL",
+            "value": "/bin/bash"
+        },
+        {
+            "name": "MODULESHOME",
+            "value": "/opt/ohpc/admin/lmod/lmod"
+        },
+        {
+            "name": "BASH_FUNC_module()",
+            "value": "() {  eval $($LMOD_CMD bash \"$@\") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)\n}"
+        },
+        {
+            "name": "LMOD_PREPEND_BLOCK",
+            "value": "normal"
+        },
+        {
+            "name": "__SGE_PREFIX__O_WORKDIR",
+            "value": "/home/abdumali/amb5/CID/new39ev/traj339"
+        },
+        {
+            "name": "XDG_RUNTIME_DIR",
+            "value": "/run/user/99021"
+        },
+        {
+            "name": "HOME",
+            "value": "/home/abdumali"
+        }
+    ],
+    "jobid": 960936,
+    "mailOpt": {
+        "abort": false,
+        "begin": false,
+        "end": false,
+        "suspend": false
+    },
+    "name": "cid39n_339",
+    "npprior": 0.5,
+    "npri": 5.000206976007374,
+    "ntickets": 2.066722238184602e-05,
+    "nurg": 0.3037835553520821,
+    "parallelEnv": "sm",
+    "parallelEnvRange": "1",
+    "ppri": 0,
+    "priority": 5.000206976007374,
+    "project": "quanah",
+    "queue": "omni@compute-1-5.localdomain",
+    "resources": {
+        "hard": [
+            {
+                "name": "h_rt",
+                "value": "172800"
+            },
+            {
+                "name": "s_rt",
+                "value": "172800"
+            },
+            {
+                "name": "h_vmem",
+                "value": "5.3G"
+            }
+        ],
+        "soft": []
+    },
+    "shares": 4.030902186143607e-06,
+    "slots": 1,
+    "softRequestedQueues": [],
+    "state": "r",
+    "taskid": null,
+    "tasks": [],
+    "timeStamp": {
+        "start": "Tue Oct 08 17:29:10 CDT 2019",
+        "startEpoch": 1570573750988,
+        "submit": "Tue Oct 08 17:28:44 CDT 2019",
+        "submitEpoch": 1570573724589
+    },
+    "usage": {
+        "cpu": 0,
+        "io": 0,
+        "ioops": 0,
+        "iow": 0,
+        "maxvmem": 0,
+        "mem": 0,
+        "vmem": 0,
+        "wallclock": 0
+    },
+    "user": "abdumali"
+}
