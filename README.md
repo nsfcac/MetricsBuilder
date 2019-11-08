@@ -1,8 +1,8 @@
-# Introduction
+## Introduction
 MetricsBuilder is a tool that provides a uniform API for analytic clients like [HiperJobViz](https://idatavisualizationlab.github.io/HPCC/HiperJobViz/index.html); it builds aggregated data and returns a dataframe CSV file back to clients. 
 
 Currently, it is designed specifically for the data collected in The Quanah Cluster in [High Performance Comoputing Center](http://www.depts.ttu.edu/hpcc/) in Texas Tech University.
-# MetricsBuilder command line parameters
+## MetricsBuilder command line parameters
 ```
 $python3 MetricsBuilder.py --help
 Options:
@@ -21,3 +21,15 @@ $python3 MetricsBuilder3.py -S 2019-04-20T00:00:00Z -E 2019-04-26T23:59:59Z -I 5
 ```
 
 The output file will be saved in folder "csv", named with "2019-04-20T00:00:00Z_2019-04-27T00:00:00Z_5m.csv"
+
+## Files/folders description
+##### hostlist
+A file contains IP addresses of all the monitored nodes
+##### csv
+A folder where generated csv files are saved
+##### influxDB
+A folder where samples of influxDB points are saved
+##### BMC
+A folder where samples of BMC metrics are saved
+### UGE
+A folder where samples of UGE metrics are saved
