@@ -23,13 +23,13 @@ $python3 MetricsBuilder3.py -S 2019-04-20T00:00:00Z -E 2019-04-26T23:59:59Z -I 5
 The output file will be saved in folder "csv", named with "2019-04-20T00:00:00Z_2019-04-27T00:00:00Z_5m.csv"
 
 ## Files/folders description
-##### hostlist
+#### hostlist
 A file contains IP addresses of all the monitored nodes
-##### csv
+#### csv
 A folder where generated csv files are saved
-##### influxDB
+#### influxDB
 A folder where samples of influxDB points are saved
-##### BMC
+#### BMC
 A folder where samples of BMC metrics are saved
-### UGE
+#### UGE
 A folder where samples of UGE metrics are saved
