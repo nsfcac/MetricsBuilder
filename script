@@ -1,1 +1,0 @@
-python3 MetricsBuilder3.py -s 2019-04-20T00:00:00Z -e 2019-04-27T00:00:00Z -i 5m -v MEAN -o

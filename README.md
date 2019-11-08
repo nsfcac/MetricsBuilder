@@ -25,8 +25,8 @@ The output file will be saved in folder "csv", named with "2019-04-20T00:00:00Z_
 ## Files/folders
 #### hostlist
 A file contains IP addresses of all the monitored nodes
-#### csv
-A folder where generated csv files are saved
+#### CSV
+A folder where generated CSV files are saved
 #### influxDB
 A folder where samples of influxDB points are saved
 #### BMC
@@ -35,7 +35,7 @@ A folder where samples of BMC metrics are saved
 A folder where samples of UGE metrics are saved
 
 ## To do list
-#### 1. Evaluate efficiency of different database design
+#### 1. Evaluate efficiency of different database designs
 Build a tool that converts historical data to newly designed data structure
 #### 2. Add configuration file
 Users can set up configuration of MetricsBuilder in the configuration file, e.g. parameters for connecting to database, metrics needed by analytic tools etc.
