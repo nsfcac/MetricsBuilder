@@ -35,10 +35,10 @@ A folder where samples of BMC metrics are saved
 A folder where samples of UGE metrics are saved
 
 ## To do list
-1. Evaluate efficiency of different database design
+### 1. Evaluate efficiency of different database design
 
-    *Build a tool that converts historical data to newly designed data structure
-2. Configuration file
+    Build a tool that converts historical data to newly designed data structure
+### 2. Configuration file
 
-    *Users can set up configuration of MetricsBuilder in the configuration file, e.g. parameters for connecting to database, metrics needed by analytic tools etc.
-3. Optimize the algorithm of the processing function
+    Users can set up configuration of MetricsBuilder in the configuration file, e.g. parameters for connecting to database, metrics needed by analytic tools etc.
+### 3. Optimize the algorithm of the processing function
