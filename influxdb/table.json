@@ -1,1 +1,0 @@
-[{"cluster": "quanah", "location": "ESB", "time": "2019-04-20T00:01:09.07667712Z", "error": "None", "host": "10.101.9.6", "job_data": "{'state': 'r', 'user': 'dsundara', 'startTime': 'Fri Apr 19 21:02:37 CDT 2019', 'jobID': 754316, 'nodes': 'compute-9-6,compute-9-60', 'submitTime': 'Thu Apr 18 10:30:55 CDT 2019'}"}]
