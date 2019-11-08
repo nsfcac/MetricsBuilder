@@ -1,5 +1,6 @@
 # Introduction
-MetricsBuilder is a tool that provides a uniform API for analytic tools like HiperViz; it builds aggregated data and returns a csv dataframe back to analytic tools. 
+MetricsBuilder is a tool that provides a uniform API for analytic tools like HiperViz; it builds aggregated data and returns a dataframe CSV file back to analytic tools. 
+
 Currently, it is designed specifically for the data collected in The Quanah Cluster in Texas Tech University.
 # MetricsBuilder command line parameters
 ```
