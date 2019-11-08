@@ -15,7 +15,7 @@ Options:
     --help, -H          Show help                                       [boolean]
 ```
 
-To create a csv file based on the time range, time interval and data type:
+To create a csv file based on time range, time interval and data type:
 ```
 $python3 MetricsBuilder3.py -S 2019-04-20T00:00:00Z -E 2019-04-26T23:59:59Z -I 5m -D MEAN -O 
 ```
