@@ -438,8 +438,8 @@ def get_uge_metrics(
                     except:
                         # Otherwise job_data is not a valid string
                         jobID = None
-                    
-                    if timestamp not in Time_List:
+
+                    if timestamp not in Node_Jobs:
                         Node_Jobs.update(
                             {
                                 timestamp: [jobID]
