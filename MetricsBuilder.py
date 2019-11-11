@@ -445,7 +445,7 @@ def get_uge_metrics(
                             )
                     except:
                         pass
-                    
+
     # Process job list for each timestamp
     for time in Time_List:
         Jobs.append(Node_Jobs[time])
@@ -454,14 +454,16 @@ def get_uge_metrics(
     if hostIp in hostDetail:
         hostDetail[hostIp].update(
             {
-                "Jobs": Jobs
+                "Jobs": Jobs,
+                "time": Time_List
             }
         )
     else:
         hostDetail.update(
             {
                 hostIp: {
-                    "Jobs": Jobs
+                    "Jobs": Jobs,
+                    "time": Time_List
                 }
             }
         )
