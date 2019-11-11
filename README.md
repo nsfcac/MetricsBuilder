@@ -6,18 +6,18 @@ Currently, it is designed specifically for the data collected in The Quanah Clus
 ```
 $python3 MetricsBuilder.py --help
 Options:
-    --version, -V       Show version number                             [boolean]
-    --startTime, -S     Specify start time of monitoring data           [string]
-    --endTime, -E       Specify end time of monitoring data             [string]
-    --interval, -I      Specify time interval of monitoring data        [string]
-    --dataType, -D      Specify value type, MAX, MIN, MEAN              [string]
-    --outfile, -O       Generate a dataframe CSV file for each requests [boolean]
-    --help, -H          Show help                                       [boolean]
+    --version, -v       Show version number                             [boolean]
+    --startTime, -s     Specify start time of monitoring data           [string]
+    --endTime, -e       Specify end time of monitoring data             [string]
+    --interval, -i      Specify time interval of monitoring data        [string]
+    --dataType, -t      Specify value type, MAX, MIN, MEAN              [string]
+    --outfile, -o       Generate a dataframe CSV file for each requests [boolean]
+    --help, -h          Show help                                       [boolean]
 ```
 
 To create a csv file based on time range, time interval and data type:
 ```
-$python3 MetricsBuilder3.py -S 2019-04-20T00:00:00Z -E 2019-04-26T23:59:59Z -I 5m -D MEAN -O 
+$python3 MetricsBuilder3.py -s 2019-04-20T00:00:00Z -e 2019-04-26T23:59:59Z -i 5m -t MEAN -o 
 ```
 
 The output file will be saved in folder "CSV", named with "2019-04-20T00:00:00Z_2019-04-27T00:00:00Z_5m.csv"

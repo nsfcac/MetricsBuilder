@@ -120,25 +120,25 @@ def main(argv):
     if outfile:
         print("Writing Processed into file...")
         outfile1_name = (
-            "./influxdb/jobDetail" + startTime + "_" 
+            "./influxDB/jobDetail" + startTime + "_" 
             + endTime + "_" + timeInterval + ".json"
         )
         with open(outfile1_name, "w") as outfile1:
             json.dump(jobDetail, outfile1, indent = 4, sort_keys = True)
         
         outfile2_name = (
-            "./influxdb/hostDetail" + startTime + "_" 
+            "./influxDB/hostDetail" + startTime + "_" 
             + endTime + "_" + timeInterval + ".json"
         )
         with open(outfile2_name, "w") as outfile2:
             json.dump(hostDetail, outfile2, indent = 4, sort_keys = True)
 
         print("Done!")
-        
+
     # if outfile:
     #     print("Writing Processed into file...")
     #     outfile_name = (
-    #         "./influxdb/" + startTime + "_" 
+    #         "./influxDB/" + startTime + "_" 
     #         + endTime + "_" + timeInterval + ".csv"
     #     )
     #     build_csv(hostDetail, outfile_name)
