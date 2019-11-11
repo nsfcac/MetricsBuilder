@@ -23,6 +23,126 @@ __maintainer__ = "Jie Li"
 __email__ = "jieli@ttu.edu"
 __status__ = "Dev"
 
+def main(argv):
+
+    validTime = ['s', 'm', 'h', 'd', 'w']
+
+    startTime = ""
+    endTime = ""
+    timeInterval = ""
+    valueType = ""
+    outfile = False
+
+    try:
+        opts, args = getopt.getopt(
+            argv, "s:e:i:t:ovh", 
+            ["startTime=", "endTime=", "interval=", "valueType=", "outfile", "version", "help"]
+        )
+    except getopt.GetoptError:
+        print("Arguments Error!")
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt in ("-s", "--startTime"):
+            startTime = arg
+        elif opt in ("-e", "--endTime"):
+            endTime = arg
+        elif opt in ("-i", "--interval"):
+            timeInterval = arg
+        elif opt in ("-t", "--valueType"):
+            valueType = arg
+        elif opt in ("-o", "--file"):
+            outfile = True
+        elif opt in ("-v", "--version"):
+            print(__version__)
+            return
+        elif opt in ("-h", "--help"):
+            printHelp()
+            return
+
+    # Validate start and end time
+    st = validate_time(startTime)
+    et = validate_time(endTime)
+
+    if not st or not et or st>et:
+        print("Invalid start time and end time!")
+        sys.exit(2)
+
+    # Validate time interval
+    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
+    if not time_valid.match(timeInterval):
+        print("Invalid Time Interval!")
+        sys.exit(2)
+
+    # Validate value type
+    if valueType not in ("MEAN", "MAX", "MIN"):
+        print("Invalid Value Type!")
+        sys.exit(2)
+
+    printLogo()
+
+    # Set up client
+    print("Set up influxDB client...")
+    client = InfluxDBClient(
+        host='localhost', 
+        port=8086, 
+        database='hpcc_monitoring_db'
+    )
+
+    # Get hosts Ip
+    hostIp_list = parse_host()
+
+    # BMC metrics list
+    measure_bmc_list = [
+        "CPU_Temperature", "Inlet_Temperature", 
+        "CPU_Usage", "Memory_Usage",
+        "Fan_Speed", "Node_Power_Usage",
+    ]
+    # UGE metrics list
+    measure_uge_list = ["Job_Info"]
+
+    jobDetail = {}
+    hostDetail = {}
+
+    # Record running time of core_to_threads
+    start_time = time.time()
+
+    # Get metrics using multi-thread
+    core_to_threads(
+        client, hostIp_list, 
+        measure_bmc_list, measure_uge_list,
+        jobDetail, hostDetail,
+        startTime, endTime, timeInterval, valueType
+    )
+
+    print("---%s seconds---" % (time.time() - start_time))
+
+    if outfile:
+        print("Writing Processed into file...")
+        outfile1_name = (
+            "./influxdb/jobDetail" + startTime + "_" 
+            + endTime + "_" + timeInterval + ".json"
+        )
+        with open(outfile1_name, "w") as outfile1:
+            json.dump(jobDetail, outfile1, indent = 4, sort_keys = True)
+        
+        outfile2_name = (
+            "./influxdb/hostDetail" + startTime + "_" 
+            + endTime + "_" + timeInterval + ".json"
+        )
+        with open(outfile2_name, "w") as outfile2:
+            json.dump(hostDetail, outfile2, indent = 4, sort_keys = True)
+
+        print("Done!")
+        
+    # if outfile:
+    #     print("Writing Processed into file...")
+    #     outfile_name = (
+    #         "./influxdb/" + startTime + "_" 
+    #         + endTime + "_" + timeInterval + ".csv"
+    #     )
+    #     build_csv(hostDetail, outfile_name)
+
 def validate_time(date_text):
     """Validate time string format"""
     try:
@@ -63,7 +183,7 @@ def query_bmc(
     Generate BMC query string based on the IP address, 
     startTime, endTime, and timeInterval
     """
-    result = []
+    result = None
 
     if measurement == "CPU_Temperature":
         select_obj = (measureType + """("CPU1 Temp") as "CPU1 Temp", """
@@ -79,8 +199,11 @@ def query_bmc(
                     + measureType + """("FAN_2") as "FAN_2", """
                     + measureType + """("FAN_3") as "FAN_3", """
                     + measureType + """("FAN_4") as "FAN_4" """)
-    else:
+    elif measurement == "Node_Power_Usage":
         select_obj = measureType + """("powerusage_watts") as "Power Usage" """
+    else:
+        print(measurement + " is not in the database!")
+        return result
 
     queryStr = (
         "SELECT " + select_obj
@@ -95,230 +218,261 @@ def query_bmc(
         influxdbQuery = client.query(queryStr)
         result = list(influxdbQuery.get_points())
     except:
-        result = []
+        print(e)
 
     return result
 
-def query_uge(client, hostIp, startTime, endTime, timeInterval):
+def query_uge(
+        client, hostIp, measurement, 
+        startTime, endTime, timeInterval
+    ):
     """
     Generate UGE query string based on the IP address, 
     startTime, endTime, and timeInterval
     """
-    result = []
+    result = None
 
-    queryStr = (
-        "SELECT "
-        + "DISTINCT(job_data) as job_data FROM Job_Info"
-        + " WHERE host='" + hostIp 
-        + "' AND time >= '" + startTime 
-        + "' AND time <= '" + endTime
-        + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
-    )
+    # measure_uge_list = ["Job_Info"]
+    if measurement == "Job_Info":
+        queryStr = (
+            "SELECT "
+            + "DISTINCT(job_data) as job_data FROM Job_Info"
+            + " WHERE host='" + hostIp 
+            + "' AND time >= '" + startTime 
+            + "' AND time <= '" + endTime
+            + "' GROUP BY *, time(" + timeInterval + ") SLIMIT 1"
+        )
+    else:
+        print(measurement + " is not in the database!")
+        return result
 
     try:
         influxdbQuery = client.query(queryStr)
         result = list(influxdbQuery.get_points())
     except:
-        result
+        print(e)
 
     return result
 
-def process_uge(ugeMetric):
-    """Process UGE metrics"""
-    timeList = []
-    record = []
-
-    for i, item in enumerate(ugeMetric):
-        dataTime = item["time"]
-        if dataTime not in timeList:
-            timeList.append(dataTime) 
-            try:
-                dataStr = item["job_data"].replace("'", '"')
-                job_data = json.loads(dataStr)
-                new_rec = [job_data["jobID"]]
-            except:
-                new_rec = [[]]
-            record.append(new_rec)
-        else:
-            for t, time in enumerate(timeList):
-                if dataTime == time:
-                    try:
-                        dataStr = item["job_data"].replace("'", '"')
-                        job_data = json.loads(dataStr)
-                        if job_data["jobID"] not in record[t]:
-                            record[t].append(job_data["jobID"])
-                    except:
-                        record[t].append([])
-    return record
-
-def preprocess_uge(ugeMetric):
-    """Process UGE metrics"""
-    job_list = []
-    usr_list = []
-    job_user_time_dic = {}
-
-    try:
-        for i, item in enumerate(ugeMetric):
-            dataStr = item["job_data"].replace("'",'"')
-            job_data = json.loads(dataStr)
-
-            nodesName = job_data["nodes"].split(",")
-            jobID = job_data["jobID"]
-            user = job_data["user"]
-            submitTime = job_data["submitTime"]
-            startTime = job_data["startTime"]
-
-            nodesIp = []
-            for node in nodesName:
-                nodeIp = get_hostip(node)
-                nodesIp.append(nodeIp)
-
-            if jobID not in job_list:
-                job_list.append(jobID)
-                job_time_dic = {
-                            jobID: {
-                                "nodes": nodesIp,
-                                "time": [submitTime, startTime, None]
-                                # "submitTime": submitTime,
-                                # "startTime": startTime,
-                                # "finishTime": None
-                            }
-                        }
-                if user not in usr_list:
-                    usr_list.append(jobID)
-                    job_user_time_dic.update({user:[job_time_dic]})
-                else:
-                    job_user_time_dic[user].append(job_time_dic)
-    except:
-        pass
-    return job_user_time_dic
-
-def get_metrics(
-        client, hostIp, measure_bmc_list, 
-        userJob, hostDetail,
+def get_bmc_metrics(
+        client, hostIp, 
+        measure_bmc_list,
+        hostDetail,
         startTime, endTime, timeInterval, valueType
     ):
-    """Query BMC and UGE metrics from influxDB"""
+    """Query and process BMC metrics from influxDB"""
 
-    fans = []
-    cpus = []
-    memory = []
-    cpu_temp = []
-    inlet_temp = []
-
-    # arrTemperature = [CPU1_Temp, CPU2_Temp, Inlet_Temp]
-    # arrCPU_load = [CPU_Usage]
-    # arrMemory_usage = [Memory_Usage]
-    # arrFan_speed = [FAN_1, FAN_2, FAN_3, FAN_4]
+    # BMC metrics
+    CPU1_Temp = []
+    CPU2_Temp = []
+    Inlet_Temp = []
+    CPU_Usage = []
+    Memory_Usage = []
+    Fan_1_Speed = []
+    Fan_2_Speed = []
+    Fan_3_Speed = []
+    Fan_4_Speed = []
+    Power_Usage = []
 
     for item in measure_bmc_list:
         bmc_metrics = query_bmc(
             client, hostIp, item, valueType, startTime, endTime, timeInterval
         )
 
-        bmc_length = len(bmc_metrics)
+        # If query_bmc returns a valid result
+        if bmc_metrics:
+            bmc_length = len(bmc_metrics)
 
-        for i in range(bmc_length):
-            if item == "CPU_Temperature":
-                if bmc_metrics[i]["CPU1 Temp"] and bmc_metrics[i]["CPU2 Temp"]:
-                    cpu1_temp = round(float(bmc_metrics[i]["CPU1 Temp"]), 2)
-                    cpu2_temp = round(float(bmc_metrics[i]["CPU2 Temp"]), 2)
-                    record = [cpu1_temp, cpu2_temp]
+            for i in range(bmc_length):
+                if item == "CPU_Temperature":
+                    try:
+                        cpu1_temp = round(float(bmc_metrics[i]["CPU1 Temp"]), 2)
+                        cpu2_temp = round(float(bmc_metrics[i]["CPU2 Temp"]), 2)
+                    except:
+                        cpu1_temp = None
+                        cpu2_temp = None
+
+                    CPU1_Temp.append(cpu1_temp)
+                    CPU2_Temp.append(cpu2_temp)
+                    
+                elif item =="Inlet_Temperature":
+                    try:
+                        inlet_temp = round(float(bmc_metrics[i]["Inlet Temp"]), 2)
+                    except:
+                        inlet_temp = None
+
+                    Inlet_Temp.append(inlet_temp)
+
+                elif item == "CPU_Usage":
+                    try:
+                        cpu_usage = round(float(bmc_metrics[i]["CPU Usage"]), 2)
+                    except:
+                        cpu_usage = None
+
+                    CPU_Usage.append(cpu_usage)
+
+                elif item == "Memory_Usage":
+                    try:
+                        memory_usage = round(float(bmc_metrics[i]["Memory Usage"]), 2)
+                    except:
+                        memory_usage = None
+
+                    Memory_Usage.append(memory_usage)
+
+                elif item == "Fan_Speed":
+                    try:
+                        fan_1 = round(float(bmc_metrics[i]["FAN_1"]), 2)
+                        fan_2 = round(float(bmc_metrics[i]["FAN_2"]), 2)
+                        fan_3 = round(float(bmc_metrics[i]["FAN_3"]), 2)
+                        fan_4 = round(float(bmc_metrics[i]["FAN_4"]), 2)
+                    except:
+                        fan_1 = None
+                        fan_2 = None
+                        fan_3 = None
+                        fan_4 = None
+                        
+                    Fan_1_Speed.append(fan_1)
+                    Fan_2_Speed.append(fan_2)
+                    Fan_3_Speed.append(fan_3)
+                    Fan_4_Speed.append(fan_4)
+
+                elif item == "Node_Power_Usage":
+                    try:
+                        power_usage = round(float(bmc_metrics[i]["Power Usage"]), 2)
+                    except:
+                        power_usage = None
+
+                    Power_Usage.append(power_usage)
+
                 else:
-                    record = [None, None]
-                cpu_temp.append(record)
-                
-            if item =="Inlet_Temperature":
-                if bmc_metrics[i]["Inlet Temp"]:
-                    record = round(float(bmc_metrics[i]["Inlet Temp"]), 2)
-                else:
-                    record = None
-                inlet_temp.append(record)
+                    print(item + " is not in the database!")
 
-            if item == "CPU_Usage":
-                if bmc_metrics[i]["CPU Usage"]:
-                    record = round(float(bmc_metrics[i]["CPU Usage"]), 2)
-                else:
-                    record = None
-                cpus.append(record)
-
-            if item == "Memory_Usage":
-                if bmc_metrics[i]["Memory Usage"]:
-                    record = round(float(bmc_metrics[i]["Memory Usage"]), 2)
-                else:
-                    record = None
-                memory.append(record)
-
-            if item == "Fan_Speed":
-                if bmc_metrics[i]["FAN_1"] and bmc_metrics[i]["FAN_2"] and bmc_metrics[i]["FAN_3"] and bmc_metrics[i]["FAN_4"]:
-                    fan_1 = round(float(bmc_metrics[i]["FAN_1"]), 2)
-                    fan_2 = round(float(bmc_metrics[i]["FAN_2"]), 2)
-                    fan_3 = round(float(bmc_metrics[i]["FAN_3"]), 2)
-                    fan_4 = round(float(bmc_metrics[i]["FAN_4"]), 2)
-                    record = [fan_1, fan_2, fan_3, fan_4]
-                else:
-                    record = [None, None, None, None]
-                fans.append(record)
-    
-    # Merge cpu_temp with inlet_temp
-    for i, item in enumerate(cpu_temp):
-        item.append(inlet_temp[i])
-
-    # Get UGE metrics
-    uge_metrics = query_uge(client, hostIp, startTime, endTime, timeInterval)
-    uge_record = process_uge(uge_metrics)
-
-    hostDetail.update(
-        {
-            hostIp: {
-                "arrFan_speed": fans,
-                "arrCPU_load": cpus,
-                "arrMemory_usage": memory,
-                "arrTemperature": cpu_temp,
-                "arrJob": uge_record
+    # Update hostDetail
+    if hostIp in hostDetail:
+        hostDetail[hostIp].update(
+            {
+                "CPU1_Temp": CPU1_Temp,
+                "CPU2_Temp": CPU2_Temp,
+                "Inlet_Temp": Inlet_Temp,
+                "CPU_Usage": CPU_Usage,
+                "Memory_Usage": Memory_Usage,
+                "Fan_1_Speed": Fan_1_Speed,
+                "Fan_2_Speed": Fan_2_Speed,
+                "Fan_3_Speed": Fan_3_Speed,
+                "Fan_4_Speed": Fan_4_Speed,
+                "Power_Usage": Power_Usage
             }
-        }
-    )
-    # for i in range(uge_length):
-    # uge_metrics = preprocess_uge(uge_raw)
+        )
+    else:
+        hostDetail.update(
+            {
+                hostIp: {
+                    "CPU1_Temp": CPU1_Temp,
+                    "CPU2_Temp": CPU2_Temp,
+                    "Inlet_Temp": Inlet_Temp,
+                    "CPU_Usage": CPU_Usage,
+                    "Memory_Usage": Memory_Usage,
+                    "Fan_1_Speed": Fan_1_Speed,
+                    "Fan_2_Speed": Fan_2_Speed,
+                    "Fan_3_Speed": Fan_3_Speed,
+                    "Fan_4_Speed": Fan_4_Speed,
+                    "Power_Usage": Power_Usage
+                }
+            }
+        )
+    return None
 
-    # for userId, jobInfo in uge_metrics.items():
-    #     if userId in userJob:
-    #         userJob[userId].extend(jobInfo)
-    #     else:
-    #         userJob.update(
-    #             {
-    #                 userId: jobInfo
-    #             }
-    #         )
-# End of get_metrics
+def get_uge_metrics(
+        client, hostIp, 
+        measure_uge_list,
+        jobDetail, hostDetail,
+        startTime, endTime, timeInterval
+    ):
+    """Query and process UGE metrics from influxDB"""
+    # These variables are used to generate a list of jobs 
+    # running on the host for each timestamp
+    Jobs = []
+    Node_Jobs = {}
+    Time_List = []
 
-def process_user_job(userJob):
-    """Process userJob information"""
-    userJobResult = {}
-    for userId, jobList in userJob.items():
-        job_set = []
-        agg_jobList = {}
-        for job in jobList:
-            jobId = list(job.keys())[0]
-            jobInfo = list(job.values())[0]
-            if jobId not in job_set:
-                job_set.append(jobId)
-                agg_jobList.update(
-                    {
-                        jobId: jobInfo
-                    }
-                )
-            else:
-                agg_jobList[jobId]["nodes"].extend(jobInfo["nodes"])
-        userJobResult.update({userId: agg_jobList})
-    return userJobResult
+    for item in measure_uge_list:
+        uge_metrics = query_uge(
+            client, hostIp, item, startTime, endTime, timeInterval
+        )
+        # If query_uge returns a valid result
+        if uge_metrics:
+            uge_length = len(uge_metrics)
+
+            for i in range(uge_length):
+                if item == "Job_Info":
+                    try:
+                        timestamp = uge_metrics[i]["time"]
+                        # Replace ' to "", otherwise json.loads won't work
+                        dataStr = uge_metrics[i]["job_data"].replace("'",'"')
+                        job_data = json.loads(dataStr)
+
+                        jobID = job_data["jobID"]
+                        user = job_data["user"]
+                        submitTime = job_data["submitTime"]
+                        startTime = job_data["startTime"]
+                        job_Info = {
+                            "user": user,
+                            "submitTime": submitTime,
+                            "startTime": startTime
+                        }
+
+                        # The timestamp list records all the timestamps 
+                        # being read, since uge_query returns several points 
+                        # under the same timestamp, we have to aggregate them
+                        if timestamp not in Time_List:
+                            Time_List.append(timestamp)
+                            Node_Jobs.update(
+                                {
+                                    timestamp: [jobID]
+                                }
+                            )
+                        else:
+                            if jobID not in Node_Jobs[timestamp]:
+                                Node_Jobs[timestamp].append(jobID)
+                        
+                        # Generate job-info pairs, the info includes information
+                        # about user, submit time and start time
+                        if jobID not in jobDetail:
+                            jobDetail.update(
+                                {
+                                    jobID: job_Info
+                                }
+                            )
+                    except:
+                        return None
+    # Process job list for each timestamp
+    for time in Time_List:
+        Jobs.append(Node_Jobs[time])
+    
+    # Update hostDetail:
+    if hostIp in hostDetail:
+        hostDetail[hostIp].update(
+            {
+                "Jobs": Jobs
+            }
+        )
+    else:
+        hostDetail.update(
+            {
+                hostIp: {
+                    "Jobs": Jobs
+                }
+            }
+        )
+    
+    return None
 
 def core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJob, hostDetail,
+        client, hostIp_list, 
+        measure_bmc_list, measure_uge_list,
+        jobDetail, hostDetail,
         startTime, endTime, timeInterval, valueType
-    ):
+    ):  
     """Run get_metric in Multi-threads"""
 
     print("Pulling Metrics From InfluxDB...")
@@ -331,127 +485,44 @@ def core_to_threads(
     )
 
     try:
-        threads = []
+        bmc_threads = []
+        uge_threads = []
         for hostIp in hostIp_list:
-            a = Thread(
-                target = get_metrics, 
+            # BMC threads
+            bmc = Thread(
+                target = get_bmc_metrics, 
                 args = (
-                    client, hostIp, measure_bmc_list, 
-                    userJob, hostDetail,
+                    client, hostIp, 
+                    measure_bmc_list,
+                    hostDetail,
                     startTime, endTime, timeInterval, valueType
                 )
             )
-            threads.append(a)
-            a.start()
-        for index, thread in enumerate(threads):
-            thread.join()
+            bmc_threads.append(bmc)
+            bmc.start()
+            # UGE threads
+            uge = Thread(
+                target = get_uge_metrics, 
+                args = (
+                    client, hostIp, 
+                    measure_uge_list,
+                    jobDetail, hostDetail,
+                    startTime, endTime, timeInterval
+                )
+            )
+            uge_threads.append(uge)
+            uge.start()
+
+        for i in range(hostIp_list_len):
+            bmc_threads[i].join()
+            uge_threads[i].join()
             # Update Progress Bar
             printProgressBar(
-                index + 1, hostIp_list_len, 
+                i + 1, hostIp_list_len, 
                 prefix = 'Progress:', suffix = 'Complete', length = 50
             )
     except:
         pass
-
-def main(argv):
-
-    validTime = ['s', 'm', 'h', 'd', 'w']
-
-    startTime = ""
-    endTime = ""
-    timeInterval = ""
-    valueType = ""
-    outfile = False
-
-    try:
-        opts, args = getopt.getopt(
-            argv, "S:E:I:D:O:H", 
-            ["startTime=", "endTime=", "interval=", "valueType=", "outfile=", "help="]
-        )
-    except getopt.GetoptError:
-        print("Arguments Error!")
-        sys.exit(2)
-
-    for opt, arg in opts:
-        if opt in ("-S", "--startTime"):
-            startTime = arg
-        elif opt in ("-E", "--endTime"):
-            endTime = arg
-        elif opt in ("-I", "--interval"):
-            timeInterval = arg
-        elif opt in ("-V", "--valueType"):
-            valueType = arg
-        elif opt in ("-O", "--file"):
-            outfile = True
-        elif opt in ("-H", "--help"):
-            printHelp()
-            return
-    
-    print("Start time is: ", startTime)
-    print("End time is: ", endTime)
-    print("Time interval is: ", timeInterval)
-
-    # Validate start and end time
-    st = validate_time(startTime)
-    et = validate_time(endTime)
-
-    if not st or not et or st>et:
-        print("Invalid start time and end time!")
-        sys.exit(2)
-
-    # Validate time interval
-    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
-    if not time_valid.match(timeInterval):
-        print("Invalid Time Interval!")
-        sys.exit(2)
-
-    # Validate value type
-    if valueType not in ("MEAN", "MAX", "MIN"):
-        print("Invalid Value Type!")
-        sys.exit(2)
-
-    # printLogo()
-    # Set up client
-    print("Set up influxDB client...")
-    client = InfluxDBClient(
-        host='localhost', 
-        port=8086, 
-        database='hpcc_monitoring_db'
-    )
-
-    # Get hosts Ip
-    hostIp_list = parse_host()
-
-    userJobRecord = {}
-
-    userJob = {}
-    hostDetail = {}
-
-    measure_bmc_list = [
-        "CPU_Temperature", "Inlet_Temperature", 
-        "CPU_Usage", "Memory_Usage",
-        "Fan_Speed", "Node_Power_Usage",
-    ]
-
-    measure_uge_list = ["Job_Info"]
-
-    start_time = time.time()
-
-    core_to_threads(
-        hostIp_list, measure_bmc_list, client,
-        userJobRecord, hostDetail,
-        startTime, endTime, timeInterval, valueType
-    )
-
-    print("---%s seconds---" % (time.time() - start_time))
-
-    if outfile:
-        print("Writing Processed into file...")
-        outfile_name = (
-            "./influxdb/" + startTime + "_" 
-            + endTime + "_" + timeInterval + ".csv"
-        )
-        build_csv(hostDetail, outfile_name)
 
 def build_csv(json_data, outfile):
     with open(outfile, "w") as csv_file:

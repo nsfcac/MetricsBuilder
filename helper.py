@@ -30,14 +30,14 @@ def printLogo():
 
 def printHelp():
     print(
-        """
-        Options:
-            --version, -V       Show version number                             [boolean]
-            --startTime, -S     Specify start time of monitoring data           [string]
-            --endTime, -E       Specify end time of monitoring data             [string]
-            --interval, -I      Specify time interval of monitoring data        [string]
-            --dataType, -D      Specify value type, MAX, MIN, MEAN              [string]
-            --outfile, -O       Generate a dataframe CSV file for each requests [boolean]
-            --help, -H          Show help                                       [boolean]
-        """
-    )
+    """
+    Options:
+        
+        --startTime, -s     Specify start time of monitoring data           [string]
+        --endTime, -e       Specify end time of monitoring data             [string]
+        --interval, -i      Specify time interval of monitoring data        [string]
+        --valueType, -t     Specify value type: MAX, MIN, MEAN              [string]
+        --outfile, -o       Generate a dataframe CSV file for each requests [boolean]
+        --version, -v       Show version number                             [boolean]
+        --help, -h          Show help                                       [boolean]
+    """)
