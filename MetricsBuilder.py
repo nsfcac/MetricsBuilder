@@ -444,7 +444,8 @@ def get_uge_metrics(
                                 }
                             )
                     except:
-                        return None
+                        pass
+                    
     # Process job list for each timestamp
     for time in Time_List:
         Jobs.append(Node_Jobs[time])
