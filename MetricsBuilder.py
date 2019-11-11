@@ -405,8 +405,14 @@ def get_uge_metrics(
 
             for i in range(uge_length):
                 if item == "Job_Info":
+                    # The timestamp list records all the timestamps 
+                    # being read, since uge_query returns several points 
+                    # under the same timestamp, we have to aggregate them
+                    timestamp = uge_metrics[i]["time"]
+                    if timestamp not in Time_List:
+                        Time_List.append(timestamp)
+
                     try:
-                        timestamp = uge_metrics[i]["time"]
                         # Replace ' to "", otherwise json.loads won't work
                         dataStr = uge_metrics[i]["job_data"].replace("'",'"')
                         job_data = json.loads(dataStr)
@@ -420,20 +426,6 @@ def get_uge_metrics(
                             "submitTime": submitTime,
                             "startTime": startTime
                         }
-
-                        # The timestamp list records all the timestamps 
-                        # being read, since uge_query returns several points 
-                        # under the same timestamp, we have to aggregate them
-                        if timestamp not in Time_List:
-                            Time_List.append(timestamp)
-                            Node_Jobs.update(
-                                {
-                                    timestamp: [jobID]
-                                }
-                            )
-                        else:
-                            if jobID not in Node_Jobs[timestamp]:
-                                Node_Jobs[timestamp].append(jobID)
                         
                         # Generate job-info pairs, the info includes information
                         # about user, submit time and start time
@@ -444,7 +436,18 @@ def get_uge_metrics(
                                 }
                             )
                     except:
-                        pass
+                        # Otherwise job_data is not a valid string
+                        jobID = None
+                    
+                    if timestamp not in Time_List:
+                        Node_Jobs.update(
+                            {
+                                timestamp: [jobID]
+                            }
+                        )
+                    else:
+                        if jobID not in Node_Jobs[timestamp]:
+                            Node_Jobs[timestamp].append(jobID)
 
     # Process job list for each timestamp
     for time in Time_List:
