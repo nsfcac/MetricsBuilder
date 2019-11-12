@@ -29,11 +29,11 @@ The output files will be saved in folder "CSV".
 ## Dataframe samples
 #### Job details dataframe
 
-|  JobID |          startTime           |           submitTime         |   user   |
-|--------|------------------------------|------------------------------|----------|
-| 755371 | Sat Apr 20 21:40:19 CDT 2019 | Sat Apr 20 21:39:12 CDT 2019 | akitazum |
-| 753687 | Thu Apr 18 05:02:59 CDT 2019 | Thu Apr 16 23:37:34 CDT 2019 | rafiisla |
-| 753696 | Thu Apr 18 07:41:54 CDT 2019 | Wed Apr 17 08:12:49 CDT 2019 | jieyao   |
+|     JobID    |          startTime           |           submitTime         |    user    |
+|--------------|------------------------------|------------------------------|------------|
+|    755371    | Sat Apr 20 21:40:19 CDT 2019 | Sat Apr 20 21:39:12 CDT 2019 |  akitazum  |
+|    753687    | Thu Apr 18 05:02:59 CDT 2019 | Thu Apr 16 23:37:34 CDT 2019 |  rafiisla  |
+|    753696    | Thu Apr 18 07:41:54 CDT 2019 | Wed Apr 17 08:12:49 CDT 2019 |  jieyao    |
 
 #### Host details dataframe
 
