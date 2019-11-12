@@ -4,10 +4,10 @@
 import json
 import csv
 import re
-import datetime
 import time
 import sys
 import getopt
+from datetime import datetime, timedelta
 
 from threading import Thread
 from influxdb import InfluxDBClient
@@ -68,11 +68,16 @@ def main(argv):
         print("Invalid start time and end time!")
         sys.exit(2)
 
-    # Validate time interval
-    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
-    if not time_valid.match(timeInterval):
+    # Validate the time interval and build a timedelta object
+    delta = time_delta(timeInterval)
+    if not delta:
         print("Invalid Time Interval!")
         sys.exit(2)
+    
+    # Generate a time list
+    time_List = [dt.strftime("%Y-%m-%dT%H:%M:%SZ") for dt in datetime_range(
+        st, et, delta
+    )] 
 
     # Validate value type
     if valueType not in ("MEAN", "MAX", "MIN"):
@@ -109,7 +114,7 @@ def main(argv):
 
     # Get metrics using multi-thread
     core_to_threads(
-        client, hostIp_list, 
+        client, hostIp_list, time_List,
         measure_bmc_list, measure_uge_list,
         jobDetail, hostDetail,
         startTime, endTime, timeInterval, valueType
@@ -146,7 +151,7 @@ def main(argv):
 def validate_time(date_text):
     """Validate time string format"""
     try:
-        date = datetime.datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%SZ")
+        date = datetime.strptime(date_text, "%Y-%m-%dT%H:%M:%SZ")
         return date
     except ValueError as e:
         print(e)
@@ -174,6 +179,35 @@ def get_hostip(hostname):
         n, h2, h1 = hostname.split('-')
         return '10.101.' + h2 + "." + h1
     return None
+
+def time_delta(timeInterval):
+    """Validate time interval and generate timedelta object"""
+    time_valid = re.compile('[1-9][0-9]*[s, m, h, d, w]')
+    if not time_valid.match(timeInterval):
+        return None
+    if "s" in timeInterval:
+        num = int(timeInterval.split('s')[0])
+        delta = timedelta(seconds = num)
+    elif "m" in timeInterval:
+        num = int(timeInterval.split('m')[0])
+        delta = timedelta(minutes = num)
+    elif "h" in timeInterval:
+        num = int(timeInterval.split('h')[0])
+        delta = timedelta(hours = num)
+    elif "d" in timeInterval:
+        num = int(timeInterval.split('d')[0])
+        delta = timedelta(days = num)
+    else:
+        num = int(timeInterval.split('w')[0])
+        delta = timedelta(weeks = num)
+    return delta
+
+def datetime_range(start, end, interval):
+    """Generate time interval array"""
+    current = start
+    while current < end:
+        yield current
+        current += interval
 
 def query_bmc(
         client, hostIp, measurement, measureType, 
@@ -255,7 +289,7 @@ def query_uge(
     return result
 
 def get_bmc_metrics(
-        client, hostIp, 
+        client, hostIp, time_List,
         measure_bmc_list,
         hostDetail,
         startTime, endTime, timeInterval, valueType
@@ -273,7 +307,7 @@ def get_bmc_metrics(
     Fan_3_Speed = []
     Fan_4_Speed = []
     Power_Usage = []
-
+    
     for item in measure_bmc_list:
         bmc_metrics = query_bmc(
             client, hostIp, item, valueType, startTime, endTime, timeInterval
@@ -284,6 +318,7 @@ def get_bmc_metrics(
             bmc_length = len(bmc_metrics)
 
             for i in range(bmc_length):
+
                 if item == "CPU_Temperature":
                     try:
                         cpu1_temp = round(float(bmc_metrics[i]["CPU1 Temp"]), 2)
@@ -346,8 +381,27 @@ def get_bmc_metrics(
 
                 else:
                     print(item + " is not in the database!")
-        # else:
-            # Otherwise query influxDB error, set all values to None
+        # Otherwise generate empty value for each timestamp
+        else:
+            for timestamp in time_List:
+                if item == "CPU_Temperature":
+                    CPU1_Temp.append(None)
+                    CPU2_Temp.append(None)
+                elif item =="Inlet_Temperature":
+                    Inlet_Temp.append(None)
+                elif item == "CPU_Usage":
+                    CPU_Usage.append(None)
+                elif item == "Memory_Usage":
+                    Memory_Usage.append(None)
+                elif item == "Fan_Speed":
+                    Fan_1_Speed.append(None)
+                    Fan_2_Speed.append(None)
+                    Fan_3_Speed.append(None)
+                    Fan_4_Speed.append(None)
+                elif item == "Node_Power_Usage":
+                    Power_Usage.append(None)
+                else:
+                    print(item + " is not in the database!")
 
 
     # Update hostDetail
@@ -386,7 +440,7 @@ def get_bmc_metrics(
     return None
 
 def get_uge_metrics(
-        client, hostIp, 
+        client, hostIp, time_List,
         measure_uge_list,
         jobDetail, hostDetail,
         startTime, endTime, timeInterval
@@ -396,25 +450,18 @@ def get_uge_metrics(
     # running on the host for each timestamp
     Jobs = []
     Node_Jobs = {}
-    Time_List = []
 
     for item in measure_uge_list:
         uge_metrics = query_uge(
             client, hostIp, item, startTime, endTime, timeInterval
         )
+        uge_length = len(uge_metrics)
         # If query_uge returns a valid result
-        if uge_metrics:
-            uge_length = len(uge_metrics)
-
+        if uge_metrics: 
             for i in range(uge_length):
+                # uge metrics may contains several points with the same timestamp
+                timestamp = uge_metrics[i]["time"]
                 if item == "Job_Info":
-                    # The timestamp list records all the timestamps 
-                    # being read, since uge_query returns several points 
-                    # under the same timestamp, we have to aggregate them
-                    timestamp = uge_metrics[i]["time"]
-                    if timestamp not in Time_List:
-                        Time_List.append(timestamp)
-
                     try:
                         # Replace ' to "", otherwise json.loads won't work
                         dataStr = uge_metrics[i]["job_data"].replace("'",'"')
@@ -451,9 +498,17 @@ def get_uge_metrics(
                     else:
                         if jobID not in Node_Jobs[timestamp]:
                             Node_Jobs[timestamp].append(jobID)
+        # Otherwise generate empty value for each timestamp
+        else:
+            for timestamp in time_List:
+                Node_Jobs.update(
+                    {
+                        timestamp: None
+                    }
+                )
 
     # Process job list for each timestamp
-    for time in Time_List:
+    for time in time_List:
         Jobs.append(Node_Jobs[time])
     
     # Update hostDetail:
@@ -461,7 +516,6 @@ def get_uge_metrics(
         hostDetail[hostIp].update(
             {
                 "Jobs": Jobs,
-                "time": Time_List
             }
         )
     else:
@@ -469,7 +523,6 @@ def get_uge_metrics(
             {
                 hostIp: {
                     "Jobs": Jobs,
-                    "time": Time_List
                 }
             }
         )
@@ -477,7 +530,7 @@ def get_uge_metrics(
     return None
 
 def core_to_threads(
-        client, hostIp_list, 
+        client, hostIp_list, time_List,
         measure_bmc_list, measure_uge_list,
         jobDetail, hostDetail,
         startTime, endTime, timeInterval, valueType
@@ -501,7 +554,7 @@ def core_to_threads(
             bmc = Thread(
                 target = get_bmc_metrics, 
                 args = (
-                    client, hostIp, 
+                    client, hostIp, time_List,
                     measure_bmc_list,
                     hostDetail,
                     startTime, endTime, timeInterval, valueType
@@ -513,7 +566,7 @@ def core_to_threads(
             uge = Thread(
                 target = get_uge_metrics, 
                 args = (
-                    client, hostIp, 
+                    client, hostIp, time_List,
                     measure_uge_list,
                     jobDetail, hostDetail,
                     startTime, endTime, timeInterval

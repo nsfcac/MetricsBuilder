@@ -17,7 +17,7 @@ Options:
 
 To create a csv file based on time range, time interval and data type:
 ```
-$python3 MetricsBuilder3.py -s 2019-04-20T00:00:00Z -e 2019-04-26T23:59:59Z -i 5m -t MEAN -o 
+$python3 MetricsBuilder.py -s 2019-04-20T00:00:00Z -e 2019-04-26T23:59:59Z -i 5m -t MEAN -o 
 ```
 
 The output file will be saved in folder "CSV", named with "2019-04-20T00:00:00Z_2019-04-27T00:00:00Z_5m.csv"
