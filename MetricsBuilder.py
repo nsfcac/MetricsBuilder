@@ -73,16 +73,16 @@ def main(argv):
     if not delta:
         print("Invalid Time Interval!")
         sys.exit(2)
-    
-    # Generate a time list
-    time_List = [dt.strftime("%Y-%m-%dT%H:%M:%SZ") for dt in datetime_range(
-        st, et, delta
-    )] 
 
     # Validate value type
     if valueType not in ("MEAN", "MAX", "MIN"):
         print("Invalid Value Type!")
         sys.exit(2)
+    
+    # Generate a time list
+    time_List = [dt.strftime("%Y-%m-%dT%H:%M:%SZ") for dt in datetime_range(
+        st, et, delta
+    )] 
 
     printLogo()
 
@@ -122,35 +122,18 @@ def main(argv):
 
     print("---%s seconds---" % (time.time() - start_time))
 
-    # if outfile:
-    #     print("Writing Processed into file...")
-    #     outfile1_name = (
-    #         "./influxDB/jobDetail" + startTime + "_" 
-    #         + endTime + "_" + timeInterval + ".json"
-    #     )
-    #     with open(outfile1_name, "w") as outfile1:
-    #         json.dump(jobDetail, outfile1, indent = 4, sort_keys = True)
-        
-    #     outfile2_name = (
-    #         "./influxDB/hostDetail" + startTime + "_" 
-    #         + endTime + "_" + timeInterval + ".json"
-    #     )
-    #     with open(outfile2_name, "w") as outfile2:
-    #         json.dump(hostDetail, outfile2, indent = 4, sort_keys = True)
-
-    #     print("Done!")
-
     if outfile:
         print("Writing Processed data into files...")
         jobfile = (
-            "./influxDB/JobDetail_" + startTime + "_" 
+            "./CSV/JobDetail_" + startTime + "_" 
             + endTime + "_" + timeInterval + ".csv"
         )
         hostfile = (
-            "./influxDB/HostDetail_" + startTime + "_" 
+            "./CSV/HostDetail_" + startTime + "_" 
             + endTime + "_" + timeInterval + ".csv"
         )
         build_csv(jobDetail, hostDetail, jobfile, hostfile, time_List)
+        print("Done!")
 
 def validate_time(date_text):
     """Validate time string format"""
@@ -635,6 +618,6 @@ def build_csv(jobDetail, hostDetail, jobfile, hostfile, time_List):
             for feature in feature_list:
                 each_row.append(jobDetail[job][feature])
             csvwriter.writerow(each_row)
-            
+
 if __name__ == "__main__":
     main(sys.argv[1:])
