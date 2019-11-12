@@ -346,6 +346,9 @@ def get_bmc_metrics(
 
                 else:
                     print(item + " is not in the database!")
+        # else:
+            # Otherwise query influxDB error, set all values to None
+
 
     # Update hostDetail
     if hostIp in hostDetail:
