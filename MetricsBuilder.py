@@ -122,31 +122,35 @@ def main(argv):
 
     print("---%s seconds---" % (time.time() - start_time))
 
-    if outfile:
-        print("Writing Processed into file...")
-        outfile1_name = (
-            "./influxDB/jobDetail" + startTime + "_" 
-            + endTime + "_" + timeInterval + ".json"
-        )
-        with open(outfile1_name, "w") as outfile1:
-            json.dump(jobDetail, outfile1, indent = 4, sort_keys = True)
-        
-        outfile2_name = (
-            "./influxDB/hostDetail" + startTime + "_" 
-            + endTime + "_" + timeInterval + ".json"
-        )
-        with open(outfile2_name, "w") as outfile2:
-            json.dump(hostDetail, outfile2, indent = 4, sort_keys = True)
-
-        print("Done!")
-
     # if outfile:
     #     print("Writing Processed into file...")
-    #     outfile_name = (
-    #         "./influxDB/" + startTime + "_" 
-    #         + endTime + "_" + timeInterval + ".csv"
+    #     outfile1_name = (
+    #         "./influxDB/jobDetail" + startTime + "_" 
+    #         + endTime + "_" + timeInterval + ".json"
     #     )
-    #     build_csv(hostDetail, outfile_name)
+    #     with open(outfile1_name, "w") as outfile1:
+    #         json.dump(jobDetail, outfile1, indent = 4, sort_keys = True)
+        
+    #     outfile2_name = (
+    #         "./influxDB/hostDetail" + startTime + "_" 
+    #         + endTime + "_" + timeInterval + ".json"
+    #     )
+    #     with open(outfile2_name, "w") as outfile2:
+    #         json.dump(hostDetail, outfile2, indent = 4, sort_keys = True)
+
+    #     print("Done!")
+
+    if outfile:
+        print("Writing Processed data into files...")
+        jobfile = (
+            "./influxDB/JobDetail_" + startTime + "_" 
+            + endTime + "_" + timeInterval + ".csv"
+        )
+        hostfile = (
+            "./influxDB/HostDetail_" + startTime + "_" 
+            + endTime + "_" + timeInterval + ".csv"
+        )
+        build_csv(jobDetail, hostDetail, jobfile, hostfile, time_List)
 
 def validate_time(date_text):
     """Validate time string format"""
@@ -586,14 +590,15 @@ def core_to_threads(
     except:
         pass
 
-def build_csv(json_data, outfile):
-    with open(outfile, "w") as csv_file:
-        hostDetail = json_data
-        header_list = []
+def build_csv(jobDetail, hostDetail, jobfile, hostfile, time_List):
+    """Convert json files to CSV files"""
+    # Write host details into a CSV file
+    with open(hostfile, "w") as host_csv_file:
+        header_list = ["TimeStamp"]
         host_list = list(hostDetail.keys())
         feature_list = list(hostDetail[host_list[0]].keys())
 
-        csvwriter = csv.writer(csv_file)
+        csvwriter = csv.writer(host_csv_file)
 
         # Write header
         for host in host_list:
@@ -604,17 +609,32 @@ def build_csv(json_data, outfile):
         csvwriter.writerow(header_list)
 
         # Write value
-        timeStamp_len = len(hostDetail[host_list[0]][feature_list[0]]) - 1
-
-        for t in range(timeStamp_len):
-            each_row = []
+        for i, timestamp in enumerate(time_List):
+            each_row = [timestamp]
             for host in host_list:
                 for feature in feature_list:
-                    try:
-                        each_row.append(hostDetail[host][feature][t])
-                    except:
-                        each_row.append(None)
+                    each_row.append(hostDetail[host][feature][i])
             csvwriter.writerow(each_row)
+    
+    # Write job details into a CSV file
+    with open(jobfile, "w") as job_csv_file:
+        header_list = ["JobID"]
+        job_list = list(jobDetail.keys())
+        feature_list = list(jobDetail[job_list[0]].keys())
 
+        csvwriter = csv.writer(job_csv_file)
+        # Write header
+        for feature in feature_list:
+            header_list.append(feature)
+        
+        csvwriter.writerow(header_list)
+
+        # Write value
+        for job in job_list:
+            each_row = [job]
+            for feature in feature_list:
+                each_row.append(jobDetail[job][feature])
+            csvwriter.writerow(each_row)
+            
 if __name__ == "__main__":
     main(sys.argv[1:])
