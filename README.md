@@ -24,7 +24,7 @@ The output files will be saved in folder "CSV".
 
 `JobDetail_2019-04-20T00:00:00Z_2019-04-26T23:59:59Z_5m.csv` contains jobs information about `submit time`, `start time` and `user name`.
 
-`HostDetail_2019-04-20T00:00:00Z_2019-04-26T23:59:59Z_5m.csv` contains hosts information for each timestamp, these information includes `CPU Temperature`, `Inlet Temperature`, `CPU Usage`, `Memory Usage`, `Fan Speed`, and `Node Power Usage`.
+`HostDetail_2019-04-20T00:00:00Z_2019-04-26T23:59:59Z_5m.csv` contains hosts information of each timestamp, these information includes `CPU Temperature`, `Inlet Temperature`, `CPU Usage`, `Memory Usage`, `Fan Speed`, and `Node Power Usage`.
 
 ## Dataframe samples
 #### Job details dataframe
