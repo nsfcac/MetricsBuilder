@@ -1,5 +1,5 @@
 # Convertor
-Convert historical data to a newly defined structure
+Convert historical data to a newly defined data structure
 ## Convertor command line parameters
 ```
 $python3 Convertor.py --help
