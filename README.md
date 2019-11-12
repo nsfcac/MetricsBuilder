@@ -45,13 +45,18 @@ The output files will be saved in folder "CSV".
 | 2019-04-20T15:35:00Z |     [754634]     |         0.68          |          160.99          |
 
 ## Files/folders
-#### hostlist 
-a file contains IP addresses of all monitored nodes
-#### CSV
-Where generated CSV files are saved
-#### influxDB
-Where samples of influxDB points are saved
-#### BMC
-Where samples of BMC metrics are saved
-#### UGE
-Where samples of UGE metrics are saved
+__hostlist__ : a file contains IP addresses of all monitored nodes
+
+__CSV__: generated CSV files
+
+__influxDB__: samples of influxDB points
+
+__BMC__: samples of BMC metrics
+
+__UGE__: samples of UGE metrics
+
+__tools__: data structure convertor, profiling tools etc.
+
+## Tools
+#### Convertor
+This tool is developed to convert historical data to a newly defined structure, which is used to compare efficiency of differenty database designs.
