@@ -3,6 +3,7 @@
 
 import sys
 import getopt
+from datetime import datetime, timedelta
 
 from influxdb import InfluxDBClient
 
@@ -19,7 +20,7 @@ def main(argv):
 
     startTime = ""
     endTime = ""
-    database = ""
+    dbname = ""
 
     try:
         opts, args = getopt.getopt(
@@ -36,7 +37,7 @@ def main(argv):
         elif opt in ("-e", "--endTime"):
             endTime = arg
         elif opt in ("-d", "--database"):
-            database = arg
+            dbname = arg
         elif opt in ("-v", "--version"):
             print(__version)
             return
@@ -65,9 +66,10 @@ def main(argv):
     print("Set up influxDB client...")
     client = InfluxDBClient(
         host='localhost', 
-        port=8086, 
-        database='hpcc_monitoring_db'
+        port=8086
     )
+
+    client.switch_database('hpcc_monitoring_db')
 
     # Get hosts Ip
     hostIp_list = parse_host()
@@ -80,6 +82,11 @@ def main(argv):
     ]
     # UGE metrics list
     measure_uge_list = ["Job_Info"]
+
+    # Todo fetch all points
+
+    # Create database
+    client.create_database(dbname)
 
     return
 
