@@ -12,7 +12,7 @@ Options:
 ```
 ## Data structure
 ### BMC metrics structure
-BMC metrics are saved in `measurement`("bmc"); host IP address("10.101.1.1", for example) is saved in `tags`; metrics are saved as a structured string in `filed`.
+BMC metrics are saved in `measurement`("bmc"); host IP address("10.101.1.1", for example) is saved in `tags`; metrics are saved as a structured string in `fileds`.
 
 __tags__: host_IP=`<Host IP address>`
 
@@ -20,7 +20,7 @@ __fields__: CPU_Temperature=`<CPU1 Temp>|<CPU2 Temp>`,Inlet_Temperature=`<Inlet 
 
 
 ### UGE metrics structure
-UGE metrics are saved `measurement`("uge"); job ID("753696", for example) is saved in `tag`; job information is saved as a structured string in `field`.
+UGE metrics are saved `measurement`("uge"); job ID("753696", for example) is saved in `tags`; job information is saved as a structured string in `fields`.
 
 __tags__: job_ID=`<Job ID>`
 
