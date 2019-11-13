@@ -11,22 +11,31 @@ Options:
     --help, -h          Show help                                       [boolean]
 ```
 ## Data structure
-### BMC metrics structure 
-All BMC metrics are saved in host level. Each host has its own `measurement`("10.101.1.1", for example). Metrics are saved as a structured string in the same `field`. We do not use key-value `tags`.
+### BMC metrics structure
+BMC metrics are saved in `measurement`("bmc); host IP address("10.101.1.1", for example) is saved in `tags`; metrics are saved as a structured string in `filed`.
 
-__field string__
+#### tags
 ```
-<CPU1 Temp>|<CPU2 Temp>|<Inlet Temp>|<CPU Usage>|<Memory Usage>|<FAN1 Speed>|<FAN2 Speed>|<FAN3 Speed>|<FAN4 Speed>|<Power Usage>
+<Host IP address>
 ```
+#### field
+__CPU_Temperature__: `<CPU1 Temp>|<CPU2 Temp>`
+__Inlet_Temperature__: `<Inlet Temp>`
+__CPU_Usage__:`<CPU Usage>` 
+__Memory_Usage__:`<Memory Usage>`
+__Fan_Speed__:`<Fan_1>|<Fan_2>|<Fan_3>|<Fan_4>`
+__Node_Power_Usage__:`<Power Usage>`
+
+
 ### UGE metrics structure
-UGE metrics are saved in cluster level. We only have one `measurement`("uge"), and use both `tag` and `field`.
+UGE metrics are saved `measurement`("uge"); job ID("753696", for example) is saved in `tag`; job information is saved as a structured string in `field`.
 
-__tag string__
+#### tags
 ```
 <Job ID>
 ```
 
-__field string__
+#### field
 ```
 <User Name>|<Submit Time>|<Start Time>|<Finish Time>
 ```
