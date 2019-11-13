@@ -253,7 +253,6 @@ def query_uge(
     """
     result = None
 
-    # measure_uge_list = ["Job_Info"]
     if measurement == "Job_Info":
         queryStr = (
             "SELECT "

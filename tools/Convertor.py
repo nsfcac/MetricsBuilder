@@ -109,7 +109,7 @@ def parse_host():
     return hostIp_list
 
 def query_bmc(
-        client, hostIp, measurement, tartTime, endTime
+        client, hostIp, measurement, startTime, endTime
     ):
     """
     Generate BMC query string based on the IP address, startTime, endTime
@@ -144,6 +144,37 @@ def query_bmc(
         + "' AND time <= '" + endTime
         + "'"
     )
+
+    try:
+        influxdbQuery = client.query(queryStr)
+        result = list(influxdbQuery.get_points())
+    except:
+        print(e)
+
+    return result
+
+def query_uge(
+        client, hostIp, measurement, 
+        startTime, endTime
+    ):
+    """
+    Generate UGE query string based on the IP address, 
+    startTime, endTime
+    """
+    result = None
+
+    # measure_uge_list = ["Job_Info"]
+    if measurement == "Job_Info":
+        queryStr = (
+            "SELECT job_data FROM Job_Info"
+            + " WHERE host='" + hostIp 
+            + "' AND time >= '" + startTime 
+            + "' AND time <= '" + endTime
+            + "'"
+        )
+    else:
+        print(measurement + " is not in the database!")
+        return result
 
     try:
         influxdbQuery = client.query(queryStr)
