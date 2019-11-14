@@ -1,0 +1,44 @@
+# Reference: http://manpages.ubuntu.com/manpages/trusty/man5/sge_accounting.5.html
+
+[qname]omni:
+[hostname]compute-9-24.localdomain:
+[group]bio:
+[owner]minguo:
+[job_name]cor_fly_nanopore:
+[job_number]1007788:
+[account]sge:
+[priority]0:
+[submission_time]1573771180795:
+[start_time]1573771219487:
+[end_time]1573772848262:
+[failed]0:
+[exit_status]0:
+[ru_wallclock]1628.775:
+[ru_utime]4671.104:
+[ru_stime]23.274:
+[ru_maxrss]1049836:
+[ru_ixrss]0:
+[ru_ismrss]0:
+[ru_idrss]0:
+[ru_isrss]0:
+[ru_minflt]19617571:
+[ru_majflt]0:
+[ru_nswap]0:
+[ru_inblock]332664:
+[ru_oublock]328016:
+[ru_msgsnd]0:
+[ru_msgrcv]0:
+[ru_nsignals]0:
+[ru_nvcsw]51669:
+[ru_nivcsw]9097:
+[project]quanah:
+[department]defaultdepartment:
+[granted_pe]sm:
+[slots]4:
+[task_number]42:
+-[cpu, the cpu time usage in seconds]4694.379:
+-[mem, the integral memory usage in Gbytes cpu seconds]4503.600931:
+-[io, the amount of data transferred in input/output operations]4.199676:
+[category]-u minguo -l h_rt=172800,h_vmem=1280m,s_rt=172800 -pe sm 4 -P quanah -binding no_job_binding 0 0 0 0 no_explicit_binding:
+[iow, io wait time in seconds]65.470000:
+NONE:1270276096:0:0:NONE:NONE:0:0:compute-3-15.localdomain:/lustre/work/minguo/canu/assemblies/correction/2-correction:qsub -l h_vmem=1280m -pe sm 4 -P quanah -j y -o correctReads.$TASK_ID.out -cwd -N cor_fly_nanopore -t 1-72 ./correctReads.sh 0:1628.979000:542857
