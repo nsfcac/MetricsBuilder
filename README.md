@@ -1,7 +1,7 @@
 ## Introduction
 MetricsBuilder is a tool that provides a uniform API for analytic clients like [HiperJobViz](https://idatavisualizationlab.github.io/HPCC/HiperJobViz/index.html); it builds aggregated data and returns dataframe CSV files back to clients. 
 
-Currently, it is designed specifically for the data collected in The Quanah Cluster in [High Performance Comoputing Center](http://www.depts.ttu.edu/hpcc/) in Texas Tech University.
+Currently, it is designed specifically for the data collected in the Quanah Cluster in [High Performance Comoputing Center](http://www.depts.ttu.edu/hpcc/) in Texas Tech University.
 ## MetricsBuilder command line parameters
 ```
 $python3 MetricsBuilder.py --help
@@ -15,7 +15,7 @@ Options:
     --help, -h          Show help                                       [boolean]
 ```
 
-To fetch processed data from influxDB based on time range, time interval and data type:
+To fetch data from influxDB based on time range, time interval and data type:
 ```
 $python3 MetricsBuilder.py -s 2019-04-20T00:00:00Z -e 2019-04-26T23:59:59Z -i 5m -t MEAN -o 
 ```
