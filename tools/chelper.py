@@ -21,14 +21,14 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
     if iteration == total:
         print()
 
-def printLogo():
+def printMBCLogo():
     print("""    __  _______  ______                           __            """)
     print("""   /  |/  / __ )/ ____/___  ____ _   _____  _____/ /_____  _____""")
     print("""  / /|_/ / __  / /   / __ \/ __ \ | / / _ \/ ___/ __/ __ \/ ___/""")
     print(""" / /  / / /_/ / /___/ /_/ / / / / |/ /  __/ /  / /_/ /_/ / /    """)
     print("""/_/  /_/_____/\____/\____/_/ /_/|___/\___/_/   \__/\____/_/     """)
 
-def printHelp():
+def printMBCHelp():
     print(
     """
     Options:
@@ -37,6 +37,16 @@ def printHelp():
     --endTime, -e       Specify end time of monitoring data             [string]
     --interval, -i      Specify time interval of monitoring data        [string]
     --valueType, -t     Specify value type: MAX, MIN, MEAN              [string]
+    --help, -h          Show help                                       [boolean]
+    """)
+
+def printFTFHelp():
+    print(
+    """
+    Options:
+    --version, -v       Show version number                             [boolean]
+    --hostDetail, -d    Specify hostDetail csv file                     [string]
+    --jobDetail, -j     Specify jobDetai csv file                       [string]
     --help, -h          Show help                                       [boolean]
     """)
 

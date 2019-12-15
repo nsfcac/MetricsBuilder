@@ -16,7 +16,7 @@ from chelper import *
 
 __author__ = "Jie Li"
 __copyright__ = "Copyright 2019, Texas Tech University"
-__credits__ = ["Jie Li", "Ghazanfar Ali"]
+__credits__ = ["Jie Li"]
 __license__ = "MIT"
 __version__ = "0.0.1"
 __maintainer__ = "Jie Li"
@@ -55,7 +55,7 @@ def main(argv):
             print(__version__)
             return
         elif opt in ("-h", "--help"):
-            printHelp()
+            printMBCHelp()
             return
 
     # Validate start and end time
@@ -82,7 +82,7 @@ def main(argv):
         st, et, delta
     )] 
 
-    printLogo()
+    printMBCLogo()
 
     # Set up client
     print("Set up influxDB client...")

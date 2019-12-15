@@ -1,3 +1,7 @@
+# FTFinder
+Find finish time for each job, it reads HostDetail.csv, analyzes the finish time and writes the results into JobDetail.csv
+
+
 # MBConvertor
 Process historical data and save them into "processed_metrics" database.
 ## MBConvertor command line parameters
