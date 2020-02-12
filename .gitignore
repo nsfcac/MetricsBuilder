@@ -4,3 +4,4 @@
 # Ignore folders
 env/
 __pycache__/
+tools/__pycache__/
