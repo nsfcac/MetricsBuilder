@@ -29,7 +29,7 @@ def query_data() -> str:
         else:
             return('Error: Quering data failed!')
     except Exception as err:
-        print("Error: " + err)
+        print(err)
 
 
 if __name__ == '__main__':

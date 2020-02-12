@@ -20,7 +20,7 @@ def query_db(config: dict, start: str, end: str, interval: str) -> dict:
             "meta": {"args": error.args}
         }
         json_data["errors"] = [error]
-        print("Error: " + err)
+        print(err)
 
     return json_data
 
