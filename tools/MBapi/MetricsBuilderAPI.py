@@ -14,15 +14,19 @@ app.config['dbconfig'] = {'host': 'localhost',
 
 
 @app.route('/api/v1/')
-def query_data():
-    query_parameters = request.args
-    startTime = query_parameters.get('starttime')
-    endTime = query_parameters.get('endtime')
-    timeInterval = query_parameters.get('interval')
-    if sanity_check(startTime, endTime, timeInterval):
-        query_db(app.config['dbconfig'], startTime, endTime, timeInterval)
-    else:
-        return('Quering data failed!')
+def query_data() -> str:
+    try:
+        query_parameters = request.args
+        startTime = query_parameters.get('starttime')
+        endTime = query_parameters.get('endtime')
+        timeInterval = query_parameters.get('interval')
+        if sanity_check(startTime, endTime, timeInterval):
+            received_data = query_db(app.config['dbconfig'], startTime, endTime, timeInterval)
+            print(received_data)
+        else:
+            return('Error: Quering data failed!')
+    except Exception as err:
+        print("Error: " + err.message)
 
 
 if __name__ == '__main__':
