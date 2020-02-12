@@ -1,5 +1,5 @@
 from flask import Flask
-from flash import request, jsonify
+from flask import request, jsonify
 from flask_cors import CORS
 
 from time_sanity_check import sanity_check
