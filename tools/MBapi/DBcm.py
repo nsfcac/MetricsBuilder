@@ -6,16 +6,11 @@ class QueryInfluxdb():
         self.configuration = config
     
     def get(self, sql: str) -> list:
-        json_data = {}
+        json_data = []
         try:
             client = InfluxDBClient(**self.configuration)
             influxdbQuery = client.query(sql)
-            json_data['data'] = list(influxdbQuery.get_points())
+            json_data = list(influxdbQuery.get_points())
         except Exception as err:
-            error = {
-                'title': 'Query InfluxDB Exception',
-                'meta': {'args': err.args}
-            }
-            json_data['errors'] = [error]
             print(err)
         return json_data
