@@ -22,12 +22,13 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T14:30:00Z'
         timeInterval = '5m'
+        node = '10.101.6.11'
 
         if time_sanity_check(startTime, endTime, timeInterval):
-            # node_data = query_node(config, startTime, endTime, timeInterval)
-            # print(node_data)
-            job_set = query_job_set(config, startTime, endTime)
-            print(job_set)
+            node_data = query_node(config, startTime, endTime, timeInterval)
+            print(node_data)
+            # job_set = query_job_set(node, config, startTime, endTime)
+            # print(job_set)
         else:
             return('Error: Quering data failed!')
     except Exception as err:

@@ -5,12 +5,13 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
     try:
         influx = QueryInfluxdb(config)
         measurement = "cluster_unified_metrics"
-        fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
+        fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts", "jobID"]
         
         for node in nodelist:
             json_data[node] = {}
             for field in fields:
                 node_sql = node_sql_gen(field, measurement, node, start, end, interval)
+                print(node_sql)
                 node_data = influx.get(node_sql)
                 if field == "jobID":
                     for index, item in enumerate(node_data):
@@ -68,10 +69,13 @@ def query_job_info(config: dict, joblist: list) -> dict:
     return json_data
 
 def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, interval: str) -> str:
-    return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = " + host + " AND " + "time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ")")
+    if field == "jobID":
+        return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE host = " + host + " AND time >= '" + start + "' AND time <= '" + end + "'")
+    else:
+        return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = " + host + " AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ")")
 
 def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
     return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time <= '" + end + "'")
 
 def job_sql_gen(field: str, measurement: str) -> list:
-    return ("SELECT " + filed + " FROM " + measurement + " ORDER BY desc LIMIT 1")
+    return ("SELECT " + field + " FROM " + measurement + " ORDER BY desc LIMIT 1")
