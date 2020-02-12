@@ -11,9 +11,9 @@ config = {'host': 'localhost',
           'port': 8086,
           'database': 'hpcc_monitoring_db',}
 
-app.config['dbconfig'] = {'host': 'localhost',
-                          'port': 8086,
-                          'database': 'hpcc_monitoring_db',}
+# app.config['dbconfig'] = {'host': 'localhost',
+#                           'port': 8086,
+#                           'database': 'hpcc_monitoring_db',}
 
 
 # @app.route('/api/v1/')
@@ -29,7 +29,7 @@ def query_data() -> str:
         else:
             return('Error: Quering data failed!')
     except Exception as err:
-        print("Error: " + err.message)
+        print("Error: " + err)
 
 
 if __name__ == '__main__':

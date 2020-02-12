@@ -15,6 +15,6 @@ def sanity_check(start: str, end: str, interval: str) -> bool:
             return False
         return True
     except Exception as err:
-        print("Error: " + err.message) 
+        print("Error: " + err) 
         return False
         

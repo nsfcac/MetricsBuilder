@@ -17,5 +17,5 @@ class QueryInfluxdb():
                 'meta': {'args': err.args}
             }
             json_data['errors'] = [error]
-            print("Error: " + self.__str__() + " : " + err.message)
+            print("Error: " + err)
         return json_data
