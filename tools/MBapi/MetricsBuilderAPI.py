@@ -42,7 +42,7 @@ def query_data() -> str:
             json_data['timeStamp'] = time_list
 
             node_data = query_node(node_list, config, startTime, endTime, timeInterval)
-            pro_node_data = node_data_parser(node_list, node_data)
+            pro_node_data = node_data_parser(node_list, node_data, time_list)
             json_data['nodesInfo'] = pro_node_data
 
             job_list = list(query_job_set(config, startTime, endTime))
