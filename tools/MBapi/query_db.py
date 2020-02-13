@@ -67,7 +67,7 @@ def query_job_info(config: dict, joblist: list) -> dict:
 
 def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, interval: str) -> str:
     if field == "jobID":
-        return("SELECT jobID FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ") fill(null)")
+        return("SELECT DISTINCT(jobID) FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ") fill(null)")
     else:
         return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ")")
 
