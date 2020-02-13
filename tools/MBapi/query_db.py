@@ -11,11 +11,11 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
             json_data[node] = {}
             for field in fields:
                 node_sql = node_sql_gen(field, measurement, node, start, end, interval)
-                print(node_sql)
                 node_data = influx.get(node_sql)
+                print(node_data)
                 if field == "jobID":
                     for index, item in enumerate(node_data):
-                        node_data[index] = item.split('_')[1] 
+                        node_data[index] = item.split('_')[1]
                 json_data[node][field] = node_data
  
     except Exception as err:
