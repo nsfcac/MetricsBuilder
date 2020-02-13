@@ -45,7 +45,7 @@ def build_csv(json_data: dict, hostfile: str, jobfile: str) -> None:
 
     print("Time Stamp length: ", len(time_List))
 
-    for host in host_list:
+    for host in list(hostDetail.keys()):
         print(len(hostDetail[host]['jobID']))
 
     # # Write host details into a CSV file
