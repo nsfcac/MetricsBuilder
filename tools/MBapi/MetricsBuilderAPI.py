@@ -50,8 +50,8 @@ def query_data() -> str:
             pro_job_data = job_data_parser(job_info)
             json_data['jobsInfo'] = pro_job_data
             
-            # build_csv(json_data, hostfile, jobfile)
-            print(json.dumps(json_data, indent=2))
+            build_csv(json_data, hostfile, jobfile)
+            # print(json.dumps(json_data, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:
