@@ -29,7 +29,6 @@ def datetime_range(start: str, end: str, interval: str) -> str:
     while current < end:
         yield current
         current += interval
-    yield current
 
 def time_stamp(start: str, end: str, interval: str) -> list:
     st = datetime.strptime(start, "%Y-%m-%dT%H:%M:%SZ")
