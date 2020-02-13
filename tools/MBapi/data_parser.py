@@ -35,17 +35,23 @@ def id_de_duplicate(job_list: list) -> list:
 
 def agg_time_job(job_id_arr: list) -> list:
     time_arr = []
-    updated_job_id = []
+    updated_job_obj = []
+    job_id_arr = []
+
     for item in job_id_arr:
         if item["time"] not in time_arr:
-            updated_job_id.append(item)
+            updated_job_obj.append(item)
             time_arr.append(item["time"])
         else:
-            for i in updated_job_id:
+            for i in updated_job_obj:
                 if i["time"] == item["time"]:
                     all_jobs = i["distinct"] + item["distinct"]
                     i["distinct"] = list(set(all_jobs))
-    return updated_job_id
+    
+    for item in updated_job_obj:
+        job_id_arr.append(item["distinct"])
+        
+    return job_id_arr
 
 
 def job_data_parser(job_info: dict) -> dict:
