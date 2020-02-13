@@ -38,7 +38,7 @@ def job_data_parser(job_info: dict) -> dict:
             qu_job_id = key.split("A")[0]
             job_id = qu_job_id.split("_")[1]
         else:
-            job_id = qu_job_id.split("_")[1]
+            job_id = key.split("_")[1]
 
         if job_id not in job_arr:
             json_data[job_id] = value
