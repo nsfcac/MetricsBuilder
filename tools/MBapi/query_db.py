@@ -6,7 +6,7 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
     try:
         influx = QueryInfluxdb(config)
         measurement = "cluster_unified_metrics"
-        fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts", "jobID"]
+        fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
         
         for node in nodelist:
             json_data[node] = {}

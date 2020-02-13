@@ -25,7 +25,7 @@ def query_data() -> str:
         # endTime = query_parameters.get('endtime')
         # timeInterval = query_parameters.get('interval')
         startTime = '2020-02-12T14:00:00Z'
-        endTime = '2020-02-12T14:30:00Z'
+        endTime = '2020-02-12T19:00:00Z'
         timeInterval = '5m'
         node_list = parse_host()
         json_data = {}
