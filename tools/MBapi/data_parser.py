@@ -1,4 +1,4 @@
-def node_data_parser(node_list: list, node_data: dict) -> dict:
+def node_data_parser(node_list: list, node_data: dict, time_list: list) -> dict:
     json_data = {}
     fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
     for node in node_list:
@@ -13,7 +13,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
                     job_obj["distinct"] = id_de_duplicate(item["distinct"])
                     jobid_tmp.append(job_obj)
                 # print(jobid_tmp)
-                json_data[node][field] = agg_time_job(jobid_tmp)
+                json_data[node][field] = agg_time_job(jobid_tmp, time_list)
             else:
                 for item in node_data[node][field]:
                     json_data[node][field].append(item['max'])
@@ -34,9 +34,10 @@ def id_de_duplicate(job_list: list) -> list:
     return jobs
 
 
-def agg_time_job(job_id_arr: list) -> list:
+def agg_time_job(job_id_arr: list, time_list: list) -> list:
     time_arr = []
     updated_job_obj = []
+    tmp_obj = {}
     result = []
 
     for item in job_id_arr:
@@ -49,9 +50,14 @@ def agg_time_job(job_id_arr: list) -> list:
                     all_jobs = i["distinct"] + item["distinct"]
                     i["distinct"] = list(set(all_jobs))
     
-    # print(updated_job_obj)
     for item in updated_job_obj:
-        result.append(item["distinct"])
+        tmp_obj[item["time"]] = item["distinct"]
+
+    for time in time_list:
+        if time in tmp_obj:
+            result.append(tmp_obj[time])
+        else:
+            result.append([])
     # print(result)
     return result
 
