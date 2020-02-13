@@ -8,7 +8,7 @@ from sanity_check import time_sanity_check
 from query_db import query_node, query_job_set, query_job_info
 from configure import parse_host
 from time_stamp import time_stamp
-from data_parser import node_data_parser
+from data_parser import node_data_parser, job_data_parser
 
 # app = Flask(__name__)
 # CORS(app)
@@ -46,7 +46,8 @@ def query_data() -> str:
             # Get job list that running during the time range
             job_list = list(query_job_set(config, startTime, endTime))
             job_info = query_job_info(config, job_list)
-            print(json.dumps(job_info, indent=2))
+            processed = job_data_parser(job_info)
+            print(json.dumps(processed, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:

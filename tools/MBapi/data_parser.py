@@ -7,7 +7,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
             json_data[node][field] = []
             if field == "jobID":
                 for item in node_data[node][field]:
-                    job_arr = de_duplicate(item["distinct"])
+                    job_arr = id_de_duplicate(item["distinct"])
                     json_data[node][field].append(job_arr)
             else:
                 for item in node_data[node][field]:
@@ -17,7 +17,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
     return json_data
 
 
-def de_duplicate(job_list: list) -> list:
+def id_de_duplicate(job_list: list) -> list:
     jobs = []
     for item in job_list:
         if "A" in item:
@@ -28,3 +28,22 @@ def de_duplicate(job_list: list) -> list:
         if job_id not in jobs:
                 jobs.append(job_id)
     return jobs
+
+def job_data_parser(job_info: dict) -> dict:
+    json_data = {}
+    job_arr = []
+
+    for key, value in job_info.items():
+        if "A" in key:
+            qu_job_id = key.split("A")[0]
+            job_id = qu_job_id.split("_")[1]
+        else:
+            job_id = qu_job_id.split("_")[1]
+
+        if job_id not in job_arr:
+            json_data[job_id] = value
+            job_arr.append(job_id)
+
+    return json_data
+
+    
