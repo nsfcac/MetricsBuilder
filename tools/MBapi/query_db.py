@@ -80,7 +80,7 @@ def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, 
     if field == "jobID":
         return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ") fill(previous)")
     else:
-        return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ") fill(previous)")
+        return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time <= '" + end + "' GROUP BY time(" + interval + ")")
 
 def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
     return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time <= '" + end + "'")
