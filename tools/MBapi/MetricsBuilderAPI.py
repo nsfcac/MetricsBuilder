@@ -46,7 +46,7 @@ def query_data() -> str:
             pro_job_data = job_data_parser(job_info)
             json_data['jobsInfo'] = pro_job_data
 
-            print(json.dumps(json_data, indent=2))
+            # print(json.dumps(json_data, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:
