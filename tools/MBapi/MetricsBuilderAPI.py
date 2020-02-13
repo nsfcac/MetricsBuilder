@@ -22,7 +22,7 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T14:30:00Z'
         timeInterval = '5m'
-        node = '10.101.6.11'
+        node = ['10.101.6.11']
 
         if time_sanity_check(startTime, endTime, timeInterval):
             node_data = query_node(node, config, startTime, endTime, timeInterval)
