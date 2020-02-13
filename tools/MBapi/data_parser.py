@@ -2,7 +2,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
     json_data = {}
     fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts", "jobID"]
     for node in node_list:
-        print(node)
+        # print(node)
         json_data[node] = {}
         for field in fields:
             json_data[node][field] = []
@@ -13,7 +13,8 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
             else:
                 for item in node_data[field]:
                     json_data[node][field].append(item['max'])
-        print(json_data[node])
+        
+    print(json_data[node])
     return json_data
 
 
