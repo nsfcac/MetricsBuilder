@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request, jsonify
 from flask_cors import CORS
 
+import json
+
 from sanity_check import time_sanity_check
 from query_db import query_node, query_job_set, query_job_info
 
@@ -31,7 +33,7 @@ def query_data() -> str:
             job_set = query_job_set(config, startTime, endTime)
             job_list = list(job_set)
             job_info = query_job_info(config, job_list)
-            print(job_info)
+            print(json.dumps(job_info), indent=2)
         else:
             return('Error: Quering data failed!')
     except Exception as err:
