@@ -71,7 +71,7 @@ def query_job_info(config: dict, joblist: list) -> dict:
                         print(job_info_sql)
                         job_info_data = influx.get(job_info_sql)
                         print(job_info_data)
-                        json_data[job_id_raw][fields] = job_info_data
+                        json_data[job_id_raw][field] = job_info_data
 
     except Exception as err:
         print(err)
