@@ -67,9 +67,9 @@ def query_job_info(config: dict, joblist: list) -> dict:
                 if job_id_raw not in arr_fetched:
                     json_data[job_id_raw] = {}
                     for field in fields:
-                    job_info_sql = job_sql_gen(field, job_id)
-                    job_info_data = influx.get(job_info_sql)
-                    json_data[job_id_raw][fields] = job_info_data
+                        job_info_sql = job_sql_gen(field, job_id)
+                        job_info_data = influx.get(job_info_sql)
+                        json_data[job_id_raw][fields] = job_info_data
 
     except Exception as err:
         print(err)
