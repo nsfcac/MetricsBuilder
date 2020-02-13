@@ -12,7 +12,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
                     job_obj["time"] = item["time"]
                     job_obj["distinct"] = id_de_duplicate(item["distinct"])
                     jobid_tmp.append(job_obj)
-                print(jobid_tmp)
+                # print(jobid_tmp)
                 json_data[node][field] = agg_time_job(jobid_tmp)
             else:
                 for item in node_data[node][field]:
@@ -49,10 +49,10 @@ def agg_time_job(job_id_arr: list) -> list:
                     all_jobs = i["distinct"] + item["distinct"]
                     i["distinct"] = list(set(all_jobs))
     
-    print(updated_job_obj)
+    # print(updated_job_obj)
     for item in updated_job_obj:
         result.append(item["distinct"])
-    print(result)
+    # print(result)
     return result
 
 

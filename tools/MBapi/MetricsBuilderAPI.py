@@ -9,6 +9,7 @@ from query_db import query_node, query_job_set, query_job_info
 from configure import parse_host
 from time_stamp import time_stamp
 from data_parser import node_data_parser, job_data_parser
+from write_csv import build_csv
 
 # app = Flask(__name__)
 # CORS(app)
@@ -27,9 +28,12 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T19:00:00Z'
         timeInterval = '5m'
-        # node_list = parse_host()
+        node_list = parse_host()
         json_data = {}
-        node_list = ['10.101.5.5']
+
+        hostfile = "./csv/HostDetail_" + startTime.split("T")[0] + "_" + timeInterval + ".csv"
+        jobfile = "./csv/JobDetail_" + startTime.split("T")[0] + "_" + timeInterval + ".csv"
+        # node_list = ['10.101.5.5']
         # joblist = ['qu_1122654A30']
 
         if time_sanity_check(startTime, endTime, timeInterval):
@@ -45,7 +49,8 @@ def query_data() -> str:
             job_info = query_job_info(config, job_list)
             pro_job_data = job_data_parser(job_info)
             json_data['jobsInfo'] = pro_job_data
-
+            
+            build_csv(json_data, hostfile, jobfile)
             # print(json.dumps(json_data, indent=2))
         else:
             return('Error: Quering data failed!')
