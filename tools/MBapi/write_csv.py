@@ -54,9 +54,10 @@ def build_csv(json_data: dict, hostfile: str, jobfile: str) -> None:
         # print("features length: ", len(feature_list))
         csvwriter = csv.writer(host_csv_file)
 
+        print("node ip: ", host_list[405])
         for feature in feature_list:
-            print(feature, len(hostDetail[host_list[455]][feature]))
-        
+            print(feature, len(hostDetail[host_list[405]][feature]))
+
         # Write header
         for host in host_list:
             for feature in feature_list:
