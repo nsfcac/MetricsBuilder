@@ -27,7 +27,7 @@ def query_data() -> str:
         if time_sanity_check(startTime, endTime, timeInterval):
             # node_data = query_node(node, config, startTime, endTime, timeInterval)
             # print(node_data)
-            job_set = query_job_set(node, config, startTime, endTime)
+            job_set = query_job_set(config, startTime, endTime)
             print(job_set)
         else:
             return('Error: Quering data failed!')
