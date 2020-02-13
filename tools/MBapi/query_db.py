@@ -52,26 +52,24 @@ def query_job_info(config: dict, joblist: list) -> dict:
     arr_fetched = {}
     try:
         influx = QueryInfluxdb(config)
-        fields = ["startTime", "submitTime", "user"]
+        # fields = ["startTime", "submitTime", "user"]
 
         for job_id in joblist:
             # Not an array job
             if "A" not in job_id:
                 json_data[job_id] = {}
-                for field in fields:
-                    job_info_sql = job_sql_gen(field, job_id)
-                    job_info_data = influx.get(job_info_sql)
-                    json_data[job_id][fields] = job_info_data
+                job_info_sql = job_sql_gen(job_id)
+                job_info_data = influx.get(job_info_sql)
+                # json_data[job_id][fields] = job_info_data
             else:
                 job_id_raw = job_id.split("A")[0]
                 if job_id_raw not in arr_fetched:
                     json_data[job_id_raw] = {}
-                    for field in fields:
-                        job_info_sql = job_sql_gen(field, job_id)
-                        print(job_info_sql)
-                        job_info_data = influx.get(job_info_sql)
-                        print(job_info_data)
-                        json_data[job_id_raw][field] = job_info_data
+                    job_info_sql = job_sql_gen(job_id)
+                    print(job_info_sql)
+                    job_info_data = influx.get(job_info_sql)
+                    print(job_info_data)
+                    # json_data[job_id_raw][field] = job_info_data
 
     except Exception as err:
         print(err)
@@ -87,5 +85,5 @@ def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, 
 def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
     return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time <= '" + end + "'")
 
-def job_sql_gen(field: str, measurement: str) -> list:
-    return ("SELECT " + field + " FROM " + measurement + " ORDER BY desc LIMIT 1")
+def job_sql_gen(measurement: str) -> list:
+    return ("SELECT * FROM " + measurement + " ORDER BY desc LIMIT 1")
