@@ -1,11 +1,13 @@
-from flask import Flask
-from flask import request, jsonify
-from flask_cors import CORS
+# from flask import Flask
+# from flask import request, jsonify
+# from flask_cors import CORS
 
 import json
 
 from sanity_check import time_sanity_check
 from query_db import query_node, query_job_set, query_job_info
+from configure import parse_host
+from time_stamp import time_stamp
 
 # app = Flask(__name__)
 # CORS(app)
@@ -24,11 +26,20 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T14:30:00Z'
         timeInterval = '5m'
-        node = ['10.101.6.11']
+        node_list = parse_host()
+        json_data = {}
+        # node = ['10.101.6.11']
         # joblist = ['qu_1122654A30']
 
         if time_sanity_check(startTime, endTime, timeInterval):
-            node_data = query_node(node, config, startTime, endTime, timeInterval)
+
+            # time_list = time_stamp(startTime, endTime, timeInterval)
+            # json_data['timeStamp'] = time_list
+
+            # json_data['nodesInfo'] = {}
+            # json_data['jobsInfo'] = {}
+
+            node_data = query_node(node_list[0], config, startTime, endTime, timeInterval)
             print(json.dumps(node_data, indent=2))
             # Get job list that running during the time range
             # job_list = list(query_job_set(config, startTime, endTime))
