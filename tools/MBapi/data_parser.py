@@ -12,6 +12,7 @@ def node_data_parser(node_list: list, node_data: dict) -> dict:
             else:
                 for item in node_data[field]:
                     json_data[node][field].append(item['max'])
+        print(json_data[node])
     return json_data
 
 
