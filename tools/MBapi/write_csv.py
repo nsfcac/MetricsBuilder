@@ -43,22 +43,27 @@ def build_csv(json_data: dict, hostfile: str, jobfile: str) -> None:
     jobDetail = json_data["jobsInfo"]
     time_List = json_data["timeStamp"]
 
+    print("Time Stamp length: ", len(time_List))
+
     # Write host details into a CSV file
     with open(hostfile, "w") as host_csv_file:
         header_list = ["TimeStamp"]
         host_list = list(hostDetail.keys())
-        # print("nodes lenght: ", len(host_list))
+        # print("nodes length: ", len(host_list))
         feature_list = list(hostDetail[host_list[0]].keys())
-        # print("features lenght: ", len(feature_list))
+        # print("features length: ", len(feature_list))
         csvwriter = csv.writer(host_csv_file)
 
+        for feature in feature_list:
+            print(feature, len(hostDetail[host_list[455]][feature]))
+        
         # Write header
         for host in host_list:
             for feature in feature_list:
                 header = host + "-" + feature
                 header_list.append(header)   
         
-        print(len(header_list))
+        print("header length: ", len(header_list))
         csvwriter.writerow(header_list)
 
         # Write value
