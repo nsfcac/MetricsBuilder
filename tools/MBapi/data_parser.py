@@ -15,9 +15,8 @@ def node_data_parser(node_list: list, node_data: dict, time_list: list) -> dict:
                 # print(jobid_tmp)
                 json_data[node][field] = agg_time_job(jobid_tmp, time_list)
             else:
-                for item in node_data[node][field]:
-                    json_data[node][field].append(item['max'])
-        
+                json_data[node][field] = check_field(node_data[node][field], time_list)
+                
     return json_data
 
 
@@ -59,6 +58,22 @@ def agg_time_job(job_id_arr: list, time_list: list) -> list:
         else:
             result.append([])
     # print(result)
+    return result
+
+
+def check_field(field: list, time_list: list) -> list:
+    tmp_obj = {}
+    result = []
+
+    for item in field:
+        tmp_obj[item["time"]] = item["max"]
+
+    for time in time_list:
+        if time in tmp_obj:
+            result.append(tmp_obj[time])
+        else:
+            result.append(None)
+
     return result
 
 
