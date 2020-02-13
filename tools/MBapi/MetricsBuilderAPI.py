@@ -45,8 +45,8 @@ def query_data() -> str:
             # print(json.dumps(processed, indent=2))
             # Get job list that running during the time range
             job_list = list(query_job_set(config, startTime, endTime))
-            # job_info = query_job_info(config, job_list)
-            print(json.dumps(job_list, indent=2))
+            job_info = query_job_info(config, job_list)
+            print(json.dumps(job_info, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:

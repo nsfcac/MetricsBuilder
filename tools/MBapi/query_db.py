@@ -49,27 +49,16 @@ def query_job_set(config: dict, start: str, end: str) -> set:
 
 def query_job_info(config: dict, joblist: list) -> dict:
     json_data = {}
-    arr_fetched = {}
     try:
         influx = QueryInfluxdb(config)
         fields = ["startTime", "submitTime", "user"]
 
         for job_id in joblist:
-            # Not an array job
-            if "A" not in job_id:
-                json_data[job_id] = {}
-                job_info_sql = job_sql_gen(job_id)
-                job_info_data = influx.get(job_info_sql)
-                for field in fields:
-                    json_data[job_id][field] = job_info_data[0][field]
-            else:
-                job_id_raw = job_id.split("A")[0]
-                if job_id_raw not in arr_fetched:
-                    json_data[job_id_raw] = {}
-                    job_info_sql = job_sql_gen(job_id)
-                    job_info_data = influx.get(job_info_sql)
-                    for field in fields:
-                        json_data[job_id_raw][field] = job_info_data[0][field]
+            json_data[job_id] = {}
+            job_info_sql = job_sql_gen(job_id)
+            job_info_data = influx.get(job_info_sql)
+            for field in fields:
+                json_data[job_id][field] = job_info_data[0][field]
 
     except Exception as err:
         print(err)
