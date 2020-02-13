@@ -34,20 +34,22 @@ def query_data() -> str:
 
         if time_sanity_check(startTime, endTime, timeInterval):
 
-            # time_list = time_stamp(startTime, endTime, timeInterval)
-            # json_data['timeStamp'] = time_list
+            time_list = time_stamp(startTime, endTime, timeInterval)
+            json_data['timeStamp'] = time_list
 
-            # json_data['nodesInfo'] = {}
-            # json_data['jobsInfo'] = {}
+            json_data['nodesInfo'] = {}
+            json_data['jobsInfo'] = {}
 
-            # node_data = query_node(node, config, startTime, endTime, timeInterval)
-            # processed = node_data_parser(node, node_data)
-            # print(json.dumps(processed, indent=2))
-            # Get job list that running during the time range
+            node_data = query_node(node, config, startTime, endTime, timeInterval)
+            pro_node_data = node_data_parser(node, node_data)
+            json_data['nodesInfo'] = pro_node_data
+
             job_list = list(query_job_set(config, startTime, endTime))
             job_info = query_job_info(config, job_list)
-            processed = job_data_parser(job_info)
-            print(json.dumps(processed, indent=2))
+            pro_job_data = job_data_parser(job_info)
+            json_data['jobsInfo'] = pro_job_data
+
+            print(json.dumps(json_data, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:
