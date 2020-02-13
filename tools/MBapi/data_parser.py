@@ -48,9 +48,10 @@ def agg_time_job(job_id_arr: list) -> list:
                     all_jobs = i["distinct"] + item["distinct"]
                     i["distinct"] = list(set(all_jobs))
     
+    print(updated_job_obj)
     for item in updated_job_obj:
         job_id_arr.append(item["distinct"])
-        
+    print(job_id_arr)
     return job_id_arr
 
 
