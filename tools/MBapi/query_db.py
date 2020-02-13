@@ -39,13 +39,8 @@ def query_job_set(config: dict, start: str, end: str) -> set:
             job_list_str = item['distinct']
             id_list = job_list_str.split(',')
             for job_id in id_list:
-                if "A" in job_id:
-                    this_job_id = job_id.split("A")[0]
-                    if this_job_id not in set_data:
-                        set_data.add(this_job_id)
-                else:
-                    if job_id not in set_data:
-                        set_data.add(job_id)
+                if job_id not in set_data:
+                    set_data.add(job_id)
           
     except Exception as err:
         print(err)
