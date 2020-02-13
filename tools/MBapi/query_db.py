@@ -2,6 +2,7 @@ from DBcm import QueryInfluxdb
 
 def query_node(nodelist: list, config: dict, start: str, end: str, interval: str) -> dict:
     json_data = {}
+
     try:
         influx = QueryInfluxdb(config)
         measurement = "cluster_unified_metrics"
@@ -17,7 +18,6 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
                         job_list_str = item['distinct']
                         job_list = job_list_str.split(',')
                         item['distinct'] = job_list
-                print(node_data)
                 json_data[node][field] = node_data
  
     except Exception as err:
@@ -27,6 +27,7 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
 
 def query_job_set(config: dict, start: str, end: str) -> set:
     set_data = set()
+    
     try: 
         influx = QueryInfluxdb(config)
         measurement = "Current_Jobs_ID"
@@ -34,10 +35,10 @@ def query_job_set(config: dict, start: str, end: str) -> set:
 
         job_list_sql = list_sql_gen(field, measurement, start, end)
         job_list_data = influx.get(job_list_sql)
-        for id_str in job_list_data:
-            id_list = id_str.split(',')
+        for item in job_list_data:
+            job_list_str = item['distinct']
+            id_list = job_list_str.split(',')
             for job_id in id_list:
-                # if job is an array job
                 if "A" in job_id:
                     this_job_id = job_id.split("A")[0]
                     if this_job_id not in set_data:
@@ -45,7 +46,7 @@ def query_job_set(config: dict, start: str, end: str) -> set:
                 else:
                     if job_id not in set_data:
                         set_data.add(job_id)
-                
+          
     except Exception as err:
         print(err)
 
