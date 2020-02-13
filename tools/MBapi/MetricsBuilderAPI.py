@@ -27,9 +27,9 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T19:00:00Z'
         timeInterval = '5m'
-        node_list = parse_host()
+        # node_list = parse_host()
         json_data = {}
-        # node = ['10.101.6.11']
+        node_list = ['10.101.5.5']
         # joblist = ['qu_1122654A30']
 
         if time_sanity_check(startTime, endTime, timeInterval):
