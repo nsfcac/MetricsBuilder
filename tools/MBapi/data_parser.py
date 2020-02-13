@@ -19,7 +19,7 @@ def node_data_parser(node_list: list, node_data: dict, time_list: list) -> dict:
                 
     return json_data
 
-
+# Process array job id and de-duplicate 
 def id_de_duplicate(job_list: list) -> list:
     jobs = []
     for item in job_list:
@@ -32,7 +32,7 @@ def id_de_duplicate(job_list: list) -> list:
                 jobs.append(job_id)
     return jobs
 
-
+# DISTINCT may have duplicated value at one timestamp
 def agg_time_job(job_id_arr: list, time_list: list) -> list:
     time_arr = []
     updated_job_obj = []
@@ -60,7 +60,7 @@ def agg_time_job(job_id_arr: list, time_list: list) -> list:
     # print(result)
     return result
 
-
+# Add None value
 def check_field(field: list, time_list: list) -> list:
     tmp_obj = {}
     result = []
