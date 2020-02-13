@@ -26,9 +26,9 @@ def query_data() -> str:
         startTime = '2020-02-12T14:00:00Z'
         endTime = '2020-02-12T14:30:00Z'
         timeInterval = '5m'
-        node_list = parse_host()
+        # node_list = parse_host()
         json_data = {}
-        # node = ['10.101.6.11']
+        node = ['10.101.6.11']
         # joblist = ['qu_1122654A30']
 
         if time_sanity_check(startTime, endTime, timeInterval):
@@ -39,7 +39,7 @@ def query_data() -> str:
             # json_data['nodesInfo'] = {}
             # json_data['jobsInfo'] = {}
 
-            node_data = query_node(node_list[0], config, startTime, endTime, timeInterval)
+            node_data = query_node(node, config, startTime, endTime, timeInterval)
             print(json.dumps(node_data, indent=2))
             # Get job list that running during the time range
             # job_list = list(query_job_set(config, startTime, endTime))
