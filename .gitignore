@@ -3,5 +3,6 @@
 
 # Ignore folders
 env/
+test/api_tutorial
 __pycache__/
 tools/__pycache__/
