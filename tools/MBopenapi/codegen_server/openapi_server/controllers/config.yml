@@ -1,0 +1,4 @@
+influxdb:
+  host: '10.10.1.4'
+  port: '8086'
+  database: 'hpcc_monitoring_db'
