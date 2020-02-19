@@ -23,15 +23,15 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
         for field in temp_fields:
             field_step = len(node_data[node][field])
             if field_step != time_step:
-                print(f"{node} - {field} length error!")
+                print(f"{node} - {field} - {field_step} : length error!")
         for field in usage_fields:
             field_step = len(node_data[node][field])
             if field_step != time_step:
-                print(f"{node} - {field} length error!")
+                print(f"{node} - {field} - {field_step} : length error!")
         for field in speed_fields:
             field_step = len(node_data[node][field])
             if field_step != time_step:
-                print(f"{node} - {field} length error!")
+                print(f"{node} - {field} - {field_step} : length error!")
             # if time_step == field_step:
             #     # No value misses
             #     for item in node_data[node][field]:
