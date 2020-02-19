@@ -1,6 +1,5 @@
 from queue import Queue
 from threading import Thread
-from DBcm import QueryInfluxdb
 
 def query_in_parallel(node_list: list, config: dict, start: str, end: str, interval: str, value: str) -> list:
     influx = QueryInfluxdb(config)
@@ -27,7 +26,7 @@ def query_in_parallel(node_list: list, config: dict, start: str, end: str, inter
         thread.join()
     return results
 
-def query_node_info(node_list: list, influx: str, start: str, end: str, interval: str, value: str) -> dict:
+def query_node_info(node_list: list, influx: object, start: str, end: str, interval: str, value: str) -> dict:
     """
     Query node information
     """
@@ -56,7 +55,7 @@ def query_node_info(node_list: list, influx: str, start: str, end: str, interval
 
     return json_data
 
-def query_job_list(influx: str, start: str, end: str) -> list:
+def query_job_list(influx: object, start: str, end: str) -> list:
     # Get all jobs running during the time range, should configurable
     job_set = set()
     
@@ -80,7 +79,7 @@ def query_job_list(influx: str, start: str, end: str) -> list:
 
     return job_list
 
-def query_job_info(influx: str, job_list: list) -> dict:
+def query_job_info(influx: object, job_list: list) -> dict:
     """
     Query job information
     """
