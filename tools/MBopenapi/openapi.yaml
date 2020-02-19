@@ -38,7 +38,7 @@ components:
                 - cpu_usage
                 - power_usage
                 - fan_speed
-                - cpu_int_temp
+                - cpu_inl_temp
               properties:
                 memory_usage:
                   type: array
@@ -58,7 +58,7 @@ components:
                     type: array
                     items:
                       type: integer
-                cpu_int_temp:
+                cpu_inl_temp:
                   type: array
                   items:
                     type: array
@@ -79,15 +79,22 @@ components:
                 - submit_time
                 - start_time
                 - finish_time
+                - array_job
               properties:
                 user_name:
                   type: string
                 submit_time:
                   type: integer
-                start_time:
-                  type: integer
-                finish_time:
-                  type: integer
+                start_time: {}
+                  # oneOf: 
+                  #   - type: integer
+                  #   - type: object
+                finish_time: {}
+                  # oneOf:
+                  #   - type: integer
+                  #   - type: object
+                array_job:
+                  type: boolean
         time_stamp: 
           type: array
           items:

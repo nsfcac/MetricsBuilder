@@ -15,7 +15,7 @@ class UnifiedMetricsJobsInfoDetails(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, user_name=None, submit_time=None, start_time=None, finish_time=None):  # noqa: E501
+    def __init__(self, user_name=None, submit_time=None, start_time=None, finish_time=None, array_job=None):  # noqa: E501
         """UnifiedMetricsJobsInfoDetails - a model defined in OpenAPI
 
         :param user_name: The user_name of this UnifiedMetricsJobsInfoDetails.  # noqa: E501
@@ -23,28 +23,33 @@ class UnifiedMetricsJobsInfoDetails(Model):
         :param submit_time: The submit_time of this UnifiedMetricsJobsInfoDetails.  # noqa: E501
         :type submit_time: int
         :param start_time: The start_time of this UnifiedMetricsJobsInfoDetails.  # noqa: E501
-        :type start_time: int
+        :type start_time: object
         :param finish_time: The finish_time of this UnifiedMetricsJobsInfoDetails.  # noqa: E501
-        :type finish_time: int
+        :type finish_time: object
+        :param array_job: The array_job of this UnifiedMetricsJobsInfoDetails.  # noqa: E501
+        :type array_job: bool
         """
         self.openapi_types = {
             'user_name': str,
             'submit_time': int,
-            'start_time': int,
-            'finish_time': int
+            'start_time': object,
+            'finish_time': object,
+            'array_job': bool
         }
 
         self.attribute_map = {
             'user_name': 'user_name',
             'submit_time': 'submit_time',
             'start_time': 'start_time',
-            'finish_time': 'finish_time'
+            'finish_time': 'finish_time',
+            'array_job': 'array_job'
         }
 
         self._user_name = user_name
         self._submit_time = submit_time
         self._start_time = start_time
         self._finish_time = finish_time
+        self._array_job = array_job
 
     @classmethod
     def from_dict(cls, dikt) -> 'UnifiedMetricsJobsInfoDetails':
@@ -109,7 +114,7 @@ class UnifiedMetricsJobsInfoDetails(Model):
 
 
         :return: The start_time of this UnifiedMetricsJobsInfoDetails.
-        :rtype: int
+        :rtype: object
         """
         return self._start_time
 
@@ -119,7 +124,7 @@ class UnifiedMetricsJobsInfoDetails(Model):
 
 
         :param start_time: The start_time of this UnifiedMetricsJobsInfoDetails.
-        :type start_time: int
+        :type start_time: object
         """
         if start_time is None:
             raise ValueError("Invalid value for `start_time`, must not be `None`")  # noqa: E501
@@ -132,7 +137,7 @@ class UnifiedMetricsJobsInfoDetails(Model):
 
 
         :return: The finish_time of this UnifiedMetricsJobsInfoDetails.
-        :rtype: int
+        :rtype: object
         """
         return self._finish_time
 
@@ -142,9 +147,32 @@ class UnifiedMetricsJobsInfoDetails(Model):
 
 
         :param finish_time: The finish_time of this UnifiedMetricsJobsInfoDetails.
-        :type finish_time: int
+        :type finish_time: object
         """
         if finish_time is None:
             raise ValueError("Invalid value for `finish_time`, must not be `None`")  # noqa: E501
 
         self._finish_time = finish_time
+
+    @property
+    def array_job(self):
+        """Gets the array_job of this UnifiedMetricsJobsInfoDetails.
+
+
+        :return: The array_job of this UnifiedMetricsJobsInfoDetails.
+        :rtype: bool
+        """
+        return self._array_job
+
+    @array_job.setter
+    def array_job(self, array_job):
+        """Sets the array_job of this UnifiedMetricsJobsInfoDetails.
+
+
+        :param array_job: The array_job of this UnifiedMetricsJobsInfoDetails.
+        :type array_job: bool
+        """
+        if array_job is None:
+            raise ValueError("Invalid value for `array_job`, must not be `None`")  # noqa: E501
+
+        self._array_job = array_job

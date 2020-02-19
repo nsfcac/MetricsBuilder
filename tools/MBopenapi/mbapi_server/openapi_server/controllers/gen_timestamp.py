@@ -30,11 +30,9 @@ def datetime_range(start: str, end: str, interval: str) -> str:
         yield current
         current += interval
 
-def time_stamp(start: str, end: str, interval: str) -> list:
-    st = datetime.strptime(start, "%Y-%m-%dT%H:%M:%SZ")
-    ed = datetime.strptime(end, "%Y-%m-%dT%H:%M:%SZ")
+def gen_timestamp(start: str, end: str, interval: str) -> list:
     delta = time_delta(interval)
-    time_list = [dt.strftime("%Y-%m-%dT%H:%M:%SZ") for dt in datetime_range(
-        st, ed, delta
+    time_list = [int(dt.timestamp()) for dt in datetime_range(
+        start, end, delta
     )]
     return time_list

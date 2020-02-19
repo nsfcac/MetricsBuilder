@@ -15,7 +15,7 @@ class UnifiedMetricsNodesInfoMetrics(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, memory_usage=None, cpu_usage=None, power_usage=None, fan_speed=None, cpu_int_temp=None):  # noqa: E501
+    def __init__(self, memory_usage=None, cpu_usage=None, power_usage=None, fan_speed=None, cpu_inl_temp=None):  # noqa: E501
         """UnifiedMetricsNodesInfoMetrics - a model defined in OpenAPI
 
         :param memory_usage: The memory_usage of this UnifiedMetricsNodesInfoMetrics.  # noqa: E501
@@ -26,15 +26,15 @@ class UnifiedMetricsNodesInfoMetrics(Model):
         :type power_usage: List[float]
         :param fan_speed: The fan_speed of this UnifiedMetricsNodesInfoMetrics.  # noqa: E501
         :type fan_speed: List[List[int]]
-        :param cpu_int_temp: The cpu_int_temp of this UnifiedMetricsNodesInfoMetrics.  # noqa: E501
-        :type cpu_int_temp: List[List[float]]
+        :param cpu_inl_temp: The cpu_inl_temp of this UnifiedMetricsNodesInfoMetrics.  # noqa: E501
+        :type cpu_inl_temp: List[List[float]]
         """
         self.openapi_types = {
             'memory_usage': List[float],
             'cpu_usage': List[float],
             'power_usage': List[float],
             'fan_speed': List[List[int]],
-            'cpu_int_temp': List[List[float]]
+            'cpu_inl_temp': List[List[float]]
         }
 
         self.attribute_map = {
@@ -42,14 +42,14 @@ class UnifiedMetricsNodesInfoMetrics(Model):
             'cpu_usage': 'cpu_usage',
             'power_usage': 'power_usage',
             'fan_speed': 'fan_speed',
-            'cpu_int_temp': 'cpu_int_temp'
+            'cpu_inl_temp': 'cpu_inl_temp'
         }
 
         self._memory_usage = memory_usage
         self._cpu_usage = cpu_usage
         self._power_usage = power_usage
         self._fan_speed = fan_speed
-        self._cpu_int_temp = cpu_int_temp
+        self._cpu_inl_temp = cpu_inl_temp
 
     @classmethod
     def from_dict(cls, dikt) -> 'UnifiedMetricsNodesInfoMetrics':
@@ -155,24 +155,24 @@ class UnifiedMetricsNodesInfoMetrics(Model):
         self._fan_speed = fan_speed
 
     @property
-    def cpu_int_temp(self):
-        """Gets the cpu_int_temp of this UnifiedMetricsNodesInfoMetrics.
+    def cpu_inl_temp(self):
+        """Gets the cpu_inl_temp of this UnifiedMetricsNodesInfoMetrics.
 
 
-        :return: The cpu_int_temp of this UnifiedMetricsNodesInfoMetrics.
+        :return: The cpu_inl_temp of this UnifiedMetricsNodesInfoMetrics.
         :rtype: List[List[float]]
         """
-        return self._cpu_int_temp
+        return self._cpu_inl_temp
 
-    @cpu_int_temp.setter
-    def cpu_int_temp(self, cpu_int_temp):
-        """Sets the cpu_int_temp of this UnifiedMetricsNodesInfoMetrics.
+    @cpu_inl_temp.setter
+    def cpu_inl_temp(self, cpu_inl_temp):
+        """Sets the cpu_inl_temp of this UnifiedMetricsNodesInfoMetrics.
 
 
-        :param cpu_int_temp: The cpu_int_temp of this UnifiedMetricsNodesInfoMetrics.
-        :type cpu_int_temp: List[List[float]]
+        :param cpu_inl_temp: The cpu_inl_temp of this UnifiedMetricsNodesInfoMetrics.
+        :type cpu_inl_temp: List[List[float]]
         """
-        if cpu_int_temp is None:
-            raise ValueError("Invalid value for `cpu_int_temp`, must not be `None`")  # noqa: E501
+        if cpu_inl_temp is None:
+            raise ValueError("Invalid value for `cpu_inl_temp`, must not be `None`")  # noqa: E501
 
-        self._cpu_int_temp = cpu_int_temp
+        self._cpu_inl_temp = cpu_inl_temp

@@ -5,10 +5,8 @@ from openapi_server.models.error_message import ErrorMessage  # noqa: E501
 from openapi_server.models.unified_metrics import UnifiedMetrics  # noqa: E501
 from openapi_server import util
 
-from openapi_server.controllers.conf_parser import parse_conf, parse_host
-# from openapi_server.controllers.query_db import query_node, query_job_set, query_job_info
-# from openapi_server.controllers.time_stamp import time_stamp
-# from openapi_server.controllers.data_parser import node_data_parser, job_data_parser
+from openapi_server.controllers.parse_config import parse_conf, parse_host
+from openapi_server.controllers.gen_timestamp import gen_timestamp
 
 def get_unified_metric(start, end, interval, value):  # noqa: E501
     """get_unified_metric
@@ -27,28 +25,27 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     :rtype: UnifiedMetrics
     """
 
+    # Initialization 
     config = parse_conf()
     node_list = parse_host()
 
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
+
+    # Check Sanity
     if start > end:
         return ErrorMessage(
             error_code = '400 INVALID_PARAMETERS',
-            error_message = 'Start time should not larger than end time'
+            error_message = 'Start time should no larger than end time'
         )
     else:
         unified_metrics = UnifiedMetrics()
 
-        # time_list = time_stamp(start, end, interval)
-        # unified_metrics.time_stamp = time_list
+        # Get time stamp
+        time_list = gen_timestamp(start, end, interval)
+        unified_metrics.time_stamp = time_list
 
-        # unified_metrics.nodes_info = query_node(node_list, config["influxdb"], start, end, interval, value, time_list)
-        
-        # job_list = list(query_job_set(config, start, end))
-        # job_info = query_job_info(config, job_list)
-        # pro_job_data = job_data_parser(job_info)
-        # unified_metrics.jobs_info= pro_job_data
-
+        # Query Nodes and Jobs info in parallel
+    
     return unified_metrics

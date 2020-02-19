@@ -1,6 +1,6 @@
 from Queue import Queue
 from threading import Thread
-from DBcm import QueryInfluxdb
+from openapi_server.controllers.DBcm import QueryInfluxdb
 
 def query_in_parallel(node_list: list, config: dict, start: str, end: str, interval: str, value: str) -> list:
     influx = QueryInfluxdb(config)

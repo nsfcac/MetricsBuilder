@@ -97,27 +97,28 @@ components:
               - 5
             - - 5
               - 5
-            cpu_int_temp:
-            - - 5.637376656633329
-              - 5.637376656633329
-            - - 5.637376656633329
-              - 5.637376656633329
             memory_usage:
             - 0.8008281904610115
             - 0.8008281904610115
             cpu_usage:
             - 6.027456183070403
             - 6.027456183070403
+            cpu_inl_temp:
+            - - 5.637376656633329
+              - 5.637376656633329
+            - - 5.637376656633329
+              - 5.637376656633329
         jobs_info:
           details:
-            start_time: 7
+            start_time: ""
+            array_job: true
             submit_time: 2
             user_name: user_name
-            finish_time: 9
+            finish_time: ""
           id: id
         time_stamp:
-        - 3
-        - 3
+        - 7
+        - 7
       properties:
         nodes_info:
           $ref: '#/components/schemas/UnifiedMetrics_nodes_info'
@@ -152,17 +153,17 @@ components:
           - 5
         - - 5
           - 5
-        cpu_int_temp:
-        - - 5.637376656633329
-          - 5.637376656633329
-        - - 5.637376656633329
-          - 5.637376656633329
         memory_usage:
         - 0.8008281904610115
         - 0.8008281904610115
         cpu_usage:
         - 6.027456183070403
         - 6.027456183070403
+        cpu_inl_temp:
+        - - 5.637376656633329
+          - 5.637376656633329
+        - - 5.637376656633329
+          - 5.637376656633329
       properties:
         memory_usage:
           items:
@@ -182,14 +183,14 @@ components:
               type: integer
             type: array
           type: array
-        cpu_int_temp:
+        cpu_inl_temp:
           items:
             items:
               type: number
             type: array
           type: array
       required:
-      - cpu_int_temp
+      - cpu_inl_temp
       - cpu_usage
       - fan_speed
       - memory_usage
@@ -206,17 +207,17 @@ components:
             - 5
           - - 5
             - 5
-          cpu_int_temp:
-          - - 5.637376656633329
-            - 5.637376656633329
-          - - 5.637376656633329
-            - 5.637376656633329
           memory_usage:
           - 0.8008281904610115
           - 0.8008281904610115
           cpu_usage:
           - 6.027456183070403
           - 6.027456183070403
+          cpu_inl_temp:
+          - - 5.637376656633329
+            - 5.637376656633329
+          - - 5.637376656633329
+            - 5.637376656633329
       properties:
         id:
           type: string
@@ -227,20 +228,22 @@ components:
       - metrics
     UnifiedMetrics_jobs_info_details:
       example:
-        start_time: 7
+        start_time: ""
+        array_job: true
         submit_time: 2
         user_name: user_name
-        finish_time: 9
+        finish_time: ""
       properties:
         user_name:
           type: string
         submit_time:
           type: integer
-        start_time:
-          type: integer
-        finish_time:
-          type: integer
+        start_time: {}
+        finish_time: {}
+        array_job:
+          type: boolean
       required:
+      - array_job
       - finish_time
       - start_time
       - submit_time
@@ -248,10 +251,11 @@ components:
     UnifiedMetrics_jobs_info:
       example:
         details:
-          start_time: 7
+          start_time: ""
+          array_job: true
           submit_time: 2
           user_name: user_name
-          finish_time: 9
+          finish_time: ""
         id: id
       properties:
         id:

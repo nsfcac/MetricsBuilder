@@ -3,6 +3,7 @@ from flask import request
 from flask_cors import CORS
 
 import json
+import time
 
 from sanity_check import time_sanity_check
 from query_db import query_node_info, query_job_list, query_job_info
@@ -27,6 +28,7 @@ def query_data() -> str:
         end = query_parameters.get('endtime')
         timeInterval = query_parameters.get('interval')
         value = "max"
+        # time_pattern = "%a %b %d %H:%M:%S %Z %Y"
         # start = '2020-02-12T14:00:00Z'
         # end = '2020-02-12T19:00:00Z'
         # timeInterval = '5m'
@@ -42,7 +44,11 @@ def query_data() -> str:
 
             print("Getting Time Stamp...")
             time_list = time_stamp(start, end, timeInterval)
-            json_data['timeStamp'] = time_list
+            int_time_list = []
+            for item in time_list:
+                int_time = int(time.mktime(time.strptime(item, time_pattern)))
+                int_time_list.append(int_time)
+            json_data['timeStamp'] = int_time_list
 
             print("Getting Nodes Information...")
             node_data = query_node_info(node_list, config, start, end, timeInterval, value)
