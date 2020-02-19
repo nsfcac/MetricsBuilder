@@ -30,39 +30,41 @@ def query_node_info(node_list: list, config: dict, start: str, end: str, interva
 
     return json_data
 
-# def query_job_set(config: dict, start: str, end: str) -> set:
-#     # Get all jobs running during the time range, should configurable
-#     set_data = set()
+def query_job_list(config: dict, start: str, end: str) -> list:
+    # Get all jobs running during the time range, should configurable
+    job_set = set()
     
-#     try: 
-#         influx = QueryInfluxdb(config)
-#         measurement = "Current_Jobs_ID"
-#         field = "jobs_list"
+    try: 
+        influx = QueryInfluxdb(config)
+        measurement = "Current_Jobs_ID"
+        field = "jobs_list"
 
-#         job_list_sql = list_sql_gen(field, measurement, start, end)
-#         job_list_data = influx.get(job_list_sql)
-#         for item in job_list_data:
-#             job_list_str = item['distinct']
-#             id_list = job_list_str.split(',')
-#             for job_id in id_list:
-#                 if job_id not in set_data:
-#                     set_data.add(job_id)
+        job_list_sql = list_sql_gen(field, measurement, start, end)
+        job_list_data = influx.get(job_list_sql)
+        for item in job_list_data:
+            job_list_str = item['distinct']
+            id_list = job_list_str.split(',')
+            for job_id in id_list:
+                if job_id not in job_set:
+                    job_set.add(job_id)
           
-#     except Exception as err:
-#         print(err)
+    except Exception as err:
+        print(err)
+    
+    job_list = list(job_set)
 
-#     return set_data
+    return job_list
 
-def query_job_info(config: dict, joblist: list) -> dict:
+def query_job_info(config: dict, job_list: list) -> dict:
     """
-    Query node information
+    Query job information
     """
     json_data = {}
     try:
         influx = QueryInfluxdb(config)
-        fields = ["startTime", "submitTime", "user"]
+        fields = ["start_time", "submit_time", "user_name", "finish_time"]
 
-        for job_id in joblist:
+        for job_id in job_list:
             json_data[job_id] = {}
             job_info_sql = job_sql_gen(job_id)
             job_info_data = influx.get(job_info_sql)
@@ -83,11 +85,11 @@ def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, 
     else:
         return ("SELECT " + value + "(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ")")
 
-# def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
-#     """
-#     Generate influxdb SQL for retriving jobs running during the time range
-#     """
-#     return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
+def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
+    """
+    Generate influxdb SQL for retriving jobs running during the time range
+    """
+    return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
 
 def job_sql_gen(measurement: str) -> list:
     return ("SELECT * FROM " + measurement + " ORDER BY desc LIMIT 1")
