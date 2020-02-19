@@ -96,7 +96,7 @@ def process_job_data(job_data: dict) -> dict:
         submit_time = int(time.mktime(time.strptime(job_data[item]["submit_time"], time_pattern)))
         start_time = int(time.mktime(time.strptime(job_data[item]["start_time"], time_pattern)))
         if "A" not in job_id:
-            json_data[job_id_password] = {
+            json_data[job_id] = {
                     "user_name": job_data[item]["user_name"],
                     "submit_time": submit_time,
                     "start_time": start_time,
