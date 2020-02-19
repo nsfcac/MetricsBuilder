@@ -1,33 +1,19 @@
-from queue import Queue
-from threading import Thread
-from openapi_server.controllers.DBcm import QueryInfluxdb
+def query_info(node_list: list, influx: object, start: str, end: str, interval: str, value: str) -> dict:
+    json_data = {}
 
-def query_in_parallel(node_list: list, config: dict, start: str, end: str, interval: str, value: str) -> list:
-    influx = QueryInfluxdb(config)
-    queue = Queue()
-    results = []
-    # Job list
+    node_info = query_node_info(node_list, influx, start, end, interval, value)
+
     job_list = query_job_list(influx, start, end)
+    job_info = query_job_info(influx, job_list)
 
-    # Nodes info thread
-    node_info_thread = Thread(target = query_node_info, args = (node_list, influx, start, end, interval, value))
-    
-    # Jobs info thread
-    job_info_thread = Thread(target = query_job_info, args = (influx, job_list))
+    json_data.update({
+        "node_info": node_info,
+        "job_info": job_info
+    })
 
-    pool = [node_info_thread, job_info_thread]
+    return json_data
 
-    # Start all threads in thread pool
-    for thread in pool:
-        thread.start()
-        response = queue.get()
-        results.append(response)
-    # Kill all threads
-    for thread in pool:
-        thread.join()
-    return results
-
-def query_node_info(node_list: list, influx: str, start: str, end: str, interval: str, value: str) -> dict:
+def query_node_info(node_list: list, influx: object, start: str, end: str, interval: str, value: str) -> dict:
     """
     Query node information
     """
@@ -56,7 +42,7 @@ def query_node_info(node_list: list, influx: str, start: str, end: str, interval
 
     return json_data
 
-def query_job_list(influx: str, start: str, end: str) -> list:
+def query_job_list(influx: object, start: str, end: str) -> list:
     # Get all jobs running during the time range, should configurable
     job_set = set()
     
@@ -80,7 +66,7 @@ def query_job_list(influx: str, start: str, end: str) -> list:
 
     return job_list
 
-def query_job_info(influx: str, job_list: list) -> dict:
+def query_job_info(influx: object, job_list: list) -> dict:
     """
     Query job information
     """

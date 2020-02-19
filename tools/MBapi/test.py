@@ -1,4 +1,4 @@
-from query_db import query_node_info
+from query_db import query_info
 from time_stamp import time_stamp
 from configure import parse_host
 from process_data import process_node_data, process_job_data
@@ -25,8 +25,8 @@ influx = QueryInfluxdb(config)
 # node_data = query_node_info(node_list, influx, start, end, interval, value)
 # node_data = query_result[0]
 
-node_data = query_node_info(node_list, influx, start, end, interval, value)
+all_data = query_info(node_list, influx, start, end, interval, value)
 
-result = process_node_data(node_list, node_data, time_list, value)
+result = process_node_data(node_list, all_data["node_data"], time_list, value)
 
 print(result)
