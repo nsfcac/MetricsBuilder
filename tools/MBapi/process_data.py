@@ -99,16 +99,23 @@ def process_job_data(job_data: dict) -> dict:
             if job_id_password not in json_data:
                 json_data[job_id_password] = {
                     "user_name": job_data[item]["user_name"],
-                    "submit_time": job_data[item]["submit_time"],
+                    # "submit_time": job_data[item]["submit_time"],
+                    "submit_time": {},
                     "start_time": {},
                     "job_array": True
                 }
                 json_data[job_id_password]["start_time"].update({
                     job_id_array: job_data[item]["start_time"]
                 })
+                json_data[job_id_password]["submit_time"].update({
+                    job_id_array: job_data[item]["submit_time"]
+                })
             else:
                 json_data[job_id_password]["start_time"].update({
                     job_id_array: job_data[item]["start_time"]
+                })
+                json_data[job_id_password]["submit_time"].update({
+                    job_id_array: job_data[item]["submit_time"]
                 })
 
     return json_data
