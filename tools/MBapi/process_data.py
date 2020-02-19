@@ -18,41 +18,53 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
             "cpu_usage": [],
             "power_usage": [],
             "fan_speed": [],
-            "cpu_int_temp": []
+            "cpu_inl_temp": []
         }
-        for field in temp_fields:
-            field_step = len(node_data[node][field])
-            if field_step != time_step:
-                print(f"{node} - {field} - {field_step} : length error!")
-        for field in usage_fields:
-            field_step = len(node_data[node][field])
-            if field_step != time_step:
-                print(f"{node} - {field} - {field_step} : length error!")
-        for field in speed_fields:
-            field_step = len(node_data[node][field])
-            if field_step != time_step:
-                print(f"{node} - {field} - {field_step} : length error!")
-            # if time_step == field_step:
-            #     # No value misses
-            #     for item in node_data[node][field]:
 
-        # for time in time_list:
-            # temperature fields are saved in the same array
-            # for field in temp_fields:
-            #     json_data[node][field] = []
-            #     if field == "jobID":
-            #         jobid_tmp = []
-            #         for item in node_data[node][field]:
-            #             job_obj = {}
-            #             job_obj["time"] = item["time"]
-            #             job_obj["distinct"] = id_de_duplicate(item["distinct"])
-            #             jobid_tmp.append(job_obj)
-            #         # print(jobid_tmp)
-            #         json_data[node][field] = agg_time_job(jobid_tmp, time_list)
-            #     else:
-            #         json_data[node][field] = check_field(node_data[node][field], time_list)
+        for i, time in enumerate(time_list):
+            # metrics in usage_fields do not need to be aggregated
+            for field in usage_fields:
+                field_step = len(node_data[node][field])
+                if field_step == 0:
+                    json_data[node][field].append(None)
+                elif field_step != time_step:
+                    for item in node_data[node][field]:
+                        if item['time'] == time:
+                            json_data[node][field].append(item[value])
+                        else:
+                            json_data[node][field].append(None)
+                else:
+                    json_data[node][field].append(node_data[node][field][i][value])
+            # metrics in temp_fields and speed_fields need to be aggregated, i.e.
+            # metrics at the same time stamp are saved in an array
+            json_data[node]["cpu_inl_temp"].append([])
+            json_data[node]["fan_speed"].append([])
+            for field in temp_fields:
+                field_step = len(node_data[node][field])
+                if field_step == 0:
+                    json_data[node]["cpu_inl_temp"][i].append(None)
+                elif field_step != time_step:
+                    for item in node_data[node][field]:
+                        if item['time'] == time:
+                            json_data[node]["cpu_inl_temp"][i].append(item[value])
+                        else:
+                            json_data[node]["cpu_inl_temp"][i].append(None)
+                else:
+                    json_data[node]["cpu_inl_temp"][i].append(node_data[node][field][i][value])
+            for field in speed_fields:
+                field_step = len(node_data[node][field])
+                if field_step == 0:
+                    json_data[node]["fan_speed"][i].append(None)
+                elif field_step != time_step:
+                    for item in node_data[node][field]:
+                        if item['time'] == time:
+                            json_data[node]["fan_speed"][i].append(item[value])
+                        else:
+                            json_data[node]["fan_speed"][i].append(None)
+                else:
+                    json_data[node]["fan_speed"][i].append(node_data[node][field][i][value])
                 
-    # return json_data
+    return json_data
 
 # Process array job id and de-duplicate 
 def id_de_duplicate(job_list: list) -> list:
