@@ -8,7 +8,8 @@ from openapi_server import util
 from openapi_server.controllers.parse_config import parse_conf, parse_host
 from openapi_server.controllers.gen_timestamp import gen_timestamp
 from openapi_server.controllers.DBcm import QueryInfluxdb
-from openapi_server.controllers.query_db import query_info
+from openapi_server.controllers.query_db import query_data
+from openapi_server.controllers.process_data import process_node_data, process_job_data
 
 def get_unified_metric(start, end, interval, value):  # noqa: E501
     """get_unified_metric
@@ -50,5 +51,10 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         unified_metrics.time_stamp = time_list
 
         # Query Nodes and Jobs info
+        all_data = query_data(node_list, influx, start, end, interval, value)
+
+        # Process Nodes and Jobs info
+        unified_metrics.jobs_info = process_job_data(all_data["job_data"])
+        unified_metrics.nodes_info = process_node_data(node_list, all_data["node_data"], time_list, value)
     
     return unified_metrics

@@ -27,6 +27,6 @@ influx = QueryInfluxdb(config)
 
 all_data = query_info(node_list, influx, start, end, interval, value)
 
-result = process_node_data(node_list, all_data["node_data"], time_list, value)
+result = process_node_data(node_list, all_data["node_info"], time_list, value)
 
 print(result)
