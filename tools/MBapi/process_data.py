@@ -1,9 +1,13 @@
-def node_data_parser(node_list: list, node_data: dict, time_list: list) -> dict:
+def process_node_data(node_list: list, node_data: dict, time_list: list, value: str) -> dict:
     json_data = {}
-    fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
+    temp_fields = ["CPU1_temp", "CPU2_temp", "inlet_temp"]
+    usage_fields = ["cpuusage", "memoryusage", "powerusage_watts"]
+    speed_fields = ["fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed"]
+    # "jobID"
     for node in node_list:
         json_data[node] = {}
-        for field in fields:
+        # temperature fields are saved in the same array
+        for field in temp_fields:
             json_data[node][field] = []
             if field == "jobID":
                 jobid_tmp = []

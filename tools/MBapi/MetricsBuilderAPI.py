@@ -29,12 +29,12 @@ def query_data() -> str:
         # startTime = '2020-02-12T14:00:00Z'
         # endTime = '2020-02-12T19:00:00Z'
         # timeInterval = '5m'
-        node_list = parse_host()
+        # node_list = parse_host()
         json_data = {}
 
-        # hostfile = "./csv/HostDetail_" + startTime + "_" + endTime + "_" + timeInterval + ".csv"
-        # jobfile = "./csv/JobDetail_" + startTime + "_" + endTime + "_"  + timeInterval + ".csv"
-        # node_list = ['10.101.5.5']
+        hostfile = "./csv/HostDetail_" + startTime + "_" + endTime + "_" + timeInterval + ".csv"
+        jobfile = "./csv/JobDetail_" + startTime + "_" + endTime + "_"  + timeInterval + ".csv"
+        node_list = ['10.101.5.5']
         # joblist = ['qu_1122654A30']
 
         if time_sanity_check(startTime, endTime, timeInterval):
@@ -56,13 +56,16 @@ def query_data() -> str:
             
             # print("Writting to csv files...")
             print("Sending data...")
-            # build_csv(json_data, hostfile, jobfile)
-            return(json.dumps(json_data))
+            build_csv(json_data, hostfile, jobfile)
+            # return(json.dumps(json_data))
             # print(json.dumps(json_data, indent=2))
         else:
             return('Error: Quering data failed!')
     except Exception as err:
         print(err)
+
+
+query_data()
 
 
 if __name__ == '__main__':

@@ -1,18 +1,23 @@
 from DBcm import QueryInfluxdb
 
-def query_node(nodelist: list, config: dict, start: str, end: str, interval: str) -> dict:
+def query_node_info(node_list: list, config: dict, start: str, end: str, interval: str, value: str) -> dict:
+    """
+    Query node information
+    """
+    # should configurable
     json_data = {}
 
     try:
         influx = QueryInfluxdb(config)
         measurement = "cluster_unified_metrics"
-        fields = ["CPU1_temp", "CPU2_temp", "CPUCores", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
+        fields = ["CPU1_temp", "CPU2_temp", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
         
-        for node in nodelist:
+        for node in node_list:
             json_data[node] = {}
             for field in fields:
-                node_sql = node_sql_gen(field, measurement, node, start, end, interval)
+                node_sql = node_sql_gen(field, measurement, node, start, end, interval, value)
                 node_data = influx.get(node_sql)
+                # jobID is stored as string in influxdb
                 if field == "jobID":
                     for item in node_data:
                         job_list_str = item['distinct']
@@ -25,29 +30,33 @@ def query_node(nodelist: list, config: dict, start: str, end: str, interval: str
 
     return json_data
 
-def query_job_set(config: dict, start: str, end: str) -> set:
-    set_data = set()
+# def query_job_set(config: dict, start: str, end: str) -> set:
+#     # Get all jobs running during the time range, should configurable
+#     set_data = set()
     
-    try: 
-        influx = QueryInfluxdb(config)
-        measurement = "Current_Jobs_ID"
-        field = "jobs_list"
+#     try: 
+#         influx = QueryInfluxdb(config)
+#         measurement = "Current_Jobs_ID"
+#         field = "jobs_list"
 
-        job_list_sql = list_sql_gen(field, measurement, start, end)
-        job_list_data = influx.get(job_list_sql)
-        for item in job_list_data:
-            job_list_str = item['distinct']
-            id_list = job_list_str.split(',')
-            for job_id in id_list:
-                if job_id not in set_data:
-                    set_data.add(job_id)
+#         job_list_sql = list_sql_gen(field, measurement, start, end)
+#         job_list_data = influx.get(job_list_sql)
+#         for item in job_list_data:
+#             job_list_str = item['distinct']
+#             id_list = job_list_str.split(',')
+#             for job_id in id_list:
+#                 if job_id not in set_data:
+#                     set_data.add(job_id)
           
-    except Exception as err:
-        print(err)
+#     except Exception as err:
+#         print(err)
 
-    return set_data
+#     return set_data
 
 def query_job_info(config: dict, joblist: list) -> dict:
+    """
+    Query node information
+    """
     json_data = {}
     try:
         influx = QueryInfluxdb(config)
@@ -65,14 +74,20 @@ def query_job_info(config: dict, joblist: list) -> dict:
 
     return json_data
 
-def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, interval: str) -> str:
+def node_sql_gen(field: str, measurement: str, host: str, start: str, end: str, interval: str, value: str) -> str:
+    """
+    Generate influxdb SQL for retriving metrics from 'cluster_unified_metrics'
+    """
     if field == "jobID":
         return("SELECT DISTINCT(jobID) FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ") fill(null)")
     else:
-        return ("SELECT MAX(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ")")
+        return ("SELECT " + value + "(" + field + ") FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ")")
 
-def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
-    return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
+# def list_sql_gen(field: str, measurement: str, start: str, end: str) -> list:
+#     """
+#     Generate influxdb SQL for retriving jobs running during the time range
+#     """
+#     return("SELECT DISTINCT(" + field + ") FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
 
 def job_sql_gen(measurement: str) -> list:
     return ("SELECT * FROM " + measurement + " ORDER BY desc LIMIT 1")
