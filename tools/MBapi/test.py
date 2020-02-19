@@ -1,6 +1,6 @@
 from query_db import query_node_info
 
-config = {'host': 'localhost',
+config = {'host': '10.10.1.4',
           'port': 8086,
           'database': 'hpcc_monitoring_db',}
 
