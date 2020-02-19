@@ -1,14 +1,14 @@
 def query_info(node_list: list, influx: object, start: str, end: str, interval: str, value: str) -> dict:
     json_data = {}
 
-    node_info = query_node_info(node_list, influx, start, end, interval, value)
+    node_data = query_node_info(node_list, influx, start, end, interval, value)
 
     job_list = query_job_list(influx, start, end)
-    job_info = query_job_info(influx, job_list)
+    job_data = query_job_info(influx, job_list)
 
     json_data.update({
-        "node_info": node_info,
-        "job_info": job_info
+        "node_data": node_data,
+        "job_data": job_data
     })
 
     return json_data
