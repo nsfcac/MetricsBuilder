@@ -72,13 +72,12 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
             # process jobID
             for item in node_data[node]["jobID"]:
                 if item["time"] == time:
-                    try:
-                        if json_data[node]["job_id"][i]:
-                            tmp = set(json_data[node]["job_id"][i] + item["distinct"])
-                            json_data[node]["job_id"][i] = list(tmp)                            
-                    except:
+                    if len(json_data[node]["job_id"]) == 0:
                         json_data[node]["job_id"].append([])
-                        json_data[node]["job_id"][i] = list(set(item["distinct"]))
+                        json_data[node]["job_id"][0] = list(set(item["distinct"]))
+                    else:
+                        tmp = set(json_data[node]["job_id"][i] + item["distinct"])
+                        json_data[node]["job_id"][i] = list(tmp)
                 else:
                     json_data[node]["job_id"].append([])
     return json_data
