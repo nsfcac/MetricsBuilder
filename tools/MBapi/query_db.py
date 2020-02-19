@@ -62,14 +62,21 @@ def query_job_info(config: dict, job_list: list) -> dict:
     json_data = {}
     try:
         influx = QueryInfluxdb(config)
-        fields = ["start_time", "submit_time", "user_name", "finish_time"]
+        fields = ["startTime", "submitTime", "user"]
+        # fields = ["start_time", "submit_time", "user_name", "finish_time"]
 
         for job_id in job_list:
             json_data[job_id] = {}
             job_info_sql = job_sql_gen(job_id)
             job_info_data = influx.get(job_info_sql)
             for field in fields:
-                json_data[job_id][field] = job_info_data[0][field]
+                if field == "startTime":
+                    re_field = "start_time"
+                elif field == "submitTime":
+                    re_field = "submit_time"
+                else:
+                    re_field = "user_name"
+                json_data[job_id][re_field] = job_info_data[0][field]
 
     except Exception as err:
         print(err)
