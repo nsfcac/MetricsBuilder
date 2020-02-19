@@ -1,27 +1,58 @@
+# def convert_kv(node_list: list, node_data: dict, value: str) -> dict:
+#     json_data = {}
+#     fields = ["CPU1_temp", "CPU2_temp", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
+#     for field in fileds:
+#         if field == "jobID":
+
+
 def process_node_data(node_list: list, node_data: dict, time_list: list, value: str) -> dict:
     json_data = {}
     temp_fields = ["CPU1_temp", "CPU2_temp", "inlet_temp"]
     usage_fields = ["cpuusage", "memoryusage", "powerusage_watts"]
     speed_fields = ["fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed"]
     # "jobID"
+    time_step = len(time_list)
     for node in node_list:
-        json_data[node] = {}
-        # temperature fields are saved in the same array
+        json_data[node] = {
+            "memory_usage": [],
+            "cpu_usage": [],
+            "power_usage": [],
+            "fan_speed": [],
+            "cpu_int_temp": []
+        }
         for field in temp_fields:
-            json_data[node][field] = []
-            if field == "jobID":
-                jobid_tmp = []
-                for item in node_data[node][field]:
-                    job_obj = {}
-                    job_obj["time"] = item["time"]
-                    job_obj["distinct"] = id_de_duplicate(item["distinct"])
-                    jobid_tmp.append(job_obj)
-                # print(jobid_tmp)
-                json_data[node][field] = agg_time_job(jobid_tmp, time_list)
-            else:
-                json_data[node][field] = check_field(node_data[node][field], time_list)
+            field_step = len(node_data[node][field])
+            if field_step != time_step:
+                print(f"{field} length error!")
+        for field in usage_fields:
+            field_step = len(node_data[node][field])
+            if field_step != time_step:
+                print(f"{field} length error!")
+        for field in speed_fields:
+            field_step = len(node_data[node][field])
+            if field_step != time_step:
+                print(f"{field} length error!")
+            # if time_step == field_step:
+            #     # No value misses
+            #     for item in node_data[node][field]:
+
+        # for time in time_list:
+            # temperature fields are saved in the same array
+            # for field in temp_fields:
+            #     json_data[node][field] = []
+            #     if field == "jobID":
+            #         jobid_tmp = []
+            #         for item in node_data[node][field]:
+            #             job_obj = {}
+            #             job_obj["time"] = item["time"]
+            #             job_obj["distinct"] = id_de_duplicate(item["distinct"])
+            #             jobid_tmp.append(job_obj)
+            #         # print(jobid_tmp)
+            #         json_data[node][field] = agg_time_job(jobid_tmp, time_list)
+            #     else:
+            #         json_data[node][field] = check_field(node_data[node][field], time_list)
                 
-    return json_data
+    # return json_data
 
 # Process array job id and de-duplicate 
 def id_de_duplicate(job_list: list) -> list:
