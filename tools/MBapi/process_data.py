@@ -70,16 +70,11 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                     json_data[node]["fan_speed"][i].append(node_data[node][field][i][value])
             
             # process jobID
+            json_data[node]["job_id"].append([])
             for item in node_data[node]["jobID"]:
                 if item["time"] == time:
-                    if len(json_data[node]["job_id"]) == 0:
-                        json_data[node]["job_id"].append([])
-                        json_data[node]["job_id"][0] = list(set(item["distinct"]))
-                    else:
-                        tmp = set(json_data[node]["job_id"][i] + item["distinct"])
-                        json_data[node]["job_id"][i] = list(tmp)
-                else:
-                    json_data[node]["job_id"].append([])
+                    tmp = set(json_data[node]["job_id"][i] + item["distinct"])
+                    json_data[node]["job_id"][i] = list(tmp)
     return json_data
 
 # Process array job id and de-duplicate 
