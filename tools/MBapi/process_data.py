@@ -24,17 +24,25 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
         for i, time in enumerate(time_list):
             # metrics in usage_fields do not need to be aggregated
             for field in usage_fields:
+                # rename field names
+                if field == "cpuusage":
+                    re_field = "cpu_usage"
+                elif field == "memoryusage":
+                    re_field = "memory_usage"
+                else:
+                    re_field = "power_usage"
+                    
                 field_step = len(node_data[node][field])
                 if field_step == 0:
-                    json_data[node][field].append(None)
+                    json_data[node][re_field].append(None)
                 elif field_step != time_step:
                     for item in node_data[node][field]:
-                        if item['time'] == time:
-                            json_data[node][field].append(item[value])
+                        if item["time"] == time:
+                            json_data[node][re_field].append(item[value])
                         else:
-                            json_data[node][field].append(None)
+                            json_data[node][re_field].append(None)
                 else:
-                    json_data[node][field].append(node_data[node][field][i][value])
+                    json_data[node][re_field].append(node_data[node][field][i][value])
             # metrics in temp_fields and speed_fields need to be aggregated, i.e.
             # metrics at the same time stamp are saved in an array
             json_data[node]["cpu_inl_temp"].append([])
@@ -45,7 +53,7 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                     json_data[node]["cpu_inl_temp"][i].append(None)
                 elif field_step != time_step:
                     for item in node_data[node][field]:
-                        if item['time'] == time:
+                        if item["time"] == time:
                             json_data[node]["cpu_inl_temp"][i].append(item[value])
                         else:
                             json_data[node]["cpu_inl_temp"][i].append(None)
@@ -57,7 +65,7 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                     json_data[node]["fan_speed"][i].append(None)
                 elif field_step != time_step:
                     for item in node_data[node][field]:
-                        if item['time'] == time:
+                        if item["time"] == time:
                             json_data[node]["fan_speed"][i].append(item[value])
                         else:
                             json_data[node]["fan_speed"][i].append(None)
