@@ -10,8 +10,8 @@ config = {'host': '10.10.1.4',
           'port': 8086,
           'database': 'hpcc_monitoring_db',}
 
-node_list = ['10.101.5.5']
-# node_list = parse_host()
+# node_list = ['10.101.5.5']
+node_list = parse_host()
 start = '2020-02-12T14:00:00Z'
 end = '2020-02-12T15:00:00Z'
 interval = '10m'
