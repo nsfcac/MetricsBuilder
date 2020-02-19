@@ -1,10 +1,10 @@
-import Queue
+from queue import Queue
 from threading import Thread
 from openapi_server.controllers.DBcm import QueryInfluxdb
 
 def query_in_parallel(node_list: list, config: dict, start: str, end: str, interval: str, value: str) -> list:
     influx = QueryInfluxdb(config)
-    queue = Queue.Queue()
+    queue = Queue()
     results = []
     # Job list
     job_list = query_job_list(influx, start, end)
