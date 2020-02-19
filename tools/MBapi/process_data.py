@@ -1,3 +1,5 @@
+import time
+
 def process_node_data(node_list: list, node_data: dict, time_list: list, value: str) -> dict:
     """
     Process node data retrieved from influxdb
@@ -85,13 +87,21 @@ def process_job_data(job_data: dict) -> dict:
     Process job data retrieved from influxdb
     """
     json_data = {}
+    time_pattern = "%a %b %d %H:%M:%S %Z %Y"
+
+    # Wed Feb 12 13:55:48 CST 2020
+
     for item in job_data.keys():
         job_id = item.split("_")[1]
+        submit_time = int(time.mktime(time.strptime(job_data[item]["submit_time"], time_pattern)))
+        start_time = int(time.mktime(time.strptime(job_data[item]["start_time"], time_pattern)))
         if "A" not in job_id:
-            json_data[job_id] = job_data[item]
-            json_data[job_id].update({
-                "job_array": False
-            })
+            json_data[job_id_password] = {
+                    "user_name": job_data[item]["user_name"],
+                    "submit_time": submit_time,
+                    "start_time": start_time,
+                    "job_array": False
+                }
         else:
             # Array job
             job_id_password = job_id.split("A")[0]
@@ -99,23 +109,16 @@ def process_job_data(job_data: dict) -> dict:
             if job_id_password not in json_data:
                 json_data[job_id_password] = {
                     "user_name": job_data[item]["user_name"],
-                    # "submit_time": job_data[item]["submit_time"],
-                    "submit_time": {},
+                    "submit_time": submit_time,
                     "start_time": {},
                     "job_array": True
                 }
                 json_data[job_id_password]["start_time"].update({
-                    job_id_array: job_data[item]["start_time"]
-                })
-                json_data[job_id_password]["submit_time"].update({
-                    job_id_array: job_data[item]["submit_time"]
+                    job_id_array: start_time
                 })
             else:
                 json_data[job_id_password]["start_time"].update({
-                    job_id_array: job_data[item]["start_time"]
-                })
-                json_data[job_id_password]["submit_time"].update({
-                    job_id_array: job_data[item]["submit_time"]
+                    job_id_array: start_time
                 })
 
     return json_data
