@@ -1,7 +1,7 @@
 from query_db import query_node_info, query_job_list, query_job_info
 from time_stamp import time_stamp
 from configure import parse_host
-from process_data import process_node_data
+from process_data import process_node_data, process_job_data
 
 
 config = {'host': '10.10.1.4',
@@ -18,7 +18,9 @@ value = 'max'
 time_list = time_stamp(start, end, interval)
 
 job_list = query_job_list(config, start, end)
-result = query_job_info(config, job_list)
+job_data = query_job_info(config, job_list)
+
+result = process_job_data(job_data)
 
 # node_data = query_node_info(node_list, config, start, end, interval, value)
 

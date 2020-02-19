@@ -79,3 +79,35 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                     tmp = set(json_data[node]["job_id"][i] + processed_id)
                     json_data[node]["job_id"][i] = list(tmp)
     return json_data
+
+def process_job_data(job_data: dict) -> dict:
+    """
+    Process job data retrieved from influxdb
+    """
+    json_data = {}
+    for item in job_data.keys():
+        job_id = item.split("_")[1]
+        if "A" not in job_id:
+            json_data[job_id] = job_data[item]
+            json_data[job_id].update({
+                "job_array": False
+            })
+        else:
+            # Array job
+            job_id_password = job_id.split("A")[0]
+            if job_id_password not in json_data:
+                json_data[job_id_password].update({
+                    "user_name": job_data[item]["user_name"],
+                    "submit_time": job_data[item]["submit_time"],
+                    "start_time": {},
+                    "job_array": True
+                })
+                json_data[job_id_password]["start_time"].update({
+                    job_id: job_data[item]["start_time"]
+                })
+            else:
+                json_data[job_id_password]["start_time"].update({
+                    job_id: job_data[item]["start_time"]
+                })
+
+    return json_data
