@@ -32,6 +32,13 @@ def datetime_range(start: str, end: str, interval: str) -> str:
 
 def gen_timestamp(start: str, end: str, interval: str) -> list:
     delta = time_delta(interval)
+    time_list = [dt.strftime("%Y-%m-%dT%H:%M:%SZ") for dt in datetime_range(
+        start, end, delta
+    )]
+    return time_list
+
+def gen_epoch_timestamp(start: str, end: str, interval: str) -> list:
+    delta = time_delta(interval)
     time_list = [int(dt.timestamp()) for dt in datetime_range(
         start, end, delta
     )]
