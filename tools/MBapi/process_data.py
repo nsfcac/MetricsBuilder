@@ -1,10 +1,3 @@
-# def convert_kv(node_list: list, node_data: dict, value: str) -> dict:
-#     json_data = {}
-#     fields = ["CPU1_temp", "CPU2_temp", "cpuusage", "fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed", "inlet_temp", "jobID", "memoryusage", "powerusage_watts"]
-#     for field in fileds:
-#         if field == "jobID":
-
-
 def process_node_data(node_list: list, node_data: dict, time_list: list, value: str) -> dict:
     json_data = {}
     temp_fields = ["CPU1_temp", "CPU2_temp", "inlet_temp"]
@@ -18,7 +11,8 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
             "cpu_usage": [],
             "power_usage": [],
             "fan_speed": [],
-            "cpu_inl_temp": []
+            "cpu_inl_temp": [],
+            "job_id": []
         }
 
         for i, time in enumerate(time_list):
@@ -31,7 +25,7 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                     re_field = "memory_usage"
                 else:
                     re_field = "power_usage"
-                    
+
                 field_step = len(node_data[node][field])
                 if field_step == 0:
                     json_data[node][re_field].append(None)
@@ -71,7 +65,18 @@ def process_node_data(node_list: list, node_data: dict, time_list: list, value: 
                             json_data[node]["fan_speed"][i].append(None)
                 else:
                     json_data[node]["fan_speed"][i].append(node_data[node][field][i][value])
-                
+            
+            # process jobID
+            for item in node_data[node]["jobID"]:
+                if item["time"] == time:
+                    if json_data[node]["job_id"][i]:
+                        tmp = set(json_data[node]["job_id"][i] + item["distinct"])
+                        json_data[node]["job_id"][i] = list(tmp)
+                    else:
+                        json_data[node]["job_id"].append([])
+                        json_data[node]["job_id"][i] = list(set(item["distinct"]))
+                else:
+                    json_data[node]["job_id"].append([])
     return json_data
 
 # Process array job id and de-duplicate 
