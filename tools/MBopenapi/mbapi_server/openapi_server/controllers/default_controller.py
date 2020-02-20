@@ -48,14 +48,15 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
 
         # Get time stamp
         time_list = gen_timestamp(start, end, interval)
-        epoch_time_list = gen_epoch_timestamp(start, end, interval)
-        unified_metrics.time_stamp = epoch_time_list
+        # time_list = gen_epoch_timestamp(start, end, interval)
+        # epoch_time_list = gen_epoch_timestamp(start, end, interval)
+        # unified_metrics.time_stamp = epoch_time_list
 
         # Query Nodes and Jobs info
-        all_data = query_data(node_list, influx, start, end, interval, value)
+        # all_data = query_data(node_list, influx, start, end, interval, value)
 
         # Process Nodes and Jobs info
         # unified_metrics.jobs_info = process_job_data(all_data["job_data"])
         # unified_metrics.nodes_info = process_node_data(node_list, all_data["node_data"], time_list, value)
     
-    return all_data
+    return time_list
