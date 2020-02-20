@@ -33,6 +33,10 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     node_list = parse_host()
     influx = QueryInfluxdb(config["influxdb"])
 
+    # Time string used in query_data
+    start_str = start
+    end_str = end
+
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
@@ -48,15 +52,14 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
 
         # Get time stamp
         time_list = gen_timestamp(start, end, interval)
-        # time_list = gen_epoch_timestamp(start, end, interval)
-        # epoch_time_list = gen_epoch_timestamp(start, end, interval)
-        # unified_metrics.time_stamp = epoch_time_list
+        epoch_time_list = gen_epoch_timestamp(start, end, interval)
+        unified_metrics.time_stamp = epoch_time_list
 
         # Query Nodes and Jobs info
-        # all_data = query_data(node_list, influx, start, end, interval, value)
+        all_data = query_data(node_list, influx, start_str, end_str, interval, value)
 
         # Process Nodes and Jobs info
         # unified_metrics.jobs_info = process_job_data(all_data["job_data"])
         # unified_metrics.nodes_info = process_node_data(node_list, all_data["node_data"], time_list, value)
     
-    return time_list
+    return all_data
