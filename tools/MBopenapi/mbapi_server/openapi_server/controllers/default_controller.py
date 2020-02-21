@@ -68,7 +68,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         unified_metrics.nodes_info = process_node_data(node_list, all_data["node_data"], time_list, value)
 
         process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
-        total_elapsed = float("{0:.2f}".format(query_elapsed + process_elapsed)
+        total_elapsed = float("{0:.2f}".format(query_elapsed + process_elapsed))
         # In seconds
         time_range = int(end.timestamp()) - int(start.timestamp())
 
