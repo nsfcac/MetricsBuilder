@@ -60,14 +60,14 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         # Query Nodes and Jobs info
         all_data = query_data(node_list, influx, start_str, end_str, interval, value)
 
-        query_elapsed = time.time() - query_start
+        query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 
         process_start = time.time()
         # Process Nodes and Jobs info
         unified_metrics.jobs_info = process_job_data(all_data["job_data"])
         unified_metrics.nodes_info = process_node_data(node_list, all_data["node_data"], time_list, value)
 
-        process_elapsed = time.time() - process_start
+        process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
         total_elapsed = query_elapsed + process_elapsed
         # In seconds
         time_range = int(end.timestamp()) - int(start.timestamp())
