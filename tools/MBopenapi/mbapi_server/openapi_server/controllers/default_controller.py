@@ -73,6 +73,6 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         time_range = int(end.timestamp()) - int(start.timestamp())
 
         with open("requests.log", "a+") as requests_log:
-            print(f"{time_range}:{interval}:{value}:{query_elapsed}:{process_elapsed}:{total_elapsed}\n", file = requests_log)
+            print(f"{time_range}:{interval}:{value}:{query_elapsed}:{process_elapsed}:{total_elapsed}", file = requests_log)
 
     return unified_metrics
