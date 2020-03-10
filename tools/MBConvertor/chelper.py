@@ -32,11 +32,8 @@ def printMBCHelp():
     print(
     """
     Options:
-    --version, -v       Show version number                             [boolean]
     --startTime, -s     Specify start time of monitoring data           [string]
     --endTime, -e       Specify end time of monitoring data             [string]
-    --interval, -i      Specify time interval of monitoring data        [string]
-    --valueType, -t     Specify value type: MAX, MIN, MEAN              [string]
     --help, -h          Show help                                       [boolean]
     """)
 
