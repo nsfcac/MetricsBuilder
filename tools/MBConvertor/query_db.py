@@ -4,9 +4,6 @@ def get_phase_time(client: object) -> int:
     """
     Get first time stamp of each measurement
     """
-    # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
-    #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
-    # sec_mea = ["cluster_unified_metrics", "Current_Jobs_ID"]
     phase_time = []
 
     try:            
@@ -23,3 +20,9 @@ def get_phase_time(client: object) -> int:
         print(err)
     
     return phase_time
+
+# fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
+#             "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
+# sec_mea = ["cluster_unified_metrics", "Current_Jobs_ID"]
+
+def 
