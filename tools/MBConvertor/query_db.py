@@ -1,4 +1,6 @@
-def get_fst_time(client: object) -> object:
+from datetime import datetime
+
+def get_fst_time(client: object) -> int:
     """
     Get first time stamp of each measurement
     """
@@ -8,7 +10,8 @@ def get_fst_time(client: object) -> object:
 
     try:            
         sql = "SELECT first(error) FROM CPU_Temperature WHERE host='10.101.1.1'"
-        data_point = client.get(sql)
-        return data_point
+        timestamp = client.get(sql)[0]["time"]
+        epoch_time = int(datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%f%Z"))
+        return epoch_time
     except Exception as err:
         print(err)

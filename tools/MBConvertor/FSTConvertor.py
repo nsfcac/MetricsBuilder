@@ -17,8 +17,8 @@ def main():
 
     # Initialization
     client = QueryInfluxdb(config)
-    data_point = get_fst_time(client)
-    print(data_point)
+    first = get_fst_time(client)
+    print(first)
 
     # Get host list
     # hostlist = parse_host()
