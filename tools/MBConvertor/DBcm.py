@@ -9,7 +9,7 @@ class QueryInfluxdb():
         json_data = []
         try:
             client = InfluxDBClient(**self.configuration)
-            influxdbQuery = client.query(sql)
+            influxdbQuery = client.query(sql, epoch='s')
             json_data = list(influxdbQuery.get_points())
         except Exception as err:
             print(err)
