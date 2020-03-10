@@ -3,7 +3,8 @@
 
 import sys
 
-from DBcm import QueryInfluxdb
+from influxdb import InfluxDBClient
+
 from parse_config import parse_host
 from query_db import get_fst_time
 
@@ -16,9 +17,9 @@ config = {
 def main():
 
     # Initialization
-    influx = QueryInfluxdb(config)
-    data_point = get_fst_time(influx)
-    print(data_point)
+    client = InfluxDBClient(**config)
+    result = client.query("SELECT first('CPU1 Temp') FROM 'CPU_Temperature' WHERE host='10.101.1.1'")
+    print(result)
 
     # Get host list
     # hostlist = parse_host()
