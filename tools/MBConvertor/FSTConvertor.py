@@ -5,7 +5,7 @@ import sys
 
 from DBcm import QueryInfluxdb
 from parse_config import parse_host
-from query_db import get_fst_time
+from query_db import get_phase_time
 
 config = {
     'host': 'localhost',
@@ -17,8 +17,8 @@ def main():
 
     # Initialization
     client = QueryInfluxdb(config)
-    first = get_fst_time(client)
-    print(first)
+    phase_time = get_phase_time(client)
+    print(phase_time)
 
     # Get host list
     # hostlist = parse_host()
