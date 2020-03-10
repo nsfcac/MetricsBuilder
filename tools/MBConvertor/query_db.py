@@ -53,7 +53,7 @@ def query_data(node_list: list, measurement: str,
         print(err)
     return result
 
-def sql_gen(measurement: str, host: str: start: int, end: int) -> str:
+def sql_gen(measurement: str, host: str, start: int, end: int) -> str:
     """
     Generate influxdb SQL for retriving data points during the time range
     """
