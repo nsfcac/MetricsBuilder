@@ -10,7 +10,7 @@ def get_fst_time(client: object) -> object:
         field = "CPU1 Temp"
         measurement = "CPU_Temperature"
         host = "10.101.1.1"
-        sql = "SELECT first(" + field + ") FROM " + measurement + "WHERE host = '" + host + "'"
+        sql = "SELECT first('" + field + "') FROM " + measurement + "WHERE host = '" + host + "'"
         data_point = client.get(sql)
         return data_point
     except Exception as err:
