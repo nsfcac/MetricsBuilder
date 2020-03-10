@@ -10,8 +10,9 @@ def get_fst_time(client: object) -> int:
 
     try:            
         sql = "SELECT first(error) FROM CPU_Temperature WHERE host='10.101.1.1'"
-        timestamp = client.get(sql)[0]["time"].split(".")[0]
-        epoch_time = int(datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S").timestamp())
+        timestamp = client.get(sql)[0]["time"]
+        print(timestamp)
+        epoch_time = int(datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S.%fZ").timestamp())
         return epoch_time
     except Exception as err:
         print(err)
