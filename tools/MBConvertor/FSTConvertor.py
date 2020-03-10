@@ -13,7 +13,7 @@ config = {
     'database': 'hpcc_monitoring_db'
 }
 
-def main(argv):
+def main():
 
     # Initialization
     influx = QueryInfluxdb(config)
@@ -29,4 +29,4 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()
