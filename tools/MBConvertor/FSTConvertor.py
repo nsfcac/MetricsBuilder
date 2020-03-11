@@ -39,14 +39,20 @@ def main():
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
+    tables = read_client.list_measurement()
+
+    with open("measurements.json", "w") as tablefile:
+        json.dump(tables, tablefile, indent=2)
+
+
     # print(st)
     # print(et)
 
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
     #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]
-    fst_mea = ["Job_Info"]
+    # fst_mea = ["Job_Info"]
     # measurement = "CPU_Temperature"
-    node_list = ["10.101.1.1"]
+    # node_list = ["10.101.1.1"]
 
     # for mea in fst_mea:
     #     json_data = query_data(node_list, mea, read_client, st, et)
@@ -54,8 +60,8 @@ def main():
     #         updated = process_data(json_data, mea)
     #         print(updated)
 
-    data_point = query_data_point(read_client)
-    print(json.dumps(data_point, indent=4))
+    # data_point = query_data_point(read_client)
+    # print(json.dumps(data_point, indent=4))
 
     # Get host list
     # hostlist = parse_host()

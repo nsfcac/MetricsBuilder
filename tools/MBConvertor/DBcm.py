@@ -5,7 +5,16 @@ class QueryInfluxdb():
     def __init__(self, config: dict) -> None:
         self.configuration = config
         self.client = InfluxDBClient(**self.configuration)
-    
+
+    def list_measurement(self) -> list:
+        tables = []
+        try:
+            tables = self.client.get_list_measurements()
+        except Exception as err:
+            print(err)
+        return tables
+
+
     def get(self, sql: str) -> list:
         json_data = []
         try:
@@ -14,6 +23,7 @@ class QueryInfluxdb():
         except Exception as err:
             print(err)
         return json_data
+
 
     def write(self, json_data: object) -> None:
         try:
