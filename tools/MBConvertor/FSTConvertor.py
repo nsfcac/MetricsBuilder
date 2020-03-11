@@ -46,13 +46,13 @@ def main():
     # measurement = "CPU_Temperature"
     node_list = ["10.101.1.1"]
 
-    for mea in fst_mea:
-        json_data = query_data(node_list, mea, read_client, st, et)
-        updated = process_data(json_data, mea)
-        if updated:
-            print(updated[0])
-    # data_point = query_data_point(read_client)
-    # print(json.dumps(data_point, indent=4))
+    # for mea in fst_mea:
+    #     json_data = query_data(node_list, mea, read_client, st, et)
+    #     updated = process_data(json_data, mea)
+    #     if updated:
+    #         print(updated[0])
+    data_point = query_data_point(read_client)
+    print(json.dumps(data_point, indent=4))
     # Get host list
     # hostlist = parse_host()
     # Get first timestamp
