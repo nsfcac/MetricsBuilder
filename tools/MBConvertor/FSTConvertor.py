@@ -39,8 +39,8 @@ def main():
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
-    # print(st)
-    # print(et)
+    print(st)
+    print(et)
 
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
     #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]
@@ -52,7 +52,7 @@ def main():
         json_data = query_data(node_list, mea, read_client, st, et)
         if json_data:
             updated = process_data(json_data, mea)
-            print(updated[0])
+            print(updated)
 
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
