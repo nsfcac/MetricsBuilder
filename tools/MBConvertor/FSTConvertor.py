@@ -30,16 +30,16 @@ def main():
     phase_time = get_phase_time(read_client)
     print(phase_time)
 
-    start = phase_time[0]
-    one_day = 24 * 60 * 60 * 1000
+    start = phase_time[0]/1000
+    one_day = 24 * 60 * 60
     end = start + one_day
 
-    st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(start))
-    et = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(end))
+    st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
+    et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
     print(st)
     print(et)
-    
+
     measurement = "CPU_Temperature"
     node_list = ["10.101.1.1"]
 
