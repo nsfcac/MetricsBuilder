@@ -34,6 +34,7 @@ def query_data_point(client: object) -> list:
     try:
         data_sql = "SELECT * FROM CPU_Usage WHERE host='10.101.1.1' LIMIT 1"
         data = client.get(data_sql)
+        print("{0:.2f}".format(data[0]["cpuusage(load)"]))
     except Exception as err:
         print(err)
     return data

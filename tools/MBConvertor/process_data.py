@@ -51,7 +51,7 @@ def process_data(json_data: list, measurement: str) -> list:
                         "NodeId": data["host"]
                     }, 
                     "fields": {
-                        "Reading": data["cpuusage(load)"]
+                        "Reading": "{0:.2f}".format(data["cpuusage(load)"])
                     }
                 }
             # if measurement == "Memory_Usage":

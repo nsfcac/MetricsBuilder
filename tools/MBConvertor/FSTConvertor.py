@@ -48,8 +48,8 @@ def main():
     # updated = process_data(json_data, measurement)
     # if updated:
     #     print(updated)
-    data_point = query_data_point(read_client)
-    print(json.dumps(data_point, indent=4))
+    # data_point = query_data_point(read_client)
+    # print(json.dumps(data_point, indent=4))
     # Get host list
     # hostlist = parse_host()
     # Get first timestamp
