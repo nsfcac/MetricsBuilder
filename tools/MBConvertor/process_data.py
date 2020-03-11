@@ -1,4 +1,5 @@
 import time
+from dateutil import parser
 
 def process_data(json_data: list, measurement: str) -> list:
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
@@ -160,10 +161,11 @@ def process_data(json_data: list, measurement: str) -> list:
                 if data["jobID"] not in job_list:
                     job_list.append(data["jobID"])
 
-                    time_pattern = "%a %b %d %X %Z %Y"
-                    start = int(time.mktime(time.strptime(data["startTime"], time_pattern)))
-                    submit = int(time.mktime(time.strptime(data["submitTime"], time_pattern)))
+                    start = int(parser.parse(data["startTime"]).timestamp())
+                    submit = int(parser.parse(data["submitTime"]).timestamp())
 
+                    print(start)
+                    
                     data_point_2 = {
                         "measurement" : "JobsInfo",
                         "time": data["time"],
