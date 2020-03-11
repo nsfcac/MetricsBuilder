@@ -160,12 +160,13 @@ def process_data(json_data: list, measurement: str) -> list:
                 job_list = []
                 if data["jobID"] not in job_list:
                     job_list.append(data["jobID"])
-
-                    start = int(parser.parse(data["startTime"]).timestamp())
-                    submit = int(parser.parse(data["submitTime"]).timestamp())
+                    
+                    
+                    start = int(parser.parse(data["startTime"].replace("CDT", "UTC-5")).timestamp())
+                    submit = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
 
                     print(start)
-                    
+
                     data_point_2 = {
                         "measurement" : "JobsInfo",
                         "time": data["time"],
