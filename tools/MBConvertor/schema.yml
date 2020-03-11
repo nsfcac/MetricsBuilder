@@ -18,7 +18,7 @@ fields:
 measurement: Thermal         
 time: 1583792296             
 tags: 
-    - Sensor: "FAN1"
+    - Sensor: "FAN_1"
     - NodeId: "101.10.1.1"
 fields:
     - Reading: 4500 

@@ -35,21 +35,24 @@ def main():
     one_day = 24 * 60 * 60
     end = start + one_day
 
-    # st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
-    # et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
+    st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
+    et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
     # print(st)
     # print(et)
 
+    fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
+                "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
     # measurement = "CPU_Temperature"
-    # node_list = ["10.101.1.1"]
+    node_list = ["10.101.1.1"]
 
-    # json_data = query_data(node_list, measurement, read_client, st, et)
-    # updated = process_data(json_data, measurement)
-    # if updated:
-    #     print(updated)
-    data_point = query_data_point(read_client)
-    print(json.dumps(data_point, indent=4))
+    for mea in fst_mea:
+        json_data = query_data(node_list, mea, read_client, st, et)[0]
+        updated = process_data(json_data, mea)
+        if updated:
+            print(updated)
+    # data_point = query_data_point(read_client)
+    # print(json.dumps(data_point, indent=4))
     # Get host list
     # hostlist = parse_host()
     # Get first timestamp
