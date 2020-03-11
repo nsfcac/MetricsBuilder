@@ -41,8 +41,9 @@ def main():
     # print(st)
     # print(et)
 
-    fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
-                "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]
+    # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
+    #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]
+    fst_mea = ["Job_Info"]
     # measurement = "CPU_Temperature"
     node_list = ["10.101.1.1"]
 
