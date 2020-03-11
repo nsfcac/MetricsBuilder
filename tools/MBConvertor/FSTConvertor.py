@@ -52,13 +52,13 @@ def main():
 
     job_data = []
     data_obj = {
-        "measurement": measurements["sys_measurements"][0],
-        "details": query_sample_data(read_client, measurements["sys_measurements"][0])
+        "measurement": measurements["job_measurements"][0],
+        "details": query_sample_data(read_client, measurements["job_measurements"][0])
     }
     job_data.append(data_obj)
     data_obj = {
-        "measurement": measurements["sys_measurements"][-1],
-        "details": query_sample_data(read_client, measurements["sys_measurements"][-1])
+        "measurement": measurements["job_measurements"][-1],
+        "details": query_sample_data(read_client, measurements["job_measurements"][-1])
     }
     job_data.append(data_obj)
     
