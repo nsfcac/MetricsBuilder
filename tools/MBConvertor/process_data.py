@@ -53,7 +53,7 @@ def process_data(json_data: list, measurement: str) -> list:
                         "NodeId": data["host"]
                     }, 
                     "fields": {
-                        "Reading": "{0:.2f}".format(data["cpuusage(load)"])
+                        "Reading": float("{0:.2f}".format(data["cpuusage(load)"]))
                     }
                 }
                 result.append(data_point)
@@ -71,7 +71,7 @@ def process_data(json_data: list, measurement: str) -> list:
                         "NodeId": data["host"]
                     }, 
                     "fields": {
-                        "Reading": "{0:.2f}".format(mem_usage)
+                        "Reading": float("{0:.2f}".format(mem_usage))
                     }
                 }
 
