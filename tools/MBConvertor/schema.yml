@@ -59,6 +59,8 @@ fields:
 
 # Node-Jobs relationship is saved in "NodeJobs" measurement. Tag key is "NodeId",
 # from which we can get the corresponding field value that is a list of job IDs.
+# Job ID follows the name rule of UGE, if it is an array job, job_id + "." + task_id
+# to represent the job ID
 
 # Dummy data points in "NodeJobs" measurement
 measurement: NodeJobs
@@ -68,10 +70,11 @@ tags:
 fields:
     - JobList:
         - 123456
-        - 123457
+        - 123457.1
+        - 123457.2
 
 # Job details are saved in "JobsInfo" measurement. Tag key is "JobId", from which
-# we can get the corresponding job details that are saved into field. The data 
+# we can get the corresponding job details that are saved into fields. The data 
 # point in this measurement is inserted only when a new job is submitted.
 
 # Dummy data points in "JobsInfo" measurement
@@ -82,5 +85,9 @@ tags:
 fields:
     - StartTime: 1583792200   
     - SubmitTime: 1583792200  
+    - TotalNodes: 4
+    - NodeList: "101.10.1.1-1"
+    - CPUCores: 10
+    - JobName: "efg"
     - User: "abc"
 #------------------------------End UGE metrics----------------------------------
