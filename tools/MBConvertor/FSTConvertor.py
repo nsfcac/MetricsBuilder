@@ -7,7 +7,7 @@ import time
 
 from DBcm import QueryInfluxdb
 from parse_config import parse_host
-from query_db import get_phase_time, query_data, query_data_point
+from query_db import get_phase_time, query_data, query_sample_data
 from parse_measurements import parse_measurement
 from process_data import process_data
 
@@ -39,16 +39,22 @@ def main():
 
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
-    
 
-    # Get all measurements
     measurements = parse_measurement(read_client)
-    with open("sys_measurements.json", "w") as sysfile:
-        json.dump(measurements["sys_measurements"], sysfile, indent=2)
-    with open("job_measurements.json", "w") as jobfile:
-        json.dump(measurements["job_measurements"], jobfile, indent=2)
+    # Get sample data points
+    sys_data = []
+    for mea in measurements["sys_measurements"]:
+        sys_data.append(query_sample_data(read_client, mea))
 
-
+    job_data = []
+    job_data.append(query_sample_data(read_client, measurements["sys_measurements"][0]))
+    job_data.append(query_sample_data(read_client, measurements["sys_measurements"][-1]))
+    
+    with open("sys_data.json", "w") as sysfile:
+        json.dump(sys_data, sysfile, indent=2)
+    with open("job_data.json", "w") as jobfile:
+        json.dump(job_data, jobfile, indent=2)
+    
     # print(st)
     # print(et)
 

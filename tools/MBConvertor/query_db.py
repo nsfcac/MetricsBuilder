@@ -26,13 +26,13 @@ def get_phase_time(client: object) -> int:
 # sec_mea = ["cluster_unified_metrics", "Current_Jobs_ID"]
 
 
-def query_data_point(client: object) -> list:
+def query_sample_data(client: object, measurement: str) -> list:
     """
     Get one sample data
     """
     data = []
     try:
-        data_sql = "SELECT * FROM Job_Info WHERE host='10.101.1.5' order by time desc LIMIT 1"
+        data_sql = "SELECT * FROM " + measurement + " LIMIT 1"
         data = client.get(data_sql)
     except Exception as err:
         print(err)
