@@ -47,8 +47,8 @@ def main():
     node_list = ["10.101.1.1"]
 
     for mea in fst_mea:
-        json_data = query_data(node_list, mea, read_client, st, et)[0]
-        updated = process_data(json_data, mea)
+        json_data = query_data(node_list, mea, read_client, st, et)
+        updated = process_data(json_data[0], mea)
         if updated:
             print(updated)
     # data_point = query_data_point(read_client)
