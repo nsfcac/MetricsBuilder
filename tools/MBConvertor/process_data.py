@@ -163,17 +163,21 @@ def process_data(json_data: list, measurement: str) -> list:
                     time_pattern = "%a %b %d %H:%M:%S %Z %Y"
                     start = int(time.mktime(time.strptime(data["startTime"], time_pattern)))
                     submit = int(time.mktime(time.strptime(data["submitTime"], time_pattern)))
-                    
+
                     data_point_2 = {
                         "measurement" : "JobsInfo",
                         "time": data["time"],
                         "tags": {
-                            "JobId": data["jobID"]
+                            "JobId": data["jobID"],
+                            "Queue": data["cluster"]
                         }, 
                         "fields": {
                             "StartTime": start,
                             "SubmitTime": submit,
-                            "User": data["user"]
+                            "NodeList": None,
+                            "CPUCores": None,
+                            "JobName": None,
+                            "User": data["user"],
                         }
                     }
                     result.append(data_point_2)

@@ -31,7 +31,8 @@ def main():
     phase_time = get_phase_time(read_client)
     print(phase_time)
 
-    start = phase_time[0]
+    # start = phase_time[0]
+    start = 1555076381903
     one_day = 24 * 60 * 60
     end = start + one_day
 
