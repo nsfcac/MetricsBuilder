@@ -48,10 +48,9 @@ def main():
 
     for mea in fst_mea:
         json_data = query_data(node_list, mea, read_client, st, et)
-        print(json_data[0])
-        updated = process_data(json_data[0], mea)
+        updated = process_data(json_data, mea)
         if updated:
-            print(updated)
+            print(updated[0])
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
     # Get host list
