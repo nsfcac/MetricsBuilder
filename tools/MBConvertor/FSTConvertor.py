@@ -48,6 +48,7 @@ def main():
 
     for mea in fst_mea:
         json_data = query_data(node_list, mea, read_client, st, et)
+        print(json_data[0])
         updated = process_data(json_data[0], mea)
         if updated:
             print(updated)
