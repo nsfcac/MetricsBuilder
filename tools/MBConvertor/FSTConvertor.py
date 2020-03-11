@@ -32,7 +32,7 @@ def main():
     print(phase_time)
 
     # start = phase_time[0]
-    start = 1555076381903
+    start = 1555076381
     one_day = 24 * 60 * 60
     end = start + one_day
 
