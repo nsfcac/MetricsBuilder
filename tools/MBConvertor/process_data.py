@@ -1,3 +1,5 @@
+import time
+
 def process_data(json_data: list, measurement: str) -> list:
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
     #         "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
@@ -29,7 +31,7 @@ def process_data(json_data: list, measurement: str) -> list:
                 }
                 result.append(data_point_1)
                 result.append(data_point_2)
-
+                continue
             if measurement == "Inlet_Temperature":
                 data_point = {
                     "measurement" : "Thermal",
@@ -43,7 +45,7 @@ def process_data(json_data: list, measurement: str) -> list:
                     }
                 }
                 result.append(data_point)
-
+                continue
             if measurement == "CPU_Usage":
                 data_point = {
                     "measurement" : "UGE",
@@ -57,7 +59,7 @@ def process_data(json_data: list, measurement: str) -> list:
                     }
                 }
                 result.append(data_point)
-
+                continue
             if measurement == "Memory_Usage":
                 available_memory = float(data["available_memory"].split("G")[0])
                 total_memory = float(data["total_memory"].split("G")[0])
@@ -76,7 +78,7 @@ def process_data(json_data: list, measurement: str) -> list:
                 }
 
                 result.append(data_point)
-            
+                continue
             if measurement == "Fan_Speed":
                 data_point_1 = {
                     "measurement" : "Thermal",
@@ -126,7 +128,7 @@ def process_data(json_data: list, measurement: str) -> list:
                 result.append(data_point_2)
                 result.append(data_point_3)
                 result.append(data_point_4)
-
+                continue
             if measurement == "Node_Power_Usage":
                 data_point = {
                     "measurement" : "Power",
@@ -140,6 +142,42 @@ def process_data(json_data: list, measurement: str) -> list:
                     }
                 }
                 result.append(data_point)
+                continue
+            if measurement == "Job_Info":
+                data_point_1 = {
+                    "measurement" : "NodeJobs",
+                    "time": data["time"],
+                    "tags": {
+                        "NodeId": data["host"]
+                    }, 
+                    "fields": {
+                        "JobList": data["jobID"]
+                    }
+                }
+                result.append(data_point_1)
+
+                job_list = []
+                if data["jobID"] not in job_list:
+                    job_list.append(data["jobID"])
+
+                    time_pattern = "%a %b %d %H:%M:%S %Z %Y"
+                    start = int(time.mktime(time.strptime(data["startTime"], time_pattern)))
+                    submit = int(time.mktime(time.strptime(data["submitTime"], time_pattern)))
+                    
+                    data_point_2 = {
+                        "measurement" : "JobsInfo",
+                        "time": data["time"],
+                        "tags": {
+                            "JobId": data["jobID"]
+                        }, 
+                        "fields": {
+                            "StartTime": start,
+                            "SubmitTime": submit,
+                            "User": data["user"]
+                        }
+                    }
+                    result.append(data_point_2)
+                
     except Exception as err:
         print(err)
     
