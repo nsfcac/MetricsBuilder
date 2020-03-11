@@ -3,6 +3,7 @@
 
 import sys
 import json
+import time
 
 from DBcm import QueryInfluxdb
 from parse_config import parse_host
@@ -33,11 +34,18 @@ def main():
     one_day = 24 * 60 * 60 * 1000
     end = start + one_day
 
+    st = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(start))
+    et = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(end))
+    
+    print(st)
+    print(et)
+    
     measurement = "CPU_Temperature"
     node_list = ["10.101.1.1"]
 
-    data = query_data(node_list, measurement, read_client, start, end)
-    print(data[0])
+    data = query_data(node_list, measurement, read_client, st, et)
+    if data:
+        print(data[0])
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
     # Get host list
