@@ -44,11 +44,23 @@ def main():
     # Get sample data points
     sys_data = []
     for mea in measurements["sys_measurements"]:
-        sys_data.append(query_sample_data(read_client, mea))
+        data_obj = {
+            "measurement": mea,
+            "details": query_sample_data(read_client, mea)
+        }
+        sys_data.append(data_obj)
 
     job_data = []
-    job_data.append(query_sample_data(read_client, measurements["sys_measurements"][0]))
-    job_data.append(query_sample_data(read_client, measurements["sys_measurements"][-1]))
+    data_obj = {
+        "measurement": measurements["sys_measurements"][0],
+        "details": query_sample_data(read_client, measurements["sys_measurements"][0])
+    }
+    job_data.append(data_obj)
+    data_obj = {
+        "measurement": measurements["sys_measurements"][-1],
+        "details": query_sample_data(read_client, measurements["sys_measurements"][-1])
+    }
+    job_data.append(data_obj)
     
     with open("sys_data.json", "w") as sysfile:
         json.dump(sys_data, sysfile, indent=2)
