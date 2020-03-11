@@ -29,7 +29,7 @@ def main():
     write_client = QueryInfluxdb(write_config)
 
     phase_time = get_phase_time(read_client)
-    print(phase_time)
+    # print(phase_time)
 
     # start = phase_time[0]
     start = 1555076381
@@ -39,8 +39,8 @@ def main():
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
-    print(st)
-    print(et)
+    # print(st)
+    # print(et)
 
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
     #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]

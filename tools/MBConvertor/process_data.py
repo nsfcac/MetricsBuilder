@@ -160,10 +160,11 @@ def process_data(json_data: list, measurement: str) -> list:
                 if data["jobID"] not in job_list:
                     job_list.append(data["jobID"])
 
-                    time_pattern = "%a %b %d %H:%M:%S %z %Y"
-                    start = int(time.mktime(time.strptime(data["startTime"], time_pattern)))
-                    submit = int(time.mktime(time.strptime(data["submitTime"], time_pattern)))
-
+                    # time_pattern = "%a %b %d %H:%M:%S %z %Y"
+                    # start = int(time.mktime(time.strptime(data["startTime"], time_pattern)))
+                    # submit = int(time.mktime(time.strptime(data["submitTime"], time_pattern)))
+                    start = data["startTime"]
+                    submit = data["submitTime"]
                     data_point_2 = {
                         "measurement" : "JobsInfo",
                         "time": data["time"],
