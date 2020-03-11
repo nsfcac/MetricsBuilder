@@ -50,7 +50,7 @@ def main():
         json_data = query_data(node_list, mea, read_client, st, et)
         updated = process_data(json_data, mea)
         if updated:
-            for i in range(0, 2)
+            for i in range(0, 2):
                 print(updated[i])
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
