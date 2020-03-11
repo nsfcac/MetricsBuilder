@@ -6,13 +6,13 @@ class QueryInfluxdb():
         self.configuration = config
         self.client = InfluxDBClient(**self.configuration)
 
-    def list_measurement(self) -> list:
-        tables = []
+    def list_measurements(self) -> list:
+        measurements = []
         try:
-            tables = self.client.get_list_measurements()
+            measurements = self.client.get_list_measurements()
         except Exception as err:
             print(err)
-        return tables
+        return measurements
 
 
     def get(self, sql: str) -> list:
