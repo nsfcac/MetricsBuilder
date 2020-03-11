@@ -32,7 +32,7 @@ def query_data_point(client: object) -> list:
     """
     data = []
     try:
-        data_sql = "SELECT * FROM Job_Info WHERE host='10.101.1.1' LIMIT 1"
+        data_sql = "SELECT * FROM Job_Info WHERE host='10.101.1.5' order by time desc LIMIT 1"
         data = client.get(data_sql)
     except Exception as err:
         print(err)
