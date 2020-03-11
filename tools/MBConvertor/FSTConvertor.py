@@ -31,25 +31,25 @@ def main():
     phase_time = get_phase_time(read_client)
     print(phase_time)
 
-    start = phase_time[0]/1000
+    start = phase_time[0]
     one_day = 24 * 60 * 60
     end = start + one_day
 
-    st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
-    et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
+    # st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
+    # et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
-    print(st)
-    print(et)
+    # print(st)
+    # print(et)
 
-    measurement = "CPU_Temperature"
-    node_list = ["10.101.1.1"]
+    # measurement = "CPU_Temperature"
+    # node_list = ["10.101.1.1"]
 
-    json_data = query_data(node_list, measurement, read_client, st, et)
-    updated = process_data(json_data, measurement)
-    if updated:
-        print(updated[0])
-    # data_point = query_data_point(read_client)
-    # print(json.dumps(data_point, indent=4))
+    # json_data = query_data(node_list, measurement, read_client, st, et)
+    # updated = process_data(json_data, measurement)
+    # if updated:
+    #     print(updated)
+    data_point = query_data_point(read_client)
+    print(json.dumps(data_point, indent=4))
     # Get host list
     # hostlist = parse_host()
     # Get first timestamp

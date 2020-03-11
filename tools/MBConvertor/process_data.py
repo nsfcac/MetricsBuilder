@@ -29,30 +29,31 @@ def process_data(json_data: list, measurement: str) -> list:
                 }
                 result.append(data_point_1)
                 result.append(data_point_2)
-            # if measurement == "Inlet_Temperature":
-            #     data_point = {
-            #         "measurement" : "Thermal",
-            #         "time": data,
-            #         "tags": {
-            #             "Sensor": "InletTemp",
-            #             "NodeId": data
-            #         }, 
-            #         "fields": {
-            #             "Reading": data
-            #         }
-            #     }
-            # if measurement == "CPU_Usage":
-            #     data_point = {
-            #         "measurement" : "UGE",
-            #         "time": data,
-            #         "tags": {
-            #             "Sensor": "CPUUsage",
-            #             "NodeId": data
-            #         }, 
-            #         "fields": {
-            #             "Reading": data
-            #         }
-            #     }
+            if measurement == "Inlet_Temperature":
+                data_point = {
+                    "measurement" : "Thermal",
+                    "time": data["time"],
+                    "tags": {
+                        "Sensor": "InletTemp",
+                        "NodeId": data["host"]
+                    }, 
+                    "fields": {
+                        "Reading": data["Inlet Temp"]
+                    }
+                }
+                result.append(data_point)
+            if measurement == "UGE":
+                data_point = {
+                    "measurement" : "UGE",
+                    "time": data["time"],
+                    "tags": {
+                        "Sensor": "CPUUsage",
+                        "NodeId": data["host"]
+                    }, 
+                    "fields": {
+                        "Reading": data["cpuusage(load)"]
+                    }
+                }
             # if measurement == "Memory_Usage":
             #     data_point = {
             #         "measurement" : "UGE",
