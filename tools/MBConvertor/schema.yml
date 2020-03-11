@@ -82,6 +82,7 @@ measurement: JobsInfo
 time: 1583792296              
 tags: 
     - JobId: 123456
+    - Queue: "quanah"
 fields:
     - StartTime: 1583792200   
     - SubmitTime: 1583792200  
