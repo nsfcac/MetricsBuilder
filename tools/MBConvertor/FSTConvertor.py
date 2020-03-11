@@ -8,6 +8,7 @@ import time
 from DBcm import QueryInfluxdb
 from parse_config import parse_host
 from query_db import get_phase_time, query_data, query_data_point
+from process_data import process_data
 
 read_config = {
     'host': 'localhost',
@@ -43,9 +44,10 @@ def main():
     measurement = "CPU_Temperature"
     node_list = ["10.101.1.1"]
 
-    data = query_data(node_list, measurement, read_client, st, et)
-    if data:
-        print(data[0])
+    json_data = query_data(node_list, measurement, read_client, st, et)
+    updated = process_data(json_data, measurement)
+    if updated:
+        print(updated[0])
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
     # Get host list

@@ -1,4 +1,4 @@
-def process_data(json_data: dict, measurement: str) -> list:
+def process_data(json_data: list, measurement: str) -> list:
     # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
     #         "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
     result = []
