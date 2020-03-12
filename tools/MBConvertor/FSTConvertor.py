@@ -61,10 +61,13 @@ def main():
         "node_job_info",
         "system_metrics"
     ]
+
+    print("-------------------------------------------------------")
     print(f"All measurements       :{len(job_measurements) + len(sys_measurements)}")
     print(f"Numerical measurements :{len(process_dict)}")
     print(f"Jobs measurements      :{len(job_measurements)}")
     print(f"Other measurements     :{len(sys_measurements) - len(process_dict)}")
+    print("-------------------------------------------------------")
 
     # Get sample data points----------------------------------------------------
     # sys_data = []
@@ -137,6 +140,7 @@ def main():
             converted_data_point = process_data_job(json_data, mea)
             print(f"Converted data point:")
             print(json.dumps(converted_data_point, indent=4))
+            print("-------------------------------------------------------")
 
             # data_points.append(process_data_job(json_data, mea))
 
