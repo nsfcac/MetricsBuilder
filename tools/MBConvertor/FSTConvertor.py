@@ -57,22 +57,33 @@ def main():
     #     }
     #     sys_data.append(data_obj)
 
-    # job_data = []
-    # data_obj = {
-    #     "measurement": measurements["job_measurements"][0],
-    #     "details": query_sample_data(read_client, measurements["job_measurements"][0])
-    # }
-    # job_data.append(data_obj)
-    # data_obj = {
-    #     "measurement": measurements["job_measurements"][-1],
-    #     "details": query_sample_data(read_client, measurements["job_measurements"][-1])
-    # }
-    # job_data.append(data_obj)
+    job_data = []
+
+    data_obj = {
+        "measurement": job_measurements[0],
+        "details": query_sample_data(read_client, job_measurements[0])
+    }
+    job_data.append(data_obj)
+
+    for job in job_measurements:
+        if "j" in job:
+            data_obj = {
+                "measurement": job,
+                "details": query_sample_data(read_client, job_measurements[0])
+            }
+            job_data.append(data_obj)
+            break
+
+    data_obj = {
+        "measurement": job_measurements[-1],
+        "details": query_sample_data(read_client, job_measurements[-1])
+    }
+    job_data.append(data_obj)
     
     # with open("sys_data.json", "w") as sysfile:
     #     json.dump(sys_data, sysfile, indent=2)
-    # with open("job_data.json", "w") as jobfile:
-    #     json.dump(job_data, jobfile, indent=2)
+    with open("job_data.json", "w") as jobfile:
+        json.dump(job_data, jobfile, indent=2)
     # --------------------------------------------------------------------------
     
     # print(sys_measurements)
@@ -87,9 +98,9 @@ def main():
     # print(data_points)
 
     # Convert job metrics
-    print(job_measurements[-1])
-    job_data = query_data_job(job_measurements[-1], read_client)
-    print(job_data)
+    # print(job_measurements[-1])
+    # job_data = query_data_job(job_measurements[-1], read_client)
+    # print(job_data)
 
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))

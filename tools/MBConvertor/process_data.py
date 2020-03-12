@@ -1,6 +1,7 @@
 import time
 from dateutil import parser
 
+
 def process_data(json_data: list, measurement: str) -> list:
     """
     Process data accroding to the schema in measurements
@@ -23,6 +24,75 @@ def process_data(json_data: list, measurement: str) -> list:
             result.extend(process_dict.get(measurement)(data))
     return result
 
+
+def process_data_job(data: dict, measurement: str) -> dict:
+    """
+    Process job info accroding to the schema in measurements
+    """
+    data_point = None
+    try:
+        start = int(parser.parse(data["startTime"].replace("CDT", "UTC-5")).timestamp())
+        submit = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
+
+        if "i" in measurement:
+            nodes = data["nodes"]
+            if "," in nodes:
+                node_list = nodes.split(",")
+            else:
+                node_list = [nodes]
+
+            data_point = {
+                "measurement": "JobsInfo",
+                "time": data["time"],
+                "tags": {
+                    "JobId": measurement.split("i")[1],
+                    "Queue": data["cluster"]
+                }, 
+                "fields": {
+                    "StartTime": start,
+                    "SubmitTime": submit,
+                    "TotalNodes": len(node_list),
+                    "NodeList": node_list,
+                    "CPUCores": None, 
+                    "JobName": None,
+                    "User": data["user"]
+                }
+            }
+            return data_point
+        elif "qu" in measurement:
+            job = measurement
+            if "A" in job:
+                job_id = job.split("_")[1].replace("A", ".")
+            else:
+                job_id = job.split("_")[1]
+
+            nodes = data["nodes_address"]
+            if "," in nodes:
+                node_list = [node.split("-")[0] for node in nodes.split(",")]
+            else:
+                node_list = [nodes.split("-")[0]]
+
+            data_point = {
+                "measurement": "JobsInfo",
+                "time": data["time"],
+                "tags": {
+                    "JobId": job_id,
+                    "Queue": data["cluster"]
+                }, 
+                "fields": {
+                    "StartTime": start,
+                    "SubmitTime": submit,
+                    "TotalNodes": len(node_list),
+                    "NodeList": node_list,
+                    "CPUCores": data["CPUCores"], 
+                    "JobName": data["app_name"],
+                    "User": data["user"]
+                }
+            }
+            return data_point
+    except Exception as err:
+        print(err)
+    return data_point
 
 def process_CPU_Temperature(data: dict) -> list: 
     result = []
@@ -181,16 +251,20 @@ def process_Inlet_Temperature(data: dict) -> list:
         pass
     return result
 
+# If the data is from Job_Info measurement, 
+# the processed data point should be saved to another measurement
 def process_Job_Info(data: dict) -> list:
     result = []
     try:
-        start = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
+        start = int(parser.parse(data["startTime"].replace("CDT", "UTC-5")).timestamp())
         submit = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
         
-        if data["host"][0] == "[":
-            hostlist = [host[1:-1] for host in data["host"][0:-1].split(", ")]
-        else:
-            hostlist = [data["host"]]
+        # Discard the host inforamtion, 
+        # since the data stored in this field are not consistent
+        # if data["host"][0] == "[":
+        #     hostlist = [host[1:-1] for host in data["host"][0:-1].split(", ")]
+        # else:
+        #     hostlist = [data["host"]]
 
         data_point = {
             "measurement": "JobsInfo",
@@ -202,8 +276,8 @@ def process_Job_Info(data: dict) -> list:
             "fields": {
                 "StartTime": start,
                 "SubmitTime": submit,
-                "TotalNodes": len(hostlist),
-                "NodeList": hostlist,
+                "TotalNodes": None,
+                "NodeList": None,
                 "CPUCores": None,
                 "JobName": None,
                 "User": data["user"]

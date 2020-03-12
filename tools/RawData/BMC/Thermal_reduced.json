@@ -1,0 +1,64 @@
+{
+    "@odata.type": "#Thermal.v1_0_2.Thermal", 
+    "Redundancy": [], 
+    "Description": "Represents the properties for Temperature and Cooling", 
+    "Redundancy@odata.count": 0, 
+    "Fans@odata.count": 4, 
+    "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Thermal", 
+    "@odata.context": "/redfish/v1/$metadata#Thermal.Thermal", 
+    "Fans": [
+        {
+            "Status": {
+                "State": "Enabled", 
+                "Health": "OK"
+            }, 
+            "UpperThresholdNonCritical": null, 
+            "MaxReadingRange": 0, 
+            "Redundancy": [], 
+            "LowerThresholdCritical": 1050, 
+            "Redundancy@odata.count": 0, 
+            "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Fans/0x17%7C%7CFan.Embedded._1", 
+            "MemberId": "0x17||Fan.Embedded._1", 
+            "MinReadingRange": 0, 
+            "UpperThresholdFatal": 17850, 
+            "ReadingUnits": "RPM", 
+            "LowerThresholdFatal": 1050, 
+            "LowerThresholdNonCritical": null, 
+            "Name": "FAN_1", 
+            "Reading": 9310, 
+            "UpperThresholdCritical": 17850, 
+            "FanName": "FAN_1"
+        }
+    ], 
+    "Temperatures": [
+        {
+            "Status": {
+                "State": "Enabled", 
+                "Health": "OK"
+            }, 
+            "SensorNumber": 14, 
+            "LowerThresholdCritical": 3, 
+            "MinReadingRangeTemp": 13, 
+            "MaxReadingRangeTemp": 19, 
+            "PhysicalContext": "CPU", 
+            "MemberId": "iDRAC.Embedded.1#CPU1Temp", 
+            "ReadingCelsius": 64, 
+            "@odata.id": "/redfish/v1/Chassis/System.Embedded.1/Sensors/Temperatures/iDRAC.Embedded.1%23CPU1Temp", 
+            "UpperThresholdNonCritical": 93, 
+            "UpperThresholdFatal": 98, 
+            "RelatedItem@odata.count": 1, 
+            "LowerThresholdFatal": 3, 
+            "LowerThresholdNonCritical": 8, 
+            "RelatedItem": [
+                {
+                    "@odata.id": "/redfish/v1/Systems/System.Embedded.1/Processors/CPU.Socket.1"
+                }
+            ], 
+            "UpperThresholdCritical": 98, 
+            "Name": "CPU1 Temp"
+        }
+    ], 
+    "Temperatures@odata.count": 3, 
+    "Id": "Thermal", 
+    "Name": "Thermal"
+}

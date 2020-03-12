@@ -28,7 +28,7 @@ def query_sample_data(client: object, measurement: str) -> list:
     """
     data = []
     try:
-        data_sql = "SELECT * FROM " + measurement + " LIMIT 1"
+        data_sql = "SELECT * FROM \"" + measurement + "\" LIMIT 1"
         data = client.get(data_sql)
     except Exception as err:
         print(err)
@@ -70,4 +70,4 @@ def sql_gen_job(measurement: str) -> str:
     """
     Generate influxdb SQL for retriving job info
     """
-    return ("SELECT * FROM " + measurement + " LIMIT 1")
+    return ("SELECT * FROM \"" + measurement + "\" LIMIT 1")
