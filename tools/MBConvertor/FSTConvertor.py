@@ -118,9 +118,9 @@ def main():
             if json_data:
                 print(f"Converting {mea}...")
                 print(f"Original data point:")
-                print(json.dumps(json_data[-1], indent=4))
+                print(json.dumps(json_data[-10], indent=4))
 
-                converted_data_point = process_data(json_data[-1], mea)
+                converted_data_point = process_data(json_data[-10], mea)
                 print(f"Converted data point:")
                 print(json.dumps(converted_data_point, indent=4))
                 print("-------------------------------------------------------")
