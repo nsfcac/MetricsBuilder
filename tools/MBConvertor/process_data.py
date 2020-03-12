@@ -124,6 +124,7 @@ def process_data_job(data: dict, measurement: str) -> dict:
     except Exception as err:
         print(err)
         # pass
+    print(data_point)
     return data_point
 
 def process_CPU_Temperature(data: dict) -> list: 

@@ -93,7 +93,7 @@ def main():
     # for mea in sys_measurements:
     #     json_data = query_data(mea, read_client, st, et)
     #     if json_data:
-    #         data_points.extend(process_data(json_data, mea))
+    #         data_points.append(process_data(json_data, mea))
 
     # print(data_points)
 
@@ -104,7 +104,7 @@ def main():
         json_data = query_data_job(mea, read_client)
         print(json_data)
         if json_data:
-            data_points.extend(process_data_job(json_data, mea))
+            data_points.append(process_data_job(json_data, mea))
 
     print(json.dumps(data_points, indent=4))
 
