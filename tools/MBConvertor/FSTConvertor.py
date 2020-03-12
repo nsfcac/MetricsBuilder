@@ -110,9 +110,9 @@ def main():
 
     for mea in sys_measurements:
         if mea in process_dict:
-            print(f"Converting {mea}...")
             json_data = query_data(mea, read_client, st, et)
             if json_data:
+                print(f"Converting {mea}...")
                 print(f"Original data point:")
                 print(json.dumps(json_data[0], indent=4))
 
