@@ -68,7 +68,12 @@ def process_CPU_Usage(data: dict) -> list:
             host_ip = "10.101." + host.split("-")[1] + "." + host.split("-")[2]
         else:
             host_ip = host
-            
+        
+        if data["cpuusage(load)"]:
+            cpuusage = data["cpuusage(load)"]
+        elif data["cpuusage"]:
+            cpuusage = data["cpuusage"]
+
         data_point = {
             "measurement": "UGE",
             "time": data["time"],
@@ -77,13 +82,12 @@ def process_CPU_Usage(data: dict) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(data["cpuusage(load)"]))
+                "Reading": float("{0:.2f}".format(cpuusage))
             }
         }
         result = [data_point]
     except Exception as err:
-        # print(err)
-        pass
+        print(err)
     return result
 
 
