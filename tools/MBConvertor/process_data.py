@@ -12,6 +12,7 @@ def process_data(json_data: list, measurement: str) -> list:
         "Fan_Speed": process_Fan_Speed,
         "Inlet_Temperature": process_Inlet_Temperature,
         "Job_Info": process_Job_Info,
+        "Memory_Usage": process_Memory_Usage,
         "Node_Power_Usage": process_Node_Power_Usage,
         "cluster_unified_metrics": process_cluster_unified_metrics,
         "node_job_info": process_node_job_info,
@@ -69,10 +70,9 @@ def process_CPU_Usage(data: dict) -> list:
         else:
             host_ip = host
         
-        cpuusage = 0
         if data.get("cpuusage"):
             cpuusage = data["cpuusage"]
-        elif data.get("cpuusage(load)"):
+        else:
             cpuusage = data["cpuusage(load)"]
 
         data_point = {
