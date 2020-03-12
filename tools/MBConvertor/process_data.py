@@ -69,6 +69,7 @@ def process_CPU_Usage(data: dict) -> list:
         else:
             host_ip = host
         
+        cpuusage = 0
         if data.get("cpuusage"):
             cpuusage = data["cpuusage"]
         elif data.get("cpuusage(load)"):

@@ -74,9 +74,8 @@ def main():
     #     json.dump(job_data, jobfile, indent=2)
     # --------------------------------------------------------------------------
     
-    print(st)
-    print(et)
-    
+    print(sys_measurements)
+
     data_points = []
     for mea in sys_measurements:
         json_data = query_data(mea, read_client, st, et)
