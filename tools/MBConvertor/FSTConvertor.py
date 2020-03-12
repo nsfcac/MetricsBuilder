@@ -117,11 +117,11 @@ def main():
             json_data = query_data(mea, read_client, st, et)
             if json_data:
                 print(f"Converting {mea}...")
-                print(f"Original data point:")
+                print("---- Original data point ----")
                 print(json.dumps(json_data[-10], indent=4))
 
                 converted_data_point = process_data(json_data[-10], mea)
-                print(f"Converted data point:")
+                print("---- Converted data point ----")
                 print(json.dumps(converted_data_point, indent=4))
                 print("-------------------------------------------------------")
             # data_points.append(converted_data_point)
@@ -134,11 +134,11 @@ def main():
         print(f"Converting {mea}...")
         json_data = query_data_job(mea, read_client)
         if json_data:
-            print(f"Original data point:")
+            print("---- Original data point ----")
             print(json.dumps(json_data, indent=4))
 
             converted_data_point = process_data_job(json_data, mea)
-            print(f"Converted data point:")
+            print("---- Converted data point ----")
             print(json.dumps(converted_data_point, indent=4))
             print("-------------------------------------------------------")
 
