@@ -49,8 +49,22 @@ def main():
     sys_measurements = measurements["sys_measurements"]
     job_measurements = measurements["job_measurements"]
 
-    print(f"System measurements: {len(sys_measurements)}")
-    print(f"Jobs measurements: {len(job_measurements)}")
+    process_dict = [
+        "CPU_Temperature",
+        "CPU_Usage",
+        "Fan_Speed",
+        "Inlet_Temperature",
+        "Job_Info",
+        "Memory_Usage",
+        "Node_Power_Usage",
+        "cluster_unified_metrics",
+        "node_job_info",
+        "system_metrics"
+    ]
+    print(f"All measurements       :{len(measurements)}")
+    print(f"Numerical measurements :{len(process_dict)}")
+    print(f"Jobs measurements      :{len(job_measurements)}")
+    print(f"Other measurements     :{len(sys_measurements) - len(process_dict)}")
 
     # Get sample data points----------------------------------------------------
     # sys_data = []
@@ -94,19 +108,6 @@ def main():
 
     # Convert system metrics
     # data_points = []
-
-    process_dict = [
-        "CPU_Temperature",
-        "CPU_Usage",
-        "Fan_Speed",
-        "Inlet_Temperature",
-        "Job_Info",
-        "Memory_Usage",
-        "Node_Power_Usage",
-        "cluster_unified_metrics",
-        "node_job_info",
-        "system_metrics"
-    ]
 
     for mea in sys_measurements:
         if mea in process_dict:
