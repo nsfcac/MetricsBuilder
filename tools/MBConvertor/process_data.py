@@ -56,8 +56,9 @@ def process_CPU_Temperature(data: dict) -> list:
             }
         }
         result = [data_point_1, data_point_2]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -89,8 +90,9 @@ def process_CPU_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -148,8 +150,9 @@ def process_Fan_Speed(data: dict) -> list:
             }
         }
         result = [data_point_1, data_point_2, data_point_3, data_point_4]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 def process_Inlet_Temperature(data: dict) -> list: 
@@ -173,8 +176,9 @@ def process_Inlet_Temperature(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 def process_Job_Info(data: dict) -> list:
@@ -207,8 +211,9 @@ def process_Job_Info(data: dict) -> list:
 
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -237,8 +242,9 @@ def process_Memory_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -263,8 +269,9 @@ def process_Node_Power_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -390,8 +397,9 @@ def process_cluster_unified_metrics(data: dict) -> list:
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
                   data_point_5, data_point_6, data_point_7, data_point_8,
                   data_point_9, data_point_10] 
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -410,8 +418,9 @@ def process_node_job_info(data: dict) -> list:
             }
         }
         result.append(data_point)
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
 
 
@@ -543,6 +552,7 @@ def process_system_metrics(data: dict) -> list:
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
                   data_point_5, data_point_6, data_point_7, data_point_8,
                   data_point_9, data_point_10, data_point_11] 
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return result
