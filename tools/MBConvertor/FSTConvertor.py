@@ -102,7 +102,6 @@ def main():
     data_points = []
     for mea in job_measurements:
         json_data = query_data_job(mea, read_client)
-        print(json_data)
         if json_data:
             data_points.append(process_data_job(json_data, mea))
 
