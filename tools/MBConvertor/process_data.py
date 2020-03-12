@@ -31,8 +31,13 @@ def process_data_job(data: dict, measurement: str) -> dict:
     """
     data_point = None
     try:
-        start = int(parser.parse(data["startTime"].replace("CDT", "UTC-5")).timestamp())
-        submit = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
+        start_str = data["startTime"].replace("CDT", "UTC-5")
+        start_str = data["startTime"].replace("CST", "UTC-6")
+        submit_str = data["submitTime"].replace("CDT", "UTC-5")
+        submit_str = data["submitTime"].replace("CST", "UTC-6")
+
+        start = int(parser.parse(start_str).timestamp())
+        submit = int(parser.parse(submit_str).timestamp())
 
         if "i" in measurement:
             nodes = data["nodes"]
@@ -282,8 +287,13 @@ def process_Inlet_Temperature(data: dict) -> list:
 def process_Job_Info(data: dict) -> list:
     result = []
     try:
-        start = int(parser.parse(data["startTime"].replace("CDT", "UTC-5")).timestamp())
-        submit = int(parser.parse(data["submitTime"].replace("CDT", "UTC-5")).timestamp())
+        start_str = data["startTime"].replace("CDT", "UTC-5")
+        start_str = data["startTime"].replace("CST", "UTC-6")
+        submit_str = data["submitTime"].replace("CDT", "UTC-5")
+        submit_str = data["submitTime"].replace("CST", "UTC-6")
+
+        start = int(parser.parse(start_str).timestamp())
+        submit = int(parser.parse(submit_str).timestamp())
         
         # Discard the host inforamtion, 
         # since the data stored in this field are not consistent
