@@ -21,10 +21,6 @@ def get_phase_time(client: object) -> int:
     
     return phase_time
 
-# fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
-#             "Memory_Usage", "Fan_Speed", "Node_Power_Usage"]
-# sec_mea = ["cluster_unified_metrics", "Current_Jobs_ID"]
-
 
 def query_sample_data(client: object, measurement: str) -> list:
     """
@@ -38,23 +34,21 @@ def query_sample_data(client: object, measurement: str) -> list:
         print(err)
     return data
 
-def query_data(node_list: list, measurement: str, 
-               client: object, start: int, end: int) -> list:
+def query_data(measurement: str, client: object, start: int, end: int) -> list:
     """
     Query data from InfluxDB
     """
     result = []
     try:
-        for node in node_list:
-            data_sql = sql_gen(measurement, node, start, end)
-            data = client.get(data_sql)
-            result.extend(data)
+        data_sql = sql_gen(measurement, start, end)
+        data = client.get(data_sql)
+        result.extend(data)
     except Exception as err:
         print(err)
     return result
 
-def sql_gen(measurement: str, host: str, start: int, end: int) -> str:
+def sql_gen(measurement: str, start: int, end: int) -> str:
     """
     Generate influxdb SQL for retriving data points during the time range
     """
-    return("SELECT * FROM " + measurement + " WHERE host = '" + host + "' AND time >= '" + start + "' AND time < '" + end + "'")
+    return("SELECT * FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")

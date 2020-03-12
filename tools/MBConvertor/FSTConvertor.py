@@ -34,54 +34,56 @@ def main():
 
     # start = phase_time[0]
     start = 1555076381
-    one_day = 24 * 60 * 60
-    end = start + one_day
+    ten_minute = 10 * 60
+    end = start + ten_minute
+    # one_day = 24 * 60 * 60
+    # end = start + one_day
 
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
 
-    measurements = parse_measurement(read_client)
-    # Get sample data points
-    sys_data = []
-    for mea in measurements["sys_measurements"]:
-        data_obj = {
-            "measurement": mea,
-            "details": query_sample_data(read_client, mea)
-        }
-        sys_data.append(data_obj)
-
-    job_data = []
-    data_obj = {
-        "measurement": measurements["job_measurements"][0],
-        "details": query_sample_data(read_client, measurements["job_measurements"][0])
-    }
-    job_data.append(data_obj)
-    data_obj = {
-        "measurement": measurements["job_measurements"][-1],
-        "details": query_sample_data(read_client, measurements["job_measurements"][-1])
-    }
-    job_data.append(data_obj)
     
-    with open("sys_data.json", "w") as sysfile:
-        json.dump(sys_data, sysfile, indent=2)
-    with open("job_data.json", "w") as jobfile:
-        json.dump(job_data, jobfile, indent=2)
+    # Get all system measurements
+    measurements = parse_measurement(read_client)
+    sys_measurements = measurements["sys_measurements"]
+
+    # Get sample data points----------------------------------------------------
+    # sys_data = []
+    # for mea in measurements["sys_measurements"]:
+    #     data_obj = {
+    #         "measurement": mea,
+    #         "details": query_sample_data(read_client, mea)
+    #     }
+    #     sys_data.append(data_obj)
+
+    # job_data = []
+    # data_obj = {
+    #     "measurement": measurements["job_measurements"][0],
+    #     "details": query_sample_data(read_client, measurements["job_measurements"][0])
+    # }
+    # job_data.append(data_obj)
+    # data_obj = {
+    #     "measurement": measurements["job_measurements"][-1],
+    #     "details": query_sample_data(read_client, measurements["job_measurements"][-1])
+    # }
+    # job_data.append(data_obj)
+    
+    # with open("sys_data.json", "w") as sysfile:
+    #     json.dump(sys_data, sysfile, indent=2)
+    # with open("job_data.json", "w") as jobfile:
+    #     json.dump(job_data, jobfile, indent=2)
+    # --------------------------------------------------------------------------
     
     # print(st)
     # print(et)
+    data_points = []
+    for mea in sys_measurements:
+        json_data = query_data(mea, read_client, st, et)
+        if json_data:
+            data_points.extend(process_data(json_data, mea))
 
-    # fst_mea = ["CPU_Temperature", "Inlet_Temperature", "CPU_Usage", 
-    #             "Memory_Usage", "Fan_Speed", "Node_Power_Usage", "Job_Info"]
-    # fst_mea = ["Job_Info"]
-    # measurement = "CPU_Temperature"
-    # node_list = ["10.101.1.1"]
-
-    # for mea in fst_mea:
-    #     json_data = query_data(node_list, mea, read_client, st, et)
-    #     if json_data:
-    #         updated = process_data(json_data, mea)
-    #         print(updated)
-
+    print(data_points)
+    
     # data_point = query_data_point(read_client)
     # print(json.dumps(data_point, indent=4))
 
