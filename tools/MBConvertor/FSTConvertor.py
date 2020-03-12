@@ -9,7 +9,7 @@ from DBcm import QueryInfluxdb
 from parse_config import parse_host
 from query_db import get_phase_time, query_data, query_data_job, query_sample_data
 from parse_measurements import parse_measurement
-from process_data import process_data
+from process_data import process_data, process_data_job
 
 read_config = {
     'host': 'localhost',
@@ -44,9 +44,9 @@ def main():
 
     
     # Get all system measurements
-    measurements = parse_measurement(read_client)
-    sys_measurements = measurements["sys_measurements"]
-    job_measurements = measurements["job_measurements"]
+    # measurements = parse_measurement(read_client)
+    # sys_measurements = measurements["sys_measurements"]
+    # job_measurements = measurements["job_measurements"]
 
     # Get sample data points----------------------------------------------------
     # sys_data = []
@@ -57,33 +57,33 @@ def main():
     #     }
     #     sys_data.append(data_obj)
 
-    job_data = []
+    # job_data = []
 
-    data_obj = {
-        "measurement": job_measurements[0],
-        "details": query_sample_data(read_client, job_measurements[0])
-    }
-    job_data.append(data_obj)
+    # data_obj = {
+    #     "measurement": job_measurements[0],
+    #     "details": query_sample_data(read_client, job_measurements[0])
+    # }
+    # job_data.append(data_obj)
 
-    for job in job_measurements:
-        if "j" in job:
-            data_obj = {
-                "measurement": job,
-                "details": query_sample_data(read_client, job_measurements[0])
-            }
-            job_data.append(data_obj)
-            break
+    # for job in job_measurements:
+    #     if "j" in job:
+    #         data_obj = {
+    #             "measurement": job,
+    #             "details": query_sample_data(read_client, job_measurements[0])
+    #         }
+    #         job_data.append(data_obj)
+    #         break
 
-    data_obj = {
-        "measurement": job_measurements[-1],
-        "details": query_sample_data(read_client, job_measurements[-1])
-    }
-    job_data.append(data_obj)
+    # data_obj = {
+    #     "measurement": job_measurements[-1],
+    #     "details": query_sample_data(read_client, job_measurements[-1])
+    # }
+    # job_data.append(data_obj)
     
     # with open("sys_data.json", "w") as sysfile:
     #     json.dump(sys_data, sysfile, indent=2)
-    with open("job_data.json", "w") as jobfile:
-        json.dump(job_data, jobfile, indent=2)
+    # with open("job_data.json", "w") as jobfile:
+    #     json.dump(job_data, jobfile, indent=2)
     # --------------------------------------------------------------------------
     
     # print(sys_measurements)
@@ -96,6 +96,16 @@ def main():
     #         data_points.extend(process_data(json_data, mea))
 
     # print(data_points)
+
+    # Convert job metrics
+    job_measurements = ["i764687", "j-775882", "qu_1082110A434"]
+    data_points = []
+    for mea in job_measurements:
+        json_data = query_data_job(mea, read_client)
+        if json_data:
+            data_points.extend(process_data_job(json_data, mea))
+
+    print(json.dumps(data_points, indent=4))
 
     # Convert job metrics
     # print(job_measurements[-1])

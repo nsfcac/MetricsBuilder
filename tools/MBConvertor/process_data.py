@@ -53,13 +53,38 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "SubmitTime": submit,
                     "TotalNodes": len(node_list),
                     "NodeList": node_list,
-                    "CPUCores": None, 
+                    "CPUCores": data["CPUCores"], 
                     "JobName": None,
                     "User": data["user"]
                 }
             }
             return data_point
-        elif "qu" in measurement:
+        if "j" in measurement:
+            nodes = data["nodes"]
+            if "," in nodes:
+                node_list = nodes.split(",")
+            else:
+                node_list = [nodes]
+
+            data_point = {
+                "measurement": "JobsInfo",
+                "time": data["time"],
+                "tags": {
+                    "JobId": measurement.split("-")[1],
+                    "Queue": data["cluster"]
+                }, 
+                "fields": {
+                    "StartTime": start,
+                    "SubmitTime": submit,
+                    "TotalNodes": len(node_list),
+                    "NodeList": node_list,
+                    "CPUCores": data["CPUCores"], 
+                    "JobName": None,
+                    "User": data["user"]
+                }
+            }
+            return data_point
+        if "qu" in measurement:
             job = measurement
             if "A" in job:
                 job_id = job.split("_")[1].replace("A", ".")
@@ -90,8 +115,9 @@ def process_data_job(data: dict, measurement: str) -> dict:
                 }
             }
             return data_point
-    except Exception as err:
-        print(err)
+    except Exception:
+        # print(err)
+        pass
     return data_point
 
 def process_CPU_Temperature(data: dict) -> list: 
