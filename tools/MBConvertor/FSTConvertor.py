@@ -61,7 +61,7 @@ def main():
         "node_job_info",
         "system_metrics"
     ]
-    print(f"All measurements       :{len(measurements)}")
+    print(f"All measurements       :{len(job_measurements) + len(sys_measurements)}")
     print(f"Numerical measurements :{len(process_dict)}")
     print(f"Jobs measurements      :{len(job_measurements)}")
     print(f"Other measurements     :{len(sys_measurements) - len(process_dict)}")
