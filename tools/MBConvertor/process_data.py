@@ -38,7 +38,7 @@ def process_data_job(data: dict, measurement: str) -> dict:
 
         start = int(parser.parse(start_str).timestamp())
         submit = int(parser.parse(submit_str).timestamp())
-        
+
         print(start)
         print(submit)
 
@@ -66,8 +66,7 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
-            return data_point
-        if "j" in measurement:
+        elif "j" in measurement:
             nodes = data["nodes"]
             if "," in nodes:
                 node_list = nodes.split(",")
@@ -91,8 +90,8 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
-            return data_point
-        if "qu" in measurement:
+        else:
+            # "qu" in measurement
             job = measurement
             if "A" in job:
                 job_id = job.split("_")[1].replace("A", ".")
@@ -122,7 +121,6 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
-            return data_point
     except Exception as err:
         print(err)
         # pass

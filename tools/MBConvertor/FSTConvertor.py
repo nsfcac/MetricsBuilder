@@ -103,8 +103,8 @@ def main():
     for mea in job_measurements:
         json_data = query_data_job(mea, read_client)
         print(json_data)
-        # if json_data:
-        #     data_points.extend(process_data_job(json_data[0], mea))
+        if json_data:
+            data_points.extend(process_data_job(json_data, mea))
 
     print(json.dumps(data_points, indent=4))
 
