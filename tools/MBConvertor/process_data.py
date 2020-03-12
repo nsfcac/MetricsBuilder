@@ -38,8 +38,10 @@ def process_data_job(data: dict, measurement: str) -> dict:
 
         start = int(parser.parse(start_str).timestamp())
         submit = int(parser.parse(submit_str).timestamp())
+        
         print(start)
         print(submit)
+
         if "i" in measurement:
             nodes = data["nodes"]
             if "," in nodes:
