@@ -38,7 +38,8 @@ def process_data_job(data: dict, measurement: str) -> dict:
 
         start = int(parser.parse(start_str).timestamp())
         submit = int(parser.parse(submit_str).timestamp())
-
+        print(start)
+        print(submit)
         if "i" in measurement:
             nodes = data["nodes"]
             if "," in nodes:
@@ -120,9 +121,9 @@ def process_data_job(data: dict, measurement: str) -> dict:
                 }
             }
             return data_point
-    except Exception:
-        # print(err)
-        pass
+    except Exception as err:
+        print(err)
+        # pass
     return data_point
 
 def process_CPU_Temperature(data: dict) -> list: 
