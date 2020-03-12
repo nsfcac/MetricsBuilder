@@ -70,4 +70,4 @@ def sql_gen_job(measurement: str) -> str:
     """
     Generate influxdb SQL for retriving job info
     """
-    return ("SELECT * FROM " + measurement + "LIMIT 1")
+    return ("SELECT * FROM " + measurement + " LIMIT 1")

@@ -87,6 +87,7 @@ def main():
     # print(data_points)
 
     # Convert job metrics
+    print(job_measurements[-1])
     job_data = query_data_job(job_measurements[-1], read_client)
     print(job_data)
 
