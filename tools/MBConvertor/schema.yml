@@ -10,18 +10,18 @@
 measurement: Thermal         
 time: 1583792296             
 tags: 
-    - Sensor: "CPU1Temp"
-    - NodeId: "101.10.1.1"
+    Sensor: "CPU1Temp"
+    NodeId: "101.10.1.1"
 fields:
-    - Reading: 46.00
+    Reading: 46.00
 
 measurement: Thermal         
 time: 1583792296             
 tags: 
-    - Sensor: "FAN_1"
-    - NodeId: "101.10.1.1"
+    Sensor: "FAN_1"
+    NodeId: "101.10.1.1"
 fields:
-    - Reading: 4500 
+    Reading: 4500 
 
 # CPU2Temp, FAN2, FAN3, FAN4, InletTemp etc.
 
@@ -29,10 +29,10 @@ fields:
 measurement: Power           
 time: 1583792296             
 tags: 
-    - Sensor: "NodePower"
-    - NodeId: "101.10.1.1"
+    Sensor: "NodePower"
+    NodeId: "101.10.1.1"
 fields:
-    - Reading: 277
+    Reading: 277
 #------------------------------End BMC metrics----------------------------------
 
 #----------------------------------UGE metrics----------------------------------
@@ -44,18 +44,18 @@ fields:
 measurement: UGE            # UGE metrics
 time: 1583792296             
 tags: 
-    - Sensor: "CPUUsage"
-    - NodeId: "101.10.1.1"
+    Sensor: "CPUUsage"
+    NodeId: "101.10.1.1"
 fields:
-    - Reading: 0.5
+    Reading: 0.5
 
 measurement: UGE            
 time: 1583792296             
 tags: 
-    - Sensor: "MemUsage"
-    - NodeId: "101.10.1.1"
+    Sensor: "MemUsage"
+    NodeId: "101.10.1.1"
 fields:
-    - Reading: 0.5
+    Reading: 0.5
 
 # Node-Jobs relationship is saved in "NodeJobs" measurement. Tag key is "NodeId",
 # from which we can get the corresponding field value that is a list of job IDs.
@@ -66,9 +66,9 @@ fields:
 measurement: NodeJobs
 time: 1583792296             
 tags: 
-    - NodeId: "101.10.1.1"
+    NodeId: "101.10.1.1"
 fields:
-    - JobList:
+    JobList:
         - 123456
         - 123457.1
         - 123457.2
@@ -81,14 +81,14 @@ fields:
 measurement: JobsInfo
 time: 1583792296              
 tags: 
-    - JobId: 123456
-    - Queue: "quanah"
+    JobId: 123456
+    Queue: "quanah"
 fields:
-    - StartTime: 1583792200   
-    - SubmitTime: 1583792200  
-    - TotalNodes: 4
-    - NodeList: "101.10.1.1-1"
-    - CPUCores: 10
-    - JobName: "efg"
-    - User: "abc"
+    StartTime: 1583792200   
+    SubmitTime: 1583792200  
+    TotalNodes: 4
+    NodeList: "101.10.1.1"
+    CPUCores: 10
+    JobName: "efg"
+    User: "abc"
 #------------------------------End UGE metrics----------------------------------
