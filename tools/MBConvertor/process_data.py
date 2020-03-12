@@ -69,13 +69,13 @@ def process_CPU_Usage(data: dict) -> list:
             host_ip = "10.101." + host.split("-")[1] + "." + host.split("-")[2]
         else:
             host_ip = host
-
-        cpuusage = 0
         
-        if data.get("cpuusage"):
+        if data.get("cpuusage") and data["cpuusage"] != 0:
             cpuusage = data["cpuusage"]
-        elif data.get("cpuusage(load)"):
+        elif data.get("cpuusage(load)") and data["cpuusage(load)"] != 0:
             cpuusage = data["cpuusage(load)"]
+        else:
+            return result
 
         data_point = {
             "measurement": "UGE",
