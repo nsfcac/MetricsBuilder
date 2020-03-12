@@ -51,4 +51,23 @@ def sql_gen(measurement: str, start: int, end: int) -> str:
     """
     Generate influxdb SQL for retriving data points during the time range
     """
-    return("SELECT * FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
+    return ("SELECT * FROM " + measurement + " WHERE time >= '" + start + "' AND time < '" + end + "'")
+
+def query_data_job(measurement: str, client: object) -> dict:
+    """
+    Query job info from InfluxDB
+    """
+    result = None
+    try:
+        data_sql = sql_gen_job(measurement)
+        data = client.get(data_sql)
+        result = data[0]
+    except Exception as err:
+        print(err)
+    return result
+
+def sql_gen_job(measurement: str) -> str:
+    """
+    Generate influxdb SQL for retriving job info
+    """
+    return ("SELECT * FROM " + measurement + "LIMIT 1")
