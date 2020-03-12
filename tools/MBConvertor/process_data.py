@@ -18,7 +18,7 @@ def process_data(json_data: list, measurement: str) -> list:
         "system_metrics": process_system_metrics
     }
     for data in json_data:
-        if process_dict.get(measurement):
+        if process_dict.get(measurement) and process_dict.get(measurement)(data):
             result.extend(process_dict.get(measurement)(data))
     return result
 
