@@ -2,7 +2,7 @@ import time
 from dateutil import parser
 
 
-def process_data(json_data: list, measurement: str) -> list:
+def process_data(data: list, measurement: str) -> list:
     """
     Process data accroding to the schema in measurements
     """
@@ -19,9 +19,8 @@ def process_data(json_data: list, measurement: str) -> list:
         "node_job_info": process_node_job_info,
         "system_metrics": process_system_metrics
     }
-    for data in json_data:
-        if process_dict.get(measurement) and process_dict.get(measurement)(data):
-            result.extend(process_dict.get(measurement)(data))
+    if process_dict.get(measurement) and process_dict.get(measurement)(data):
+        result.extend(process_dict.get(measurement)(data))
     return result
 
 
@@ -66,7 +65,8 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
-        elif "j" in measurement:
+            return data_point
+        if "j" in measurement:
             nodes = data["nodes"]
             if "," in nodes:
                 node_list = nodes.split(",")
@@ -90,8 +90,8 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
-        else:
-            # "qu" in measurement
+            return data_point
+        if "qu" in measurement:
             job = measurement
             if "A" in job:
                 job_id = job.split("_")[1].replace("A", ".")
@@ -121,11 +121,10 @@ def process_data_job(data: dict, measurement: str) -> dict:
                     "User": data["user"]
                 }
             }
+            return data_point
     except Exception as err:
-        print(err)
-        # pass
-    print(data_point)
-    return data_point
+        # print(err)
+        return data_point
 
 def process_CPU_Temperature(data: dict) -> list: 
     result = []
