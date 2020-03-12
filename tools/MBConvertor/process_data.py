@@ -82,7 +82,8 @@ def process_CPU_Usage(data: dict) -> list:
         }
         result = [data_point]
     except Exception as err:
-        print(err)
+        # print(err)
+        pass
     return result
 
 
