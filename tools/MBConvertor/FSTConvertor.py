@@ -120,7 +120,7 @@ def main():
                 converted_data_point = process_data(json_data[0], mea)
                 print(f"Converted data point:")
                 print(json.dumps(converted_data_point, indent=4))
-
+                print("-------------------------------------------------------")
             # data_points.append(converted_data_point)
     # print(json.dumps(data_points, indent=4))
 
