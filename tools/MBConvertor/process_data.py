@@ -69,10 +69,10 @@ def process_CPU_Usage(data: dict) -> list:
         else:
             host_ip = host
         
-        if data["cpuusage(load)"]:
-            cpuusage = data["cpuusage(load)"]
-        elif data["cpuusage"]:
+        if data.get("cpuusage"):
             cpuusage = data["cpuusage"]
+        elif data.get("cpuusage(load)"):
+            cpuusage = data["cpuusage(load)"]
 
         data_point = {
             "measurement": "UGE",
