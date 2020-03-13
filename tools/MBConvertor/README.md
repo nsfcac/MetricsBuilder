@@ -2,14 +2,14 @@
 Convert historical data according to the schema and save them into "processed_metrics" database.
 ## Schema
 ### BMC metrics 
-Measurement of BMC metrics is followed by Redfish entry point name, e.g. *CPU1_Temp* is get from`/redfish/v1/Chassis/System.Embedded.1/Thermal`, thus *CPU1_Temp* will be saved into measurement `Thermal`. Tag keys of BMC metrics are constrained to __Sensor__ and __NodeId__; By indexing these two tags, we can get the only reading value, which is saved into field key __Reading__.
+Measurement of BMC metrics is followed by Redfish entry point name, e.g. *CPU1_Temp* is get from`/redfish/v1/Chassis/System.Embedded.1/Thermal`, thus *CPU1_Temp* will be saved into measurement `Thermal`. Tag keys of BMC metrics are constrained to __Label__ and __NodeId__; By indexing these two tags, we can get the only reading value, which is saved into field key __Reading__.
 
 Dummy data points in `Thermal` measurement:
 ```
 measurement: Thermal         
 time: 1583792296             
 tags: 
-    Sensor: "CPU1Temp"
+    Label: "CPU1Temp"
     NodeId: "101.10.1.1"
 fields:
     Reading: 46.00
@@ -17,7 +17,7 @@ fields:
 measurement: Thermal         
 time: 1583792296             
 tags: 
-    Sensor: "FAN_1"
+    Label: "FAN_1"
     NodeId: "101.10.1.1"
 fields:
     Reading: 4500
@@ -28,20 +28,20 @@ Dummy data points in "Power" measurement:
 measurement: Power           
 time: 1583792296             
 tags: 
-    Sensor: "NodePower"
+    Label: "NodePower"
     NodeId: "101.10.1.1"
 fields:
     Reading: 277
 ```
 ### UGE metrics 
-Resource usage (CPU usage and Memory usage) related metrics from UGE are saved into measurement `UGE`; Tag key and field key names follow the BMC metrics, in which only __Sensor__, __NodeId__ and __Reading__ are kept. 
+Resource usage (CPU usage and Memory usage) related metrics from UGE are saved into measurement `UGE`; Tag key and field key names follow the BMC metrics, in which only __Label__, __NodeId__ and __Reading__ are kept. 
 
 Dummy data points in `UGE` measurement:
 ```
 measurement: UGE
 time: 1583792296             
 tags: 
-    Sensor: "CPUUsage"
+    Label: "CPUUsage"
     NodeId: "101.10.1.1"
 fields:
     Reading: 0.5
@@ -49,7 +49,7 @@ fields:
 measurement: UGE            
 time: 1583792296             
 tags: 
-    Sensor: "MemUsage"
+    Label: "MemUsage"
     NodeId: "101.10.1.1"
 fields:
     Reading: 0.5

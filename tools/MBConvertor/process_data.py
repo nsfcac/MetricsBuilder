@@ -114,7 +114,7 @@ def process_data_job(data: dict, measurement: str) -> dict:
                 }
             }
             return data_point
-    except Exception as err:
+    except Exception:
         # print(err)
         return data_point
 
@@ -131,22 +131,22 @@ def process_CPU_Temperature(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU1Temp",
+                "Label": "CPU1Temp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["CPU1 Temp"]
+                "Reading": float("{0:.2f}".format(data["CPU1 Temp"]))
             }
         }
         data_point_2 = {
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU2Temp",
+                "Label": "CPU2Temp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["CPU2 Temp"]
+                "Reading": float("{0:.2f}".format(data["CPU2 Temp"]))
             }
         }
         result = [data_point_1, data_point_2]
@@ -176,11 +176,11 @@ def process_CPU_Usage(data: dict) -> list:
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPUUsage",
+                "Label": "CPUUsage",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(cpuusage))
+                "Reading": float("{0:.4f}".format(cpuusage))
             }
         }
         result = [data_point]
@@ -203,7 +203,7 @@ def process_Fan_Speed(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_1",
+                "Label": "FAN_1",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -214,7 +214,7 @@ def process_Fan_Speed(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_2",
+                "Label": "FAN_2",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -225,7 +225,7 @@ def process_Fan_Speed(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_3",
+                "Label": "FAN_3",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -236,7 +236,7 @@ def process_Fan_Speed(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_4",
+                "Label": "FAN_4",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -262,11 +262,11 @@ def process_Inlet_Temperature(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "InletTemp",
+                "Label": "InletTemp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["Inlet Temp"]
+                "Reading": float("{0:.2f}".format(data["Inlet Temp"]))
             }
         }
         result = [data_point]
@@ -332,11 +332,11 @@ def process_Memory_Usage(data: dict) -> list:
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "MemUsage",
+                "Label": "MemUsage",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(mem_usage))
+                "Reading": float("{0:.4f}".format(mem_usage))
             }
         }
         result = [data_point]
@@ -359,11 +359,11 @@ def process_Node_Power_Usage(data: dict) -> list:
             "measurement": "Power",
             "time": data["time"],
             "tags": {
-                "Sensor": "NodePower",
+                "Label": "NodePower",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["powerusage_watts"]
+                "Reading": float("{0:.2f}".format(data["powerusage_watts"]))
             }
         }
         result = [data_point]
@@ -386,40 +386,40 @@ def process_cluster_unified_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU1Temp",
+                "Label": "CPU1Temp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["CPU1_temp"]
+                "Reading": float("{0:.2f}".format(data["CPU1_temp"]))
             }
         }
         data_point_2 = {
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU2Temp",
+                "Label": "CPU2Temp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["CPU2_temp"]
+                "Reading": float("{0:.2f}".format(data["CPU2_temp"]))
             }
         }
         data_point_3 = {
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPUUsage",
+                "Label": "CPUUsage",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(data["cpuusage"]))
+                "Reading": float("{0:.4f}".format(data["cpuusage"]))
             }
         }
         data_point_4 = {
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_1",
+                "Label": "FAN_1",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -430,7 +430,7 @@ def process_cluster_unified_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_2",
+                "Label": "FAN_2",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -441,7 +441,7 @@ def process_cluster_unified_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_3",
+                "Label": "FAN_3",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -452,7 +452,7 @@ def process_cluster_unified_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_4",
+                "Label": "FAN_4",
                 "NodeId": host_ip
             }, 
             "fields": {
@@ -463,33 +463,33 @@ def process_cluster_unified_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "InletTemp",
+                "Label": "InletTemp",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["inlet_temp"]
+                "Reading": float("{0:.2f}".format(data["inlet_temp"]))
             }
         }
         data_point_9 = {
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "MemUsage",
+                "Label": "MemUsage",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(data["memoryusage"]))
+                "Reading": float("{0:.4f}".format(data["memoryusage"]))
             }
         }
         data_point_10 = {
             "measurement": "Power",
             "time": data["time"],
             "tags": {
-                "Sensor": "NodePower",
+                "Label": "NodePower",
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["powerusage_watts"]
+                "Reading": float("{0:.2f}".format(data["powerusage_watts"]))
             }
         }
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
@@ -531,40 +531,40 @@ def process_system_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU1Temp",
+                "Label": "CPU1Temp",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["CPU1_temp"]
+                "Reading": float("{0:.2f}".format(data["CPU1_temp"]))
             }
         }
         data_point_2 = {
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPU2Temp",
+                "Label": "CPU2Temp",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["CPU2_temp"]
+                "Reading": float("{0:.2f}".format(data["CPU2_temp"]))
             }
         }
         data_point_3 = {
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "CPUUsage",
+                "Label": "CPUUsage",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(data["cpuusage"]))
+                "Reading": float("{0:.4f}".format(data["cpuusage"]))
             }
         }
         data_point_4 = {
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_1",
+                "Label": "FAN_1",
                 "NodeId": data["host"]
             }, 
             "fields": {
@@ -575,7 +575,7 @@ def process_system_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_2",
+                "Label": "FAN_2",
                 "NodeId": data["host"]
             }, 
             "fields": {
@@ -586,7 +586,7 @@ def process_system_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_3",
+                "Label": "FAN_3",
                 "NodeId": data["host"]
             }, 
             "fields": {
@@ -597,7 +597,7 @@ def process_system_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "FAN_4",
+                "Label": "FAN_4",
                 "NodeId": data["host"]
             }, 
             "fields": {
@@ -608,33 +608,33 @@ def process_system_metrics(data: dict) -> list:
             "measurement": "Thermal",
             "time": data["time"],
             "tags": {
-                "Sensor": "InletTemp",
+                "Label": "InletTemp",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["inlet_temp"]
+                "Reading": float("{0:.2f}".format(data["inlet_temp"]))
             }
         }
         data_point_9 = {
             "measurement": "UGE",
             "time": data["time"],
             "tags": {
-                "Sensor": "MemUsage",
+                "Label": "MemUsage",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": float("{0:.2f}".format(data["memoryusage"]))
+                "Reading": float("{0:.4f}".format(data["memoryusage"]))
             }
         }
         data_point_10 = {
             "measurement": "Power",
             "time": data["time"],
             "tags": {
-                "Sensor": "NodePower",
+                "Label": "NodePower",
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["powerusage_watts"]
+                "Reading": float("{0:.2f}".format(data["powerusage_watts"]))
             }
         }
         data_point_11 = {
