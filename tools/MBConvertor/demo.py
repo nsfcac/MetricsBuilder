@@ -9,7 +9,7 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
     """
     Convertor demo, it only process 10 minutes of data
     """
-    start = 1555076381
+    start = 1571346551
     ten_minute = 10 * 60
     end = start + ten_minute
 
@@ -42,9 +42,9 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
             if json_data:
                 print(f"Converting {mea}...")
                 print("---- Original data point ----")
-                print(json.dumps(json_data[-10], indent=4))
+                print(json.dumps(json_data[0], indent=4))
 
-                converted_data_point = process_data(json_data[-10], mea)
+                converted_data_point = process_data(json_data[0], mea)
                 print("---- Converted data point ----")
                 print(json.dumps(converted_data_point, indent=4))
                 print("-------------------------------------------------------")
