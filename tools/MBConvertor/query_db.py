@@ -21,6 +21,21 @@ def get_phase_time(client: object) -> int:
     
     return phase_time
 
+def query_current_job(client: object) -> list:
+    """
+    Get Current_Job sample data
+    """
+    data = []
+    try:
+        data_sql_1 = "SELECT * FROM Current_Jobs ORDER BY TIME LIMIT 1"
+        first = client.get(data_sql_1)
+        data.extend(first)
+        data_sql_2 = "SELECT * FROM Current_Jobs ORDER BY TIME DESC LIMIT 1"
+        second = client.get(data_sql_2)
+        data.extend(second)
+    except Exception as err:
+        print(err)
+    return data
 
 def query_sample_data(client: object, measurement: str) -> list:
     """

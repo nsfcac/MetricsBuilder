@@ -2,29 +2,34 @@ import time
 from dateutil import parser
 
 
-def process_data(data: list, measurement: str) -> list:
+def process_data(data: list, measurement: str, error_count: int) -> list:
     """
     Process data accroding to the schema in measurements
     """
     result = []
-    process_dict = {
-        "CPU_Temperature": process_CPU_Temperature,
-        "CPU_Usage": process_CPU_Usage,
-        "Fan_Speed": process_Fan_Speed,
-        "Inlet_Temperature": process_Inlet_Temperature,
-        "Job_Info": process_Job_Info,
-        "Memory_Usage": process_Memory_Usage,
-        "Node_Power_Usage": process_Node_Power_Usage,
-        "cluster_unified_metrics": process_cluster_unified_metrics,
-        "node_job_info": process_node_job_info,
-        "system_metrics": process_system_metrics
-    }
-    if process_dict.get(measurement) and process_dict.get(measurement)(data):
-        result.extend(process_dict.get(measurement)(data))
+    try:
+        process_dict = {
+            "CPU_Temperature": process_CPU_Temperature,
+            "CPU_Usage": process_CPU_Usage,
+            "Fan_Speed": process_Fan_Speed,
+            "Inlet_Temperature": process_Inlet_Temperature,
+            "Job_Info": process_Job_Info,
+            "Memory_Usage": process_Memory_Usage,
+            "Node_Power_Usage": process_Node_Power_Usage,
+            "cluster_unified_metrics": process_cluster_unified_metrics,
+            "node_job_info": process_node_job_info,
+            "system_metrics": process_system_metrics
+        }
+        if process_dict.get(measurement):
+            processed_data = process_dict.get(measurement)(data, error_count)
+            if processed_data:
+                result.extend(processed_data)
+    except Exception as err:
+        print(err)
     return result
 
 
-def process_data_job(data: dict, measurement: str) -> dict:
+def process_data_job(data: dict, measurement: str, error_count: int) -> dict:
     """
     Process job info accroding to the schema in measurements
     """
@@ -114,11 +119,11 @@ def process_data_job(data: dict, measurement: str) -> dict:
                 }
             }
             return data_point
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return data_point
 
-def process_CPU_Temperature(data: dict) -> list: 
+def process_CPU_Temperature(data: dict, error_count: int) -> list: 
     result = []
     try:
         host = data["host"]
@@ -150,12 +155,12 @@ def process_CPU_Temperature(data: dict) -> list:
             }
         }
         result = [data_point_1, data_point_2]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_CPU_Usage(data: dict) -> list: 
+def process_CPU_Usage(data: dict, error_count: int) -> list: 
     result = []
     try:
         host = data["host"]
@@ -183,12 +188,12 @@ def process_CPU_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_Fan_Speed(data: dict) -> list: 
+def process_Fan_Speed(data: dict, error_count: int) -> list: 
     result = []
     try:
         host = data["host"]
@@ -242,11 +247,11 @@ def process_Fan_Speed(data: dict) -> list:
             }
         }
         result = [data_point_1, data_point_2, data_point_3, data_point_4]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
-def process_Inlet_Temperature(data: dict) -> list: 
+def process_Inlet_Temperature(data: dict, error_count: int) -> list: 
     result = []
     try:
         host = data["host"]
@@ -267,13 +272,13 @@ def process_Inlet_Temperature(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 # If the data is from Job_Info measurement, 
 # the processed data point should be saved to another measurement
-def process_Job_Info(data: dict) -> list:
+def process_Job_Info(data: dict, error_count: int) -> list:
     result = []
     try:
         start = int(parser.parse(data["startTime"], tzinfos={"CDT": "UTC-5", "CST": "UTC-6"}).timestamp())
@@ -305,12 +310,12 @@ def process_Job_Info(data: dict) -> list:
 
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_Memory_Usage(data: dict) -> list: 
+def process_Memory_Usage(data: dict, error_count: int) -> list: 
     result = []
     try:
         available_memory = float(data["available_memory"].split("G")[0])
@@ -335,12 +340,12 @@ def process_Memory_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_Node_Power_Usage(data: dict) -> list:
+def process_Node_Power_Usage(data: dict, error_count: int) -> list:
     result = []
     try:
         host = data["host"]
@@ -361,12 +366,12 @@ def process_Node_Power_Usage(data: dict) -> list:
             }
         }
         result = [data_point]
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_cluster_unified_metrics(data: dict) -> list:
+def process_cluster_unified_metrics(data: dict, error_count: int) -> list:
     result = []
     try:
         host = data["host"]
@@ -488,12 +493,12 @@ def process_cluster_unified_metrics(data: dict) -> list:
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
                   data_point_5, data_point_6, data_point_7, data_point_8,
                   data_point_9, data_point_10] 
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_node_job_info(data: dict) -> list:
+def process_node_job_info(data: dict, error_count: int) -> list:
     result = []
     try:
         joblist = [job.split("qu_")[1].replace("A", ".") for job in data["jobID"].split(",")]
@@ -508,12 +513,12 @@ def process_node_job_info(data: dict) -> list:
             }
         }
         result.append(data_point)
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
 
 
-def process_system_metrics(data: dict) -> list:
+def process_system_metrics(data: dict, error_count: int) -> list:
     result = []
     try:
         joblist = [job.split("qu_")[1].replace("A", ".") for job in data["jobID"].split(",")]
@@ -641,6 +646,6 @@ def process_system_metrics(data: dict) -> list:
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
                   data_point_5, data_point_6, data_point_7, data_point_8,
                   data_point_9, data_point_10, data_point_11] 
-    except Exception as err:
-        print(err)
+    except Exception:
+        error_count += 1
     return result
