@@ -27,10 +27,10 @@ def query_current_job(client: object) -> list:
     """
     data = []
     try:
-        data_sql_1 = "SELECT * FROM Current_Jobs ORDER BY TIME LIMIT 1"
+        data_sql_1 = "SELECT * FROM Current_Jobs order by time LIMIT 1"
         first = client.get(data_sql_1)
         data.extend(first)
-        data_sql_2 = "SELECT * FROM Current_Jobs ORDER BY TIME DESC LIMIT 1"
+        data_sql_2 = "SELECT * FROM Current_Jobs order by time desc LIMIT 1"
         second = client.get(data_sql_2)
         data.extend(second)
     except Exception as err:
