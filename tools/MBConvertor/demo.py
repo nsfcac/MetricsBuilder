@@ -10,14 +10,11 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
     Convertor demo, it only process 10 minutes of data
     """
     start = 1571346551
-    ten_minute = 10 * 60
-    end = start + ten_minute
+    half_day = 12 * 60 * 60
+    end = start + half_day
 
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
-    
-    print(f"-Start: {st}")
-    print(f"---End: {et}")
 
     process_dict = [
             "CPU_Temperature",
