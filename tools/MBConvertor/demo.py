@@ -16,6 +16,9 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
+    print(f"-Start: {st}"")
+    print(f"---End: {et}"")
+
     process_dict = [
             "CPU_Temperature",
             "CPU_Usage",
@@ -39,7 +42,6 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
     for mea in sys_measurements:
         if mea in process_dict:
             json_data = query_data(mea, read_client, st, et)
-            print(json_data[0])
             if json_data:
                 print(f"Converting {mea}...")
                 print("---- Original data point ----")

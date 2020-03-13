@@ -41,6 +41,9 @@ def query_data(measurement: str, client: object, start: int, end: int) -> list:
     result = []
     try:
         data_sql = sql_gen(measurement, start, end)
+        
+        print(data_sql)
+
         data = client.get(data_sql)
         result.extend(data)
     except Exception as err:
