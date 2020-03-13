@@ -16,8 +16,8 @@ def demo(read_client: object, sys_measurements: list, job_measurements: list) ->
     st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
     et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
     
-    print(f"-Start: {st}"")
-    print(f"---End: {et}"")
+    print(f"-Start: {st}")
+    print(f"---End: {et}")
 
     process_dict = [
             "CPU_Temperature",
