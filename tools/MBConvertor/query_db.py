@@ -76,7 +76,6 @@ def query_data_job(measurement: str, client: object) -> dict:
     try:
         data_sql = sql_gen_job(measurement)
         data = client.get(data_sql)
-        print(data_sql)
         result = data[0]
         print("Query...........")
         print(result)
