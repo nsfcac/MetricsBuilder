@@ -243,7 +243,7 @@ def process_Fan_Speed(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["FAN_1"]
+                "Reading": float("{0:.2f}".format(data["FAN_1"]))
             }
         }
         data_point_2 = {
@@ -254,7 +254,7 @@ def process_Fan_Speed(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["FAN_2"]
+                "Reading": float("{0:.2f}".format(data["FAN_2"]))
             }
         }
         data_point_3 = {
@@ -265,7 +265,7 @@ def process_Fan_Speed(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["FAN_3"]
+                "Reading": float("{0:.2f}".format(data["FAN_3"]))
             }
         }
         data_point_4 = {
@@ -276,7 +276,7 @@ def process_Fan_Speed(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["FAN_4"]
+                "Reading": float("{0:.2f}".format(data["FAN_4"]))
             }
         }
         result = [data_point_1, data_point_2, data_point_3, data_point_4]
@@ -454,7 +454,7 @@ def process_cluster_unified_metrics(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["fan1_speed"]
+                "Reading": float("{0:.2f}".format(data["fan1_speed"]))
             }
         }
         data_point_5 = {
@@ -465,7 +465,7 @@ def process_cluster_unified_metrics(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["fan2_speed"]
+                "Reading": float("{0:.2f}".format(data["fan2_speed"]))
             }
         }
         data_point_6 = {
@@ -476,7 +476,7 @@ def process_cluster_unified_metrics(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["fan3_speed"]
+                "Reading": float("{0:.2f}".format(data["fan3_speed"]))
             }
         }
         data_point_7 = {
@@ -487,7 +487,7 @@ def process_cluster_unified_metrics(data: dict, error_count: int) -> list:
                 "NodeId": host_ip
             }, 
             "fields": {
-                "Reading": data["fan4_speed"]
+                "Reading": float("{0:.2f}".format(data["fan4_speed"]))
             }
         }
         data_point_8 = {
