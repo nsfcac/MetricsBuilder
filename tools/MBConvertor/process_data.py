@@ -30,7 +30,6 @@ def convert_data_job(read_client: object, write_client: object,
             converted_data = process_data_job(data, measurement, error_count)
             if converted_data:
                 write_client.write([converted_data])
-                print("DONE!")
     except Exception as err:
         print(err)
     return 

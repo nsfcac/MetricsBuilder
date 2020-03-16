@@ -51,21 +51,21 @@ def main():
     print("Analysis measurements...")
     measurements = parse_measurement(read_client)
     sys_measurements = measurements["sys_measurements"]
-    job_measurements = measurements["job_measurements"][:4]
+    job_measurements = measurements["job_measurements"]
 
     # Converting job metrics in parallel
-    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-                            job_measurements, repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data_job, convert_data_job_args)
+    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+    #                         job_measurements, repeat(error_count))
+    # with multiprocessing.Pool(processes=cpu_count) as pool:
+    #     pool.starmap(convert_data_job, convert_data_job_args)
 
     # print(error_count)
     # Converting system metrics in parallel
-    # convert_data_args = zip(repeat(read_client), repeat(write_client), 
-    #                         repeat(st), repeat(et), sys_measurements,
-    #                         repeat(error_count))
-    # with multiprocessing.Pool(processes=cpu_count) as pool:
-    #     pool.starmap(convert_data, convert_data_args)
+    convert_data_args = zip(repeat(read_client), repeat(write_client), 
+                            repeat(st), repeat(et), sys_measurements,
+                            repeat(error_count))
+    with multiprocessing.Pool(processes=cpu_count) as pool:
+        pool.starmap(convert_data, convert_data_args)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)
