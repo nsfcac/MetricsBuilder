@@ -25,7 +25,6 @@ def convert_data_job(read_client: object, write_client: object,
     Convert job data read from read_client and save into write_client
     """
     data = query_data_job(measurement, read_client)
-    print(data)
     try: 
         if data:
             converted_data = process_data_job(data, measurement, error_count)
