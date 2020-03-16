@@ -41,7 +41,7 @@ def main():
     first =  1552539600
     # last = 1583301600
     last = 1552712400
-    step = 6 * 60 * 60
+    step = 1 * 60 * 60
     
     # Get all system measurements
     print("Analysis measurements...")
