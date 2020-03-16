@@ -542,7 +542,7 @@ def process_node_job_info(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "JobList": joblist
+                "JobList": str(joblist)
             }
         }
         result.append(data_point)
@@ -673,7 +673,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "JobList": joblist
+                "JobList": str(joblist)
             }
         }
         result = [data_point_1, data_point_2, data_point_3, data_point_4, 
