@@ -1,6 +1,38 @@
 import time
 from dateutil import parser
 
+from query_db import query_data, query_data_job
+
+def convert_data(read_client: object, write_client: object, 
+                 st: str, et: str, measurement: str,
+                 error_count: int) -> None:
+    """
+    Convert data read from read_client and save into write_client
+    """
+    data = query_data(measurement, read_client, st, et)
+    try:
+        if data:
+            converted_data = process_data(data, measurement, error_count)
+            if converted_data:
+                write_client.write_points(converted_data)
+    except Exception as err:
+        print(err)
+    return 
+
+def convert_data_job(read_client: object, write_client: object,
+                     measurement: str, error_count: int) -> None:
+    """
+    Convert job data read from read_client and save into write_client
+    """
+    data = query_data_job(measurement, read_client)
+    try: 
+        if data:
+            converted_data = process_data_job(data, measurement, error_count)
+            if converted_data:
+                write_client.write_points(converted_data)
+    except Exception as err:
+        print(err)
+    return 
 
 def process_data(data: list, measurement: str, error_count: int) -> list:
     """
@@ -20,10 +52,11 @@ def process_data(data: list, measurement: str, error_count: int) -> list:
             "node_job_info": process_node_job_info,
             "system_metrics": process_system_metrics
         }
-        if process_dict.get(measurement):
-            processed_data = process_dict.get(measurement)(data, error_count)
-            if processed_data:
-                result.extend(processed_data)
+        for d in data:
+            if process_dict.get(measurement):
+                processed_data = process_dict.get(measurement)(d, error_count)
+                if processed_data:
+                    result.extend(processed_data)
     except Exception as err:
         print(err)
     return result
