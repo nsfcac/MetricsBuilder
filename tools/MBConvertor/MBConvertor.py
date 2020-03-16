@@ -59,6 +59,7 @@ def main():
     with multiprocessing.Pool(processes=cpu_count) as pool:
         pool.starmap(convert_data_job, convert_data_job_args)
 
+    print(error_count)
     # Converting system metrics in parallel
     # convert_data_args = zip(repeat(read_client), repeat(write_client), 
     #                         repeat(st), repeat(et), sys_measurements,

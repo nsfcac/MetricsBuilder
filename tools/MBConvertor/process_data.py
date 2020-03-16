@@ -27,7 +27,7 @@ def convert_data_job(read_client: object, write_client: object,
     data = query_data_job(measurement, read_client)
     try: 
         if data:
-            converted_data = process_data_job(data, measurement, error_count)
+            converted_data = process_data_job(data[0], measurement, error_count)
             if converted_data:
                 write_client.write(converted_data)
     except Exception as err:
