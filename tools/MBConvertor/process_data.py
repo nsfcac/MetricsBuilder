@@ -25,14 +25,15 @@ def convert_data_job(read_client: object, write_client: object,
     Convert job data read from read_client and save into write_client
     """
     data = query_data_job(measurement, read_client)
+    print(data)
     try: 
         if data:
             converted_data = process_data_job(data[0], measurement, error_count)
             if converted_data:
                 print(converted_data)
                 write_client.write(converted_data)
-    except Exception:
-        print(Exception)
+    except Exception as err:
+        print(err)
     return 
 
 def process_data(data: list, measurement: str, error_count: int) -> list:
