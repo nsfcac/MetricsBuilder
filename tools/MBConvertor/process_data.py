@@ -188,7 +188,6 @@ def process_CPU_Temperature(data: dict, error_count: int) -> list:
             }
         }
         result = [data_point_1, data_point_2]
-        print(float("{0:.2f}".format(data["CPU1 Temp"])))
     except Exception:
         error_count += 1
     return result

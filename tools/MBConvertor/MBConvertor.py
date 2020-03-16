@@ -38,14 +38,10 @@ def main():
     error_count = 0
     # phase_time = get_phase_time(read_client)
 
-    # start = phase_time[0]
-    start = 1555076381
-    ten_minute = 10 * 60
-    end = start + ten_minute
-
-    st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
-    et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
-
+    first =  1552539600
+    # last = 1583301600
+    last = 1552712400
+    step = 24 * 60 * 60
     
     # Get all system measurements
     print("Analysis measurements...")
@@ -53,19 +49,24 @@ def main():
     sys_measurements = measurements["sys_measurements"]
     job_measurements = measurements["job_measurements"]
 
-    # Converting job metrics in parallel
+    # # Converting job metrics in parallel
     # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
     #                         job_measurements, repeat(error_count))
     # with multiprocessing.Pool(processes=cpu_count) as pool:
     #     pool.starmap(convert_data_job, convert_data_job_args)
 
-    # print(error_count)
     # Converting system metrics in parallel
-    convert_data_args = zip(repeat(read_client), repeat(write_client), 
+    for start in range(first, last, step):
+        end = start + step
+
+        st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
+        et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
+    
+        convert_data_args = zip(repeat(read_client), repeat(write_client), 
                             repeat(st), repeat(et), sys_measurements,
                             repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data, convert_data_args)
+        with multiprocessing.Pool(processes=cpu_count) as pool:
+            pool.starmap(convert_data, convert_data_args)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)
