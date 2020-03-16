@@ -29,6 +29,7 @@ def convert_data_job(read_client: object, write_client: object,
         if data:
             converted_data = process_data_job(data[0], measurement, error_count)
             if converted_data:
+                print(converted_data)
                 write_client.write(converted_data)
     except Exception as err:
         print(err)
