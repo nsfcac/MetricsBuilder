@@ -14,7 +14,7 @@ def convert_data(read_client: object, write_client: object,
         if data:
             converted_data = process_data(data, measurement, error_count)
             if converted_data:
-                write_client.write_points(converted_data)
+                write_client.write(converted_data)
     except Exception as err:
         print(err)
     return 
@@ -29,7 +29,7 @@ def convert_data_job(read_client: object, write_client: object,
         if data:
             converted_data = process_data_job(data, measurement, error_count)
             if converted_data:
-                write_client.write_points(converted_data)
+                write_client.write(converted_data)
     except Exception as err:
         print(err)
     return 
