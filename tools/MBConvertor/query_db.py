@@ -77,8 +77,6 @@ def query_data_job(measurement: str, client: object) -> dict:
         data_sql = sql_gen_job(measurement)
         data = client.get(data_sql)
         result = data[0]
-        print("Query...........")
-        print(result)
     except Exception as err:
         print(err)
     return result
