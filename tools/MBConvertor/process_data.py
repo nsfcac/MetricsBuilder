@@ -597,7 +597,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["fan1_speed"]
+                "Reading": float("{0:.2f}".format(data["fan1_speed"]))
             }
         }
         data_point_5 = {
@@ -608,7 +608,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["fan2_speed"]
+                "Reading": float("{0:.2f}".format(data["fan2_speed"]))
             }
         }
         data_point_6 = {
@@ -619,7 +619,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["fan3_speed"]
+                "Reading": float("{0:.2f}".format(data["fan3_speed"]))
             }
         }
         data_point_7 = {
@@ -630,7 +630,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
                 "NodeId": data["host"]
             }, 
             "fields": {
-                "Reading": data["fan4_speed"]
+                "Reading": float("{0:.2f}".format(data["fan4_speed"]))
             }
         }
         data_point_8 = {
