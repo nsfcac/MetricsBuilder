@@ -67,7 +67,6 @@ def main():
                             repeat(error_count))
         with multiprocessing.Pool(processes=cpu_count) as pool:
             pool.starmap(convert_data, convert_data_args)
-        print(start)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)

@@ -82,7 +82,7 @@ def process_data_job(data: dict, measurement: str, error_count: int) -> dict:
                 "measurement": "JobsInfo",
                 "time": data["time"],
                 "tags": {
-                    "JobId": measurement.split("i")[1],
+                    "JobId": str(measurement.split("i")[1]),
                     "Queue": data["cluster"]
                 }, 
                 "fields": {
@@ -107,7 +107,7 @@ def process_data_job(data: dict, measurement: str, error_count: int) -> dict:
                 "measurement": "JobsInfo",
                 "time": data["time"],
                 "tags": {
-                    "JobId": measurement.split("-")[1],
+                    "JobId": str(measurement.split("-")[1]),
                     "Queue": data["cluster"]
                 }, 
                 "fields": {
@@ -138,7 +138,7 @@ def process_data_job(data: dict, measurement: str, error_count: int) -> dict:
                 "measurement": "JobsInfo",
                 "time": data["time"],
                 "tags": {
-                    "JobId": job_id,
+                    "JobId": str(job_id),
                     "Queue": data["cluster"]
                 }, 
                 "fields": {
@@ -328,7 +328,7 @@ def process_Job_Info(data: dict, error_count: int) -> list:
             "measurement": "JobsInfo",
             "time": data["time"],
             "tags": {
-                "JobId": data["jobID"],
+                "JobId": str(data["jobID"]),
                 "Queue": data["cluster"]
             }, 
             "fields": {
