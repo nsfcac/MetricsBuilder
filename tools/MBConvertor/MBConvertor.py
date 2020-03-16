@@ -41,7 +41,7 @@ def main():
     first =  1552539600
     # last = 1583301600
     last = 1552712400
-    step = 12 * 60 * 60
+    step = 6 * 60 * 60
     
     # Get all system measurements
     print("Analysis measurements...")
@@ -67,6 +67,7 @@ def main():
                             repeat(error_count))
         with multiprocessing.Pool(processes=cpu_count) as pool:
             pool.starmap(convert_data, convert_data_args)
+        print(start)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)
