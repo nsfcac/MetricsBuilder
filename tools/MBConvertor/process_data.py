@@ -116,8 +116,8 @@ def process_data_job(data: dict, measurement: str, error_count: int) -> dict:
                     "StartTime": start,
                     "SubmitTime": submit,
                     "TotalNodes": len(node_list),
-                    "NodeList": node_list,
-                    "CPUCores": data["CPUCores"], 
+                    "NodeList": str(node_list),
+                    "CPUCores": int(data["CPUCores"]), 
                     "JobName": None,
                     "User": data["user"]
                 }
