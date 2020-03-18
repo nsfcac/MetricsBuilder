@@ -96,6 +96,7 @@ def convert_data_job(read_client: object, write_client: object,
                     "User": job["User"]
                 }
             }
+            print(json.dumps(data_point, indent=4))
             result.extend(data_point)
         if result:
             write_client.write(result)
