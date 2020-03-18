@@ -6,8 +6,6 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
     all_job = []
     # Query node information
     try:
-        print("Query data")
-
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
@@ -48,7 +46,6 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
     reading = []
     try:
         query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= '" + start + "' AND time < '" + end + "' GROUP BY time(" + interval + ") fill(null)"
-        print(query_sql)
         reading = influx.get(query_sql)
     except Exception as err:
         print(err)
