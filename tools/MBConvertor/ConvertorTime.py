@@ -37,8 +37,8 @@ def main():
     cpu_count = multiprocessing.cpu_count()
     # phase_time = get_phase_time(read_client)
 
-    first =  1552539600
-    last = 1552543200
+    first =  1583320929
+    last = 1583324529
     # last = 1583301600
     step = 1 * 60 * 60
     
@@ -78,7 +78,7 @@ def convert_data_job(read_client: object, write_client: object,
         data_job_sql = "SELECT * FROM JobsInfo WHERE time >= " + str(start) + " AND time < " + str(end)
         # print(data_job_sql)
         data_job = read_client.get(data_job_sql)
-        print(data_job)
+        # print(data_job)
         for job in data_job:
             data_point = {
                 "measurement": "JobsInfo",
