@@ -1,3 +1,5 @@
+import datetime
+
 def query_data(node_list: list, influx: object, start: int, end: int, interval: str, value: str) -> dict:
     json_data = {}
     node_data = {}
@@ -45,7 +47,10 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
                   start: int, end: int, interval: str, value: str) -> list:
     reading = []
     try:
-        query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= " + str(start) + " AND time < " + str(end) + " GROUP BY time(" + interval + ") fill(null)"
+
+        offset = start % (interval * 60)
+
+        query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= " + str(start) + " AND time < " + str(end) + " GROUP BY time(" + interval + ", " + str(offset)+ "s) fill(null)"
         reading = influx.get(query_sql)
         print(reading)
     except Exception as err:
