@@ -8,37 +8,33 @@ from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_data
 
-def get_metrics(start, end, interval, value):  # noqa: E501
-
-    # Initialization 
-    config = parse_conf()
-    node_list = parse_host()
-    influx = QueryInfluxdb(config["influxdb"])
-
-    # Time string used in query_data
-    start_str = start
-    end_str = end
-
-    print(f"Start time str: {start_str}; End time str: {end_str}")
-
-    # Check Sanity
-    if start > end:
-        print("Start time should no larger than end time")
-    else:
-
-        query_start = time.time()
-
-        all_data = query_data(node_list, influx, start_str, end_str, interval, value)
-
-        query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-
-        print(query_elapsed)
-        print(json.dumps(all_data, indent=4))
+start = "2020-02-12T00:00:00Z"
+end = "2020-02-12T00:10:00Z"
+interval = "5m"
+value = "max"
 
 
-if __name__ == "__main__":
-    start = "2020-02-12T00:00:00Z"
-    end = "2020-02-12T00:10:00Z"
-    interval = "5m"
-    value = "max"
-    get_metrics(start, end, interval, value)
+# Initialization 
+config = parse_conf()
+node_list = parse_host()
+influx = QueryInfluxdb(config["influxdb"])
+
+# Time string used in query_data
+start_str = start
+end_str = end
+
+print(f"Start time str: {start_str}; End time str: {end_str}")
+
+# Check Sanity
+if start > end:
+    print("Start time should no larger than end time")
+else:
+
+    query_start = time.time()
+
+    all_data = query_data(node_list, influx, start_str, end_str, interval, value)
+
+    query_elapsed = float("{0:.2f}".format(time.time() - query_start))
+
+    print(query_elapsed)
+    print(json.dumps(all_data, indent=4))
