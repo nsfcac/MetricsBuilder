@@ -18,7 +18,7 @@ class QueryInfluxdb():
     def get(self, sql: str) -> list:
         json_data = []
         try:
-            influxdbQuery = self.client.query(sql, epoch='s')
+            influxdbQuery = self.client.query(sql)
             json_data = list(influxdbQuery.get_points())
         except Exception as err:
             print(err)
