@@ -8,8 +8,8 @@ from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_data
 
-start = 1581469200000000
-end = 1581472800000000
+start = 1581469200
+end = 1581472800
 interval = "5m"
 value = "max"
 
