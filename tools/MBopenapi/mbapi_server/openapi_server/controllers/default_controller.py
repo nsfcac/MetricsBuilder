@@ -11,7 +11,7 @@ from openapi_server.controllers.parse_config import parse_conf, parse_host
 from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from openapi_server.controllers.DBcm import QueryInfluxdb
 from openapi_server.controllers.query_db import query_data
-from openapi_server.controllers.process_data import process_node_data, process_job_data
+from openapi_server.controllers.process_data import process_node_data
 
 def get_metrics(start, end, interval, value):  # noqa: E501
     """get_metrics
@@ -56,7 +56,7 @@ def get_metrics(start, end, interval, value):  # noqa: E501
 
         query_start = time.time()
         # Get time stamp
-        # time_list = gen_timestamp(start, end, interval)
+        time_list = gen_timestamp(start, end, interval)
         # Epoch time in seconds
         epoch_time_list = gen_epoch_timestamp(start, end, interval)
         unified_metrics.TimeStamp = epoch_time_list
@@ -71,17 +71,17 @@ def get_metrics(start, end, interval, value):  # noqa: E501
         print(query_elapsed)
         print(json.dumps(all_data, indent=4))
 
-        # process_start = time.time()
-        # # Process Nodes and Jobs info
-        # unified_metrics.JobsInfo = process_job_data(all_data["job_data"])
-        # unified_metrics.NodesInfo = process_node_data(node_list, all_data["node_data"], time_list, value)
+        process_start = time.time()
+        # Process Nodes and Jobs info
+        unified_metrics.JobsInfo = all_data["job_data"]
+        unified_metrics.NodesInfo = process_node_data(node_list, all_data["node_data"], time_list, value)
 
-        # process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
-        # total_elapsed = float("{0:.2f}".format(query_elapsed + process_elapsed))
-        # # In seconds
-        # time_range = int(end.timestamp()) - int(start.timestamp())
+        process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
+        total_elapsed = float("{0:.2f}".format(query_elapsed + process_elapsed))
+        # In seconds
+        time_range = int(end.timestamp()) - int(start.timestamp())
 
-        # with open("requests.log", "a+") as requests_log:
-        #     print(f"{time_range}:{interval}:{value}:{query_elapsed}:{process_elapsed}:{total_elapsed}", file = requests_log)
+        with open("requests.log", "a+") as requests_log:
+            print(f"{time_range}:{interval}:{value}:{query_elapsed}:{process_elapsed}:{total_elapsed}", file = requests_log)
 
     return unified_metrics

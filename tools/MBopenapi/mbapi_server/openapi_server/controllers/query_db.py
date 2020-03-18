@@ -1,6 +1,6 @@
 import datetime
 
-def query_data(node_list: list, influx: object, start: int, end: int, interval: str, value: str) -> dict:
+def query_data(node_list: list, influx: object, start: str, end: str, interval: str, value: str) -> dict:
     json_data = {}
     node_data = {}
     job_data = {}
@@ -27,7 +27,9 @@ def query_data(node_list: list, influx: object, start: int, end: int, interval: 
 
             job_list = query_job_list(influx, node, start, end)
             node_data[node]["JobList"] = job_list
-            all_job_list.extend(job_list)
+
+            for jobs in job_list:
+                all_job_list.extend(jobs)
 
         all_job = list(set(all_job_list))
         for job in all_job:
@@ -44,15 +46,14 @@ def query_data(node_list: list, influx: object, start: int, end: int, interval: 
 
 
 def query_reading(influx: object, node: str, measurement: str, label: str, 
-                  start: int, end: int, interval: str, value: str) -> list:
+                  start: str, end: str, interval: str, value: str) -> list:
     reading = []
     try:
-
-        offset = start % (5 * 60)
-
-        query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= " + str(start) + " AND time < " + str(end) + " GROUP BY time(" + interval + ", " + str(offset)+ "s) fill(null)"
+        query_sql = "SELECT " + value + "(Reading) FROM " + measurement 
+                    + " WHERE Label='" + label + "' AND NodeId='" + node 
+                    + "' AND time >= '" + start + " AND time < '" + end 
+                    + " GROUP BY time(" + interval + ") fill(null)"
         reading = influx.get(query_sql)
-        print(reading)
     except Exception as err:
         print(err)
     return reading
@@ -60,9 +61,10 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
 def query_job_list(influx: object, node: str, start: str, end: str) -> list:
     job_list = []
     try:
-        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node + "' AND time >= '" + start + "' AND time < '" + end + "'"
+        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node 
+                    + "' AND time >= '" + start + "' AND time < '" + end + "'"
         job_list_str = influx.get(query_sql)
-        job_list = [job[1:-1] for job in job_list_str[1:-1].split(", ")]
+        job_list = [job[1:-1].split(", ") for job in job_list_str]
     except Exception as err:
         print(err)
     return job_list
