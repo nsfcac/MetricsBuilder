@@ -46,8 +46,8 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
     reading = []
     try:
         query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= " + str(start) + " AND time < " + str(end) + " GROUP BY time(" + interval + ") fill(null)"
-        print(query_sql)
         reading = influx.get(query_sql)
+        print(reading)
     except Exception as err:
         print(err)
     return reading
