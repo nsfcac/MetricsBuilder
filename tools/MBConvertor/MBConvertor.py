@@ -4,6 +4,7 @@
 import sys
 import json
 import time
+import datetime
 
 import multiprocessing
 from itertools import repeat
@@ -59,8 +60,8 @@ def main():
     for start in range(first, last, step):
         end = start + step
 
-        st = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(start))
-        et = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.localtime(end))
+        st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
+        et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
     
         convert_data_args = zip(repeat(read_client), repeat(write_client), 
                             repeat(st), repeat(et), sys_measurements,

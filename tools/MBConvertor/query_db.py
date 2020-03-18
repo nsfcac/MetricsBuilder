@@ -49,7 +49,7 @@ def query_sample_data(client: object, measurement: str) -> list:
         print(err)
     return data
 
-def query_data(measurement: str, client: object, start: int, end: int) -> list:
+def query_data(measurement: str, client: object, start: str, end: str) -> list:
     """
     Query data from InfluxDB
     """
@@ -62,7 +62,7 @@ def query_data(measurement: str, client: object, start: int, end: int) -> list:
         print(err)
     return result
 
-def sql_gen(measurement: str, start: int, end: int) -> str:
+def sql_gen(measurement: str, start: str, end: str) -> str:
     """
     Generate influxdb SQL for retriving data points during the time range
     """
