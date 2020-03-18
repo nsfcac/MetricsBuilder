@@ -13,7 +13,6 @@ def convert_data(read_client: object, write_client: object,
     try:
         if data:
             converted_data = process_data(data, measurement, error_count)
-            print(converted_data)
             if converted_data:
                 write_client.write(converted_data)
     except Exception as err:

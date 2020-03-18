@@ -40,7 +40,7 @@ def main():
     # phase_time = get_phase_time(read_client)
 
     first =  1552539600
-    last = 1552543200
+    last = 1552626000
     # last = 1583301600
     step = 1 * 60 * 60
     
