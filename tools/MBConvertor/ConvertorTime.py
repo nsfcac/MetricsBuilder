@@ -75,7 +75,7 @@ def convert_data_job(read_client: object, write_client: object,
     # Query job info
     try:
         result = []
-        data_job_sql = "SELECT * FROM JobsInfo WHERE time >= " + str(start) + "AND time < " + str(end)
+        data_job_sql = "SELECT * FROM JobsInfo WHERE time >= " + str(start) + " AND time < " + str(end)
         print(data_job_sql)
         data_job = read_client.get(data_job_sql)
         for job in data_job:
