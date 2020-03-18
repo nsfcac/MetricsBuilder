@@ -3,7 +3,7 @@ import six
 import time
 import json
 
-from parse_config import parse_conf, parse_host
+from parse_config import parse_conf
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_data
@@ -16,7 +16,7 @@ value = "max"
 
 # Initialization 
 config = parse_conf()
-node_list = parse_host()
+node_list = ['10.101.1.1']
 influx = QueryInfluxdb(config["influxdb"])
 
 # Time string used in query_data

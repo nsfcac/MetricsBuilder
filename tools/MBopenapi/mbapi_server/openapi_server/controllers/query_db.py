@@ -6,6 +6,8 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
     all_job = []
     # Query node information
     try:
+        print("Query data")
+        
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
