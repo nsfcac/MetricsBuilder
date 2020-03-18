@@ -75,10 +75,10 @@ def convert_data_job(read_client: object, write_client: object,
     # Query job info
     try:
         result = []
-        data_job_sql = "SELECT * FROM JobsInfo WHERE time >= " + str(start) + " AND time < " + str(end)
+        data_job_sql = "SELECT * FROM JobsInfo WHERE time >= " + str(start) + " AND time < " + str(end) + " LIMIT 1"
         # print(data_job_sql)
         data_job = read_client.get(data_job_sql)
-        # print(data_job)
+        print(data_job)
         for job in data_job:
             print(job["time"])
             print(datetime.datetime.utcfromtimestamp(int(job["time"])).strftime('%Y-%m-%dT%H:%M:%SZ'))
