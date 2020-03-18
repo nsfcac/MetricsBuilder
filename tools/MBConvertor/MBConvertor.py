@@ -13,7 +13,7 @@ from parse_config import parse_host
 from query_db import get_phase_time, query_data, query_data_job, query_sample_data
 from parse_measurements import parse_measurement
 from process_data import process_data, process_data_job, convert_data, convert_data_job
-from demo import demo
+# from demo import demo
 
 read_config = {
     'host': 'localhost',

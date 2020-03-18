@@ -340,7 +340,6 @@ def process_Job_Info(data: dict, error_count: int) -> list:
                 "JobName": None,
                 "User": data["user"]
             }
-
         }
         result = [data_point]
     except Exception:
