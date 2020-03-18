@@ -10,10 +10,12 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
 
+        print("Query data")
         # Get nodes metrics
         for node in node_list:
             node_data[node] = {}
             for label in thermal_labels:
+                print(label)
                 reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
                 json_data[node][label] = reading
             for label in uge_labels:
