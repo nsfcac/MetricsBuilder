@@ -48,7 +48,7 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
     reading = []
     try:
 
-        offset = start % (interval * 60)
+        offset = start % (int(interval) * 60)
 
         query_sql = "SELECT " + value + "(Reading) FROM " + measurement + " WHERE Label='" + label + "' AND NodeId='" + node + "' AND time >= " + str(start) + " AND time < " + str(end) + " GROUP BY time(" + interval + ", " + str(offset)+ "s) fill(null)"
         reading = influx.get(query_sql)
