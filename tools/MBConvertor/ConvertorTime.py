@@ -80,6 +80,8 @@ def convert_data_job(read_client: object, write_client: object,
         data_job = read_client.get(data_job_sql)
         # print(data_job)
         for job in data_job:
+            print(job["time"])
+            print(datetime.datetime.utcfromtimestamp(int(job["time"])).strftime('%Y-%m-%dT%H:%M:%SZ'))
             data_point = {
                 "measurement": "JobsInfo",
                 "time": datetime.datetime.utcfromtimestamp(job["time"]).strftime('%Y-%m-%dT%H:%M:%SZ'),
@@ -97,10 +99,11 @@ def convert_data_job(read_client: object, write_client: object,
                     "User": job["User"]
                 }
             }
-            print(json.dumps(data_point, indent=4))
+            # print(json.dumps(data_point, indent=4))
             result.extend(data_point)
         if result:
-            write_client.write(result)
+            # write_client.write(result)
+            pass
     except Exception as err:
         print(err)
     return
