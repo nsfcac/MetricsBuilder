@@ -8,8 +8,8 @@ from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_data
 
-start = "2020-02-12T00:00:00Z"
-end = "2020-02-12T00:10:00Z"
+start = 1581469200
+end = 1581472800
 interval = "5m"
 value = "max"
 
@@ -21,13 +21,13 @@ print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
 # Time string used in query_data
-start_str = start
-end_str = end
+start_epoch = start
+end_epoch = end
 
-print(f"Start time str: {start_str}; End time str: {end_str}")
+print(f"Start time: {start_epoch}; End time: {end_epoch}")
 
 # Check Sanity
 
-all_data = query_data(node_list, influx, start_str, end_str, interval, value)
+all_data = query_data(node_list, influx, start_epoch, end_epoch, interval, value)
 
 print(json.dumps(all_data, indent=4))
