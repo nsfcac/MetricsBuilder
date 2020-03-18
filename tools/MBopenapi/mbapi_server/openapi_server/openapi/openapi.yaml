@@ -1,0 +1,262 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: jie.li@ttu.edu
+    name: Jie Li
+  description: An API for accessing High Performance Computing(HPC) system monitoring
+    metrics.
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  title: MetricsBuilder API
+  version: 1.0.0
+servers:
+- description: Local test server
+  url: http://localhost:8080/
+- description: Redfish server
+  url: http://129.118.104.141:8080/
+paths:
+  /v1/metrics:
+    get:
+      description: |-
+        Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be `min`, `max`, `mean`, or `median`.
+        A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include `s`(second), `m`(minute), `h`(hour), `d`(day), `w`(week).
+      operationId: get_metrics
+      parameters:
+      - description: start time of time range of the monitoring metrics
+        explode: true
+        in: query
+        name: start
+        required: true
+        schema:
+          example: 2020-02-14T12:00:00Z
+          format: date-time
+          type: string
+        style: form
+      - description: end time of time range of the monitoring metrics
+        explode: true
+        in: query
+        name: end
+        required: true
+        schema:
+          example: 2020-02-15T12:00:00Z
+          format: date-time
+          type: string
+        style: form
+      - description: time interval for aggregating the monitoring metrics
+        explode: true
+        in: query
+        name: interval
+        required: true
+        schema:
+          example: 5m
+          pattern: ^[1-9][0-9]*[s, m, h, d, w]$
+          type: string
+        style: form
+      - description: value type of the monitoring metrics
+        explode: true
+        in: query
+        name: value
+        required: true
+        schema:
+          enum:
+          - min
+          - max
+          - mean
+          - median
+          example: max
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnifiedMetrics'
+          description: Get unified metrics successfully
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Unexpected error
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+components:
+  schemas:
+    UnifiedMetrics:
+      example:
+        NodesInfo:
+          Metrics:
+            NodePower:
+            - 1.4658129805029452
+            - 1.4658129805029452
+            CPUInlTemp:
+            - - 5.637376656633329
+              - 5.637376656633329
+            - - 5.637376656633329
+              - 5.637376656633329
+            CPUUsage:
+            - 6.027456183070403
+            - 6.027456183070403
+            FanSpeed:
+            - - 5
+              - 5
+            - - 5
+              - 5
+            MemUsage:
+            - 0.8008281904610115
+            - 0.8008281904610115
+          Id: Id
+        JobsInfo:
+          Details:
+            User: User
+            StartTime: 7
+            JobName: JobName
+            SubmitTime: 2
+          Id: Id
+        TimeStamp:
+        - 9
+        - 9
+      properties:
+        NodesInfo:
+          $ref: '#/components/schemas/UnifiedMetrics_NodesInfo'
+        JobsInfo:
+          $ref: '#/components/schemas/UnifiedMetrics_JobsInfo'
+        TimeStamp:
+          items:
+            type: integer
+          type: array
+      required:
+      - JobsInfo
+      - NodesInfo
+      - TimeStamp
+      type: object
+    ErrorMessage:
+      properties:
+        error_code:
+          type: string
+        error_message:
+          type: string
+      required:
+      - error_code
+      - error_message
+      type: object
+    UnifiedMetrics_NodesInfo_Metrics:
+      example:
+        NodePower:
+        - 1.4658129805029452
+        - 1.4658129805029452
+        CPUInlTemp:
+        - - 5.637376656633329
+          - 5.637376656633329
+        - - 5.637376656633329
+          - 5.637376656633329
+        CPUUsage:
+        - 6.027456183070403
+        - 6.027456183070403
+        FanSpeed:
+        - - 5
+          - 5
+        - - 5
+          - 5
+        MemUsage:
+        - 0.8008281904610115
+        - 0.8008281904610115
+      properties:
+        MemUsage:
+          items:
+            type: number
+          type: array
+        CPUUsage:
+          items:
+            type: number
+          type: array
+        NodePower:
+          items:
+            type: number
+          type: array
+        FanSpeed:
+          items:
+            items:
+              type: integer
+            type: array
+          type: array
+        CPUInlTemp:
+          items:
+            items:
+              type: number
+            type: array
+          type: array
+      required:
+      - CPUInlTemp
+      - CPUUsage
+      - FanSpeed
+      - MemUsage
+      - NodePower
+    UnifiedMetrics_NodesInfo:
+      example:
+        Metrics:
+          NodePower:
+          - 1.4658129805029452
+          - 1.4658129805029452
+          CPUInlTemp:
+          - - 5.637376656633329
+            - 5.637376656633329
+          - - 5.637376656633329
+            - 5.637376656633329
+          CPUUsage:
+          - 6.027456183070403
+          - 6.027456183070403
+          FanSpeed:
+          - - 5
+            - 5
+          - - 5
+            - 5
+          MemUsage:
+          - 0.8008281904610115
+          - 0.8008281904610115
+        Id: Id
+      properties:
+        Id:
+          type: string
+        Metrics:
+          $ref: '#/components/schemas/UnifiedMetrics_NodesInfo_Metrics'
+      required:
+      - Id
+      - Metrics
+    UnifiedMetrics_JobsInfo_Details:
+      example:
+        User: User
+        StartTime: 7
+        JobName: JobName
+        SubmitTime: 2
+      properties:
+        User:
+          type: string
+        SubmitTime:
+          type: integer
+        StartTime:
+          type: integer
+        JobName:
+          type: string
+      required:
+      - JobName
+      - StartTime
+      - SubmitTime
+      - User
+    UnifiedMetrics_JobsInfo:
+      example:
+        Details:
+          User: User
+          StartTime: 7
+          JobName: JobName
+          SubmitTime: 2
+        Id: Id
+      properties:
+        Id:
+          type: string
+        Details:
+          $ref: '#/components/schemas/UnifiedMetrics_JobsInfo_Details'
+      required:
+      - Details
+      - Id

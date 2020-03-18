@@ -19,76 +19,83 @@ components:
     'UnifiedMetrics':
       type: object
       required:
-        - NodesInfo
-        - JobsInfo
-        - TimeStamp
+        - nodes_info
+        - jobs_info
+        - time_stamp
       properties:
-        NodesInfo:
+        nodes_info:
           type: object
           required:
-            - Id
-            - Metrics
+            - id
+            - metrics
           properties:
-            Id:
+            id:
               type: string
-            Metrics:
+            metrics:
               type: object
               required:
-                - MemUsage
-                - CPUUsage
-                - NodePower
-                - FanSpeed
-                - CPUInlTemp
+                - memory_usage
+                - cpu_usage
+                - power_usage
+                - fan_speed
+                - cpu_inl_temp
               properties:
-                MemUsage:
+                memory_usage:
                   type: array
                   items:
                     type: number
-                CPUUsage:
+                cpu_usage:
                   type: array
                   items:
                     type: number
-                NodePower:
+                power_usage:
                   type: array
                   items:
                     type: number
-                FanSpeed:
+                fan_speed:
                   type: array
                   items:
                     type: array
                     items:
                       type: integer
-                CPUInlTemp:
+                cpu_inl_temp:
                   type: array
                   items:
                     type: array
                     items:
                       type: number
-        JobsInfo:
+        jobs_info:
           type: object
           required:
-            - Id
-            - Details
+            - id
+            - details
           properties:
-            Id:
+            id:
               type: string
-            Details:
+            details:
               type: object
               required:
-                - User
-                - SubmitTime
-                - StartTime
-                - JobName
+                - user_name
+                - submit_time
+                - start_time
+                - finish_time
+                - array_job
               properties:
-                User:
+                user_name:
                   type: string
-                SubmitTime:
+                submit_time:
                   type: integer
-                StartTime:
-                  type: integer
-                JobName:
-                  type: string
-        TimeStamp: 
+                start_time: {}
+                  # oneOf: 
+                  #   - type: integer
+                  #   - type: object
+                finish_time: {}
+                  # oneOf:
+                  #   - type: integer
+                  #   - type: object
+                array_job:
+                  type: boolean
+        time_stamp: 
           type: array
           items:
             type: integer
@@ -105,11 +112,11 @@ components:
 paths:
   /v1/metrics:
     get:
-      description:
+      description: |
         Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be `min`, `max`, `mean`, or `median`.
         
         A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include `s`(second), `m`(minute), `h`(hour), `d`(day), `w`(week).
-      operationId: get_metrics
+      operationId: get_unified_metric
       parameters:
       - in: query
         name: start
