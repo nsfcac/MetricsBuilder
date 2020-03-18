@@ -43,7 +43,7 @@ def get_metrics(start, end, interval, value):  # noqa: E501
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
-    print(f"Start time: {start}; End time: {end}")
+    # print(f"Start time: {start}; End time: {end}")
 
     # Check Sanity
     if start > end:
@@ -57,10 +57,11 @@ def get_metrics(start, end, interval, value):  # noqa: E501
         query_start = time.time()
         # Get time stamp
         # time_list = gen_timestamp(start, end, interval)
+        # Epoch time in seconds
         epoch_time_list = gen_epoch_timestamp(start, end, interval)
         unified_metrics.TimeStamp = epoch_time_list
 
-        print(epoch_time_list)
+        # print(epoch_time_list)
 
         # Query Nodes and Jobs info
         all_data = query_data(node_list, influx, start_str, end_str, interval, value)

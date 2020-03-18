@@ -41,7 +41,7 @@ def main():
 
     first =  1552539600
     last = 1583301600
-    step = 0.5 * 60 * 60
+    step = 1800
     
     # Get all system measurements
     # print("Analysis measurements...")
@@ -50,10 +50,10 @@ def main():
     job_measurements = measurements["job_measurements"]
 
     # Converting job metrics in parallel
-    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-                            job_measurements, repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data_job, convert_data_job_args)
+    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+    #                         job_measurements, repeat(error_count))
+    # with multiprocessing.Pool(processes=cpu_count) as pool:
+    #     pool.starmap(convert_data_job, convert_data_job_args)
 
     # Converting system metrics in parallel
     for start in range(first, last, step):
