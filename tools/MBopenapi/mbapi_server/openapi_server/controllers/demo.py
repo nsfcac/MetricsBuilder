@@ -17,6 +17,7 @@ value = "max"
 # Initialization 
 config = parse_conf()
 node_list = ['10.101.1.1']
+print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
 # Time string used in query_data
