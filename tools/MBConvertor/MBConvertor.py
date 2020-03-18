@@ -24,7 +24,7 @@ read_config = {
 write_config = {
     'host': 'localhost',
     'port': '8086',
-    'database': 'updated_schema' # test_schema
+    'database': 'test_schema' #  updated_schema
 }
 
 def main():
@@ -39,7 +39,8 @@ def main():
     # phase_time = get_phase_time(read_client)
 
     first =  1552539600
-    last = 1583301600
+    last = 1552543200
+    # last = 1583301600
     step = 1 * 60 * 60
     
     # Get all system measurements
@@ -48,11 +49,11 @@ def main():
     sys_measurements = measurements["sys_measurements"]
     job_measurements = measurements["job_measurements"]
 
-    # Converting job metrics in parallel
-    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-                            job_measurements, repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data_job, convert_data_job_args)
+    # # Converting job metrics in parallel
+    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+    #                         job_measurements, repeat(error_count))
+    # with multiprocessing.Pool(processes=cpu_count) as pool:
+    #     pool.starmap(convert_data_job, convert_data_job_args)
 
     # Converting system metrics in parallel
     for start in range(first, last, step):

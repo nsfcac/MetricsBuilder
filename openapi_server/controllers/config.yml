@@ -1,33 +1,6 @@
 influxdb:
-  host: '10.10.1.4'
+  host: '10.10.1.3'
   port: '8086'
   user: 'password'
   password: '1234'
-  database: 'hpcc_monitoring_db'
-
-# bmc_measurements:
-#   - cpu_measurement:
-#     - measurement: 'meas_name'
-#     - tags:
-#       - 'tag_name_for_node_ip'
-#     - fields:
-#       - field_name_1
-#       - field_name_2
-#       # - add more fields if need
-#   - fan_measurement:
-#     - measurement: 'meas_name'
-#     - tags:
-#       - 'tag_name_for_node_ip'
-#     - fields:
-#       - field_name_1
-#       - field_name_2
-#       # - add more fields if need
-#   - thermal_measurement:
-#     - measurement: 'meas_name'
-#     - tags:
-#       - 'tag_name_for_node_ip'
-#     - fields:
-#       - field_name_1
-#       - field_name_2
-      # - more fields if need
-  # - add more measurement if need
+  database: 'updated_schema'
