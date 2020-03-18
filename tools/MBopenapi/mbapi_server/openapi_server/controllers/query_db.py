@@ -49,7 +49,8 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
         reading = influx.get(query_sql)
         print(reading)
     except Exception as err:
-        print(err)
+        # print(err)
+        print("Something is wrong")
     return reading
 
 def query_job_list(influx: object, node: str, start: str, end: str) -> list:

@@ -27,15 +27,7 @@ end_str = end
 print(f"Start time str: {start_str}; End time str: {end_str}")
 
 # Check Sanity
-if start > end:
-    print("Start time should no larger than end time")
-else:
 
-    query_start = time.time()
+all_data = query_data(node_list, influx, start_str, end_str, interval, value)
 
-    all_data = query_data(node_list, influx, start_str, end_str, interval, value)
-
-    query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-
-    print(query_elapsed)
-    print(json.dumps(all_data, indent=4))
+print(json.dumps(all_data, indent=4))
