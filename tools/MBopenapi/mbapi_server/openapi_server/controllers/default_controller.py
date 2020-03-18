@@ -84,11 +84,3 @@ def get_metrics(start, end, interval, value):  # noqa: E501
         #     print(f"{time_range}:{interval}:{value}:{query_elapsed}:{process_elapsed}:{total_elapsed}", file = requests_log)
 
     return unified_metrics
-
-
-if __name__ == "__main__":
-    start = "2020-02-12T00:00:00Z"
-    end = "2020-02-12T00:10:00Z"
-    interval = "5m"
-    value = "max"
-    get_metrics(start, end, interval, value)
