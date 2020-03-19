@@ -34,7 +34,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
         job_set = list(set(all_job_list))
         
         for job in job_set:
-            job_data[job] = {query_job_data(influx, job)}
+            job_data[job] = {}
             # job_data.update({
             #     job: query_job_data(influx, job)
             # })
