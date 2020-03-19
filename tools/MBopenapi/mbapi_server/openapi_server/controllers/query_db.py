@@ -31,7 +31,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             
             all_jobs = []
             for item in job_list:
-                all_jobs.extend(item["distinct"][1:-1].split(", ")[1:-1])
+                all_jobs.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
             job_set = list(set(all_jobs))
             print(job_set)
             
