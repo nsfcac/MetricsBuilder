@@ -76,7 +76,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             print(f"power_usage length  : {len(power_usage)}")
             print(f"fan_speed length    : {len(fan_speed)}")
             print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
-            print(f"job_id length       : {len(job_id)}")
+            print(f"job_id length       : {len(JobList)}")
 
     except Exception as err:
         print(err)
