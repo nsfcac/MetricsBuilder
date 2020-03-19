@@ -13,7 +13,7 @@ from process_data import  process_node_data
 
 start = 1564789031 - 12 * 60 * 60
 end = 1564789031 + 12 * 60 * 60
-interval = "5m"
+interval = "2h"
 value = "max"
 
 
