@@ -11,10 +11,10 @@ from query_db import query_data
 from process_data import  process_node_data
 
 
-day = 1
+hours = 24 * 3
 start = 1564660800
-end = 1564660800 + 24 * 60 * 60 * day
-interval = "2h"
+end = 1564660800 + hours * 60 * 60
+interval = "5m"
 value = "max"
 
 
@@ -35,7 +35,7 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 query_start = time.time()
 all_data = query_data(node_list, influx, st, et, interval, value)
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-print(f"Time for Quering {day} of data : {query_elapsed}")
+print(f"Time for Quering {hours} of data : {query_elapsed}")
 # print(json.dumps(all_data["job_data"], indent=4))
 
 # process_start = time.time()
