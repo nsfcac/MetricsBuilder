@@ -33,6 +33,8 @@ print(f"Start time: {st}; End time: {et}")
 
 all_data = query_data(node_list, influx, st, et, interval, value)
 
+print(all_data[node_list[0]]["MemUsage"])
+
 processed_data = process_node_data(node_list, all_data, value)
 
 print(json.dumps(processed_data, indent=4))
