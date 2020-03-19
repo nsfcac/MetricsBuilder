@@ -57,7 +57,6 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
                     + " WHERE Label='" + label + "' AND NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(null)"
-        print(query_sql)
         reading = influx.get(query_sql)
     except Exception as err:
         print(err)
@@ -70,6 +69,7 @@ def query_job_list(influx: object, node: str,
         query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(previous)"
+        print(query_sql)
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
