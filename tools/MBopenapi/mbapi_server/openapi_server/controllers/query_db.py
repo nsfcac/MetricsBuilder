@@ -18,12 +18,15 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             node_data[node] = {}
             for label in thermal_labels:
                 reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
+                print(reading)
                 json_data[node][label] = reading
             for label in uge_labels:
                 reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
+                print(reading)
                 json_data[node][label] = reading
             for label in power_labels:
-                reading = query_reading(influx, node, "Power", label, start, end, interval, value) 
+                reading = query_reading(influx, node, "Power", label, start, end, interval, value)
+                print(reading)
                 json_data[node][label] = reading
 
         #     job_list = query_job_list(influx, node, start, end)
