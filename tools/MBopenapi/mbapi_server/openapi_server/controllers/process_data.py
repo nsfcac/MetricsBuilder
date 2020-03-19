@@ -57,8 +57,8 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                 else:
                     fan_speed[index].append(None)
             
-            # time_list = [item["time"] for item in node_data[node]["JobList"]]
-            # print(time_list)
+            time_list = [item["time"] for item in node_data[node]["JobList"]]
+            print(time_list)
 
             JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
             JobList = []
