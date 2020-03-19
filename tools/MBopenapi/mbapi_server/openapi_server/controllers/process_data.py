@@ -21,8 +21,6 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             for jobs in JobListStr:
                  joblist = [job[1:-1] for job in jobs]
                  JobList.append(joblist)
-            # JobList = [ i[1:-1] for i in JobListStr]
-            # print(json.dumps(JobList, indent=4))
 
             cpu_inl_temp = []
             for index, item in enumerate(CPU1Temp):
@@ -73,6 +71,13 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                 "cpu_inl_temp": cpu_inl_temp,
                 "job_id": JobList
             }
+            print(f"memory_usage length : {len(memory_usage)}")
+            print(f"cpu_usage length    : {len(cpu_usage)}")
+            print(f"power_usage length  : {len(power_usage)}")
+            print(f"fan_speed length    : {len(fan_speed)}")
+            print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+            print(f"job_id length       : {len(job_id)}")
+
     except Exception as err:
         print(err)
     return json_data
