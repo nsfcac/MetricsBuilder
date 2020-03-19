@@ -31,4 +31,4 @@ print(f"Start time: {st}; End time: {et}")
 
 all_data = query_data(node_list, influx, st, et, interval, value)
 
-print(json.dumps(all_data, indent=4))
+# print(json.dumps(all_data, indent=4))
