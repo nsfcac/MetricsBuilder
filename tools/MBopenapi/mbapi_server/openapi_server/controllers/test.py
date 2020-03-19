@@ -11,15 +11,15 @@ from query_db import query_data
 from process_data import  process_node_data
 
 
-start = 1564102552
-end = 1564102552 + 24 * 60 * 60
+start = 1564789031 - 12 * 60 * 60
+end = 1564789031 + 12 * 60 * 60
 interval = "5m"
 value = "max"
 
 
 # Initialization 
 config = parse_conf()
-node_list = ['10.101.1.1']
+node_list = ['10.101.3.3']
 # print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 

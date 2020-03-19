@@ -70,7 +70,6 @@ def query_job_list(influx: object, node: str,
         query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(previous)"
-        print(query_sql)
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
