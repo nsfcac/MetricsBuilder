@@ -5,48 +5,48 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
     json_data = {}
     node_data = {}
     job_data = {}
-    # all_job_list = []
-    # all_job = []
-    # Query node information
-    # try:
-    thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
-    uge_labels = ["MemUsage", "CPUUsage"]
-    power_labels = ["NodePower"]
+    all_job_list = []
+    all_job = []
 
-    # Get nodes metrics
-    for node in node_list:
-        node_data[node] = {}
-        for label in thermal_labels:
-            reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
-            node_data[node][label] = reading
-            print(f"{label} length: {len(reading)}")
-        for label in uge_labels:
-            reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
-            node_data[node][label] = reading
-            print(f"{label} length: {len(reading)}")
-        for label in power_labels:
-            reading = query_reading(influx, node, "Power", label, start, end, interval, value)
-            node_data[node][label] = reading
-            print(f"{label} length: {len(reading)}")
-        # print(json.dumps(node_data[node], indent=4))
-    #     job_list = query_job_list(influx, node, start, end)
-    #     node_data[node]["JobList"] = job_list
+    try:
+        thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
+        uge_labels = ["MemUsage", "CPUUsage"]
+        power_labels = ["NodePower"]
 
-    #     for jobs in job_list:
-    #         all_job_list.extend(jobs)
+        # Get nodes metrics
+        for node in node_list:
+            node_data[node] = {}
+            for label in thermal_labels:
+                reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
+                node_data[node][label] = reading
+                print(f"{label} length: {len(reading)}")
+            for label in uge_labels:
+                reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
+                node_data[node][label] = reading
+                print(f"{label} length: {len(reading)}")
+            for label in power_labels:
+                reading = query_reading(influx, node, "Power", label, start, end, interval, value)
+                node_data[node][label] = reading
+                print(f"{label} length: {len(reading)}")
 
-    # all_job = list(set(all_job_list))
-    # for job in all_job:
-    #     job_data[job] = query_job_data(influx, job)
+            job_list = query_job_list(influx, node, start, end)
+            node_data[node]["JobList"] = job_list
 
-    # Get jobs metrics
-    # json_data.update({
-    #     "node_data": node_data,
-    #     "job_data": job_data
-    # })
-    print(json.dumps(node_data, indent=4))
-    # except Exception as err:
-    #     print(err)
+            for jobs in job_list:
+                all_job_list.extend(jobs)
+
+        all_job = list(set(all_job_list))
+        for job in all_job:
+            job_data[job] = query_job_data(influx, job)
+
+        # Get jobs metrics
+        json_data.update({
+            "node_data": node_data,
+            "job_data": job_data
+        })
+        print(json.dumps(node_data, indent=4))
+    except Exception as err:
+        print(err)
     return json_data
 
 

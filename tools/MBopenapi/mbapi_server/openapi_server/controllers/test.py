@@ -10,8 +10,8 @@ from DBcm import QueryInfluxdb
 from query_db import query_data
 
 start = 1552539600
-end = 1552539600 + 24 * 60 * 60 * 2
-interval = "1h"
+end = 1552539600 + 24 * 60 * 60
+interval = "2h"
 value = "max"
 
 
@@ -31,4 +31,4 @@ print(f"Start time: {st}; End time: {et}")
 
 all_data = query_data(node_list, influx, st, et, interval, value)
 
-# print(json.dumps(all_data, indent=4))
+print(json.dumps(all_data, indent=4))
