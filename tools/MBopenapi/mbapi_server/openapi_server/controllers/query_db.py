@@ -6,7 +6,6 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
     node_data = {}
     job_data = {}
     all_job_list = []
-    all_job = []
 
     try:
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
@@ -29,10 +28,9 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
 
             node_data[node]["JobList"] = job_list
             
-            all_jobs = []
             for item in job_list:
-                all_jobs.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
-            job_set = list(set(all_jobs))
+                all_job_list.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
+            job_set = list(set(all_job_list))
 
         for job in job_set:
             job_data[job] = query_job_data(influx, job)
