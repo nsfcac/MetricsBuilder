@@ -11,7 +11,7 @@ from query_db import query_data
 
 start = 1552539600
 end = 1552539600 + 24 * 60 * 60 * 2
-interval = "5m"
+interval = "1h"
 value = "max"
 
 
