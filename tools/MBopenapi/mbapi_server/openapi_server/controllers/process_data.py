@@ -1,5 +1,6 @@
 import time
 import json
+import multiprocessing
 
 def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
     """
@@ -72,7 +73,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             for jobs in JobListStr:
                  joblist = [job[1:-1] for job in jobs]
                  JobList.append(joblist)
-            print(json.dumps(JobList, indent = 4))
+            # print(json.dumps(JobList, indent = 4))
 
             json_data[node] = {
                 "memory_usage": memory_usage,
@@ -83,12 +84,12 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                 "job_id": JobList
             }
 
-            print(f"memory_usage length : {len(memory_usage)}")
-            print(f"cpu_usage length    : {len(cpu_usage)}")
-            print(f"power_usage length  : {len(power_usage)}")
-            print(f"fan_speed length    : {len(fan_speed)}")
-            print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
-            print(f"job_id length       : {len(JobList)}")
+            # print(f"memory_usage length : {len(memory_usage)}")
+            # print(f"cpu_usage length    : {len(cpu_usage)}")
+            # print(f"power_usage length  : {len(power_usage)}")
+            # print(f"fan_speed length    : {len(fan_speed)}")
+            # print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+            # print(f"job_id length       : {len(JobList)}")
 
     except Exception as err:
         print(err)
