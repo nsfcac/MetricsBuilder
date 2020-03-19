@@ -13,7 +13,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
         
         CPU1Temp = [item[value] for item in node_data[node]["node_data"]["CPU1Temp"]]
         CPU2Temp = [item[value] for item in node_data[node]["node_data"]["CPU2Temp"]]
-        InletTemp = [item[value] for item in node_data[node][["node_data"]"InletTemp"]]
+        InletTemp = [item[value] for item in node_data[node]["node_data"]["InletTemp"]]
 
         cpu_inl_temp = []
         for index, item in enumerate(CPU1Temp):
