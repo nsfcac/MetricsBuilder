@@ -34,13 +34,8 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
         job_set = list(set(all_job_list))
         
         for job in job_set:
-            job_data[job] = {}
-            data = query_job_data(influx, job)
-            print(json.dumps(data, indent=4))
-            # job_data.update({
-            #     job: query_job_data(influx, job)
-            # })
-        # print(json.dumps(job_data, indent=4))
+            job_data[job] = query_job_data(influx, job)
+        print(json.dumps(job_data, indent=4))
         # Get jobs metrics
         json_data.update({
             "node_data": node_data,
@@ -80,7 +75,9 @@ def query_job_data(influx: object, jobid: str) -> dict:
     job_data = {}
     try:
         query_sql = "SELECT * FROM JobsInfo WHERE JobId='" + jobid + "'"
-        job_data = influx.get(query_sql)[0]
+        job_data = influx.get(query_sql)
+        if job_data:
+            return job_data[0]
     except Exception as err:
         print(err)
     return job_data
