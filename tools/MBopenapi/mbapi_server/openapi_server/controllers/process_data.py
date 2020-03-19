@@ -23,13 +23,13 @@ def process_all_data(node_list: list, all_data: dict, value: str) -> dict:
             else:
                 cpu_inl_temp[index].append(None)
             if CPU2Temp[index]:
-                cpu_inl_temp[index].extend(CPU2Temp[index])
+                cpu_inl_temp[index].append(CPU2Temp[index])
             else:
-                cpu_inl_temp[index].extend(None)
+                cpu_inl_temp[index].append(None)
             if InletTemp[index]:
-                cpu_inl_temp[index].extend(InletTemp[index])
+                cpu_inl_temp[index].append(InletTemp[index])
             else:
-                cpu_inl_temp[index].extend(None)
+                cpu_inl_temp[index].append(None)
 
         FAN_1 = [item[value] for item in all_data["node_data"][node]["FAN_1"]]
         FAN_2 = [item[value] for item in all_data["node_data"][node]["FAN_2"]]
@@ -55,7 +55,7 @@ def process_all_data(node_list: list, all_data: dict, value: str) -> dict:
                 fan_speed[index].append(FAN_4[index])
             else:
                 fan_speed[index].append(None)
-                
+
         json_data[node] = {
             "memory_usage": memory_usage,
             "cpu_usage": cpu_usage,
