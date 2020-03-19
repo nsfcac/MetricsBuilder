@@ -14,6 +14,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             CPU1Temp = [item[value] for item in node_data[node]["CPU1Temp"]]
             CPU2Temp = [item[value] for item in node_data[node]["CPU2Temp"]]
             InletTemp = [item[value] for item in node_data[node]["InletTemp"]]
+            JobList = [i[1:-1] for i in item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
 
             cpu_inl_temp = []
             for index, item in enumerate(CPU1Temp):
@@ -62,7 +63,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                 "power_usage": power_usage,
                 "fan_speed": fan_speed,
                 "cpu_inl_temp": cpu_inl_temp,
-                "job_id": node_data[node]["JobList"]
+                "job_id": JobList
             }
     except Exception as err:
         print(err)
