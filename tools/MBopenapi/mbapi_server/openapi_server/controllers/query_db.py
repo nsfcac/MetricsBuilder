@@ -41,7 +41,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             "node_data": node_data,
             "job_data": job_data
         })
-        print(json.dumps(json_data, indent=4))
+        # print(json.dumps(json_data, indent=4))
     except Exception as err:
         print(err)
     return json_data

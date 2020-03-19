@@ -1,4 +1,5 @@
 import time
+import json
 
 def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
     """
@@ -16,6 +17,8 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             InletTemp = [item[value] for item in node_data[node]["InletTemp"]]
             JobList = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
             # JobList = [ i[1:-1] for i in JobListStr]
+            print(json.dumps(JobList, indent=4))
+
             cpu_inl_temp = []
             for index, item in enumerate(CPU1Temp):
                 cpu_inl_temp.append([])
