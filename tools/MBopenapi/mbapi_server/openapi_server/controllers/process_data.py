@@ -15,14 +15,14 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             CPU1Temp = [item[value] for item in node_data[node]["CPU1Temp"]]
             CPU2Temp = [item[value] for item in node_data[node]["CPU2Temp"]]
             InletTemp = [item[value] for item in node_data[node]["InletTemp"]]
-            
+
             JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
             JobList = []
             for jobs in JobListStr:
                  joblist = [job[1:-1] for job in jobs]
                  JobList.append(joblist)
             # JobList = [ i[1:-1] for i in JobListStr]
-            print(json.dumps(JobList, indent=4))
+            # print(json.dumps(JobList, indent=4))
 
             cpu_inl_temp = []
             for index, item in enumerate(CPU1Temp):
