@@ -31,16 +31,17 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             for item in job_list:
                 all_job_list.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
         
+        # Get jobs metrics
         job_set = list(set(all_job_list))
         
         for job in job_set:
             job_data[job] = query_job_data(influx, job)
-        print(json.dumps(job_data, indent=4))
-        # Get jobs metrics
+        
         json_data.update({
             "node_data": node_data,
             "job_data": job_data
         })
+        print(json.dumps(json_data, indent=4))
     except Exception as err:
         print(err)
     return json_data
