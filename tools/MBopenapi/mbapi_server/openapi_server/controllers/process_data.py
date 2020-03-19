@@ -7,6 +7,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
     json_data = {}
     # try:
     for node in node_list:
+        print(node_data[node]["MemUsage"])
         memory_usage = [item[value] for item in node_data[node]["MemUsage"]]
         cpu_usage = [item[value] for item in node_data[node]["CPUUsage"]]
         power_usage = [item[value] for item in node_data[node]["NodePower"]]
