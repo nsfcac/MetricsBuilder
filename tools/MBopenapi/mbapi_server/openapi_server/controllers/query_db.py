@@ -27,6 +27,8 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
                 node_data[node][label] = reading
 
             job_list = query_job_list(influx, node, start, end)
+            print(job_list)
+            
             node_data[node]["JobList"] = job_list
 
             for jobs in job_list:
