@@ -30,14 +30,14 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             print(job_list)
             
             # job_list = [job[1:-1].split(", ") for job in job_list_str]
-            node_data[node]["JobList"] = job_list
+        #     node_data[node]["JobList"] = job_list
 
-            for jobs in job_list:
-                all_job_list.extend(jobs)
+        #     for jobs in job_list:
+        #         all_job_list.extend(jobs)
 
-        all_job = list(set(all_job_list))
-        for job in all_job:
-            job_data[job] = query_job_data(influx, job)
+        # all_job = list(set(all_job_list))
+        # for job in all_job:
+        #     job_data[job] = query_job_data(influx, job)
 
         # Get jobs metrics
         json_data.update({
@@ -68,6 +68,7 @@ def query_job_list(influx: object, node: str, start: str, end: str) -> list:
     try:
         query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end + "'"
+        print(query_sql)
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
