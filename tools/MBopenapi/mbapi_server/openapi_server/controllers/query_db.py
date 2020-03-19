@@ -25,9 +25,15 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             for label in power_labels:
                 reading = query_reading(influx, node, "Power", label, start, end, interval, value)
                 node_data[node][label] = reading
-
             job_list = query_job_list(influx, node, start, end, interval)
-            print(json.dumps(job_list, indent=4))
+
+            node_data[node]["JobList"] = job_list
+            
+            all_jobs = []
+            for item in job_list:
+                all_jobs.extend(item["distinct"][1:-1].split(", "))
+            job_set = list(set(all_jobs))
+            print(job_set)
             
             # job_list = [job[1:-1].split(", ") for job in job_list_str]
         #     node_data[node]["JobList"] = job_list
