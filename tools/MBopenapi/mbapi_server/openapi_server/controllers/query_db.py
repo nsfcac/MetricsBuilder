@@ -35,10 +35,12 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
         
         for job in job_set:
             job_data[job] = {}
+            data = query_job_data(influx, job)
+            print(json.dumps(data, indent=4))
             # job_data.update({
             #     job: query_job_data(influx, job)
             # })
-        print(json.dumps(job_data, indent=4))
+        # print(json.dumps(job_data, indent=4))
         # Get jobs metrics
         json_data.update({
             "node_data": node_data,
