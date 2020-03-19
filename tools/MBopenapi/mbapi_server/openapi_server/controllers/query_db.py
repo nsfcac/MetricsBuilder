@@ -28,6 +28,8 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
 
             node_data[node]["JobList"] = job_list
             
+            print(json.dumps(job_list, indent=4))
+            
             for item in job_list:
                 all_job_list.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
         

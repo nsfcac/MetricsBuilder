@@ -27,7 +27,7 @@ influx = QueryInfluxdb(config["influxdb"])
 st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
 et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 
-print(f"Start time: {st}; End time: {et}")
+# print(f"Start time: {st}; End time: {et}")
 
 # Check Sanity
 
