@@ -29,6 +29,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             job_list = query_job_list(influx, node, start, end)
             print(job_list)
             
+            # job_list = [job[1:-1].split(", ") for job in job_list_str]
             node_data[node]["JobList"] = job_list
 
             for jobs in job_list:
@@ -67,8 +68,7 @@ def query_job_list(influx: object, node: str, start: str, end: str) -> list:
     try:
         query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end + "'"
-        job_list_str = influx.get(query_sql)
-        job_list = [job[1:-1].split(", ") for job in job_list_str]
+        job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
     return job_list
