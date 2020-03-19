@@ -33,18 +33,10 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
             for item in job_list:
                 all_jobs.extend([i[1:-1] for i in item["distinct"][1:-1].split(", ")])
             job_set = list(set(all_jobs))
-            print(job_set)
-            
-            # job_list = [job[1:-1].split(", ") for job in job_list_str]
-        #     node_data[node]["JobList"] = job_list
 
-        #     for jobs in job_list:
-        #         all_job_list.extend(jobs)
-
-        # all_job = list(set(all_job_list))
-        # for job in all_job:
-        #     job_data[job] = query_job_data(influx, job)
-
+        for job in job_set:
+            job_data[job] = query_job_data(influx, job)
+        print(json.dumps(job_data, indent=4))
         # Get jobs metrics
         json_data.update({
             "node_data": node_data,
@@ -75,7 +67,6 @@ def query_job_list(influx: object, node: str,
         query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(previous)"
-        print(query_sql)
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
