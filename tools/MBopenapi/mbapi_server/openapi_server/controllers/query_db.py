@@ -26,7 +26,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
                 reading = query_reading(influx, node, "Power", label, start, end, interval, value)
                 node_data[node][label] = reading
 
-            job_list = query_job_list(influx, node, start, end)
+            job_list = query_job_list(influx, node, start, end, interval)
             print(job_list)
             
             # job_list = [job[1:-1].split(", ") for job in job_list_str]
@@ -63,11 +63,13 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
         print(err)
     return reading
 
-def query_job_list(influx: object, node: str, start: str, end: str) -> list:
+def query_job_list(influx: object, node: str, 
+                   start: str, end: str, interval: str) -> list:
     job_list = []
     try:
-        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
-                    + "' AND time >= '" + start + "' AND time < '" + end + "'"
+        query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
+                    + "' AND time >= '" + start + "' AND time < '" + end \
+                    + "' GROUP BY time(" + interval + ") fill(previous)"
         print(query_sql)
         job_list = influx.get(query_sql)
     except Exception as err:
