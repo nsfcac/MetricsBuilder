@@ -62,6 +62,7 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
             print(len(time_list))
 
             time_list_2 = [item["time"] for item in node_data[node]["MemUsage"]]
+            print(time_list_2)
             print(len(time_list_2))
 
             JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
