@@ -12,7 +12,7 @@ from process_data import  process_node_data
 
 
 start = 1564660800
-end = 1564660800 + 24 * 60 * 60 * 3
+end = 1564660800 + 24 * 60 * 60 * 2
 interval = "2h"
 value = "max"
 
@@ -37,8 +37,8 @@ query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 print(f"Query time   : {query_elapsed}")
 # print(json.dumps(all_data["job_data"], indent=4))
 
-process_start = time.time()
-processed_data = process_node_data(node_list, all_data["node_data"], value)
-process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
-print(f"Porcess time : {process_elapsed}")
+# process_start = time.time()
+# processed_data = process_node_data(node_list, all_data["node_data"], value)
+# process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
+# print(f"Porcess time : {process_elapsed}")
 # print(json.dumps(processed_data, indent=4))
