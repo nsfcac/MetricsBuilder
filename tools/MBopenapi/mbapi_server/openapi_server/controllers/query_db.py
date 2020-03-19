@@ -61,7 +61,7 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
 def query_job_list(influx: object, node: str, start: str, end: str) -> list:
     job_list = []
     try:
-        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node 
+        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end + "'"
         job_list_str = influx.get(query_sql)
         job_list = [job[1:-1].split(", ") for job in job_list_str]
