@@ -15,8 +15,9 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
 
     # Get nodes metrics
     for node in node_list:
-        print(type(node))
-        node_data[node] = {}
+        node_data.update({
+            node: {}
+        })
         for label in thermal_labels:
             reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
             json_data[node][label] = reading
