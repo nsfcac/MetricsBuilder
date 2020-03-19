@@ -56,20 +56,23 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                     fan_speed[index].append(FAN_4[index])
                 else:
                     fan_speed[index].append(None)
-            
-            time_list = list(set([item["time"] for item in node_data[node]["JobList"]]))
-            print(time_list)
-            print(len(time_list))
 
-            time_list_2 = [item["time"] for item in node_data[node]["MemUsage"]]
-            print(time_list_2)
-            print(len(time_list_2))
+            time_list = [item["time"] for item in node_data[node]["MemUsage"]]
+           
+            JobListStr = []
+            for t in time_list:
+                jobs = []
+                for i in node_data[node]["JobList"]:
+                    if i["time"] == t:
+                        jobs.extend(i["distinct"][1:-1].split(", "))
+                JobListStr.append(list(set(jobs)))
 
-            JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
+            # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
             JobList = []
             for jobs in JobListStr:
                  joblist = [job[1:-1] for job in jobs]
                  JobList.append(joblist)
+            print(json.dumps(JobList, indent = 4))
 
             json_data[node] = {
                 "memory_usage": memory_usage,
@@ -80,12 +83,12 @@ def process_node_data(node_list: list, node_data: dict, value: str) -> dict:
                 "job_id": JobList
             }
 
-            # print(f"memory_usage length : {len(memory_usage)}")
-            # print(f"cpu_usage length    : {len(cpu_usage)}")
-            # print(f"power_usage length  : {len(power_usage)}")
-            # print(f"fan_speed length    : {len(fan_speed)}")
-            # print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
-            # print(f"job_id length       : {len(JobList)}")
+            print(f"memory_usage length : {len(memory_usage)}")
+            print(f"cpu_usage length    : {len(cpu_usage)}")
+            print(f"power_usage length  : {len(power_usage)}")
+            print(f"fan_speed length    : {len(fan_speed)}")
+            print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+            print(f"job_id length       : {len(JobList)}")
 
     except Exception as err:
         print(err)
