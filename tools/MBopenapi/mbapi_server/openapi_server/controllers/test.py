@@ -12,7 +12,7 @@ from query_db import query_data, query_node_data
 from process_data import process_node_data
 
 
-hours = 24 * 3
+hours = 24 * 0.5
 start = 1564660800
 end = 1564660800 + hours * 60 * 60
 interval = "5m"
@@ -37,6 +37,7 @@ out_queue = mp.Queue()
 
 query_start = time.time()
 
+print("Start Processes...")
 workers = [mp.Process(target=query_node_data, args=(node, influx, st , et, interval, value, out_queue)) for node in node_list]
 
 for worker in workers:
