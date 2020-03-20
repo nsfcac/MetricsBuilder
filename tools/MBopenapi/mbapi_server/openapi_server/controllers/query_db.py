@@ -73,8 +73,8 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         node_data["JobList"] = job_list
     except Exception as err:
         print(err)
-    print(node)
-    print(json.dumps(node_data, indent=4))
+    # print(node)
+    # print(json.dumps(node_data, indent=4))
     out.put(node_data)
 
 

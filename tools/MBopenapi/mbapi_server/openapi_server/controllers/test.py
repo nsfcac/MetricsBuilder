@@ -12,17 +12,17 @@ from query_db import query_data, query_node_data
 from process_data import process_node_data
 
 
-hours = 3
+hours = 24 * 3
 start = 1564660800
 end = 1564660800 + hours * 60 * 60
-interval = "1h"
+interval = "5m"
 value = "max"
 
 
 # Initialization 
 config = parse_conf()
-# node_list = parse_host()
-node_list = ["10.101.1.1", "10.101.1.2"]
+node_list = parse_host()
+# node_list = ["10.101.1.1", "10.101.1.2"]
 # print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
