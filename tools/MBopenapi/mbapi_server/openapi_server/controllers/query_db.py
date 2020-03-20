@@ -87,7 +87,7 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(null)"
         reading = influx.get(query_sql)
-        print(reading)
+        print(query_sql)
     except Exception as err:
         print(err)
     return reading
