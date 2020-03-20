@@ -22,7 +22,7 @@ value = "max"
 # Initialization 
 config = parse_conf()
 # node_list = parse_host()
-node_list = ["10.101.1.1", "10.101.1.2", "10.101.1.3"]
+node_list = ["10.101.1.1", "10.101.1.2"]
 # print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
