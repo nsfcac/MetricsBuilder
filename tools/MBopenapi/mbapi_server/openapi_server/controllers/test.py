@@ -3,15 +3,16 @@ import six
 import time
 import json
 import datetime
+import multiprocessing as mp
 
 from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
-from query_db import query_data
-from process_data import  process_node_data
+from query_db import query_data, query_node_data
+from process_data import process_node_data
 
 
-hours = 6
+hours = 24 * 3
 start = 1564660800
 end = 1564660800 + hours * 60 * 60
 interval = "5m"
@@ -31,11 +32,25 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 # print(f"Start time: {st}; End time: {et}")
 
 # Check Sanity
+out_queue = mp.Queue()
 
 query_start = time.time()
-all_data = query_data(node_list, influx, st, et, interval, value)
+
+workers = [mp.Process(target=query_node_data, args=(node, influx, start, end, interval, value, out_queue)) for node in node_list]
+
+for worker in workers:
+    worker.start()
+for worker in workers:
+    workers.join()
+
+all_data = {}
+for index, host in enumerate(node_list):
+    all_data[host] = out_queue.get()
+
+# all_data = query_data(node_list, influx, st, et, interval, value)
+
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-print(f"Time for Quering {hours} of data : {query_elapsed}")
+print(f"(Parallel) Time for Quering {hours} of data : {query_elapsed}")
 # print(json.dumps(all_data["job_data"], indent=4))
 
 # process_start = time.time()
