@@ -21,8 +21,8 @@ value = "max"
 
 # Initialization 
 config = parse_conf()
-node_list = parse_host()
-# node_list = ["10.101.1.1", "10.101.1.2"]
+# node_list = parse_host()
+node_list = ["10.101.1.1", "10.101.1.2"]
 # print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
@@ -37,7 +37,7 @@ out_queue = mp.Queue()
 
 query_start = time.time()
 
-workers = [mp.Process(target=query_node_data, args=(node, influx, st , et, interval, value, out_queue)) for node in node_list[0:10]]
+workers = [mp.Process(target=query_node_data, args=(node, influx, st , et, interval, value, out_queue)) for node in node_list]
 
 for worker in workers:
     worker.start()
