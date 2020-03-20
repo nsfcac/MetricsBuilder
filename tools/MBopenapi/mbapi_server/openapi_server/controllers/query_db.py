@@ -61,15 +61,12 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         print(node)
         # Get node metrics
         for label in thermal_labels:
-            print(label)
             reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
             node_data[label] = reading
         for label in uge_labels:
-            print(label)
             reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
             node_data[label] = reading
         for label in power_labels:
-            print(label)
             reading = query_reading(influx, node, "Power", label, start, end, interval, value)
             node_data[label] = reading
         job_list = query_job_list(influx, node, start, end, interval)
@@ -85,13 +82,13 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
                   start: str, end: str, interval: str, value: str) -> list:
     reading = []
     try:
-        print(measurement)
-        # query_sql = "SELECT " + value + "(Reading) FROM " + measurement \
-        #             + " WHERE Label='" + label + "' AND NodeId='" + node \
-        #             + "' AND time >= '" + start + "' AND time < '" + end \
-        #             + "' GROUP BY time(" + interval + ") fill(null)"
+        query_sql = "SELECT " + value + "(Reading) FROM " + measurement \
+                    + " WHERE Label='" + label + "' AND NodeId='" + node \
+                    + "' AND time >= '" + start + "' AND time < '" + end \
+                    + "' GROUP BY time(" + interval + ") fill(null)"
+        print(query_sql)
         # reading = influx.get(query_sql)
-        # print(query_sql)
+        
     except Exception as err:
         print(err)
     return reading
