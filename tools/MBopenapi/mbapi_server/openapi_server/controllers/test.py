@@ -48,7 +48,7 @@ all_data = {}
 for index, host in enumerate(node_list):
     all_data[host] = out_queue.get()
 
-print(json.dumps(all_data, indent=4))
+# print(json.dumps(all_data, indent=4))
 # all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
