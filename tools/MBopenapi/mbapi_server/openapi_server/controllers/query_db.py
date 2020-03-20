@@ -58,20 +58,17 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
-
+        print(node)
         # Get node metrics
         for label in thermal_labels:
             reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
             node_data[label] = reading
-            print(reading)
         for label in uge_labels:
             reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
             node_data[label] = reading
-            print(reading)
         for label in power_labels:
             reading = query_reading(influx, node, "Power", label, start, end, interval, value)
             node_data[label] = reading
-            print(reading)
         job_list = query_job_list(influx, node, start, end, interval)
 
         node_data["JobList"] = job_list
