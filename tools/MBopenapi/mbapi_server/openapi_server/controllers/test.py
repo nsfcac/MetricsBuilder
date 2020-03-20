@@ -37,7 +37,7 @@ out_queue = mp.Queue()
 
 query_start = time.time()
 
-workers = [mp.Process(target=query_node_data, args=(node, influx, start, end, interval, value, out_queue)) for node in node_list]
+workers = [mp.Process(target=query_node_data, args=(node, influx, st , dt, interval, value, out_queue)) for node in node_list]
 
 for worker in workers:
     worker.start()
@@ -48,6 +48,7 @@ all_data = {}
 for index, host in enumerate(node_list):
     all_data[host] = out_queue.get()
 
+print(json.dumps(all_data, indent=4))
 # all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))

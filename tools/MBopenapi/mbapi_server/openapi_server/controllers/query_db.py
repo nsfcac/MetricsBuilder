@@ -55,6 +55,7 @@ def query_node_data(node:str, influx: object, start: str, end: str,
                     interval: str, value: str, out: object) -> dict:
     node_data = {}
     try:
+        print(node)
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
@@ -75,6 +76,7 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         # print(json.dumps(json_data, indent=4))
     except Exception as err:
         print(err)
+    print(node_data)
     out.put(node_data)
 
 
@@ -86,8 +88,8 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
                     + " WHERE Label='" + label + "' AND NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(null)"
-        print(query_sql)
-        # reading = influx.get(query_sql)
+        # print(query_sql)
+        reading = influx.get(query_sql)
         
     except Exception as err:
         print(err)
