@@ -37,7 +37,7 @@ out_queue = mp.Queue()
 
 query_start = time.time()
 
-workers = [mp.Process(target=query_node_data, args=(node, influx, st , dt, interval, value, out_queue)) for node in node_list]
+workers = [mp.Process(target=query_node_data, args=(node, influx, st , et, interval, value, out_queue)) for node in node_list]
 
 for worker in workers:
     worker.start()
