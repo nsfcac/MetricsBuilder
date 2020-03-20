@@ -12,10 +12,10 @@ from query_db import query_data, query_node_data
 from process_data import process_node_data
 
 
-hours = 24 * 0.5
+hours = 4
 start = 1564660800
 end = 1564660800 + hours * 60 * 60
-interval = "5m"
+interval = "2h"
 value = "max"
 
 
