@@ -55,11 +55,9 @@ def query_node_data(node:str, influx: object, start: str, end: str,
                     interval: str, value: str, out: object) -> dict:
     node_data = {}
     try:
-        print(node)
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
         uge_labels = ["MemUsage", "CPUUsage"]
         power_labels = ["NodePower"]
-        print(node)
         # Get node metrics
         for label in thermal_labels:
             reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
@@ -73,10 +71,10 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         job_list = query_job_list(influx, node, start, end, interval)
 
         node_data["JobList"] = job_list
-        # print(json.dumps(json_data, indent=4))
     except Exception as err:
         print(err)
-    print(node_data)
+    print(node)
+    print(json.dumps(node_data, indent=4))
     out.put(node_data)
 
 
