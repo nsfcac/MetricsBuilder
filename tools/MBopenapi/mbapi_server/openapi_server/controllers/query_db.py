@@ -60,19 +60,18 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         power_labels = ["NodePower"]
 
         # Get node metrics
-        node_data[node] = {}
         for label in thermal_labels:
             reading = query_reading(influx, node, "Thermal", label, start, end, interval, value)
-            node_data[node][label] = reading
+            node_data[label] = reading
         for label in uge_labels:
             reading = query_reading(influx, node, "UGE", label, start, end, interval, value) 
-            node_data[node][label] = reading
+            node_data[label] = reading
         for label in power_labels:
             reading = query_reading(influx, node, "Power", label, start, end, interval, value)
-            node_data[node][label] = reading
+            node_data[label] = reading
         job_list = query_job_list(influx, node, start, end, interval)
 
-        node_data[node]["JobList"] = job_list
+        node_data["JobList"] = job_list
         # print(json.dumps(json_data, indent=4))
     except Exception as err:
         print(err)

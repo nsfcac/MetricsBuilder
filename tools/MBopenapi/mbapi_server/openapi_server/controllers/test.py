@@ -42,7 +42,7 @@ workers = [mp.Process(target=query_node_data, args=(node, influx, start, end, in
 for worker in workers:
     worker.start()
 for worker in workers:
-    workers.join()
+    worker.join()
 
 all_data = {}
 for index, host in enumerate(node_list):
