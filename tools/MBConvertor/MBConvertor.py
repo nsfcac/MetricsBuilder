@@ -39,7 +39,7 @@ def main():
     error_count = 0
     # phase_time = get_phase_time(read_client)
 
-    first =  1552539600
+    first = 1552539600
     last = 1583301600
     step = 3600
     

@@ -12,7 +12,7 @@ from query_db import query_data, query_node_data
 from process_data import process_node_data
 
 
-hours = 6
+hours = 24 * 3
 start = 1564228800
 end = 1564228800 + hours * 60 * 60
 interval = "5m"
