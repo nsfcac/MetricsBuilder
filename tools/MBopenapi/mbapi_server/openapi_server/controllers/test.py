@@ -21,6 +21,7 @@ interval = "5m"
 value = "max"
 
 all_data = {}
+node_data = {}
 # Initialization 
 config = parse_conf()
 node_list = parse_host()
@@ -47,16 +48,23 @@ with multiprocessing.Pool(processes=cpu_count) as pool:
     results = pool.starmap(query_node_data, query_node_data_args)
 
 for index, node in enumerate(node_list):
-    all_data[node] = results[index]
+    node_data[node] = results[index]
 
 # all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 print(f"Time for Quering {hours} of data : {query_elapsed}")
-print(json.dumps(all_data, indent=4))
+# print(json.dumps(node_data, indent=4))
 
-# process_start = time.time()
-# processed_data = process_node_data(node_list, all_data["node_data"], value)
-# process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
-# print(f"Porcess time : {process_elapsed}")
-# print(json.dumps(processed_data, indent=4))
+process_node_data_args = zip(node_list, repeat(node_data), repeat(value))
+
+with multiprocessing.Pool(processes=cpu_count) as pool:
+    results = pool.starmap(process_node_data, query_node_data_args)
+
+for index, node in enumerate(node_list):
+    all_data["node_data"][node] = results[index]
+
+process_start = time.time()
+process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
+print(f"Porcess time : {process_elapsed}")
+print(json.dumps(all_data["node_data"], indent=4))
