@@ -48,18 +48,18 @@ with multiprocessing.Pool(processes=cpu_count) as pool:
 
 # print(json.dumps(results, indent=4))
 
-for index, node in enumerate(node_list):
-    node_data[node] = results[index]
+# for index, node in enumerate(node_list):
+#     node_data[node] = results[index]
 
 # all_jobs = [ job_id for result in results for job_list in result["job_id"] for job_id in job_list]
-all_jobs = []
-for result in results:
-    for job_list in result["job_id"]:
-        for job_id in job_list:
-            all_jobs.append(job_id)
+# all_jobs = []
+# for result in results:
+#     for job_list in result["job_id"]:
+#         for job_id in job_list:
+#             all_jobs.append(job_id)
 
-print(f"All job list length: {len(all_jobs)}")
-print(f"All job set length: {len(list(set(all_jobs)))}")
+# print(f"All job list length: {len(all_jobs)}")
+# print(f"All job set length: {len(list(set(all_jobs)))}")
 
 # query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 # print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")

@@ -92,12 +92,12 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             "job_id": JobList
         }
 
-        # print(f"memory_usage length : {len(memory_usage)}")
-        # print(f"cpu_usage length    : {len(cpu_usage)}")
-        # print(f"power_usage length  : {len(power_usage)}")
-        # print(f"fan_speed length    : {len(fan_speed)}")
-        # print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
-        # print(f"job_id length       : {len(JobList)}")
+        print(f"memory_usage length : {len(memory_usage)}")
+        print(f"cpu_usage length    : {len(cpu_usage)}")
+        print(f"power_usage length  : {len(power_usage)}")
+        print(f"fan_speed length    : {len(fan_speed)}")
+        print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+        print(f"job_id length       : {len(JobList)}")
 
     except Exception as err:
         print(err)
