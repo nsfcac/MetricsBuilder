@@ -8,13 +8,13 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
     """
     json_data = {}
     try:
-        memory_usage = [item[value] for item in node_data[node]["MemUsage"]]
-        cpu_usage = [item[value] for item in node_data[node]["CPUUsage"]]
-        power_usage = [item[value] for item in node_data[node]["NodePower"]]
+        memory_usage = [item[value] for item in node_data["MemUsage"]]
+        cpu_usage = [item[value] for item in node_data["CPUUsage"]]
+        power_usage = [item[value] for item in node_data["NodePower"]]
         
-        CPU1Temp = [item[value] for item in node_data[node]["CPU1Temp"]]
-        CPU2Temp = [item[value] for item in node_data[node]["CPU2Temp"]]
-        InletTemp = [item[value] for item in node_data[node]["InletTemp"]]
+        CPU1Temp = [item[value] for item in node_data["CPU1Temp"]]
+        CPU2Temp = [item[value] for item in node_data["CPU2Temp"]]
+        InletTemp = [item[value] for item in node_data["InletTemp"]]
 
         cpu_inl_temp = []
         for index, item in enumerate(CPU1Temp):
@@ -32,10 +32,10 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             else:
                 cpu_inl_temp[index].append(None)
 
-        FAN_1 = [item[value] for item in node_data[node]["FAN_1"]]
-        FAN_2 = [item[value] for item in node_data[node]["FAN_2"]]
-        FAN_3 = [item[value] for item in node_data[node]["FAN_3"]]
-        FAN_4 = [item[value] for item in node_data[node]["FAN_4"]]
+        FAN_1 = [item[value] for item in node_data["FAN_1"]]
+        FAN_2 = [item[value] for item in node_data["FAN_2"]]
+        FAN_3 = [item[value] for item in node_data["FAN_3"]]
+        FAN_4 = [item[value] for item in node_data["FAN_4"]]
 
         fan_speed = []
         for index, item in enumerate(FAN_1):
@@ -58,9 +58,9 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 fan_speed[index].append(None)
 
         # Deduplicate the time stamp
-        all_time_list = [item["time"] for item in node_data[node]["JobList"]]
+        all_time_list = [item["time"] for item in node_data["JobList"]]
 
-        if len(all_time_list) != len(node_data[node]["CPU1Temp"]):
+        if len(all_time_list) != len(node_data["CPU1Temp"]):
             time_list = []
             for timestamp in all_time_list:
                 if timestamp not in time_list:
@@ -71,19 +71,19 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         JobListStr = []
         for t in time_list:
             jobs = []
-            for i in node_data[node]["JobList"]:
+            for i in node_data["JobList"]:
                 if i["time"] == t:
                     jobs.extend(i["distinct"][1:-1].split(", "))
             JobListStr.append(list(set(jobs)))
 
-        # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data[node]["JobList"]]
+        # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
         JobList = []
         for jobs in JobListStr:
                 joblist = [job[1:-1] for job in jobs]
                 JobList.append(joblist)
         # print(json.dumps(JobList, indent = 4))
 
-        json_data[node] = {
+        json_data = {
             "memory_usage": memory_usage,
             "cpu_usage": cpu_usage,
             "power_usage": power_usage,

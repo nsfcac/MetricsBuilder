@@ -10,8 +10,7 @@ from itertools import repeat
 from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
-from query_db import query_data, query_node_data
-from process_data import process_node_data
+from query_db import query_process_data
 
 
 hours = 24 * 3
@@ -40,12 +39,12 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
-query_node_data_args = zip(node_list, repeat(influx), 
+query_process_data_args = zip(node_list, repeat(influx), 
                            repeat(st), repeat(et), 
                            repeat(interval), repeat(value))
 
 with multiprocessing.Pool(processes=cpu_count) as pool:
-    results = pool.starmap(query_node_data, query_node_data_args)
+    results = pool.starmap(query_process_data, query_process_data_args)
 
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
@@ -53,18 +52,6 @@ for index, node in enumerate(node_list):
 # all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-print(f"Time for Quering {hours} of data : {query_elapsed}")
-# print(json.dumps(node_data, indent=4))
+print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
+print(json.dumps(node_data, indent=4))
 
-process_node_data_args = zip(node_list, repeat(node_data), repeat(value))
-
-with multiprocessing.Pool(processes=cpu_count) as pool:
-    results = pool.starmap(process_node_data, process_node_data_args)
-
-for index, node in enumerate(node_list):
-    all_data["node_data"][node] = results[index]
-
-process_start = time.time()
-process_elapsed = float("{0:.2f}".format(time.time() - process_start)) 
-print(f"Porcess time : {process_elapsed}")
-print(json.dumps(all_data["node_data"], indent=4))
