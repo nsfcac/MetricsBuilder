@@ -59,7 +59,7 @@ print(f"Time for Quering {hours} of data : {query_elapsed}")
 process_node_data_args = zip(node_list, repeat(node_data), repeat(value))
 
 with multiprocessing.Pool(processes=cpu_count) as pool:
-    results = pool.starmap(process_node_data, query_node_data_args)
+    results = pool.starmap(process_node_data, process_node_data_args)
 
 for index, node in enumerate(node_list):
     all_data["node_data"][node] = results[index]
