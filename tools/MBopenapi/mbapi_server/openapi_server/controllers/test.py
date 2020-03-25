@@ -3,7 +3,9 @@ import six
 import time
 import json
 import datetime
-import multiprocessing as mp
+
+import multiprocessing
+from itertools import repeat
 
 from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
@@ -18,7 +20,7 @@ end = 1564228800 + hours * 60 * 60
 interval = "5m"
 value = "max"
 
-
+all_data = []
 # Initialization 
 config = parse_conf()
 node_list = parse_host()
@@ -34,26 +36,24 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 # out_queue = mp.Queue()
 
+cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
-# workers = [mp.Process(target=query_node_data, args=(node, influx, st , et, interval, value, out_queue)) for node in node_list]
+query_node_data_args = zip(node_list, repeat(influx), 
+                           repeat(st), repeat(et), 
+                           repeat(interval), repeat(value))
 
-# for worker in workers:
-#     worker.start()
-# for worker in workers:
-#     worker.join()
+with multiprocessing.Pool(processes=cpu_count) as pool:
+    results = pool.starmap(query_node_data, query_node_data_args)
 
-# all_data = {}
-# for index, host in enumerate(node_list):
-#     all_data[host] = out_queue.get()
+for index, node in enumerate(node_list):
+    all_data[node] = results[index]
 
-# print(json.dumps(all_data, indent=4))
-
-all_data = query_data(node_list, influx, st, et, interval, value)
+# all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 print(f"Time for Quering {hours} of data : {query_elapsed}")
-# print(json.dumps(all_data["job_data"], indent=4))
+print(json.dumps(all_data, indent=4))
 
 # process_start = time.time()
 # processed_data = process_node_data(node_list, all_data["node_data"], value)

@@ -52,7 +52,7 @@ def query_data(node_list: list, influx: object, start: str, end: str, interval: 
 
 
 def query_node_data(node:str, influx: object, start: str, end: str, 
-                    interval: str, value: str, out: object) -> dict:
+                    interval: str, value: str) -> dict:
     node_data = {}
     try:
         thermal_labels = ["CPU1Temp", "CPU2Temp", "InletTemp", "FAN_1", "FAN_2", "FAN_3", "FAN_4"]
@@ -75,7 +75,8 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         print(err)
     # print(node)
     # print(json.dumps(node_data, indent=4))
-    out.put(node_data)
+    # out.put(node_data)
+    return node_data
 
 
 def query_reading(influx: object, node: str, measurement: str, label: str, 
