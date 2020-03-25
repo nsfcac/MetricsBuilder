@@ -50,10 +50,7 @@ for index, node in enumerate(node_list):
     node_data[node] = results[index]
 
 # all_jobs = [ job_id for job_id in result["job_id"] for result in results ]
-all_jobs = [ job_id for result["job_id"] in results for job_id in result["job_id"] ]
-    # for job_id in results[index]["job_id"]:
-    #     if job_id not in all_jobs:
-    #         all_jobs.append(job_id)
+all_jobs = [ job_id for result in results for job_id in result["job_id"] ]
 
 print(f"All job list length: {len(all_jobs)}")
 print(f"All job set length: {len(list(set(all_jobs)))}")
