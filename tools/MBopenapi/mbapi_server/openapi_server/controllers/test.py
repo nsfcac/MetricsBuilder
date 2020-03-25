@@ -20,7 +20,7 @@ end = 1564228800 + hours * 60 * 60
 interval = "5m"
 value = "max"
 
-all_data = []
+all_data = {}
 # Initialization 
 config = parse_conf()
 node_list = parse_host()
