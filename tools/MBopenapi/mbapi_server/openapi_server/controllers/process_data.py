@@ -58,15 +58,15 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 fan_speed[index].append(None)
 
         # Deduplicate the time stamp
-        all_time_list = [item["time"] for item in node_data["JobList"]]
+        time_list = [item["time"] for item in node_data["JobList"]]
 
-        if len(all_time_list) != len(node_data["CPU1Temp"]):
-            time_list = []
-            for timestamp in all_time_list:
-                if timestamp not in time_list:
-                    time_list.append(timestamp)
-        else:
-            time_list = all_time_list
+        # if len(all_time_list) != len(node_data["CPU1Temp"]):
+        #     time_list = []
+        #     for timestamp in all_time_list:
+        #         if timestamp not in time_list:
+        #             time_list.append(timestamp)
+        # else:
+        #     time_list = all_time_list
 
         JobListStr = []
         for t in time_list:
