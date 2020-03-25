@@ -49,9 +49,16 @@ with multiprocessing.Pool(processes=cpu_count) as pool:
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
 
+all_jobs = [ job_id for job_id in result["job_id"] for result in results ]
+    # for job_id in results[index]["job_id"]:
+    #     if job_id not in all_jobs:
+    #         all_jobs.append(job_id)
+
+print(f"All job list length: {len(all_jobs)}")
+print(f"All job set length: {len(list(set(all_jobs)))}")
 # all_data = query_data(node_list, influx, st, et, interval, value)
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
-print(json.dumps(node_data, indent=4))
+# print(json.dumps(node_data, indent=4))
 
