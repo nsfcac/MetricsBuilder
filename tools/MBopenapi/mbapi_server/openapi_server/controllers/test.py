@@ -10,7 +10,7 @@ from itertools import repeat
 from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
-from query_db import query_process_data
+from query_db import query_process_data, query_job_data
 
 
 hours = 1
@@ -21,6 +21,7 @@ value = "max"
 
 all_data = {}
 node_data = {}
+job_data = {}
 # Initialization 
 config = parse_conf()
 node_list = parse_host()
@@ -37,6 +38,7 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
+# Get all nodes detail
 query_process_data_args = zip(node_list, repeat(influx), 
                            repeat(st), repeat(et), 
                            repeat(interval), repeat(value))
@@ -44,25 +46,29 @@ query_process_data_args = zip(node_list, repeat(influx),
 with multiprocessing.Pool(processes=cpu_count) as pool:
     results = pool.starmap(query_process_data, query_process_data_args)
 
-all_job_list = []
+all_jobs_list = []
 
+# Attach data to node ip addr
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
     try:
-        all_job_list.extend(results[index]["job_list"])
-    except:
-        print("Something Error")
+        all_jobs_list.extend(results[index]["job_list"])
+    except Exception as err:
+        print(err)
 
-# print(json.dumps(node_data, indent=4))
+# Get all jobs ID
+all_jobs_id = list(set(all_jobs_list))
 
-all_jobs = list(set(all_job_list))
+query_job_data_args = zip(repeat(influx), all_jobs_id)
 
-print(json.dumps(all_jobs, indent=4))
+# Get all jobs detail
+with multiprocessing.Pool(processes=cpu_count) as pool:
+    results = pool.starmap(query_job_data, query_job_data_args)
 
-# print(f"All job list length: {len(all_jobs)}")
-# print(f"All job set length: {len(list(set(all_jobs)))}")
+for index, job in enumerate(all_jobs_id):
+    job_data[job] = results[index]
 
-# query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-# print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
+query_elapsed = float("{0:.2f}".format(time.time() - query_start))
+print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
 
-
+print(json.dumps(job_data, indent=4))
