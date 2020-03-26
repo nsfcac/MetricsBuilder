@@ -58,7 +58,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 fan_speed[index].append(None)
 
         # Deduplicate the time stamp
-        time_list = [item["time"] for item in node_data["JobList"]]
+        # time_list = [item["time"] for item in node_data["MemUsage"]]
 
         # if len(all_time_list) != len(node_data["CPU1Temp"]):
         #     time_list = []
@@ -68,21 +68,23 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         # else:
         #     time_list = all_time_list
 
-        JobListStr = []
-        for t in time_list:
-            jobs = []
-            for i in node_data["JobList"]:
-                if i["time"] == t:
-                    jobs.extend(i["distinct"][1:-1].split(", "))
-            JobListStr.append(list(set(jobs)))
+        # JobListStr = []
+        # for t in time_list:
+        #     jobs = []
+        #     for i in node_data["JobList"]:
+        #         if i["time"] == t:
+        #             jobs.extend(i["distinct"][1:-1].split(", "))
+        #     JobListStr.append(list(set(jobs)))
+
 
         # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
-        JobList = []
-        for jobs in JobListStr:
-                joblist = [job[1:-1] for job in jobs]
-                JobList.append(joblist)
+        # JobList = []
+        # for jobs in JobListStr:
+        #         joblist = [job[1:-1] for job in jobs]
+        #         JobList.append(joblist)
         # print(json.dumps(JobList, indent = 4))
-
+        
+        JobList = node_data["JobList"]
         json_data = {
             "memory_usage": memory_usage,
             "cpu_usage": cpu_usage,
