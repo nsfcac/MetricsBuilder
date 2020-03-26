@@ -37,25 +37,25 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         FAN_3 = [item[value] for item in node_data["FAN_3"]]
         FAN_4 = [item[value] for item in node_data["FAN_4"]]
 
-        fan_speed = []
-        for index, item in enumerate(FAN_1):
-            fan_speed.append([])
-            if item:
-                fan_speed[index].append(item)
-            else:
-                fan_speed[index].append(None)
-            if FAN_2[index]:
-                fan_speed[index].append(FAN_2[index])
-            else:
-                fan_speed[index].append(None)
-            if FAN_3[index]:
-                fan_speed[index].append(FAN_3[index])
-            else:
-                fan_speed[index].append(None)
-            if FAN_4[index]:
-                fan_speed[index].append(FAN_4[index])
-            else:
-                fan_speed[index].append(None)
+        # fan_speed = []
+        # for index, item in enumerate(FAN_1):
+        #     fan_speed.append([])
+        #     if item:
+        #         fan_speed[index].append(item)
+        #     else:
+        #         fan_speed[index].append(None)
+        #     if FAN_2[index]:
+        #         fan_speed[index].append(FAN_2[index])
+        #     else:
+        #         fan_speed[index].append(None)
+        #     if FAN_3[index]:
+        #         fan_speed[index].append(FAN_3[index])
+        #     else:
+        #         fan_speed[index].append(None)
+        #     if FAN_4[index]:
+        #         fan_speed[index].append(FAN_4[index])
+        #     else:
+        #         fan_speed[index].append(None)
 
         # Deduplicate the time stamp
         # time_list = [item["time"] for item in node_data["MemUsage"]]
