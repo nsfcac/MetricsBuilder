@@ -82,6 +82,7 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         job_list = query_job_list(influx, node, start, end, interval)
 
         node_data["JobList"] = job_list
+        print(f"JobList length : {len(job_list)}")
     except Exception as err:
         print(err)
     return node_data
