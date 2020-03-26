@@ -50,12 +50,14 @@ all_job_list = []
 
 for index, node in enumerate(node_list):
     node_data[node] = {}
-    node_data[node]["memory_usage"] = results[index]["memory_usage"]
-    node_data[node]["cpu_usage"] = results[index]["cpu_usage"]
-    node_data[node]["power_usage"] = results[index]["power_usage"]
-    node_data[node]["fan_speed"] = results[index]["fan_speed"]
-    node_data[node]["cpu_inl_temp"] = results[index]["cpu_inl_temp"]
-    node_data[node]["job_id"] = results[index]["job_id"]
+    node_data[node].update({
+        "memory_usage": results[index]["memory_usage"],
+        "cpu_usage": results[index]["cpu_usage"],
+        "power_usage": results[index]["power_usage"],
+        "fan_speed": results[index]["fan_speed"],
+        "cpu_inl_temp": results[index]["cpu_inl_temp"],
+        "job_id": results[index]["job_id"]
+    })
 
     all_job_list.extend(results[index]["job_list"])
 
