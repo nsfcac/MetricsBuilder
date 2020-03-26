@@ -58,19 +58,14 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 fan_speed[index].append(None)
 
         job_list_dict = {}
-        all_jobs_list = []
+        job_list = []
 
         for item in node_data["JobList"]:
             if item["distinct"]:
                 job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
-                all_jobs_list.extend(job_list_dict[item["time"]])
+                job_list.extend(job_list_dict[item["time"]])
             else:
                 job_list_dict[item["time"]] = []
-        
-        all_jobs = list(set(all_jobs_list))
-
-        if node == "10.101.1.1":
-            print(json.dumps(all_jobs, indent=4))
 
         json_data = {
             "memory_usage": memory_usage,
@@ -79,7 +74,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             "fan_speed": fan_speed,
             "cpu_inl_temp": cpu_inl_temp,
             "job_id": job_list_dict,
-            "all_jobs": all_jobs
+            "job_list": job_list
         }
 
     except Exception as err:

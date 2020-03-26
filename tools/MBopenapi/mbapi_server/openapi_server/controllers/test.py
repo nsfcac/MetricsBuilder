@@ -13,7 +13,7 @@ from DBcm import QueryInfluxdb
 from query_db import query_process_data
 
 
-hours = 24 * 3
+hours = 1
 start = 1564100000
 end = 1564100000 + hours * 60 * 60
 interval = "5m"
@@ -46,10 +46,22 @@ with multiprocessing.Pool(processes=cpu_count) as pool:
 
 # print(json.dumps(results, indent=4))
 
-# for index, node in enumerate(node_list):
-#     node_data[node] = results[index]
+all_job_list = []
 
-# all_jobs = [ job_id for result in results for job_list in result["job_id"] for job_id in job_list]
+for index, node in enumerate(node_list):
+    node_data[node] = {}
+    node_data[node]["memory_usage"] = results[index]["memory_usage"]
+    node_data[node]["cpu_usage"] = results[index]["cpu_usage"]
+    node_data[node]["power_usage"] = results[index]["power_usage"]
+    node_data[node]["fan_speed"] = results[index]["fan_speed"]
+    node_data[node]["cpu_inl_temp"] = results[index]["cpu_inl_temp"]
+    node_data[node]["job_id"] = results[index]["job_id"]
+
+    all_job_list.extend(results[index]["job_list"])
+
+print(json.dumps(node_data, indent=4))
+
+# all_jobs = list(set(all_job_list))
 # all_jobs = []
 # for result in results:
 #     for job_list in result["job_id"]:
