@@ -58,7 +58,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 fan_speed[index].append(None)
 
         # Deduplicate the time stamp
-        time_list = [item["time"] for item in node_data["MemUsage"]]
+        # time_list = [item["time"] for item in node_data["MemUsage"]]
 
         # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
 
