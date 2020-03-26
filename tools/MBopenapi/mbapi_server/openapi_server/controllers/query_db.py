@@ -83,9 +83,9 @@ def query_node_data(node:str, influx: object, start: str, end: str,
 
         node_data["JobList"] = job_list
         # print(f"{len(job_list)}")
-        # if node == "10.101.1.1":
-        #     print(node)
-        #     print(json.dumps(job_list, indent=4))
+        if node == "10.101.1.1":
+            print(node)
+            print(json.dumps(job_list, indent=4))
     except Exception as err:
         print(err)
     return node_data
