@@ -62,7 +62,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
 
         JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
 
-        if node == "10.101.1.1":
+        if node == "10.101.6.14":
             print(json.dumps(JobListStr, indent = 4))
         # JobList = []
         # for jobs in JobListStr:
