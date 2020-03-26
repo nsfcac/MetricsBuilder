@@ -44,32 +44,17 @@ query_process_data_args = zip(node_list, repeat(influx),
 with multiprocessing.Pool(processes=cpu_count) as pool:
     results = pool.starmap(query_process_data, query_process_data_args)
 
-print(len(results))
-# print(json.dumps(results, indent=4))
-
 all_job_list = []
 
-# for index, node in enumerate(node_list):
-#     # node_data[node] = {}
-#     # node_data[node].update({
-#     #     "memory_usage": results[index]["memory_usage"],
-#     #     "cpu_usage": results[index]["cpu_usage"],
-#     #     "power_usage": results[index]["power_usage"],
-#     #     "fan_speed": results[index]["fan_speed"],
-#     #     "cpu_inl_temp": results[index]["cpu_inl_temp"],
-#     #     "job_id": results[index]["job_id"]
-#     # })
+for index, node in enumerate(node_list):
+    node_data[node] = results[index]
+    all_job_list.extend(results[index]["job_list"])
 
-#     all_job_list.extend(results[index]["job_list"])
-
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
 
 # all_jobs = list(set(all_job_list))
-# all_jobs = []
-# for result in results:
-#     for job_list in result["job_id"]:
-#         for job_id in job_list:
-#             all_jobs.append(job_id)
+
+# print(json.dumps(all_jobs, indent=4))
 
 # print(f"All job list length: {len(all_jobs)}")
 # print(f"All job set length: {len(list(set(all_jobs)))}")

@@ -79,4 +79,5 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
 
     except Exception as err:
         print(err)
+        print("process error")
     return json_data

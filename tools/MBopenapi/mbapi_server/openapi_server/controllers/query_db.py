@@ -12,6 +12,7 @@ def query_process_data(node:str, influx: object, start: str, end: str,
             json_data = process_node_data(node, node_data, value)
     except Exception as err:
         print(err)
+        print("query error")
     return json_data
 
 
@@ -38,6 +39,7 @@ def query_node_data(node:str, influx: object, start: str, end: str,
 
     except Exception as err:
         print(err)
+        print("query error")
     return node_data
 
 
@@ -53,6 +55,7 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
         
     except Exception as err:
         print(err)
+        print("query error")
     return reading
 
 def query_job_list(influx: object, node: str, 
@@ -65,6 +68,7 @@ def query_job_list(influx: object, node: str,
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
+        print("query error")
     return job_list
 
 def query_job_data(influx: object, jobid: str) -> dict:
@@ -76,4 +80,5 @@ def query_job_data(influx: object, jobid: str) -> dict:
             return job_data[0]
     except Exception as err:
         print(err)
+        print("query error")
     return job_data
