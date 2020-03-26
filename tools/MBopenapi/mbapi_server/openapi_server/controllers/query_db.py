@@ -108,12 +108,9 @@ def query_job_list(influx: object, node: str,
                    start: str, end: str, interval: str) -> list:
     job_list = []
     try:
-        # query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
-        #             + "' AND time >= '" + start + "' AND time < '" + end \
-        #             + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
-        query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
+        query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
-                    + "'"
+                    + "' GROUP BY *, time(" + interval + ") fill(previous) SLIMIT 1"
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
