@@ -34,8 +34,6 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 # print(f"Start time: {st}; End time: {et}")
 
-# out_queue = mp.Queue()
-
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
