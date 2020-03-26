@@ -64,7 +64,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
 
         JobListDict = {}
         for item in node_data["JobList"]:
-            JobListDict[item[time]] = [i[1:-1] for i in j["distinct"][1:-1].split(", ") for j in node_data["JobList"]]
+            JobListDict[item[time]] = [i["distinct"][1:-1].split(", ") for i in node_data["JobList"]]
 
         if node == "10.101.6.14":
             print(json.dumps(JobListDict, indent = 4))
