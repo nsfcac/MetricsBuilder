@@ -63,13 +63,14 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         for item in node_data["JobList"]:
             if item["distinct"]:
                 job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
-                all_jobs_list.append(job_list_dict[item["time"]])
+                all_jobs_list.extend(job_list_dict[item["time"]])
             else:
                 job_list_dict[item["time"]] = []
         
         all_jobs = list(set(all_jobs_list))
 
-        print(json.dumps(all_jobs, indent=4))
+        if node == "10.101.1.1":
+            print(json.dumps(all_jobs, indent=4))
 
         json_data = {
             "memory_usage": memory_usage,
