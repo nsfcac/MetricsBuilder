@@ -48,13 +48,13 @@ all_job_list = []
 
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
-    # all_job_list.extend(results[index]["job_list"])
+    all_job_list.extend(node_data[node]["job_list"])
 
-print(json.dumps(node_data, indent=4))
+# print(json.dumps(node_data, indent=4))
 
-# all_jobs = list(set(all_job_list))
+all_jobs = list(set(all_job_list))
 
-# print(json.dumps(all_jobs, indent=4))
+print(json.dumps(all_jobs, indent=4))
 
 # print(f"All job list length: {len(all_jobs)}")
 # print(f"All job set length: {len(list(set(all_jobs)))}")
