@@ -48,7 +48,10 @@ all_job_list = []
 
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
-    all_job_list.extend(node_data[node]["job_list"])
+    try:
+        all_job_list.extend(results[index]["job_list"])
+    except:
+        print("Something Error")
 
 # print(json.dumps(node_data, indent=4))
 

@@ -66,7 +66,9 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 job_list.extend(job_list_dict[item["time"]])
             else:
                 job_list_dict[item["time"]] = []
-
+                
+        job_list = list(set(job_list))
+        
         json_data = {
             "memory_usage": memory_usage,
             "cpu_usage": cpu_usage,
