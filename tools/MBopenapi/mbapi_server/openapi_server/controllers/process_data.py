@@ -59,26 +59,11 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
 
         # Deduplicate the time stamp
         time_list = [item["time"] for item in node_data["MemUsage"]]
+
+        JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
+
         if node == "10.101.1.1":
-            print(json.dumps(time_list, indent = 4))
-        # if len(all_time_list) != len(node_data["CPU1Temp"]):
-        #     time_list = []
-        #     for timestamp in all_time_list:
-        #         if timestamp not in time_list:
-        #             time_list.append(timestamp)
-        # else:
-        #     time_list = all_time_list
-
-        # JobListStr = []
-        # for t in time_list:
-        #     jobs = []
-        #     for i in node_data["JobList"]:
-        #         if i["time"] == t:
-        #             jobs.extend(i["distinct"][1:-1].split(", "))
-        #     JobListStr.append(list(set(jobs)))
-
-
-        # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
+            print(json.dumps(JobListStr, indent = 4))
         # JobList = []
         # for jobs in JobListStr:
         #         joblist = [job[1:-1] for job in jobs]
