@@ -112,7 +112,7 @@ def query_job_list(influx: object, node: str,
     try:
         query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
-                    + "' GROUP BY time(" + interval + "),* SLIMIT 1 fill(previous)"
+                    + "' GROUP BY time(" + interval + "), * fill(previous)"
         # query_sql = "SELECT count(DISTINCT(JobList)) FROM NodeJobs WHERE NodeId='" + node \
         #             + "' AND time >= '" + start + "' AND time < '" + end \
         #             + "' GROUP BY time(" + interval + ") fill(previous)"
