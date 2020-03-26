@@ -13,7 +13,7 @@ from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
 
 
-hours = 24 * 3
+hours = 24 * 2
 start = 1564100000
 end = 1564100000 + hours * 60 * 60
 interval = "5m"
