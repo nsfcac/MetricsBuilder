@@ -83,9 +83,9 @@ def query_node_data(node:str, influx: object, start: str, end: str,
 
         node_data["JobList"] = job_list
         # print(f"{len(job_list)}")
-        if node == "10.101.1.1":
-            print(node)
-            print(json.dumps(job_list, indent=4))
+        # if node == "10.101.1.1":
+        #     print(node)
+        #     print(json.dumps(job_list, indent=4))
     except Exception as err:
         print(err)
     return node_data
@@ -110,12 +110,12 @@ def query_job_list(influx: object, node: str,
                    start: str, end: str, interval: str) -> list:
     job_list = []
     try:
-        query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
+        # query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
+        #             + "' AND time >= '" + start + "' AND time < '" + end \
+        #             + "' GROUP BY time(" + interval + ") fill(previous)"
+        query_sql = "SELECT count(DISTINCT(JobList)) FROM NodeJobs WHERE NodeId='" + node \
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY time(" + interval + ") fill(previous)"
-        # query_sql = "SELECT JobList FROM NodeJobs WHERE NodeId='" + node \
-        #             + "' AND time >= '" + start + "' AND time < '" + end \
-        #             + "'"
         job_list = influx.get(query_sql)
     except Exception as err:
         print(err)
