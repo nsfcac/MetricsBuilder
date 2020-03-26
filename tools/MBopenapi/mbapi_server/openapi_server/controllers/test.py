@@ -13,7 +13,7 @@ from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
 
 
-hours = 1
+hours = 24 * 3
 start = 1564100000
 end = 1564100000 + hours * 60 * 60
 interval = "5m"
@@ -71,4 +71,4 @@ for index, job in enumerate(all_jobs_id):
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
 
-print(json.dumps(job_data, indent=4))
+# print(json.dumps(job_data, indent=4))
