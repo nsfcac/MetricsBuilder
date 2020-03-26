@@ -44,7 +44,8 @@ query_process_data_args = zip(node_list, repeat(influx),
 with multiprocessing.Pool(processes=cpu_count) as pool:
     results = pool.starmap(query_process_data, query_process_data_args)
 
-print(json.dumps(results, indent=4))
+print(len(results))
+# print(json.dumps(results, indent=4))
 
 all_job_list = []
 
