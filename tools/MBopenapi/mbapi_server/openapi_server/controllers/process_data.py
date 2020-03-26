@@ -60,10 +60,14 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         # Deduplicate the time stamp
         time_list = [item["time"] for item in node_data["MemUsage"]]
 
-        JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
+        # JobListStr = [item["distinct"][1:-1].split(", ") for item in node_data["JobList"]]
+
+        JobListDict = {}
+        for item in node_data["JobList"]:
+            JobListDict[item[time]] = [i[1:-1] for i in j["distinct"][1:-1].split(", ") for j in node_data["JobList"]]
 
         if node == "10.101.6.14":
-            print(json.dumps(JobListStr, indent = 4))
+            print(json.dumps(JobListDict, indent = 4))
         # JobList = []
         # for jobs in JobListStr:
         #         joblist = [job[1:-1] for job in jobs]
