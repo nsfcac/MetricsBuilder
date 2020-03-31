@@ -78,6 +78,6 @@ for index, job in enumerate(all_jobs_id):
     job_data[job] = results[index]
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-# print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
+print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
 
 # print(json.dumps(job_data, indent=4))
