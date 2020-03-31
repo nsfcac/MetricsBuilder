@@ -13,7 +13,7 @@ from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
 
 
-hours = 1
+hours = 24
 start = 1583020800
 end = 1583020800 + hours * 60 * 60
 interval = "5m"
@@ -56,7 +56,7 @@ for index, node in enumerate(node_list):
     except Exception as err:
         print(err)
 
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
 
 # Get all jobs ID
 all_jobs_id = list(set(all_jobs_list))

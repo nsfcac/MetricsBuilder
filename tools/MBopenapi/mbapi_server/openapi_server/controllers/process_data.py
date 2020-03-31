@@ -68,8 +68,6 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 else:
                     fan_speed[index].append(None)
 
-        
-
         if node_data["JobList"]:
             for item in node_data["JobList"]:
                 if item["distinct"]:
