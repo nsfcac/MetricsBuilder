@@ -7,7 +7,6 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
     Process node data retrieved from influxdb
     """
     json_data = {}
-    time_list = []
     memory_usage = []
     cpu_usage = []
     power_usage = []
@@ -80,18 +79,10 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                 else:
                     job_list_dict[item["time"]] = []
 
-        # print(node)
-        # print(job_list_dict)
-        
-        print(node)
         for t in time_list:
-            print(t)
             if job_list_dict[t]:
-                # print(t)
-                print(job_list_dict[t])
                 job_list.append(job_list_dict[t])
             else:
-                print("None")
                 job_list.append([])
                 
         job_set = list(set(job_list_temp))

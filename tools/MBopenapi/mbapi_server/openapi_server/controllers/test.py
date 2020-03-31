@@ -63,7 +63,7 @@ for index, node in enumerate(node_list):
     except Exception as err:
         print(err)
 
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
 
 # Get all jobs ID
 all_jobs_id = list(set(all_jobs_list))
