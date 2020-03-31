@@ -94,7 +94,7 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
             "power_usage": power_usage,
             "fan_speed": fan_speed,
             "cpu_inl_temp": cpu_inl_temp,
-            "job_list": job_list,
+            "job_list": job_list_dict,
             "job_set": job_set
         }
 
