@@ -97,6 +97,13 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
             "job_set": job_set
         }
 
+        print(f"memory_usage length : {len(memory_usage)}")
+        print(f"cpu_usage length    : {len(cpu_usage)}")
+        print(f"power_usage length  : {len(power_usage)}")
+        print(f"fan_speed length    : {len(fan_speed)}")
+        print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+        print(f"job_list length     : {len(job_list)}")
+
     except Exception as err:
         print(err)
         print("Process Data Error!")
