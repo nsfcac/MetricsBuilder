@@ -1,7 +1,8 @@
 import connexion
 import six
-import json
+import json, base64
 import time
+import zlib
 
 import multiprocessing
 from itertools import repeat
@@ -14,6 +15,8 @@ from openapi_server.controllers.parse_config import parse_conf, parse_host
 from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from openapi_server.controllers.DBcm import QueryInfluxdb
 from openapi_server.controllers.query_db import query_process_data, query_job_data
+
+ZIPJSON_KEY = 'base64(zip(o))'
 
 def get_unified_metric(start, end, interval, value):  # noqa: E501
     """get_unified_metric
@@ -64,8 +67,9 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         time_list = gen_timestamp(start, end, interval)
         epoch_time_list = gen_epoch_timestamp(start, end, interval)
 
-        unified_metrics.time_stamp = epoch_time_list
-
+        # unified_metrics.time_stamp = epoch_time_list
+        unified_metrics.time_stamp = json_zip(epoch_time_list)
+        
         # Get all nodes detail
         query_process_data_args = zip(node_list, repeat(influx), 
                                 repeat(st_str), repeat(et_str), 
@@ -89,7 +93,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
             except Exception as err:
                 print(err)
 
-        unified_metrics.nodes_info = node_data
+        # unified_metrics.nodes_info = node_data
+        unified_metrics.nodes_info = json_zip(node_data)
 
         # Get all jobs ID
         all_jobs_id = list(set(all_jobs_list))
@@ -112,7 +117,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
                 "job_array": job_array
             }
 
-        unified_metrics.jobs_info = job_data
+        # unified_metrics.jobs_info = job_data
+        unified_metrics.jobs_info = json_zip(job_data)
 
         total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
         # In seconds
@@ -122,3 +128,15 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
             print(f"{time_range}|{interval}|{value}|{total_elapsed}", file = requests_log)
 
     return unified_metrics
+
+def json_zip(j):
+
+    j = {
+        ZIPJSON_KEY: base64.b64encode(
+            zlib.compress(
+                json.dumps(j).encode('utf-8')
+            )
+        ).decode('ascii')
+    }
+
+    return j
