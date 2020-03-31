@@ -14,7 +14,7 @@ from query_db import query_process_data, query_job_data
 from gen_timestamp import gen_timestamp
 
 
-hours = 24
+hours = 1
 start = 1583020800
 end = 1583020800 + hours * 60 * 60
 interval = "5m"

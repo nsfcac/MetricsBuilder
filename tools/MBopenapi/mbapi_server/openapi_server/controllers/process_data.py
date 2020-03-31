@@ -75,21 +75,23 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
         if node_data["JobList"]:
             for item in node_data["JobList"]:
                 if item["distinct"]:
-                    time_str = str(item["time"])
-                    job_list_dict[time_str] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
-                    job_list_temp.extend(job_list_dict[time_str])
+                    job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
+                    job_list_temp.extend(job_list_dict[item["time"]])
                 else:
                     job_list_dict[item["time"]] = []
 
-        # print(node)
-        # print(job_list_dict)
-
+        print(node)
+        print(job_list_dict)
+        
+        print(node)
         for t in time_list:
+            print(t)
             if job_list_dict[t]:
-                print(t)
+                # print(t)
                 print(job_list_dict[t])
                 job_list.append(job_list_dict[t])
             else:
+                print("None")
                 job_list.append([])
                 
         job_set = list(set(job_list_temp))
