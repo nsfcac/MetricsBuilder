@@ -1,124 +1,110 @@
 import time
+import json
+import multiprocessing
 
-def process_node_data(node_list: list, node_data: dict, time_list: list, value: str) -> dict:
+def process_node_data(node: str, node_data: dict, value: str, time_list: list) -> dict:
     """
     Process node data retrieved from influxdb
     """
     json_data = {}
-    temp_fields = ["CPU1_temp", "CPU2_temp", "inlet_temp"]
-    usage_fields = ["cpuusage", "memoryusage", "powerusage_watts"]
-    speed_fields = ["fan1_speed", "fan2_speed", "fan3_speed", "fan4_speed"]
-    # "jobID"
-    time_step = len(time_list)
-    for node in node_list:
-        json_data[node] = {
-            "memory_usage": [],
-            "cpu_usage": [],
-            "power_usage": [],
-            "fan_speed": [],
-            "cpu_inl_temp": [],
-            "job_id": []
+    memory_usage = []
+    cpu_usage = []
+    power_usage = []
+    cpu_inl_temp = []
+    fan_speed = []
+    job_list_dict = {}
+    job_list_temp = []
+    job_list = []
+    job_set = []
+    try:
+        if node_data["MemUsage"]:
+            memory_usage = [item[value] for item in node_data["MemUsage"]]
+
+        if node_data["CPUUsage"]:
+            cpu_usage = [item[value] for item in node_data["CPUUsage"]]
+                
+        if node_data["NodePower"]:
+            power_usage = [item[value] for item in node_data["NodePower"]]
+        
+        if node_data["CPU1Temp"] and node_data["CPU2Temp"] and node_data["InletTemp"]:
+            CPU1Temp = [item[value] for item in node_data["CPU1Temp"]]
+            CPU2Temp = [item[value] for item in node_data["CPU2Temp"]]
+            InletTemp = [item[value] for item in node_data["InletTemp"]]
+
+            for index, item in enumerate(CPU1Temp):
+                cpu_inl_temp.append([])
+                if item:
+                    cpu_inl_temp[index].append(item)
+                else:
+                    cpu_inl_temp[index].append(None)
+                if CPU2Temp[index]:
+                    cpu_inl_temp[index].append(CPU2Temp[index])
+                else:
+                    cpu_inl_temp[index].append(None)
+                if InletTemp[index]:
+                    cpu_inl_temp[index].append(InletTemp[index])
+                else:
+                    cpu_inl_temp[index].append(None)
+
+        if node_data["FAN_1"] and node_data["FAN_2"] and node_data["FAN_3"] and node_data["FAN_4"]:
+            FAN_1 = [item[value] for item in node_data["FAN_1"]]
+            FAN_2 = [item[value] for item in node_data["FAN_2"]]
+            FAN_3 = [item[value] for item in node_data["FAN_3"]]
+            FAN_4 = [item[value] for item in node_data["FAN_4"]]
+
+            for index, item in enumerate(FAN_1):
+                fan_speed.append([])
+                if item:
+                    fan_speed[index].append(item)
+                else:
+                    fan_speed[index].append(None)
+                if FAN_2[index]:
+                    fan_speed[index].append(FAN_2[index])
+                else:
+                    fan_speed[index].append(None)
+                if FAN_3[index]:
+                    fan_speed[index].append(FAN_3[index])
+                else:
+                    fan_speed[index].append(None)
+                if FAN_4[index]:
+                    fan_speed[index].append(FAN_4[index])
+                else:
+                    fan_speed[index].append(None)
+
+        if node_data["JobList"]:
+            for item in node_data["JobList"]:
+                if item["distinct"]:
+                    job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
+                    job_list_temp.extend(job_list_dict[item["time"]])
+                else:
+                    job_list_dict[item["time"]] = []
+
+        for t in time_list:
+            try:
+                job_list.append(job_list_dict[t])
+            except:
+                job_list.append([])
+                
+        job_set = list(set(job_list_temp))
+        
+        json_data = {
+            "memory_usage": memory_usage,
+            "cpu_usage": cpu_usage,
+            "power_usage": power_usage,
+            "fan_speed": fan_speed,
+            "cpu_inl_temp": cpu_inl_temp,
+            "job_list": job_list,
+            "job_set": job_set
         }
 
-        for i, time in enumerate(time_list):
-            # metrics in usage_fields do not need to be aggregated
-            for field in usage_fields:
-                # rename field names
-                if field == "cpuusage":
-                    re_field = "cpu_usage"
-                elif field == "memoryusage":
-                    re_field = "memory_usage"
-                else:
-                    re_field = "power_usage"
+        # print(f"memory_usage length : {len(memory_usage)}")
+        # print(f"cpu_usage length    : {len(cpu_usage)}")
+        # print(f"power_usage length  : {len(power_usage)}")
+        # print(f"fan_speed length    : {len(fan_speed)}")
+        # print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
+        # print(f"job_list length     : {len(job_list)}")
 
-                field_step = len(node_data[node][field])
-                if field_step == 0:
-                    json_data[node][re_field].append(None)
-                elif field_step != time_step:
-                    for item in node_data[node][field]:
-                        if item["time"] == time:
-                            json_data[node][re_field].append(item[value])
-                        else:
-                            json_data[node][re_field].append(None)
-                else:
-                    json_data[node][re_field].append(node_data[node][field][i][value])
-            # metrics in temp_fields and speed_fields need to be aggregated, i.e.
-            # metrics at the same time stamp are saved in an array
-            json_data[node]["cpu_inl_temp"].append([])
-            json_data[node]["fan_speed"].append([])
-            for field in temp_fields:
-                field_step = len(node_data[node][field])
-                if field_step == 0:
-                    json_data[node]["cpu_inl_temp"][i].append(None)
-                elif field_step != time_step:
-                    for item in node_data[node][field]:
-                        if item["time"] == time:
-                            json_data[node]["cpu_inl_temp"][i].append(item[value])
-                        else:
-                            json_data[node]["cpu_inl_temp"][i].append(None)
-                else:
-                    json_data[node]["cpu_inl_temp"][i].append(node_data[node][field][i][value])
-            for field in speed_fields:
-                field_step = len(node_data[node][field])
-                if field_step == 0:
-                    json_data[node]["fan_speed"][i].append(None)
-                elif field_step != time_step:
-                    for item in node_data[node][field]:
-                        if item["time"] == time:
-                            json_data[node]["fan_speed"][i].append(item[value])
-                        else:
-                            json_data[node]["fan_speed"][i].append(None)
-                else:
-                    json_data[node]["fan_speed"][i].append(node_data[node][field][i][value])
-            
-            # process jobID
-            json_data[node]["job_id"].append([])
-            for item in node_data[node]["jobID"]:
-                if item["time"] == time:
-                    processed_id = []
-                    for jobid in item["distinct"]:
-                        processed_id.append(jobid.split("_")[1])
-                    tmp = set(json_data[node]["job_id"][i] + processed_id)
-                    json_data[node]["job_id"][i] = list(tmp)
-    return json_data
-
-def process_job_data(job_data: dict) -> dict:
-    """
-    Process job data retrieved from influxdb
-    """
-    json_data = {}
-    time_pattern = "%a %b %d %H:%M:%S %Z %Y"
-
-    # Wed Feb 12 13:55:48 CST 2020
-
-    for item in job_data.keys():
-        job_id = item.split("_")[1]
-        submit_time = int(time.mktime(time.strptime(job_data[item]["submit_time"], time_pattern)))
-        start_time = int(time.mktime(time.strptime(job_data[item]["start_time"], time_pattern)))
-        if "A" not in job_id:
-            json_data[job_id] = {
-                    "user_name": job_data[item]["user_name"],
-                    "submit_time": submit_time,
-                    "start_time": start_time,
-                    "job_array": False
-                }
-        else:
-            # Array job
-            job_id_password = job_id.split("A")[0]
-            job_id_array = job_id.split("A")[1]
-            if job_id_password not in json_data:
-                json_data[job_id_password] = {
-                    "user_name": job_data[item]["user_name"],
-                    "submit_time": submit_time,
-                    "start_time": {},
-                    "job_array": True
-                }
-                json_data[job_id_password]["start_time"].update({
-                    job_id_array: start_time
-                })
-            else:
-                json_data[job_id_password]["start_time"].update({
-                    job_id_array: start_time
-                })
-
+    except Exception as err:
+        print(err)
+        print("Process Data Error!")
     return json_data

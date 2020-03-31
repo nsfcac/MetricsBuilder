@@ -8,11 +8,9 @@ import multiprocessing
 from itertools import repeat
 
 from parse_config import parse_conf, parse_host
-from gen_timestamp import gen_timestamp, gen_epoch_timestamp
+from gen_timestamp import gen_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
-from gen_timestamp import gen_timestamp
-
 
 hours = 1
 start = 1583020800
@@ -92,7 +90,6 @@ for index, job in enumerate(all_jobs_id):
         "start_time": results[index]["StartTime"],
         "job_array": job_array
     }
-    
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 # print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
