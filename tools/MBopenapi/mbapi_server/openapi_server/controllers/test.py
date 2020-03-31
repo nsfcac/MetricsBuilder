@@ -70,7 +70,7 @@ for index, node in enumerate(node_list):
     except Exception as err:
         print(err)
 
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
 
 # Get all jobs ID
 all_jobs_id = list(set(all_jobs_list))
@@ -97,4 +97,4 @@ for index, job in enumerate(all_jobs_id):
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 # print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
 
-print(json.dumps(job_data, indent=4))
+# print(json.dumps(job_data, indent=4))
