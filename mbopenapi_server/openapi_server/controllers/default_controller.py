@@ -88,7 +88,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
             except Exception as err:
                 print(err)
 
-        unified_metrics.nodes_info = node_data
+        unified_metrics.nodes_info = json.dumps(node_data)
 
         # Get all jobs ID
         all_jobs_id = list(set(all_jobs_list))
@@ -111,7 +111,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
                 "job_array": job_array
             }
 
-        unified_metrics.jobs_info = job_data
+        unified_metrics.jobs_info = json.dumps(job_data)
 
         total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
         # In seconds
@@ -124,6 +124,6 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         jobs_info_size = len(jobs_info_obj.encode("utf-8"))
 
         with open("requests.log", "a+") as requests_log:
-            print(f"{nodes_info_size + jobs_info_size}|{time_range}|{interval}|{value}|{total_elapsed}:", file = requests_log)
+            print(f"{nodes_info_size + jobs_info_size} Bytes|{time_range}|{interval}|{value}|{total_elapsed}:", file = requests_log)
 
     return unified_metrics
