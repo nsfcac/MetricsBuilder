@@ -117,7 +117,13 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         # In seconds
         time_range = int(end.timestamp()) - int(start.timestamp())
 
+        nodes_info_obj = json.dumps(node_data)
+        jobs_info_obj = json.dumps(job_data)
+
+        nodes_info_size = len(nodes_info_obj.encode("utf-8"))
+        jobs_info_size = len(jobs_info_obj.encode("utf-8"))
+
         with open("requests.log", "a+") as requests_log:
-            print(f"{time_range}:{interval}:{value}:{total_elapsed}", file = requests_log)
+            print(f"{nodes_info_size + jobs_info_size}|{time_range}|{interval}|{value}|{total_elapsed}:", file = requests_log)
 
     return unified_metrics
