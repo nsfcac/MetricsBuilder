@@ -52,7 +52,7 @@ all_jobs_list = []
 for index, node in enumerate(node_list):
     node_data[node] = results[index]
     try:
-        all_jobs_list.extend(results[index]["job_list"])
+        all_jobs_list.extend(results[index]["job_set"])
     except Exception as err:
         print(err)
 

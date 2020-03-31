@@ -7,6 +7,7 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
     Process node data retrieved from influxdb
     """
     json_data = {}
+    time_list = []
     memory_usage = []
     cpu_usage = []
     power_usage = []
@@ -15,18 +16,29 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
     job_list_dict = {}
     job_list_temp = []
     job_list = []
+    job_set = []
     try:
         if node_data["MemUsage"]:
             memory_usage = [item[value] for item in node_data["MemUsage"]]
+            time_list = [item["time"] for item in node_data["MemUsage"]]
+
         if node_data["CPUUsage"]:
             cpu_usage = [item[value] for item in node_data["CPUUsage"]]
+            if not time_list:
+                time_list = [item["time"] for item in node_data["CPUUsage"]]
+                
         if node_data["NodePower"]:
             power_usage = [item[value] for item in node_data["NodePower"]]
+            if not time_list:
+                time_list = [item["time"] for item in node_data["NodePower"]]
         
         if node_data["CPU1Temp"] and node_data["CPU2Temp"] and node_data["InletTemp"]:
             CPU1Temp = [item[value] for item in node_data["CPU1Temp"]]
             CPU2Temp = [item[value] for item in node_data["CPU2Temp"]]
             InletTemp = [item[value] for item in node_data["InletTemp"]]
+            
+            if not time_list:
+                time_list = [item["time"] for item in node_data["CPU1Temp"]]
 
             for index, item in enumerate(CPU1Temp):
                 cpu_inl_temp.append([])
@@ -48,6 +60,9 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             FAN_2 = [item[value] for item in node_data["FAN_2"]]
             FAN_3 = [item[value] for item in node_data["FAN_3"]]
             FAN_4 = [item[value] for item in node_data["FAN_4"]]
+
+            if not time_list:
+                time_list = [item["time"] for item in node_data["FAN_1"]]
 
             for index, item in enumerate(FAN_1):
                 fan_speed.append([])
@@ -75,8 +90,14 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                     job_list_temp.extend(job_list_dict[item["time"]])
                 else:
                     job_list_dict[item["time"]] = []
+
+        for t in time_list:
+            if job_list_dict[t]:
+                job_list.append(job_list_dict[t])
+            else:
+                job_list.append([])
                 
-        job_list = list(set(job_list_temp))
+        job_set = list(set(job_list_temp))
         
         json_data = {
             "memory_usage": memory_usage,
@@ -84,8 +105,8 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             "power_usage": power_usage,
             "fan_speed": fan_speed,
             "cpu_inl_temp": cpu_inl_temp,
-            "job_id": job_list_dict,
-            "job_list": job_list
+            "job_list": job_list,
+            "job_set": job_set
         }
 
     except Exception as err:
