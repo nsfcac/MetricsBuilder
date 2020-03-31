@@ -63,7 +63,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         # Get time stamp
         time_list = gen_timestamp(start, end, interval)
         epoch_time_list = gen_epoch_timestamp(start, end, interval)
-        unified_metrics.time_stamp = epoch_time_list
+        unified_metrics.time_stamp = json.dumps(epoch_time_list)
 
         # Get all nodes detail
         query_process_data_args = zip(node_list, repeat(influx), 
@@ -124,6 +124,6 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         jobs_info_size = len(jobs_info_obj.encode("utf-8"))
 
         with open("requests.log", "a+") as requests_log:
-            print(f"{nodes_info_size + jobs_info_size} Bytes|{time_range}|{interval}|{value}|{total_elapsed}:", file = requests_log)
+            print(f"{nodes_info_size + jobs_info_size} Bytes|{time_range}|{interval}|{value}|{total_elapsed}", file = requests_log)
 
     return unified_metrics
