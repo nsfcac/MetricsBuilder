@@ -80,8 +80,8 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                 else:
                     job_list_dict[item["time"]] = []
 
-        print(node)
-        print(job_list_dict)
+        # print(node)
+        # print(job_list_dict)
         
         print(node)
         for t in time_list:
