@@ -63,14 +63,14 @@ for index, node in enumerate(node_list):
         "power_usage": results[index]["power_usage"],
         "fan_speed": results[index]["fan_speed"],
         "cpu_inl_temp": results[index]["cpu_inl_temp"],
-        "job_list": results[index]["job_list"]
+        "job_id": results[index]["job_list"]
     }
     try:
         all_jobs_list.extend(results[index]["job_set"])
     except Exception as err:
         print(err)
 
-print(json.dumps(node_data, indent=4))
+# print(json.dumps(node_data, indent=4))
 
 # Get all jobs ID
 all_jobs_id = list(set(all_jobs_list))
@@ -82,7 +82,17 @@ with multiprocessing.Pool(processes=cpu_count) as pool:
     results = pool.starmap(query_job_data, query_job_data_args)
 
 for index, job in enumerate(all_jobs_id):
-    job_data[job] = results[index]
+    job_array = False
+    if "." in results[index]["JobId"]:
+        job_array = True
+
+    job_data[job] = {
+        "user_name": results[index]["User"],
+        "submit_time": results[index]["SubmitTime"],
+        "start_time": results[index]["StartTime"],
+        "job_array": job_array
+    }
+    
 
 query_elapsed = float("{0:.2f}".format(time.time() - query_start))
 # print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
