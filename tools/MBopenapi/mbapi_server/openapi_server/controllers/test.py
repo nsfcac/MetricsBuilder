@@ -30,21 +30,23 @@ node_list = parse_host()
 # print(config["influxdb"])
 influx = QueryInfluxdb(config["influxdb"])
 
-# Time string used in query_data
-st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
-et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
+# Time
+st = datetime.datetime.utcfromtimestamp(start)
+et = datetime.datetime.utcfromtimestamp(end)
 
-print(f"Start time: {st}; End time: {et}")
+# Time string used in query_data
+st_str = st.strftime('%Y-%m-%dT%H:%M:%SZ')
+et_str = et.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
-time_list =  gen_timestamp(st, et, interval)
+time_list = gen_timestamp(st, et, interval)
 
 print(time_list)
 # # Get all nodes detail
 # query_process_data_args = zip(node_list, repeat(influx), 
-#                            repeat(st), repeat(et), 
+#                            repeat(st_str), repeat(et_str), 
 #                            repeat(interval), repeat(value), repeat(time_list))
 
 # with multiprocessing.Pool(processes=cpu_count) as pool:
