@@ -120,4 +120,4 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         with open("requests.log", "a+") as requests_log:
             print(f"{time_range}:{interval}:{value}:{total_elapsed}", file = requests_log)
 
-    return json.dumps(unified_metrics)
+    return unified_metrics
