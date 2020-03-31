@@ -4,7 +4,7 @@ import multiprocessing
 from process_data import process_node_data
 
 def query_process_data(node:str, influx: object, start: str, end: str, 
-                       interval: str, value: str) -> dict:
+                       interval: str, value: str, time_list: list) -> dict:
     json_data = {}
     try:
         node_data = query_node_data(node, influx, start, end, interval, value)
@@ -13,7 +13,7 @@ def query_process_data(node:str, influx: object, start: str, end: str,
         # print(json.dumps(node_data, indent=4))
 
         if node_data:
-            json_data = process_node_data(node, node_data, value)
+            json_data = process_node_data(node, node_data, value, time_list)
     except Exception as err:
         print(err)
         print("Query Data Error!")

@@ -11,6 +11,7 @@ from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
+from gen_timestamp import gen_timestamp
 
 
 hours = 24
@@ -38,39 +39,42 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
-# Get all nodes detail
-query_process_data_args = zip(node_list, repeat(influx), 
-                           repeat(st), repeat(et), 
-                           repeat(interval), repeat(value))
+time_list =  gen_timestamp(st, et, interval)
 
-with multiprocessing.Pool(processes=cpu_count) as pool:
-    results = pool.starmap(query_process_data, query_process_data_args)
+print(time_list)
+# # Get all nodes detail
+# query_process_data_args = zip(node_list, repeat(influx), 
+#                            repeat(st), repeat(et), 
+#                            repeat(interval), repeat(value), repeat(time_list))
 
-all_jobs_list = []
+# with multiprocessing.Pool(processes=cpu_count) as pool:
+#     results = pool.starmap(query_process_data, query_process_data_args)
 
-# Attach data to node ip addr
-for index, node in enumerate(node_list):
-    node_data[node] = results[index]
-    try:
-        all_jobs_list.extend(results[index]["job_set"])
-    except Exception as err:
-        print(err)
+# all_jobs_list = []
 
-# print(json.dumps(node_data, indent=4))
+# # Attach data to node ip addr
+# for index, node in enumerate(node_list):
+#     node_data[node] = results[index]
+#     try:
+#         all_jobs_list.extend(results[index]["job_set"])
+#     except Exception as err:
+#         print(err)
 
-# Get all jobs ID
-all_jobs_id = list(set(all_jobs_list))
+# # print(json.dumps(node_data, indent=4))
 
-query_job_data_args = zip(repeat(influx), all_jobs_id)
+# # Get all jobs ID
+# all_jobs_id = list(set(all_jobs_list))
 
-# Get all jobs detail
-with multiprocessing.Pool(processes=cpu_count) as pool:
-    results = pool.starmap(query_job_data, query_job_data_args)
+# query_job_data_args = zip(repeat(influx), all_jobs_id)
 
-for index, job in enumerate(all_jobs_id):
-    job_data[job] = results[index]
+# # Get all jobs detail
+# with multiprocessing.Pool(processes=cpu_count) as pool:
+#     results = pool.starmap(query_job_data, query_job_data_args)
 
-query_elapsed = float("{0:.2f}".format(time.time() - query_start))
-print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
+# for index, job in enumerate(all_jobs_id):
+#     job_data[job] = results[index]
 
-# print(json.dumps(job_data, indent=4))
+# query_elapsed = float("{0:.2f}".format(time.time() - query_start))
+# print(f"Time for Quering and Processing {hours} of data : {query_elapsed}")
+
+# # print(json.dumps(job_data, indent=4))

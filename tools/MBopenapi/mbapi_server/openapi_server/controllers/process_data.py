@@ -2,7 +2,7 @@ import time
 import json
 import multiprocessing
 
-def process_node_data(node: str, node_data: dict, value: str) -> dict:
+def process_node_data(node: str, node_data: dict, value: str, time_list: list) -> dict:
     """
     Process node data retrieved from influxdb
     """
@@ -20,25 +20,17 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
     try:
         if node_data["MemUsage"]:
             memory_usage = [item[value] for item in node_data["MemUsage"]]
-            time_list = [item["time"] for item in node_data["MemUsage"]]
 
         if node_data["CPUUsage"]:
             cpu_usage = [item[value] for item in node_data["CPUUsage"]]
-            if not time_list:
-                time_list = [item["time"] for item in node_data["CPUUsage"]]
                 
         if node_data["NodePower"]:
             power_usage = [item[value] for item in node_data["NodePower"]]
-            if not time_list:
-                time_list = [item["time"] for item in node_data["NodePower"]]
         
         if node_data["CPU1Temp"] and node_data["CPU2Temp"] and node_data["InletTemp"]:
             CPU1Temp = [item[value] for item in node_data["CPU1Temp"]]
             CPU2Temp = [item[value] for item in node_data["CPU2Temp"]]
             InletTemp = [item[value] for item in node_data["InletTemp"]]
-            
-            if not time_list:
-                time_list = [item["time"] for item in node_data["CPU1Temp"]]
 
             for index, item in enumerate(CPU1Temp):
                 cpu_inl_temp.append([])
@@ -60,9 +52,6 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
             FAN_2 = [item[value] for item in node_data["FAN_2"]]
             FAN_3 = [item[value] for item in node_data["FAN_3"]]
             FAN_4 = [item[value] for item in node_data["FAN_4"]]
-
-            if not time_list:
-                time_list = [item["time"] for item in node_data["FAN_1"]]
 
             for index, item in enumerate(FAN_1):
                 fan_speed.append([])
@@ -91,7 +80,6 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 else:
                     job_list_dict[item["time"]] = []
 
-        print(time_list)
         # for t in time_list:
         #     if job_list_dict[t]:
         #         job_list.append(job_list_dict[t])
