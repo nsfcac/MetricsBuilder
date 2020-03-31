@@ -91,11 +91,12 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
                 else:
                     job_list_dict[item["time"]] = []
 
-        for t in time_list:
-            if job_list_dict[t]:
-                job_list.append(job_list_dict[t])
-            else:
-                job_list.append([])
+        print(time_list)
+        # for t in time_list:
+        #     if job_list_dict[t]:
+        #         job_list.append(job_list_dict[t])
+        #     else:
+        #         job_list.append([])
                 
         job_set = list(set(job_list_temp))
         
