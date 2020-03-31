@@ -3,6 +3,8 @@ import time
 from datetime import datetime
 import zlib, json, base64
 
+# Ref: https://medium.com/@busybus/zipjson-3ed15f8ea85d
+
 ZIPJSON_KEY = 'base64(zip(o))'
 
 def json_unzip(j, insist=True):
