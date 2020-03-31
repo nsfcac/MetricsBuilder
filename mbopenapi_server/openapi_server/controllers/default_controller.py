@@ -35,7 +35,6 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # Initialization 
     config = parse_conf()
     node_list = parse_host()
-    print(json.dumps(config, indent = 4))
     influx = QueryInfluxdb(config["influxdb"])
     cpu_count = multiprocessing.cpu_count()
 
@@ -121,4 +120,4 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         with open("requests.log", "a+") as requests_log:
             print(f"{time_range}:{interval}:{value}:{total_elapsed}", file = requests_log)
 
-    return unified_metrics
+    return json.dumps(unified_metrics)
