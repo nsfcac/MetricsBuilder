@@ -60,15 +60,15 @@ def process_node_data(node: str, node_data: dict, value: str) -> dict:
         job_list_dict = {}
         job_list = []
 
-        if node_data["JobList"]:
-            for item in node_data["JobList"]:
-                if item["distinct"]:
-                    job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
-                    job_list.extend(job_list_dict[item["time"]])
-                else:
-                    job_list_dict[item["time"]] = []
+        # if node_data["JobList"]:
+        #     for item in node_data["JobList"]:
+        #         if item["distinct"]:
+        #             job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
+        #             job_list.extend(job_list_dict[item["time"]])
+        #         else:
+        #             job_list_dict[item["time"]] = []
                 
-        job_list = list(set(job_list))
+        # job_list = list(set(job_list))
         
         json_data = {
             "memory_usage": memory_usage,
