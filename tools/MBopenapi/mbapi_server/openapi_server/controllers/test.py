@@ -57,13 +57,20 @@ all_jobs_list = []
 
 # Attach data to node ip addr
 for index, node in enumerate(node_list):
-    node_data[node] = results[index]
+    node_data[node] = {
+        "memory_usage": results[index]["memory_usage"],
+        "cpu_usage": results[index]["cpu_usage"],
+        "power_usage": results[index]["power_usage"],
+        "fan_speed": results[index]["fan_speed"],
+        "cpu_inl_temp": results[index]["cpu_inl_temp"],
+        "job_list": results[index]["job_list"]
+    }
     try:
         all_jobs_list.extend(results[index]["job_set"])
     except Exception as err:
         print(err)
 
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
 
 # Get all jobs ID
 all_jobs_id = list(set(all_jobs_list))
