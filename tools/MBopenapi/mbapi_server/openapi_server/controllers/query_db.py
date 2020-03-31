@@ -8,6 +8,10 @@ def query_process_data(node:str, influx: object, start: str, end: str,
     json_data = {}
     try:
         node_data = query_node_data(node, influx, start, end, interval, value)
+
+        print(f"{node}: ")
+        print(json.dumps(node_data, indent=4))
+        
         if node_data:
             json_data = process_node_data(node, node_data, value)
     except Exception as err:
