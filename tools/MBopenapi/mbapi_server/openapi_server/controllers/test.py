@@ -39,7 +39,7 @@ et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
 cpu_count = multiprocessing.cpu_count()
 query_start = time.time()
 
-time_list =  gen_timestamp(st, et, interval)
+time_list =  gen_timestamp(start, end, interval)
 
 print(time_list)
 # # Get all nodes detail
