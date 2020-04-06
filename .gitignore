@@ -1,0 +1,5 @@
+# Ignore files
+.DS_Store
+
+# Ignore folders
+env/
