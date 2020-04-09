@@ -10,9 +10,9 @@ info:
     url: https://opensource.org/licenses/MIT
   version: 1.0.0
 servers:
-  - url: http://localhost:8080/
+  - url: https://localhost:8080/
     description: Local test server
-  - url: http://129.118.104.141:8080/
+  - url: https://129.118.104.141:8080/
     description: Redfish server
 components:
   schemas:
@@ -132,7 +132,7 @@ paths:
         schema:
           type: string
           format: date-time
-          example: '2020-02-15T12:00:00Z'
+          example: '2020-02-14T18:00:00Z'
         description: end time of time range of the monitoring metrics
       - in: query
         name: interval
