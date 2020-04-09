@@ -13,7 +13,7 @@ def main():
                 arguments={'title': 'MetricsBuilder API'},
                 pythonic_params=True)
     CORS(app.app)
-    app.run(port=8080, ssl_context='adhoc')
+    app.run(port=8080, ssl_context=('cert.pem', 'key.pem'))
 
 
 if __name__ == '__main__':
