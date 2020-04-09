@@ -40,7 +40,7 @@ paths:
         name: end
         required: true
         schema:
-          example: 2020-02-15T12:00:00Z
+          example: 2020-02-14T18:00:00Z
           format: date-time
           type: string
         style: form
