@@ -17,7 +17,7 @@ from process_data import process_data, process_data_job, convert_data, convert_d
 # from demo import demo
 
 read_config = {
-    'host': 'localhost',
+    'host': '10.10.1.4',
     'port': '8086',
     'database': 'hpcc_monitoring_db'
 }
@@ -25,7 +25,8 @@ read_config = {
 write_config = {
     'host': 'localhost',
     'port': '8086',
-    'database': 'updated_schema'
+    # 'database': 'updated_schema'
+    'database': 'test_schema'
 }
 
 def main():
@@ -39,21 +40,23 @@ def main():
     error_count = 0
     # phase_time = get_phase_time(read_client)
 
-    first = 1552539600
-    last = 1583301600
+    # first = 1552539600
+    # last = 1583301600
+    first = 1583301600
+    last = 1583305200
     step = 3600
     
     # Get all system measurements
     # print("Analysis measurements...")
     measurements = parse_measurement(read_client)
     sys_measurements = measurements["sys_measurements"]
-    # job_measurements = measurements["job_measurements"]
+    job_measurements = measurements["job_measurements"]
 
     # Converting job metrics in parallel
-    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-    #                         job_measurements, repeat(error_count))
-    # with multiprocessing.Pool(processes=cpu_count) as pool:
-    #     pool.starmap(convert_data_job, convert_data_job_args)
+    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+                            job_measurements, repeat(error_count))
+    with multiprocessing.Pool(processes=cpu_count) as pool:
+        pool.starmap(convert_data_job, convert_data_job_args)
 
     # Converting system metrics in parallel
     for start in range(first, last, step):

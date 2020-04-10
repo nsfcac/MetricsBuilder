@@ -29,7 +29,9 @@ def convert_data_job(read_client: object, write_client: object,
         if data:
             converted_data = process_data_job(data, measurement, error_count)
             if converted_data:
-                write_client.write([converted_data])
+                job_id = converted_data["tags"]["JobId"]
+                if not check_job(write_client, job_id):
+                    write_client.write([converted_data])
     except Exception as err:
         print(err)
     return 
@@ -681,3 +683,14 @@ def process_system_metrics(data: dict, error_count: int) -> list:
     except Exception:
         error_count += 1
     return result
+
+
+def check_job(client: object, job: str) -> bool:
+    try:
+        query_str = "SELECT " + job + " FROM JobsInfo"
+        data = client.get(query_str)
+        if data:
+            return True
+    except Exception as err:
+        print(err)
+        return False
