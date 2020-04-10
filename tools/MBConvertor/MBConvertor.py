@@ -52,7 +52,7 @@ def main():
     # print("Analysis measurements...")
     measurements = parse_measurement(read_client)
     sys_measurements = measurements["sys_measurements"]
-    job_measurements = measurements["job_measurements"]
+    # job_measurements = measurements["job_measurements"]
 
     # # Converting job metrics in parallel
     # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
