@@ -46,7 +46,7 @@ def main():
     # Phase 2 Wednesday, March 4, 2020 12:00:00 AM GMT-06:00 - Friday, April 10, 2020 7:00:00 AM GMT-05:00
     first = 1583301600
     last = 1586520000
-    step = 3600
+    step = 600
     
     # Get all system measurements
     # print("Analysis measurements...")
@@ -54,11 +54,11 @@ def main():
     sys_measurements = measurements["sys_measurements"]
     job_measurements = measurements["job_measurements"]
 
-    # Converting job metrics in parallel
-    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-                            job_measurements, repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data_job, convert_data_job_args)
+    # # Converting job metrics in parallel
+    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+    #                         job_measurements, repeat(error_count))
+    # with multiprocessing.Pool(processes=cpu_count) as pool:
+    #     pool.starmap(convert_data_job, convert_data_job_args)
 
     # Converting system metrics in parallel
     for start in range(first, last, step):
