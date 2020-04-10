@@ -690,7 +690,9 @@ def check_job(client: object, job: str) -> bool:
         query_str = "SELECT * FROM JobsInfo WHERE JobId = '" + job + "'"
         data = client.get(query_str)
         if data:
+            print("True")
             return True
     except Exception as err:
         print(err)
-        return False
+
+    return False
