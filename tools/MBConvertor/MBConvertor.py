@@ -42,8 +42,8 @@ def main():
 
     # first = 1552539600
     # last = 1583301600
-    first = 1583301600
-    last = 1583305200
+    first = 1586088000
+    last = 1586260800
     step = 3600
     
     # Get all system measurements
@@ -52,24 +52,24 @@ def main():
     sys_measurements = measurements["sys_measurements"]
     job_measurements = measurements["job_measurements"]
 
-    # Converting job metrics in parallel
-    convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
-                            job_measurements, repeat(error_count))
-    with multiprocessing.Pool(processes=cpu_count) as pool:
-        pool.starmap(convert_data_job, convert_data_job_args)
+    # # Converting job metrics in parallel
+    # convert_data_job_args = zip(repeat(read_client), repeat(write_client), 
+    #                         job_measurements, repeat(error_count))
+    # with multiprocessing.Pool(processes=cpu_count) as pool:
+    #     pool.starmap(convert_data_job, convert_data_job_args)
 
-    # # Converting system metrics in parallel
-    # for start in range(first, last, step):
-    #     end = start + step
+    # Converting system metrics in parallel
+    for start in range(first, last, step):
+        end = start + step
 
-    #     st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
-    #     et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
+        st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
+        et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
     
-    #     convert_data_args = zip(repeat(read_client), repeat(write_client), 
-    #                         repeat(st), repeat(et), sys_measurements,
-    #                         repeat(error_count))
-    #     with multiprocessing.Pool(processes=cpu_count) as pool:
-    #         pool.starmap(convert_data, convert_data_args)
+        convert_data_args = zip(repeat(read_client), repeat(write_client), 
+                            repeat(st), repeat(et), sys_measurements,
+                            repeat(error_count))
+        with multiprocessing.Pool(processes=cpu_count) as pool:
+            pool.starmap(convert_data, convert_data_args)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)
