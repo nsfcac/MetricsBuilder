@@ -25,8 +25,7 @@ read_config = {
 write_config = {
     'host': 'localhost',
     'port': '8086',
-    # 'database': 'updated_schema'
-    'database': 'test_schema'
+    'database': 'updated_schema'
 }
 
 def main():
@@ -61,18 +60,18 @@ def main():
     with multiprocessing.Pool(processes=cpu_count) as pool:
         pool.starmap(convert_data_job, convert_data_job_args)
 
-    # # Converting system metrics in parallel
-    # for start in range(first, last, step):
-    #     end = start + step
+    # Converting system metrics in parallel
+    for start in range(first, last, step):
+        end = start + step
 
-    #     st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
-    #     et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
+        st = datetime.datetime.utcfromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%SZ')
+        et = datetime.datetime.utcfromtimestamp(end).strftime('%Y-%m-%dT%H:%M:%SZ')
     
-    #     convert_data_args = zip(repeat(read_client), repeat(write_client), 
-    #                         repeat(st), repeat(et), sys_measurements,
-    #                         repeat(error_count))
-    #     with multiprocessing.Pool(processes=cpu_count) as pool:
-    #         pool.starmap(convert_data, convert_data_args)
+        convert_data_args = zip(repeat(read_client), repeat(write_client), 
+                            repeat(st), repeat(et), sys_measurements,
+                            repeat(error_count))
+        with multiprocessing.Pool(processes=cpu_count) as pool:
+            pool.starmap(convert_data, convert_data_args)
 
     # For demo
     # demo(read_client, sys_measurements, job_measurements)
