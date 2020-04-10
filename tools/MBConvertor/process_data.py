@@ -687,7 +687,7 @@ def process_system_metrics(data: dict, error_count: int) -> list:
 
 def check_job(client: object, job: str) -> bool:
     try:
-        query_str = "SELECT " + job + " FROM JobsInfo"
+        query_str = "SELECT * FROM JobsInfo WHERE JobId = '" + job + "'"
         data = client.get(query_str)
         if data:
             return True
