@@ -29,9 +29,10 @@ def convert_data_job(read_client: object, write_client: object,
         if data:
             converted_data = process_data_job(data, measurement, error_count)
             if converted_data:
-                job_id = converted_data["tags"]["JobId"]
-                if not check_job(write_client, job_id):
-                    write_client.write([converted_data])
+                write_client.write([converted_data])
+                # job_id = converted_data["tags"]["JobId"]
+                # if not check_job(write_client, job_id):
+                #     write_client.write([converted_data])
     except Exception as err:
         print(err)
     return 
