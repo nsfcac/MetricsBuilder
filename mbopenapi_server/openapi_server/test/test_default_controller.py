@@ -20,9 +20,10 @@ class TestDefaultController(BaseTestCase):
         
         """
         query_string = [('start', 2020-02-14T12:00Z),
-                        ('end', 2020-02-15T12:00Z),
+                        ('end', 2020-02-14T18:00Z),
                         ('interval', 5m),
-                        ('value', max)]
+                        ('value', max),
+                        ('compress', true)]
         headers = { 
             'Accept': 'application/json',
         }

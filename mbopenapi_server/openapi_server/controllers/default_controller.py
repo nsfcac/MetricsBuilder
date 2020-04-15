@@ -18,7 +18,7 @@ from openapi_server.controllers.query_db import query_process_data, query_job_da
 
 ZIPJSON_KEY = 'base64(zip(o))'
 
-def get_unified_metric(start, end, interval, value):  # noqa: E501
+def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     """get_unified_metric
 
     Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. &#x60;2020-02-12T14:00:00Z&#x60;; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be &#x60;min&#x60;, &#x60;max&#x60;, &#x60;mean&#x60;, or &#x60;median&#x60;.  A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include &#x60;s&#x60;(second), &#x60;m&#x60;(minute), &#x60;h&#x60;(hour), &#x60;d&#x60;(day), &#x60;w&#x60;(week).  # noqa: E501
@@ -31,6 +31,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     :type interval: str
     :param value: value type of the monitoring metrics
     :type value: str
+    :param compress: return compressed data
+    :type compress: bool
 
     :rtype: UnifiedMetrics
     """
@@ -68,7 +70,10 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         epoch_time_list = gen_epoch_timestamp(start, end, interval)
 
         # unified_metrics.time_stamp = epoch_time_list
-        unified_metrics.time_stamp = json_zip(epoch_time_list)
+        if compress:
+            unified_metrics.time_stamp = json_zip(epoch_time_list)
+        else:
+            unified_metrics.time_stamp = epoch_time_list
         
         # Get all nodes detail
         query_process_data_args = zip(node_list, repeat(influx), 
@@ -93,8 +98,11 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
             except Exception as err:
                 print(err)
 
-        # unified_metrics.nodes_info = node_data
-        unified_metrics.nodes_info = json_zip(node_data)
+        if compress:
+            unified_metrics.nodes_info = json_zip(node_data)
+        else:
+            unified_metrics.nodes_info = node_data
+        
 
         # Get all jobs ID
         all_jobs_id = list(set(all_jobs_list))
@@ -117,8 +125,10 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
                 "job_array": job_array
             }
 
-        # unified_metrics.jobs_info = job_data
-        unified_metrics.jobs_info = json_zip(job_data)
+        if compress:
+            unified_metrics.jobs_info = json_zip(job_data)
+        else:
+            unified_metrics.jobs_info = job_data
 
         total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
         # In seconds

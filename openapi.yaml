@@ -154,6 +154,16 @@ paths:
             - mean
             - median
         description: value type of the monitoring metrics
+      - in: query
+        name: compress
+        required: true
+        schema:
+          type: boolean
+          example: true
+          enum:
+            - true
+            - false
+        description: return compressed data
       responses:
         '200':
           description: Get unified metrics successfully
