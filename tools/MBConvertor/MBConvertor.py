@@ -17,7 +17,7 @@ from process_data import process_data, process_data_job, convert_data, convert_d
 # from demo import demo
 
 read_config = {
-    'host': 'localhost',
+    'host': '10.10.1.4',
     'port': '8086',
     'database': 'hpcc_monitoring_db'
 }
@@ -25,7 +25,8 @@ read_config = {
 write_config = {
     'host': 'localhost',
     'port': '8086',
-    'database': 'updated_schema'
+    'database': 'test_schema'
+    # 'database': 'updated_schema'
 }
 
 def main():
@@ -39,13 +40,14 @@ def main():
     error_count = 0
     # phase_time = get_phase_time(read_client)
 
-    # Phase 1 Thursday, March 14, 2019 12:00:00 AM GMT-05:00 - Wednesday, March 4, 2020 12:00:00 AM GMT-06:00
-    first = 1552539600
-    # last = 1583301600
+    # # Phase 1 Thursday, March 14, 2019 12:00:00 AM GMT-05:00 - Friday, April 10, 2020 12:00:00 PM GMT-05:00
+    # first = 1552539600
+    # last = 1586520000
 
-    # Phase 2 Wednesday, March 4, 2020 12:00:00 AM GMT-06:00 - Friday, April 10, 2020 7:00:00 AM GMT-05:00
-    # first = 1583301600
-    last = 1586520000
+    # For test
+    # Phase 2 Friday, April 10, 2020 12:00:00 PM GMT-05:00 - April 11, 2020 12:00:00 PM GMT-05:00
+    first = 1586520000
+    last = 1586606400
     step = 3600
     
     # Get all system measurements
