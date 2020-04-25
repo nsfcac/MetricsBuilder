@@ -25,8 +25,8 @@ read_config = {
 write_config = {
     'host': 'localhost',
     'port': '8086',
-    'database': 'test_schema'
-    # 'database': 'updated_schema'
+    # 'database': 'test_schema'
+    'database': 'updated_schema'
 }
 
 def main():
@@ -40,16 +40,13 @@ def main():
     error_count = 0
     # phase_time = get_phase_time(read_client)
 
-    # # Phase 1 Thursday, March 14, 2019 12:00:00 AM GMT-05:00 - Friday, April 10, 2020 12:00:00 PM GMT-05:00
+    # # Phase 1: Thursday, March 14, 2019 12:00:00 AM GMT-05:00 - Friday, April 10, 2020 12:00:00 PM GMT-05:00
     # first = 1552539600
     # last = 1586520000
 
-    # For test
-    # Phase 2 Friday, April 10, 2020 12:00:00 PM GMT-05:00 - April 11, 2020 12:00:00 PM GMT-05:00
-    # first = 1586520000
-    # last = 1586606400
-    first = 1586606400
-    last = 1586610000
+    # Phase 2: Friday, April 10, 2020 12:00:00 PM GMT-05:00 - Friday, April 24, 2020 12:00:00 PM GMT-05:00
+    first = 1586520000
+    last = 1587729600
     step = 3600
     
     # Get all system measurements
