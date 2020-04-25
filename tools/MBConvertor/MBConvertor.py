@@ -46,8 +46,10 @@ def main():
 
     # For test
     # Phase 2 Friday, April 10, 2020 12:00:00 PM GMT-05:00 - April 11, 2020 12:00:00 PM GMT-05:00
-    first = 1586520000
-    last = 1586606400
+    # first = 1586520000
+    # last = 1586606400
+    first = 1586606400
+    last = 1586610000
     step = 3600
     
     # Get all system measurements
