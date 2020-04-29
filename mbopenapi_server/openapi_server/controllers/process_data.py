@@ -1,5 +1,6 @@
 import time
 import json
+import logging
 import multiprocessing
 
 def process_node_data(node: str, node_data: dict, value: str, time_list: list) -> dict:
@@ -119,7 +120,6 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
         # print(f"cpu_inl_temp length : {len(cpu_inl_temp)}")
         # print(f"job_list length     : {len(job_list)}")
 
-    except Exception as err:
-        print(err)
-        print("Process Data Error!")
+    except:
+        logging.error(f"Failed to process data of node: {node}")
     return json_data

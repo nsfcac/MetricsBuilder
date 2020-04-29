@@ -1,5 +1,6 @@
 import datetime
 import json
+import logging
 import multiprocessing
 
 # For testing
@@ -17,9 +18,8 @@ def query_process_data(node:str, client: object, start: str, end: str,
 
         if node_data:
             json_data = process_node_data(node, node_data, value, time_list)
-    except Exception as err:
-        print(err)
-        print("Query Data Error!")
+    except:
+        logging.error(f"Failed to query and process data of node: {node}, time range: {start} - {end}, interval: {interval}, value: {value}")
     return json_data
 
 
@@ -45,9 +45,8 @@ def query_node_data(node:str, client: object, start: str, end: str,
 
         node_data["JobList"] = job_list
 
-    except Exception as err:
-        print(err)
-        print("Query Data Error!")
+    except:
+        logging.error(f"Failed to query data of node: {node}, time range: {start} - {end}, interval: {interval}, value: {value}")
     return node_data
 
 
@@ -61,9 +60,8 @@ def query_reading(client: object, node: str, measurement: str, label: str,
                     + "' GROUP BY time(" + interval + ") fill(null)"
         reading = list( client.query(query_sql).get_points() )
         
-    except Exception as err:
-        print(err)
-        print("Query Data Error!")
+    except:
+        logging.error(f"Failed to query {measurement} of node: {node}, time range: {start} - {end}, interval: {interval}, value: {value}")
     return reading
 
 def query_job_list(client: object, node: str, 
@@ -75,9 +73,8 @@ def query_job_list(client: object, node: str,
                     + "' AND time >= '" + start + "' AND time < '" + end \
                     + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
         job_list = list( client.query(query_sql).get_points() )
-    except Exception as err:
-        print(err)
-        print("Query Data Error!")
+    except:
+        logging.error(f"Failed to query job list of node: {node}")
     return job_list
 
 def query_job_data(client: object, jobid: str) -> dict:
@@ -87,7 +84,6 @@ def query_job_data(client: object, jobid: str) -> dict:
         job_data = list( client.query(query_sql).get_points() )
         if job_data:
             return job_data[0]
-    except Exception as err:
-        print(err)
-        print("Query Data Error!")
+    except:
+        logging.error(f"Failed to query data of job: {jobid}")
     return job_data

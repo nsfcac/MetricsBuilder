@@ -3,6 +3,7 @@ import six
 import json, base64
 import time
 import zlib
+import logging
 from influxdb import InfluxDBClient 
 
 import multiprocessing
@@ -18,6 +19,14 @@ from openapi_server.controllers.DBcm import QueryInfluxdb
 from openapi_server.controllers.query_db import query_process_data, query_job_data
 
 ZIPJSON_KEY = 'base64(zip(o))'
+
+logging.basicConfig(
+    level=logging.ERROR,
+    filename='metricsbuilder.log',
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S %Z'
+)
+
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     """get_unified_metric

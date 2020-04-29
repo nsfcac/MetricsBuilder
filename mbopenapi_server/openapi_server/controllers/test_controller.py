@@ -3,13 +3,7 @@ import six
 import json
 import time
 from influxdb import InfluxDBClient
-
-# from datetime import datetime
-# from datetime import timezone
-# import pytz
-
-import datetime
-from dateutil.tz import *
+import logging
 
 import multiprocessing
 from itertools import repeat
@@ -19,6 +13,13 @@ from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
 # from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
+
+logging.basicConfig(
+    level=logging.ERROR,
+    filename='test_metricsbuilder.log',
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S %Z'
+)
 
 
 def get_unified_metric(start, end, interval, value):  # noqa: E501
@@ -49,6 +50,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     start = parse(start)
     end = parse(end)
 
+    # When we changed the database, April 28, 2020 11:40:00 AM GMT-05:00 DST
     switch_time = 1588092000
     start_epoch = int(start.timestamp())
     end_epoch = int(end.timestamp())
