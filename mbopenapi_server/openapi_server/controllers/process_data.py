@@ -74,9 +74,7 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
 
         if node_data["JobList"]:
             for item in node_data["JobList"]:
-                # # Check time
-                # print(json.dumps(item["time"]), end=" ")
-                # print(json.dumps(item["distinct"]))
+                # Aggregate the value with the same time
                 this_job_list = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
                 if item["time"] not in db_time_list:
                     db_time_list.append(item["time"])
@@ -84,14 +82,8 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                 else:
                     job_list_dict[item["time"]].extend(this_job_list)
 
-                # if item["distinct"]:
-                #     job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
-                #     job_list_temp.extend(job_list_dict[item["time"]])
-                # else:
-                #     job_list_dict[item["time"]] = []
-
         print(json.dumps(job_list_dict, indent=4))
-        # Aggregate the value with the same time
+        
         for t in time_list:
             try:
                 job_list.append(job_list_dict[t])
