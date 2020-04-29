@@ -73,6 +73,8 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
 
         if node_data["JobList"]:
             for item in node_data["JobList"]:
+                # Check time
+                print(json.dumps(item["time"]))
                 if item["distinct"]:
                     job_list_dict[item["time"]] = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
                     job_list_temp.extend(job_list_dict[item["time"]])
