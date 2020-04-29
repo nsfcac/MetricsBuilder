@@ -81,9 +81,6 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                     job_list_dict[item["time"]] = this_job_list
                 else:
                     job_list_dict[item["time"]].extend(this_job_list)
-
-        # print("job_list_dict")
-        # print(json.dumps(job_list_dict, indent=4))
         
         # Interpolate
         for i, t in enumerate(time_list):
@@ -99,9 +96,9 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                     this_job_list = job_list[i-1]
             job_list.append(this_job_list)
 
-        print("job_list: ", end = " ")
-        print(len(job_list))
-        print(json.dumps(job_list, indent=4))
+        # print("job_list: ", end = " ")
+        # print(len(job_list))
+        # print(json.dumps(job_list, indent=4))
         
         
         job_set = list(set(job_list_temp))
