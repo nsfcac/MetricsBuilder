@@ -62,6 +62,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         Due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, 
         currently we do not support requesting data with time range falls on this time point
         """)
+        return
 
     client = InfluxDBClient(host=host, port=port, database=dbname)
 
