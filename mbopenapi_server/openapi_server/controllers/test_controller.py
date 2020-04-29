@@ -121,7 +121,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     return
 
 start = "2020-02-14T12:00:00Z"
-end = "2020-02-14T18:00:00Z"
+end = "2020-02-15T12:00:00Z"
 interval = "1h"
 value = "max"
 
