@@ -140,6 +140,8 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     "cpu_cores": results[index]["CPUCores"],
                     "job_array": job_array
                 }
+            else:
+                print("No Result")
     
         if compress:
             unified_metrics.jobs_info = json_zip(job_data)

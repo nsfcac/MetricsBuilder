@@ -1,8 +1,9 @@
 import datetime
 import json
 import multiprocessing
-from process_data import process_node_data
-# from openapi_server.controllers.process_data import process_node_data
+# For testing
+# from process_data import process_node_data
+from openapi_server.controllers.process_data import process_node_data
 
 def query_process_data(node:str, influx: object, start: str, end: str, 
                        interval: str, value: str, time_list: list) -> dict:
