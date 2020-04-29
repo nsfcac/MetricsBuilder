@@ -114,7 +114,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
         except Exception as err:
             print(err)
 
-
+    print(json.dumps(node_data, indent=4))
     # Get all jobs ID
     all_jobs_id = list(set(all_jobs_list))
 
