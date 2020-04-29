@@ -6,7 +6,8 @@ def parse_conf()-> object:
     """
     cfg = []
     try:
-        with open('openapi_server/controllers/config.yml', 'r') as ymlfile:
+        with open('./config.yml', 'r') as ymlfile:
+        # with open('openapi_server/controllers/config.yml', 'r') as ymlfile:
             cfg = yaml.safe_load(ymlfile)
     except Exception as err:
         print(err)
