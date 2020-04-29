@@ -7,6 +7,7 @@ import multiprocessing
 # from process_data import process_node_data
 from openapi_server.controllers.process_data import process_node_data
 
+
 def query_process_data(node:str, client: object, start: str, end: str, 
                        interval: str, value: str, time_list: list) -> dict:
     json_data = {}

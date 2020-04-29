@@ -3,6 +3,7 @@ import json
 import logging
 import multiprocessing
 
+
 def process_node_data(node: str, node_data: dict, value: str, time_list: list) -> dict:
     """
     Process node data retrieved from influxdb
