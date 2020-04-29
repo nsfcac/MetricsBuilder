@@ -115,7 +115,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
         for index, job in enumerate(all_jobs_id):
             job_array = False
-            if "." in results[index]["JobId"]:
+            if "." in results[index]["tags"]["JobId"]:
                 job_array = True
 
             job_data[job] = {

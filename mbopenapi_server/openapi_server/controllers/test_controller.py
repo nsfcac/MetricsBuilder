@@ -34,8 +34,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
 
     # Initialization 
     config = parse_conf()
-    node_list = parse_host()
-    # node_list = ["10.101.1.1"]
+    # node_list = parse_host()
+    node_list = ["10.101.1.1"]
     influx = QueryInfluxdb(config["influxdb"])
     cpu_count = multiprocessing.cpu_count()
 
@@ -56,8 +56,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # Get time stamp
     time_list = gen_timestamp(start, end, interval)
 
-    print("time_list: ", end = " ")
-    print(len(time_list))
+    # print("time_list: ", end = " ")
+    # print(len(time_list))
     # print(json.dumps(time_list, indent=4))
     epoch_time_list = gen_epoch_timestamp(start, end, interval)
 
@@ -97,6 +97,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     with multiprocessing.Pool(processes=cpu_count) as pool:
         results = pool.starmap(query_job_data, query_job_data_args)
 
+    print(json.dumps(results, indent = 4))
     for index, job in enumerate(all_jobs_id):
         job_array = False
         if "." in results[index]["JobId"]:
