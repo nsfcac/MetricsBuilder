@@ -97,19 +97,31 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     with multiprocessing.Pool(processes=cpu_count) as pool:
         results = pool.starmap(query_job_data, query_job_data_args)
 
-    print(json.dumps(results, indent = 4))
     for index, job in enumerate(all_jobs_id):
-        job_array = False
-        if "." in results[index]["JobId"]:
-            job_array = True
+        try:
+            job_array = False
+            if "." in results[index]["JobId"]:
+                job_array = True
+            
+            if "FinishTime" in results[index]:
+                finish_time = results[index]["FinishTime"]
+            else:
+                finish_time = None
 
-        job_data[job] = {
-            "user_name": results[index]["User"],
-            "submit_time": results[index]["SubmitTime"],
-            "start_time": results[index]["StartTime"],
-            "job_array": job_array
-        }
+            job_data[job] = {
+                "start_time": results[index]["StartTime"],
+                "submit_time": results[index]["SubmitTime"],
+                "finish_time": finish_time,
+                "job_name": results[index]["JobName"],
+                "user_name": results[index]["User"],
+                "total_nodes": results[index]["TotalNodes"],
+                "cpu_cores": results[index]["CPUCores"],
+                "job_array": job_array
+            }
+        except Exception as err:
+            print(err)
 
+    print(json.dumps(job_data, indent=4))
 
     # total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
     # # In seconds
@@ -124,8 +136,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # print(json.dumps(unified_metrics, indent=4))
     return
 
-start = "2020-02-13T12:00:00Z"
-end = "2020-02-15T12:00:00Z"
+start = "2020-04-23T12:00:00Z"
+end = "2020-04-27T12:00:00Z"
 interval = "1h"
 value = "max"
 

@@ -114,16 +114,28 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             results = pool.starmap(query_job_data, query_job_data_args)
 
         for index, job in enumerate(all_jobs_id):
-            job_array = False
-            if "." in results[index]["tags"]["JobId"]:
-                job_array = True
+            try:
+                job_array = False
+                if "." in results[index]["JobId"]:
+                    job_array = True
+                
+                if "FinishTime" in results[index]:
+                    finish_time = results[index]["FinishTime"]
+                else:
+                    finish_time = None
 
-            job_data[job] = {
-                "user_name": results[index]["User"],
-                "submit_time": results[index]["SubmitTime"],
-                "start_time": results[index]["StartTime"],
-                "job_array": job_array
-            }
+                job_data[job] = {
+                    "start_time": results[index]["StartTime"],
+                    "submit_time": results[index]["SubmitTime"],
+                    "finish_time": finish_time,
+                    "job_name": results[index]["JobName"],
+                    "user_name": results[index]["User"],
+                    "total_nodes": results[index]["TotalNodes"],
+                    "cpu_cores": results[index]["CPUCores"],
+                    "job_array": job_array
+                }
+            except Exception as err:
+                print(err)
 
         if compress:
             unified_metrics.jobs_info = json_zip(job_data)
