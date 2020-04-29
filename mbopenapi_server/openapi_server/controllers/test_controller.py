@@ -124,6 +124,8 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
                 "cpu_cores": results[index]["CPUCores"],
                 "job_array": job_array
             }
+        else:
+            print("No Result")
 
     print(json.dumps(job_data, indent=4))
 
