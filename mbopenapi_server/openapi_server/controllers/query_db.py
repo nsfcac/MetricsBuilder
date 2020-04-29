@@ -37,6 +37,7 @@ def query_node_data(node:str, influx: object, start: str, end: str,
         for label in power_labels:
             reading = query_reading(influx, node, "Power", label, start, end, interval, value)
             node_data[label] = reading
+        
         job_list = query_job_list(influx, node, start, end, interval)
 
         node_data["JobList"] = job_list
@@ -64,6 +65,7 @@ def query_reading(influx: object, node: str, measurement: str, label: str,
 
 def query_job_list(influx: object, node: str, 
                    start: str, end: str, interval: str) -> list:
+    # SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='10.101.1.1' AND time >= '2020-04-06T12:00:00Z' AND time < '2020-04-07T12:00:00Z' GROUP BY *, time(2h) SLIMIT 1
     job_list = []
     try:
         query_sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \

@@ -7,13 +7,13 @@ import multiprocessing
 from itertools import repeat
 from dateutil.parser import parse
 
-from parse_config import parse_conf, parse_host
-from gen_timestamp import gen_timestamp, gen_epoch_timestamp
-from DBcm import QueryInfluxdb
-from query_db import query_process_data, query_job_data
+from openapi_server.controllers.parse_config import parse_conf, parse_host
+from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
+from openapi_server.controllers.DBcm import QueryInfluxdb
+from openapi_server.controllers.query_db import query_process_data, query_job_data
 
 
-def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
+def get_unified_metric(start, end, interval, value):  # noqa: E501
     """get_unified_metric
 
     Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. &#x60;2020-02-12T14:00:00Z&#x60;; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be &#x60;min&#x60;, &#x60;max&#x60;, &#x60;mean&#x60;, or &#x60;median&#x60;.  A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include &#x60;s&#x60;(second), &#x60;m&#x60;(minute), &#x60;h&#x60;(hour), &#x60;d&#x60;(day), &#x60;w&#x60;(week).  # noqa: E501
@@ -34,7 +34,8 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
     # Initialization 
     config = parse_conf()
-    node_list = parse_host()
+    # node_list = parse_host()
+    node_list = ["10.101.1.1"]
     influx = QueryInfluxdb(config["influxdb"])
     cpu_count = multiprocessing.cpu_count()
 
@@ -43,17 +44,14 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     job_data = {}
     all_jobs_list = []
 
-    start_str = "2020-02-14T12:00:00Z"
-    end_str = "2020-02-14T18:00:00Z"
-
-    start = parse(start_str)
-    end = parse(end_str)
+    start = parse(start)
+    end = parse(end)
 
     # Time string used in query_data
     st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
     et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-    query_start = time.time()
+    # query_start = time.time()
 
     # Get time stamp
     time_list = gen_timestamp(start, end, interval)
@@ -61,6 +59,8 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     epoch_time_list = gen_epoch_timestamp(start, end, interval)
 
     
+    # Query nodes data
+
     # Get all nodes detail
     query_process_data_args = zip(node_list, repeat(influx), 
                             repeat(st_str), repeat(et_str), 
@@ -107,9 +107,9 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         }
 
 
-    total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
-    # In seconds
-    time_range = int(end.timestamp()) - int(start.timestamp())
+    # total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
+    # # In seconds
+    # time_range = int(end.timestamp()) - int(start.timestamp())
 
     unified_metrics = {
         "node_data": node_data,
@@ -117,4 +117,12 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         "time_list": epoch_time_list
     }
 
-    return unified_metrics
+    print(json.dumps(unified_metrics, indent=4))
+    return
+
+start = "2020-02-14T12:00:00Z"
+end = "2020-02-14T18:00:00Z"
+interval = "1h"
+value = "max"
+
+get_unified_metric(start, end, interval, value)
