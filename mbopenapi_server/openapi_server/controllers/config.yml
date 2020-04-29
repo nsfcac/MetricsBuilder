@@ -2,3 +2,4 @@ influxdb:
   host: '10.10.1.3'
   port: '8086'
   database: 'updated_schema'
+  db_monster: 'monster_hpcc'
