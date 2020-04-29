@@ -76,11 +76,11 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
             for item in node_data["JobList"]:
                 # Aggregate the value with the same time
                 this_job_list = [jobstr[1:-1] for jobstr in item["distinct"][1:-1].split(", ")]
+                job_list_temp += this_job_list
                 if item["time"] not in db_time_list:
                     db_time_list.append(item["time"])
                     job_list_dict[item["time"]] = this_job_list
                 else:
-                    # job_list_dict[item["time"]].extend(this_job_list)
                     for job in this_job_list:
                         if job not in job_list_dict[item["time"]]:
                             job_list_dict[item["time"]].append(job)
@@ -99,12 +99,16 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                     this_job_list = job_list[i-1]
             job_list.append(this_job_list)
 
-        print("job_list: ", end = " ")
-        print(len(job_list))
-        print(json.dumps(job_list, indent=4))
-        
-        
+        # print("job_list: ", end = " ")
+        # print(len(job_list))
+        # print(json.dumps(job_list, indent=4))
+
         job_set = list(set(job_list_temp))
+
+        print("job_list: ", end = " ")
+        print(job_list)
+        print("job_set: ", end = " ")
+        print(job_set)
         
         json_data = {
             "memory_usage": memory_usage,
