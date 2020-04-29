@@ -7,10 +7,10 @@ import multiprocessing
 from itertools import repeat
 from dateutil.parser import parse
 
-from openapi_server.controllers.parse_config import parse_conf, parse_host
-from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
-from openapi_server.controllers.DBcm import QueryInfluxdb
-from openapi_server.controllers.query_db import query_process_data, query_job_data
+from parse_config import parse_conf, parse_host
+from gen_timestamp import gen_timestamp, gen_epoch_timestamp
+from DBcm import QueryInfluxdb
+from query_db import query_process_data, query_job_data
 
 
 def get_unified_metric(start, end, interval, value):  # noqa: E501
