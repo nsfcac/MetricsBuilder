@@ -3,6 +3,7 @@ import six
 import json, base64
 import time
 import zlib
+from influxdb import InfluxDBClient 
 
 import multiprocessing
 from itertools import repeat

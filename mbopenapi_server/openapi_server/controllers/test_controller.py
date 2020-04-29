@@ -2,6 +2,14 @@ import connexion
 import six
 import json
 import time
+from influxdb import InfluxDBClient
+
+# from datetime import datetime
+# from datetime import timezone
+# import pytz
+
+import datetime
+from dateutil.tz import *
 
 import multiprocessing
 from itertools import repeat
@@ -9,7 +17,7 @@ from dateutil.parser import parse
 
 from parse_config import parse_conf, parse_host
 from gen_timestamp import gen_timestamp, gen_epoch_timestamp
-from DBcm import QueryInfluxdb
+# from DBcm import QueryInfluxdb
 from query_db import query_process_data, query_job_data
 
 
@@ -31,21 +39,39 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
 
     :rtype: UnifiedMetrics
     """
-
-    # Initialization 
+     # Initialization 
     config = parse_conf()
     # node_list = parse_host()
     node_list = ["10.101.1.1"]
-    influx = QueryInfluxdb(config["influxdb"])
+    host = config["influxdb"]["host"]
+    port = config["influxdb"]["port"]
+
+    start = parse(start)
+    end = parse(end)
+
+    switch_time = 1588092000
+    start_epoch = int(start.timestamp())
+    end_epoch = int(end.timestamp())
+
+    if start_epoch >= switch_time:
+        dbname = config["influxdb"]["db_monster"]
+    elif end_epoch <= switch_time:
+        dbname = config["influxdb"]["database"]
+    else:
+        print("""
+        Due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, 
+        currently we do not support requesting data with time range falls on this time point
+        """)
+
+    client = InfluxDBClient(host=host, port=port, database=dbname)
+
     cpu_count = multiprocessing.cpu_count()
 
     unified_metrics = {}
     node_data = {}
     job_data = {}
     all_jobs_list = []
-
-    start = parse(start)
-    end = parse(end)
+    
 
     # Time string used in query_data
     st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -65,7 +91,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # Query nodes data
 
     # Get all nodes detail
-    query_process_data_args = zip(node_list, repeat(influx), 
+    query_process_data_args = zip(node_list, repeat(client), 
                             repeat(st_str), repeat(et_str), 
                             repeat(interval), repeat(value), repeat(time_list))
 
@@ -91,7 +117,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # Get all jobs ID
     all_jobs_id = list(set(all_jobs_list))
 
-    query_job_data_args = zip(repeat(influx), all_jobs_id)
+    query_job_data_args = zip(repeat(client), all_jobs_id)
 
     # Get all jobs detail
     with multiprocessing.Pool(processes=cpu_count) as pool:
