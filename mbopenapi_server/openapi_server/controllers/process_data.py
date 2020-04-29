@@ -106,8 +106,10 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
         job_set = list(set(job_list_temp))
 
         print("job_list: ", end = " ")
+        print(len(job_list))
         print(job_list)
         print("job_set: ", end = " ")
+        print(len(job_set))
         print(job_set)
         
         json_data = {
