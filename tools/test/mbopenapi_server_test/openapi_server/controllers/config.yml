@@ -1,0 +1,58 @@
+influxdb:
+  host: '10.10.1.3'
+  port: '8086'
+  database: 'updated_schema'
+  db_monster: 'monster_hpcc'
+
+
+# Database "updated_schema"
+# name: Power
+# key   value
+# ---   -----
+# Label NodePower
+
+# name: Thermal
+# key   value
+# ---   -----
+# Label CPU1Temp
+# Label CPU2Temp
+# Label FAN_1
+# Label FAN_2
+# Label FAN_3
+# Label FAN_4
+# Label InletTemp
+
+# name: UGE
+# key   value
+# ---   -----
+# Label CPUUsage
+# Label MemUsage
+
+
+# Database "monster_hpcc"
+# name: Health
+# key   value
+# ---   -----
+# Label System
+
+# name: Power
+# key   value
+# ---   -----
+# Label NodePower
+
+# name: Thermal
+# key   value
+# ---   -----
+# Label CPU1Temp
+# Label CPU2Temp
+# Label FAN_1
+# Label FAN_2
+# Label FAN_3
+# Label FAN_4
+# Label InletTemp
+
+# name: UGE
+# key   value
+# ---   -----
+# Label CPUUsage
+# Label MemUsage

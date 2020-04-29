@@ -1,0 +1,329 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: jie.li@ttu.edu
+    name: Jie Li
+  description: An API for accessing High Performance Computing(HPC) system monitoring
+    metrics.
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  title: MetricsBuilder API
+  version: 1.0.0
+servers:
+- description: Local test server
+  url: https://localhost:8080/
+- description: Redfish server
+  url: https://129.118.104.141:8080/
+paths:
+  /v1/metrics:
+    get:
+      description: |
+        Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be `min`, `max`, `mean`, or `median`.
+
+        A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include `s`(second), `m`(minute), `h`(hour), `d`(day), `w`(week).
+
+        Use compress to specify returned data is compressed or not. If query large range of time with small interval, it would reduce significant transfering time using compressed data. For Json data compression and de-compression, please refer to [this](https://medium.com/@busybus/zipjson-3ed15f8ea85d).
+
+        One thing to be noticed, due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.
+      operationId: get_unified_metric
+      parameters:
+      - description: start time of time range of the monitoring metrics
+        explode: true
+        in: query
+        name: start
+        required: true
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - description: end time of time range of the monitoring metrics
+        explode: true
+        in: query
+        name: end
+        required: true
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - description: time interval for aggregating the monitoring metrics
+        explode: true
+        in: query
+        name: interval
+        required: true
+        schema:
+          example: 5m
+          pattern: ^[1-9][0-9]*[s, m, h, d, w]$
+          type: string
+        style: form
+      - description: value type of the monitoring metrics
+        explode: true
+        in: query
+        name: value
+        required: true
+        schema:
+          enum:
+          - min
+          - max
+          - mean
+          - median
+          example: max
+          type: string
+        style: form
+      - description: return compressed data
+        explode: true
+        in: query
+        name: compress
+        required: true
+        schema:
+          enum:
+          - true
+          - false
+          example: true
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnifiedMetrics'
+          description: Get unified metrics successfully
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Unexpected error
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+components:
+  schemas:
+    UnifiedMetrics:
+      example:
+        nodes_info:
+          id: id
+          metrics:
+            power_usage:
+            - 1.4658129805029452
+            - 1.4658129805029452
+            fan_speed:
+            - - 5
+              - 5
+            - - 5
+              - 5
+            job_id:
+            - job_id
+            - job_id
+            memory_usage:
+            - 0.8008281904610115
+            - 0.8008281904610115
+            cpu_usage:
+            - 6.027456183070403
+            - 6.027456183070403
+            cpu_inl_temp:
+            - - 5.637376656633329
+              - 5.637376656633329
+            - - 5.637376656633329
+              - 5.637376656633329
+        jobs_info:
+          details:
+            start_time: 2.3021358869347655
+            job_name: job_name
+            job_array: true
+            submit_time: 7.061401241503109
+            user_name: user_name
+            total_nodes: 3.616076749251911
+            cpu_cores: 2.027123023002322
+            node_list:
+            - node_list
+            - node_list
+            finish_time: 9.301444243932576
+          id: id
+        time_stamp:
+        - 4
+        - 4
+      properties:
+        nodes_info:
+          $ref: '#/components/schemas/UnifiedMetrics_nodes_info'
+        jobs_info:
+          $ref: '#/components/schemas/UnifiedMetrics_jobs_info'
+        time_stamp:
+          items:
+            type: integer
+          type: array
+      required:
+      - jobs_info
+      - nodes_info
+      - time_stamp
+      type: object
+    ErrorMessage:
+      properties:
+        error_code:
+          type: string
+        error_message:
+          type: string
+      required:
+      - error_code
+      - error_message
+      type: object
+    UnifiedMetrics_nodes_info_metrics:
+      example:
+        power_usage:
+        - 1.4658129805029452
+        - 1.4658129805029452
+        fan_speed:
+        - - 5
+          - 5
+        - - 5
+          - 5
+        job_id:
+        - job_id
+        - job_id
+        memory_usage:
+        - 0.8008281904610115
+        - 0.8008281904610115
+        cpu_usage:
+        - 6.027456183070403
+        - 6.027456183070403
+        cpu_inl_temp:
+        - - 5.637376656633329
+          - 5.637376656633329
+        - - 5.637376656633329
+          - 5.637376656633329
+      properties:
+        memory_usage:
+          items:
+            type: number
+          type: array
+        cpu_usage:
+          items:
+            type: number
+          type: array
+        power_usage:
+          items:
+            type: number
+          type: array
+        fan_speed:
+          items:
+            items:
+              type: integer
+            type: array
+          type: array
+        cpu_inl_temp:
+          items:
+            items:
+              type: number
+            type: array
+          type: array
+        job_id:
+          items:
+            type: string
+          type: array
+      required:
+      - cpu_inl_temp
+      - cpu_usage
+      - fan_speed
+      - job_id
+      - memory_usage
+      - power_usage
+    UnifiedMetrics_nodes_info:
+      example:
+        id: id
+        metrics:
+          power_usage:
+          - 1.4658129805029452
+          - 1.4658129805029452
+          fan_speed:
+          - - 5
+            - 5
+          - - 5
+            - 5
+          job_id:
+          - job_id
+          - job_id
+          memory_usage:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          cpu_usage:
+          - 6.027456183070403
+          - 6.027456183070403
+          cpu_inl_temp:
+          - - 5.637376656633329
+            - 5.637376656633329
+          - - 5.637376656633329
+            - 5.637376656633329
+      properties:
+        id:
+          type: string
+        metrics:
+          $ref: '#/components/schemas/UnifiedMetrics_nodes_info_metrics'
+      required:
+      - id
+      - metrics
+    UnifiedMetrics_jobs_info_details:
+      example:
+        start_time: 2.3021358869347655
+        job_name: job_name
+        job_array: true
+        submit_time: 7.061401241503109
+        user_name: user_name
+        total_nodes: 3.616076749251911
+        cpu_cores: 2.027123023002322
+        node_list:
+        - node_list
+        - node_list
+        finish_time: 9.301444243932576
+      properties:
+        start_time:
+          type: number
+        submit_time:
+          type: number
+        finish_time:
+          type: number
+        job_name:
+          type: string
+        user_name:
+          type: string
+        node_list:
+          items:
+            type: string
+          type: array
+        total_nodes:
+          type: number
+        cpu_cores:
+          type: number
+        job_array:
+          type: boolean
+      required:
+      - cpu_cores
+      - finish_time
+      - job_array
+      - job_name
+      - node_list
+      - start_time
+      - submit_time
+      - total_nodes
+      - user_name
+    UnifiedMetrics_jobs_info:
+      example:
+        details:
+          start_time: 2.3021358869347655
+          job_name: job_name
+          job_array: true
+          submit_time: 7.061401241503109
+          user_name: user_name
+          total_nodes: 3.616076749251911
+          cpu_cores: 2.027123023002322
+          node_list:
+          - node_list
+          - node_list
+          finish_time: 9.301444243932576
+        id: id
+      properties:
+        id:
+          type: string
+        details:
+          $ref: '#/components/schemas/UnifiedMetrics_jobs_info_details'
+      required:
+      - details
+      - id
