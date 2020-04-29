@@ -80,7 +80,9 @@ def process_node_data(node: str, node_data: dict, value: str, time_list: list) -
                     db_time_list.append(item["time"])
                     job_list_dict[item["time"]] = this_job_list
                 else:
-                    job_list_dict[item["time"]].extend(this_job_list)
+                    for job in this_job_list:
+                        if job not in job_list_dict[item["time"]]:
+                            job_list_dict[item["time"]].extend(job)
         
         # Interpolate
         for i, t in enumerate(time_list):
