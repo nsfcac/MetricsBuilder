@@ -108,12 +108,18 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
             else:
                 finish_time = None
 
+            if "NodeList" in results[index]:
+                node_list = results[index]["NodeList"]
+            else:
+                node_list = None
+
             job_data[job] = {
                 "start_time": results[index]["StartTime"],
                 "submit_time": results[index]["SubmitTime"],
                 "finish_time": finish_time,
                 "job_name": results[index]["JobName"],
                 "user_name": results[index]["User"],
+                "node_list": node_list,
                 "total_nodes": results[index]["TotalNodes"],
                 "cpu_cores": results[index]["CPUCores"],
                 "job_array": job_array
