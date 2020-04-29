@@ -15,7 +15,6 @@ from openapi_server import util
 
 from openapi_server.controllers.parse_config import parse_conf, parse_host
 from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
-from openapi_server.controllers.DBcm import QueryInfluxdb
 from openapi_server.controllers.query_db import query_process_data, query_job_data
 
 ZIPJSON_KEY = 'base64(zip(o))'
@@ -50,30 +49,51 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     # Initialization 
     config = parse_conf()
     node_list = parse_host()
-    influx = QueryInfluxdb(config["influxdb"])
-    cpu_count = multiprocessing.cpu_count()
-
-    node_data = {}
-    job_data = {}
-    all_jobs_list = []
+    host = config["influxdb"]["host"]
+    port = config["influxdb"]["port"]
 
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
-    # Time string used in query_data
-    st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
-    et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
+    # When we changed the database, April 28, 2020 11:40:00 AM GMT-05:00 DST
+    switch_time = 1588092000
+    start_epoch = int(start.timestamp())
+    end_epoch = int(end.timestamp())
 
     # Check Sanity
+    if start_epoch >= switch_time:
+        dbname = config["influxdb"]["db_monster"]
+    elif end_epoch <= switch_time:
+        dbname = config["influxdb"]["database"]
+    else:
+        return ErrorMessage(
+            error_code = '400 INVALID_PARAMETERS',
+            error_message = 'Due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.'
+        )
+
     if start > end:
         return ErrorMessage(
             error_code = '400 INVALID_PARAMETERS',
             error_message = 'Start time should no larger than end time'
         )
     else:
+        #Initialize influxdb client
+        client = InfluxDBClient(host=host, port=port, database=dbname)
+
+        cpu_count = multiprocessing.cpu_count()
+
+        results = []
+        node_data = {}
+        job_data = {}
+        all_jobs_list = []
+
+        # Time string used in query_data
+        st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
+        et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
+
         unified_metrics = UnifiedMetrics()
 
-        query_start = time.time()
+        # query_start = time.time()
 
         # Get time stamp
         time_list = gen_timestamp(start, end, interval)
@@ -86,7 +106,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             unified_metrics.time_stamp = epoch_time_list
         
         # Get all nodes detail
-        query_process_data_args = zip(node_list, repeat(influx), 
+        query_process_data_args = zip(node_list, repeat(client), 
                                 repeat(st_str), repeat(et_str), 
                                 repeat(interval), repeat(value), repeat(time_list))
 
@@ -95,18 +115,17 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
         # Attach data to node ip addr
         for index, node in enumerate(node_list):
-            node_data[node] = {
-                "memory_usage": results[index]["memory_usage"],
-                "cpu_usage": results[index]["cpu_usage"],
-                "power_usage": results[index]["power_usage"],
-                "fan_speed": results[index]["fan_speed"],
-                "cpu_inl_temp": results[index]["cpu_inl_temp"],
-                "job_id": results[index]["job_list"]
-            }
-            try:
-                all_jobs_list.extend(results[index]["job_set"])
-            except Exception as err:
-                print(err)
+            if results[index]:
+                node_data[node] = {
+                    "memory_usage": results[index]["memory_usage"],
+                    "cpu_usage": results[index]["cpu_usage"],
+                    "power_usage": results[index]["power_usage"],
+                    "fan_speed": results[index]["fan_speed"],
+                    "cpu_inl_temp": results[index]["cpu_inl_temp"],
+                    "job_id": results[index]["job_list"]
+                }
+                if results[index]["job_set"]:
+                    all_jobs_list.extend(results[index]["job_set"])
 
         if compress:
             unified_metrics.nodes_info = json_zip(node_data)
@@ -117,7 +136,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         # Get all jobs ID
         all_jobs_id = list(set(all_jobs_list))
 
-        query_job_data_args = zip(repeat(influx), all_jobs_id)
+        query_job_data_args = zip(repeat(client), all_jobs_id)
 
         # Get all jobs detail
         with multiprocessing.Pool(processes=cpu_count) as pool:
@@ -150,20 +169,18 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     "cpu_cores": results[index]["CPUCores"],
                     "job_array": job_array
                 }
-            else:
-                print("No Result")
     
         if compress:
             unified_metrics.jobs_info = json_zip(job_data)
         else:
             unified_metrics.jobs_info = job_data
 
-        total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
-        # In seconds
-        time_range = int(end.timestamp()) - int(start.timestamp())
+        # total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
+        # # In seconds
+        # time_range = int(end.timestamp()) - int(start.timestamp())
 
-        with open("requests.log", "a+") as requests_log:
-            print(f"{time_range}|{interval}|{value}|{total_elapsed}", file = requests_log)
+        # with open("requests.log", "a+") as requests_log:
+        #     print(f"{time_range}|{interval}|{value}|{total_elapsed}", file = requests_log)
 
     return unified_metrics
 
