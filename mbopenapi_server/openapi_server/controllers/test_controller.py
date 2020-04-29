@@ -56,6 +56,7 @@ def get_unified_metric(start, end, interval, value):  # noqa: E501
     # Get time stamp
     time_list = gen_timestamp(start, end, interval)
 
+    print(json.dumps(time_list))
     epoch_time_list = gen_epoch_timestamp(start, end, interval)
 
     
