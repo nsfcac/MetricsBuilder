@@ -19,12 +19,12 @@ from openapi_server.controllers.query_db import query_process_data, query_job_da
 
 ZIPJSON_KEY = 'base64(zip(o))'
 
-logging.basicConfig(
-    level=logging.ERROR,
-    filename='metricsbuilder.log',
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S %Z'
-)
+# logging.basicConfig(
+#     level=logging.ERROR,
+#     filename='metricsbuilder.log',
+#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#     datefmt='%Y-%m-%d %H:%M:%S %Z'
+# )
 
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
