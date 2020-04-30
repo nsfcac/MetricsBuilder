@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn instance to serve mbapi(metrics builder api)
+After=network.target
+
+[Service]
+WorkingDirectory=/home/username/MetricsBuilder/mbopenapi
+Environment="PATH=/home/username/MetricsBuilder/env"
+ExecStart=/home/username/MetricsBuilder/env/bin/gunicorn --workers 2 --bind unix:/home/username/MetricsBuilder/mbopenapi/mbapi.sock wsgi:gunicorn_app
+
+[Install]
+WantedBy=multi-user.target
