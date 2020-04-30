@@ -4,7 +4,7 @@ import connexion
 
 from openapi_server import encoder
 from flask_cors import CORS
-from flask_talisman import Talisman
+# from flask_talisman import Talisman
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
     app.add_api('openapi.yaml',
                 arguments={'title': 'MetricsBuilder API'},
                 pythonic_params=True)
-    Talisman(app.app)
+    # Talisman(app.app)
     CORS(app.app)
     
     app.run(port=8080, ssl_context=('cert.pem', 'key.pem'))
