@@ -4,7 +4,7 @@ import connexion
 
 from openapi_server import encoder
 from flask_cors import CORS
-from flask_talisman import Talisman
+# from flask_talisman import Talisman
 
 
 def main():
