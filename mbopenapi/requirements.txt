@@ -8,3 +8,4 @@ setuptools >= 21.0.0
 influxdb
 flask-cors
 pyopenssl
+flask-talisman
