@@ -14,8 +14,10 @@ def main():
                 pythonic_params=True)
     CORS(app.app)
     # app.run(port=8080, ssl_context=('cert.pem', 'key.pem'))
-    app.run()
+    # app.run()
+    return app
 
 
 if __name__ == '__main__':
-    main()
+    app = main()
+    app.run()
