@@ -13,3 +13,5 @@ else
     echo "Stop MetricsBuilderAPI ..."
     kill -9 `ps -ef | grep openapi_server | grep -v grep | awk '{print $2}'`
 fi
+
+# gunicorn --bind 0.0.0.0:8080 wsgi:gunicorn_app
