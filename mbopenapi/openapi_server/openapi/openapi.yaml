@@ -34,6 +34,7 @@ paths:
         name: start
         required: true
         schema:
+          example: 2020-02-14T12:00:00-05:00
           format: date-time
           type: string
         style: form
@@ -43,6 +44,7 @@ paths:
         name: end
         required: true
         schema:
+          example: 2020-02-14T18:00:00-05:00
           format: date-time
           type: string
         style: form

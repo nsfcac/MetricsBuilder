@@ -143,7 +143,7 @@ paths:
         schema:
           type: string
           format: date-time
-          example: '2020-02-14T12:00:00Z-05:00'
+          example: '2020-02-14T12:00:00-05:00'
         description: start time of time range of the monitoring metrics
       - in: query
         name: end
@@ -151,7 +151,7 @@ paths:
         schema:
           type: string
           format: date-time
-          example: '2020-02-14T18:00:00Z-05:00'
+          example: '2020-02-14T18:00:00-05:00'
         description: end time of time range of the monitoring metrics
       - in: query
         name: interval

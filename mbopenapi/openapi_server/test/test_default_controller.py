@@ -19,8 +19,8 @@ class TestDefaultController(BaseTestCase):
 
         
         """
-        query_string = [('start', 2020-02-14T12:00Z),
-                        ('end', 2020-02-14T18:00Z),
+        query_string = [('start', 2020-02-14T12:00-05:00),
+                        ('end', 2020-02-14T18:00-05:00),
                         ('interval', 5m),
                         ('value', max),
                         ('compress', true)]
