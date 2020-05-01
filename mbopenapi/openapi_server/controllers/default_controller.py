@@ -1,10 +1,11 @@
 import connexion
 import six
-import json, base64
+import json
+import base64
 import time
 import zlib
 import logging
-from influxdb import InfluxDBClient 
+from influxdb import InfluxDBClient
 
 import multiprocessing
 from itertools import repeat
@@ -14,8 +15,10 @@ from openapi_server.models.unified_metrics import UnifiedMetrics  # noqa: E501
 from openapi_server import util
 
 from openapi_server.controllers.parse_config import parse_conf, parse_host
-from openapi_server.controllers.gen_timestamp import gen_timestamp, gen_epoch_timestamp
-from openapi_server.controllers.query_db import query_process_data, query_job_data
+from openapi_server.controllers.gen_timestamp import gen_timestamp
+from openapi_server.controllers.gen_timestamp import gen_epoch_timestamp
+from openapi_server.controllers.query_db import query_process_data
+from openapi_server.controllers.query_db import query_job_data
 
 ZIPJSON_KEY = 'base64(zip(o))'
 
@@ -46,7 +49,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     :rtype: UnifiedMetrics
     """
 
-    # Initialization 
+    # Initialization
     config = parse_conf()
     node_list = parse_host()
     host = config["influxdb"]["host"]
@@ -67,17 +70,19 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         dbname = config["influxdb"]["database"]
     else:
         return ErrorMessage(
-            error_code = '400 INVALID_PARAMETERS',
-            error_message = 'Due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.'
+            error_code='400 INVALID_PARAMETERS',
+            error_message='Due to we switched database on April 28, 2020 \
+                11:40:00 AM GMT-05:00 DST, currently we do not support \
+                    requesting data with time range falls on this time point.'
         )
 
     if start > end:
         return ErrorMessage(
-            error_code = '400 INVALID_PARAMETERS',
-            error_message = 'Start time should no larger than end time'
+            error_code='400 INVALID_PARAMETERS',
+            error_message='Start time should no larger than end time'
         )
     else:
-        #Initialize influxdb client
+        # Initialize influxdb client
         client = InfluxDBClient(host=host, port=port, database=dbname)
 
         cpu_count = multiprocessing.cpu_count()
@@ -104,11 +109,12 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             unified_metrics.time_stamp = json_zip(epoch_time_list)
         else:
             unified_metrics.time_stamp = epoch_time_list
-        
+
         # Get all nodes detail
-        query_process_data_args = zip(node_list, repeat(client), 
-                                repeat(st_str), repeat(et_str), 
-                                repeat(interval), repeat(value), repeat(time_list))
+        query_process_data_args = zip(
+            node_list, repeat(client), repeat(st_str),
+            repeat(et_str), repeat(interval),
+            repeat(value), repeat(time_list))
 
         with multiprocessing.Pool(processes=cpu_count) as pool:
             results = pool.starmap(query_process_data, query_process_data_args)
@@ -131,11 +137,9 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             unified_metrics.nodes_info = json_zip(node_data)
         else:
             unified_metrics.nodes_info = node_data
-        
 
         # Get all jobs ID
         all_jobs_id = list(set(all_jobs_list))
-
         query_job_data_args = zip(repeat(client), all_jobs_id)
 
         # Get all jobs detail
@@ -147,7 +151,6 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                 job_array = False
                 if "." in results[index]["JobId"]:
                     job_array = True
-                
                 if "FinishTime" in results[index]:
                     finish_time = results[index]["FinishTime"]
                 else:
@@ -169,23 +172,23 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     "cpu_cores": results[index]["CPUCores"],
                     "job_array": job_array
                 }
-    
         if compress:
             unified_metrics.jobs_info = json_zip(job_data)
         else:
             unified_metrics.jobs_info = job_data
 
-        # total_elapsed = float("{0:.2f}".format(time.time() - query_start)) 
+        # total_elapsed = float("{0:.2f}".format(time.time() - query_start))
         # # In seconds
         # time_range = int(end.timestamp()) - int(start.timestamp())
 
         # with open("requests.log", "a+") as requests_log:
-        #     print(f"{time_range}|{interval}|{value}|{total_elapsed}", file = requests_log)
+        #     print(f"{time_range}|{interval}|{value}|{total_elapsed}", \
+        # file = requests_log)
 
     return unified_metrics
 
-def json_zip(j):
 
+def json_zip(j):
     j = {
         ZIPJSON_KEY: base64.b64encode(
             zlib.compress(
@@ -193,5 +196,4 @@ def json_zip(j):
             )
         ).decode('ascii')
     }
-
     return j
