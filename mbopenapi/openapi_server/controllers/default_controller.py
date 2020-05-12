@@ -28,7 +28,7 @@ ZIPJSON_KEY = 'base64(zip(o))'
 #     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 #     datefmt='%Y-%m-%d %H:%M:%S %Z'
 # )
-
+# curl --insecure -X GET "https://redfish.hpcc.ttu.edu:8080/v1/metrics?start=2020-04-24T12%3A00%3A00-05%3A00&end=2020-04-27T12%3A00%3A00-05%3A00&interval=5m&value=max&compress=false" -H "accept: application/json" -o 0424-0427_metrics.json
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     """get_unified_metric
@@ -158,6 +158,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
                 if "NodeList" in results[index]:
                     node_list = results[index]["NodeList"]
+                    pro_nodelist = process_nodelist(node_list)
                 else:
                     node_list = None
 
@@ -167,7 +168,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     "finish_time": finish_time,
                     "job_name": results[index]["JobName"],
                     "user_name": results[index]["User"],
-                    "node_list": node_list,
+                    "node_list": pro_nodelist,
                     "total_nodes": results[index]["TotalNodes"],
                     "cpu_cores": results[index]["CPUCores"],
                     "job_array": job_array
@@ -186,6 +187,16 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         # file = requests_log)
 
     return unified_metrics
+
+
+def process_nodelist(nodelist: str) -> list:
+    try:
+        nodelist_arr = nodelist[1:-1].split(", ")
+        process_nodelist = [node[1:-1].split("-")[0] for node in nodelist_arr]
+        return process_nodelist
+    except:
+        logging.error(f"Failed to process NodeList of node")
+        return None
 
 
 def json_zip(j):

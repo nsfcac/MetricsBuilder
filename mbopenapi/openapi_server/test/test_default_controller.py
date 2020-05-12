@@ -10,6 +10,8 @@ from openapi_server.models.error_message import ErrorMessage  # noqa: E501
 from openapi_server.models.unified_metrics import UnifiedMetrics  # noqa: E501
 from openapi_server.test import BaseTestCase
 
+# curl --insecure -X GET "https://redfish.hpcc.ttu.edu:8080/v1/metrics?start=2020-04-12T12%3A00%3A00%2B00%3A00&end=2020-04-18T12%3A00%3A00%2B00%3A00&interval=5m&value=max&compress=false" -H "accept: application/json"
+
 
 class TestDefaultController(BaseTestCase):
     """DefaultController integration test stubs"""

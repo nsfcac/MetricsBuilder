@@ -187,12 +187,12 @@ paths:
         '200':
           description: Get unified metrics successfully
           content:
-            'application/json':
+            application/json:
               schema:
                 $ref: '#/components/schemas/UnifiedMetrics'
         'default':
           description: Unexpected error
           content:
-            'application/json':
+            application/json:
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
