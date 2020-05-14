@@ -1,18 +1,16 @@
-import socket
-import smtplib, ssl
 import platform    # For getting the operating system name
 import subprocess  # For executing a shell command
+import yagmail
 
-
-port = 465
+username = "watchdog4monster"
 password = "watchmonster"
 sender_email = "watchdog4monster@gmail.com"
+
+yag = yagmail.SMTP(sender_email, password)
+
 receiver_email_list = ["jie.li@ttu.edu"]
 hostlist = [{"ip": "10.10.1.3", "server": "Influx"}, {"ip": "10.10.1.4", "server": "Nagios"}]
 connection_err_list = []
-
-# Create a secure SSL context
-context = ssl.create_default_context()
 
 
 def ping(host):
@@ -43,13 +41,15 @@ if connection_err_list:
     hoststr = ", ".join([str(host) for host in connection_err_list])
 
     message = """\
-Subject: MonSTer Watchdog Notification
-            
+
 Server %s %s unreachable!
 
 This message is sent from MonSTer watchdog.""" % (hoststr, be)
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-        server.login("watchdog4monster@gmail.com", password)
-        for receiver_email in receiver_email_list:
-            server.sendmail(sender_email, receiver_email, message)
+    for receiver_email in receiver_email_list:
+            yag.send(
+                to=receiver_email,
+                subject="MonSTer Watchdog Notification",
+                contents=message
+            )
+    
