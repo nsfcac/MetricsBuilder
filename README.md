@@ -32,26 +32,19 @@ OpenAPI generator uses `openapi.yaml` as the input, prepares server-side stub us
 
 ## Metrics Builder functions
 All functions (except for auto-generated Classes/functions) can be found under directory `mbopenapi/openapi_server/controllers`
-1. **main function**
-
+1. **main function**\
 Metrics Builder main function is implemented in `default_controller.py`, in which we check sanity of requests, concurrently calls querying and processing functions, and compresses the processed data.
-2. **query_db.py**
-
+2. **query_db.py**\
 Queries node-level and job-level metrics. The functions in this file generate Influx query languages based on the speficied arguments and call InfluxDB python client to fetch data.
-3. **process_data.py**
-
+3. **process_data.py**\
 Processes and agregates the data returned from InfluxDB.
-4. **gen_timestamp.py**
-
+4. **gen_timestamp.py**\
 Generates timestamps based on user-speficied arguments.
-5. **parse_config.py**
-
+5. **parse_config.py**\
 Parses configuration file `config.yml`.
-6. **config.yml**
-
+6. **config.yml**\
 Saves configuration for accessing InfluxDB.
-7. **hostlist**
-
+7. **hostlist**\
 Saves nodes information of the Quanah cluster.
 
 
