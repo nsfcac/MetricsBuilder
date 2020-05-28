@@ -41,7 +41,7 @@ Processes and agregates the data returned from InfluxDB.
 4. **gen_timestamp.py**\
 Generates timestamps based on user-speficied arguments.
 5. **parse_config.py**\
-Parses configuration file, `config.yml`.
+Parses configuration files, `config.yml` and `hostlist`.
 6. **config.yml**\
 Saves configuration for accessing InfluxDB.
 7. **hostlist**\
