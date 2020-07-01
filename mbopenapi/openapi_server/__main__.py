@@ -2,7 +2,10 @@ import connexion
 
 from openapi_server import encoder
 from flask_cors import CORS
-# from flask_talisman import Talisman
+import ssl
+
+context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+context.load_cert_chain("/password/SSL_Certificate/influx_ttu_edu_cert.cer", "/password/SSL_Certificate/server.key")
 
 
 def main():
@@ -14,7 +17,7 @@ def main():
     # Talisman(app.app)
     CORS(app.app)
     
-    app.run(port=8080, ssl_context=('cert.pem', 'key.pem'))
+    app.run(port=8080, ssl_context=context)
     # app.run()
 
 
