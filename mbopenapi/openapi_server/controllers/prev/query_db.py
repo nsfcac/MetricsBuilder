@@ -54,6 +54,7 @@ def query_node_data(node:str, client: object, start: str, end: str,
 def query_reading(client: object, node: str, measurement: str, label: str, 
                   start: str, end: str, interval: str, value: str) -> list:
     reading = []
+    # SELECT max(Value) from TempSensor where NodeId ='10.101.1.1' and time >= 1594537200000000000 and time < 1594544400000000000 group by time(5m) fill(null)
     try:
         query_sql = "SELECT " + value + "(Reading) FROM " + measurement \
                     + " WHERE Label='" + label + "' AND NodeId='" + node \
