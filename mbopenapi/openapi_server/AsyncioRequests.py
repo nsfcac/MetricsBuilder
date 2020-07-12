@@ -2,6 +2,7 @@ import json
 import time
 import logging
 import asyncio
+import asyncio
 from aioinflux import InfluxDBClient
 
 
@@ -17,6 +18,7 @@ class AsyncioRequests:
         self.db = db
         self.meas = meas
         self.data = {}
+        self.loop = asyncio.get_event_loop()
         
     
     async def __fetch_json(self, sql: str, node: str, client: object) -> dict:
