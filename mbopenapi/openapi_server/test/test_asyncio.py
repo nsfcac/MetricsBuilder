@@ -24,7 +24,7 @@ nodes = parse_nodelist(nodelist_cfg)
 sqls = []
 
 meas = 'TempSensor'
-host = '10.10.1.3'
+host = 'localhost'
 port = '8086'
 db = 'hpcc_metrics_phase2'
 
@@ -34,4 +34,4 @@ for node in nodes:
 
 influxdb_data = AsyncioRequests(sqls, nodes, meas, host, port, db)
 
-print(json.dumps(influxdb_data, indent = 4))
+print(influxdb_data)
