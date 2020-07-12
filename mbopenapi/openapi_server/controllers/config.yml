@@ -1,8 +1,38 @@
 influxdb:
   host: '10.10.1.3'
   port: '8086'
-  database: 'updated_schema'
-  db_monster: 'monster_hpcc'
+  phase1: 'hpcc_metrics_phase1'
+  phase2: 'hpcc_metrics_phase2'
+
+
+nodelist:
+  - '10.101.1/1-60'
+  - '10.101.2/1-60'
+  - '10.101.3/1-56'
+  - '10.101.4/1-48'
+  - '10.101.5/1-24'
+  - '10.101.6/1-20'
+  - '10.101.7/1-3,5-60'
+  - '10.101.8/1-60'
+  - '10.101.9/1-60'
+  - '10.101.10/25-44'
+
+measurements:
+  "Power":
+    - "NodePower"
+  "FanSensor":
+    - "FAN_1"
+    - "FAN_2"
+    - "FAN_3"
+    - "FAN_4"
+  "TempSensor":
+    - "CPU1 Temp"
+    - "CPU2 Temp"
+    - "Inlet Temp"
+  "CPUUsage":
+    - "UGE"
+  "MemUsage":
+    - "UGE"
 
 
 # Database "updated_schema"
