@@ -11,8 +11,7 @@ class AsyncioRequests:
     """
 
 
-    def __init__(self, sqls: list, nodes: list, meas: str, 
-                 host: str, port: str, db: str):
+    def __init__(self, host: str, port: str, db: str, meas: str):
         self.host = host
         self.port = port
         self.db = db

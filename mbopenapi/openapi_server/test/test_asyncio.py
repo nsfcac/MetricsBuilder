@@ -32,6 +32,7 @@ for node in nodes:
     sql = "SELECT max(Value) FROM " + meas + " WHERE NodeId='" + node + "' AND time >= '1594537200000000000' AND time < '1594544400000000000' GROUP BY time(5m) fill(null)" 
     sqls.append(sql)
 
-influxdb_data = AsyncioRequests(sqls, nodes, meas, host, port, db)
+request = AsyncioRequests(host, port, db, meas)
 
-print(influxdb_data)
+resp = request.bulk_fetch(sqls, nodes)
+print(json.dumps(resp, indent=4))
