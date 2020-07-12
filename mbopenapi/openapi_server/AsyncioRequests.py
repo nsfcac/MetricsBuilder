@@ -10,6 +10,7 @@ class AsyncioRequests:
     """
     Asyncio requests to Influxdb
     """
+    import asyncio
 
 
     def __init__(self, host: str, port: str, db: str, meas: str):
@@ -18,7 +19,7 @@ class AsyncioRequests:
         self.db = db
         self.meas = meas
         self.data = {}
-        self.loop = asyncio.get_event_loop()
+        self.loop = self.asyncio.get_event_loop()
         
     
     async def __fetch_json(self, sql: str, node: str, client: object) -> dict:
