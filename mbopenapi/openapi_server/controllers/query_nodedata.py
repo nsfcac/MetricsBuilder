@@ -47,7 +47,7 @@ def generate_sqls(node:str, measurements: dict,
         for measurement, labels in measurements.items():
             if measurement == "NodeJobs":
                 for label in labels:
-                    sql = "SELECT DISTINCT(Value) FROM " + measurement + \
+                    sql = "SELECT DISTINCT(Value) FROM " + measurement \
                         + " WHERE Label='" + label + "' AND NodeId='" + node \
                         + "' AND time >= '" + start + "' AND time < '" + end \
                         + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
