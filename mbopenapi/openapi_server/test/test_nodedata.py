@@ -6,6 +6,7 @@ sys.path.append('../')
 
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
+from controllers.process_nodedata import process_nodedata
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -59,15 +60,16 @@ end = "2020-07-12T18:00:00-05:00"
 interval = "5m"
 value = "max"
 
-# cores= multiprocessing.cpu_count()
+# # cores= multiprocessing.cpu_count()
 
-query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
-                          repeat(start), repeat(end), repeat(interval), repeat(value))
+# query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
+#                           repeat(start), repeat(end), repeat(interval), repeat(value))
 
-with multiprocessing.Pool() as pool:
-    results = pool.starmap(query_nodedata, query_nodedata_args)
+# with multiprocessing.Pool() as pool:
+#     results = pool.starmap(query_nodedata, query_nodedata_args)
 
-# node = '10.101.1.1'
-# results = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
+node = '10.101.1.1'
+nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
+results = process_nodedata(nodedata)
 print(json.dumps(results, indent=4))
