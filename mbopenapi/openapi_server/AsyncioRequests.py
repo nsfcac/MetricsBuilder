@@ -46,11 +46,11 @@ class AsyncioRequests:
         resp = {}
         try:
             resp = await client.query(sql)
-            # series = resp['results'][0].get('series', None)
-            # if series:
-            #     json = series[0]
-            # else:
-            #     json = {}
+            series = resp['results'][0].get('series', None)
+            if series:
+                json = series[0]
+            else:
+                json = {}
                 # logging.warning(f"Warning : No data from {node} : {sql}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {label} data from {node}")
