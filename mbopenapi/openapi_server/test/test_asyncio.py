@@ -18,19 +18,45 @@ nodelist_cfg = [
     "10.101.10/25-44"
 ]
 
+measurements = {
+  "measurements": {
+    "Power": [
+      "NodePower"
+    ],
+    "FanSensor": [
+      "FAN_1",
+      "FAN_2",
+      "FAN_3",
+      "FAN_4"
+    ],
+    "TempSensor": [
+      "CPU1 Temp",
+      "CPU2 Temp",
+      "Inlet Temp"
+    ],
+    "CPUUsage": [
+      "UGE"
+    ],
+    "MemUsage": [
+      "UGE"
+    ]
+  }
+}
+
 # SELECT max(Value) from TempSensor where NodeId ='10.101.1.1' and time >= 1594537200000000000 and time < 1594544400000000000 group by time(5m) fill(null)
 
 nodes = parse_nodelist(nodelist_cfg)
 sqls = []
 
-meas = 'TempSensor'
+meas = list(measurements.keys())
 host = 'localhost'
 port = '8086'
 db = 'hpcc_metrics_phase2'
 
 for node in nodes:
-    sql = "SELECT max(Value) FROM " + meas + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
-    sqls.append(sql)
+    for mea in meas:
+        sql = "SELECT max(Value) FROM " + meas + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
+        sqls.append(sql)
 
 request = AsyncioRequests(host, port, db, meas)
 
