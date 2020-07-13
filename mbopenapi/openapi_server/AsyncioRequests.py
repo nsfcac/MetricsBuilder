@@ -67,5 +67,5 @@ class AsyncioRequests:
 
     def bulk_fetch(self, sqls: list) -> list:
         self.data =  self.loop.run_until_complete(self.__requests(sqls))
-        self.loop.close()
+        # self.loop.close()
         return self.data
