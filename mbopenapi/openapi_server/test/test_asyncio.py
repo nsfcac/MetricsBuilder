@@ -2,6 +2,7 @@ import json
 import sys
 sys.path.append('../')
 
+from influxdb import InfluxDBClient
 from AsyncioRequests import AsyncioRequests
 from mb_utils import parse_nodelist
 
@@ -58,9 +59,23 @@ for node in nodes:
     sql = "SELECT max(Value) FROM " + mea + " WHERE Label='FAN_1' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
     sqls.append(sql)
 
-request = AsyncioRequests(host, port, db, mea)
-resp = request.bulk_fetch(sqls, nodes)
+
+# Sequencial
+client = InfluxDBClient(host, port, dbname=db)
+
+
+resp = []
+for sql in sqls:
+    result = client.query(sql)
+    resp.append(result)
+
+# # Asyncio
+# request = AsyncioRequests(host, port, db, mea)
+# resp = request.bulk_fetch(sqls, nodes)
+
+
 print(json.dumps(resp, indent=4))
+
 
 # for mea in meas:
 #     sqls = []
