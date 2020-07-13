@@ -50,8 +50,8 @@ measurements = {
 
 node_list = parse_nodelist(nodelist_cfg)
 
-start = "2020-07-13T12:00-05:00"
-end = "2020-07-13T18:00-05:00"
+start = "2020-07-13T12:00:00-05:00"
+end = "2020-07-13T18:00:00-05:00"
 interval = "5m"
 value = "max"
 
