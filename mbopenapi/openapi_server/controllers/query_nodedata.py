@@ -46,10 +46,12 @@ def generate_sqls(node:str, measurements: dict,
     try:
         for measurement, labels in measurements.items():
             if measurement == "NodeJobs":
-                sql = "SELECT DISTINCT(JobList) FROM NodeJobs WHERE NodeId='" + node \
-                    + "' AND time >= '" + start + "' AND time < '" + end \
-                    + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
-                sqls.append(sql)
+                for label in labels:
+                    sql = "SELECT DISTINCT(Value) FROM " + measurement + \
+                        + " WHERE Label='" + label + "' AND NodeId='" + node \
+                        + "' AND time >= '" + start + "' AND time < '" + end \
+                        + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
+                    sqls.append(sql)
             else:
                 for label in labels:
                     sql = "SELECT " + value + "(Value) FROM " + measurement \
