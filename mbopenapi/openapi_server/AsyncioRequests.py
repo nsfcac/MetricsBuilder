@@ -26,19 +26,16 @@ class AsyncioRequests:
         """
         Get request wrapper to fetch json data from Influxdb
         """
-        resp = await client.query(sql)
-        series = resp['results'][0].get('series', None)
-        if series:
-            json = series[0]
-        else:
-            json = {}
-        return {"node": node, "data": json}
-        # try:
-        #     resp = await client.query(sql)
-        #     return await {"node": node, "data": resp}
-        # except:
-        #     # logging.error(f"Error : Cannot fetch data from {node} : {sql}")
-        #     return {"node": node, "data": resp}
+        try:
+            resp = await client.query(sql)
+            series = resp['results'][0].get('series', None)
+            if series:
+                json = series[0]
+            else:
+                json = {}
+            return {"node": node, "data": json}
+        except:
+            logging.error(f"Error : Cannot fetch data from {node} : {sql}")
 
 
     async def __requests(self, sqls: list, nodes: list) -> list:
