@@ -14,10 +14,10 @@ class AsyncioRequests:
     import asyncio
 
 
-    def __init__(self, host: str, port: str, db: str):
+    def __init__(self, host: str, port: str, database: str):
         self.host = host
         self.port = port
-        self.db = db
+        self.database = database
         self.data = {}
         self.loop = self.asyncio.get_event_loop()
     
@@ -42,23 +42,23 @@ class AsyncioRequests:
         """
         Get request wrapper to fetch json data from Influxdb
         """
+        (label, node) = self.__find_label_node(sql)
+        resp = {}
         try:
             resp = await client.query(sql)
-            series = resp['results'][0].get('series', None)
-            (label, node) = self.__find_label_node(sql)
-            if series:
-                json = series[0]
-            else:
-                json = {}
+            # series = resp['results'][0].get('series', None)
+            # if series:
+            #     json = series[0]
+            # else:
+            #     json = {}
                 # logging.warning(f"Warning : No data from {node} : {sql}")
-            return {"node": node, "label": label, "data": json}
         except Exception as err:
-            logging.error(f"Error : Cannot fetch data from: {sql} : {err}")
-            return {"node": {}, "label": {}, "data": {}}
+            logging.error(f"Error : Cannot fetch {label} data from {node}")
+        return {"node": node, "label": label, "data": resp}
 
 
     async def __requests(self, sqls: list) -> list:
-        async with InfluxDBClient(host = self.host, port = self.port, db = self.db) as client:
+        async with InfluxDBClient(host = self.host, port = self.port, db = self.database) as client:
             tasks = []
             for i, sql in enumerate(sqls):
                 tasks.append(self.__fetch_json(sql=sql, client=client))
