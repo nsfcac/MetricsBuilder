@@ -5,7 +5,7 @@ def process_nodedata(nodedata: list) -> dict:
     for data in nodedata:
         node = data['node']
         label = data['label']
-        values = data["data"]["values"][0]
+        values = data["data"]["values"]
         flatten_values = [value[1] for value in values]
 
         processed.update({
