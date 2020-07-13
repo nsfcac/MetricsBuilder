@@ -33,10 +33,11 @@ class AsyncioRequests:
             label_node_str = re.findall(pattern, sql)[0].split("'")
             label = label_node_str[1]
             node = label_node_str[3]
-        except:
-            logging.error(f"Error : Cannot parse sql string: {sql}")
+        except Exception as err:
+            logging.error(f"Error : Cannot parse sql string: {sql} : {err}")
         return (label, node)
     
+
     async def __fetch_json(self, sql: str, client: object) -> dict:
         """
         Get request wrapper to fetch json data from Influxdb
@@ -51,9 +52,9 @@ class AsyncioRequests:
                 json = {}
                 # logging.warning(f"Warning : No data from {node} : {sql}")
             return {"node": node, "label": label, "data": json}
-        except:
-            logging.error(f"Error : Cannot fetch data from: {sql}")
-            return {"node": node, "label": label, "data": {}}
+        except Exception as err:
+            logging.error(f"Error : Cannot fetch data from: {sql} : {err}")
+            return {"node": {}, "label": {}, "data": {}}
 
 
     async def __requests(self, sqls: list) -> list:
