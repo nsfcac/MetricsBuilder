@@ -14,11 +14,10 @@ class AsyncioRequests:
     import asyncio
 
 
-    def __init__(self, host: str, port: str, db: str, meas: str):
+    def __init__(self, host: str, port: str, db: str):
         self.host = host
         self.port = port
         self.db = db
-        self.meas = meas
         self.data = {}
         self.loop = self.asyncio.get_event_loop()
     

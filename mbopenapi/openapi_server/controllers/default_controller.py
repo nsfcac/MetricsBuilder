@@ -65,8 +65,12 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         # Initialize returned metrics
         unified_metrics = UnifiedMetrics()
 
-        # Initialize influxdb client
-        client = InfluxDBClient(host=influx_host, port=influx_port, database=dbname)
+        # # Configure influxdb client
+        influx_cfg.update({
+            "database": dbname
+        })
+
+        # client = InfluxDBClient(host=influx_host, port=influx_port, database=dbname)
 
         # Time strings used in query influxdb
         st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
