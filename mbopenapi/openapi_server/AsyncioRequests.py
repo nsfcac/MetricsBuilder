@@ -28,8 +28,7 @@ class AsyncioRequests:
         """
         try:
             resp = await client.query(sql)
-            values = await resp
-            return {"node": node, "data": values}
+            return await {"node": node, "data": resp}
         except:
             # logging.error(f"Error : Cannot fetch data from {node} : {sql}")
             return {"node": node, "data": {}}
