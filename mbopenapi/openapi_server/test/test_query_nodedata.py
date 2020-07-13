@@ -46,7 +46,10 @@ measurements = {
     ],
     "MemUsage": [
         "UGE"
-    ]
+    ],
+    "NodeJobs": [
+        "JobList"
+  ]
 }
 
 node_list = parse_nodelist(nodelist_cfg)

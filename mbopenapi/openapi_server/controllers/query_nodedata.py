@@ -59,7 +59,6 @@ def generate_sqls(node:str, measurements: dict,
                         + "' AND time >= '" + start + "' AND time < '" + end \
                         + "' GROUP BY time(" + interval + ") fill(null)"
                     sqls.append(sql)
-        print(sqls)
     except Exception as err:
         logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")
 
