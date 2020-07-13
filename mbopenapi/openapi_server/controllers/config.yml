@@ -33,6 +33,8 @@ measurements:
     - "UGE"
   "MemUsage":
     - "UGE"
+  "NodeJobs":
+    - "JobList"
 
 
 # Database "updated_schema"
