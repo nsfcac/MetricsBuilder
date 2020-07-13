@@ -70,29 +70,18 @@ for node in nodes:
 
 
 # # Sequencial
-# client = InfluxDBClient(host=host, port=port, database=db)
-
-
-# resp = []
-# for sql in sqls:
-#     result = list(client.query(sql).get_points())
-#     resp.append(result)
+client = InfluxDBClient(host=host, port=port, database=db)
+resp = []
+for sql in sqls:
+    result = list(client.query(sql).get_points())
+    resp.append(result)
 
 # Asyncio
-request = AsyncioRequests(host, port, db, mea)
-resp = request.bulk_fetch(sqls)
+# request = AsyncioRequests(host, port, db, mea)
+# resp = request.bulk_fetch(sqls)
 
 
 print(json.dumps(resp, indent=4))
 
-
-# for mea in meas:
-#     sqls = []
-#     for node in nodes:
-#         sql = "SELECT max(Value) FROM " + mea + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
-#         sqls.append(sql)
-
-#     request = AsyncioRequests(host, port, db, mea)
-#     resp = request.bulk_fetch(sqls, nodes)
 
 # print(json.dumps(resp, indent=4))

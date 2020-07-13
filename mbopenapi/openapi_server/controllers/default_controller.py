@@ -36,8 +36,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     config = parse_config('config_path')
     node_list = parse_nodelist(config['nodelist'])
     measurements = config["measurements"]
-    influx_host = config['influxdb']['host']
-    influx_port = config['influxdb']['port']
+    influx_cfg = config['influxdb']
 
     # Switch database according to the time we switched the database
     switch_time = 1594537200
