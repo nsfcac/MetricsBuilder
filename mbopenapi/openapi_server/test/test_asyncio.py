@@ -61,7 +61,7 @@ for node in nodes:
 
 
 # Sequencial
-client = InfluxDBClient(host, port, dbname=db)
+client = InfluxDBClient(host=host, port=port, database=db)
 
 
 resp = []
