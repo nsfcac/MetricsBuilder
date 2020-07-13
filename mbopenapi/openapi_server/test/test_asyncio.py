@@ -66,7 +66,7 @@ client = InfluxDBClient(host=host, port=port, database=db)
 
 resp = []
 for sql in sqls:
-    result = client.query(sql)
+    result = list(client.query(sql).get_points())
     resp.append(result)
 
 # # Asyncio
