@@ -46,7 +46,8 @@ class AsyncioRequests:
         try:
             resp = await client.query(sql)
             series = resp['results'][0].get('series', None)
-            (label, node) = self.__find_label_node(sql)
+            # (label, node) = self.__find_label_node(sql)
+            (label, node) = (None, None)
             if series:
                 json = series[0]
             else:
