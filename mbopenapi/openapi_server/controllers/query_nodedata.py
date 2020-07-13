@@ -1,8 +1,50 @@
 import logging
 import multiprocessing
+import sys
+sys.path.append('../')
+
+from itertools import repeat
+
+from AsyncioRequests import AsyncioRequests
 
 
-def generate_sqls(influx_cfg: dict, node_list: list, measurements: dict, 
+def query_nodedata(influx_cfg: dict, node_list: list, measurements: dict, 
+                  start: str, end: str, interval: str, value: str) -> list:
+    """
+    Spread query across cores
+    """
+    node_data = []
+    try:
+        # Generate sqls
+        sqls = generate_sqls(node_list, measurements, start, end, interval, value)
+
+        # Parallel query influxdb
+        query_influx_args = zip(repeat(influx_cfg), sqls)
+        with multiprocessing.Pool() as pool:
+            data = pool.starmap(query_influx, query_influx_args)
+
+        # Flatten the returned data
+        node_data = [item for sublist in data for item in sublist]
+
+    except Exception as err:
+        logging.error(f"query_nodedata error: {err}")
+    return node_data
+
+
+def query_influx(influx_cfg: dict, sqls: list) -> list:
+    """
+    Use AsyncioRequests to query urls
+    """
+    data = []
+    try:
+        request = AsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
+        data = request.bulk_fetch(sqls)
+    except Exception as err:
+        logging.error(f"query_nodedata : fetch_influx error : {err}")
+    return data
+
+
+def generate_sqls(node_list: list, measurements: dict, 
                   start: str, end: str, interval: str, value: str) -> list:
     """
     Generate sqls from accroding to the user-specified parameters
@@ -18,29 +60,6 @@ def generate_sqls(influx_cfg: dict, node_list: list, measurements: dict,
                         + "' GROUP BY time(" + interval + ") fill(null)"
                     sqls.append(sql)
     except Exception as err:
-        logging.error(f"Error : Cannot generate sql strings: {err}")
+        logging.error(f"Cannot generate sql strings: {err}")
 
     return sqls
-
-
-def query_nodedata(influx_cfg: dict, sqls: list) -> dict:
-    """
-    Query node data
-    """
-    return
-
-
-def fetch(influx_cfg: dict, urls: list) -> list:
-    """
-    Use AsyncioRequests to query urls
-    """
-    try:
-        bmc = AsyncioRequests(auth = (bmc_config['user'], 
-                                    bmc_config['password']),
-                            timeout = (bmc_config['timeout']['connect'], 
-                                        bmc_config['timeout']['read']),
-                            max_retries = bmc_config['max_retries'])
-        bmc_metrics = bmc.bulk_fetch(urls, nodes)
-    except Exception as err:
-        logging.error(f"fetch_bmc : parallel_fetch : fetch error : {err}")
-    return bmc_metrics
