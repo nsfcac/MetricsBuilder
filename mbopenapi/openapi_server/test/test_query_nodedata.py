@@ -1,4 +1,5 @@
 import json
+import multiprocessing
 import sys
 sys.path.append('../')
 
@@ -54,6 +55,8 @@ end = "2020-07-13T18:00-05:00"
 interval = "5m"
 value = "max"
 
-node_data = query_nodedata(influx_cfg, node_list, measurements, start, end, interval, value)
+cores= multiprocessing.cpu_count()
+
+node_data = query_nodedata(influx_cfg, node_list, measurements, start, end, interval, value, cores)
 
 print(json.dumps(node_data, indent=4))

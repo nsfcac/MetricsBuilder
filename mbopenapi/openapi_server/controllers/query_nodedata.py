@@ -3,23 +3,28 @@ import multiprocessing
 import sys
 sys.path.append('../')
 
-from itertools import repeat
-
 from AsyncioRequests import AsyncioRequests
 
 
 def query_nodedata(influx_cfg: dict, node_list: list, measurements: dict, 
-                  start: str, end: str, interval: str, value: str) -> list:
+                  start: str, end: str, interval: str, value: str, cores) -> list:
     """
     Spread query across cores
     """
     node_data = []
     try:
         # Generate sqls
-        sqls = generate_sqls(node_list, measurements, start, end, interval, value)
+        all_sqls = generate_sqls(node_list, measurements, start, end, interval, value)
+
+        # Partition
+        sqls_group = partition(all_sqls, cores)
+
+        query_influx_args = []
+        for i in range(cores):
+            sqls = sqls_group[i]
+            query_influx_args.append((influx_cfg, sqls))
 
         # Parallel query influxdb
-        query_influx_args = zip(repeat(influx_cfg), sqls)
         with multiprocessing.Pool() as pool:
             data = pool.starmap(query_influx, query_influx_args)
 
@@ -40,7 +45,7 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
         request = AsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
         data = request.bulk_fetch(sqls)
     except Exception as err:
-        logging.error(f"query_nodedata : fetch_influx error : {err}")
+        logging.error(f"query_nodedata : query_influx : {err}")
     return data
 
 
@@ -60,6 +65,28 @@ def generate_sqls(node_list: list, measurements: dict,
                         + "' GROUP BY time(" + interval + ") fill(null)"
                     sqls.append(sql)
     except Exception as err:
-        logging.error(f"Cannot generate sql strings: {err}")
+        logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")
 
     return sqls
+
+
+def partition(arr:list, cores: int) -> list:
+    """
+    Partition sqls into several groups based on # of cores
+    """
+    groups = []
+    try:
+        arr_len = len(arr)
+        arr_per_core = arr_len // cores
+        arr_surplus = arr_len % cores
+
+        increment = 1
+        for i in range(cores):
+            if(arr_surplus != 0 and i == (cores-1)):
+                groups.append(arr[i * arr_per_core:])
+            else:
+                groups.append(arr[i * arr_per_core : increment * arr_per_core])
+                increment += 1
+    except Exception as err:
+        logging.error(f"query_nodedata : partition error : {err}")
+    return groups
