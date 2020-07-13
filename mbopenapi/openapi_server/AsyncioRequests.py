@@ -28,10 +28,11 @@ class AsyncioRequests:
         """
         try:
             resp = await client.query(sql)
-            return await {"node": node, "data": resp, "meas": self.meas}
+            results = await resp["results"][0]["series"][0]
+            return await {"node": node, "data": results}
         except:
             # logging.error(f"Error : Cannot fetch data from {node} : {sql}")
-            return {"node": node, "data": resp, "meas": self.meas}
+            return {"node": node, "data": {}}
 
 
     async def __requests(self, sqls: list, nodes: list) -> list:
