@@ -60,18 +60,18 @@ for node in nodes:
     sqls.append(sql)
 
 
-# Sequencial
-client = InfluxDBClient(host=host, port=port, database=db)
+# # Sequencial
+# client = InfluxDBClient(host=host, port=port, database=db)
 
 
-resp = []
-for sql in sqls:
-    result = list(client.query(sql).get_points())
-    resp.append(result)
+# resp = []
+# for sql in sqls:
+#     result = list(client.query(sql).get_points())
+#     resp.append(result)
 
-# # Asyncio
-# request = AsyncioRequests(host, port, db, mea)
-# resp = request.bulk_fetch(sqls, nodes)
+# Asyncio
+request = AsyncioRequests(host, port, db, mea)
+resp = request.bulk_fetch(sqls, nodes)
 
 
 print(json.dumps(resp, indent=4))
