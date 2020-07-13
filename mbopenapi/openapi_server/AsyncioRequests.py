@@ -28,7 +28,7 @@ class AsyncioRequests:
         """
         try:
             resp = await client.query(sql)
-            results = await resp["results"][0]["series"][0]
+            results = await resp["results"]
             return {"node": node, "data": results}
         except:
             # logging.error(f"Error : Cannot fetch data from {node} : {sql}")
