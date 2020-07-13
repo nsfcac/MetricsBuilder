@@ -56,11 +56,13 @@ db = 'hpcc_metrics_phase2'
 
 mea = "FanSensor"
 for node in nodes:
-    # sql = "SELECT max(Value) FROM " + mea + " WHERE Label='FAN_1' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
-    sql = "SELECT max(Value) FROM " + mea + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
+    for mea, labels in meas:
+        for label in labels:
+            sql = "SELECT max(Value) FROM " + mea + " WHERE Label='" + label + ""' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
+            sqls.append(sql)
 
-    sqls.append(sql)
 
+print(json.dumps(sqls, indent=4))
 
 # # Sequencial
 # client = InfluxDBClient(host=host, port=port, database=db)
@@ -71,12 +73,12 @@ for node in nodes:
 #     result = list(client.query(sql).get_points())
 #     resp.append(result)
 
-# Asyncio
-request = AsyncioRequests(host, port, db, mea)
-resp = request.bulk_fetch(sqls, nodes)
+# # Asyncio
+# request = AsyncioRequests(host, port, db, mea)
+# resp = request.bulk_fetch(sqls, nodes)
 
 
-print(json.dumps(resp, indent=4))
+# print(json.dumps(resp, indent=4))
 
 
 # for mea in meas:
