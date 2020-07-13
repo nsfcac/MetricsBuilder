@@ -20,28 +20,26 @@ nodelist_cfg = [
 ]
 
 measurements = {
-  "measurements": {
     "Power": [
-      "NodePower"
+        "NodePower"
     ],
     "FanSensor": [
-      "FAN_1",
-      "FAN_2",
-      "FAN_3",
-      "FAN_4"
+        "FAN_1",
+        "FAN_2",
+        "FAN_3",
+        "FAN_4"
     ],
     "TempSensor": [
-      "CPU1 Temp",
-      "CPU2 Temp",
-      "Inlet Temp"
+        "CPU1 Temp",
+        "CPU2 Temp",
+        "Inlet Temp"
     ],
     "CPUUsage": [
-      "UGE"
+        "UGE"
     ],
     "MemUsage": [
-      "UGE"
+        "UGE"
     ]
-  }
 }
 
 # SELECT max(Value) from TempSensor where NodeId ='10.101.1.1' and time >= 1594537200000000000 and time < 1594544400000000000 group by time(5m) fill(null)
