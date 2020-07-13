@@ -32,6 +32,7 @@ class AsyncioRequests:
         try:
             pattern = "Label='[\s\S]*'"
             label_node_str = re.findall(pattern, sql)[0]
+            print(label_node_str)
             label_node_str.split("'")
             label = label_node_str[1]
             node = label_node_str[3]
