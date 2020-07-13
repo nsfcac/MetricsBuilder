@@ -53,12 +53,15 @@ host = 'localhost'
 port = '8086'
 db = 'hpcc_metrics_phase2'
 
-for node in nodes:
-    for mea in meas:
+resps = []
+
+for mea in meas:
+    sqls = []
+    for node in nodes:
         sql = "SELECT max(Value) FROM " + mea + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
         sqls.append(sql)
 
-request = AsyncioRequests(host, port, db, meas)
+    request = AsyncioRequests(host, port, db, mea)
+    resp = request.bulk_fetch(sqls, nodes)
 
-resp = request.bulk_fetch(sqls, nodes)
-print(json.dumps(resp, indent=4))
+# print(json.dumps(resp, indent=4))
