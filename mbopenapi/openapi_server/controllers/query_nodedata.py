@@ -6,30 +6,18 @@ sys.path.append('../')
 from AsyncioRequests import AsyncioRequests
 
 
-def query_nodedata(influx_cfg: dict, node_list: list, measurements: dict, 
-                  start: str, end: str, interval: str, value: str, cores) -> list:
+def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
+                   start: str, end: str, interval: str, value: str) -> list:
     """
     Spread query across cores
     """
     node_data = []
     try:
         # Generate sqls
-        all_sqls = generate_sqls(node_list, measurements, start, end, interval, value)
+        sqls = generate_sqls(node, measurements, start, end, interval, value)
 
-        # Partition
-        sqls_group = partition(all_sqls, cores)
-
-        query_influx_args = []
-        for i in range(cores):
-            sqls = sqls_group[i]
-            query_influx_args.append((influx_cfg, sqls))
-
-        # Parallel query influxdb
-        with multiprocessing.Pool() as pool:
-            data = pool.starmap(query_influx, query_influx_args)
-
-        # Flatten the returned data
-        node_data = [item for sublist in data for item in sublist]
+        # Query data
+        node_data = query_influx(influx_cfg, sqls)
 
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
@@ -49,21 +37,20 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
     return data
 
 
-def generate_sqls(node_list: list, measurements: dict, 
+def generate_sqls(node:str, measurements: dict, 
                   start: str, end: str, interval: str, value: str) -> list:
     """
     Generate sqls from accroding to the user-specified parameters
     """
     sqls = []
     try:
-        for node in node_list:
-            for measurement, labels in measurements.items():
-                for label in labels:
-                    sql = "SELECT " + value + "(Value) FROM " + measurement \
-                        + " WHERE Label='" + label + "' AND NodeId='" + node \
-                        + "' AND time >= '" + start + "' AND time < '" + end \
-                        + "' GROUP BY time(" + interval + ") fill(null)"
-                    sqls.append(sql)
+        for measurement, labels in measurements.items():
+            for label in labels:
+                sql = "SELECT " + value + "(Value) FROM " + measurement \
+                    + " WHERE Label='" + label + "' AND NodeId='" + node \
+                    + "' AND time >= '" + start + "' AND time < '" + end \
+                    + "' GROUP BY time(" + interval + ") fill(null)"
+                sqls.append(sql)
     except Exception as err:
         logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")
 

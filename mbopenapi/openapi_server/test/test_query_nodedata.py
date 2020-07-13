@@ -1,5 +1,6 @@
 import json
 import multiprocessing
+from itertools import repeat
 import sys
 sys.path.append('../')
 
@@ -57,6 +58,10 @@ value = "max"
 
 cores= multiprocessing.cpu_count()
 
-node_data = query_nodedata(influx_cfg, node_list, measurements, start, end, interval, value, cores)
+query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
+                          repeat(start), repeat(end), repeat(interval), repeat(value))
 
-print(json.dumps(node_data, indent=4))
+with multiprocessing.Pool() as pool:
+    results = pool.starmap(query_nodedata, query_nodedata_args)
+
+print(json.dumps(results, indent=4))
