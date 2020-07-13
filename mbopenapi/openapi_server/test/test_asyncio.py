@@ -29,7 +29,7 @@ port = '8086'
 db = 'hpcc_metrics_phase2'
 
 for node in nodes:
-    sql = "SELECT max(Value) FROM " + meas + " WHERE NodeId='" + node + "' AND time >= '1594537200000000000' AND time < '1594544400000000000' GROUP BY time(5m) fill(null)" 
+    sql = "SELECT max(Value) FROM " + meas + " WHERE NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
     sqls.append(sql)
 
 request = AsyncioRequests(host, port, db, meas)
