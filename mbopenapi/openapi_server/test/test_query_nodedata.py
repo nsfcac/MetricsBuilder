@@ -59,4 +59,4 @@ cores= multiprocessing.cpu_count()
 
 node_data = query_nodedata(influx_cfg, node_list, measurements, start, end, interval, value, cores)
 
-# print(json.dumps(node_data, indent=4))
+print(json.dumps(node_data, indent=4))
