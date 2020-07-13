@@ -43,7 +43,7 @@ class AsyncioRequests:
         Get request wrapper to fetch json data from Influxdb
         """
         (label, node) = self.__find_label_node(sql)
-        resp = {}
+        json = {}
         try:
             resp = await client.query(sql)
             series = resp['results'][0].get('series', None)
@@ -54,7 +54,7 @@ class AsyncioRequests:
                 # logging.warning(f"Warning : No data from {node} : {sql}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {label} data from {node}")
-        return {"node": node, "label": label, "data": resp}
+        return {"node": node, "label": label, "data": json}
 
 
     async def __requests(self, sqls: list) -> list:
