@@ -49,14 +49,14 @@ measurements = {
 nodes = parse_nodelist(nodelist_cfg)
 sqls = []
 
-meas = list(measurements.keys())
+# meas = list(measurements.keys())
 host = 'localhost'
 port = '8086'
 db = 'hpcc_metrics_phase2'
 
-mea = "FanSensor"
+# mea = "FanSensor"
 for node in nodes:
-    for mea, labels in meas:
+    for mea, labels in enumerate(measurements):
         for label in labels:
             sql = "SELECT max(Value) FROM " + mea + " WHERE Label='" + label + "' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
             sqls.append(sql)
