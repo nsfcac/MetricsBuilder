@@ -1,20 +1,28 @@
 def process_nodedata(nodedata: list) -> dict:
 
-    processed = {}
+    processed_data = {}
 
     for data in nodedata:
+        # Get node - measurement - label names
         node = data['node']
-        label = data['label']
         measurement = data["data"]["name"]
+        label = data['label']
         values = data["data"]["values"]
+
+        # Aggregate data points
         flatten_values = [value[1] for value in values]
 
-        processed.update({
-            measurement: {
+        # Build a dict
+        if measurement in processed_data:
+            processed_data[measurement].update({
                 label: flatten_values
-            }
-        })
-
+            })
+        else:
+            processed_data.update({
+                measurement: {
+                    label: flatten_values
+                }
+            })
     # json_data = {
     #         "memory_usage": memory_usage,
     #         "cpu_usage": cpu_usage,
@@ -25,4 +33,4 @@ def process_nodedata(nodedata: list) -> dict:
     #         "job_set": job_set
     #     }
 
-    return processed
+    return processed_data
