@@ -27,7 +27,7 @@ class AsyncioRequests:
         Get request wrapper to fetch json data from Influxdb
         """
         resp = await client.query(sql)
-        return {"node": node, "data": resp}
+        return {"node": node, "data": resp['results'][0]['series'][0]}
         # try:
         #     resp = await client.query(sql)
         #     return await {"node": node, "data": resp}
