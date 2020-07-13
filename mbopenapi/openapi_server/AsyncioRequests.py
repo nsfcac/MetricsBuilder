@@ -51,7 +51,7 @@ class AsyncioRequests:
                 json = series[0]
             else:
                 json = {}
-                # logging.warning(f"Warning : No data from {node} : {sql}")
+                logging.warning(f"Warning : No data from {node} : {sql}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {label} data from {node}")
         return {"node": node, "label": label, "data": json}
@@ -67,5 +67,4 @@ class AsyncioRequests:
 
     def bulk_fetch(self, sqls: list) -> list:
         self.data =  self.loop.run_until_complete(self.__requests(sqls))
-        self.loop.close()
         return self.data
