@@ -58,7 +58,7 @@ mea = "FanSensor"
 for node in nodes:
     for mea, labels in meas:
         for label in labels:
-            sql = "SELECT max(Value) FROM " + mea + " WHERE Label='" + label + ""' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
+            sql = "SELECT max(Value) FROM " + mea + " WHERE Label='" + label + "' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
             sqls.append(sql)
 
 
