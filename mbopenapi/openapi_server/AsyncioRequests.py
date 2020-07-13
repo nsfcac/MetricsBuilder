@@ -33,6 +33,7 @@ class AsyncioRequests:
                 json = series[0]
             else:
                 json = {}
+                logging.warning(f"Warning : No data from {node} : {sql}")
             return {"node": node, "data": json}
         except:
             logging.error(f"Error : Cannot fetch data from {node} : {sql}")
