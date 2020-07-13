@@ -31,10 +31,9 @@ class AsyncioRequests:
         node = None
         try:
             pattern = "Label='[\s\S]*'"
-            label_node_str = re.findall(pattern, sql)[0]
-            label_node_slots = label_node_str.split("'")
-            label = label_node_slots[1]
-            node = label_node_slots[3]
+            label_node_str = re.findall(pattern, sql)[0].split("'")
+            label = label_node_str[1]
+            node = label_node_str[3]
         except:
             logging.error(f"Error : Cannot parse sql string: {sql}")
         return (label, node)
@@ -46,8 +45,7 @@ class AsyncioRequests:
         try:
             resp = await client.query(sql)
             series = resp['results'][0].get('series', None)
-            # (label, node) = self.__find_label_node(sql)
-            (label, node) = (None, None)
+            (label, node) = self.__find_label_node(sql)
             if series:
                 json = series[0]
             else:
