@@ -55,7 +55,7 @@ db = 'hpcc_metrics_phase2'
 
 mea = "FanSensor"
 for node in nodes:
-    sql = "SELECT max(Value) FROM " + mea + " WHERE Label = 'FAN_1' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
+    sql = "SELECT max(Value) FROM " + mea + " WHERE Label='FAN_1' and NodeId='" + node + "' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)" 
     sqls.append(sql)
 
 print(sqls[1])
