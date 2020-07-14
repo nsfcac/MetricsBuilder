@@ -84,7 +84,11 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             })
             labels_list = list(labels.keys())
             if len(labels_list) == 1:
-                aggregated[new_key] = organized[measurement][labels_list[0]]
+                if measurement == "NodeJobs":
+                    label_value = process_joblist(organized[measurement][labels_list[0]])
+                else:
+                    label_value = organized[measurement][labels_list[0]]
+                aggregated[new_key] = label_value
             else:
                 length = len(organized[measurement][labels_list[0]])
                 for i in range(length):
@@ -94,23 +98,9 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                         all_label_value.append(label_value)
                     aggregated[new_key].append(all_label_value)
 
-        # Process Job list
-        joblist = aggregated["job_list"]
-        processed_joblist = process_joblist(joblist, time_list)
-        aggregated.update({
-            "job_list": processed_joblist
-        })
-
-        # nodedata = {
-        #     node: {
-        #         "memory_usage": memory_usage,
-        #         "cpu_usage": cpu_usage,
-        #         "power_usage": power_usage,
-        #         "fan_speed": fan_speed,
-        #         "cpu_inl_temp": cpu_inl_temp,
-        #         "job_list": job_list
-        #     }
-        # }
+        nodedata = {
+            node: aggregated
+        }
 
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
