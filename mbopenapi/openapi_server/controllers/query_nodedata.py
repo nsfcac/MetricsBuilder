@@ -3,7 +3,8 @@ import multiprocessing
 import sys
 sys.path.append('../')
 
-from openapi_server.NodeAsyncioRequests import NodeAsyncioRequests
+# from openapi_server.NodeAsyncioRequests import NodeAsyncioRequests
+from NodeAsyncioRequests import NodeAsyncioRequests
 
 
 def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
