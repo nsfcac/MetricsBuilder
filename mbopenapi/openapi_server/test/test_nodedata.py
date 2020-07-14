@@ -70,8 +70,8 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 # # cores= multiprocessing.cpu_count()
 
-node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
-# node_list = ['10.101.2.35']
+# node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
+node_list = ['10.101.2.35']
 query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
                           repeat(start), repeat(end), repeat(interval), repeat(value))
 
