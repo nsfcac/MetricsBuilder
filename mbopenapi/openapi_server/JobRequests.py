@@ -2,8 +2,7 @@ import re
 import json
 import time
 import logging
-from aioinflux import InfluxDBClient
-import asyncio
+from influxdb import InfluxDBClient
 
 
 class JobAsyncioRequests:
@@ -12,12 +11,11 @@ class JobAsyncioRequests:
     """
 
 
-    def __init__(self, host: str, port: str, database: str, loop):
+    def __init__(self, host: str, port: str, database: str):
         self.host = host
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = loop
     
 
     def __find_jobid(self, sql:str) -> str:

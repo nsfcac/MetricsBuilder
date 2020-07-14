@@ -57,7 +57,7 @@ measurements = {
   ]
 }
 
-node_list = parse_nodelist(nodelist_cfg)
+# node_list = parse_nodelist(nodelist_cfg)
 
 start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T18:00:00-05:00"
@@ -73,7 +73,7 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 # # cores= multiprocessing.cpu_count()
 
 # node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
-# node_list = ['10.101.2.35']
+node_list = ['10.101.2.35']
 
 
 # query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
@@ -98,7 +98,7 @@ nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, inter
 #                 key: value
 #             })
 
-processed_jobdata = query_jobdata(nodedata, influx_cfg)
+# processed_jobdata = query_jobdata(nodedata, influx_cfg)
 
 # node_data = {}
 
@@ -114,11 +114,11 @@ processed_jobdata = query_jobdata(nodedata, influx_cfg)
 # with multiprocessing.Pool() as pool:
 #     processed_jobdata = pool.map(process_jobdata, all_jobdata)
 
-job_data = {}
-for data in processed_jobdata:
-    for key, value in data.items():
-        job_data.update({
-            key: value
-        })
+# job_data = {}
+# for data in processed_jobdata:
+#     for key, value in data.items():
+#         job_data.update({
+#             key: value
+#         })
         
-print(json.dumps(job_data, indent=4))
+print(json.dumps(nodedata, indent=4))
