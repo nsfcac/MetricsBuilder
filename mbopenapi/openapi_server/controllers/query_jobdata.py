@@ -3,7 +3,7 @@ import multiprocessing
 import sys
 sys.path.append('../')
 
-from AsyncioRequests import JobAsyncioRequests
+from JobAsyncioRequests import JobAsyncioRequests
 
 
 def query_jobdata(job_ids: list, influx_cfg: dict) -> list:
@@ -25,11 +25,11 @@ def query_jobdata(job_ids: list, influx_cfg: dict) -> list:
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
-    Use AsyncioRequests to query urls
+    Use JobAsyncioRequests to query urls
     """
     data = []
     try:
-        request = AsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
+        request = JobAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
         data = request.bulk_fetch(sqls)
     except Exception as err:
         logging.error(f"query_jobdata : query_influx : {err}")

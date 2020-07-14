@@ -7,7 +7,7 @@ import asyncio
 from aioinflux import InfluxDBClient
 
 
-class AsyncioRequests:
+class NodeAsyncioRequests:
     """
     Asyncio requests to Influxdb
     """
