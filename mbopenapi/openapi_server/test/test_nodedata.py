@@ -65,9 +65,7 @@ value = "max"
 start = util.deserialize_datetime(start)
 end = util.deserialize_datetime(end)
 
-epoch_time_list = gen_epoch_timelist(start, end, interval)
-
-time_list = gen_timelist(start, end, interval)
+time_list = gen_epoch_timelist(start, end, interval)
 print(json.dumps(time_list, indent = 4))
 
 # # cores= multiprocessing.cpu_count()
