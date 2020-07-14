@@ -88,6 +88,8 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                 else:
                     label_value = organized[measurement][labels_list[0]]
                 aggregated[new_key] = label_value
+                job_set = set([item for sublist in label_value for item in sublist])
+                aggregated["job_set"] = job_set
             else:
                 length = len(time_list)
                 for i in range(length):
@@ -100,9 +102,9 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                             all_label_value.append(None)
                     aggregated[new_key].append(all_label_value)
             
-            # Check length
-            if len(aggregated[new_key]) != len(time_list):
-                    print(f"{node} - {new_key} - f{len(label_value)}")
+            # # Check length
+            # if len(aggregated[new_key]) != len(time_list):
+            #         print(f"{node} - {new_key} - {len(label_value)}")
                
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
@@ -126,4 +128,4 @@ def process_joblist(job_list_dict: dict, time_list: list) -> list:
             processed_joblist.append(this_job_list)
     except Exception as err:
         logging.error(f"process_nodedata : process_joblist : {err}")
-    return processed_joblist
+    return processed_joblist    

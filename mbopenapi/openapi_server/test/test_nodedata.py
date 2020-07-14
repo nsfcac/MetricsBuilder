@@ -87,4 +87,4 @@ with multiprocessing.Pool() as pool:
 
 # results = process_nodedata(nodedata, time_list)
 
-# print(json.dumps(processed_results, indent=4))
+print(json.dumps(processed_results, indent=4))
