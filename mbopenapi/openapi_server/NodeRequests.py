@@ -47,7 +47,7 @@ class NodeRequests:
         (node, measurement, label) = self.__find_label_node(sql)
         json = {}
         try:
-            resp = client.query(sql).get_points()
+            json = client.query(sql).get_points()
             # series = resp['results'][0].get('series', None)
             # if series:
             #     json = series[0]['values']
@@ -56,7 +56,7 @@ class NodeRequests:
                 # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node}")
-        return {"node": node, "measurement": measurement, "label": label, "values": resp}
+        return {"node": node, "measurement": measurement, "label": label, "values": json}
 
 
     def bulk_fetch(self, sqls: list) -> list:
