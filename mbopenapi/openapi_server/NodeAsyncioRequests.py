@@ -2,7 +2,6 @@ import re
 import json
 import time
 import logging
-import asyncio
 from aioinflux import InfluxDBClient
 
 
@@ -10,7 +9,7 @@ class NodeAsyncioRequests:
     """
     Node Asyncio requests to Influxdb
     """
-    # import asyncio
+    import asyncio
 
 
     def __init__(self, host: str, port: str, database: str):
@@ -18,7 +17,7 @@ class NodeAsyncioRequests:
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = asyncio.get_event_loop()
+        self.loop = self.asyncio.get_event_loop()
     
 
     def __find_label_node(self, sql:str) -> str:
