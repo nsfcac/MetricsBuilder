@@ -16,7 +16,7 @@ def process_jobdata(jobdata: dict) -> dict:
     values = jobdata["values"]["values"][0]
 
     for i, column in enumerate(columns):
-        jobdata.update({
+        processed_jobdata.update({
             column: values[i]
         })
     
