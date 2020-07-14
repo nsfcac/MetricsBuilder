@@ -104,8 +104,7 @@ def aggregate_nodedata(organized: dict, time_list: list) -> dict:
         print(f"Job list : {len(job_list)}")
 
     except Exception as err:
-        # logging.error(f"process_nodedata : aggregate_nodedata : {err}")
-        pass
+        logging.error(f"process_nodedata : aggregate_nodedata : {err}")
 
     return json_data
 
