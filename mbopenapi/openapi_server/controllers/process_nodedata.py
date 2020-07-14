@@ -41,7 +41,7 @@ def process_nodedata(nodedata: list) -> dict:
     cpu_2_temp = organized["TempSensor"]["CPU2 Temp"]
     inlet_temp = organized["TempSensor"]["Inlet Temp"]
 
-    cpu_inl_temp = [ [cpu_1_temp[i], cpu_2_temp[i], inlet_temp[i]] for in range(len(cpu_1_temp)) ]
+    cpu_inl_temp = [ [cpu_1_temp[i], cpu_2_temp[i], inlet_temp[i]] for i in range(len(cpu_1_temp)) ]
 
     job_list = organized["NodeJobs"]["JobList"]
 
