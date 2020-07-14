@@ -58,6 +58,6 @@ class NodeRequests:
 
     def bulk_fetch(self, sqls: list) -> list:
         for i, sql in enumerate(sqls):
-            sql_data = self.__fetch_json(sql, client)
+            sql_data = self.__fetch_json(sql, self.client)
             self.data.append(sql_data)
         return self.data
