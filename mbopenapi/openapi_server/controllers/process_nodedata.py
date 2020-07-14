@@ -10,10 +10,11 @@ def process_nodedata(nodedata: list) -> dict:
         values = data["data"]["values"]
 
         if measurement == "NodeJobs":
+            flatten_values = {}
             for value in values:
-                flatten_values = {
-                    value[0]: value[1][1:-1].split(",")
-                }
+                flatten_values.update({
+                    value[0]: value[1][1:-1].split(", ")
+                })
         else:
             # Aggregate data points
             flatten_values = [value[1] for value in values]
@@ -60,4 +61,4 @@ def process_nodedata(nodedata: list) -> dict:
         "job_list": job_list,
     }
 
-    return json_data
+    return organized
