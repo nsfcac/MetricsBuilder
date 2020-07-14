@@ -67,7 +67,7 @@ query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
 
 with multiprocessing.Pool() as pool:
     results = pool.starmap(query_nodedata, query_nodedata_args)
-    processed_results = pool.map(process_nodedata. results)
+    processed_results = pool.map(process_nodedata, results)
 # node = '10.101.2.35'
 # nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
