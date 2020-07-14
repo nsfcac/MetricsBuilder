@@ -114,11 +114,11 @@ jobdata = query_jobdata(nodedata, influx_cfg)
 # with multiprocessing.Pool() as pool:
 #     processed_jobdata = pool.map(process_jobdata, all_jobdata)
 
-# job_data = {}
-# for data in processed_jobdata:
-#     for key, value in data.items():
-#         job_data.update({
-#             key: value
-#         })
+job_data = {}
+for data in jobdata:
+    for key, value in data.items():
+        job_data.update({
+            key: value
+        })
         
-print(json.dumps(jobdata, indent=4))
+print(json.dumps(job_data, indent=4))
