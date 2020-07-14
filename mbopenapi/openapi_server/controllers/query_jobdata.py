@@ -2,12 +2,14 @@ import logging
 import multiprocessing
 from itertools import repeat
 import asyncio
-import sys
-sys.path.append('../')
 
-# from openapi_server.JobAsyncioRequests import JobAsyncioRequests
-from JobAsyncioRequests import JobAsyncioRequests
-from controllers.process_jobdata import process_jobdata
+from openapi_server.JobAsyncioRequests import JobAsyncioRequests
+from openapi_server.controllers.process_jobdata import process_jobdata
+
+# import sys
+# sys.path.append('../')
+# from JobAsyncioRequests import JobAsyncioRequests
+# from controllers.process_jobdata import process_jobdata
 
 
 def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
