@@ -18,20 +18,16 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
     try:
         cores= multiprocessing.cpu_count()
 
+        node_group = partition(node_list, cores)
+
         # Generate sqls
-        generate_sqls_args = zip(node_list, repeat(measurements), repeat(start),
+        generate_sqls_args = zip(node_group, repeat(measurements), repeat(start),
                                  repeat(end), repeat(interval), repeat(value))
 
         with multiprocessing.Pool() as pool:
-            sqls = pool.starmap(generate_sqls, generate_sqls_args)
-
-        flatten_sqls = [item for sublist in sqls for item in sublist]
-        sqls_group = partition(flatten_sqls, cores)
-
-        # Parallel query data
-        query_influx_args = zip(repeat(influx_cfg), sqls_group)
-
-        with multiprocessing.Pool() as pool:
+            sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
+            # Parallel query data
+            query_influx_args = zip(repeat(influx_cfg), sqls_group)
             node_data = pool.starmap(query_influx, query_influx_args)
 
     except Exception as err:
