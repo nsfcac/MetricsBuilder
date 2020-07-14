@@ -5,9 +5,9 @@ import logging
 from influxdb import InfluxDBClient
 
 
-class JobAsyncioRequests:
+class JobRequests:
     """
-    Job Asyncio requests to Influxdb
+    Job requests to Influxdb
     """
 
 

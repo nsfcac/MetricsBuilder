@@ -6,7 +6,7 @@ import asyncio
 import sys
 sys.path.append('../../')
 
-from openapi_server.NodeAsyncioRequests import NodeAsyncioRequests
+from openapi_server.NodeRequests import NodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
 
 # from NodeAsyncioRequests import NodeAsyncioRequests
