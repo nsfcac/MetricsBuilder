@@ -1,7 +1,7 @@
 import logging
 
 
-def process_nodedata(nodedata: list, time_list: list) -> dict:
+def process_nodedata(nodedata: list, measurements: dict, time_list: list) -> dict:
     """
     Process node data points read from influxdb
     """
@@ -51,7 +51,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                 })
 
             # Aggregate organized data
-            aggregated = aggregate_nodedata(node, organized, time_list)
+            aggregated = aggregate_nodedata(node, organized, measurements, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
@@ -59,56 +59,63 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     return aggregated
 
 
-def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
+def aggregate_nodedata(node: str, organized: dict, 
+                       measurements: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
-    json_data = {}
+    aggregated = {}
     try:
-        # Mapping data points
-        # To do: make it automatically
-        memory_usage = organized["MemUsage"]["UGE"]
-        cpu_usage = organized["CPUUsage"]["UGE"]
-        power_usage = organized["Power"]["NodePower"]
-
-        fan_1 = organized["FanSensor"]["FAN_1"]
-        fan_2 = organized["FanSensor"]["FAN_2"]
-        fan_3 = organized["FanSensor"]["FAN_3"]
-        fan_4 = organized["FanSensor"]["FAN_4"]
-
-        fan_speed = [ [fan_1[i], fan_2[i], fan_3[i], fan_4[i]] for i in range(len(fan_1)) ]
-
-        cpu_1_temp = organized["TempSensor"]["CPU1 Temp"]
-        cpu_2_temp = organized["TempSensor"]["CPU2 Temp"]
-        inlet_temp = organized["TempSensor"]["Inlet Temp"]
-
-        cpu_inl_temp = [ [cpu_1_temp[i], cpu_2_temp[i], inlet_temp[i]] for i in range(len(cpu_1_temp)) ]
-
-        job_list_dict = organized["NodeJobs"]["JobList"]
-        job_list = process_joblist(job_list_dict, time_list)
-
-        json_data = {
-            node: {
-                "memory_usage": memory_usage,
-                "cpu_usage": cpu_usage,
-                "power_usage": power_usage,
-                "fan_speed": fan_speed,
-                "cpu_inl_temp": cpu_inl_temp,
-                "job_list": job_list
-            }
+        # Mapping aggregated data keys to measurements
+        mapping = {
+            "memory_usage" : "MemUsage",
+            "cpu_usage": "CPUUsage",
+            "power_usage": "Power",
+            "fan_speed": "FanSensor",
+            "cpu_inl_temp": "TempSensor",
+            "job_list": "NodeJobs"
         }
 
-        print(f"Memory usage : {len(memory_usage)}")
-        print(f"CPU usage : {len(cpu_usage)}")
-        print(f"Power usage : {len(power_usage)}")
-        print(f"Fan speed : {len(fan_speed)}")
-        print(f"Temperature : {len(cpu_inl_temp)}")
-        print(f"Job list : {len(job_list)}")
+        mapping_keys = list(mapping.keys())
+
+        for measurement, labels in measurements.items():
+            aggregated.update({
+                measurement: []
+            })
+            if len(labels) == 1:
+                aggregated[measurement] = organized[measurement][labels[0]]
+            else:
+                length = len(organized[measurement][labels[0]])
+                for i in range(length):
+                    all_label_value = []
+                    for label in labels:
+                        label_value = organized[measurement][label][i]
+                        all_label_value.append(label_value)
+                    aggregated[measurement].append(all_label_value)
+
+
+        # aggregated = {
+        #     node: {
+        #         "memory_usage": memory_usage,
+        #         "cpu_usage": cpu_usage,
+        #         "power_usage": power_usage,
+        #         "fan_speed": fan_speed,
+        #         "cpu_inl_temp": cpu_inl_temp,
+        #         "job_list": job_list
+        #     }
+        # }
+
+        # print(f"Memory usage : {len(memory_usage)}")
+        # print(f"CPU usage : {len(cpu_usage)}")
+        # print(f"Power usage : {len(power_usage)}")
+        # print(f"Fan speed : {len(fan_speed)}")
+        # print(f"Temperature : {len(cpu_inl_temp)}")
+        # print(f"Job list : {len(job_list)}")
 
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
 
-    return json_data
+    return aggregated
 
 
 def process_joblist(job_list_dict: dict, time_list: list) -> list:

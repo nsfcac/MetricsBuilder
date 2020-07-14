@@ -79,7 +79,7 @@ with multiprocessing.Pool() as pool:
     # query data
     results = pool.starmap(query_nodedata, query_nodedata_args)
     # # process data
-    process_nodedata_args = zip(results, repeat(time_list))
+    process_nodedata_args = zip(results, repeat(measurements), repeat(time_list))
     processed_results = pool.starmap(process_nodedata, process_nodedata_args)
 
 # node = '10.101.2.35'
