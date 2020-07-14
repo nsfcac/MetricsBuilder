@@ -83,7 +83,6 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             error_message='Start time should no larger than end time'
         )
     else:
-        asyncio.set_event_loop(asyncio.new_event_loop())
         # Initialize influxdb client
         client = InfluxDBClient(host=host, port=port, database=dbname)
 
