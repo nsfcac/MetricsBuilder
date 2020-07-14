@@ -54,13 +54,13 @@ class AsyncioRequests:
             resp = await client.query(sql)
             series = resp['results'][0].get('series', None)
             if series:
-                json = series[0]
+                json = series[0]['values']
             else:
                 json = {}
                 # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
-            logging.error(f"Error : Cannot fetch {label} data from {node}")
-        return {"node": node, "measurement": measurement, "label": label, "data": resp}
+            logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node}")
+        return {"node": node, "measurement": measurement, "label": label, "data": json}
 
 
     async def __requests(self, sqls: list) -> list:
