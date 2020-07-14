@@ -5,7 +5,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     Process node data points read from influxdb
     """
-    nodedata = {}
+    aggregated = {}
     organized = {}
     try:
         for data in nodedata:
@@ -63,7 +63,6 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
-    nodedata = {}
     aggregated = {}
     try:
         # Mapping aggregated data keys to measurements
@@ -98,14 +97,10 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                         all_label_value.append(label_value)
                     aggregated[new_key].append(all_label_value)
 
-        nodedata = {
-            node: aggregated
-        }
-
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
 
-    return nodedata
+    return {node: aggregated}
 
 
 def process_joblist(job_list_dict: dict, time_list: list) -> list:
