@@ -46,6 +46,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
     # Parse configuration, get target node list
     config = parse_config('config_path')
+    print(config)
     node_list = parse_nodelist(config['nodelist'])
     measurements = config["measurements"]
     influx_cfg = config['influxdb']
@@ -139,7 +140,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             unified_metrics.time_stamp = epoch_time_list
             unified_metrics.nodes_info = node_data
             unified_metrics.jobs_info = job_data
-            
+
     return unified_metrics
 
 
