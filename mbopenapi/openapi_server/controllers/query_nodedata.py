@@ -8,19 +8,21 @@ sys.path.append('../')
 from NodeAsyncioRequests import NodeAsyncioRequests
 
 
-def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
-                   start: str, end: str, interval: str, value: str, loop) -> list:
+def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict, 
+                   start: str, end: str, interval: str, value: str) -> list:
     """
     Spread query across cores
     """
     node_data = []
     try:
         # Generate sqls
-        sqls = generate_sqls(node, measurements, start, end, interval, value)
+        sqls = generate_sqls(node_list, measurements, start, end, interval, value)
 
+        loop = asyncio.get_event_loop()
         # Query data
         node_data = query_influx(influx_cfg, sqls, loop)
 
+        loop.close()
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
     return node_data
@@ -39,28 +41,29 @@ def query_influx(influx_cfg: dict, sqls: list, loop) -> list:
     return data
 
 
-def generate_sqls(node:str, measurements: dict, 
+def generate_sqls(node_list:list, measurements: dict, 
                   start: str, end: str, interval: str, value: str) -> list:
     """
     Generate sqls from accroding to the user-specified parameters
     """
     sqls = []
     try:
-        for measurement, labels in measurements.items():
-            if measurement == "NodeJobs":
-                for label in labels:
-                    sql = "SELECT DISTINCT(Value) FROM " + measurement \
-                        + " WHERE Label='" + label + "' AND NodeId='" + node \
-                        + "' AND time >= '" + start + "' AND time < '" + end \
-                        + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
-                    sqls.append(sql)
-            else:
-                for label in labels:
-                    sql = "SELECT " + value + "(Value) FROM " + measurement \
-                        + " WHERE Label='" + label + "' AND NodeId='" + node \
-                        + "' AND time >= '" + start + "' AND time < '" + end \
-                        + "' GROUP BY time(" + interval + ") fill(null)"
-                    sqls.append(sql)
+        for node in node_list:
+            for measurement, labels in measurements.items():
+                if measurement == "NodeJobs":
+                    for label in labels:
+                        sql = "SELECT DISTINCT(Value) FROM " + measurement \
+                            + " WHERE Label='" + label + "' AND NodeId='" + node \
+                            + "' AND time >= '" + start + "' AND time < '" + end \
+                            + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
+                        sqls.append(sql)
+                else:
+                    for label in labels:
+                        sql = "SELECT " + value + "(Value) FROM " + measurement \
+                            + " WHERE Label='" + label + "' AND NodeId='" + node \
+                            + "' AND time >= '" + start + "' AND time < '" + end \
+                            + "' GROUP BY time(" + interval + ") fill(null)"
+                        sqls.append(sql)
     except Exception as err:
         logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")
 
