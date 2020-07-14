@@ -90,7 +90,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
-        processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, time_list)
+        processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, epoch_time_list)
 
         # Generate dict for each node data
         for node_group in processed_nodedata:
