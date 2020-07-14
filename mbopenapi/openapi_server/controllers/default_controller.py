@@ -1,5 +1,9 @@
 import connexion
 import six
+import json
+import base64
+import zlib
+import logging
 import multiprocessing
 from itertools import repeat
 
@@ -13,6 +17,9 @@ from openapi_server.controllers.query_nodedata import query_nodedata
 from openapi_server.controllers.query_jobdata import query_jobdata
 from openapi_server.controllers.process_nodedata import process_nodedata
 from openapi_server.controllers.process_jobdata import generate_jobset, process_jobdata
+
+
+ZIPJSON_KEY = 'base64(zip(o))'
 
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
@@ -82,7 +89,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
 
         # Generate time list
-        time_list = gen_timelist(start, end, interval)
+        # time_list = gen_timelist(start, end, interval)
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
@@ -124,5 +131,24 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     key: value
                 })
         # Aggregate time list, nodes and jobs data
+        if compress:
+            unified_metrics.time_stamp = json_zip(epoch_time_list)
+            unified_metrics.nodes_info = json_zip(node_data)
+            unified_metrics.jobs_info = json_zip(job_data)
+        else:
+            unified_metrics.time_stamp = epoch_time_list
+            unified_metrics.nodes_info = node_data
+            unified_metrics.jobs_info = job_data
+            
+    return unified_metrics
 
-    return 
+
+def json_zip(j):
+    j = {
+        ZIPJSON_KEY: base64.b64encode(
+            zlib.compress(
+                json.dumps(j).encode('utf-8')
+            )
+        ).decode('ascii')
+    }
+    return j
