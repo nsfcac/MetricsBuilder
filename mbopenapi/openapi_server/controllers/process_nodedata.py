@@ -50,13 +50,13 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                     }
                 })
 
-            # # Aggregate organized data
-            # aggregated = aggregate_nodedata(organized, time_list)
+            # Aggregate organized data
+            aggregated = aggregate_nodedata(organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
 
-    return organized
+    return aggregated
 
 
 def aggregate_nodedata(organized: dict, time_list: list) -> dict:
