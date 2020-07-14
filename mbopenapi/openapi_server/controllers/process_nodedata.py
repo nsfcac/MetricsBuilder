@@ -68,22 +68,23 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     try:
         # Mapping aggregated data keys to measurements
         mapping = {
-            "memory_usage" : "MemUsage",
-            "cpu_usage": "CPUUsage",
-            "power_usage": "Power",
-            "fan_speed": "FanSensor",
-            "cpu_inl_temp": "TempSensor",
-            "job_list": "NodeJobs"
+            "MemUsage": "memory_usage",
+            "CPUUsage": "cpu_usage",
+            "Power": "power_usage",
+            "FanSensor": "fan_speed",
+            "TempSensor": "cpu_inl_temp",
+            "NodeJobs": "job_list"
         }
 
         # Aggregate and unfold organized data
         for measurement, labels in organized.items():
+            new_key = mapping(measurement)
             aggregated.update({
-                measurement: []
+                new_key: []
             })
             labels_list = list(labels.keys())
             if len(labels_list) == 1:
-                aggregated[measurement] = organized[measurement][labels_list[0]]
+                aggregated[new_key] = organized[measurement][labels_list[0]]
             else:
                 length = len(organized[measurement][labels_list[0]])
                 for i in range(length):
@@ -91,14 +92,14 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                     for label in labels_list:
                         label_value = organized[measurement][label][i]
                         all_label_value.append(label_value)
-                    aggregated[measurement].append(all_label_value)
+                    aggregated[new_key].append(all_label_value)
 
-        # Process Job list
-        joblist = aggregated["NodeJobs"]
-        processed_joblist = process_joblist(joblist, time_list)
-        aggregated.update({
-            "NodeJobs": processed_joblist
-        })
+        # # Process Job list
+        # joblist = aggregated["NodeJobs"]
+        # processed_joblist = process_joblist(joblist, time_list)
+        # aggregated.update({
+        #     "NodeJobs": processed_joblist
+        # })
 
         # nodedata = {
         #     node: {
