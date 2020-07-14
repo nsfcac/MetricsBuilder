@@ -34,8 +34,6 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             # # Process data
             # process_nodedata_args = zip(node_data, repeat(time_list))
             # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
-        for nodes in node_data:
-            print(len(nodes))
 
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
