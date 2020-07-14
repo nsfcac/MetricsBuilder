@@ -69,7 +69,7 @@ value = "max"
 #     results = pool.starmap(query_nodedata, query_nodedata_args)
 
 node = '10.101.2.35'
-nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
+results = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
-results = process_nodedata(nodedata)
+# results = process_nodedata(nodedata)
 print(json.dumps(results, indent=4))
