@@ -1,6 +1,7 @@
 import connexion
 import six
-from influxdb import InfluxDBClient
+import multiprocessing
+from itertools import repeat
 
 from openapi_server.models.error_message import ErrorMessage  # noqa: E501
 from openapi_server.models.unified_metrics import UnifiedMetrics  # noqa: E501
@@ -8,6 +9,8 @@ from openapi_server import util
 from openapi_server.mb_utils import parse_config, parse_nodelist
 
 from openapi_server.controllers.generate_timelist import gen_timelist, gen_epoch_timelist
+from openapi_server.controllers.query_nodedata import query_nodedata
+from openapi_server.controllers.process_nodedata import process_nodedata
 
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
@@ -70,8 +73,6 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             "database": dbname
         })
 
-        # client = InfluxDBClient(host=influx_host, port=influx_port, database=dbname)
-
         # Time strings used in query influxdb
         st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
         et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -81,6 +82,17 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
+        query_nodedata_args = zip(node_list, repeat(influx_cfg), 
+                                  repeat(measurements), 
+                                  repeat(st_str), repeat(et_str), 
+                                  repeat(interval), repeat(value))
+        
+        with multiprocessing.Pool() as pool:
+            # Query data
+            nodedata = pool.starmap(query_nodedata, query_nodedata_args)
+            # Process data
+            process_nodedata_args = zip(nodedata, repeat(epoch_time_list))
+            processed_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
         # Get jobs data
 
