@@ -1,14 +1,15 @@
 import logging
 import multiprocessing
+import asyncio
 import sys
 sys.path.append('../')
 
-from openapi_server.NodeAsyncioRequests import NodeAsyncioRequests
-# from NodeAsyncioRequests import NodeAsyncioRequests
+# from openapi_server.NodeAsyncioRequests import NodeAsyncioRequests
+from NodeAsyncioRequests import NodeAsyncioRequests
 
 
 def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
-                   start: str, end: str, interval: str, value: str) -> list:
+                   start: str, end: str, interval: str, value: str, ) -> list:
     """
     Spread query across cores
     """
@@ -18,20 +19,21 @@ def query_nodedata(node: str, influx_cfg: dict, measurements: dict,
         sqls = generate_sqls(node, measurements, start, end, interval, value)
 
         # Query data
-        node_data = query_influx(influx_cfg, sqls)
+        loop  = asyncio.get_event_loop()
+        node_data = query_influx(influx_cfg, sqls, loop)
 
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
     return node_data
 
 
-def query_influx(influx_cfg: dict, sqls: list) -> list:
+def query_influx(influx_cfg: dict, sqls: list, loop) -> list:
     """
     Use NodeAsyncioRequests to query urls
     """
     data = []
     try:
-        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
+        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")

@@ -12,12 +12,12 @@ class NodeAsyncioRequests:
     import asyncio
 
 
-    def __init__(self, host: str, port: str, database: str):
+    def __init__(self, host: str, port: str, database: str, loop):
         self.host = host
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = self.asyncio.get_event_loop()
+        self.loop = loop
     
 
     def __find_label_node(self, sql:str) -> str:
