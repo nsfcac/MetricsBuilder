@@ -35,6 +35,7 @@ def process_nodedata(nodedata: list) -> dict:
 
     # Mapping data points
     # To do: make it automatically
+    """
     memory_usage = organized["MemUsage"]["UGE"]
     cpu_usage = organized["CPUUsage"]["UGE"]
     power_usage = organized["Power"]["NodePower"]
@@ -62,5 +63,6 @@ def process_nodedata(nodedata: list) -> dict:
         "cpu_inl_temp": cpu_inl_temp,
         "job_list": job_list,
     }
+    """
 
     return organized
