@@ -40,13 +40,11 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
     :rtype: UnifiedMetrics
     """
-    config_path = './config.yml'
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
     # Parse configuration, get target node list
-    config = parse_config('config_path')
-    print(config)
+    config = parse_config()
     node_list = parse_nodelist(config['nodelist'])
     measurements = config["measurements"]
     influx_cfg = config['influxdb']

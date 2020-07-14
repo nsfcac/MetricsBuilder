@@ -1,13 +1,13 @@
 import yaml
 
 
-def parse_config(path: str) -> object:
+def parse_config() -> object:
     """
     Read configuration file
     """
     cfg = []
     try:
-        with open(path, 'r') as ymlfile:
+        with open('openapi_server/controllers/config.yml', 'r') as ymlfile:
             cfg = yaml.safe_load(ymlfile)
         return cfg
     except Exception as err:
