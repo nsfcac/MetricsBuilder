@@ -66,19 +66,21 @@ start = util.deserialize_datetime(start)
 end = util.deserialize_datetime(end)
 
 time_list = gen_epoch_timelist(start, end, interval)
-print(json.dumps(time_list, indent = 4))
+# print(json.dumps(time_list, indent = 4))
 
 # # cores= multiprocessing.cpu_count()
 
-# query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
-#                           repeat(start), repeat(end), repeat(interval), repeat(value))
+query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
+                          repeat(start), repeat(end), repeat(interval), repeat(value))
 
-# with multiprocessing.Pool() as pool:
-#     results = pool.starmap(query_nodedata, query_nodedata_args)
-#     process_nodedata_args = zip(results, repeat(time_list))
-#     processed_results = pool.map(process_nodedata,)
+with multiprocessing.Pool() as pool:
+    # query data
+    results = pool.starmap(query_nodedata, query_nodedata_args)
+    # process data
+    process_nodedata_args = zip(results, repeat(time_list))
+    processed_results = pool.starmap(process_nodedata,)
 # # node = '10.101.2.35'
 # # nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
 # # results = process_nodedata(nodedata)
-# print(json.dumps(processed_results, indent=4))
+print(json.dumps(processed_results, indent=4))
