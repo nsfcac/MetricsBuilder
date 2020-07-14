@@ -102,10 +102,11 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             node: aggregated
         }
 
+        return nodedata
+        
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
-
-    return nodedata
+        return
 
 
 def process_joblist(job_list_dict: dict, time_list: list) -> list:
