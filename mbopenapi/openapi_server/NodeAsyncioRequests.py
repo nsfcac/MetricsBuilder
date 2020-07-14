@@ -3,6 +3,7 @@ import json
 import time
 import logging
 from aioinflux import InfluxDBClient
+import asyncio
 
 
 class NodeAsyncioRequests:
@@ -65,7 +66,7 @@ class NodeAsyncioRequests:
             tasks = []
             for i, sql in enumerate(sqls):
                 tasks.append(self.__fetch_json(sql=sql, client=client))
-            return await self.asyncio.gather(*tasks)
+            return await asyncio.gather(*tasks)
 
 
     def bulk_fetch(self, sqls: list) -> list:
