@@ -98,7 +98,7 @@ nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, inter
 #                 key: value
 #             })
 
-jobdata = query_jobdata(nodedata, influx_cfg)
+# jobdata = query_jobdata(nodedata, influx_cfg)
 
 # node_data = {}
 
@@ -121,4 +121,4 @@ jobdata = query_jobdata(nodedata, influx_cfg)
 #             key: value
 #         })
         
-print(json.dumps(jobdata, indent=4))
+print(json.dumps(nodedata, indent=4))
