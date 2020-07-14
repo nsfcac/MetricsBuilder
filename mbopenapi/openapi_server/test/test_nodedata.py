@@ -62,10 +62,10 @@ end = "2020-07-12T18:00:00-05:00"
 interval = "5m"
 value = "max"
 
-start = util.deserialize_datetime(start)
-end = util.deserialize_datetime(end)
+epoch_start = util.deserialize_datetime(start)
+epoch_end = util.deserialize_datetime(end)
 
-time_list = gen_epoch_timelist(start, end, interval)
+time_list = gen_epoch_timelist(epoch_start, epoch_end, interval)
 # print(json.dumps(time_list, indent = 4))
 
 # # cores= multiprocessing.cpu_count()
