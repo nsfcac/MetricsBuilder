@@ -87,11 +87,11 @@ def process_joblist(joblist: dict, time_list: list) -> list:
     """
     processed_joblist = []
     try:
-        for index, time in enumerate(time_list):
-            if index == 0:
-                this_job_list = joblist.get(time, [])
+        for i, t in enumerate(time_list):
+            if i == 0:
+                this_job_list = joblist.get(t, [])
             else:
-                this_job_list = joblist.get(time, joblist[index-1])
+                this_job_list = joblist.get(t, joblist[i-1])
             processed_joblist.append(this_job_list)
     except Exception as err:
         logging.error(f"process_nodedata : process_joblist error : {err}")
