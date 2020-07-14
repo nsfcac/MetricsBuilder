@@ -5,7 +5,7 @@ from flask_cors import CORS
 import ssl
 
 context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-context.load_cert_chain("/password/SSL_Certificate/influx_ttu_edu_cert.cer", "/password/SSL_Certificate/server.key")
+context.load_cert_chain("/home/username/SSL_Certificate/influx_ttu_edu_cert.cer", "/home/username/SSL_Certificate/server.key")
 
 
 def main():
