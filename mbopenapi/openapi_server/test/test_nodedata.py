@@ -4,6 +4,7 @@ from itertools import repeat
 import sys
 sys.path.append('../')
 
+import util
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
 from controllers.process_nodedata import process_nodedata
@@ -60,6 +61,9 @@ start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T18:00:00-05:00"
 interval = "5m"
 value = "max"
+
+start = util.deserialize_datetime(start)
+end = util.deserialize_datetime(end)
 
 time_list = gen_timelist(start, end, interval)
 print(json.dumps(time_list, indent = 4))
