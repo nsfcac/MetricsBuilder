@@ -85,7 +85,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             labels_list = list(labels.keys())
             if len(labels_list) == 1:
                 if measurement == "NodeJobs":
-                    label_value = process_joblist(organized[measurement][labels_list[0]])
+                    label_value = process_joblist(organized[measurement][labels_list[0]], time_list)
                 else:
                     label_value = organized[measurement][labels_list[0]]
                 aggregated[new_key] = label_value
