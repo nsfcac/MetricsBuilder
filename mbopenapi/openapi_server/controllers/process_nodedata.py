@@ -89,13 +89,16 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                     label_value = organized[measurement][labels_list[0]]
                 aggregated[new_key] = label_value
             else:
-                length = len(organized[measurement][labels_list[0]])
-                for i in range(length):
-                    all_label_value = []
-                    for label in labels_list:
-                        label_value = organized[measurement][label][i]
-                        all_label_value.append(label_value)
-                    aggregated[new_key].append(all_label_value)
+                if organized[measurement][labels_list[0]]:
+                    length = len(organized[measurement][labels_list[0]])
+                    for i in range(length):
+                        all_label_value = []
+                        for label in labels_list:
+                            label_value = organized[measurement][label][i]
+                            all_label_value.append(label_value)
+                        aggregated[new_key].append(all_label_value)
+                else:
+                    aggregated[new_key] = []
 
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
