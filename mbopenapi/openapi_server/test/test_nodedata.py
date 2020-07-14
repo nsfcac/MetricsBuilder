@@ -7,6 +7,7 @@ sys.path.append('../')
 import util
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
+from controllers.query_jobdata import query_jobdata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 from controllers.process_jobdata import generate_jobset
@@ -85,9 +86,10 @@ with multiprocessing.Pool() as pool:
     all_jobset = pool.map(generate_jobset, process_nodedata)
 
 flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
 # node = '10.101.2.35'
 # nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
 # results = process_nodedata(nodedata, time_list)
-print(len(flatten_jobset))
-print(json.dumps(flatten_jobset, indent=4))
+# print(len(flatten_jobset))
+print(json.dumps(all_jobdata, indent=4))
