@@ -63,6 +63,7 @@ def aggregate_nodedata(organized: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
+    json_data = {}
     try:
         # Mapping data points
         # To do: make it automatically
@@ -96,6 +97,7 @@ def aggregate_nodedata(organized: dict, time_list: list) -> dict:
         }
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {err}")
+
     return json_data
 
 
