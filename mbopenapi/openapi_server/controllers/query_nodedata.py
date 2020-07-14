@@ -1,6 +1,7 @@
 import logging
 import multiprocessing
 from itertools import repeat
+from influxdb import InfluxDBClient
 
 import sys
 sys.path.append('../../')
