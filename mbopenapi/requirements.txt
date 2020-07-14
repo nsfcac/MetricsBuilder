@@ -9,4 +9,5 @@ influxdb
 flask-cors
 pyopenssl
 aioinflux
-aioinflux[pandas] 
+aioinflux[pandas]
+quart
