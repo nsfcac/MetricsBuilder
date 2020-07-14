@@ -39,7 +39,7 @@ def gen_timelist(start: str, end: str, interval: str) -> list:
 
 def gen_epoch_timelist(start: str, end: str, interval: str) -> list:
     delta = time_delta(interval)
-    time_list = [int(dt.timestamp()) for dt in datetime_range(
+    time_list = [int(dt.timestamp() * 1000000000) for dt in datetime_range(
         start, end, delta
     )]
     return time_list
