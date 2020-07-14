@@ -81,29 +81,29 @@ with multiprocessing.Pool() as pool:
     # query data
     results = pool.starmap(query_nodedata, query_nodedata_args)
     # # process data
-    process_nodedata_args = zip(results, repeat(time_list))
-    processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
-    all_jobset = pool.map(generate_jobset, processd_nodedata)
+    # process_nodedata_args = zip(results, repeat(time_list))
+    # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+    # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-node_data = {}
+# node_data = {}
 
-for data in processd_nodedata:
-    for key, value in data.items():
-        node_data.update({
-            key: value
-        })
+# for data in processd_nodedata:
+#     for key, value in data.items():
+#         node_data.update({
+#             key: value
+#         })
 
-flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
+# flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+# all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
 
-with multiprocessing.Pool() as pool:
-    processed_jobdata = pool.map(process_jobdata, all_jobdata)
+# with multiprocessing.Pool() as pool:
+#     processed_jobdata = pool.map(process_jobdata, all_jobdata)
 
-job_data = {}
-for data in processed_jobdata:
-    for key, value in data.items():
-        job_data.update({
-            key: value
-        })
+# job_data = {}
+# for data in processed_jobdata:
+#     for key, value in data.items():
+#         job_data.update({
+#             key: value
+#         })
         
-print(json.dumps(job_data, indent=4))
+print(json.dumps(results, indent=4))
