@@ -10,7 +10,7 @@ def generate_jobset(processed_nodedata: dict) -> set:
 
 
 def process_jobdata(jobdata: dict) -> dict:
-    jobdata = {}
+    processed_jobdata = {}
     job = jobdata["job"]
     columns = jobdata["values"]["columns"]
     values = jobdata["values"]["values"][0]
@@ -20,4 +20,4 @@ def process_jobdata(jobdata: dict) -> dict:
             column: values[i]
         })
     
-    return {job: jobdata}
+    return {job: processed_jobdata}
