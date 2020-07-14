@@ -36,7 +36,7 @@ def process_jobdata(jobdata: dict) -> dict:
     for i, column in enumerate(columns):
         if column != "time":
             organized_jobdata.update({
-                columns: values[i]
+                column: values[i]
             })
 
     # for key, value in mapping.items():
