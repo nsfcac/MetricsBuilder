@@ -15,7 +15,7 @@ def process_jobdata(jobdata: dict) -> dict:
     """
     processed_jobdata = {}
     organized_jobdata = {}
-    
+
     job_array = False
 
     mapping = {
@@ -34,21 +34,22 @@ def process_jobdata(jobdata: dict) -> dict:
     values = jobdata["values"]["values"][0]
 
     for i, column in enumerate(columns):
-        organized_jobdata.update({
-            column: values[i]
-        })
+        if column != "time":
+            organized_jobdata.update({
+                mapping[column]: values[i]
+            })
 
-    for key, value in mapping.items():
-        processed_jobdata.update({
-            value: organized_jobdata[key]
-        })
+    # for key, value in mapping.items():
+    #     processed_jobdata.update({
+    #         value: organized_jobdata[key]
+    #     })
     
-    if "." in organized_jobdata["JobId"]:
-        job_array = False
+    # if "." in organized_jobdata["JobId"]:
+    #     job_array = False
 
-    processed_jobdata.update({
-        "finish_time": None,
-        "job_array": job_array
-    })
+    # processed_jobdata.update({
+    #     "finish_time": None,
+    #     "job_array": job_array
+    # })
     
-    return {job: processed_jobdata}
+    return {job: organized_jobdata}
