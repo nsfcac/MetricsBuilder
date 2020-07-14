@@ -11,10 +11,11 @@ class NodeRequests:
     """
 
 
-    def __init__(self, host: str, port: str, database: str):
+    def __init__(self, host: str, port: str, database: str, client: object):
         self.host = host
         self.port = port
         self.database = database
+        self.client = client
         self.data = []
     
 
@@ -40,14 +41,14 @@ class NodeRequests:
         return (node, measurement, label)
     
 
-    def __fetch_json(self, sql: str, client: object) -> dict:
+    def __fetch_json(self, sql: str) -> dict:
         """
         Get request wrapper to fetch json data from Influxdb
         """
         (node, measurement, label) = self.__find_label_node(sql)
         json = {}
         try:
-            json = client.query(sql).get_points()
+            json = self.client.query(sql).get_points()
             # series = resp['results'][0].get('series', None)
             # if series:
             #     json = series[0]['values']
@@ -60,8 +61,7 @@ class NodeRequests:
 
 
     def bulk_fetch(self, sqls: list) -> list:
-        with InfluxDBClient(host = self.host, port = self.port, database = self.database) as client:
-            for i, sql in enumerate(sqls):
-                sql_data = self.__fetch_json(sql, client)
-                self.data.append(sql_data)
+        for i, sql in enumerate(sqls):
+            sql_data = self.__fetch_json(sql, client)
+            self.data.append(sql_data)
         return self.data
