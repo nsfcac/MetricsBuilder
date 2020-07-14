@@ -8,7 +8,7 @@ import util
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
 from controllers.process_nodedata import process_nodedata
-from controllers.generate_timelist import gen_timelist
+from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -64,6 +64,8 @@ value = "max"
 
 start = util.deserialize_datetime(start)
 end = util.deserialize_datetime(end)
+
+epoch_time_list = gen_epoch_timelist(start, end, interval)
 
 time_list = gen_timelist(start, end, interval)
 print(json.dumps(time_list, indent = 4))
