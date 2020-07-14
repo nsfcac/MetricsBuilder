@@ -60,7 +60,7 @@ class AsyncioRequests:
                 # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {label} data from {node}")
-        return {"node": node, "measurement": measurement, "label": label, "data": json}
+        return {"node": node, "measurement": measurement, "label": label, "data": resp}
 
 
     async def __requests(self, sqls: list) -> list:
