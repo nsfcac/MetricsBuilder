@@ -16,7 +16,7 @@ class NodeAsyncioRequests:
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = asyncio.get_event_loop()
+        self.loop = self.asyncio.get_event_loop()
     
 
     def __find_label_node(self, sql:str) -> str:
