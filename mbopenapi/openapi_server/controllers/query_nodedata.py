@@ -31,9 +31,9 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             query_influx_args = zip(repeat(influx_cfg), sqls_group)
             node_data = pool.starmap(query_influx, query_influx_args)
 
-            # # Process data
-            # process_nodedata_args = zip(node_data, repeat(time_list))
-            # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+            # Process data
+            process_nodedata_args = zip(node_data, repeat(time_list))
+            processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
