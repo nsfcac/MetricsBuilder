@@ -78,7 +78,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
 
         # Aggregate and unfold organized data
         for measurement, labels in organized.items():
-            new_key = mapping(measurement)
+            new_key = mapping[measurement]
             aggregated.update({
                 new_key: []
             })
