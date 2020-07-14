@@ -93,12 +93,17 @@ for data in processd_nodedata:
             key: value
         })
 
-# flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-# all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
+flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
 
-# with multiprocessing.Pool() as pool:
-#     processed_all_jobdata = pool.map(process_jobdata, all_jobdata)
+with multiprocessing.Pool() as pool:
+    processed_jobdata = pool.map(process_jobdata, all_jobdata)
 
-# results = process_nodedata(nodedata, time_list)
-# print(len(flatten_jobset))
-print(json.dumps(node_data, indent=4))
+job_data = {}
+for data in processed_jobdata:
+    for key, value in data.items():
+        job_data.update({
+            key: value
+        })
+        
+print(json.dumps(job_data, indent=4))
