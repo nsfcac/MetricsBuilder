@@ -15,6 +15,7 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
     Spread query across cores
     """
     processed_jobdata = []
+    flatten_joblist = []
     flatten_jobset = set()
     try:
         cores= multiprocessing.cpu_count()
@@ -25,25 +26,27 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
         # Get job ids
         for jobset in all_jobset:
             flatten_jobset.update(jobset)
+        
+        flatten_joblist = list(flatten_jobset)
 
-        # job_group = partition(flatten_jobset, cores)
+        job_group = partition(flatten_joblist, cores)
 
-        # with multiprocessing.Pool() as pool:
-        #     # Generate sqls
-        #     sqls_group = pool.map(generate_sqls, job_group)
+        with multiprocessing.Pool() as pool:
+            # Generate sqls
+            sqls_group = pool.map(generate_sqls, job_group)
 
-        #     # Parallel query  job data
-        #     query_influx_args = zip(repeat(influx_cfg), sqls_group)
-        #     job_data = pool.starmap(query_influx, query_influx_args)
+            # Parallel query  job data
+            query_influx_args = zip(repeat(influx_cfg), sqls_group)
+            job_data = pool.starmap(query_influx, query_influx_args)
 
-        #     processed_jobdata = pool.map(process_jobdata, job_data)
+            processed_jobdata = pool.map(process_jobdata, job_data)
             
 
         
 
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
-    return list(flatten_jobset)
+    return processed_jobdata
 
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
