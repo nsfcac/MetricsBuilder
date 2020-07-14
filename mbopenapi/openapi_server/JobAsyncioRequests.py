@@ -42,18 +42,17 @@ class JobAsyncioRequests:
         """
         jobid = self.__find_jobid(sql)
         json = {}
-        resp = {}
         try:
             resp = await client.query(sql)
-            # series = resp['results'][0].get('series', None)
-            # if series:
-            #     json = series[0]['values']
-            # else:
-            #     json = {}
-            #     # logging.warning(f"Warning : No {label} data from {node}")
+            series = resp['results'][0].get('series', None)
+            if series:
+                json = series[0]
+            else:
+                json = {}
+                # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch job data from {jobid}")
-        return {"job": jobid, "values": resp}
+        return {"job": jobid, "values": json}
 
 
     async def __requests(self, sqls: list) -> list:
