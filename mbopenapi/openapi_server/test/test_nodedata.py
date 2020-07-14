@@ -84,5 +84,5 @@ node = '10.101.2.35'
 nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
 results = process_nodedata(nodedata, time_list)
-print(json.dumps(results, indent=4))
+# print(json.dumps(results, indent=4))
 # print(json.dumps(results, indent=4))

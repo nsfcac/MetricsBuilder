@@ -95,6 +95,14 @@ def aggregate_nodedata(organized: dict, time_list: list) -> dict:
             "cpu_inl_temp": cpu_inl_temp,
             "job_list": job_list,
         }
+
+        print(f"Memory usage : {len(memory_usage)}")
+        print(f"CPU usage : {len(cpu_usage)}")
+        print(f"Power usage : {len(power_usage)}")
+        print(f"Fan speed : {len(fan_speed)}")
+        print(f"Temperature : {len(cpu_inl_temp)}")
+        print(f"Job list : {len(job_list)}")
+        
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {err}")
 
