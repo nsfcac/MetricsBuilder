@@ -3,14 +3,19 @@ def process_nodedata(nodedata: list) -> dict:
     organized = {}
 
     for data in nodedata:
-        # Get node - measurement - label names
+        # Get node, measurement, label names
         node = data['node']
         measurement = data["data"]["name"]
         label = data['label']
         values = data["data"]["values"]
 
-        # Aggregate data points
-        flatten_values = [value[1] for value in values]
+        if measurement == "NodeJobs":
+            flatten_values = {
+                value[0]: value[1].[1:-1].split(",")
+            }
+        else:
+            # Aggregate data points
+            flatten_values = [value[1] for value in values]
 
         # Build a dict
         if measurement in organized:
