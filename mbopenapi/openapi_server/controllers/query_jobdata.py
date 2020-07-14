@@ -8,9 +8,6 @@ sys.path.append('../../')
 from openapi_server.JobRequests import JobRequests
 from openapi_server.controllers.process_jobdata import process_jobdata
 
-# from JobAsyncioRequests import JobAsyncioRequests
-# from controllers.process_jobdata import process_jobdata
-
 
 def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
     """

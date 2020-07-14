@@ -8,9 +8,6 @@ sys.path.append('../../')
 from openapi_server.NodeRequests import NodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
 
-# from NodeAsyncioRequests import NodeAsyncioRequests
-# from controllers.process_nodedata import process_nodedata
-
 
 def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict, 
                    start: str, end: str, interval: str, value: str, time_list: list) -> list:
