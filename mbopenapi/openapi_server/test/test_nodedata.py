@@ -57,7 +57,7 @@ measurements = {
   ]
 }
 
-client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], database=['dbname'])
+client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], database=influx_cfg['dbname'])
 
 # node_list = parse_nodelist(nodelist_cfg)
 
