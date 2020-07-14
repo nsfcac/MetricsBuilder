@@ -80,13 +80,14 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             aggregated.update({
                 measurement: []
             })
-            if len(labels) == 1:
-                aggregated[measurement] = organized[measurement][labels[0]]
+            labels_list = list(labels.keys())
+            if len(labels_list) == 1:
+                aggregated[measurement] = organized[measurement][labels_list[0]]
             else:
-                length = len(organized[measurement][labels[0]])
+                length = len(organized[measurement][labels_list[0]])
                 for i in range(length):
                     all_label_value = []
-                    for label in labels:
+                    for label in labels_list:
                         label_value = organized[measurement][label][i]
                         all_label_value.append(label_value)
                     aggregated[measurement].append(all_label_value)
