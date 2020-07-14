@@ -44,8 +44,6 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
             processed_jobdata = pool.map(process_jobdata, job_data)
             
 
-        
-
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
     return processed_jobdata
