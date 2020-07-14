@@ -44,7 +44,7 @@ measurements = {
 
 # SELECT max(Value) from TempSensor where NodeId ='10.101.1.1' and time >= 1594537200000000000 and time < 1594544400000000000 group by time(5m) fill(null)
 
-nodes = parse_nodelist(nodelist_cfg)
+# nodes = parse_nodelist(nodelist_cfg)
 sqls = []
 
 # meas = list(measurements.keys())
@@ -53,7 +53,7 @@ port = '8086'
 db = 'hpcc_metrics_phase2'
 
 
-
+nodes = ["10.101.1.1"]
 # Test all sqls
 for node in nodes:
     for mea, labels in measurements.items():
