@@ -98,7 +98,7 @@ nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, inter
 #                 key: value
 #             })
 
-jobdata = query_jobdata(nodedata, influx_cfg)
+processed_jobdata = query_jobdata(nodedata, influx_cfg)
 
 # node_data = {}
 
@@ -115,7 +115,7 @@ jobdata = query_jobdata(nodedata, influx_cfg)
 #     processed_jobdata = pool.map(process_jobdata, all_jobdata)
 
 job_data = {}
-for data in jobdata:
+for data in processed_jobdata:
     for key, value in data.items():
         job_data.update({
             key: value

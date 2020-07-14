@@ -15,8 +15,6 @@ from openapi_server.mb_utils import parse_config, parse_nodelist
 from openapi_server.controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 from openapi_server.controllers.query_nodedata import query_nodedata
 from openapi_server.controllers.query_jobdata import query_jobdata
-from openapi_server.controllers.process_nodedata import process_nodedata
-from openapi_server.controllers.process_jobdata import generate_jobset, process_jobdata
 
 
 ZIPJSON_KEY = 'base64(zip(o))'
@@ -103,19 +101,15 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     })
         
         # Get jobs data
-        flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-        # Request jobs information according to the job set
-        all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
+        processed_jobdata = query_jobdata(processed_nodedata, influx_cfg)
 
-        # Process job data
-        with multiprocessing.Pool() as pool:
-            processed_jobdata = pool.map(process_jobdata, all_jobdata)
-
-        for data in processed_jobdata:
-            for key, value in data.items():
+        # Generate dict for each node data
+        for job_group in processed_jobdata:
+            for key, value in job_group.items():
                 job_data.update({
                     key: value
                 })
+        
         # Aggregate time list, nodes and jobs data
         if compress:
             unified_metrics.time_stamp = json_zip(epoch_time_list)
