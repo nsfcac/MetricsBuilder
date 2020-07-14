@@ -10,7 +10,7 @@ from controllers.query_nodedata import query_nodedata
 from controllers.query_jobdata import query_jobdata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
-from controllers.process_jobdata import generate_jobset
+from controllers.process_jobdata import generate_jobset, process_jobdata
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -72,8 +72,8 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 # # cores= multiprocessing.cpu_count()
 
-# node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
-node_list = ['10.101.2.35']
+node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
+# node_list = ['10.101.2.35']
 query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
                           repeat(start), repeat(end), repeat(interval), repeat(value))
 
@@ -87,9 +87,10 @@ with multiprocessing.Pool() as pool:
 
 flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
 all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
-# node = '10.101.2.35'
-# nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
+
+with multiprocessing.Pool() as pool:
+    processed_all_jobdata = pool.map(process_jobdata, all_jobdata)
 
 # results = process_nodedata(nodedata, time_list)
 # print(len(flatten_jobset))
-print(json.dumps(all_jobdata, indent=4))
+print(json.dumps(processed_all_jobdata, indent=4))
