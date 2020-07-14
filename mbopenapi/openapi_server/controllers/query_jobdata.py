@@ -3,7 +3,7 @@ import multiprocessing
 import sys
 sys.path.append('../')
 
-from AsyncioRequests import AsyncioRequests
+from AsyncioRequests import JobAsyncioRequests
 
 
 def query_jobdata(job_ids: list, influx_cfg: dict) -> list:
