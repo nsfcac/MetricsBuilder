@@ -7,10 +7,10 @@ sys.path.append('../')
 import util
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
-from controllers.query_jobdata import query_jobdata
+# from controllers.query_jobdata import query_jobdata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
-from controllers.process_jobdata import generate_jobset, process_jobdata
+# from controllers.process_jobdata import generate_jobset, process_jobdata
 
 influx_cfg = {
     "host": "10.10.1.3",
