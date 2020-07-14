@@ -31,11 +31,10 @@ def process_jobdata(jobdata: list) -> dict:
                         }
                     })
 
-            processed_jobdata.update({
-                job: {
-                    "finish_time": None
-                }
+            processed_jobdata[job].update({
+                "finish_time": None
             })
+
     except Exception as err:
         logging.error(f"process_jobdata : {job} : {err}")
     
