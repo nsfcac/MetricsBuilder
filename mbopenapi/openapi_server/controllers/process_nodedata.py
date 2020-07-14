@@ -51,7 +51,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                 })
 
             # Aggregate organized data
-            aggregated = aggregate_nodedata(node, organized, time_list)
+            # aggregated = aggregate_nodedata(node, organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
@@ -67,7 +67,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     try:
         # Mapping data points
         # To do: make it automatically
-        memory_usage = organized.get(["MemUsage"]["UGE"])
+        memory_usage = organized["MemUsage"]["UGE"]
         cpu_usage = organized["CPUUsage"]["UGE"]
         power_usage = organized["Power"]["NodePower"]
 
