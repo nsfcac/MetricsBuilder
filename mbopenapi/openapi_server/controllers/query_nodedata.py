@@ -1,7 +1,6 @@
 import logging
 import multiprocessing
 from itertools import repeat
-import asyncio
 
 import sys
 sys.path.append('../../')
@@ -49,7 +48,7 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
     data = []
     try:
-        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
+        request = NodeRequests(influx_cfg['host'], influx_cfg['port'], 
                                       influx_cfg['database'])
         data = request.bulk_fetch(sqls)
 

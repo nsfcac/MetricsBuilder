@@ -1,7 +1,6 @@
 import logging
 import multiprocessing
 from itertools import repeat
-import asyncio
 
 import sys
 sys.path.append('../../')
@@ -56,13 +55,11 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
     data = []
     try:
-        loop = asyncio.get_event_loop()
 
-        request = JobAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
-                                     influx_cfg['database'], loop)
+        request = JobRequests(influx_cfg['host'], influx_cfg['port'], 
+                                     influx_cfg['database'])
         data = request.bulk_fetch(sqls)
 
-        loop.close()
     except Exception as err:
         logging.error(f"query_jobdata : query_influx : {err}")
     return data
