@@ -7,54 +7,54 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     aggregated = {}
     organized = {}
-    try:
-        for data in nodedata:
-            node = data['node']
-            measurement = data['measurement']
-            label = data['label']
-            values = data['values']
+    # try:
+    for data in nodedata:
+        node = data['node']
+        measurement = data['measurement']
+        label = data['label']
+        values = data['values']
 
-            # If returned valid values, process
-            if values:
-                if measurement == 'NodeJobs':
-                    flatten_values = {}
-                    for value in values:
-                        timestamp = value[0]
-                        job_str_list = value[1][1:-1].split(', ')
-                        job_list = [job[1:-1] for job in job_str_list]
-                        
-                        # For Job list data, it's possible that several returned data
-                        # points have the same time stamp when using DISTINCT in sql.
-                        # Aggregate the data with the same time stamp here
-                        if timestamp in flatten_values:
-                            flatten_values[timestamp].extend(job_list)
-                        else:
-                            flatten_values.update({
-                                timestamp: job_list
-                            })
-                else:
-                    # Aggregate data points
-                    flatten_values = [value[1] for value in values]
+        # If returned valid values, process
+        if values:
+            if measurement == 'NodeJobs':
+                flatten_values = {}
+                for value in values:
+                    timestamp = value[0]
+                    job_str_list = value[1][1:-1].split(', ')
+                    job_list = [job[1:-1] for job in job_str_list]
+                    
+                    # For Job list data, it's possible that several returned data
+                    # points have the same time stamp when using DISTINCT in sql.
+                    # Aggregate the data with the same time stamp here
+                    if timestamp in flatten_values:
+                        flatten_values[timestamp].extend(job_list)
+                    else:
+                        flatten_values.update({
+                            timestamp: job_list
+                        })
             else:
-                flatten_values = []
+                # Aggregate data points
+                flatten_values = [value[1] for value in values]
+        else:
+            flatten_values = []
 
-            # Build a dict
-            if measurement in organized:
-                organized[measurement].update({
+        # Build a dict
+        if measurement in organized:
+            organized[measurement].update({
+                label: flatten_values
+            })
+        else:
+            organized.update({
+                measurement: {
                     label: flatten_values
-                })
-            else:
-                organized.update({
-                    measurement: {
-                        label: flatten_values
-                    }
-                })
+                }
+            })
 
-            # Aggregate organized data
-            aggregated = aggregate_nodedata(organized, time_list)
+        # Aggregate organized data
+        aggregated = aggregate_nodedata(organized, time_list)
 
-    except Exception as err:
-        logging.error(f"process_nodedata : process_nodedata : {err}")
+    # except Exception as err:
+    #     logging.error(f"process_nodedata : process_nodedata : {err}")
 
     return aggregated
 
