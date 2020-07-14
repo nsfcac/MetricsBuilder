@@ -5,7 +5,7 @@ import logging
 from influxdb import InfluxDBClient
 
 
-class NodeAsyncioRequests:
+class NodeRequests:
     """
     Node Asyncio requests to Influxdb
     """
