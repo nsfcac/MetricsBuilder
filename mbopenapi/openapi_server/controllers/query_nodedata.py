@@ -17,15 +17,16 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
     node_data = []
     try:
         cores= multiprocessing.cpu_count()
-        # Generate sqls
-        sqls = generate_sqls(node_list, measurements, start, end, interval, value)
 
-        sqls_group = partition(sqls, cores)
-
-        # Parallel query data
-        query_influx_args = zip(repeat(influx_cfg), sqls_group)
+        generate_sqls_args = zip(node_list, repeat(measurements), repeat(start),
+                                 repeat(end), repeat(interval), repeat(value))
 
         with multiprocessing.Pool() as pool:
+            # Generate sqls
+            sqls = pool.starmap(generate_sqls, generate_sqls_args)
+
+            # Query influx
+            query_influx_args = zip(repeat(influx_cfg), sqls)
             node_data = pool.starmap(query_influx, query_influx_args)
 
     except Exception as err:
@@ -43,7 +44,7 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
 
         request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
-        
+
         loop.close()
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
