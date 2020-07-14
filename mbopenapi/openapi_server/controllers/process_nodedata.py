@@ -84,7 +84,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             })
             labels_list = list(labels.keys())
             if len(labels_list) == 1:
-                if measurement == "NodeJobs":
+                if new_key == "job_list":
                     label_value = process_joblist(organized[measurement][labels_list[0]], time_list)
                 else:
                     label_value = organized[measurement][labels_list[0]]
@@ -105,7 +105,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
 
-    return aggregated
+    return nodedata
 
 
 def process_joblist(job_list_dict: dict, time_list: list) -> list:
