@@ -72,7 +72,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             "Power": "power_usage",
             "FanSensor": "fan_speed",
             "TempSensor": "cpu_inl_temp",
-            "NodeJobs": "job_list"
+            "NodeJobs": "job_id"
         }
 
         # Aggregate and unfold organized data
@@ -83,7 +83,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
             })
             labels_list = list(labels.keys())
             if len(labels_list) == 1:
-                if new_key == "job_list":
+                if new_key == "job_id":
                     label_value = process_joblist(organized[measurement][labels_list[0]], time_list)
                 else:
                     label_value = organized[measurement][labels_list[0]]
