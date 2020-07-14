@@ -41,7 +41,7 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
 
 def query_influx(sqls: list, client: object) -> list:
     """
-    Use NodeAsyncioRequests to query urls
+    Use NodeRequests to query urls
     """
     data = []
     try:
