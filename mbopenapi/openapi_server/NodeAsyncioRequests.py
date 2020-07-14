@@ -2,7 +2,6 @@ import re
 import json
 import time
 import logging
-import asyncio
 from aioinflux import InfluxDBClient
 
 
@@ -10,7 +9,7 @@ class NodeAsyncioRequests:
     """
     Node Asyncio requests to Influxdb
     """
-
+    import asyncio
 
     def __init__(self, host: str, port: str, database: str):
         self.host = host
