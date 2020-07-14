@@ -94,5 +94,5 @@ def process_joblist(joblist: dict, time_list: list) -> list:
                 this_job_list = joblist.get(time, joblist[index-1])
             processed_joblist.append(this_job_list)
     except Exception as err:
-        logging.error(f"process_nodedata : process_joblist error")
+        logging.error(f"process_nodedata : process_joblist error : {err}")
     return processed_joblist
