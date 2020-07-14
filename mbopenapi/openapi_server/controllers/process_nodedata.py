@@ -21,7 +21,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                     for value in values:
                         timestamp = value[0]
                         job_str_list = value[1][1:-1].split(', ')
-                        job_list = [job[1:-1] for job in job_str_list]
+                        job_list = [job[1:-1] for job in job_str_list if job[1:-1]]
                         
                         # For Job list data, it's possible that several returned data
                         # points have the same time stamp when using DISTINCT in sql.
