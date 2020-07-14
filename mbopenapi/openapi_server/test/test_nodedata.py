@@ -7,6 +7,7 @@ sys.path.append('../')
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
 from controllers.process_nodedata import process_nodedata
+from controllers.generate_timelist import gen_timelist
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -60,16 +61,20 @@ end = "2020-07-12T18:00:00-05:00"
 interval = "5m"
 value = "max"
 
-# cores= multiprocessing.cpu_count()
+time_list = gen_timelist(start, end, interval)
+print(json.dumps(time_list, indent = 4))
 
-query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
-                          repeat(start), repeat(end), repeat(interval), repeat(value))
+# # cores= multiprocessing.cpu_count()
 
-with multiprocessing.Pool() as pool:
-    results = pool.starmap(query_nodedata, query_nodedata_args)
-    processed_results = pool.map(process_nodedata, results)
-# node = '10.101.2.35'
-# nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
+# query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
+#                           repeat(start), repeat(end), repeat(interval), repeat(value))
 
-# results = process_nodedata(nodedata)
-print(json.dumps(processed_results, indent=4))
+# with multiprocessing.Pool() as pool:
+#     results = pool.starmap(query_nodedata, query_nodedata_args)
+#     process_nodedata_args = zip(results, repeat(time_list))
+#     processed_results = pool.map(process_nodedata,)
+# # node = '10.101.2.35'
+# # nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
+
+# # results = process_nodedata(nodedata)
+# print(json.dumps(processed_results, indent=4))

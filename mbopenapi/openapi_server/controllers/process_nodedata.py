@@ -1,4 +1,7 @@
-def process_nodedata(nodedata: list) -> dict:
+import logging
+
+
+def process_nodedata(nodedata: list, time_list: list) -> dict:
 
     organized = {}
 
@@ -44,7 +47,6 @@ def process_nodedata(nodedata: list) -> dict:
 
     # Mapping data points
     # To do: make it automatically
-    """
     memory_usage = organized["MemUsage"]["UGE"]
     cpu_usage = organized["CPUUsage"]["UGE"]
     power_usage = organized["Power"]["NodePower"]
@@ -62,7 +64,8 @@ def process_nodedata(nodedata: list) -> dict:
 
     cpu_inl_temp = [ [cpu_1_temp[i], cpu_2_temp[i], inlet_temp[i]] for i in range(len(cpu_1_temp)) ]
 
-    job_list = organized["NodeJobs"]["JobList"]
+    job_list_dict = organized["NodeJobs"]["JobList"]
+    job_list = process_joblist(job_list_dict, time_list)
 
     json_data = {
         "memory_usage": memory_usage,
@@ -72,10 +75,24 @@ def process_nodedata(nodedata: list) -> dict:
         "cpu_inl_temp": cpu_inl_temp,
         "job_list": job_list,
     }
-    """
 
     return organized
 
 
-def process_joblist(joblist: dict) -> list:
-    return
+def process_joblist(joblist: dict, time_list: list) -> list:
+    """
+    Interpolate the job list data. 
+    For some time stamps, it may not have their corresponding job lists.
+    Go through the generated time list, and interpolate the empty slot.
+    """
+    processed_joblist = []
+    try:
+        for index, time in enumerate(time_list):
+            if index == 0:
+                this_job_list = joblist.get(time, [])
+            else:
+                this_job_list = joblist.get(time, joblist[index-1])
+            processed_joblist.append(this_job_list)
+    except Exception as err:
+        logging.error(f"process_nodedata : process_joblist error")
+    return processed_joblist
