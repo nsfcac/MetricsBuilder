@@ -92,21 +92,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
-        query_nodedata_args = zip(node_list, repeat(influx_cfg), 
-                                  repeat(measurements), 
-                                  repeat(st_str), repeat(et_str), 
-                                  repeat(interval), repeat(value))
         
-        with multiprocessing.Pool() as pool:
-            # Query data
-            nodedata = pool.starmap(query_nodedata, query_nodedata_args)
-
-            # Process data
-            process_nodedata_args = zip(nodedata, repeat(epoch_time_list))
-            processed_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
-
-            # Get all job set
-            all_jobset = pool.map(generate_jobset, process_nodedata)
 
         # Generate dict for each node data
         for data in processed_nodedata:
