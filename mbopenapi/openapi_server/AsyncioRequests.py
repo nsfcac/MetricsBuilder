@@ -26,23 +26,29 @@ class AsyncioRequests:
         """
         Parse Label and node from sql string
         """
-        label = None
         node = None
+        measurement = None
+        label = None
         try:
-            pattern = "Label='[\s\S]*'"
-            label_node_str = re.findall(pattern, sql)[0].split("'")
+            # Parse measurement
+            meas_pattern = "FROM [a-zA-Z]* WHERE"
+            measurement = re.findall(meas_pattern, sql)[0].split(' ')[1]
+
+            # Parse lable and node id
+            label_node_pattern = "Label='[\s\S]*'"
+            label_node_str = re.findall(label_node_pattern, sql)[0].split("'")
             label = label_node_str[1]
             node = label_node_str[3]
         except Exception as err:
             logging.error(f"Error : Cannot parse sql string: {sql} : {err}")
-        return (label, node)
+        return (node, measurement, label)
     
 
     async def __fetch_json(self, sql: str, client: object) -> dict:
         """
         Get request wrapper to fetch json data from Influxdb
         """
-        (label, node) = self.__find_label_node(sql)
+        (node, measurement, label) = self.__find_label_node(sql)
         json = {}
         try:
             resp = await client.query(sql)
@@ -54,7 +60,7 @@ class AsyncioRequests:
                 # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {label} data from {node}")
-        return {"node": node, "label": label, "data": json}
+        return {"node": node, "measurement": measurement, "label": label, "data": json}
 
 
     async def __requests(self, sqls: list) -> list:
