@@ -9,6 +9,7 @@ from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
+from controllers.process_jobdata import generate_jobset
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -80,11 +81,12 @@ with multiprocessing.Pool() as pool:
     results = pool.starmap(query_nodedata, query_nodedata_args)
     # # process data
     process_nodedata_args = zip(results, repeat(time_list))
-    processed_results = pool.starmap(process_nodedata, process_nodedata_args)
+    process_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+    all_jobset = pool.map(generate_jobset, process_nodedata)
 
 # node = '10.101.2.35'
 # nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
 # results = process_nodedata(nodedata, time_list)
 
-print(json.dumps(processed_results, indent=4))
+print(json.dumps(all_jobset, indent=4))
