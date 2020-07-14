@@ -16,6 +16,8 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
     """
     node_data = []
     try:
+        client = InfluxDBClient(host=host, port=port, database=dbname)
+
         cores= multiprocessing.cpu_count()
 
         node_group = partition(node_list, cores)
@@ -27,7 +29,7 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
-            query_influx_args = zip(repeat(influx_cfg), sqls_group)
+            query_influx_args = zip(repeat(influx_cfg), repeat(client), sqls_group)
             node_data = pool.starmap(query_influx, query_influx_args)
 
             # # Process data
@@ -39,14 +41,14 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
     return node_data
 
 
-def query_influx(influx_cfg: dict, sqls: list) -> list:
+def query_influx(influx_cfg: dict, sqls: list, client: object) -> list:
     """
     Use NodeAsyncioRequests to query urls
     """
     data = []
     try:
         request = NodeRequests(influx_cfg['host'], influx_cfg['port'], 
-                                      influx_cfg['database'])
+                                      influx_cfg['database'], client)
         data = request.bulk_fetch(sqls)
 
     except Exception as err:
