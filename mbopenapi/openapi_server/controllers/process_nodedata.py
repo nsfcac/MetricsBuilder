@@ -1,7 +1,7 @@
 import logging
 
 
-def process_nodedata(nodedata: list, measurements: dict, time_list: list) -> dict:
+def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     Process node data points read from influxdb
     """
@@ -51,7 +51,7 @@ def process_nodedata(nodedata: list, measurements: dict, time_list: list) -> dic
                 })
 
             # Aggregate organized data
-            aggregated = aggregate_nodedata(node, organized, measurements, time_list)
+            aggregated = aggregate_nodedata(node, organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
@@ -59,38 +59,37 @@ def process_nodedata(nodedata: list, measurements: dict, time_list: list) -> dic
     return aggregated
 
 
-def aggregate_nodedata(node: str, organized: dict, 
-                       measurements: dict, time_list: list) -> dict:
+def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
     aggregated = {}
-    # try:
-    # Mapping aggregated data keys to measurements
-    mapping = {
-        "memory_usage" : "MemUsage",
-        "cpu_usage": "CPUUsage",
-        "power_usage": "Power",
-        "fan_speed": "FanSensor",
-        "cpu_inl_temp": "TempSensor",
-        "job_list": "NodeJobs"
-    }
+    try:
+        # Mapping aggregated data keys to measurements
+        mapping = {
+            "memory_usage" : "MemUsage",
+            "cpu_usage": "CPUUsage",
+            "power_usage": "Power",
+            "fan_speed": "FanSensor",
+            "cpu_inl_temp": "TempSensor",
+            "job_list": "NodeJobs"
+        }
 
-    # Aggregate and unfold organized data
-    for measurement, labels in measurements.items():
-        aggregated.update({
-            measurement: []
-        })
-        if len(labels) == 1:
-            aggregated[measurement] = organized[measurement][labels[0]]
-        else:
-            length = len(organized[measurement][labels[0]])
-            for i in range(length):
-                all_label_value = []
-                for label in labels:
-                    label_value = organized[measurement][label][i]
-                    all_label_value.append(label_value)
-                aggregated[measurement].append(all_label_value)
+        # Aggregate and unfold organized data
+        for measurement, labels in organized.items():
+            aggregated.update({
+                measurement: []
+            })
+            if len(labels) == 1:
+                aggregated[measurement] = organized[measurement][labels[0]]
+            else:
+                length = len(organized[measurement][labels[0]])
+                for i in range(length):
+                    all_label_value = []
+                    for label in labels:
+                        label_value = organized[measurement][label][i]
+                        all_label_value.append(label_value)
+                    aggregated[measurement].append(all_label_value)
 
 
         # aggregated = {
@@ -111,8 +110,8 @@ def aggregate_nodedata(node: str, organized: dict,
         # print(f"Temperature : {len(cpu_inl_temp)}")
         # print(f"Job list : {len(job_list)}")
 
-    # except Exception as err:
-        # logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
+    except Exception as err:
+        logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
 
     return aggregated
 
