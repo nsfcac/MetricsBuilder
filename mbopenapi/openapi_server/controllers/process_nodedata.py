@@ -51,7 +51,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                 })
 
             # Aggregate organized data
-            # aggregated = aggregate_nodedata(organized, time_list)
+            aggregated = aggregate_nodedata(node, organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
@@ -59,7 +59,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     return organized
 
 
-def aggregate_nodedata(organized: dict, time_list: list) -> dict:
+def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
@@ -88,12 +88,14 @@ def aggregate_nodedata(organized: dict, time_list: list) -> dict:
         job_list = process_joblist(job_list_dict, time_list)
 
         json_data = {
-            "memory_usage": memory_usage,
-            "cpu_usage": cpu_usage,
-            "power_usage": power_usage,
-            "fan_speed": fan_speed,
-            "cpu_inl_temp": cpu_inl_temp,
-            "job_list": job_list,
+            node: {
+                "memory_usage": memory_usage,
+                "cpu_usage": cpu_usage,
+                "power_usage": power_usage,
+                "fan_speed": fan_speed,
+                "cpu_inl_temp": cpu_inl_temp,
+                "job_list": job_list
+            }
         }
 
         print(f"Memory usage : {len(memory_usage)}")
