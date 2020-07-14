@@ -8,7 +8,7 @@ sys.path.append('../')
 import util
 from mb_utils import parse_nodelist
 from controllers.query_nodedata import query_nodedata
-# from controllers.query_jobdata import query_jobdata
+from controllers.query_jobdata import query_jobdata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 # from controllers.process_jobdata import generate_jobset, process_jobdata
@@ -90,15 +90,16 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, time_list)
 
-node_data = {}
+# node_data = {}
 
-for node_group in nodedata:
-    for node in node_group:
-        for key, value in node.items():
-            node_data.update({
-                key: value
-            })
+# for node_group in nodedata:
+#     for node in node_group:
+#         for key, value in node.items():
+#             node_data.update({
+#                 key: value
+#             })
 
+jobdata = query_jobdata(nodedata, influx_cfg)
 
 # node_data = {}
 
@@ -121,4 +122,4 @@ for node_group in nodedata:
 #             key: value
 #         })
         
-print(json.dumps(node_data, indent=4))
+print(json.dumps(jobdata, indent=4))

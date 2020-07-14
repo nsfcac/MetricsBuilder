@@ -3,21 +3,21 @@ import json
 import time
 import logging
 from aioinflux import InfluxDBClient
+import asyncio
 
 
 class JobAsyncioRequests:
     """
     Job Asyncio requests to Influxdb
     """
-    import asyncio
 
 
-    def __init__(self, host: str, port: str, database: str):
+    def __init__(self, host: str, port: str, database: str, loop):
         self.host = host
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = self.asyncio.get_event_loop()
+        self.loop = loop
     
 
     def __find_jobid(self, sql:str) -> str:
@@ -58,7 +58,7 @@ class JobAsyncioRequests:
             tasks = []
             for i, sql in enumerate(sqls):
                 tasks.append(self.__fetch_json(sql=sql, client=client))
-            return await self.asyncio.gather(*tasks)
+            return await asyncio.gather(*tasks)
 
 
     def bulk_fetch(self, sqls: list) -> list:

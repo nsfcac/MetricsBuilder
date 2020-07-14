@@ -1,7 +1,7 @@
 import logging
 
 
-def process_nodedata(nodedata: list, time_list: list) -> dict:
+def process_nodedata(nodedata: list, time_list: list) -> list:
     """
     Process node data points read from influxdb
     """

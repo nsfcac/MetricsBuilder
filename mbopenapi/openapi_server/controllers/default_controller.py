@@ -92,15 +92,16 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
-        
+        processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, time_list)
 
         # Generate dict for each node data
-        for data in processed_nodedata:
-            for key, value in data.items():
-                node_data.update({
-                    key: value
-                })
-
+        for node_group in processed_nodedata:
+            for node in node_group:
+                for key, value in node.items():
+                    node_data.update({
+                        key: value
+                    })
+        
         # Get jobs data
         flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
         # Request jobs information according to the job set

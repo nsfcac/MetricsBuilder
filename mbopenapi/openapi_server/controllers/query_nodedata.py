@@ -48,7 +48,8 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
     try:
         loop = asyncio.get_event_loop()
 
-        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'], loop)
+        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
+                                      influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
 
         loop.close()
