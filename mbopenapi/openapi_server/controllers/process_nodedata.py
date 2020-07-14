@@ -6,24 +6,24 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     organized = {}
 
     for data in nodedata:
-        # If node data is None, do no process
-        if data["data"]:
-            # Get node, measurement, label names
-            node = data['node']
-            measurement = data["data"]["name"]
-            label = data['label']
-            values = data["data"]["values"]
+        node = data['node']
+        measurement = data['measurement']
+        label = data['label']
+        values = data['values']
 
-            if measurement == "NodeJobs":
+        # If returned valid values, process
+        if values:
+            if measurement == 'NodeJobs':
                 flatten_values = {}
                 for value in values:
                     timestamp = value[0]
-                    job_str_list = value[1][1:-1].split(", ")
+                    job_str_list = value[1][1:-1].split(', ')
                     job_list = [job[1:-1] for job in job_str_list]
+                    
                     # For Job list data, it's possible that several returned data
                     # points have the same time stamp when using DISTINCT in sql.
                     # Aggregate the data with the same time stamp here
-                    if value[0] in flatten_values:
+                    if timestamp in flatten_values:
                         flatten_values[timestamp].extend(job_list)
                     else:
                         flatten_values.update({
@@ -32,18 +32,20 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
             else:
                 # Aggregate data points
                 flatten_values = [value[1] for value in values]
+        else:
+            flatten_values = []
 
-            # Build a dict
-            if measurement in organized:
-                organized[measurement].update({
+        # Build a dict
+        if measurement in organized:
+            organized[measurement].update({
+                label: flatten_values
+            })
+        else:
+            organized.update({
+                measurement: {
                     label: flatten_values
-                })
-            else:
-                organized.update({
-                    measurement: {
-                        label: flatten_values
-                    }
-                })
+                }
+            })
     """
     # Mapping data points
     # To do: make it automatically
