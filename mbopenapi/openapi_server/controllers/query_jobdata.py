@@ -15,7 +15,7 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
     Spread query across cores
     """
     processed_jobdata = []
-    flatten_jobset = {}
+    flatten_jobset = set()
     try:
         cores= multiprocessing.cpu_count()
 
@@ -105,7 +105,7 @@ def generate_jobset(processed_nodedata: list) -> set:
     """
     Generate job set from 'job_id'
     """
-    flatten_jobset = {}
+    flatten_jobset = set()
     try:
         for nodedata in processed_nodedata:
             for node, values in nodedata.items():
