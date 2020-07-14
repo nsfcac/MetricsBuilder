@@ -34,7 +34,7 @@ def process_jobdata(jobdata: dict) -> dict:
     values = jobdata["values"]["values"][0]
 
     for i, column in enumerate(columns):
-        if column != "time":
+        if column != "time" and column != "JobId":
             organized_jobdata.update({
                 mapping[column]: values[i]
             })
