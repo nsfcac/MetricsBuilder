@@ -22,3 +22,5 @@ else
 fi
 
 # gunicorn --bind 0.0.0.0:8080 wsgi:gunicorn_app
+
+# 0 */1 * * * /home/lijie/openapi_ctrl.sh
