@@ -5,9 +5,9 @@ import asyncio
 import sys
 sys.path.append('../')
 
-from openapi_server.JobAsyncioRequests import JobAsyncioRequests
+# from openapi_server.JobAsyncioRequests import JobAsyncioRequests
 from controller.process_jobdata import process_jobdata
-# from JobAsyncioRequests import JobAsyncioRequests
+from JobAsyncioRequests import JobAsyncioRequests
 
 
 def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
