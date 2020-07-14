@@ -9,9 +9,9 @@ class NodeAsyncioRequests:
     """
     Node Asyncio requests to Influxdb
     """
-    import asyncio
 
     def __init__(self, host: str, port: str, database: str):
+        import asyncio
         self.host = host
         self.port = port
         self.database = database
