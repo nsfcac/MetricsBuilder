@@ -10,8 +10,9 @@ from openapi_server.mb_utils import parse_config, parse_nodelist
 
 from openapi_server.controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 from openapi_server.controllers.query_nodedata import query_nodedata
+from openapi_server.controllers.query_jobdata import query_jobdata
 from openapi_server.controllers.process_nodedata import process_nodedata
-from openapi_server.controllers.process_jobdata import generate_jobset
+from openapi_server.controllers.process_jobdata import generate_jobset, process_jobdata
 
 
 def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
@@ -101,6 +102,10 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
         # Get jobs data
         flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+        jobdata = query_jobdata(flatten_jobset, influx_cfg)
+
+        with multiprocessing.Pool() as pool:
+            processed_jobdata = pool.map(process_jobdata, jobdata)
 
         # Request jobs information according to the job set
         #

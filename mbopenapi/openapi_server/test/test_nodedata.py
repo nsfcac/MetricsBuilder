@@ -82,15 +82,15 @@ with multiprocessing.Pool() as pool:
     results = pool.starmap(query_nodedata, query_nodedata_args)
     # # process data
     process_nodedata_args = zip(results, repeat(time_list))
-    process_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
-    all_jobset = pool.map(generate_jobset, process_nodedata)
+    processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+    all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
+# flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+# all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
 
-with multiprocessing.Pool() as pool:
-    processed_all_jobdata = pool.map(process_jobdata, all_jobdata)
+# with multiprocessing.Pool() as pool:
+#     processed_all_jobdata = pool.map(process_jobdata, all_jobdata)
 
 # results = process_nodedata(nodedata, time_list)
 # print(len(flatten_jobset))
-print(json.dumps(processed_all_jobdata, indent=4))
+print(json.dumps(processd_nodedata, indent=4))
