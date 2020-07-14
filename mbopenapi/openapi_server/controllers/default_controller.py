@@ -69,6 +69,8 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     else:
         # Initialize returned metrics
         unified_metrics = UnifiedMetrics()
+        node_data = {}
+        job_data = {}
 
         # # Configure influxdb client
         influx_cfg.update({
@@ -100,15 +102,27 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
             # Get all job set
             all_jobset = pool.map(generate_jobset, process_nodedata)
 
+        # Generate dict for each node data
+        for data in processed_nodedata:
+            for key, value in data.items():
+                node_data.update({
+                    key: value
+                })
+
         # Get jobs data
         flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-        jobdata = query_jobdata(flatten_jobset, influx_cfg)
-
-        with multiprocessing.Pool() as pool:
-            processed_jobdata = pool.map(process_jobdata, jobdata)
-
         # Request jobs information according to the job set
-        #
+        all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
+
+        # Process job data
+        with multiprocessing.Pool() as pool:
+            processed_jobdata = pool.map(process_jobdata, all_jobdata)
+
+        for data in processed_jobdata:
+            for key, value in data.items():
+                job_data.update({
+                    key: value
+                })
         # Aggregate time list, nodes and jobs data
 
     return 
