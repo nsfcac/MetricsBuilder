@@ -40,7 +40,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
     :rtype: UnifiedMetrics
     """
-    config_path = 'openapi_server/controllers/config.yml'
+    config_path = './config.yml'
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
