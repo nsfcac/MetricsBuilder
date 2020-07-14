@@ -1,5 +1,4 @@
 import connexion
-import asyncio
 from openapi_server import encoder
 from flask_cors import CORS
 import ssl
@@ -9,7 +8,6 @@ context.load_cert_chain("/home/username/SSL_Certificate/influx_ttu_edu_cert.cer"
 
 
 def main():
-    asyncio.set_event_loop(asyncio.new_event_loop())
     app = connexion.App(__name__, specification_dir='./openapi/')
     app.app.json_encoder = encoder.JSONEncoder
     app.add_api('openapi.yaml',
