@@ -9,14 +9,13 @@ class NodeAsyncioRequests:
     """
     Node Asyncio requests to Influxdb
     """
-    import asyncio
 
-    def __init__(self, host: str, port: str, database: str):
+
+    def __init__(self, host: str, port: str, database: str, loop):
         self.host = host
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = self.asyncio.get_event_loop()
     
 
     def __find_label_node(self, sql:str) -> str:
@@ -70,5 +69,4 @@ class NodeAsyncioRequests:
 
     def bulk_fetch(self, sqls: list) -> list:
         self.data =  self.loop.run_until_complete(self.__requests(sqls))
-        self.loop.close()
         return self.data
