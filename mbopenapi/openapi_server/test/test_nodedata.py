@@ -75,20 +75,21 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 # node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
 # node_list = ['10.101.2.35']
-loop = asyncio.get_event_loop()
 
-query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
-                          repeat(start), repeat(end), repeat(interval), repeat(value), repeat(loop))
 
-with multiprocessing.Pool() as pool:
-    # query data
-    results = pool.starmap(query_nodedata, query_nodedata_args)
+# query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
+#                           repeat(start), repeat(end), repeat(interval), repeat(value), repeat(loop))
+
+# with multiprocessing.Pool() as pool:
+#     # query data
+#     results = pool.starmap(query_nodedata, query_nodedata_args)
     # # process data
     # process_nodedata_args = zip(results, repeat(time_list))
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-loop.close()
+results = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value)
+
 
 
 # node_data = {}
