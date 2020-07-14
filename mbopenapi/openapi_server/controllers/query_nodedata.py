@@ -9,7 +9,7 @@ from NodeAsyncioRequests import NodeAsyncioRequests
 
 
 def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
-                   start: str, end: str, interval: str, value: str, ) -> list:
+                   start: str, end: str, interval: str, value: str, loop) -> list:
     """
     Spread query across cores
     """
@@ -19,10 +19,8 @@ def query_nodedata(node: str, influx_cfg: dict, measurements: dict,
         sqls = generate_sqls(node, measurements, start, end, interval, value)
 
         # Query data
-        loop = asyncio.get_event_loop()
         node_data = query_influx(influx_cfg, sqls, loop)
-        loop.close()
-        
+
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
     return node_data
