@@ -1,7 +1,6 @@
 import logging
 import multiprocessing
 from itertools import repeat
-from influxdb import InfluxDBClient
 
 import sys
 sys.path.append('../../')
@@ -10,15 +9,13 @@ from openapi_server.NodeRequests import NodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
 
 
-def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict, 
+def query_nodedata(node_list: str, client: object, measurements: dict, 
                    start: str, end: str, interval: str, value: str, time_list: list) -> list:
     """
     Spread query across cores
     """
     node_data = []
     try:
-        client = InfluxDBClient(host=host, port=port, database=dbname)
-
         cores= multiprocessing.cpu_count()
 
         node_group = partition(node_list, cores)
@@ -30,7 +27,7 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
-            query_influx_args = zip(repeat(influx_cfg), repeat(client), sqls_group)
+            query_influx_args = zip(sqls_group, repeat(client))
             node_data = pool.starmap(query_influx, query_influx_args)
 
             # # Process data
@@ -38,18 +35,17 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
-        logging.error(f"query_nodedata error: {err}")
+        logging.error(f"query_nodedata: {err}")
     return node_data
 
 
-def query_influx(influx_cfg: dict, sqls: list, client: object) -> list:
+def query_influx(sqls: list, client: object) -> list:
     """
     Use NodeAsyncioRequests to query urls
     """
     data = []
     try:
-        request = NodeRequests(influx_cfg['host'], influx_cfg['port'], 
-                                      influx_cfg['database'], client)
+        request = NodeRequests(client)
         data = request.bulk_fetch(sqls)
 
     except Exception as err:

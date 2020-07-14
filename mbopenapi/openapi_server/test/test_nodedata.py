@@ -1,7 +1,7 @@
 import json
 import multiprocessing
 from itertools import repeat
-import asyncio
+from influxdb import InfluxDBClient
 import sys
 sys.path.append('../')
 
@@ -57,6 +57,8 @@ measurements = {
   ]
 }
 
+client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], database=['dbname'])
+
 # node_list = parse_nodelist(nodelist_cfg)
 
 start = "2020-07-12T12:00:00-05:00"
@@ -87,7 +89,7 @@ node_list = ['10.101.2.35']
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, time_list)
+nodedata = query_nodedata(node_list, client, measurements, start, end, interval, value, time_list)
 
 # node_data = {}
 

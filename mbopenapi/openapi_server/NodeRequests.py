@@ -10,10 +10,7 @@ class NodeRequests:
     """
 
 
-    def __init__(self, host: str, port: str, database: str, client: object):
-        self.host = host
-        self.port = port
-        self.database = database
+    def __init__(self, client: object):
         self.client = client
         self.data = []
     
