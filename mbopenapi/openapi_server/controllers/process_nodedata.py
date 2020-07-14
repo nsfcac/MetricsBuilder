@@ -3,7 +3,7 @@ def process_nodedata(nodedata: list) -> dict:
     organized = {}
 
     for data in nodedata:
-        # Check if data is valid
+        # If node data is None, do no process
         if data["data"]:
             # Get node, measurement, label names
             node = data['node']
@@ -14,8 +14,9 @@ def process_nodedata(nodedata: list) -> dict:
             if measurement == "NodeJobs":
                 flatten_values = {}
                 for value in values:
+                    job_list = value[1][1:-1].split(", ")
                     flatten_values.update({
-                        value[0]: value[1][1:-1].split(", ")
+                        value[0]: [job[1:-1] for job in job_list]
                     })
             else:
                 # Aggregate data points
