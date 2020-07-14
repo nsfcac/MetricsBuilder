@@ -88,8 +88,8 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                 else:
                     label_value = organized[measurement][labels_list[0]]
                 aggregated[new_key] = label_value
-                job_set = set([item for sublist in label_value for item in sublist])
-                aggregated["job_set"] = job_set
+                # job_set = set([item for sublist in label_value for item in sublist])
+                # aggregated["job_set"] = job_set
             else:
                 length = len(time_list)
                 for i in range(length):
