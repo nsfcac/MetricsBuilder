@@ -15,6 +15,7 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
     Spread query across cores
     """
     processed_jobdata = []
+    flatten_jobset = {}
     try:
         cores= multiprocessing.cpu_count()
 
@@ -22,26 +23,27 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
             all_jobset = pool.map(generate_jobset, processd_nodedata)
 
         # Get job ids
-        flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
+        for jobset in all_jobset:
+            flatten_jobset.update(jobset)
 
-        job_group = partition(flatten_jobset, cores)
+        # job_group = partition(flatten_jobset, cores)
 
-        with multiprocessing.Pool() as pool:
-            # Generate sqls
-            sqls_group = pool.map(generate_sqls, job_group)
+        # with multiprocessing.Pool() as pool:
+        #     # Generate sqls
+        #     sqls_group = pool.map(generate_sqls, job_group)
 
-            # Parallel query  job data
-            query_influx_args = zip(repeat(influx_cfg), sqls_group)
-            job_data = pool.starmap(query_influx, query_influx_args)
+        #     # Parallel query  job data
+        #     query_influx_args = zip(repeat(influx_cfg), sqls_group)
+        #     job_data = pool.starmap(query_influx, query_influx_args)
 
-            processed_jobdata = pool.map(process_jobdata, job_data)
+        #     processed_jobdata = pool.map(process_jobdata, job_data)
             
 
         
 
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
-    return processed_jobdata
+    return flatten_jobset
 
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
@@ -99,15 +101,17 @@ def partition(arr:list, cores: int) -> list:
     return groups
 
 
-def generate_jobset(processed_nodedata: dict) -> set:
+def generate_jobset(processed_nodedata: list) -> set:
     """
     Generate job set from 'job_id'
     """
-    flatten = []
+    flatten_jobset = {}
     try:
-        for node, values in processed_nodedata.items():
-            job_id = values['job_id']
-            flatten = list(set([item for sublist in job_id for item in sublist]))
+        for nodedata in processed_nodedata:
+            for node, values in nodedata.items():
+                job_id = values['job_id']
+                flatten = set([item for sublist in job_id for item in sublist])
+            flatten_jobset.update(flatten)
     except Exception as err:
         logging.error(f"generate_jobset : {err}")
-    return flatten
+    return flatten_jobset
