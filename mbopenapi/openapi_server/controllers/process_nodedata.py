@@ -44,7 +44,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                         label: flatten_values
                     }
                 })
-
+    """
     # Mapping data points
     # To do: make it automatically
     memory_usage = organized["MemUsage"]["UGE"]
@@ -75,7 +75,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
         "cpu_inl_temp": cpu_inl_temp,
         "job_list": job_list,
     }
-
+    """
     return organized
 
 
