@@ -14,10 +14,18 @@ def process_nodedata(nodedata: list) -> dict:
             if measurement == "NodeJobs":
                 flatten_values = {}
                 for value in values:
-                    job_list = value[1][1:-1].split(", ")
-                    flatten_values.update({
-                        value[0]: [job[1:-1] for job in job_list]
-                    })
+                    timestamp = value[0]
+                    job_str_list = value[1][1:-1].split(", ")
+                    job_list = [job[1:-1] for job in job_str_list]
+                    # For Job list data, it's possible that several returned data
+                    # points have the same time stamp when using DISTINCT in sql.
+                    # Aggregate the data with the same time stamp here
+                    if value[0] in flatten_values:
+                        flatten_values[timestamp].extend(job_list)
+                    else:
+                        flatten_values.update({
+                            timestamp: job_list
+                        })
             else:
                 # Aggregate data points
                 flatten_values = [value[1] for value in values]
@@ -67,3 +75,7 @@ def process_nodedata(nodedata: list) -> dict:
     """
 
     return organized
+
+
+def process_joblist(joblist: dict) -> list:
+    return
