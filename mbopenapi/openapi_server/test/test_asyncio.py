@@ -69,6 +69,8 @@ for node in nodes:
 #     sqls.append(sql)
 
 
+# "SELECT max(Value) FROM measurement WHERE Label='FAN_1' and NodeId='10.101.1.1' AND time >= 1594537200000000000 AND time < 1594544400000000000 GROUP BY time(5m) fill(null)"
+
 # # # Sequencial
 # client = InfluxDBClient(host=host, port=port, database=db)
 # resp = []
