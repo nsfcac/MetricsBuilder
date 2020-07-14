@@ -5,7 +5,7 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     Process node data points read from influxdb
     """
-    aggregated = {}
+    nodedata = {}
     organized = {}
     try:
         for data in nodedata:
@@ -51,12 +51,12 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
                 })
 
             # Aggregate organized data
-            aggregated = aggregate_nodedata(node, organized, time_list)
+            nodedata = aggregate_nodedata(node, organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
 
-    return aggregated
+    return nodedata
 
 
 def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
