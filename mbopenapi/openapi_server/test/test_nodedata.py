@@ -113,4 +113,4 @@ results = query_nodedata(node_list, influx_cfg, measurements, start, end, interv
 #             key: value
 #         })
         
-print(json.dumps(results, indent=4))
+# print(json.dumps(results, indent=4))
