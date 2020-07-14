@@ -7,12 +7,23 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     aggregated = {}
     organized = {}
+    node_list = []
+
     try:
         for data in nodedata:
             node = data['node']
             measurement = data['measurement']
             label = data['label']
             values = data['values']
+            # if node not in node_list:
+            #     node_list.append(node)
+            #     organized.update({
+            #         node:{
+            #             measurement: {}
+            #         }
+            #     })
+            # else:
+            #     organized[node]
 
             # If returned valid values, process
             if values:
