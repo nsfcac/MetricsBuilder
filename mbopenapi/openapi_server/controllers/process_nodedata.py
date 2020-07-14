@@ -7,7 +7,6 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
     """
     aggregated = {}
     organized = {}
-    node_list = []
 
     try:
         for data in nodedata:
@@ -15,17 +14,6 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
             measurement = data['measurement']
             label = data['label']
             values = data['values']
-            # if node not in node_list:
-            #     node_list.append(node)
-            #     organized.update({
-            #         node:{
-            #             measurement: {}
-            #         }
-            #     })
-            # else:
-            #     organized[node]
-
-            # If returned valid values, process
             if values:
                 if measurement == 'NodeJobs':
                     flatten_values = {}
@@ -49,25 +37,34 @@ def process_nodedata(nodedata: list, time_list: list) -> dict:
             else:
                 flatten_values = []
 
-            # Build a dict
-            if measurement in organized:
-                organized[measurement].update({
-                    label: flatten_values
-                })
+            # # Build a dict
+            if node in organized:
+                if measurement in organized[node]:
+                    organized[node][measurement].update({
+                        label: flatten_values
+                    })
+                else:
+                    organized[node].update({
+                        measurement: {
+                            label: flatten_values
+                        }
+                    })
             else:
                 organized.update({
-                    measurement: {
-                        label: flatten_values
+                    node: {
+                        measurement: {
+                            label: flatten_values
+                        }
                     }
                 })
 
-            # Aggregate organized data
-            aggregated = aggregate_nodedata(node, organized, time_list)
+            # # Aggregate organized data
+            # aggregated = aggregate_nodedata(node, organized, time_list)
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
 
-    return aggregated
+    return organized
 
 
 def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
