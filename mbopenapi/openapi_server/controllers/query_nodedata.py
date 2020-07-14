@@ -3,7 +3,7 @@ import multiprocessing
 import sys
 sys.path.append('../')
 
-from AsyncioRequests import NodeAsyncioRequests
+from NodeAsyncioRequests import NodeAsyncioRequests
 
 
 def query_nodedata(node: str, influx_cfg: dict, measurements: dict, 
@@ -26,11 +26,11 @@ def query_nodedata(node: str, influx_cfg: dict, measurements: dict,
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
-    Use AsyncioRequests to query urls
+    Use NodeAsyncioRequests to query urls
     """
     data = []
     try:
-        request = AsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
+        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
         data = request.bulk_fetch(sqls)
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
