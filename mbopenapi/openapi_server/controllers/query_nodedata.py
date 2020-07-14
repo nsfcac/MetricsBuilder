@@ -27,13 +27,13 @@ def query_nodedata(node: str, influx_cfg: dict, measurements: dict,
     return node_data
 
 
-def query_influx(influx_cfg: dict, sqls: list, loop) -> list:
+def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
     Use NodeAsyncioRequests to query urls
     """
     data = []
     try:
-        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'], loop)
+        request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], influx_cfg['database'])
         data = request.bulk_fetch(sqls)
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
