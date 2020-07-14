@@ -63,6 +63,7 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
     """
     Aggregate fan speed, temperature
     """
+    nodedata = {}
     aggregated = {}
     try:
         # Mapping aggregated data keys to measurements
@@ -92,8 +93,14 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                         all_label_value.append(label_value)
                     aggregated[measurement].append(all_label_value)
 
+        # Process Job list
+        joblist = aggregated["NodeJobs"]
+        processed_joblist = process_joblist(joblist, time_list)
+        aggregated.update({
+            "NodeJobs": processed_joblist
+        })
 
-        # aggregated = {
+        # nodedata = {
         #     node: {
         #         "memory_usage": memory_usage,
         #         "cpu_usage": cpu_usage,
@@ -103,13 +110,6 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
         #         "job_list": job_list
         #     }
         # }
-
-        # print(f"Memory usage : {len(memory_usage)}")
-        # print(f"CPU usage : {len(cpu_usage)}")
-        # print(f"Power usage : {len(power_usage)}")
-        # print(f"Fan speed : {len(fan_speed)}")
-        # print(f"Temperature : {len(cpu_inl_temp)}")
-        # print(f"Job list : {len(job_list)}")
 
     except Exception as err:
         logging.error(f"process_nodedata : aggregate_nodedata : {node} : {err}")
