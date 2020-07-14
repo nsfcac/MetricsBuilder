@@ -68,7 +68,7 @@ value = "max"
 # with multiprocessing.Pool() as pool:
 #     results = pool.starmap(query_nodedata, query_nodedata_args)
 
-node = '10.101.1.1'
+node = '10.101.2.35'
 nodedata = query_nodedata(node, influx_cfg, measurements, start, end, interval, value)
 
 results = process_nodedata(nodedata)
