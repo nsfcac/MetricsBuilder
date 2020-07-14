@@ -94,12 +94,12 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
                         all_label_value.append(label_value)
                     aggregated[new_key].append(all_label_value)
 
-        # # Process Job list
-        # joblist = aggregated["NodeJobs"]
-        # processed_joblist = process_joblist(joblist, time_list)
-        # aggregated.update({
-        #     "NodeJobs": processed_joblist
-        # })
+        # Process Job list
+        joblist = aggregated["job_list"]
+        processed_joblist = process_joblist(joblist, time_list)
+        aggregated.update({
+            "job_list": processed_joblist
+        })
 
         # nodedata = {
         #     node: {
