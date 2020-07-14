@@ -9,7 +9,7 @@ from aioinflux import InfluxDBClient
 
 class JobAsyncioRequests:
     """
-    Asyncio requests to Influxdb
+    Job Asyncio requests to Influxdb
     """
     import asyncio
 
@@ -40,7 +40,7 @@ class JobAsyncioRequests:
         """
         Get request wrapper to fetch json data from Influxdb
         """
-        jobid = self.__find_label_node(sql)
+        jobid = self.__find_jobid(sql)
         json = {}
         resp = {}
         try:

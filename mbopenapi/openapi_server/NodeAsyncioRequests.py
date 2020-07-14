@@ -9,7 +9,7 @@ from aioinflux import InfluxDBClient
 
 class NodeAsyncioRequests:
     """
-    Asyncio requests to Influxdb
+    Node Asyncio requests to Influxdb
     """
     import asyncio
 
