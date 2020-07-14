@@ -32,13 +32,13 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             query_influx_args = zip(repeat(influx_cfg), sqls_group)
             node_data = pool.starmap(query_influx, query_influx_args)
 
-            # Process data
-            process_nodedata_args = zip(node_data, repeat(time_list))
-            processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+            # # Process data
+            # process_nodedata_args = zip(node_data, repeat(time_list))
+            # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
         logging.error(f"query_nodedata error: {err}")
-    return processd_nodedata
+    return node_data
 
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
@@ -47,13 +47,10 @@ def query_influx(influx_cfg: dict, sqls: list) -> list:
     """
     data = []
     try:
-        loop = asyncio.get_event_loop()
-
         request = NodeAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
-                                      influx_cfg['database'], loop)
+                                      influx_cfg['database'])
         data = request.bulk_fetch(sqls)
 
-        loop.close()
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
     return data
