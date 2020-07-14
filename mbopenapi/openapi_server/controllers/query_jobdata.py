@@ -43,7 +43,7 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
 
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
-    return flatten_jobset
+    return list(flatten_jobset)
 
 
 def query_influx(influx_cfg: dict, sqls: list) -> list:
