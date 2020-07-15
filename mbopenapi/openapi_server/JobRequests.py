@@ -38,7 +38,7 @@ class JobRequests:
         try:
             json = list(self.client.query(sql, epoch = 'ns').get_points())
         except Exception as err:
-            logging.error(f"Error : Cannot fetch job data from {jobid}")
+            logging.error(f"Error : Cannot fetch job data from {jobid} : {err}")
         return {"job": jobid, "values": json}
 
 
