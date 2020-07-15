@@ -1,7 +1,7 @@
 import logging
 
 
-def process_nodedata(nodedata: list, time_list: list) -> list:
+def process_nodedata(nodedata: list, value_type: str, time_list: list) -> list:
     """
     Process node data points read from influxdb
     """
@@ -18,8 +18,8 @@ def process_nodedata(nodedata: list, time_list: list) -> list:
                 if measurement == 'NodeJobs':
                     flatten_values = {}
                     for value in values:
-                        timestamp = value[0]
-                        job_str_list = value[1][1:-1].split(', ')
+                        timestamp = value["time"]
+                        job_str_list = value[value_type][1:-1].split(', ')
                         job_list = [job[1:-1] for job in job_str_list if job[1:-1]]
                         
                         # For Job list data, it's possible that several returned data
@@ -33,7 +33,7 @@ def process_nodedata(nodedata: list, time_list: list) -> list:
                             })
                 else:
                     # Aggregate data points
-                    flatten_values = [value[1] for value in values]
+                    flatten_values = [value[value_type] for value in values]
             else:
                 flatten_values = []
 

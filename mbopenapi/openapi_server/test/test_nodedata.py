@@ -64,7 +64,7 @@ node_list = parse_nodelist(nodelist_cfg)
 start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T18:00:00-05:00"
 interval = "5m"
-value = "max"
+value_type = "max"
 
 start_time = util.deserialize_datetime(start)
 end_time = util.deserialize_datetime(end)
@@ -89,7 +89,7 @@ time_list = gen_timelist(start_time, end_time, interval)
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-nodedata = query_nodedata(node_list, client, measurements, start, end, interval, value, time_list)
+nodedata = query_nodedata(node_list, client, measurements, start, end, interval, value_type, time_list)
 
 # node_data = {}
 
