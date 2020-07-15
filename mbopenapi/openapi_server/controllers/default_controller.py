@@ -60,17 +60,13 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     elif end_epoch <= switch_time:
         return ErrorMessage(
             error_code='400 INVALID_PARAMETERS',
-            error_message='Due to we switched database on July 12, 2020 \
-                02:00:00 AM GMT-05:00 DST, currently we do not support \
-                    requesting data before this time point.'
+            error_message='Due to we switched database on July 12, 2020 02:00:00 AM GMT-05:00 DST, currently we do not support equesting data before this time point.'
         )
         # dbname = config["influxdb"]["phase1"]
     else:
         return ErrorMessage(
             error_code='400 INVALID_PARAMETERS',
-            error_message='Due to we switched database on July 12, 2020 \
-                02:00:00 AM GMT-05:00 DST, currently we do not support \
-                    requesting data with time range falls on this time point.'
+            error_message='Due to we switched database on July 12, 2020 02:00:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.'
         )
 
     if start > end:
