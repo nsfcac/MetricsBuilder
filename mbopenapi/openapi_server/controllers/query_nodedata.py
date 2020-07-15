@@ -66,15 +66,15 @@ def generate_sqls(node_list:list, measurements: dict,
                     for label in labels:
                         sql = "SELECT DISTINCT(Value) FROM " + measurement \
                             + " WHERE Label='" + label + "' AND NodeId='" + node \
-                            + "' AND time >= '" + start + "' AND time < '" + end \
-                            + "' GROUP BY *, time(" + interval + ") SLIMIT 1"
+                            + "' AND time >= " + start + " AND time < " + end \
+                            + " GROUP BY *, time(" + interval + ") SLIMIT 1"
                         sqls.append(sql)
                 else:
                     for label in labels:
                         sql = "SELECT " + value_type + "(Value) FROM " + measurement \
                             + " WHERE Label='" + label + "' AND NodeId='" + node \
-                            + "' AND time >= '" + start + "' AND time < '" + end \
-                            + "' GROUP BY time(" + interval + ") fill(null)"
+                            + "' AND time >= " + start + " AND time < " + end \
+                            + " GROUP BY time(" + interval + ") fill(null)"
                         sqls.append(sql)
     except Exception as err:
         logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")

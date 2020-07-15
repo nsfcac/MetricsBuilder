@@ -5,6 +5,8 @@ import base64
 import zlib
 import logging
 import multiprocessing
+
+from influxdb import InfluxDBClient
 from itertools import repeat
 
 from openapi_server.models.error_message import ErrorMessage  # noqa: E501
@@ -80,6 +82,10 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         influx_cfg.update({
             "database": dbname
         })
+
+        client = InfluxDBClient(host=influx_cfg['host'], 
+                                port=influx_cfg['port'], 
+                                database=influx_cfg['database'])
 
         # Time strings used in query influxdb
         st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
