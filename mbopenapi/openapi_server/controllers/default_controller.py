@@ -14,7 +14,7 @@ from openapi_server.models.unified_metrics import UnifiedMetrics  # noqa: E501
 from openapi_server import util
 from openapi_server.mb_utils import parse_config, parse_nodelist
 
-from openapi_server.controllers.generate_timelist import gen_timelist, gen_epoch_timelist
+from openapi_server.controllers.generate_timelist import gen_epoch_timelist
 from openapi_server.controllers.query_nodedata import query_nodedata
 from openapi_server.controllers.query_jobdata import query_jobdata
 
@@ -50,9 +50,9 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     influx_cfg = config['influxdb']
 
     # Switch database according to the time we switched the database
-    switch_time = 1594537200
-    start_epoch = int(start.timestamp())
-    end_epoch = int(end.timestamp())
+    switch_time = 1594537200000000000
+    start_epoch = int(start.timestamp()) * 1000000000
+    end_epoch = int(end.timestamp()) * 1000000000
 
     # Check sanity
     if start_epoch >= switch_time:
@@ -87,16 +87,13 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                                 port=influx_cfg['port'], 
                                 database=influx_cfg['database'])
 
-        # Time strings used in query influxdb
-        st_str = start.strftime('%Y-%m-%dT%H:%M:%SZ')
-        et_str = end.strftime('%Y-%m-%dT%H:%M:%SZ')
-
         # Generate time list
-        # time_list = gen_timelist(start, end, interval)
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
-        processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, start, end, interval, value, epoch_time_list)
+        processed_nodedata = query_nodedata(node_list, client, measurements, 
+                                            str(start_epoch), str(end_epoch), 
+                                            interval, value, epoch_time_list)
 
         # Generate dict for each node data
         for node_group in processed_nodedata:
@@ -107,7 +104,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     })
         
         # Get jobs data
-        processed_jobdata = query_jobdata(processed_nodedata, influx_cfg)
+        processed_jobdata = query_jobdata(processed_nodedata, client)
 
         # Generate dict for each node data
         for job_group in processed_jobdata:

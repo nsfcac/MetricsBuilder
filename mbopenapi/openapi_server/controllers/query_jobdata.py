@@ -2,8 +2,8 @@ import logging
 import multiprocessing
 from itertools import repeat
 
-import sys
-sys.path.append('../../')
+# import sys
+# sys.path.append('../../')
 
 from openapi_server.JobRequests import JobRequests
 from openapi_server.controllers.process_jobdata import process_jobdata
