@@ -71,7 +71,7 @@ end_time = util.deserialize_datetime(end)
 
 time_list = gen_timelist(start_time, end_time, interval)
 
-print(json.dumps(time_list, indent=4))
+# print(json.dumps(time_list, indent=4))
 # print(json.dumps(time_list, indent = 4))
 
 # # cores= multiprocessing.cpu_count()
@@ -125,4 +125,4 @@ nodedata = query_nodedata(node_list, client, measurements, start, end, interval,
 #             key: value
 #         })
         
-# print(json.dumps(nodedata, indent=4))
+print(json.dumps(nodedata, indent=4))
