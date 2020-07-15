@@ -102,7 +102,7 @@ nodedata = query_nodedata(node_list, client, measurements, start, end, interval,
 #                 key: value
 #             })
 
-processed_jobdata = query_jobdata(nodedata, influx_cfg)
+processed_jobdata = query_jobdata(nodedata, client)
 
 # node_data = {}
 
