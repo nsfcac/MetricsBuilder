@@ -44,7 +44,7 @@ class NodeRequests:
         (node, measurement, label) = self.__find_label_node(sql)
         json = []
         try:
-            json = list(self.client.query(sql).get_points())
+            json = list(self.client.query(sql, epoch = 'ns').get_points())
         except Exception as err:
             logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node} : {err}")
         return {"node": node, "measurement": measurement, "label": label, "values": json}
