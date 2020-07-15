@@ -65,7 +65,7 @@ def process_nodedata(nodedata: list, value_type: str, time_list: list) -> list:
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
 
-    return organized
+    return aggregated
 
 
 def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
