@@ -10,7 +10,7 @@ from openapi_server.controllers.process_nodedata import process_nodedata
 
 
 def query_nodedata(node_list: str, client: object, measurements: dict, 
-                   start: str, end: str, interval: str, value: str, time_list: list) -> list:
+                   start: str, end: str, interval: str, value_type: str, time_list: list) -> list:
     """
     Spread query across cores
     """
@@ -23,20 +23,20 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
         with multiprocessing.Pool() as pool:
             # Generate sqls
             generate_sqls_args = zip(node_group, repeat(measurements), repeat(start),
-                                 repeat(end), repeat(interval), repeat(value))
+                                 repeat(end), repeat(interval), repeat(value_type))
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
             query_influx_args = zip(sqls_group, repeat(client))
             node_data = pool.starmap(query_influx, query_influx_args)
 
-            # # Process data
-            # process_nodedata_args = zip(node_data, repeat(time_list))
-            # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+            # Process data
+            process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
+            processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
-    return node_data
+    return processd_nodedata
 
 
 def query_influx(sqls: list, client: object) -> list:
@@ -54,7 +54,7 @@ def query_influx(sqls: list, client: object) -> list:
 
 
 def generate_sqls(node_list:list, measurements: dict, 
-                  start: str, end: str, interval: str, value: str) -> list:
+                  start: str, end: str, interval: str, value_type: str) -> list:
     """
     Generate sqls from accroding to the user-specified parameters
     """
@@ -71,7 +71,7 @@ def generate_sqls(node_list:list, measurements: dict,
                         sqls.append(sql)
                 else:
                     for label in labels:
-                        sql = "SELECT " + value + "(Value) FROM " + measurement \
+                        sql = "SELECT " + value_type + "(Value) FROM " + measurement \
                             + " WHERE Label='" + label + "' AND NodeId='" + node \
                             + "' AND time >= '" + start + "' AND time < '" + end \
                             + "' GROUP BY time(" + interval + ") fill(null)"
