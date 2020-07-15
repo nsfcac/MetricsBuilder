@@ -44,7 +44,7 @@ class NodeRequests:
         (node, measurement, label) = self.__find_label_node(sql)
         json = {}
         try:
-            json = self.client.query(sql).get_points()
+            json = list(self.client.query(sql).get_points())
             # series = resp['results'][0].get('series', None)
             # if series:
             #     json = series[0]['values']
