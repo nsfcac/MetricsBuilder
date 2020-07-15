@@ -58,9 +58,9 @@ def process_nodedata(nodedata: list, value_type: str, time_list: list) -> list:
                     }
                 })
 
-        # # # Aggregate organized data
-        # for node, metircs in organized.items():
-        #     aggregated.append(aggregate_nodedata(node, metircs, time_list))
+        # Aggregate organized data
+        for node, metircs in organized.items():
+            aggregated.append(aggregate_nodedata(node, metircs, time_list))
 
     except Exception as err:
         logging.error(f"process_nodedata : process_nodedata : {err}")
