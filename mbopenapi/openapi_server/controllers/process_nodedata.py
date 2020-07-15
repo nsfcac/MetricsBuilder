@@ -19,7 +19,7 @@ def process_nodedata(nodedata: list, value_type: str, time_list: list) -> list:
                     flatten_values = {}
                     for value in values:
                         timestamp = value["time"]
-                        job_str_list = value[value_type][1:-1].split(', ')
+                        job_str_list = value["distinct"][1:-1].split(', ')
                         job_list = [job[1:-1] for job in job_str_list if job[1:-1]]
                         
                         # For Job list data, it's possible that several returned data

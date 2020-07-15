@@ -30,13 +30,13 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
             query_influx_args = zip(sqls_group, repeat(client))
             node_data = pool.starmap(query_influx, query_influx_args)
 
-            # # Process data
-            # process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
-            # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+            # Process data
+            process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
+            processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
-    return node_data
+    return processd_nodedata
 
 
 def query_influx(sqls: list, client: object) -> list:
