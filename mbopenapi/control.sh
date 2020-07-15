@@ -1,8 +1,8 @@
 #! /bin/bash
 
-# activate(){
-#     . ../env/bin/activate
-# }
+readonly sourceFile="/home/username/TestMB/MetricsBuilder/env/bin/activate"
+
+source ${sourceFile}
 
 if [ $# == 0 ]
   then
@@ -14,8 +14,8 @@ if [ $1 == 0 ]
 then
     # activate
     echo "Start MetricsBuilderAPI ..."
-    cd /home/username/MetricsBuilder/mbopenapi/
-    nohup python3.6 -m openapi_server >> running.log &
+    cd /home/username/TestMB/MetricsBuilder/mbopenapi/
+    nohup python3 -m openapi_server >> running.log &
 else
     echo "Stop MetricsBuilderAPI ..."
     kill -9 `ps -ef | grep openapi_server | grep -v grep | awk '{print $2}'`
