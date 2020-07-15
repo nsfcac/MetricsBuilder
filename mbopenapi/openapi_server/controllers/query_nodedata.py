@@ -36,7 +36,7 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
 
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
-    return node_data
+    return processd_nodedata
 
 
 def query_influx(sqls: list, client: object) -> list:
