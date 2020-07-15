@@ -69,6 +69,9 @@ value_type = "max"
 start_time = util.deserialize_datetime(start)
 end_time = util.deserialize_datetime(end)
 
+start_time_epoch = int(start_time.timestamp()) * 1000000000
+end_time_epoch = int(end_time.timestamp()) * 1000000000
+
 time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 # print(json.dumps(time_list, indent=4))
@@ -91,7 +94,7 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-nodedata = query_nodedata(node_list, client, measurements, start_time, end_time, interval, value_type, time_list)
+nodedata = query_nodedata(node_list, client, measurements, start_time_epoch, end_time_epoch, interval, value_type, time_list)
 
 # node_data = {}
 
