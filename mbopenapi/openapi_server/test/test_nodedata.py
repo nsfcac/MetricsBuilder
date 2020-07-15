@@ -71,7 +71,7 @@ end_time = util.deserialize_datetime(end)
 
 time_list = gen_timelist(start_time, end_time, interval)
 
-print(time_list)
+print(json.dumps(time_list, indent=4))
 # print(json.dumps(time_list, indent = 4))
 
 # # cores= multiprocessing.cpu_count()
