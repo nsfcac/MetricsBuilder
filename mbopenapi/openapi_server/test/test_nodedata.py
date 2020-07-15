@@ -61,8 +61,8 @@ client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], databa
 
 # node_list = parse_nodelist(nodelist_cfg)
 
-start = "2020-07-12T12:00:00-05:00"
-end = "2020-07-12T14:00:00-05:00"
+start = "2020-07-12T12:00:00Z"
+end = "2020-07-12T14:00:00Z"
 interval = "30m"
 value_type = "max"
 
