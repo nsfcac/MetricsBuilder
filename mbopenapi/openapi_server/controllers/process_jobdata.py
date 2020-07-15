@@ -28,10 +28,10 @@ def process_jobdata(jobdata: list) -> dict:
                 }
             })
             
-            for i, value in enumerate(values):
-                if value != "time" and value != "JobId":
+            for key, value in values.items():
+                if key != "time" and key != "JobId":
                     processed_jobdata[job].update({
-                        mapping[value]: values[i]
+                        mapping[key]: value
                     })
 
 
