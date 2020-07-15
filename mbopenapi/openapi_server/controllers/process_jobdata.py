@@ -20,7 +20,6 @@ def process_jobdata(jobdata: list) -> dict:
                 "CPUCores": "cpu_cores"
             }
 
-            columns = data["values"]["columns"]
             values = data["values"]["values"][0]
 
             processed_jobdata.update({
@@ -29,10 +28,10 @@ def process_jobdata(jobdata: list) -> dict:
                 }
             })
             
-            for i, column in enumerate(columns):
-                if column != "time" and column != "JobId":
+            for i, value in enumerate(values):
+                if value != "time" and value != "JobId":
                     processed_jobdata[job].update({
-                        mapping[column]: values[i]
+                        mapping[value]: values[i]
                     })
 
 
