@@ -20,7 +20,7 @@ def process_jobdata(jobdata: list) -> dict:
                 "CPUCores": "cpu_cores"
             }
 
-            values = data["values"]["values"][0]
+            values = data["values"][0]
 
             processed_jobdata.update({
                 job: {
