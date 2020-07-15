@@ -38,12 +38,12 @@ def query_jobdata(processd_nodedata: list, client: object) -> list:
             query_influx_args = zip(sqls_group, repeat(client))
             job_data = pool.starmap(query_influx, query_influx_args)
 
-            # processed_jobdata = pool.map(process_jobdata, job_data)
+            processed_jobdata = pool.map(process_jobdata, job_data)
             
 
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
-    return job_data
+    return processed_jobdata
 
 
 def query_influx(sqls: list, client: object) -> list:
