@@ -63,7 +63,7 @@ client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], databa
 
 start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T14:00:00-05:00"
-interval = "30m"
+interval = "5m"
 value_type = "max"
 
 start_time = util.deserialize_datetime(start)
