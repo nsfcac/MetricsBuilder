@@ -125,4 +125,4 @@ nodedata = query_nodedata(node_list, client, measurements, start, end, interval,
 #             key: value
 #         })
         
-print(json.dumps(nodedata, indent=4))
+# print(json.dumps(nodedata, indent=4))
