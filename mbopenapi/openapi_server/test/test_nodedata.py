@@ -59,7 +59,7 @@ measurements = {
 
 client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], database=influx_cfg['database'])
 
-node_list = parse_nodelist(nodelist_cfg)
+# node_list = parse_nodelist(nodelist_cfg)
 
 start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T18:00:00-05:00"
@@ -74,7 +74,7 @@ time_list = gen_timelist(start_time, end_time, interval)
 
 # # cores= multiprocessing.cpu_count()
 
-# node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
+node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
 # node_list = ['10.101.2.35']
 
 
