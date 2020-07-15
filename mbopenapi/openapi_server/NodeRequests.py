@@ -42,15 +42,9 @@ class NodeRequests:
         Get request wrapper to fetch json data from Influxdb
         """
         (node, measurement, label) = self.__find_label_node(sql)
-        json = {}
+        json = []
         try:
             json = list(self.client.query(sql).get_points())
-            # series = resp['results'][0].get('series', None)
-            # if series:
-            #     json = series[0]['values']
-            # else:
-            #     json = {}
-                # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
             logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node} : {err}")
         return {"node": node, "measurement": measurement, "label": label, "values": json}
