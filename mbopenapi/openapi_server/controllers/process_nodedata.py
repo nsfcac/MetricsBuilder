@@ -130,6 +130,7 @@ def process_joblist(job_list_dict: dict, time_list: list) -> list:
     processed_joblist = []
     try:
         for i, t in enumerate(time_list):
+            print(i, t)
             if i == 0:
                 this_job_list = job_list_dict.get(t, [])
             else:
