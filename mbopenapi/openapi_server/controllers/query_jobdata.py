@@ -9,7 +9,7 @@ from openapi_server.JobRequests import JobRequests
 from openapi_server.controllers.process_jobdata import process_jobdata
 
 
-def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
+def query_jobdata(processd_nodedata: list, client: object) -> list:
     """
     Spread query across cores
     """
@@ -35,26 +35,25 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
             sqls_group = pool.map(generate_sqls, job_group)
 
             # Parallel query  job data
-            query_influx_args = zip(repeat(influx_cfg), sqls_group)
+            query_influx_args = zip(sqls_group, repeat(client))
             job_data = pool.starmap(query_influx, query_influx_args)
 
-            processed_jobdata = pool.map(process_jobdata, job_data)
+            # processed_jobdata = pool.map(process_jobdata, job_data)
             
 
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
-    return processed_jobdata
+    return job_data
 
 
-def query_influx(influx_cfg: dict, sqls: list) -> list:
+def query_influx(sqls: list, client: object) -> list:
     """
     Use JobAsyncioRequests to query urls
     """
     data = []
     try:
 
-        request = JobRequests(influx_cfg['host'], influx_cfg['port'], 
-                                     influx_cfg['database'])
+        request = JobRequests(client)
         data = request.bulk_fetch(sqls)
 
     except Exception as err:

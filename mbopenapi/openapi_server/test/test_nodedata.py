@@ -93,16 +93,16 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
 
 nodedata = query_nodedata(node_list, client, measurements, start, end, interval, value_type, time_list)
 
-node_data = {}
+# node_data = {}
 
-for node_group in nodedata:
-    for node in node_group:
-        for key, value in node.items():
-            node_data.update({
-                key: value
-            })
+# for node_group in nodedata:
+#     for node in node_group:
+#         for key, value in node.items():
+#             node_data.update({
+#                 key: value
+#             })
 
-# processed_jobdata = query_jobdata(nodedata, influx_cfg)
+processed_jobdata = query_jobdata(nodedata, influx_cfg)
 
 # node_data = {}
 
@@ -125,4 +125,4 @@ for node_group in nodedata:
 #             key: value
 #         })
         
-print(json.dumps(node_data, indent=4))
+print(json.dumps(processed_jobdata, indent=4))
