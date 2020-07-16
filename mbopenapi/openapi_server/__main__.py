@@ -17,7 +17,7 @@ def main():
 
     CORS(app.app)
     
-    app.run(port=8080, ssl_context=context)
+    app.run(port=8080, ssl_context=context, threaded=True)
     # app.run()
 
 
