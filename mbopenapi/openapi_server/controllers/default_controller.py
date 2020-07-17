@@ -117,7 +117,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
 
         processed_jobdata = query_jobdata(processed_nodedata, client)
 
-        job_data = {}
+        # job_data = {}
         for job_group in processed_jobdata:
             for key, value in job_group.items():
                 job_data.update({
