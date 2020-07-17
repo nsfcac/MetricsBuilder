@@ -105,10 +105,19 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                         key: value
                     })
         
-        # Get jobs data
+        # # Get jobs data
+        # processed_jobdata = query_jobdata(processed_nodedata, client)
+
+        # # Generate dict for each job data
+        # for job_group in processed_jobdata:
+        #     for key, value in job_group.items():
+        #         job_data.update({
+        #             key: value
+        #         })
+
         processed_jobdata = query_jobdata(processed_nodedata, client)
 
-        # Generate dict for each job data
+        job_data = {}
         for job_group in processed_jobdata:
             for key, value in job_group.items():
                 job_data.update({
@@ -123,7 +132,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         else:
             unified_metrics.time_stamp = epoch_time_list
             unified_metrics.nodes_info = node_data
-            unified_metrics.jobs_info = processed_jobdata
+            unified_metrics.jobs_info = job_data
 
     return unified_metrics
 
