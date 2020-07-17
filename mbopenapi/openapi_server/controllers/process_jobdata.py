@@ -34,6 +34,14 @@ def process_jobdata(jobdata: list) -> dict:
                         mapping[key]: value
                     })
 
+            # Convert node list (as string) to node list (as array)
+            node_list_str = processed_jobdata[job]["node_list"]
+            node_list_arr = node_list_str[1:-1].split(", ")
+            
+            processed_jobdata[job].update({
+                "node_list": node_list_arr
+            })
+
 
     except Exception as err:
         logging.error(f"process_jobdata : {job} : {err}")
