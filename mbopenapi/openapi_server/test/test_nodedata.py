@@ -98,7 +98,7 @@ processed_nodedata = query_nodedata(node_list, client, measurements, str(start_t
 
 node_data = {}
 
-for node_group in nodedata:
+for node_group in processed_nodedata:
     for node in node_group:
         for key, value in node.items():
             node_data.update({
