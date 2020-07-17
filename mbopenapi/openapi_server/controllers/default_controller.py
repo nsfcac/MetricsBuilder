@@ -106,23 +106,23 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
                     })
         
         # # Get jobs data
-        # processed_jobdata = query_jobdata(processed_nodedata, client)
-
-        # # Generate dict for each job data
-        # for job_group in processed_jobdata:
-        #     for key, value in job_group.items():
-        #         job_data.update({
-        #             key: value
-        #         })
-
         processed_jobdata = query_jobdata(processed_nodedata, client)
 
-        # job_data = {}
+        # Generate dict for each job data
         for job_group in processed_jobdata:
             for key, value in job_group.items():
                 job_data.update({
                     key: value
                 })
+
+        # processed_jobdata = query_jobdata(processed_nodedata, client)
+
+        # # job_data = {}
+        # for job_group in processed_jobdata:
+        #     for key, value in job_group.items():
+        #         job_data.update({
+        #             key: value
+        #         })
         
         # Aggregate time list, nodes and jobs data
         if compress:
