@@ -107,13 +107,13 @@ nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch)
 
 processed_jobdata = query_jobdata(nodedata, client)
 
-node_data = {}
+# node_data = {}
 
-for data in processed_jobdata:
-    for key, value in data.items():
-        node_data.update({
-            key: value
-        })
+# for data in processed_jobdata:
+#     for key, value in data.items():
+#         node_data.update({
+#             key: value
+#         })
 
 # flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
 # all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
@@ -128,4 +128,4 @@ for data in processed_jobdata:
 #             key: value
 #         })
         
-print(json.dumps(node_data, indent=4))
+print(json.dumps(processed_jobdata, indent=4))
