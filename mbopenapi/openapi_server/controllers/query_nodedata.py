@@ -2,8 +2,8 @@ import logging
 import multiprocessing
 from itertools import repeat
 
-# import sys
-# sys.path.append('../../')
+import sys
+sys.path.append('../../')
 
 from openapi_server.NodeRequests import NodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
