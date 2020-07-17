@@ -94,38 +94,25 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), interval, value_type, time_list)
+processed_nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), interval, value_type, time_list)
 
-# node_data = {}
+node_data = {}
 
-# for node_group in nodedata:
-#     for node in node_group:
-#         for key, value in node.items():
-#             node_data.update({
-#                 key: value
-#             })
+for node_group in nodedata:
+    for node in node_group:
+        for key, value in node.items():
+            node_data.update({
+                key: value
+            })
 
-processed_jobdata = query_jobdata(nodedata, client)
+processed_jobdata = query_jobdata(processed_nodedata, client)
 
-# node_data = {}
+job_data = {}
+for job_group in processed_jobdata:
+    for key, value in job_group.items():
+        job_data.update({
+            key: value
+        })
 
-# for data in processed_jobdata:
-#     for key, value in data.items():
-#         node_data.update({
-#             key: value
-#         })
 
-# flatten_jobset = list(set([item for sublist in all_jobset for item in sublist]))
-# all_jobdata = query_jobdata(flatten_jobset, influx_cfg)
-
-# with multiprocessing.Pool() as pool:
-#     processed_jobdata = pool.map(process_jobdata, all_jobdata)
-
-# job_data = {}
-# for data in processed_jobdata:
-#     for key, value in data.items():
-#         job_data.update({
-#             key: value
-#         })
-        
-print(json.dumps(processed_jobdata, indent=4))
+print(json.dumps(job_data, indent=4))
