@@ -10,7 +10,8 @@ from openapi_server.controllers.process_nodedata import process_nodedata
 
 
 def query_nodedata(node_list: str, client: object, measurements: dict, 
-                   start: str, end: str, interval: str, value_type: str, time_list: list) -> list:
+                   start: str, end: str, offset: str, 
+                   interval: str, value_type: str, time_list: list) -> list:
     """
     Spread query across cores
     """
@@ -22,8 +23,9 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
 
         with multiprocessing.Pool() as pool:
             # Generate sqls
-            generate_sqls_args = zip(node_group, repeat(measurements), repeat(start),
-                                 repeat(end), repeat(interval), repeat(value_type))
+            generate_sqls_args = zip(node_group, repeat(measurements),
+                                     repeat(start), repeat(end), repeat(offset),
+                                     repeat(interval), repeat(value_type))
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
@@ -54,7 +56,8 @@ def query_influx(sqls: list, client: object) -> list:
 
 
 def generate_sqls(node_list:list, measurements: dict, 
-                  start: str, end: str, interval: str, value_type: str) -> list:
+                  start: str, end: str, offset: str, 
+                  interval: str, value_type: str) -> list:
     """
     Generate sqls from accroding to the user-specified parameters
     """
@@ -67,14 +70,14 @@ def generate_sqls(node_list:list, measurements: dict,
                         sql = "SELECT DISTINCT(Value) FROM " + measurement \
                             + " WHERE Label='" + label + "' AND NodeId='" + node \
                             + "' AND time >= " + start + " AND time < " + end \
-                            + " GROUP BY *, time(" + interval + ") SLIMIT 1"
+                            + " GROUP BY *, time(" + interval + "," + offset + ") SLIMIT 1"
                         sqls.append(sql)
                 else:
                     for label in labels:
                         sql = "SELECT " + value_type + "(Value) FROM " + measurement \
                             + " WHERE Label='" + label + "' AND NodeId='" + node \
                             + "' AND time >= " + start + " AND time < " + end \
-                            + " GROUP BY time(" + interval + ") fill(null)"
+                            + " GROUP BY time(" + interval + "," + offset + ") fill(null)"
                         sqls.append(sql)
     except Exception as err:
         logging.error(f"query_nodedata : generate_sqls: cannot generate sql strings: {err}")
