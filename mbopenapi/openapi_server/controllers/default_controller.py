@@ -54,6 +54,9 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
     start_epoch = int(start.timestamp()) * 1000000000
     end_epoch = int(end.timestamp()) * 1000000000
 
+    # This is used for offset time bucket when quering influx, see: https://github.com/influxdata/influxdb/issues/8010
+    offset = f"{int(start.timestamp())}s"
+
     # Check sanity
     if start_epoch >= switch_time:
         dbname = config["influxdb"]["phase2"]
@@ -95,7 +98,7 @@ def get_unified_metric(start, end, interval, value, compress):  # noqa: E501
         # Get nodes data
         processed_nodedata = query_nodedata(node_list, client, measurements, 
                                             str(start_epoch), str(end_epoch), 
-                                            interval, value, epoch_time_list)
+                                            offset, interval, value, epoch_time_list)
 
         # Generate dict for each node data
         for node_group in processed_nodedata:
