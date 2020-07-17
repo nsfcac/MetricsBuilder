@@ -109,7 +109,7 @@ processed_jobdata = query_jobdata(nodedata, client)
 
 node_data = {}
 
-for data in processd_nodedata:
+for data in processed_jobdata:
     for key, value in data.items():
         node_data.update({
             key: value
