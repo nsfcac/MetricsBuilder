@@ -4,7 +4,7 @@ readonly sourceFile="/home/username/TestMB/MetricsBuilder/env/bin/activate"
 
 source ${sourceFile}
 
-/home/username/TestMB/MetricsBuilder/env/bin/python3 -m openapi_server
+python3 -m openapi_server
 
 # if [ $# == 0 ]
 #   then
