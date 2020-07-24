@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=username
-WorkingDirectory=/home/username/TestMB/MetricsBuilder/mbopenapi
+WorkingDirectory=/path/to/MetricsBuilder/mbopenapi
 ExecStart=/usr/bin/python3.6 -m openapi_server
 Restart=always
 
