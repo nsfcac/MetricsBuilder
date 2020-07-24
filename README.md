@@ -32,5 +32,4 @@ OpenAPI generator generates server-side code by:
 $ openapi-generator generate -i openapi.yaml -g python-flask -o mbopenapi
 ```
 
-OpenAPI generator uses `openapi.yaml` as the input, prepares server-side stub using the flask framework in Python, saves the generated code in folder, `mbopenapi`.  Please refer to the [README.md](./mbopenapi/README,md) under the `mbopenapi` folder for more details about how to use the generated server.
-
+OpenAPI generator uses `openapi.yaml` as the input, prepares server-side stub using the flask framework in Python, saves the generated code in folder, `mbopenapi`.  Please refer to the [README.md](./mbopenapi) under the `mbopenapi` folder for more details about how to use the generated server.
