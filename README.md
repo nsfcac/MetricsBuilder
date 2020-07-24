@@ -20,7 +20,7 @@ YAML file `openapi.yaml` is the OpenAPI specification of this API service. It co
 
 `openapi` specifies the version number of OpenAPI specification this document uses. `info` is the metadata of the API service. `servers` specifies connectivity information of the API service. 
 
-`components` are a collection of resuable schemas throughout the API service. In this implementation, we use two schemas, `UnifiedMetrics` and `ErrorMessage`. `UnifiedMetrics` includes `nodes_info`, `jobs_info`, and `time_stamp` fields, representing ***node-related metrics***, ***job-related metrics***, and ***epoch time stamps***, respectively.
+`components` are a collection of resuable schemas throughout the API service. In this implementation, we use two schemas, `UnifiedMetrics` and `ErrorMessage`. `UnifiedMetrics` includes `nodes_info`, `jobs_info`, and `time_stamp` fields, representing **node-related metrics**, **job-related metrics**, and **epoch time stamps**, respectively.
 
 `paths` are the reources and method supported by the API service. We only have `get` method in the API.
 
