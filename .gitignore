@@ -1,6 +1,9 @@
 # Ignore files
 .DS_Store
+./env*
+./tests/*
 
 # Ignore folders
 env/
 tests/
+.vscode/
