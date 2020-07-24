@@ -1,6 +1,6 @@
 # MetricsBuilder #
 <p align="center">
-<img src="./tools/architecture.png" alt="Architecture" width="300" />
+<img src="./tools/mechanism.png" alt="mechanism" width="600" />
 </p>
 
 
