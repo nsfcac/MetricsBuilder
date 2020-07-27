@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .openapi-generator
+.vscode
 .Python
 env/
 build/
