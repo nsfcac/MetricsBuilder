@@ -3,7 +3,8 @@ info:
   contact:
     email: jie.li@ttu.edu
     name: Jie Li
-  description: An API for accessing High Performance Computing(HPC) system monitoring
+  description: |
+    An API for accessing High Performance Computing(HPC) system monitoring
     metrics.
   license:
     name: MIT License
@@ -18,17 +19,27 @@ servers:
 paths:
   /v1/metrics:
     get:
-      description: |
-        Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be `min`, `max`, `mean`, or `median`.
-
-        A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include `s`(second), `m`(minute), `h`(hour), `d`(day), `w`(week).
-
-        Use compress to specify returned data is compressed or not. If query large range of time with small interval, it would reduce significant transfering time using compressed data. For Json data compression and de-compression, please refer to [this](https://medium.com/@busybus/zipjson-3ed15f8ea85d).
-
-        One thing to be noticed, due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.
+      description: "Get **unified metrics** based on speficied start time, end time,\
+        \ time \ninterval and value type. The **start** and **end** time should follow\
+        \ \ndate-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6),\
+        \ \ne.g. `2020-02-12T14:00:00Z`; the time **interval** should follow \n**duration\
+        \ literals**, which specify a length of time; the **value** \ntype should\
+        \ only be `min`, `max`, `mean`, or `median`.\n\nA duration literal is an integer\
+        \ literal followed immediately (with no \nspaces) by a duration unit, the\
+        \ units include `s`(second), `m`(minute), \n`h`(hour), `d`(day), `w`(week).\n\
+        \nUse compress to specify returned data is compressed or not. If query \n\
+        large range of time with small interval, it would reduce significant \ntransfering\
+        \ time using compressed data. For Json data compression and \nde-compression,\
+        \ please refer to [this](https://medium.com/@busybus/zipjson-3ed15f8ea85d).\n\
+        \nFor rack and computer fields, please use a comma to seperate each number\
+        \ \nsuch as `1, 2, 3, 4` or use a dash to indicate a range of numbers such\
+        \ \nas `1-4`. Racks range from **1 to 10** and computers range form **1 to\
+        \ 60**\nin the Quanah cluster\n\nTo be noticed, due to we switched database\
+        \ on April 28, 2020 11:40:00 AM\n GMT-05:00 DST, currently we do not support\
+        \ requesting data with time \n range falls on this time point.\n"
       operationId: get_unified_metric
       parameters:
-      - description: start time of time range of the monitoring metrics
+      - description: Start time of time range.
         explode: true
         in: query
         name: start
@@ -38,7 +49,7 @@ paths:
           format: date-time
           type: string
         style: form
-      - description: end time of time range of the monitoring metrics
+      - description: End time of time range.
         explode: true
         in: query
         name: end
@@ -48,7 +59,7 @@ paths:
           format: date-time
           type: string
         style: form
-      - description: time interval for aggregating the monitoring metrics
+      - description: Time interval for aggregating the monitoring metrics.
         explode: true
         in: query
         name: interval
@@ -58,7 +69,7 @@ paths:
           pattern: ^[1-9][0-9]*[s, m, h, d, w]$
           type: string
         style: form
-      - description: value type of the monitoring metrics
+      - description: Value type of the monitoring metrics.
         explode: true
         in: query
         name: value
@@ -72,7 +83,7 @@ paths:
           example: max
           type: string
         style: form
-      - description: return compressed data
+      - description: Return compressed data.
         explode: true
         in: query
         name: compress
@@ -83,6 +94,32 @@ paths:
           - false
           example: true
           type: boolean
+        style: form
+      - description: Target nodes in the cluster.
+        explode: true
+        in: query
+        name: nodelist
+        required: false
+        schema:
+          example: 10.101.1.[1-60], 10.101.7.[1-3,5-60]
+          type: string
+        style: form
+      - description: Monitoring metrics returned.
+        explode: true
+        in: query
+        name: metrics
+        required: false
+        schema:
+          items:
+            enum:
+            - Power
+            - FanSensor
+            - TempSensor
+            - CPUUsage
+            - MemUsage
+            - NodeJobs
+            type: string
+          type: array
         style: form
       responses:
         "200":

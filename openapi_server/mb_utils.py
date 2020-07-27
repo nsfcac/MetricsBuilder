@@ -36,3 +36,34 @@ def parse_nodelist(nodelist_cfg: list) -> list:
                 nodelist.append(ip_addr)
     
     return nodelist
+
+
+def read_nodelist(nodelist: str, node_pool: list) -> list:
+    """
+    Parse user specified nodelist
+    """
+    node_list = []
+    user_nodelist = []
+    try:
+        nodelist = nodelist.split(", ")
+        user_nodelist = parse_nodelist(nodelist)
+        node_list = [node for node in user_nodelist if node in node_pool]
+    except Exception as err:
+        print(err)
+    return node_list
+
+
+def read_metrics(metrics: list, metrics_pool: dict) -> dict:
+    """
+    Parse user specified metrics
+    """
+    measurements = {}
+    try:
+        for metric in metrics:
+            if metric in metrics_pool:
+                measurements.update({
+                    metric: metrics_pool[metric]
+                })
+    except Exception as err:
+        print(err)
+    return measurements
