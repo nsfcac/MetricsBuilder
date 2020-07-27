@@ -1,15 +1,16 @@
 import logging
+import asyncio
 import multiprocessing
 from itertools import repeat
 
 # import sys
 # sys.path.append('../../')
 
-from openapi_server.NodeRequests import NodeRequests
+from openapi_server.AsyncioNodeRequests import AsyncioNodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
 
 
-def query_nodedata(node_list: str, client: object, measurements: dict, 
+def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict, 
                    start: str, end: str, offset: str, 
                    interval: str, value_type: str, time_list: list) -> list:
     """
@@ -29,7 +30,7 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
-            query_influx_args = zip(sqls_group, repeat(client))
+            query_influx_args = zip(sqls_group, repeat(influx_cfg))
             node_data = pool.starmap(query_influx, query_influx_args)
 
             # Process data
@@ -41,15 +42,19 @@ def query_nodedata(node_list: str, client: object, measurements: dict,
     return processd_nodedata
 
 
-def query_influx(sqls: list, client: object) -> list:
+def query_influx(sqls: list, influx_cfg: dict) -> list:
     """
-    Use NodeRequests to query urls
+    Use AsyncioNodeRequests to query urls
     """
     data = []
     try:
-        request = NodeRequests(client)
+        loop = asyncio.get_event_loop()
+
+        request = AsyncioNodeRequests(influx_cfg['host'], influx_cfg['port'], 
+                                      influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
 
+        loop.close()
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
     return data
