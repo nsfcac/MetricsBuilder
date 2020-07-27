@@ -24,14 +24,6 @@ YAML file `openapi.yaml` is the OpenAPI specification of this API service. It co
 
 `paths` are the reources and method supported by the API service. We only have `get` method in the API.
 
-## The server-side stub
-
-OpenAPI generator generates server-side code by:
-
-```bash
-$ openapi-generator generate -i openapi.yaml -g python-flask -o mbopenapi
-```
-
 OpenAPI generator uses `openapi.yaml` as the input, prepares server-side stub using the flask framework in Python.
 
 ## Requirements
