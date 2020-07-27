@@ -106,15 +106,11 @@ def get_unified_metric(start, end, interval, value, compress, nodelist=None, met
             "database": dbname
         })
 
-        client = InfluxDBClient(host=influx_cfg['host'], 
-                                port=influx_cfg['port'], 
-                                database=influx_cfg['database'])
-
         # Generate time list
         epoch_time_list = gen_epoch_timelist(start, end, interval)
 
         # Get nodes data
-        processed_nodedata = query_nodedata(node_list, client, measurements, 
+        processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, 
                                             str(start_epoch), str(end_epoch), 
                                             offset, interval, value, epoch_time_list)
 
@@ -127,7 +123,7 @@ def get_unified_metric(start, end, interval, value, compress, nodelist=None, met
                     })
         
         # # Get jobs data
-        processed_jobdata = query_jobdata(processed_nodedata, client)
+        processed_jobdata = query_jobdata(processed_nodedata, influx_cfg)
 
         # Generate dict for each job data
         for job_group in processed_jobdata:

@@ -1,15 +1,16 @@
 import logging
+import asyncio
 import multiprocessing
 from itertools import repeat
 
 # import sys
 # sys.path.append('../../')
 
-from openapi_server.JobRequests import JobRequests
+from openapi_server.AsyncioJobRequests import AsyncioJobRequests
 from openapi_server.controllers.process_jobdata import process_jobdata
 
 
-def query_jobdata(processd_nodedata: list, client: object) -> list:
+def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
     """
     Spread query across cores
     """
@@ -35,7 +36,7 @@ def query_jobdata(processd_nodedata: list, client: object) -> list:
             sqls_group = pool.map(generate_sqls, job_group)
 
             # Parallel query  job data
-            query_influx_args = zip(sqls_group, repeat(client))
+            query_influx_args = zip(sqls_group, repeat(influx_cfg))
             job_data = pool.starmap(query_influx, query_influx_args)
 
             processed_jobdata = pool.map(process_jobdata, job_data)
@@ -46,15 +47,19 @@ def query_jobdata(processd_nodedata: list, client: object) -> list:
     return processed_jobdata
 
 
-def query_influx(sqls: list, client: object) -> list:
+def query_influx(sqls: list, influx_cfg: dict) -> list:
     """
     Use JobAsyncioRequests to query urls
     """
     data = []
     try:
+        loop = asyncio.get_event_loop()
 
-        request = JobRequests(client)
+        request = JobAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
+                                     influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
+
+        loop.close()
 
     except Exception as err:
         logging.error(f"query_jobdata : query_influx : {err}")
