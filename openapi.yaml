@@ -1,7 +1,9 @@
 openapi: 3.0.1
 info:
   title: MetricsBuilder API
-  description: 'An API for accessing High Performance Computing(HPC) system monitoring metrics.'
+  description: |
+   An API for accessing High Performance Computing(HPC) system monitoring
+   metrics.
   contact:
     name: Jie Li
     email: jie.li@ttu.edu
@@ -128,13 +130,30 @@ paths:
   /v1/metrics:
     get:
       description: |
-        Get **unified metrics** based on speficied start time, end time, time interval and value type. The **start** and **end** time should follow date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow **duration literals**, which specify a length of time; the **value** type should only be `min`, `max`, `mean`, or `median`.
+        Get **unified metrics** based on speficied start time, end time, time 
+        interval and value type. The **start** and **end** time should follow 
+        date-time Notation as defined by [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6), 
+        e.g. `2020-02-12T14:00:00Z`; the time **interval** should follow 
+        **duration literals**, which specify a length of time; the **value** 
+        type should only be `min`, `max`, `mean`, or `median`.
         
-        A duration literal is an integer literal followed immediately (with no spaces) by a duration unit, the units include `s`(second), `m`(minute), `h`(hour), `d`(day), `w`(week).
+        A duration literal is an integer literal followed immediately (with no 
+        spaces) by a duration unit, the units include `s`(second), `m`(minute), 
+        `h`(hour), `d`(day), `w`(week).
 
-        Use compress to specify returned data is compressed or not. If query large range of time with small interval, it would reduce significant transfering time using compressed data. For Json data compression and de-compression, please refer to [this](https://medium.com/@busybus/zipjson-3ed15f8ea85d).
+        Use compress to specify returned data is compressed or not. If query 
+        large range of time with small interval, it would reduce significant 
+        transfering time using compressed data. For Json data compression and 
+        de-compression, please refer to [this](https://medium.com/@busybus/zipjson-3ed15f8ea85d).
 
-        One thing to be noticed, due to we switched database on April 28, 2020 11:40:00 AM GMT-05:00 DST, currently we do not support requesting data with time range falls on this time point.
+        For rack and computer fields, please use a comma to seperate each number 
+        such as `1, 2, 3, 4` or use a dash to indicate a range of numbers such 
+        as `1-4`. Racks range from **1 to 10** and computers range form **1 to 60**
+        in the Quanah cluster
+        
+        To be noticed, due to we switched database on April 28, 2020 11:40:00 AM
+         GMT-05:00 DST, currently we do not support requesting data with time 
+         range falls on this time point.
       operationId: get_unified_metric
       parameters:
       - in: query
@@ -144,7 +163,7 @@ paths:
           type: string
           format: date-time
           example: '2020-02-14T12:00:00-05:00'
-        description: start time of time range of the monitoring metrics
+        description: Start time of time range.
       - in: query
         name: end
         required: true
@@ -152,7 +171,7 @@ paths:
           type: string
           format: date-time
           example: '2020-02-14T18:00:00-05:00'
-        description: end time of time range of the monitoring metrics
+        description: End time of time range.
       - in: query
         name: interval
         required: true
@@ -160,7 +179,7 @@ paths:
           type: string
           pattern: '^[1-9][0-9]*[s, m, h, d, w]$'
           example: '5m'
-        description: time interval for aggregating the monitoring metrics
+        description: Time interval for aggregating the monitoring metrics.
       - in: query
         name: value
         required: true
@@ -172,7 +191,7 @@ paths:
             - max
             - mean
             - median
-        description: value type of the monitoring metrics
+        description: Value type of the monitoring metrics.
       - in: query
         name: compress
         required: true
@@ -182,17 +201,38 @@ paths:
           enum:
             - true
             - false
-        description: return compressed data
+        description: Return compressed data.
+      - in: query
+        name: nodelist
+        required: false
+        schema:
+          type: string
+          example: '10.101.1.[1-60], 10.101.7.[1-3,5-60]'
+        description: Target nodes in the cluster.
+      - in: query
+        name: metrics
+        required: false
+        schema:
+          type: array
+          items:
+            enum:
+              - Power
+              - FanSensor
+              - TempSensor
+              - CPUUsage
+              - MemUsage
+              - NodeJobs
+        description: Monitoring metrics returned.
       responses:
         '200':
           description: Get unified metrics successfully
           content:
-            application/json:
+            'application/json':
               schema:
                 $ref: '#/components/schemas/UnifiedMetrics'
         'default':
           description: Unexpected error
           content:
-            application/json:
+            'application/json':
               schema:
                 $ref: '#/components/schemas/ErrorMessage'
