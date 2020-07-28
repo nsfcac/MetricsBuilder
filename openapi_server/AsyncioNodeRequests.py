@@ -50,7 +50,7 @@ class AsyncioNodeRequests:
         json = {}
         try:
             resp = await client.query(sql)
-            series = await resp['results'][0].get('series', None)
+            series = resp['results'][0].get('series', None)
             if series:
                 json = series[0]['values']
             else:
