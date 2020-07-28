@@ -9,7 +9,7 @@ context.load_cert_chain("/home/username/SSL_Certificate/influx_ttu_edu_cert.cer"
 
 
 def main():
-    app = connexion.App(__name__, specification_dir='./openapi/')
+    app = connexion.App(__name__, specification_dir='./openapi/', server='gevent')
     app.app.json_encoder = encoder.JSONEncoder
     app.add_api('openapi.yaml',
                 arguments={'title': 'MetricsBuilder API'},
@@ -17,7 +17,7 @@ def main():
 
     CORS(app.app)
     
-    app.run(port=8080, ssl_context=context, threaded=True)
+    app.run(port=8080, ssl_context=context)
     # app.run()
 
 
