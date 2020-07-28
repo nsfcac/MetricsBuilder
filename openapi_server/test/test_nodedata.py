@@ -1,7 +1,8 @@
 import json
 import multiprocessing
+import warnings
+warnings.filterwarnings("ignore")
 from itertools import repeat
-from influxdb import InfluxDBClient
 
 import sys
 sys.path.append('../../')
