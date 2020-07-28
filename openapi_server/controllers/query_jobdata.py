@@ -31,35 +31,34 @@ def query_jobdata(processd_nodedata: list, influx_cfg: dict) -> list:
 
         job_group = partition(flatten_joblist, cores)
 
+        loop = asyncio.get_event_loop()
+
         with multiprocessing.Pool() as pool:
             # Generate sqls
             sqls_group = pool.map(generate_sqls, job_group)
 
             # Parallel query  job data
-            query_influx_args = zip(sqls_group, repeat(influx_cfg))
+            query_influx_args = zip(sqls_group, repeat(influx_cfg), repeat(loop))
             job_data = pool.starmap(query_influx, query_influx_args)
 
             processed_jobdata = pool.map(process_jobdata, job_data)
             
-
+        loop.close()
     except Exception as err:
         logging.error(f"query_jobdata error: {err}")
     return processed_jobdata
 
 
-def query_influx(sqls: list, influx_cfg: dict) -> list:
+def query_influx(sqls: list, influx_cfg: dict, loop) -> list:
     """
     Use JobAsyncioRequests to query urls
     """
     data = []
     try:
-        loop = asyncio.get_event_loop()
 
         request = JobAsyncioRequests(influx_cfg['host'], influx_cfg['port'], 
                                      influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
-
-        loop.close()
 
     except Exception as err:
         logging.error(f"query_jobdata : query_influx : {err}")
