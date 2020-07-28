@@ -19,23 +19,20 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
 
         node_group = partition(node_list, cores)
 
-        loop = asyncio.get_event_loop()
-
         # Generate sqls
         sqls = generate_sqls(node_list, measurements, start, end, offset, interval, value_type)
         # Asynchronously query node data
-        node_data = query_influx(sqls, influx_cfg, loop)
+        node_data = query_influx(sqls, influx_cfg)
 
-        loop.close()
-
-        with multiprocessing.Pool() as pool:
-            # Process data
-            process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
-            processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
+        # with multiprocessing.Pool() as pool:
+        #     # Process data
+        #     process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
+        #     processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
-    return processd_nodedata
+    # return processd_nodedata
+    return node_data
 
 
 def query_influx(sqls: list, influx_cfg: dict, loop) -> list:
