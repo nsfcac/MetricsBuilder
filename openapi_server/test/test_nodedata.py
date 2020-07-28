@@ -2,15 +2,16 @@ import json
 import multiprocessing
 from itertools import repeat
 from influxdb import InfluxDBClient
-import sys
-sys.path.append('../')
 
-import util
-from mb_utils import parse_nodelist
-from controllers.query_nodedata import query_nodedata
-from controllers.query_jobdata import query_jobdata
-from controllers.process_nodedata import process_nodedata
-from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
+import sys
+sys.path.append('../../')
+
+import openapi_server.util
+from openapi_server.mb_utils import parse_nodelist
+from openapi_server.controllers.query_nodedata import query_nodedata
+from openapi_server.controllers.query_jobdata import query_jobdata
+from openapi_server.controllers.process_nodedata import process_nodedata
+from openapi_server.controllers.generate_timelist import gen_timelist, gen_epoch_timelist
 
 influx_cfg = {
     "host": "10.10.1.3",
