@@ -24,6 +24,7 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
         # Asynchronously query node data
         node_data = query_influx(sqls, influx_cfg)
 
+        processd_nodedata = process_nodedata(node_data, value_type, time_list)
         # with multiprocessing.Pool() as pool:
         #     # Process data
         #     process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
@@ -31,8 +32,7 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
 
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
-    # return processd_nodedata
-    return node_data
+    return processd_nodedata
 
 
 def query_influx(sqls: list, influx_cfg: dict) -> list:
