@@ -10,14 +10,14 @@ class AsyncioNodeRequests:
     """
     Asyncio node requests to Influxdb
     """
-
+    import asyncio
 
     def __init__(self, host: str, port: str, database: str):
         self.host = host
         self.port = port
         self.database = database
         self.data = {}
-        self.loop = asyncio.get_event_loop()
+        self.loop = self.asyncio.get_event_loop()
     
 
     def __find_label_node(self, sql:str) -> str:
@@ -50,7 +50,7 @@ class AsyncioNodeRequests:
         json = {}
         try:
             resp = await client.query(sql)
-            series = resp['results'][0].get('series', None)
+            series = await resp['results'][0].get('series', None)
             if series:
                 json = series[0]['values']
             else:
