@@ -6,7 +6,7 @@ from influxdb import InfluxDBClient
 import sys
 sys.path.append('../../')
 
-import openapi_server.util
+from openapi_server import util
 from openapi_server.mb_utils import parse_nodelist
 from openapi_server.controllers.query_nodedata import query_nodedata
 from openapi_server.controllers.query_jobdata import query_jobdata
