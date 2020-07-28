@@ -3,8 +3,8 @@ import asyncio
 import multiprocessing
 from itertools import repeat
 
-# import sys
-# sys.path.append('../../')
+import sys
+sys.path.append('../../')
 
 from openapi_server.AsyncioNodeRequests import AsyncioNodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
@@ -30,7 +30,7 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
         node_data = query_influx(sqls, influx_cfg, loop)
 
         loop.close()
-        
+
         with multiprocessing.Pool() as pool:
             # Process data
             process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
