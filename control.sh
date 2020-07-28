@@ -1,6 +1,6 @@
 #! /bin/bash
 
-readonly sourceFile="/home/username/TestMB/MetricsBuilder/env/bin/activate"
+readonly sourceFile="/home/username/MetricsBuilder/env/bin/activate"
 
 source ${sourceFile}
 
