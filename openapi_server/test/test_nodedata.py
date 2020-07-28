@@ -73,7 +73,7 @@ end_time_epoch = int(end_time.timestamp()) * 1000000000
 
 time_list = gen_epoch_timelist(start_time, end_time, interval)
 
-processed_nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), interval, value_type, time_list)
+processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, str(start_time_epoch), str(end_time_epoch), interval, value_type, time_list)
 
 # node_data = {}
 
