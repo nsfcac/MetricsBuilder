@@ -6,7 +6,7 @@ source ${sourceFile}
 
 # python3 -m openapi_server
 
-gunicorn --certfile='/home/username/SSL_Certificate/influx_ttu_edu_cert.cer' --keyfile='/home/username/SSL_Certificate/server.key' --worker-class=gevent --worker-connections=1000 --workers=5 --timeout 120 -b 0.0.0.0:8080 'openapi_server.__main__:app' --limit-request-line 0
+gunicorn --certfile='/home/username/SSL_Certificate/influx_ttu_edu_cert.cer' --keyfile='/home/username/SSL_Certificate/server.key' --timeout 120 -b 0.0.0.0:8080 'openapi_server.__main__:app' --limit-request-line 0
 
 # gunicorn --certfile='/home/username/SSL_Certificate/influx_ttu_edu_cert.cer' --keyfile='/home/username/SSL_Certificate/server.key' -b 0.0.0.0:8080 'openapi_server.__main__:app'
 
