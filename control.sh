@@ -1,6 +1,6 @@
 #! /bin/bash
 
-readonly sourceFile="/home/lijie/TestMB/MetricsBuilder/env/bin/activate"
+readonly sourceFile="/home/lijie/MetricsBuilder/env/bin/activate"
 
 source ${sourceFile}
 
