@@ -1,4 +1,7 @@
 import sys
+import site
+
+site.addsitedir('/var/www/MetricsBuilder/env/lib/python3.6/site-packages')
 
 sys.path.append('/var/www/MetricsBuilder')
 
