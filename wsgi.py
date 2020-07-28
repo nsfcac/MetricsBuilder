@@ -1,4 +1,5 @@
 import sys
-sys.path.append('/home/username/MetricsBuilder')
+
+sys.path.append('/var/www/MetricsBuilder')
 
 from openapi_server.__main__ import app as application
