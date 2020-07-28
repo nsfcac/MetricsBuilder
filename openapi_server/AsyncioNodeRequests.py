@@ -57,7 +57,7 @@ class AsyncioNodeRequests:
                 json = {}
                 # logging.warning(f"Warning : No {label} data from {node}")
         except Exception as err:
-            logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node}")
+            logging.error(f"Error : Cannot fetch {measurement} - {label} data from {node} : {err}")
         return {"node": node, "measurement": measurement, "label": label, "values": json}
 
 
