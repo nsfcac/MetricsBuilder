@@ -22,6 +22,8 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
 
         node_group = partition(node_list, cores)
 
+        loop = asyncio.get_event_loop()
+
         with multiprocessing.Pool() as pool:
             # Generate sqls
             generate_sqls_args = zip(node_group, repeat(measurements),
@@ -30,31 +32,29 @@ def query_nodedata(node_list: str, influx_cfg: dict, measurements: dict,
             sqls_group = pool.starmap(generate_sqls, generate_sqls_args)
 
             # Parallel query data
-            query_influx_args = zip(sqls_group, repeat(influx_cfg))
+            query_influx_args = zip(sqls_group, repeat(influx_cfg), repeat(loop))
             node_data = pool.starmap(query_influx, query_influx_args)
 
             # Process data
             process_nodedata_args = zip(node_data, repeat(value_type), repeat(time_list))
             processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
 
+        loop.close()
     except Exception as err:
         logging.error(f"query_nodedata: {err}")
     return processd_nodedata
 
 
-def query_influx(sqls: list, influx_cfg: dict) -> list:
+def query_influx(sqls: list, influx_cfg: dict, loop) -> list:
     """
     Use AsyncioNodeRequests to query urls
     """
     data = []
     try:
-        loop = asyncio.get_event_loop()
-
         request = AsyncioNodeRequests(influx_cfg['host'], influx_cfg['port'], 
                                       influx_cfg['database'], loop)
         data = request.bulk_fetch(sqls)
 
-        loop.close()
     except Exception as err:
         logging.error(f"query_nodedata : query_influx : {err}")
     return data
