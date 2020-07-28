@@ -3,9 +3,6 @@ import asyncio
 import multiprocessing
 from itertools import repeat
 
-import sys
-sys.path.append('../../')
-
 from openapi_server.AsyncioNodeRequests import AsyncioNodeRequests
 from openapi_server.controllers.process_nodedata import process_nodedata
 
