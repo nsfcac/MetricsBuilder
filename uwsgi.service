@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStartPre=-/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown username:nginx /run/uwsgi'
-ExecStart=/usr/bin/bash -c 'cd /home/username/MetricsBuilder; source env/bin/activate; uwsgi --ini metricsBuilder.ini'
+ExecStart=/usr/bin/bash -c 'cd /home/username/MetricsBuilder; source env/bin/activate; uwsgi --ini metricsbuilder.ini'
 Restart=always
 
 [Install]
