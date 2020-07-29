@@ -1,0 +1,11 @@
+[Unit]
+Description=uWSGI instance to serve metricsbuilder
+After=network.target
+
+[Service]
+ExecStartPre=-/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown username:nginx /run/uwsgi'
+ExecStart=/usr/bin/bash -c 'cd /home/username/MetricsBuilder; source env/bin/activate; uwsgi --ini metricsBuilder.ini'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
