@@ -22,6 +22,35 @@ from openapi_server.controllers.query_jobdata import query_jobdata
 ZIPJSON_KEY = 'base64(zip(o))'
 
 
+def get_avail_metrics():  # noqa: E501
+    """get_avail_metrics
+
+    Get available metrics of the cluster # noqa: E501
+
+    :rtype: List[str]
+    """
+    # Parse configuration, get node list of the cluster
+    config = parse_config()
+    avail_metrics = list(config['measurements'].keys())
+    
+    return avail_metrics
+
+
+def get_avail_nodes():  # noqa: E501
+    """get_avail_nodes
+
+    Get available nodes of the cluster # noqa: E501
+
+    :rtype: List[str]
+    """
+
+    # Parse configuration, get node list of the cluster
+    config = parse_config()
+    avail_nodes = config['nodelist']
+
+    return avail_nodes
+
+
 def get_unified_metric(start, end, interval, value, compress, nodelist=None, metrics=None):  # noqa: E501
     """get_unified_metric
 
