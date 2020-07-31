@@ -17,6 +17,48 @@ servers:
 - description: Redfish server
   url: https://129.118.104.141:8080/
 paths:
+  /v1/availmetrics:
+    get:
+      description: Get available metrics of the cluster
+      operationId: get_avail_metrics
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/josn:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: Get available metrics succesfully
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Unexpected error
+      x-openapi-router-controller: openapi_server.controllers.default_controller
+  /v1/availnodes:
+    get:
+      description: Get available nodes of the cluster
+      operationId: get_avail_nodes
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/josn:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: Get available nodes succesfully
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+          description: Unexpected error
+      x-openapi-router-controller: openapi_server.controllers.default_controller
   /v1/metrics:
     get:
       description: "Get **unified metrics** based on speficied start time, end time,\
@@ -45,7 +87,7 @@ paths:
         name: start
         required: true
         schema:
-          example: 2020-07-13T12:00:00-05:00
+          example: 2020-07-31T12:00:00-05:00
           format: date-time
           type: string
         style: form
@@ -55,7 +97,7 @@ paths:
         name: end
         required: true
         schema:
-          example: 2020-07-13T18:00:00-05:00
+          example: 2020-07-31T13:00:00-05:00
           format: date-time
           type: string
         style: form
