@@ -4,7 +4,7 @@ from flask_cors import CORS
 import ssl
 
 
-context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_3)
+context = ssl.SSLContext(ssl.PROTOCOL_TLS)
 context.load_cert_chain("/home/username/SSL_Certificate/influx_ttu_edu_cert.cer", "/home/username/SSL_Certificate/server.key")
 
 app = connexion.App(__name__, specification_dir='./openapi/', server='gevent')
