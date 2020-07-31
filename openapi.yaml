@@ -127,6 +127,46 @@ components:
         error_message:
           type: string
 paths:
+  /v1/availnodes:
+    get:
+      description: Get available nodes of the cluster
+      operationId: get_avail_nodes
+      parameters: []
+      responses:
+        '200':
+          description: Get available nodes succesfully
+          content:
+            'application/josn':
+              schema:
+                type: array
+                items:
+                  type: string
+        'default':
+          description: Unexpected error
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  /v1/availmetrics:
+    get:
+      description: Get available metrics of the cluster
+      operationId: get_avail_metrics
+      parameters: []
+      responses:
+        '200':
+          description: Get available metrics succesfully
+          content:
+            'application/josn':
+              schema:
+                type: array
+                items:
+                  type: string
+        'default':
+          description: Unexpected error
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
   /v1/metrics:
     get:
       description: |
