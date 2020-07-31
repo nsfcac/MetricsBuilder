@@ -3,7 +3,7 @@
 ## Overview
 
 <p align="center">
-<img src="./tools/mechanism.png" alt="mechanism" width="600" />
+<img src="./tools/Figures/mechanism.png" alt="mechanism" width="600" />
 </p>
 
 **Metrics Builder** acts as a middleware between the consumers (i.e. analytic clients or tools) and the producers (i.e. the databases). As depcited in the figure, its main workflow is as follows. 
