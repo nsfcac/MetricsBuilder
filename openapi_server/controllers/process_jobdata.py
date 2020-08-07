@@ -27,7 +27,10 @@ def process_jobdata(jobdata: list) -> dict:
             if "FinishTime" not in values:
                 finish_time = None
             else:
-                finish_time = values["FinishTime"]
+                if values["FinishTime"] == 0:
+                    finish_time = None
+                else:
+                    finish_time = values["FinishTime"]
                 
             processed_jobdata.update({
                 job: {
