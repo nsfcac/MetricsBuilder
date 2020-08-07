@@ -23,11 +23,11 @@ def process_jobdata(jobdata: list) -> dict:
 
             values = data["values"][0]
 
-            # processed_jobdata.update({
-            #     job: {
-            #         "finish_time": None
-            #     }
-            # })
+            processed_jobdata.update({
+                job: {
+                    # "finish_time": None
+                }
+            })
             
             for key, value in values.items():
                 if key != "time" and key != "JobId":
