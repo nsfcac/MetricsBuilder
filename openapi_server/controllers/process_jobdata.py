@@ -13,7 +13,7 @@ def process_jobdata(jobdata: list) -> dict:
             mapping = {
                 "StartTime": "start_time",
                 "SubmitTime": "submit_time",
-                "FinishTime": "finish_time",
+                # "FinishTime": "finish_time",
                 "JobName": "job_name",
                 "User": "user_name",
                 "NodeList": "node_list",
@@ -23,9 +23,11 @@ def process_jobdata(jobdata: list) -> dict:
 
             values = data["values"][0]
 
+            # This is a temporary solution for getting finish time
+            finish_time = processed_jobdata[job].get("FinishTime", None)
             processed_jobdata.update({
                 job: {
-                    # "finish_time": None
+                    "finish_time": finish_time
                 }
             })
             
