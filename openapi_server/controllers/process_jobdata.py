@@ -13,7 +13,7 @@ def process_jobdata(jobdata: list) -> dict:
             mapping = {
                 "StartTime": "start_time",
                 "SubmitTime": "submit_time",
-                # "FinishTime": "finish_time",
+                "FinishTime": "finish_time",
                 "JobName": "job_name",
                 "User": "user_name",
                 "NodeList": "node_list",
@@ -34,7 +34,7 @@ def process_jobdata(jobdata: list) -> dict:
                 
             processed_jobdata.update({
                 job: {
-                    "finish_time": finish_time
+                    # "finish_time": finish_time
                 }
             })
 
@@ -44,6 +44,9 @@ def process_jobdata(jobdata: list) -> dict:
                     processed_jobdata[job].update({
                         mapping[key]: value
                     })
+
+            processed_jobdata[job]["finish_time"] = finish_time
+            
 
             # Convert node list (as string) to node list (as array)
             node_list_str = processed_jobdata[job]["node_list"]
