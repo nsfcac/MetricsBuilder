@@ -13,7 +13,7 @@ def process_jobdata(jobdata: list) -> dict:
             mapping = {
                 "StartTime": "start_time",
                 "SubmitTime": "submit_time",
-                "FinishTime": "finish_time",
+                # "FinishTime": "finish_time",
                 "JobName": "job_name",
                 "User": "user_name",
                 "NodeList": "node_list",
