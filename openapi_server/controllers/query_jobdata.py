@@ -48,7 +48,7 @@ def query_jobdata(processd_nodedata: list, client: object) -> list:
 
 def query_influx(sqls: list, client: object) -> list:
     """
-    Use JobAsyncioRequests to query urls
+    Use JobRequests to query urls
     """
     data = []
     try:
