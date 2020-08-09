@@ -15,4 +15,5 @@ app.add_api('openapi.yaml',
 CORS(app.app)
 
 if __name__ == '__main__':
-    app.run(port=8080, ssl_context=context)
+    # app.run(port=8080, ssl_context=context)
+    app.run(port=8080)
