@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI instance to serve metricsbuilder
+After=network.target
+
+[Service]
+User=username
+Group=nginx
+WorkingDirectory=/home/username/MetricsBuilder
+Environment="PATH=/home/username/MetricsBuilder/env/bin"
+ExecStart=/home/username/MetricsBuilder/env/bin/uwsgi --ini metricsbuilder.ini
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
