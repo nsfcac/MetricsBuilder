@@ -18,7 +18,6 @@ CORS(app.app)
 if __name__ == '__main__':
     http_server = WSGIServer(('', 8080), app, keyfile="/home/username/SSL_Certificate/server.key", 
                               certfile="/home/username/SSL_Certificate/influx_ttu_edu_cert.cer")
-    http_server.start()
-    # http_server.serve_forever()
+    http_server.serve_forever()
     # app.run(port=8080, ssl_context=context)
     # app.run(port=8080)
