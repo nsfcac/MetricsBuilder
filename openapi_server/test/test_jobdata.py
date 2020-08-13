@@ -11,6 +11,7 @@ from controllers.query_nodedata import query_nodedata
 from controllers.query_jobdata import query_jobdata
 from controllers.process_nodedata import process_nodedata
 from controllers.generate_timelist import gen_timelist, gen_epoch_timelist
+from controllers.estimate_finishtime import estimate_finishtime
 
 influx_cfg = {
     "host": "10.10.1.3",
@@ -105,14 +106,20 @@ for node_group in processed_nodedata:
                 key: value
             })
 
-processed_jobdata = query_jobdata(processed_nodedata, client)
-
-job_data = {}
-for job_group in processed_jobdata:
-    for key, value in job_group.items():
-        job_data.update({
-            key: value
-        })
+node_data_list = list(node_data.values())
 
 
-print(json.dumps(job_data, indent=4))
+with multiprocessing.Pool() as pool:
+    jobs_finishtime = pool.map(estimate_finishtime, node_data_list) 
+
+# processed_jobdata = query_jobdata(processed_nodedata, client)
+
+# job_data = {}
+# for job_group in processed_jobdata:
+#     for key, value in job_group.items():
+#         job_data.update({
+#             key: value
+#         })
+
+
+print(json.dumps(jobs_finishtime, indent=4))
