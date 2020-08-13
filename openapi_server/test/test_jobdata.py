@@ -91,9 +91,9 @@ for node_group in processed_nodedata:
 
 node_data_list = list(node_data.values())
 
-
+tuple_time_list = tuple(time_list)
 with multiprocessing.Pool() as pool:
-    estimate_finishtime_args = zip(node_data_list. repeat(time_list))
+    estimate_finishtime_args = zip(node_data_list. repeat(tuple_time_list))
     jobs_finishtime = pool.starmap(estimate_finishtime, node_data_list) 
 
 # processed_jobdata = query_jobdata(processed_nodedata, client)
