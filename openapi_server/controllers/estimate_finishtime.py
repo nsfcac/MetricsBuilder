@@ -1,11 +1,10 @@
-def estimate_finishtime(node_data: dict, tuple_time_list: tuple) -> dict:
+def estimate_finishtime(node_data: dict, time_list: tuple) -> dict:
     """
     Estimate finish time of jobs by comparing the difference of consecutive NodeJobs
     """
     prev_jobs = []
     jobs_finishtime = {}
     node_jobs = node_data['job_id']
-    time_list = list(tuple_time_list)
     time_list_len = len(time_list)
 
     for i, timestamp in enumerate(time_list):
