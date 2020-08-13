@@ -87,12 +87,12 @@ for node_group in processed_nodedata:
                 key: value
             })
 
-node_data_list = list(node_data.values())
+# node_data_list = list(node_data.values())
 
 
-with multiprocessing.Pool() as pool:
-    estimate_finishtime_args = zip(node_data_list. repeat(time_list))
-    jobs_finishtime = pool.starmap(estimate_finishtime, node_data_list) 
+# with multiprocessing.Pool() as pool:
+#     estimate_finishtime_args = zip(node_data_list. repeat(time_list))
+#     jobs_finishtime = pool.starmap(estimate_finishtime, node_data_list) 
 
 # processed_jobdata = query_jobdata(processed_nodedata, client)
 
@@ -104,4 +104,4 @@ with multiprocessing.Pool() as pool:
 #         })
 
 
-print(json.dumps(jobs_finishtime, indent=4))
+print(json.dumps(node_data, indent=4))
