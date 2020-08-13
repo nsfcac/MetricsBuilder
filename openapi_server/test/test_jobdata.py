@@ -63,7 +63,7 @@ node_list = parse_nodelist(nodelist_cfg)
 
 start = "2020-07-12T12:00:00-05:00"
 end = "2020-07-12T14:00:00-05:00"
-interval = "30m"
+interval = "5m"
 value_type = "max"
 
 start_time = util.deserialize_datetime(start)
@@ -89,7 +89,7 @@ for node_group in processed_nodedata:
                 key: value
             })
 
-# node_data_list = list(node_data.values())
+node_data_list = list(node_data.values())
 
 
 with multiprocessing.Pool() as pool:
