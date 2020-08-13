@@ -59,8 +59,6 @@ measurements = {
   ]
 }
 
-client = InfluxDBClient(host=influx_cfg['host'], port=influx_cfg['port'], database=influx_cfg['database'])
-
 node_list = parse_nodelist(nodelist_cfg)
 
 start = "2020-07-12T12:00:00-05:00"
@@ -71,32 +69,14 @@ value_type = "max"
 start_time = util.deserialize_datetime(start)
 end_time = util.deserialize_datetime(end)
 
+offset = f"{int(start_time.timestamp())}s"
+
 start_time_epoch = int(start_time.timestamp()) * 1000000000
 end_time_epoch = int(end_time.timestamp()) * 1000000000
 
 time_list = gen_epoch_timelist(start_time, end_time, interval)
 
-# print(json.dumps(time_list, indent=4))
-# print(json.dumps(time_list, indent = 4))
-
-# # cores= multiprocessing.cpu_count()
-
-# node_list = ["10.101.1.1", "10.101.2.35", "10.101.1.3"]
-# node_list = ['10.101.2.35']
-
-
-# query_nodedata_args = zip(node_list, repeat(influx_cfg), repeat(measurements),
-#                           repeat(start), repeat(end), repeat(interval), repeat(value), repeat(loop))
-
-# with multiprocessing.Pool() as pool:
-#     # query data
-#     results = pool.starmap(query_nodedata, query_nodedata_args)
-    # # process data
-    # process_nodedata_args = zip(results, repeat(time_list))
-    # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
-    # all_jobset = pool.map(generate_jobset, processd_nodedata)
-
-processed_nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), offset, interval, value_type, time_list)
+processed_nodedata = query_nodedata(node_list, influx_cfg, measurements, str(start_time_epoch), str(end_time_epoch), offset, interval, value_type, time_list)
 
 node_data = {}
 
