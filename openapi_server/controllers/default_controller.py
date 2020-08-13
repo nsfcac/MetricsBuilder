@@ -17,6 +17,7 @@ from openapi_server.mb_utils import parse_config, parse_nodelist, read_nodelist,
 from openapi_server.controllers.generate_timelist import gen_epoch_timelist
 from openapi_server.controllers.query_nodedata import query_nodedata
 from openapi_server.controllers.query_jobdata import query_jobdata
+from openapi_server.controllers.estimate_finishtime import estimate_finishtime
 
 
 ZIPJSON_KEY = 'base64(zip(o))'
@@ -154,7 +155,23 @@ def get_unified_metric(start, end, interval, value, compress, nodelist=None, met
                     node_data.update({
                         key: value
                     })
+
+        # Estimate job finish time
+        node_data_list = list(node_data.values())
+
+        with multiprocessing.Pool() as pool:
+            estimate_finishtime_args = zip(node_data_list, repeat(epoch_time_list))
+            jobs_finishtime_temp = pool.starmap(estimate_finishtime, estimate_finishtime_args)
         
+        jobs_finishtime = {}
+
+        for jobs in jobs_finishtime_temp:
+            if jobs:
+                for job_id, finishtime in jobs.items():
+                    jobs_finishtime.update({
+                        job_id: finishtime
+                    })
+
         # # Get jobs data
         processed_jobdata = query_jobdata(processed_nodedata, client)
 
@@ -164,6 +181,11 @@ def get_unified_metric(start, end, interval, value, compress, nodelist=None, met
                 job_data.update({
                     key: value
                 })
+        
+        # Update job finish time
+        for job, finishtime in jobs_finishtime.items():
+            if job in job_data:
+                job_data[job]["finish_time"] = finishtime
         
         # Aggregate time list, nodes and jobs data
         if compress:
