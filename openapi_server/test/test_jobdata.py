@@ -93,7 +93,7 @@ node_data_list = list(node_data.values())
 
 
 with multiprocessing.Pool() as pool:
-    estimate_finishtime_args = zip(node_data_list. repeat(time_list))
+    estimate_finishtime_args = zip(node_data_list, repeat(time_list))
     jobs_finishtime = pool.starmap(estimate_finishtime, estimate_finishtime_args) 
 
 # processed_jobdata = query_jobdata(processed_nodedata, client)
