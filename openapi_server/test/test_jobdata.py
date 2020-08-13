@@ -96,7 +96,7 @@ time_list = gen_epoch_timelist(start_time, end_time, interval)
     # processd_nodedata = pool.starmap(process_nodedata, process_nodedata_args)
     # all_jobset = pool.map(generate_jobset, processd_nodedata)
 
-processed_nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), interval, value_type, time_list)
+processed_nodedata = query_nodedata(node_list, client, measurements, str(start_time_epoch), str(end_time_epoch), offset, interval, value_type, time_list)
 
 node_data = {}
 
