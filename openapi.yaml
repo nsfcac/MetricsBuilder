@@ -261,6 +261,8 @@ paths:
               - TempSensor
               - CPUUsage
               - MemUsage
+              - Load
+              - SwapUsage
               - NodeJobs
         description: Monitoring metrics returned.
       responses:

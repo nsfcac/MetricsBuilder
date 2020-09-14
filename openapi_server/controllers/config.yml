@@ -34,5 +34,9 @@ measurements:
     - "UGE"
   "MemUsage":
     - "UGE"
+  "Load":
+    - "UGE"
+  "SwapUsage":
+    - "UGE"
   "NodeJobs":
     - "JobList"
