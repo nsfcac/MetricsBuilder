@@ -78,6 +78,8 @@ def aggregate_nodedata(node: str, organized: dict, time_list: list) -> dict:
         mapping = {
             "MemUsage": "memory_usage",
             "CPUUsage": "cpu_usage",
+            "Load": "load_short",
+            "SwapUsage": "swap_usage",
             "Power": "power_usage",
             "FanSensor": "fan_speed",
             "TempSensor": "cpu_inl_temp",
