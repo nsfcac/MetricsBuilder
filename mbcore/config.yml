@@ -1,0 +1,7 @@
+timescaledb: 
+  host: 0.0.0.0
+  port: 5432
+  user: monster
+  password: redraider
+  # database: demo
+  database: redraider
