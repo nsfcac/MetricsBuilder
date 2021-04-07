@@ -28,7 +28,10 @@ def main():
         host_id_map = gene_host_id_mapping(conn)
 
     job_id = 680540
-    metrics = ['systempowerconsumption', 'totalcpupower', 'totalmemorypower', 'cpuusage']
+    metrics = {
+        'idrac9': ['systempowerconsumption', 'totalcpupower', 'totalmemorypower', 'cpuusage'],
+        'slurm':['node_jobs', 'memoryusage']
+    }
     start = '2021-03-25 15:00:00-05'
     end = '2021-03-26 05:00:00-05'
     interval = '5 min'
@@ -43,8 +46,15 @@ def main():
 
     loop = asyncio.get_event_loop()
     node_metrics = loop.run_until_complete(async_query_tsdb(node_sqls, dsn))
-    print(json.dumps(node_metrics, indent=4, default=str))
 
+    # Aggregate node_jobs
+    for i, each_record in enumerate(node_metrics):
+        if 'node_jobs' in each_record:
+            agg_node_jobs = aggregate_node_jobs(each_record['node_jobs'])
+            node_metrics[i]['node_jobs'] = agg_node_jobs
+
+    dataset = gene_dataset(node_metrics)
+    print(json.dumps(dataset, indent=4, default=str))
 
 def gene_idrac9_sql(host_id: int, metric: str, start: str, end: str, 
                     interval: str, aggregate: str) -> dict:
@@ -53,11 +63,26 @@ def gene_idrac9_sql(host_id: int, metric: str, start: str, end: str,
     interval should be like '5 minutes' or '5 min'
     start and end should be in this format "2021-03-21 17:00:00-05"
     """
-    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, fqdd as label, {aggregate}(value) from idrac9.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp <= '{end}' GROUP BY time, label ORDER BY time;"
+    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, fqdd as label, {aggregate}(value) from idrac9.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time, label ORDER BY time;"
     return sql
 
 
-def gene_node_sqls(nodes: list, metrics: list, host_id_map: dict, 
+def gene_slurm_sql(host_id: int, metric: str, start: str, end: str, 
+                    interval: str, aggregate: str) -> dict:
+    """
+    Generate SQL for querying slurm metrics
+    """
+    sql = ""
+    if metric == 'node_jobs':
+        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, array_agg(jobs) as jobs, array_agg(cpus) as cpus from slurm.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time ORDER BY time;"
+    else:
+        metric = 'memoryusage'
+        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, {aggregate}(value) from slurm.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time ORDER BY time;"
+    # select time_bucket_gapfill('1 minutes', timestamp) as time, array_agg(jobs) as jobs, array_agg(cpus) as cpus from slurm.node_jobs where nodeid = {nodeid} and timestamp >= '2021-03-21 15:00:00-05' and timestamp <= '2021-03-23 15:00:00-05' group by time order by time;
+    return sql
+
+
+def gene_node_sqls(nodes: list, metrics: dict, host_id_map: dict, 
                     start: str, end: str, interval: str, aggregate: str) -> list:
     """
     Generate node-sqls
@@ -65,11 +90,21 @@ def gene_node_sqls(nodes: list, metrics: list, host_id_map: dict,
     node_sqls = []
     for node in nodes:
         host_id = host_id_map[node]
-        sqls = []
-        for metric in metrics:
+        sqls = {}
+        idrac9_sqls = []
+        slurm_sqls = []
+
+        for metric in metrics['idrac9']:
             sql = gene_idrac9_sql(host_id, metric, start, end, 
                                   interval, aggregate)
-            sqls.append(sql)
+            idrac9_sqls.append(sql)
+
+        for metric in metrics['slurm']:
+            sql = gene_slurm_sql(host_id, metric, start, end, 
+                                 interval, aggregate)
+            slurm_sqls.append(sql)
+
+        sqls = {'idrac9': idrac9_sqls, 'slurm': slurm_sqls}
         each = {'node': node, 'metrics': metrics, 'sqls': sqls}
         node_sqls.append(each)
     return node_sqls
@@ -77,15 +112,22 @@ def gene_node_sqls(nodes: list, metrics: list, host_id_map: dict,
 
 async def async_query_tsdb(node_sqls: list, dsn: str) -> list:
     """
-    node_sqls = [{'node': 'cpu-1-1', 'sqls':[]}]
+    node_sqls = [{'node': 'cpu-1-1', 'metrics':[], 'sqls':[]}]
     """
     tasks = []
     async with aiopg.create_pool(dsn) as pool:
         for each in node_sqls:
             node = each['node']
-            metrics = each['metrics']
-            for i, sql in enumerate(each['sqls']):
-                tasks.append(async_execute(node, metrics[i], sql, pool))
+
+            idrac9_metrics = each['metrics']['idrac9']
+            idrac9_sqls = each['sqls']['idrac9']
+            for i, sql in enumerate(idrac9_sqls):
+                tasks.append(async_execute(node, idrac9_metrics[i], sql, pool))
+
+            slurm_metrics = each['metrics']['slurm']
+            slurm_sqls = each['sqls']['slurm']
+            for i, sql in enumerate(slurm_sqls):
+                tasks.append(async_execute(node, slurm_metrics[i], sql, pool))
         return await asyncio.gather(*tasks) 
 
 
@@ -99,33 +141,64 @@ async def async_execute(node: str, metric: str, sql: str, pool: object) -> dict:
     except Exception as err:
         print(f"{node} : {err}")
 
-# def query_tsdb(conn: object, host: str, sql: str) -> list
-#     """
-#     Query TimeScaleDB, return host metrics in a list of tuples
-#     """
-#     cur = conn.cursor()
-#     cur.execute(sql)
-#     metrics = cur.fetchall()
-#     return {host: metrics}
 
+def aggregate_node_jobs(node_jobs: list) -> list:
+    agg_node_jobs = []
+    for record in node_jobs:
+        timestamp = record[0]
+        jobs_list = record[1]
+        cpus_list = record[2]
 
-# metrics = {}
-# time_list = []
-# label_value = {}
-# for(time, label, value) in cur.fetchall():
-#         if time not in time_list:
-#             time_list.append(time)
-#         if label not in label_value:
-#             label_value.update(
-#                 label:[value]
-#             )
-#         else:
-#             label_value[label].append(value)
-    
-#     metrics.update(
-#         "time": time_list,
-#         "values" : label_value
-#     )
+        if jobs_list:
+            jobs_cpus = {}
+            for i, jobs in enumerate(jobs_list):
+                for j, job in enumerate(jobs):
+                    job_id_str = str(job)
+                    if job_id_str not in jobs_cpus:
+                        jobs_cpus.update({
+                            job_id_str: cpus_list[i][j]
+                        })
+            agg_jobs_list = [int(job) for job in list(jobs_cpus.keys())]
+            agg_cpus_list = list(jobs_cpus.values())
+        else:
+            agg_jobs_list = []
+            agg_cpus_list = []
+        agg_node_jobs.append([timestamp, agg_jobs_list, agg_cpus_list])
+
+    return agg_node_jobs
+
+def gene_dataset(node_metrics: list) -> dict:
+    """
+    This is only for generating previous MetricsBuilder-like dataset.
+    """
+    nodes_info = {}
+    time_stamp_dt = [i[0] for i in node_metrics[0]['systempowerconsumption']]
+    time_stamp = [int(ts.timestamp()) for ts in time_stamp_dt]
+    # all_keys = list(node_metrics[0].keys())
+    # all_metrics = all_keys.pop(0)
+
+    for record in node_metrics:
+        node = record['node']
+        all_keys = list(record.keys())
+        metric = all_keys[1]
+
+        if metric == 'node_jobs' or metric == 'memoryusage':
+            values = [i[1] for i in record[metric]]
+        else:
+            values = [i[2] for i in record[metric]]
+
+        if node not in nodes_info:
+            nodes_info.update({
+                node:{
+                    metric: values
+                }
+            })
+        else:
+            nodes_info[node].update({
+                metric:values
+            })
+
+    return {'nodes_info': nodes_info, 'time_stamp': time_stamp}
 
 
 if __name__ == '__main__':
