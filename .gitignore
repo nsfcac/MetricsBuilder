@@ -70,3 +70,4 @@ target/
 #Sample data
 *.json
 *.txt
+*.out
