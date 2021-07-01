@@ -1,4 +1,5 @@
 import yaml
+import pandas as pd
 
 
 def init_tsdb_connection(config_tsdb: dict) -> str:
@@ -40,17 +41,11 @@ def parse_config(path: str) -> dict:
         print(err)
 
 
-def gene_host_id_mapping(conn: object) -> dict:
+def gene_node_id_mapping(con: object) -> dict:
     """
-    Generate hostname-id mapping dict
+    Generate nodename-id mapping dict
     """
-    mapping = {}
-    cur = conn.cursor()
-    query = "SELECT nodeid, hostname FROM nodes"
-    cur.execute(query)
-    for (nodeid, hostname) in cur.fetchall():
-        mapping.update({
-            hostname: nodeid
-        })
-    cur.close()
+    mapping_sql = "SELECT nodeid, hostname FROM nodes;"
+    mapping_df = pd.read_sql_query(mapping_sql,con=con)
+    mapping = pd.Series(mapping_df.hostname.values, index=mapping_df.nodeid).to_dict()
     return mapping

@@ -17,3 +17,5 @@ asyncio
 aiopg
 pandas
 sqlalchemy
+flask_cors
+flask
