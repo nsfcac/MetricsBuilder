@@ -11,76 +11,125 @@ import aiopg
 import asyncio
 import hostlist
 import psycopg2
+import itertools
+import pandas as pd
 
 sys.path.append('./')
-from utils import parse_config, init_tsdb_dsn, init_tsdb_connection, gene_host_id_mapping
+
+from sqlalchemy import create_engine 
+from utils import parse_config, init_tsdb_connection, gene_host_id_mapping
+
 
 def main():
     # Read configuratin file
     config = parse_config('./config.yml')
+
     # Create TimeScaleDB connection
     connection = init_tsdb_connection(config['timescaledb'])
-    dsn = init_tsdb_dsn(config['timescaledb'])
 
-    host_id_map = {}
-    with psycopg2.connect(connection) as conn:
-        # Get hostname-id mapping
-        host_id_map = gene_host_id_mapping(conn)
+    # SqlAlchemy engine
+    engine = create_engine(connection)
 
-    job_id = 680540
-    metrics = {
-        'idrac9': ['systempowerconsumption', 'totalcpupower', 'totalmemorypower', 'cpuusage', 'rpmreading'],
-        'slurm':['node_jobs', 'memoryusage']
-    }
-    start = '2021-03-25 15:00:00-05'
-    end = '2021-03-26 05:00:00-05'
-    interval = '5 min'
-    aggregate = 'max'
-    nodelist = 'cpu-23-[16-28,34-38,45-54,56-60],cpu-24-[1,5-6,16-19,38-41],cpu-25-[4-8,11-15,50-54,56-60]'
-    nodes = hostlist.expand_hostlist(nodelist)
+    sql = "SELECT time_bucket_gapfill('5 min', timestamp) as time, nodeid, jsonb_agg(jobs) as jobs, jsonb_agg(cpus) as cpus from slurm.node_jobs WHERE timestamp BETWEEN '2021-06-22 06:00:00-05' AND '2021-06-22 07:00:00-05' group by time, nodeid order by time;"
 
-    node_sqls = gene_node_sqls(nodes, metrics, host_id_map, 
-                               start, end, interval, aggregate)
-    
-    # print(json.dumps(node_sqls, indent=4))
 
-    loop = asyncio.get_event_loop()
-    node_metrics = loop.run_until_complete(async_query_tsdb(node_sqls, dsn))
+    node_jobs_df = pd.read_sql_query(sql,con=engine)
+    node_jobs = process_node_jobs_df(node_jobs_df)
+    print(json.dumps(node_jobs, indent=2))
+    # # df = pd.read_sql_query(sql,con=engine)
+    # metric = 'cpuusage'
+    # start = '2021-06-17 06:00:00-05'
+    # end = '2021-06-17 08:00:00-05'
+    # interval = '5 min'
+    # aggregate = 'max'
+    # sql = gene_idrac9_sql(metric, start, end, interval, aggregate)
 
-    print(json.dumps(node_metrics, indent=4, default=str))
-    # # Aggregate node_jobs
-    # for i, each_record in enumerate(node_metrics):
-    #     if 'node_jobs' in each_record:
-    #         agg_node_jobs = aggregate_node_jobs(each_record['node_jobs'])
-    #         node_metrics[i]['node_jobs'] = agg_node_jobs
 
-    # dataset = gene_dataset(node_metrics)
-    # print(json.dumps(dataset, indent=4, default=str))
-
-def gene_idrac9_sql(host_id: int, metric: str, start: str, end: str, 
+def gene_idrac9_sql(metric: str, start: str, end: str, 
                     interval: str, aggregate: str) -> dict:
     """
     Generate SQL for querying iDRAC9 metrics
     interval should be like '5 minutes' or '5 min'
     start and end should be in this format "2021-03-21 17:00:00-05"
     """
-    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, fqdd as label, {aggregate}(value) from idrac9.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time, label ORDER BY time;"
+    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, nodeid, fqdd as label, {aggregate}(value) as value from idrac9.{metric} WHERE timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time, nodeid, label ORDER BY time;"
     return sql
 
 
-def gene_slurm_sql(host_id: int, metric: str, start: str, end: str, 
+def gene_slurm_sql(metric: str, start: str, end: str, 
                     interval: str, aggregate: str) -> dict:
     """
     Generate SQL for querying slurm metrics
     """
     sql = ""
     if metric == 'node_jobs':
-        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, array_agg(jobs) as jobs, array_agg(cpus) as cpus from slurm.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time ORDER BY time;"
+        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, nodeid, jsonb_agg(jobs) as jobs, jsonb_agg(cpus) as cpus from slurm.{metric} WHERE timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time, nodeid ORDER BY time;"
     else:
         metric = 'memoryusage'
-        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, {aggregate}(value) from slurm.{metric} WHERE nodeid = {host_id} AND timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time ORDER BY time;"
-    # select time_bucket_gapfill('1 minutes', timestamp) as time, array_agg(jobs) as jobs, array_agg(cpus) as cpus from slurm.node_jobs where nodeid = {nodeid} and timestamp >= '2021-03-21 15:00:00-05' and timestamp <= '2021-03-23 15:00:00-05' group by time order by time;
+        sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) as time, nodeid, {aggregate}(value) from slurm.{metric} WHERE timestamp >= '{start}' AND timestamp < '{end}' GROUP BY time, nodeid ORDER BY time;"
     return sql
+
+
+def process_node_jobs_df(node_jobs_df):
+    nodes_info = {}
+    node_jobs_df['time'] = node_jobs_df['time'].apply(lambda x: int(x.timestamp()))
+    node_jobs_df['fl_jobs'] = node_jobs_df.apply(lambda df_row: flatten_array(df_row, 'jobs'), axis = 1)
+    node_jobs_df['fl_cpus'] = node_jobs_df.apply(lambda df_row: flatten_array(df_row, 'cpus'), axis = 1)
+    node_jobs_df.drop(columns = ['jobs', 'cpus'], inplace = True)
+    node_jobs_df.rename(columns={'fl_jobs': 'jobs', 'fl_cpus': 'cpus'}, inplace = True)
+
+    grouped_df = node_jobs_df.groupby(['nodeid'])[['time', 'jobs', 'cpus']]
+    for key, item in grouped_df:
+        # print(grouped_df.get_group(key), "\n\n")
+        # # print(key)
+        # print(f'{key} - Time')
+        # print(grouped_df.get_group(key)['time'].tolist())
+        # print('jobs')
+        jobs = grouped_df.get_group(key)['jobs'].tolist()
+        # print('cpus')
+        cpus = grouped_df.get_group(key)['cpus'].tolist()
+        nodes_info.update({
+            key:{
+            'jobs': jobs,
+            'cpus': cpus
+            }
+        })
+    # print(json.dumps(out, indent=4, default=str))
+    # print(node_jobs_df.groupby('nodeid').apply(lambda x: x.to_json(orient='records')))
+    # .apply(lambda n_j_df: convert_df_json(n_j_df))
+    return nodes_info
+
+
+def convert_df_json(n_j_df):
+    columns = n_j_df.columns
+    for column in columns:
+        n_j_df[column].tolist()
+    return
+
+
+def flatten_array(df_row, column: str):
+    jobs = []
+    cpus = []
+    job_id_array = df_row['jobs']
+    cpus_array = df_row['cpus']
+    try:
+        if job_id_array:
+            # Flatten array
+            fl_job_id_array = [item for sublist in job_id_array for item in sublist]
+            fl_cpus_array = [item for sublist in cpus_array for item in sublist]
+
+            # Only keep unique jobs
+            for i, job in enumerate(fl_job_id_array):
+                if job not in jobs:
+                    jobs.append(job)
+                    cpus.append(fl_cpus_array[i])
+    except:
+        # print(f"{df_row['time']} - {df_row['nodeid']}")
+        pass
+    if column == 'jobs':
+        return jobs
+    else:
+        return cpus
 
 
 def gene_node_sqls(nodes: list, metrics: dict, host_id_map: dict, 
@@ -111,38 +160,6 @@ def gene_node_sqls(nodes: list, metrics: dict, host_id_map: dict,
     return node_sqls
 
 
-async def async_query_tsdb(node_sqls: list, dsn: str) -> list:
-    """
-    node_sqls = [{'node': 'cpu-1-1', 'metrics':[], 'sqls':[]}]
-    """
-    tasks = []
-    async with aiopg.create_pool(dsn) as pool:
-        for each in node_sqls:
-            node = each['node']
-
-            idrac9_metrics = each['metrics']['idrac9']
-            idrac9_sqls = each['sqls']['idrac9']
-            for i, sql in enumerate(idrac9_sqls):
-                tasks.append(async_execute(node, idrac9_metrics[i], sql, pool))
-
-            slurm_metrics = each['metrics']['slurm']
-            slurm_sqls = each['sqls']['slurm']
-            for i, sql in enumerate(slurm_sqls):
-                tasks.append(async_execute(node, slurm_metrics[i], sql, pool))
-        return await asyncio.gather(*tasks) 
-
-
-async def async_execute(node: str, metric: str, sql: str, pool: object) -> dict:
-    try:
-        async with pool.acquire() as conn:
-            async with conn.cursor() as cur:
-                await cur.execute(sql)
-                resp = await cur.fetchall()
-                return {'node': node, metric: resp}
-    except Exception as err:
-        print(f"{node} : {err}")
-
-
 def aggregate_node_jobs(node_jobs: list) -> list:
     agg_node_jobs = []
     for record in node_jobs:
@@ -167,6 +184,7 @@ def aggregate_node_jobs(node_jobs: list) -> list:
         agg_node_jobs.append([timestamp, agg_jobs_list, agg_cpus_list])
 
     return agg_node_jobs
+
 
 def gene_dataset(node_metrics: list) -> dict:
     """

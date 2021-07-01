@@ -10,7 +10,7 @@ def init_tsdb_connection(config_tsdb: dict) -> str:
     db_user = config_tsdb['user']
     db_pswd = config_tsdb['password']
     db_dbnm = config_tsdb['database']
-    connection = f"postgres://{db_user}:{db_pswd}@{db_host}:{db_port}/{db_dbnm}"
+    connection = f"postgresql://{db_user}:{db_pswd}@{db_host}:{db_port}/{db_dbnm}"
     return connection
 
 

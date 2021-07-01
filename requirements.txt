@@ -15,3 +15,5 @@ psycopg2
 python-hostlist
 asyncio
 aiopg
+pandas
+sqlalchemy
