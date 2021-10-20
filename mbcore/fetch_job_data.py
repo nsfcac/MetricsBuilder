@@ -53,7 +53,7 @@ def fetch_job_data(starttime: str, endtime: str):
     # df = get_jobs_acct_df(jobids, attributes)
     df = get_jobs_acct_df(starttime, endtime, attributes)
 
-    if df:
+    if not df.empty:
         df = process_jobs_acct_df(df)
         df = df.set_index('job_id')
 

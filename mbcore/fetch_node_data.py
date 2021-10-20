@@ -1,6 +1,7 @@
 
 import sys
 import pandas as pd
+from multiprocessing import Pool
 
 sys.path.append('./')
 
@@ -32,8 +33,14 @@ def fetch_node_data(metrics: list,
                                    end, 
                                    interval, 
                                    aggregate)
+                                   
     node_jobs_df = pd.read_sql_query(node_jobs_sql,con=engine)
     node_jobs = process_node_jobs_df(node_jobs_df, mapping)
+
+    # Use multiprocessing
+    # process_num = len(metrics)
+    # with Pool(process_num) as p:
+    #     p.map()
 
     for metric in metrics:
         metric_data = query_metric(metric, start, end, interval, 
@@ -64,15 +71,16 @@ def query_metric(metric: str,
     Query monitoring data from TSDB and produce dict format data.
     """
     # memoryusage from iDRAC9 is not available, we get it from slurm
-    if metric == 'memoryusage':
+    if metric in ['memoryusage', 'cpu_load', 'memory_used']:
         sql = gene_slurm_sql(metric, start, end, interval, aggregate)
     else:
         sql = gene_idrac9_sql(metric, start, end, interval, aggregate)
 
     df = pd.read_sql_query(sql,con=engine)
 
-    if metric =='memoryusage':
+    if metric in ['memoryusage', 'cpu_load', 'memory_used']:
         metric_info = process_slurm_df(metric, df, mapping)
     else:
         metric_info = process_idrac9_df(metric, df, mapping)
+    
     return metric_info

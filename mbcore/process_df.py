@@ -3,15 +3,10 @@ def process_idrac9_df(metric: str, idrac9_df: object, mapping: dict) -> dict:
     Process idrac9 metrics dataframe
     """
     nodes_info = {}
-    metric_name = ''
-    if metric in ['systempowerconsumption', 'totalmemorypower', \
-                  'totalcpupower', 'cpuusage']:
-        metric_name = metric
     grouped_df = idrac9_df.groupby(['nodeid', 'label'])
     for key, item in grouped_df:
         node_name = mapping[key[0]]
-        if not metric_name:
-            metric_name = f'{metric}-{key[1]}'
+        metric_name = f'{metric}-{key[1]}'
         metric_value = grouped_df.get_group(key)['value'].tolist()
         if node_name not in nodes_info:
             nodes_info.update({
@@ -54,29 +49,32 @@ def process_node_jobs_df(node_jobs_df:object, mapping: dict) -> dict:
     Process node_jobs dataframe which is get from node_jobs table in TSDB.
     """
     node_jobs = {}
-    node_jobs_df['time'] = node_jobs_df['time'].apply(
-        lambda x: int(x.timestamp())
-    )
-    node_jobs_df['fl_jobs'] = node_jobs_df.apply(
-        lambda df_row: flatten_array(df_row, 'jobs'), axis = 1)
-    node_jobs_df['fl_cpus'] = node_jobs_df.apply(
-        lambda df_row: flatten_array(df_row, 'cpus'), axis = 1)
-    node_jobs_df.drop(columns = ['jobs', 'cpus'], 
-                      inplace = True)
-    node_jobs_df.rename(columns={'fl_jobs': 'jobs', 'fl_cpus': 'cpus'}, 
-                       inplace = True)
+    try:
+        node_jobs_df['time'] = node_jobs_df['time'].apply(
+            lambda x: int(x.timestamp())
+        )
+        node_jobs_df['fl_jobs'] = node_jobs_df.apply(
+            lambda df_row: flatten_array(df_row, 'jobs'), axis = 1)
+        node_jobs_df['fl_cpus'] = node_jobs_df.apply(
+            lambda df_row: flatten_array(df_row, 'cpus'), axis = 1)
+        node_jobs_df.drop(columns = ['jobs', 'cpus'], 
+                        inplace = True)
+        node_jobs_df.rename(columns={'fl_jobs': 'jobs', 'fl_cpus': 'cpus'}, 
+                        inplace = True)
 
-    grouped_df = node_jobs_df.groupby(['nodeid'])#[['time', 'jobs', 'cpus']]
-    for key, item in grouped_df:
-        jobs = grouped_df.get_group(key)['jobs'].tolist()
-        cpus = grouped_df.get_group(key)['cpus'].tolist()
-        node_name = mapping[key]
-        node_jobs.update({
-            node_name:{
-                'jobs': jobs,
-                'cpus': cpus
-            }
-        })
+        grouped_df = node_jobs_df.groupby(['nodeid'])#[['time', 'jobs', 'cpus']]
+        for key, item in grouped_df:
+            jobs = grouped_df.get_group(key)['jobs'].tolist()
+            cpus = grouped_df.get_group(key)['cpus'].tolist()
+            node_name = mapping[key]
+            node_jobs.update({
+                node_name:{
+                    'jobs': jobs,
+                    'cpus': cpus
+                }
+            })
+    except Exception as err:
+        pass
     return node_jobs
 
 
