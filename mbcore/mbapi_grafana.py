@@ -65,64 +65,6 @@ def search():
     # avail_metrics = get_avail_metrics_flat(CONNECTION, METADATA, ENGINE)
     return jsonify(avail_metrics)
 
-'''
-######################## For demo purpose ########################
-@app.route('/metrics', methods=['GET'])
-@cross_origin()
-def metrics():
-    # Get Available metrics (including fqdd)
-    avail_metrics = get_avail_metrics(CONNECTION, METADATA, ENGINE)
-    
-    return jsonify(avail_metrics)
-
-
-@app.route('/users', methods=['GET'])
-@cross_origin()
-def users():
-    # Get Available users
-    now = dt.datetime.now()
-    prev = now - dt.timedelta(hours=1)
-    time_from = prev.strftime(DATETIME_FORMAT)
-    time_to = now.strftime(DATETIME_FORMAT)
-    partitions = ['quanah', 'nocona', 'matador']
-
-    avail_users = get_avail_users(time_from, time_to, partitions)
-    
-    return jsonify(avail_users)
-
-@app.route('/demo', methods=['GET'])
-@cross_origin()
-def demo():
-    # Get demo metrics
-    demo_metrics = []
-    metric_list = ['TemperatureReading', 'SystemPowerConsumption']
-    metric_fqdd_mapping = {
-        'TemperatureReading': ['DIMM.Socket.A1', 'DIMM.Socket.A2'],
-        'SystemPowerConsumption': ['PowerMetrics']
-    }
-    now = dt.datetime.now()
-    prev = now - dt.timedelta(hours=1)
-    time_from = prev.strftime(DATETIME_FORMAT)
-    time_to = now.strftime(DATETIME_FORMAT)
-    partition = 'nocona'
-    interval = '5m'
-    aggregation = 'max'
-
-    for metric in metric_list:
-        for fqdd in metric_fqdd_mapping[metric]:
-            metric_readings = query_filter_metrics(metric,
-                                                   fqdd,
-                                                   NODE_ID_MAPPING,
-                                                   time_from,
-                                                   time_to,
-                                                   interval,
-                                                   aggregation,
-                                                   partition)
-            demo_metrics.append(metric_readings)
-    
-    return jsonify(demo_metrics)
-###################################################################
-'''
 
 @app.route('/query', methods=['POST'])
 @cross_origin()
@@ -147,12 +89,14 @@ def query():
 
     for target in targets:
         req_metric = target.get('metric', '')
-        req_type = target['type']
+        req_type = target.get('type', '')
+        nodes = target.get('nodes', '')
         if req_metric and req_type == 'metrics':
             metric = req_metric.split(' | ')[0]
             fqdd = req_metric.split(' | ')[1]
             metrics = query_filter_metrics(metric, 
-                                           fqdd, 
+                                           fqdd,
+                                           nodes,
                                            NODE_ID_MAPPING, 
                                            time_from,
                                            time_to,
@@ -161,7 +105,6 @@ def query():
                                            partition)
             results.append(metrics)
         if req_type == 'jobs':
-            # Change the array representation ['cpu1'] -> '{cpu1}'
             users = target.get('users', '')
             if not users:
                 users = get_avail_users(time_from, time_to, partition)
@@ -176,6 +119,7 @@ def query():
 
 def query_filter_metrics(metric: str,
                          fqdd: str,
+                         nodes: list,
                          NODE_ID_MAPPING,
                          time_from: str,
                          time_to: str,
@@ -192,12 +136,15 @@ def query_filter_metrics(metric: str,
                           aggregation)
     df = pd.read_sql_query(sql,con=ENGINE)
 
+    # Filter nodes
+    fi_df = df[df['nodeid'].isin(nodes)].copy()
+
     # Convert node id to node name
-    df['nodeid'] = df['nodeid'].apply(lambda x: NODE_ID_MAPPING[x])
-    df['label'] = df['label'].apply(lambda x: f'{metric}|{x}')
+    fi_df['nodeid'] = fi_df['nodeid'].apply(lambda x: NODE_ID_MAPPING[x])
+    fi_df['label'] = fi_df['label'].apply(lambda x: f'{metric}|{x}')
 
     # Pivot the table
-    df_p = df.pivot(index='time', columns=['nodeid', 'label'], values='value')
+    df_p = fi_df.pivot(index='time', columns=['nodeid', 'label'], values='value')
     
     # Flatten the table
     df_p.columns = [ '|'.join([str(c) for c in c_list]) for c_list in df_p.columns.values ]
@@ -231,43 +178,6 @@ def metrics_df_to_response(df)-> dict:
     return response
 
 
-# def dataframe_to_response(target, df, freq=None):
-#     response = []
-
-#     if df.empty:
-#         return response
-
-#     if freq is not None:
-#         orig_tz = df.index.tz
-#         df = df.tz_convert('UTC').resample(rule=freq, label='right', closed='right', how='mean').tz_convert(orig_tz)
-
-#     if isinstance(df, pd.Series):
-#         response.append(_series_to_response(df, target))
-#     elif isinstance(df, pd.DataFrame):
-#         for col in df:
-#             response.append(_series_to_response(df[col], target))
-
-#     return response
-
-
-# def _series_to_response(df, target):
-#     if df.empty:
-#         return {'target': '%s' % (target),
-#                 'datapoints': []}
-
-#     sorted_df = df.dropna().sort_index()
-
-#     try:
-#         timestamps = (sorted_df.index.astype(pd.np.int64) // 10 ** 6).values.tolist()
-#     except:
-#         timestamps = (sorted_df.index.astype(pd.np.int64) // 10 ** 6).tolist()
-
-#     values = sorted_df.values.tolist()
-
-#     return {'target': '%s' % (df.name),
-#             'datapoints': zip(values, timestamps)}
-
-
 def query_filter_jobs(users: list,
                       time_from: str,
                       time_to: str,
@@ -282,7 +192,11 @@ def jobs_df_to_response(df)-> dict:
     columns = []
     selected_columns = ['job_id', 'name', 'user_id', 'user_name', 'nodes', 
                         'node_count', 'cpus', 'start_time', 'end_time']
-    selected_df = df[selected_columns]
+    selected_df = df[selected_columns].copy()
+
+    # convert ['cpu-1-1', 'cpu-1-2'] -> '{cpu-1-1, cpu-1-1}'
+    selected_df['nodes'] = selected_df['nodes'].apply(lambda x: '{' + ', '.join(x) + '}')
+    
     columns_raw = list(selected_df.columns)
     for column in columns_raw:
         if column in ['job_id', 'user_id', 'cpus', 'start_time', 'end_time']:
