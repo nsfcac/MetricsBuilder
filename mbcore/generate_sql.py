@@ -17,6 +17,8 @@ def gene_idrac9_sql(metric: str,
         schema = 'idrac9'
     if partition == 'matador':
         schema = 'idrac9_gpu'
+    if partition == 'quanah':
+        schema = 'idrac8'
 
     sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) AS time, \
         nodeid, fqdd AS label, {aggregation}(value) AS value \
@@ -45,6 +47,20 @@ def gene_slurm_jobs_sql(time_from: str,
             WHERE partition = '{partition}' \
             AND start_time < {epoch_to} \
             AND end_time > {epoch_from};"
+    return sql
+
+
+def gene_node_jobs_sql(time_from: str, time_to: str, interval: str) -> str:
+    """
+    Generate SQL for querying node-jobs correlation
+    """
+    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) AS time, \
+            nodeid, jsonb_agg(jobs) AS jobs, jsonb_agg(cpus) AS cpus \
+            FROM slurm.node_jobs \
+            WHERE timestamp >= '{time_from}' \
+            AND timestamp <= '{time_to}' \
+            GROUP BY time, nodeid \
+            ORDER BY time;"
     return sql
 
 
