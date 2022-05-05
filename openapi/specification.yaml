@@ -1,0 +1,1077 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: jie.li@ttu.edu
+    name: Jie Li
+  description: MetricsBuilder APIs for Accessing Monitoring Metrics Collected via
+    MonSter.
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  title: MetricsBuilder API
+  version: 2.0.0
+servers:
+- description: Local development server
+  url: http://localhost:{port}/{basePath}
+  variables:
+    port:
+      default: "5001"
+    basePath:
+      default: v2
+- description: Hugo Server
+  url: http://hugo.hpcc.ttu.edu:{port}/{basePath}
+  variables:
+    port:
+      default: "5000"
+    basePath:
+      default: v2
+paths:
+  /metricsbuilder/{partition}:
+    get:
+      description: Execute queries for metrics, job information, etc.
+      operationId: metricsbuilder
+      parameters:
+      - description: The target partition of the HPC cluster
+        explode: false
+        in: path
+        name: partition
+        required: true
+        schema:
+          default: nocona
+          example: nocona
+          type: string
+        style: simple
+      - description: Start time of the time range
+        explode: true
+        in: query
+        name: start
+        required: false
+        schema:
+          example: 2022-04-16T10:00:00-05:00
+          format: date-time
+          type: string
+        style: form
+      - description: End time of the time range
+        explode: true
+        in: query
+        name: end
+        required: false
+        schema:
+          example: 2022-04-16T12:00:00-05:00
+          format: date-time
+          type: string
+        style: form
+      - description: Time interval for aggregating the metrics.
+        explode: true
+        in: query
+        name: interval
+        required: false
+        schema:
+          default: 5m
+          example: 5m
+          pattern: ^[1-9][0-9]*[s, m, h, d, w]$
+          type: string
+        style: form
+      - description: Aggregation function.
+        explode: true
+        in: query
+        name: aggregation
+        required: false
+        schema:
+          default: max
+          enum:
+          - min
+          - max
+          - mean
+          - median
+          example: max
+          type: string
+        style: form
+      - description: Target nodes in the cluster.
+        explode: true
+        in: query
+        name: nodelist
+        required: false
+        schema:
+          default: 10.101.23.[1-60],10.101.24.[1-60],10.101.25.[1-60],10.101.26.[1-60]
+          example: 10.101.23.[1-60],10.101.24.[1-10,50-60]
+          type: string
+        style: form
+      - description: Selected Metrics.
+        explode: true
+        in: query
+        name: metrics
+        required: false
+        schema:
+          default:
+          - SystemPower
+          - FanSensor
+          - TempSensor
+          - NodeJobs
+          - JobsInfo
+          items:
+            enum:
+            - SystemPower
+            - CPUPower
+            - MemPower
+            - FanSensor
+            - TempSensor
+            - CPUUsage
+            - MemUsage
+            - NodeJobs
+            - JobsInfo
+            type: string
+          type: array
+        style: form
+      - description: Return compressed data.
+        explode: true
+        in: query
+        name: compress
+        required: false
+        schema:
+          default: true
+          enum:
+          - true
+          - false
+          example: true
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                jobs_info:
+                  "5000001":
+                    name: test1
+                    cpus: 200,
+                    node_count: 2
+                    batch_host: cpu-23-26
+                    nodes:
+                    - cpu-23-26
+                    - cpu-23-27
+                    start_time: 1648956168
+                    end_time: 1684956168
+                    user_id: 100001
+                    user_name: username1
+                nodes_info:
+                  cpu-23-1:
+                    cores:
+                    - - 64
+                      - 35
+                    - - 64
+                      - 35
+                    cpu_load:
+                    - 6252.0
+                    - 6687.0
+                    job_id:
+                    - - 5688032
+                      - 5689127
+                    - - 5688032
+                      - 5689127
+                    memory_used:
+                    - 55452.0
+                    - 57897.0
+                    iDRAC.Embedded.1#CPU1Temp:
+                    - 46.0
+                    - 46.0
+                    Fan.Embedded.1A:
+                    - 5762.0
+                    - 5848.0
+                time_stamp:
+                - 1651149550
+                - 1651149850
+              schema:
+                $ref: '#/components/schemas/WebResponseMetrics'
+          description: Return metrics for web applications
+        default:
+          content:
+            application/json:
+              example:
+                name: ERROR
+                message: Internal Server Error
+              schema:
+                $ref: '#/components/schemas/inline_response_default'
+          description: default error
+      summary: Query Metrics for Web Applications
+      x-openapi-router-controller:  openapi_server.controllers.default_controller
+  /query:
+    post:
+      description: Execute queries for metrics, job information, etc.
+      operationId: query
+      requestBody:
+        content:
+          application/json:
+            example:
+              app: dashboard
+              dashboardId: 5
+              interval: 15s
+              intervalMs: 15000
+              maxDataPoints: 5773
+              panelId: 2
+              range:
+                from: 2022-04-16T10:00:00.000Z
+                to: 2022-04-16T12:00:00.000Z
+              rangeRaw:
+                from: 2022-04-16T10:00:00.000Z
+                to: 2022-04-16T12:00:00.000Z
+              requestId: Q108
+              scopedVars:
+                __interval:
+                  text: 15s
+                  value: 15s
+                __interval_ms:
+                  text: "15000"
+                  value: "15000"
+                startTime: 1633068850927
+              targets:
+              - refId: A
+                type: metrics
+                users:
+                - "98727"
+                - "54371"
+                jobs:
+                - "1111"
+                - "1112"
+                nodes:
+                - cpu-1-1
+                - cpu-1-2
+              required: true
+              timeInfo: ""
+              timezone: browser
+            schema:
+              $ref: '#/components/schemas/RequestMetrics'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                columns:
+                - type: number
+                  text: CPU Temp 1
+                  label: '| cpu-23-12'
+                - type: number
+                  text: CPU Temp 2
+                  label: '| cpu-23-12'
+                rows:
+                - - 85
+                  - 45
+                - - 80
+                  - 48
+              schema:
+                $ref: '#/components/schemas/ResponseMetrics'
+          description: Return grafana table structure for each target request
+        default:
+          content:
+            application/json:
+              example:
+                name: ERROR
+                message: Internal Server Error
+              schema:
+                $ref: '#/components/schemas/inline_response_default'
+          description: default error
+      summary: Query Metrics for Grafana Plugins
+      x-openapi-router-controller:  openapi_server.controllers.default_controller
+  /queue:
+    get:
+      operationId: queue
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                timestamp: 1651181880
+                queue_status:
+                - ACCOUNT: default
+                - TRES_PER_NODE: gpu:1
+                - MIN_CPUS: "1"
+                - MIN_TMP_DISK: "0"
+                - END_TIME: 1651206259
+                - FEATURES: (null)
+                - GROUP: CS
+                - OVER_SUBSCRIBE: OK
+                - JOBID: "5692509"
+                - NAME: models
+                - COMMENT: (null)
+                - TIME_LIMIT: 10:00:00
+                - MIN_MEMORY: 9639M
+                - REQ_NODES: ""
+                - COMMAND: /home/user/project/code/job.sh
+                - PRIORITY: "0.00000131200068"
+                - QOS: normal
+                - REASON: None
+                - ST: R
+                - USER: username1
+                - RESERVATION: (null)
+                - WCKEY: (null)
+                - EXC_NODES: ""
+                - NICE: "0"
+                - S:C:T: '*:*:*'
+                - EXEC_HOST: cpu-23-1
+                - CPUS: 1
+                - NODES: "1"
+                - DEPENDENCY: (null)
+                - ARRAY_JOB_ID: "5692509"
+                - SOCKETS_PER_NODE: '*'
+                - CORES_PER_SOCKET: '*'
+                - THREADS_PER_CORE: '*'
+                - ARRAY_TASK_ID: N/A
+                - TIME_LEFT: 6:46:19
+                - TIME: 3:13:41
+                - NODELIST:
+                  - cpu-23-1
+                - CONTIGUOUS: "0"
+                - PARTITION: nocona
+                - NODELIST(REASON): cpu-23-1
+                - START_TIME: 1651170259
+                - STATE: RUNNING
+                - UID: "100011"
+                - SUBMIT_TIME: 1651170257
+                - LICENSES: (null)
+                - CORE_SPEC: N/A
+                - SCHEDNODES: (null)
+                - WORK_DIR: /home/user/project/code
+              schema:
+                $ref: '#/components/schemas/QueueStatus'
+          description: Get qeueu status succesfully.
+        default:
+          content:
+            application/json:
+              example:
+                name: ERROR
+                message: Internal Server Error
+              schema:
+                $ref: '#/components/schemas/inline_response_default'
+          description: default error
+      summary: Get Queue Status of Slurm
+      x-openapi-router-controller:  openapi_server.controllers.default_controller
+  /search:
+    get:
+      description: Return available metrics of iDRAC and Slurm
+      operationId: search
+      parameters:
+      - description: Target partition of the HPC cluster
+        explode: true
+        in: query
+        name: partition
+        required: false
+        schema:
+          default: nocona
+          enum:
+          - quanah
+          - nocona
+          - matador
+          example: cocona
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                name: root
+                children:
+                - name: slurm
+                  children:
+                  - name: Memory Usage
+                    value: slurm | memoryusage | Memory Usage
+                  - name: CPU Load
+                    value: slurm | cpu_load | CPU Load
+                - name: idrac
+                  children:
+                  - name: System Power Consumption
+                    value: idrac | systempowerconsumption | System Power Consumption
+                  - name: CPU Power Consumption
+                    value: idrac | cpupowerconsumption | CPU Power Consumption
+              schema:
+                $ref: '#/components/schemas/AvailableMetrics'
+          description: Get available metrics succesfully.
+        default:
+          content:
+            application/json:
+              example:
+                name: ERROR
+                message: Internal Server Error
+              schema:
+                $ref: '#/components/schemas/inline_response_default'
+          description: default error
+      summary: Get Available Metric Names for Grafana Plugins
+      x-openapi-router-controller:  openapi_server.controllers.default_controller
+components:
+  responses:
+    DefaultError:
+      content:
+        application/json:
+          example:
+            name: ERROR
+            message: Internal Server Error
+          schema:
+            $ref: '#/components/schemas/inline_response_default'
+      description: default error
+  schemas:
+    MetricFqdd:
+      example:
+        children:
+          name: name
+          value: value
+        name: name
+      properties:
+        name:
+          title: name
+          type: string
+        children:
+          $ref: '#/components/schemas/MetricFqdd_children'
+      title: MetricFqdd
+      type: object
+    MetricSource:
+      example:
+        children:
+        - children:
+            name: name
+            value: value
+          name: name
+        - children:
+            name: name
+            value: value
+          name: name
+        name: name
+      properties:
+        name:
+          title: name
+          type: string
+        children:
+          items:
+            $ref: '#/components/schemas/MetricFqdd'
+          title: children
+          type: array
+      title: MetricSource
+      type: object
+    AvailableMetrics:
+      example:
+        children:
+        - children:
+          - children:
+              name: name
+              value: value
+            name: name
+          - children:
+              name: name
+              value: value
+            name: name
+          name: name
+        - children:
+          - children:
+              name: name
+              value: value
+            name: name
+          - children:
+              name: name
+              value: value
+            name: name
+          name: name
+        name: name
+      properties:
+        name:
+          title: name
+          type: string
+        children:
+          items:
+            $ref: '#/components/schemas/MetricSource'
+          title: children
+          type: array
+      title: AvailableMetrics
+      type: object
+    TimeRange:
+      example:
+        from: from
+        to: to
+      properties:
+        from:
+          title: from
+          type: string
+        to:
+          title: to
+          type: string
+      title: TimeRange
+      type: object
+    Interval:
+      example:
+        text: text
+        value: value
+      properties:
+        text:
+          title: text
+          type: string
+        value:
+          title: value
+          type: string
+      title: Interval
+      type: object
+    RequestMetrics:
+      example:
+        app: app
+        maxDataPoints: 1.4658129805029452
+        panelId: 5.962133916683182
+        timezone: timezone
+        scopedVars:
+          __interval:
+            text: text
+            value: value
+          startTime: 5.637376656633329
+          __interval_ms:
+            text: text
+            value: value
+        range:
+          from: from
+          to: to
+        targets:
+        - nodes:
+          - nodes
+          - nodes
+          jobs:
+          - jobs
+          - jobs
+          refId: refId
+          type: metrics
+          users:
+          - users
+          - users
+          required: true
+        - nodes:
+          - nodes
+          - nodes
+          jobs:
+          - jobs
+          - jobs
+          refId: refId
+          type: metrics
+          users:
+          - users
+          - users
+          required: true
+        intervalMs: 6.027456183070403
+        timeInfo: timeInfo
+        dashboardId: 0.8008281904610115
+        requestId: requestId
+        rangeRaw:
+          from: from
+          to: to
+        interval: interval
+      properties:
+        app:
+          title: app
+          type: string
+        dashboardId:
+          title: dashboardId
+          type: number
+        interval:
+          title: interval
+          type: string
+        intervalMs:
+          title: intervalMs
+          type: number
+        maxDataPoints:
+          title: maxDataPoints
+          type: number
+        panelId:
+          title: panelId
+          type: number
+        range:
+          $ref: '#/components/schemas/TimeRange'
+        rangeRaw:
+          $ref: '#/components/schemas/TimeRange'
+        requestId:
+          title: requestId
+          type: string
+        scopedVars:
+          $ref: '#/components/schemas/RequestMetrics_scopedVars'
+        targets:
+          items:
+            $ref: '#/components/schemas/RequestMetrics_targets'
+          title: targets
+          type: array
+        timeInfo:
+          title: timeInfo
+          type: string
+        timezone:
+          title: timezone
+          type: string
+      required:
+      - app
+      - dashboardId
+      - interval
+      - intervalMs
+      - maxDataPoints
+      - panelId
+      - range
+      - rangeRaw
+      - requestId
+      - scopedVars
+      - targets
+      - timeInfo
+      - timezone
+      title: RequestMetrics
+      type: object
+    ResponseMetrics:
+      items:
+        properties:
+          columns:
+            items:
+              properties:
+                type:
+                  enum:
+                  - number
+                  - time
+                  - string
+                  type: string
+                text:
+                  type: string
+                label:
+                  type: string
+              required:
+              - text
+              - type
+              type: object
+            type: array
+          rows:
+            items:
+              items:
+                oneOf:
+                - type: string
+                - type: number
+              type: array
+            type: array
+        type: object
+      type: array
+    WebResponseMetrics:
+      example:
+        nodes_info:
+        - '{}'
+        - '{}'
+        jobs_info:
+        - '{}'
+        - '{}'
+        time_stamp:
+        - 0
+        - 0
+      properties:
+        nodes_info:
+          items:
+            type: object
+          title: nodes_info
+          type: array
+        jobs_info:
+          items:
+            type: object
+          title: jobs_info
+          type: array
+        time_stamp:
+          items:
+            type: integer
+          title: time_stamp
+          type: array
+      title: WebResponseMetrics
+    SlurmData:
+      example:
+        TRES_PER_NODE: TRES_PER_NODE
+        NODELIST:
+        - NODELIST
+        - NODELIST
+        START_TIME: 5.962133916683182
+        RESERVATION: RESERVATION
+        CORES_PER_SOCKET: CORES_PER_SOCKET
+        STATE: STATE
+        PRIORITY: PRIORITY
+        COMMENT: COMMENT
+        EXEC_HOST: EXEC_HOST
+        SCHEDNODES: SCHEDNODES
+        JOBID: JOBID
+        GROUP: GROUP
+        REQ_NODES: REQ_NODES
+        ACCOUNT: ACCOUNT
+        MIN_MEMORY: MIN_MEMORY
+        END_TIME: 6.027456183070403
+        DEPENDENCY: DEPENDENCY
+        SUBMIT_TIME: 5.637376656633329
+        CPUS: 1.4658129805029452
+        ARRAY_TASK_ID: ARRAY_TASK_ID
+        LICENSES: LICENSES
+        COMMAND: COMMAND
+        WCKEY: WCKEY
+        S:C:T: S:C:T
+        PARTITION: PARTITION
+        REASON: REASON
+        NODELIST(REASON): NODELIST(REASON)
+        OVER_SUBSCRIBE: OVER_SUBSCRIBE
+        CORE_SPEC: CORE_SPEC
+        ST: ST
+        NODES: NODES
+        EXC_NODES: EXC_NODES
+        THREADS_PER_CORE: THREADS_PER_CORE
+        CONTIGUOUS: CONTIGUOUS
+        SOCKETS_PER_NODE: SOCKETS_PER_NODE
+        TIME: TIME
+        USER: USER
+        MIN_CPUS: MIN_CPUS
+        FEATURES: FEATURES
+        NAME: NAME
+        UID: UID
+        WORK_DIR: WORK_DIR
+        QOS: QOS
+        NICE: NICE
+        ARRAY_JOB_ID: ARRAY_JOB_ID
+        TIME_LIMIT: TIME_LIMIT
+        MIN_TMP_DISK: MIN_TMP_DISK
+        TIME_LEFT: TIME_LEFT
+      properties:
+        ACCOUNT:
+          title: ACCOUNT
+          type: string
+        TRES_PER_NODE:
+          title: TRES_PER_NODE
+          type: string
+        MIN_CPUS:
+          title: MIN_CPUS
+          type: string
+        MIN_TMP_DISK:
+          title: MIN_TMP_DISK
+          type: string
+        END_TIME:
+          title: END_TIME
+          type: number
+        FEATURES:
+          title: FEATURES
+          type: string
+        GROUP:
+          title: GROUP
+          type: string
+        OVER_SUBSCRIBE:
+          title: OVER_SUBSCRIBE
+          type: string
+        JOBID:
+          title: JOBID
+          type: string
+        NAME:
+          title: NAME
+          type: string
+        COMMENT:
+          title: COMMENT
+          type: string
+        TIME_LIMIT:
+          title: TIME_LIMIT
+          type: string
+        MIN_MEMORY:
+          title: MIN_MEMORY
+          type: string
+        REQ_NODES:
+          title: REQ_NODES
+          type: string
+        COMMAND:
+          title: COMMAND
+          type: string
+        PRIORITY:
+          title: PRIORITY
+          type: string
+        QOS:
+          title: QOS
+          type: string
+        REASON:
+          title: REASON
+          type: string
+        ST:
+          title: ST
+          type: string
+        USER:
+          title: USER
+          type: string
+        RESERVATION:
+          title: RESERVATION
+          type: string
+        WCKEY:
+          title: WCKEY
+          type: string
+        EXC_NODES:
+          title: EXC_NODES
+          type: string
+        NICE:
+          title: NICE
+          type: string
+        S:C:T:
+          title: S:C:T
+          type: string
+        EXEC_HOST:
+          title: EXEC_HOST
+          type: string
+        CPUS:
+          title: CPUS
+          type: number
+        NODES:
+          title: NODES
+          type: string
+        DEPENDENCY:
+          title: DEPENDENCY
+          type: string
+        ARRAY_JOB_ID:
+          title: ARRAY_JOB_ID
+          type: string
+        SOCKETS_PER_NODE:
+          title: SOCKETS_PER_NODE
+          type: string
+        CORES_PER_SOCKET:
+          title: CORES_PER_SOCKET
+          type: string
+        THREADS_PER_CORE:
+          title: THREADS_PER_CORE
+          type: string
+        ARRAY_TASK_ID:
+          title: ARRAY_TASK_ID
+          type: string
+        TIME_LEFT:
+          title: TIME_LEFT
+          type: string
+        TIME:
+          title: TIME
+          type: string
+        NODELIST:
+          items:
+            type: string
+          title: NODELIST
+          type: array
+        CONTIGUOUS:
+          title: CONTIGUOUS
+          type: string
+        PARTITION:
+          title: PARTITION
+          type: string
+        NODELIST(REASON):
+          title: NODELIST(REASON)
+          type: string
+        START_TIME:
+          title: START_TIME
+          type: number
+        STATE:
+          title: STATE
+          type: string
+        UID:
+          title: UID
+          type: string
+        SUBMIT_TIME:
+          title: SUBMIT_TIME
+          type: number
+        LICENSES:
+          title: LICENSES
+          type: string
+        CORE_SPEC:
+          title: CORE_SPEC
+          type: string
+        SCHEDNODES:
+          title: SCHEDNODES
+          type: string
+        WORK_DIR:
+          title: WORK_DIR
+          type: string
+      title: SlurmData
+      type: object
+    QueueStatus:
+      example:
+        queue_status:
+        - TRES_PER_NODE: TRES_PER_NODE
+          NODELIST:
+          - NODELIST
+          - NODELIST
+          START_TIME: 5.962133916683182
+          RESERVATION: RESERVATION
+          CORES_PER_SOCKET: CORES_PER_SOCKET
+          STATE: STATE
+          PRIORITY: PRIORITY
+          COMMENT: COMMENT
+          EXEC_HOST: EXEC_HOST
+          SCHEDNODES: SCHEDNODES
+          JOBID: JOBID
+          GROUP: GROUP
+          REQ_NODES: REQ_NODES
+          ACCOUNT: ACCOUNT
+          MIN_MEMORY: MIN_MEMORY
+          END_TIME: 6.027456183070403
+          DEPENDENCY: DEPENDENCY
+          SUBMIT_TIME: 5.637376656633329
+          CPUS: 1.4658129805029452
+          ARRAY_TASK_ID: ARRAY_TASK_ID
+          LICENSES: LICENSES
+          COMMAND: COMMAND
+          WCKEY: WCKEY
+          S:C:T: S:C:T
+          PARTITION: PARTITION
+          REASON: REASON
+          NODELIST(REASON): NODELIST(REASON)
+          OVER_SUBSCRIBE: OVER_SUBSCRIBE
+          CORE_SPEC: CORE_SPEC
+          ST: ST
+          NODES: NODES
+          EXC_NODES: EXC_NODES
+          THREADS_PER_CORE: THREADS_PER_CORE
+          CONTIGUOUS: CONTIGUOUS
+          SOCKETS_PER_NODE: SOCKETS_PER_NODE
+          TIME: TIME
+          USER: USER
+          MIN_CPUS: MIN_CPUS
+          FEATURES: FEATURES
+          NAME: NAME
+          UID: UID
+          WORK_DIR: WORK_DIR
+          QOS: QOS
+          NICE: NICE
+          ARRAY_JOB_ID: ARRAY_JOB_ID
+          TIME_LIMIT: TIME_LIMIT
+          MIN_TMP_DISK: MIN_TMP_DISK
+          TIME_LEFT: TIME_LEFT
+        - TRES_PER_NODE: TRES_PER_NODE
+          NODELIST:
+          - NODELIST
+          - NODELIST
+          START_TIME: 5.962133916683182
+          RESERVATION: RESERVATION
+          CORES_PER_SOCKET: CORES_PER_SOCKET
+          STATE: STATE
+          PRIORITY: PRIORITY
+          COMMENT: COMMENT
+          EXEC_HOST: EXEC_HOST
+          SCHEDNODES: SCHEDNODES
+          JOBID: JOBID
+          GROUP: GROUP
+          REQ_NODES: REQ_NODES
+          ACCOUNT: ACCOUNT
+          MIN_MEMORY: MIN_MEMORY
+          END_TIME: 6.027456183070403
+          DEPENDENCY: DEPENDENCY
+          SUBMIT_TIME: 5.637376656633329
+          CPUS: 1.4658129805029452
+          ARRAY_TASK_ID: ARRAY_TASK_ID
+          LICENSES: LICENSES
+          COMMAND: COMMAND
+          WCKEY: WCKEY
+          S:C:T: S:C:T
+          PARTITION: PARTITION
+          REASON: REASON
+          NODELIST(REASON): NODELIST(REASON)
+          OVER_SUBSCRIBE: OVER_SUBSCRIBE
+          CORE_SPEC: CORE_SPEC
+          ST: ST
+          NODES: NODES
+          EXC_NODES: EXC_NODES
+          THREADS_PER_CORE: THREADS_PER_CORE
+          CONTIGUOUS: CONTIGUOUS
+          SOCKETS_PER_NODE: SOCKETS_PER_NODE
+          TIME: TIME
+          USER: USER
+          MIN_CPUS: MIN_CPUS
+          FEATURES: FEATURES
+          NAME: NAME
+          UID: UID
+          WORK_DIR: WORK_DIR
+          QOS: QOS
+          NICE: NICE
+          ARRAY_JOB_ID: ARRAY_JOB_ID
+          TIME_LIMIT: TIME_LIMIT
+          MIN_TMP_DISK: MIN_TMP_DISK
+          TIME_LEFT: TIME_LEFT
+        timestamp: 0.8008281904610115
+      properties:
+        timestamp:
+          title: timestamp
+          type: number
+        queue_status:
+          items:
+            $ref: '#/components/schemas/SlurmData'
+          title: queue_status
+          type: array
+      title: QueueStatus
+    inline_response_default:
+      properties:
+        name:
+          title: name
+          type: string
+        message:
+          title: message
+          type: string
+      title: inline_response_default
+      type: object
+    MetricFqdd_children:
+      example:
+        name: name
+        value: value
+      properties:
+        name:
+          title: name
+          type: string
+        value:
+          title: value
+          type: string
+      title: MetricFqdd_children
+      type: object
+    RequestMetrics_scopedVars:
+      example:
+        __interval:
+          text: text
+          value: value
+        startTime: 5.637376656633329
+        __interval_ms:
+          text: text
+          value: value
+      properties:
+        __interval:
+          $ref: '#/components/schemas/Interval'
+        __interval_ms:
+          $ref: '#/components/schemas/Interval'
+        startTime:
+          title: startTime
+          type: number
+      title: RequestMetrics_scopedVars
+      type: object
+    RequestMetrics_targets:
+      example:
+        nodes:
+        - nodes
+        - nodes
+        jobs:
+        - jobs
+        - jobs
+        refId: refId
+        type: metrics
+        users:
+        - users
+        - users
+        required: true
+      properties:
+        refId:
+          title: refId
+          type: string
+        type:
+          enum:
+          - metrics
+          - users
+          - jobs
+          - nodes
+          title: type
+          type: string
+        users:
+          items:
+            type: string
+          title: users
+          type: array
+        jobs:
+          items:
+            type: string
+          title: jobs
+          type: array
+        nodes:
+          items:
+            type: string
+          title: nodes
+          type: array
+        required:
+          title: required
+          type: boolean
+      title: RequestMetrics_targets
+      type: object
