@@ -14,8 +14,9 @@ def main():
                 arguments={'title': 'MetricsBuilder API'},
                 pythonic_params=True)
 
-    app.run(port=8080)
-
+    crt = os.environ['FLASKCRT']
+    key = os.environ['FLASKKEY']
+    app.run(port=8080, ssl_context=(crt, key))
 
 if __name__ == '__main__':
     main()

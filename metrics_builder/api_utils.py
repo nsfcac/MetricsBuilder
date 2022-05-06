@@ -265,7 +265,7 @@ def query_tsdb(target: dict,
     results = []
 
     if req_metric and req_type == 'metrics' and len(req_metric.split(' | ')) == 3:
-        partition = req_metric.split(' | ')[0]
+        source = req_metric.split(' | ')[0]
         metric = req_metric.split(' | ')[1]
         fqdd = req_metric.split(' | ')[2]
         metrics = query_filter_metrics(engine,
@@ -277,7 +277,7 @@ def query_tsdb(target: dict,
                                         end,
                                         interval,
                                         aggregation,
-                                        partition)
+                                        source)
         # results = metrics
         results = {'type': 'metrics', 'result': metrics}
 
@@ -291,6 +291,7 @@ def query_tsdb(target: dict,
         results = {'type': 'jobs', 'result': jobs}
 
     if req_type == 'node_core':
+        #TODO: add filter function
         node_core = query_node_core(engine, 
                                     start, 
                                     end, 
@@ -312,7 +313,7 @@ def query_filter_metrics(engine: object,
                          end: str,
                          interval: str,
                          aggregation: str,
-                         partition: str):
+                         source: str):
     """query_filter_metrics Query Filter Metrics
 
     Query and filter metrics from TSDB
@@ -330,7 +331,7 @@ def query_filter_metrics(engine: object,
         aggregate (str, optional): aggregation function. Defaults to 'max'.
     
     """
-    if partition == 'slurm':
+    if source == 'slurm':
         sql_str = sql.generate_slurm_sql(metric, 
                                          start, 
                                          end, 
@@ -343,7 +344,7 @@ def query_filter_metrics(engine: object,
                                          end, 
                                          interval,
                                          aggregation,
-                                         'idrac')
+                                         source)
     
     df = pd.read_sql_query(sql_str, con=engine)
 
@@ -357,7 +358,7 @@ def query_filter_metrics(engine: object,
         fi_df = df
 
     # Add label in slurm metrics
-    if partition == 'slurm':
+    if source == 'slurm':
         fi_df['label'] = metric
 
     # Convert node id to node name
@@ -393,7 +394,6 @@ def metrics_df_to_response(df: object):
     df_dict = df.to_dict(orient='list')
     df_json = process_metric_df_dict(df_dict)
 
-    # print(df_json)
     return df_json
 
 
@@ -404,9 +404,6 @@ def process_metric_df_dict(df_dict: dict):
         if key != 'time':
             node = key.split('|')[0]
             sensor = key.split('|')[2].replace(' ', '_')
-
-            # if sensor == 'System_Power_Control':
-            #     sensor = 'power_consumption'
 
             df_json.update({
                 node: {

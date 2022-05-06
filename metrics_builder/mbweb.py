@@ -47,12 +47,18 @@ def metricsbuilder(partition,
 
     # Node id - node name mapping
     ID_NODE_MAPPING = api_utils.get_id_node_mapping(connection)
+    NODE_ID_MAPPING = {v : k for k, v in ID_NODE_MAPPING.items()}
     
     # Expand nodelist
     nodelist = hostlist.expand_hostlist(nodelist)
+    # Convert ipaddress to hostname
+    nodelist = [mbweb_utils.ip_hostname(node) for node in nodelist]
+    
+    # Convert nodelist to nodeidlist
+    nodeidlist = [NODE_ID_MAPPING[n] for n in nodelist]
 
     # generate targets
-    targets = mbweb_utils.gene_targets(connection, metrics)
+    targets = mbweb_utils.gene_targets(connection, metrics, nodeidlist)
 
     start = start.strftime(DATETIME_FORMAT)
     end = end.strftime(DATETIME_FORMAT)

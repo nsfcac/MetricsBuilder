@@ -1,3 +1,4 @@
+from platform import node
 import connexion
 import six
 
@@ -9,6 +10,8 @@ from openapi_server.models.web_response_metrics import WebResponseMetrics  # noq
 from openapi_server import util
 
 from metrics_builder import slurm_queue, mbweb, mbweb_utils
+from metrics_builder import logger
+log = logger.get_logger(__name__)
 
 
 def metricsbuilder(partition, 
@@ -44,7 +47,7 @@ def metricsbuilder(partition,
     """
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
-
+    nodelist = nodelist
     try:
         metrics = mbweb.metricsbuilder(partition, 
                                        start, 
@@ -66,8 +69,9 @@ def metricsbuilder(partition,
                                       jobs_info = jobs_info,
                                       time_stamp = time_stamp)
     except Exception as e:
+        log.error(f"Error of MetricsBuilder for web : {e}")
         response = InlineResponseDefault(name='Query metrics error',
-                                         message=e)
+                                         message=str(e))
     return response
 
 

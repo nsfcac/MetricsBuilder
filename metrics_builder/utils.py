@@ -32,7 +32,6 @@ import yaml
 from pathlib import Path
 
 from metrics_builder import logger
-
 log = logger.get_logger(__name__)
 
 def parse_config():
