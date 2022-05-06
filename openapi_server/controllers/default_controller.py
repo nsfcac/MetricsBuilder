@@ -8,9 +8,17 @@ from openapi_server.models.request_metrics import RequestMetrics  # noqa: E501
 from openapi_server.models.web_response_metrics import WebResponseMetrics  # noqa: E501
 from openapi_server import util
 
-from metrics_builder import testimport
+from metrics_builder import slurm_queue, mbweb, mbweb_utils
 
-def metricsbuilder(partition, start=None, end=None, interval=None, aggregation=None, nodelist=None, metrics=None, compress=None):  # noqa: E501
+
+def metricsbuilder(partition, 
+                   start=None, 
+                   end=None, 
+                   interval=None, 
+                   aggregation=None, 
+                   nodelist=None, 
+                   metrics=None, 
+                   compression=None):  # noqa: E501
     """Query Metrics for Web Applications
 
     Execute queries for metrics, job information, etc. # noqa: E501
@@ -37,8 +45,30 @@ def metricsbuilder(partition, start=None, end=None, interval=None, aggregation=N
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
 
-    testimport.test()
-    return 'do some magic!'
+    try:
+        metrics = mbweb.metricsbuilder(partition, 
+                                       start, 
+                                       end, 
+                                       interval, 
+                                       aggregation, 
+                                       nodelist, 
+                                       metrics, 
+                                       compression)
+        nodes_info = metrics['nodes_info']
+        jobs_info = metrics['jobs_info']
+        time_stamp = metrics['time_stamp']
+        
+        if compression:
+            nodes_info = mbweb_utils.json_zip(nodes_info)
+            jobs_info = mbweb_utils.json_zip(jobs_info)
+
+        response = WebResponseMetrics(nodes_info = nodes_info, 
+                                      jobs_info = jobs_info,
+                                      time_stamp = time_stamp)
+    except Exception as e:
+        response = InlineResponseDefault(name='Query metrics error',
+                                         message=e)
+    return response
 
 
 def query(request_metrics):  # noqa: E501
@@ -64,7 +94,14 @@ def queue():  # noqa: E501
 
     :rtype: QueueStatus
     """
-    return 'do some magic!'
+    try:
+        queue = slurm_queue.get_queue()
+        response = QueueStatus(timestamp=queue['timestamp'], 
+                               queue_status=queue['queue_status'])
+    except Exception as e:
+        response = InlineResponseDefault(name='Get queue info error',
+                                         message=e)
+    return response
 
 
 def search(partition=None):  # noqa: E501

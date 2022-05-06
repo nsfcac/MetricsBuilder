@@ -32,7 +32,6 @@ paths:
       summary: Query Metrics for Web Applications
       description: Execute queries for metrics, job information, etc.
       operationId: metricsbuilder
-      x-openapi-router-controller: testController
       parameters:
       - description: The target partition of the HPC cluster
         in: path

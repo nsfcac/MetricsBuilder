@@ -104,29 +104,29 @@ paths:
         required: false
         schema:
           default:
-          - SystemPower
-          - FanSensor
-          - TempSensor
-          - NodeJobs
-          - JobsInfo
+          - System Power-iDRAC
+          - CPU Power-iDRAC
+          - Memory Power-iDRAC
+          - NodeJobs Correlation-Slurm
+          - Jobs Info-Slurm
           items:
             enum:
-            - SystemPower
-            - CPUPower
-            - MemPower
-            - FanSensor
-            - TempSensor
-            - CPUUsage
-            - MemUsage
-            - NodeJobs
-            - JobsInfo
+            - System Power-iDRAC
+            - CPU Power-iDRAC
+            - Memory Power-iDRAC
+            - Fan Sensor-iDRAC
+            - Temperature Sensor-iDRAC
+            - CPU Usage-iDRAC
+            - Memory Usage-Slurm
+            - NodeJobs Correlation-Slurm
+            - Jobs Info-Slurm
             type: string
           type: array
         style: form
       - description: Return compressed data.
         explode: true
         in: query
-        name: compress
+        name: compression
         required: false
         schema:
           default: true
@@ -361,7 +361,7 @@ paths:
           enum:
           - quanah
           - nocona
-          - matador
+          # - matador
           example: cocona
           type: string
         style: form
