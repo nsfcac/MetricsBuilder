@@ -92,7 +92,6 @@ def generate_idrac_sql(metric: str,
     Returns:
         string: sql string
     """
-    # schema = 'idrac'
     sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) AS time, \
         nodeid, fqdd AS label, {aggregate}(value) AS value \
         FROM {schema}.{metric} \

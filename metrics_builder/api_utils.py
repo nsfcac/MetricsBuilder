@@ -41,7 +41,7 @@ import metrics_builder.sql as sql
 
 DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
-def get_id_node_mapping(connection: str):
+def get_id_node_mapping(connection: str, partition: str, nodelist: list):
     """get_id_node_mapping Get ID-Node Mapping
 
     Get ID-Node Mapping
@@ -52,15 +52,20 @@ def get_id_node_mapping(connection: str):
     """
     engine = db.create_engine(connection)
     connect = engine.connect()
-    # Only select nocona nodes
-    mapping_sql = "SELECT nodeid, hostname FROM nodes;"
+
+    nodelist_tmp = ["'" + node + "'" for node in nodelist]
+    nodelist_str = "(" + ", ".join(nodelist_tmp) + ")"
+
+    #TODO: add column 'partition' in the node matedata table and restrain the 
+    # nodes are in the partition. 
+    mapping_sql = f"SELECT nodeid, hostname FROM nodes WHERE bmc_ip_addr IN {nodelist_str};"
     mapping_df = pd.read_sql_query(mapping_sql,con=connect)
     mapping = pd.Series(mapping_df.hostname.values, index=mapping_df.nodeid).to_dict()
     connect.close()
     return mapping
 
 
-def get_metric_fqdd_mapping(connection: str):
+def get_metric_fqdd_mapping(connection: str, idrac_schema: str):
     """get_metric_fqdd_mapping Get Metric-FQDD Mapping
 
     Get metric-fqdd mapping. If finding the metric_fqdd table in tsdb, query
@@ -101,7 +106,7 @@ def get_metric_fqdd_mapping(connection: str):
         # print("Collecting FQDD info...")
         # for metric in tqdm(metric_list):
         for metric in metric_list:
-            fqdd = get_avail_metric_fqdd(connect, metadata, engine, metric)
+            fqdd = get_avail_metric_fqdd(connect, metadata, engine, metric, idrac_schema)
             if fqdd:
                 mapping.update({
                     metric: fqdd
@@ -143,7 +148,8 @@ def get_avail_metrics(connect: object,
 def get_avail_metric_fqdd(connect: object, 
                           metadata: object, 
                           engine: object,
-                          metric: str):
+                          metric: str,
+                          idrac_schema: str):
     """get_avail_metric_fqdd Get Available Metric FQDD
 
     Get available fqdd of a metric based on the metrics collected in the last
@@ -159,9 +165,9 @@ def get_avail_metric_fqdd(connect: object,
     metric = metric.lower()
     table = db.Table(metric,
                      metadata,
+                     schema = idrac_schema,
                      autoload=True,
-                     autoload_with=engine,
-                     schema = 'idrac')
+                     autoload_with=engine)
 
     # Find unique fqdd values
     query = db.select([table.columns.fqdd.distinct()]).limit(20)

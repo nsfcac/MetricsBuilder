@@ -1,4 +1,3 @@
-from platform import node
 import connexion
 import six
 
@@ -40,8 +39,8 @@ def metricsbuilder(partition,
     :type nodelist: str
     :param metrics: Selected Metrics.
     :type metrics: List[str]
-    :param compress: Return compressed data.
-    :type compress: bool
+    :param compression: Return compressed data.
+    :type compression: bool
 
     :rtype: WebResponseMetrics
     """

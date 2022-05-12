@@ -38,14 +38,16 @@ paths:
         name: partition
         required: true
         schema:
-          type: string
-          example: nocona
           default: nocona
+          enum:
+          - nocona
+          - quanah
+          example: nocona
+          type: string
       - description: Start time of the time range
         in: query
         name: start
         schema:
-          # default: '2022-04-16T10:00:00-05:00'
           example: '2022-04-16T10:00:00-05:00'
           format: date-time
           type: string
@@ -53,7 +55,6 @@ paths:
         in: query
         name: end
         schema:
-          # default: '2022-04-16T12:00:00-05:00'
           example: '2022-04-16T12:00:00-05:00'
           format: date-time
           type: string
@@ -94,21 +95,26 @@ paths:
         schema:
           items:
             enum:
-            - SystemPower
-            - CPUPower
-            - MemPower
-            - FanSensor
-            - TempSensor
-            - CPUUsage
-            - MemUsage
-            - NodeJobs
-            - JobsInfo
+            - System Power-iDRAC
+            - CPU Power-iDRAC
+            - Memory Power-iDRAC
+            - Fan Sensor-iDRAC
+            - Temperature Sensor-iDRAC
+            - CPU Usage-iDRAC
+            - Memory Usage-Slurm
+            - NodeJobs Correlation-Slurm
+            - Jobs Info-Slurm
             type: string
           type: array
-          default: [SystemPower, FanSensor, TempSensor, NodeJobs, JobsInfo]
+          default:
+          - System Power-iDRAC
+          - CPU Power-iDRAC
+          - Memory Power-iDRAC
+          - NodeJobs Correlation-Slurm
+          - Jobs Info-Slurm
       - description: Return compressed data.
         in: query
-        name: compress
+        name: compression
         required: false
         schema:
           type: boolean
@@ -225,7 +231,7 @@ paths:
         required: false
         schema:
           type: string
-          enum: [quanah, nocona, matador]
+          enum: [quanah, nocona]
           example: cocona
           default: nocona
       responses:
@@ -266,11 +272,13 @@ paths:
               $ref: '#/components/schemas/RequestMetrics'
             example:
               app: "dashboard"
+              aggregation: "max"
               dashboardId: 5
               interval: "15s"
               intervalMs: 15000
               maxDataPoints: 5773
               panelId: 2
+              partition: "nocona"
               range:
                 from: "2022-04-16T10:00:00.000Z"
                 to: "2022-04-16T12:00:00.000Z"
@@ -366,6 +374,13 @@ components:
       properties:
         app:
           type: string
+        aggregation:
+          type: string
+          enum:
+          - min
+          - max
+          - mean
+          - median
         dashboardId:
           type: number
         interval:
@@ -376,6 +391,11 @@ components:
           type: number
         panelId:
           type: number
+        partition:
+          type: string
+          enum:
+          - nocona
+          - quanah
         range:
           $ref: '#/components/schemas/TimeRange'
         rangeRaw:

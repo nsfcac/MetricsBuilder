@@ -32,31 +32,32 @@ import json
 import zlib
 import base64
 
-import metrics_builder.api_utils as api_utils 
+import metrics_builder.api_utils as api_utils
 
 
-def gene_targets(connection: str, metrics: list, nodeidlist: list):
+def gene_targets(connection: str, idrac_schema: str, metrics: list, nodeidlist: list):
     targets = []
-    metric_fqdd = api_utils.get_metric_fqdd_mapping(connection)
+    
+    metric_fqdd = api_utils.get_metric_fqdd_mapping(connection, idrac_schema)
     # Conver all keys into lowercase
     metric_fqdd = {k.lower(): v for k, v in metric_fqdd.items()}
 
     for metric in metrics:
-        target = const_target(metric, metric_fqdd, nodeidlist)
+        target = const_target(metric, idrac_schema, metric_fqdd, nodeidlist)
         targets.extend(target)
 
     return targets
 
 
-def const_target(metric: str, metric_fqdd: dict, nodeidlist: list):
+def const_target(metric: str, idrac_schema: str, metric_fqdd: dict, nodeidlist: list):
     target = []
     metric_name = metric.split('-')[0]
     metric_source = metric.split('-')[1]
 
     idrac_mapping_table = {
         'System Power': 'systempowerconsumption',
-        'CPU Power': 'rpmreading',
-        'Memory Power': 'temperaturereading',
+        'CPU Power': 'totalcpupower',
+        'Memory Power': 'totalmemorypower',
         'Fan Sensor': 'rpmreading',
         'Temperature Sensor': 'temperaturereading',
         'CPU Usage': 'cpuusage',
@@ -72,8 +73,7 @@ def const_target(metric: str, metric_fqdd: dict, nodeidlist: list):
             fqdd = metric_fqdd.get(mm_name, '')
             if fqdd:
                 for f in fqdd:
-                    # replace 'idrac' with the idrac_schema in configuration
-                    metric_str = f"idrac | {mm_name} | {f}"
+                    metric_str = f"{idrac_schema} | {mm_name} | {f}"
                     target.append({
                         "metric": metric_str,
                         "type": "metrics",
@@ -94,18 +94,15 @@ def const_target(metric: str, metric_fqdd: dict, nodeidlist: list):
                     "type": "node_core",
                     "nodes": nodeidlist,
                 })
-            if metric_name == 'Jobs Info':
+            elif metric_name == 'Jobs Info':
                 target.append({
                     "type": "jobs",
                     "nodes": nodeidlist,
                 })
+            else:
+                pass
             
     return target
-
-
-def ip_hostname(ip_addr: str):
-    hostname = ip_addr.replace('.', '-').replace('10-101', 'cpu')
-    return hostname
 
 
 def json_zip(j):

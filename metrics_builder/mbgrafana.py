@@ -34,16 +34,10 @@ import hostlist
 
 from metrics_builder import utils, api_utils, mbweb_utils
 
-def metricsbuilder(partition, 
-                   start=None, 
-                   end=None, 
-                   interval=None, 
-                   aggregation=None, 
-                   nodelist=None, 
-                   metrics=None, 
-                   compress=None):
+def metricsbuilder(request: dict):
     DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
+    partition = request.get("partition", "nocona")
     # TSDB Connection
     connection = utils.init_tsdb_connection(partition)
 
@@ -59,24 +53,6 @@ def metricsbuilder(partition,
     if not id_node_mapping:
         raise Exception("Cannot find id-node mapping in the node metadata table!")
 
-    # Get nodeidlist
-    nodeidlist = list(id_node_mapping.keys())
-    
-    # generate targets
-    targets = mbweb_utils.gene_targets(connection, idrac_schema, metrics, nodeidlist)
-
-    start = start.strftime(DATETIME_FORMAT)
-    end = end.strftime(DATETIME_FORMAT)
-
-    request = {
-        "range": {
-            "from": start,
-            "to": end
-        },
-        "interval": interval,
-        "aggregation": aggregation,
-        "targets": targets,
-    }
 
     results = api_utils.query_tsdb_parallel(request, id_node_mapping, connection)
     time_stamp = api_utils.gen_epoch_timelist(start, end, interval)

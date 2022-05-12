@@ -1,4 +1,6 @@
 config.yml
+openapi/gen.sh
+openapi/openapitools.json
 env
 __pycache__
 metrics_builder/shared

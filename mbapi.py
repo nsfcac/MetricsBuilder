@@ -7,10 +7,10 @@ from openapi_server import encoder
 
 def main():
     abs_file_path = os.path.abspath(os.path.dirname(__file__))
-    openapi_path = os.path.join(abs_file_path, "./openapi")
+    openapi_path = os.path.join(abs_file_path, "./openapi_server/openapi")
     app = connexion.App(__name__, specification_dir=openapi_path)
     app.app.json_encoder = encoder.JSONEncoder
-    app.add_api('specification.yaml',
+    app.add_api('openapi.yaml',
                 arguments={'title': 'MetricsBuilder API'},
                 pythonic_params=True)
 
