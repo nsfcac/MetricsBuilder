@@ -1,4 +1,5 @@
 config.yml
+test.py
 openapi/gen.sh
 openapi/openapitools.json
 env

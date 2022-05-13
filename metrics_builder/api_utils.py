@@ -29,22 +29,22 @@ Author:
     Jie Li, jie.li@ttu.edu
 """
 import re
-import json
 import multiprocessing
 import pandas as pd
 import sqlalchemy as db
 from itertools import repeat
 from datetime import datetime, timedelta
+from dateutil.parser import parse
 
 
 import metrics_builder.sql as sql
 
 DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
-def get_id_node_mapping(connection: str, partition: str, nodelist: list):
-    """get_id_node_mapping Get ID-Node Mapping
+def get_id_ip_mapping(connection: str, nodelist: list):
+    """get_id_ip_mapping Get ID-NodeIP Mapping
 
-    Get ID-Node Mapping
+    Get ID-NodeIP Mapping
 
     Args:
         connection (str): connection string
@@ -59,6 +59,30 @@ def get_id_node_mapping(connection: str, partition: str, nodelist: list):
     #TODO: add column 'partition' in the node matedata table and restrain the 
     # nodes are in the partition. 
     mapping_sql = f"SELECT nodeid, hostname FROM nodes WHERE bmc_ip_addr IN {nodelist_str};"
+    mapping_df = pd.read_sql_query(mapping_sql,con=connect)
+    mapping = pd.Series(mapping_df.hostname.values, index=mapping_df.nodeid).to_dict()
+    connect.close()
+    return mapping
+
+
+def get_id_host_mapping(connection: str, nodelist: list):
+    """get_id_host_mapping Get ID-host Mapping
+
+    Get ID-host Mapping
+
+    Args:
+        connection (str): connection string
+
+    """
+    engine = db.create_engine(connection)
+    connect = engine.connect()
+
+    nodelist_tmp = ["'" + node + "'" for node in nodelist]
+    nodelist_str = "(" + ", ".join(nodelist_tmp) + ")"
+
+    #TODO: add column 'partition' in the node matedata table and restrain the 
+    # nodes are in the partition. 
+    mapping_sql = f"SELECT nodeid, hostname FROM nodes WHERE hostname IN {nodelist_str};"
     mapping_df = pd.read_sql_query(mapping_sql,con=connect)
     mapping = pd.Series(mapping_df.hostname.values, index=mapping_df.nodeid).to_dict()
     connect.close()
@@ -197,6 +221,7 @@ def query_tsdb_parallel(request: object, id_node_mapping: dict, connection: str)
     time_range = request.get('range')
     interval = request.get('interval')
     aggregation = request.get('aggregation')
+    nodes = request.get('nodes')
     targets = request.get('targets')
 
     # Extract time range (from, to), metrics
@@ -211,7 +236,8 @@ def query_tsdb_parallel(request: object, id_node_mapping: dict, connection: str)
                               repeat(start),
                               repeat(end),
                               repeat(interval),
-                              repeat(aggregation))
+                              repeat(aggregation),
+                              repeat(nodes))
         results = pool.starmap(query_tsdb, query_tsdb_args)
 
     # Aggregate results
@@ -250,7 +276,8 @@ def query_tsdb(target: dict,
                start: str,
                end: str,
                interval: str,
-               aggregation: str):
+               aggregation: str,
+               nodes: list):
     """query_tsdb Query TSDB for each target
 
     Args:
@@ -267,7 +294,6 @@ def query_tsdb(target: dict,
     engine = db.create_engine(connection)
     req_metric = target.get('metric', '')
     req_type = target.get('type', '')
-    nodes = target.get('nodes', '')
     results = []
 
     if req_metric and req_type == 'metrics' and len(req_metric.split(' | ')) == 3:
@@ -328,7 +354,7 @@ def query_filter_metrics(engine: object,
         engine (object): sqlalchemy engine
         metric (str): metric name
         fqdd (str): fqdd name
-        nodes (list): target nodes
+        nodes (list): target nodes (node IDs)
         id_node_mapping (dict): id-node mapping
         start (str): start of time range
         end (str): end of time range
@@ -605,8 +631,15 @@ def gen_epoch_timelist(start: str, end: str, interval: str):
 
 def datetime_range(start: str, end: str, interval: str):
     """Generate time interval array"""
+    # start = parse(start)
+    # end = parse(end)
+
+    # start = start.strftime(DATETIME_FORMAT)
+    # end = end.strftime(DATETIME_FORMAT)
+
     start = datetime.strptime(start, DATETIME_FORMAT)
     end = datetime.strptime(end, DATETIME_FORMAT)
+    # print(f"api_util: {start}")
     current = start
     while current <= end:
         yield current
@@ -634,3 +667,73 @@ def time_delta(timeInterval: str) -> str:
         num = int(timeInterval.split('w')[0])
         delta = timedelta(weeks = num)
     return delta
+
+
+def get_metric_fqdd_tree(metric_fqdd_mapping: dict, idrac_schema: str):
+    """get_metric_fqdd_tree Get Metric-FQDD Tree
+
+    Get metric-fqdd tree for grafana
+
+    Args:
+        metric_fqdd_mapping (dict): metric-fqdd mapping
+    """
+    metric_fqdd_tree = {
+        'name': 'root',
+        'children': []
+    }
+
+    # iDRAC metrics
+    metric_fqdd_list = []
+    for metric, fqdds in metric_fqdd_mapping.items():
+        children = []
+        for fqdd in fqdds:
+            child = {
+                'name': fqdd, 'value': f'{idrac_schema} | {metric} | {fqdd}'
+            }
+            children.append(child)
+        metric_fqdd_list.append({
+            'name': metric, 'children': children
+        })
+    
+    child_dict = {
+        'name': idrac_schema,
+        'children': metric_fqdd_list
+    }
+    metric_fqdd_tree['children'].append(child_dict)
+
+    # # Slurm metrics
+    # slurm_child_dict = {
+    #     'name': 'slurm',
+    #     'children': [
+    #         {
+    #             'name': 'memoryusage',
+    #             'children': [
+    #                 {
+    #                     'name': 'Memory Usage', 
+    #                     'value': 'slurm | memoryusage | Memory Usage'
+    #                 }
+    #             ]
+    #         },
+    #         {
+    #             'name': 'memory_used',
+    #             'children': [
+    #                 {
+    #                     'name': 'Memory Used', 
+    #                     'value': 'slurm | memory_used | Memory Used'
+    #                 },
+    #             ]
+    #         },
+    #         {
+    #             'name': 'cpu_load',
+    #             'children': [
+    #                 {
+    #                     'name': 'CPU Load', 
+    #                     'value': 'slurm | cpu_load | CPU Load'
+    #                 }
+    #             ]
+    #         },
+    #     ]
+    # }
+    # metric_fqdd_tree['children'].append(slurm_child_dict)
+    
+    return metric_fqdd_tree

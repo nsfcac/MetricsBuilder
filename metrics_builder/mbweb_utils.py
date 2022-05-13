@@ -35,7 +35,7 @@ import base64
 import metrics_builder.api_utils as api_utils
 
 
-def gene_targets(connection: str, idrac_schema: str, metrics: list, nodeidlist: list):
+def gene_targets(connection: str, idrac_schema: str, metrics: list):
     targets = []
     
     metric_fqdd = api_utils.get_metric_fqdd_mapping(connection, idrac_schema)
@@ -43,13 +43,13 @@ def gene_targets(connection: str, idrac_schema: str, metrics: list, nodeidlist: 
     metric_fqdd = {k.lower(): v for k, v in metric_fqdd.items()}
 
     for metric in metrics:
-        target = const_target(metric, idrac_schema, metric_fqdd, nodeidlist)
+        target = const_target(metric, idrac_schema, metric_fqdd)
         targets.extend(target)
 
     return targets
 
 
-def const_target(metric: str, idrac_schema: str, metric_fqdd: dict, nodeidlist: list):
+def const_target(metric: str, idrac_schema: str, metric_fqdd: dict):
     target = []
     metric_name = metric.split('-')[0]
     metric_source = metric.split('-')[1]
@@ -77,7 +77,7 @@ def const_target(metric: str, idrac_schema: str, metric_fqdd: dict, nodeidlist: 
                     target.append({
                         "metric": metric_str,
                         "type": "metrics",
-                        "nodes": nodeidlist,
+                        # "nodes": nodeidlist,
                     })
     else:
         mm_name = slurm_mapping_table.get(metric_name, '')
@@ -86,18 +86,18 @@ def const_target(metric: str, idrac_schema: str, metric_fqdd: dict, nodeidlist: 
             target.append({
                 "metric": metric_str,
                 "type": "metrics",
-                "nodes": nodeidlist,
+                # "nodes": nodeidlist,
             })
         else:
             if metric_name == 'NodeJobs Correlation':
                 target.append({
                     "type": "node_core",
-                    "nodes": nodeidlist,
+                    # "nodes": nodeidlist,
                 })
             elif metric_name == 'Jobs Info':
                 target.append({
                     "type": "jobs",
-                    "nodes": nodeidlist,
+                    # "nodes": nodeidlist,
                 })
             else:
                 pass

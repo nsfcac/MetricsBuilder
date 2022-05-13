@@ -15,7 +15,7 @@ class RequestMetricsTargets(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, ref_id=None, type=None, users=None, jobs=None, nodes=None, required=None):  # noqa: E501
+    def __init__(self, ref_id=None, type=None, users=None, jobs=None, required=None):  # noqa: E501
         """RequestMetricsTargets - a model defined in OpenAPI
 
         :param ref_id: The ref_id of this RequestMetricsTargets.  # noqa: E501
@@ -26,8 +26,6 @@ class RequestMetricsTargets(Model):
         :type users: List[str]
         :param jobs: The jobs of this RequestMetricsTargets.  # noqa: E501
         :type jobs: List[str]
-        :param nodes: The nodes of this RequestMetricsTargets.  # noqa: E501
-        :type nodes: List[str]
         :param required: The required of this RequestMetricsTargets.  # noqa: E501
         :type required: bool
         """
@@ -36,7 +34,6 @@ class RequestMetricsTargets(Model):
             'type': str,
             'users': List[str],
             'jobs': List[str],
-            'nodes': List[str],
             'required': bool
         }
 
@@ -45,7 +42,6 @@ class RequestMetricsTargets(Model):
             'type': 'type',
             'users': 'users',
             'jobs': 'jobs',
-            'nodes': 'nodes',
             'required': 'required'
         }
 
@@ -53,7 +49,6 @@ class RequestMetricsTargets(Model):
         self._type = type
         self._users = users
         self._jobs = jobs
-        self._nodes = nodes
         self._required = required
 
     @classmethod
@@ -106,7 +101,7 @@ class RequestMetricsTargets(Model):
         :param type: The type of this RequestMetricsTargets.
         :type type: str
         """
-        allowed_values = ["metrics", "users", "jobs", "nodes"]  # noqa: E501
+        allowed_values = ["metrics", "users", "jobs", "node_core"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"
@@ -156,27 +151,6 @@ class RequestMetricsTargets(Model):
         """
 
         self._jobs = jobs
-
-    @property
-    def nodes(self):
-        """Gets the nodes of this RequestMetricsTargets.
-
-
-        :return: The nodes of this RequestMetricsTargets.
-        :rtype: List[str]
-        """
-        return self._nodes
-
-    @nodes.setter
-    def nodes(self, nodes):
-        """Sets the nodes of this RequestMetricsTargets.
-
-
-        :param nodes: The nodes of this RequestMetricsTargets.
-        :type nodes: List[str]
-        """
-
-        self._nodes = nodes
 
     @property
     def required(self):

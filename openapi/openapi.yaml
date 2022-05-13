@@ -277,14 +277,15 @@ paths:
               interval: "15s"
               intervalMs: 15000
               maxDataPoints: 5773
+              nodes: ["cpu-23-1", "cpu-23-2"]
               panelId: 2
               partition: "nocona"
               range:
-                from: "2022-04-16T10:00:00.000Z"
-                to: "2022-04-16T12:00:00.000Z"
+                from: "2022-04-16T10:00:00-05:00"
+                to: "2022-04-16T12:00:00-05:00"
               rangeRaw:
-                from: "2022-04-16T10:00:00.000Z"
-                to: "2022-04-16T12:00:00.000Z"
+                from: "2022-04-16T10:00:00-05:00"
+                to: "2022-04-16T12:00:00-05:00"
               requestId: "Q108"
               scopedVars:
                 __interval:
@@ -297,9 +298,14 @@ paths:
               targets:
                 - refId: "A"
                   type: "metrics"
-                  users: ["98727", "54371"]
-                  jobs: ["1111", "1112"]
-                  nodes: ["cpu-1-1", "cpu-1-2"]
+                  metric: "idrac | systempowerconsumption | PowerMetrics"
+                - refId: "B"
+                  type: "metrics"
+                  metric: "slurm | memoryusage | memoryusage"
+                - refId: "C"
+                  type: "node_core"
+                - refId: "D"
+                  type: "jobs"
               required: true
               timeInfo: ""
               timezone: "browser"
@@ -389,6 +395,10 @@ components:
           type: number
         maxDataPoints:
           type: number
+        nodes:
+          type: array
+          items:
+            type: string
         panelId:
           type: number
         partition:
@@ -420,16 +430,12 @@ components:
                 type: string
               type:
                 type: string
-                enum: [metrics ,users, jobs, nodes]
+                enum: [metrics ,users, jobs, node_core]
               users:
                 type: array
                 items:
                   type: string
               jobs:
-                type: array
-                items:
-                  type: string
-              nodes:
                 type: array
                 items:
                   type: string

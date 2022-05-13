@@ -21,7 +21,7 @@ class RequestMetrics(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, app=None, aggregation=None, dashboard_id=None, interval=None, interval_ms=None, max_data_points=None, panel_id=None, partition=None, range=None, range_raw=None, request_id=None, scoped_vars=None, targets=None, time_info=None, timezone=None):  # noqa: E501
+    def __init__(self, app=None, aggregation=None, dashboard_id=None, interval=None, interval_ms=None, max_data_points=None, nodes=None, panel_id=None, partition=None, range=None, range_raw=None, request_id=None, scoped_vars=None, targets=None, time_info=None, timezone=None):  # noqa: E501
         """RequestMetrics - a model defined in OpenAPI
 
         :param app: The app of this RequestMetrics.  # noqa: E501
@@ -36,6 +36,8 @@ class RequestMetrics(Model):
         :type interval_ms: float
         :param max_data_points: The max_data_points of this RequestMetrics.  # noqa: E501
         :type max_data_points: float
+        :param nodes: The nodes of this RequestMetrics.  # noqa: E501
+        :type nodes: List[str]
         :param panel_id: The panel_id of this RequestMetrics.  # noqa: E501
         :type panel_id: float
         :param partition: The partition of this RequestMetrics.  # noqa: E501
@@ -62,6 +64,7 @@ class RequestMetrics(Model):
             'interval': str,
             'interval_ms': float,
             'max_data_points': float,
+            'nodes': List[str],
             'panel_id': float,
             'partition': str,
             'range': TimeRange,
@@ -80,6 +83,7 @@ class RequestMetrics(Model):
             'interval': 'interval',
             'interval_ms': 'intervalMs',
             'max_data_points': 'maxDataPoints',
+            'nodes': 'nodes',
             'panel_id': 'panelId',
             'partition': 'partition',
             'range': 'range',
@@ -97,6 +101,7 @@ class RequestMetrics(Model):
         self._interval = interval
         self._interval_ms = interval_ms
         self._max_data_points = max_data_points
+        self._nodes = nodes
         self._panel_id = panel_id
         self._partition = partition
         self._range = range
@@ -259,6 +264,27 @@ class RequestMetrics(Model):
             raise ValueError("Invalid value for `max_data_points`, must not be `None`")  # noqa: E501
 
         self._max_data_points = max_data_points
+
+    @property
+    def nodes(self):
+        """Gets the nodes of this RequestMetrics.
+
+
+        :return: The nodes of this RequestMetrics.
+        :rtype: List[str]
+        """
+        return self._nodes
+
+    @nodes.setter
+    def nodes(self, nodes):
+        """Sets the nodes of this RequestMetrics.
+
+
+        :param nodes: The nodes of this RequestMetrics.
+        :type nodes: List[str]
+        """
+
+        self._nodes = nodes
 
     @property
     def panel_id(self):

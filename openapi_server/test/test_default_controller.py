@@ -67,14 +67,12 @@ class TestDefaultController(BaseTestCase):
   },
   "aggregation" : "min",
   "targets" : [ {
-    "nodes" : [ "nodes", "nodes" ],
     "jobs" : [ "jobs", "jobs" ],
     "refId" : "refId",
     "type" : "metrics",
     "users" : [ "users", "users" ],
     "required" : true
   }, {
-    "nodes" : [ "nodes", "nodes" ],
     "jobs" : [ "jobs", "jobs" ],
     "refId" : "refId",
     "type" : "metrics",
@@ -82,6 +80,7 @@ class TestDefaultController(BaseTestCase):
     "required" : true
   } ],
   "intervalMs" : 6.027456183070403,
+  "nodes" : [ "nodes", "nodes" ],
   "partition" : "nocona",
   "timeInfo" : "timeInfo",
   "dashboardId" : 0.8008281904610115,

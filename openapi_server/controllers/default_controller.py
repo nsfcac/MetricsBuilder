@@ -8,7 +8,7 @@ from openapi_server.models.request_metrics import RequestMetrics  # noqa: E501
 from openapi_server.models.web_response_metrics import WebResponseMetrics  # noqa: E501
 from openapi_server import util
 
-from metrics_builder import slurm_queue, mbweb, mbweb_utils
+from metrics_builder import slurm_queue, mbweb, mbweb_utils, mbgrafana, api_utils
 from metrics_builder import logger
 log = logger.get_logger(__name__)
 
@@ -46,6 +46,8 @@ def metricsbuilder(partition,
     """
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
+    # print(f"controller: {start}")
+
     nodelist = nodelist
     try:
         metrics = mbweb.metricsbuilder(partition, 
@@ -74,7 +76,7 @@ def metricsbuilder(partition,
     return response
 
 
-def query(request_metrics):  # noqa: E501
+def query():  # noqa: E501
     """Query Metrics for Grafana Plugins
 
     Execute queries for metrics, job information, etc. # noqa: E501
@@ -85,8 +87,9 @@ def query(request_metrics):  # noqa: E501
     :rtype: List[object]
     """
     if connexion.request.is_json:
-        request_metrics = RequestMetrics.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+        # request_metrics = RequestMetrics.from_dict(connexion.request.get_json())  # noqa: E501
+        request_metrics = connexion.request.get_json()
+        return mbgrafana.metricsbuilder(request_metrics)
 
 
 def queue():  # noqa: E501
@@ -117,4 +120,4 @@ def search(partition=None):  # noqa: E501
 
     :rtype: AvailableMetrics
     """
-    return 'do some magic!'
+    return mbgrafana.search(partition)

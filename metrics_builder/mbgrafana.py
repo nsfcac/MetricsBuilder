@@ -30,29 +30,44 @@ Author:
 """
 import json
 
-import hostlist
+from dateutil.parser import parse
 
-from metrics_builder import utils, api_utils, mbweb_utils
+from metrics_builder import utils, api_utils
 
 def metricsbuilder(request: dict):
     DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
+    # Extract basic info for querying the database
+    partition = request.get("partition")
+    # node is represented as format like cpu-1-1
+    nodelist = request.get("nodes")
+    
+    range = request.get("range")
+    if range:
+        start = range.get("from")
+        end = range.get("to")
 
-    partition = request.get("partition", "nocona")
+    start = parse(start)
+    end = parse(end)
+
+    start = start.strftime(DATETIME_FORMAT)
+    end = end.strftime(DATETIME_FORMAT)
+
+    request["range"]["from"] = start
+    request["range"]["to"] = end
+    
+    interval = request.get("interval")
+
     # TSDB Connection
     connection = utils.init_tsdb_connection(partition)
 
-    # iDRAC schema (the schema where iDRAC metrics are stored)
-    idrac_schema = utils.parse_config()['timescaledb'][f'{partition}_idrac_schema']
-
-    # Expand nodelist
-    nodelist = hostlist.expand_hostlist(nodelist)
+    # # iDRAC schema (the schema where iDRAC metrics are stored)
+    # idrac_schema = utils.parse_config()['timescaledb'][f'{partition}_idrac_schema']
 
     # Node id - node name mapping
-    id_node_mapping = api_utils.get_id_node_mapping(connection, partition, nodelist)
+    id_node_mapping = api_utils.get_id_host_mapping(connection, nodelist)
 
     if not id_node_mapping:
         raise Exception("Cannot find id-node mapping in the node metadata table!")
-
 
     results = api_utils.query_tsdb_parallel(request, id_node_mapping, connection)
     time_stamp = api_utils.gen_epoch_timelist(start, end, interval)
@@ -62,3 +77,14 @@ def metricsbuilder(request: dict):
     })
 
     return results
+
+
+def search(partition: str):
+    # TSDB Connection
+    connection = utils.init_tsdb_connection(partition)
+    # iDRAC schema (the schema where iDRAC metrics are stored)
+    idrac_schema = utils.parse_config()['timescaledb'][f'{partition}_idrac_schema']
+
+    metric_fqdd_mapping = api_utils.get_metric_fqdd_mapping(connection, idrac_schema)
+    metric_fqdd_tree = api_utils.get_metric_fqdd_tree(metric_fqdd_mapping, idrac_schema)
+    return metric_fqdd_tree

@@ -54,7 +54,7 @@ def metricsbuilder(partition,
     nodelist = hostlist.expand_hostlist(nodelist)
 
     # Node id - node name mapping
-    id_node_mapping = api_utils.get_id_node_mapping(connection, partition, nodelist)
+    id_node_mapping = api_utils.get_id_ip_mapping(connection, nodelist)
 
     if not id_node_mapping:
         raise Exception("Cannot find id-node mapping in the node metadata table!")
@@ -63,10 +63,12 @@ def metricsbuilder(partition,
     nodeidlist = list(id_node_mapping.keys())
     
     # generate targets
-    targets = mbweb_utils.gene_targets(connection, idrac_schema, metrics, nodeidlist)
+    targets = mbweb_utils.gene_targets(connection, idrac_schema, metrics)
 
     start = start.strftime(DATETIME_FORMAT)
     end = end.strftime(DATETIME_FORMAT)
+
+    # print(f"mbweb: {start}")
 
     request = {
         "range": {
@@ -76,6 +78,7 @@ def metricsbuilder(partition,
         "interval": interval,
         "aggregation": aggregation,
         "targets": targets,
+        'nodes': nodeidlist
     }
 
     results = api_utils.query_tsdb_parallel(request, id_node_mapping, connection)

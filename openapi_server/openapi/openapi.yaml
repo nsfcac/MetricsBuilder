@@ -212,14 +212,17 @@ paths:
               interval: 15s
               intervalMs: 15000
               maxDataPoints: 5773
+              nodes:
+              - cpu-23-1
+              - cpu-23-2
               panelId: 2
               partition: nocona
               range:
-                from: 2022-04-16T10:00:00.000Z
-                to: 2022-04-16T12:00:00.000Z
+                from: 2022-04-16T10:00:00-05:00
+                to: 2022-04-16T12:00:00-05:00
               rangeRaw:
-                from: 2022-04-16T10:00:00.000Z
-                to: 2022-04-16T12:00:00.000Z
+                from: 2022-04-16T10:00:00-05:00
+                to: 2022-04-16T12:00:00-05:00
               requestId: Q108
               scopedVars:
                 __interval:
@@ -232,15 +235,14 @@ paths:
               targets:
               - refId: A
                 type: metrics
-                users:
-                - "98727"
-                - "54371"
-                jobs:
-                - "1111"
-                - "1112"
-                nodes:
-                - cpu-1-1
-                - cpu-1-2
+                metric: idrac | systempowerconsumption | PowerMetrics
+              - refId: B
+                type: metrics
+                metric: slurm | memoryusage | memoryusage
+              - refId: C
+                type: node_core
+              - refId: D
+                type: jobs
               required: true
               timeInfo: ""
               timezone: browser
@@ -531,10 +533,7 @@ components:
           to: to
         aggregation: min
         targets:
-        - nodes:
-          - nodes
-          - nodes
-          jobs:
+        - jobs:
           - jobs
           - jobs
           refId: refId
@@ -543,10 +542,7 @@ components:
           - users
           - users
           required: true
-        - nodes:
-          - nodes
-          - nodes
-          jobs:
+        - jobs:
           - jobs
           - jobs
           refId: refId
@@ -556,6 +552,9 @@ components:
           - users
           required: true
         intervalMs: 6.027456183070403
+        nodes:
+        - nodes
+        - nodes
         partition: nocona
         timeInfo: timeInfo
         dashboardId: 0.8008281904610115
@@ -588,6 +587,11 @@ components:
         maxDataPoints:
           title: maxDataPoints
           type: number
+        nodes:
+          items:
+            type: string
+          title: nodes
+          type: array
         panelId:
           title: panelId
           type: number
@@ -1051,9 +1055,6 @@ components:
       type: object
     RequestMetrics_targets:
       example:
-        nodes:
-        - nodes
-        - nodes
         jobs:
         - jobs
         - jobs
@@ -1072,7 +1073,7 @@ components:
           - metrics
           - users
           - jobs
-          - nodes
+          - node_core
           title: type
           type: string
         users:
@@ -1084,11 +1085,6 @@ components:
           items:
             type: string
           title: jobs
-          type: array
-        nodes:
-          items:
-            type: string
-          title: nodes
           type: array
         required:
           title: required
