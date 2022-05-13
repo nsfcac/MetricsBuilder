@@ -108,6 +108,7 @@ def queue():  # noqa: E501
         response = InlineResponseDefault(name='Get queue info error',
                                          message=e)
     return response
+    # return slurm_queue.get_queue()
 
 
 def search(partition=None):  # noqa: E501

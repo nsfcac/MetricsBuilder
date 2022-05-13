@@ -701,39 +701,39 @@ def get_metric_fqdd_tree(metric_fqdd_mapping: dict, idrac_schema: str):
     }
     metric_fqdd_tree['children'].append(child_dict)
 
-    # # Slurm metrics
-    # slurm_child_dict = {
-    #     'name': 'slurm',
-    #     'children': [
-    #         {
-    #             'name': 'memoryusage',
-    #             'children': [
-    #                 {
-    #                     'name': 'Memory Usage', 
-    #                     'value': 'slurm | memoryusage | Memory Usage'
-    #                 }
-    #             ]
-    #         },
-    #         {
-    #             'name': 'memory_used',
-    #             'children': [
-    #                 {
-    #                     'name': 'Memory Used', 
-    #                     'value': 'slurm | memory_used | Memory Used'
-    #                 },
-    #             ]
-    #         },
-    #         {
-    #             'name': 'cpu_load',
-    #             'children': [
-    #                 {
-    #                     'name': 'CPU Load', 
-    #                     'value': 'slurm | cpu_load | CPU Load'
-    #                 }
-    #             ]
-    #         },
-    #     ]
-    # }
-    # metric_fqdd_tree['children'].append(slurm_child_dict)
+    # Slurm metrics
+    slurm_child_dict = {
+        'name': 'slurm',
+        'children': [
+            {
+                'name': 'memoryusage',
+                'children': [
+                    {
+                        'name': 'Memory Usage', 
+                        'value': 'slurm | memoryusage | Memory Usage'
+                    }
+                ]
+            },
+            {
+                'name': 'memory_used',
+                'children': [
+                    {
+                        'name': 'Memory Used', 
+                        'value': 'slurm | memory_used | Memory Used'
+                    },
+                ]
+            },
+            {
+                'name': 'cpu_load',
+                'children': [
+                    {
+                        'name': 'CPU Load', 
+                        'value': 'slurm | cpu_load | CPU Load'
+                    }
+                ]
+            },
+        ]
+    }
+    metric_fqdd_tree['children'].append(slurm_child_dict)
     
     return metric_fqdd_tree
