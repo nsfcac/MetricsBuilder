@@ -8,7 +8,7 @@ from openapi_server.models.request_metrics import RequestMetrics  # noqa: E501
 from openapi_server.models.web_response_metrics import WebResponseMetrics  # noqa: E501
 from openapi_server import util
 
-from metrics_builder import slurm_queue, mbweb, mbweb_utils, mbgrafana, api_utils
+from metrics_builder import slurm_queue, mbweb, mbweb_utils, mbgrafana
 from metrics_builder import logger
 log = logger.get_logger(__name__)
 
@@ -46,8 +46,6 @@ def metricsbuilder(partition,
     """
     start = util.deserialize_datetime(start)
     end = util.deserialize_datetime(end)
-    # print(f"controller: {start}")
-
     nodelist = nodelist
     try:
         metrics = mbweb.metricsbuilder(partition, 
@@ -72,7 +70,7 @@ def metricsbuilder(partition,
     except Exception as e:
         log.error(f"Error of MetricsBuilder for web : {e}")
         response = InlineResponseDefault(name='Query metrics error',
-                                         message=str(e))
+                                         message='Cannot query metrics for the web applications!')
     return response
 
 
@@ -106,9 +104,8 @@ def queue():  # noqa: E501
                                queue_status=queue['queue_status'])
     except Exception as e:
         response = InlineResponseDefault(name='Get queue info error',
-                                         message=e)
+                                         message='Cannot get the queue status from Slurm!')
     return response
-    # return slurm_queue.get_queue()
 
 
 def search(partition=None):  # noqa: E501

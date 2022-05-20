@@ -1,6 +1,6 @@
 config.yml
 test.py
-openapi/gen.sh
+# openapi/gen.sh
 openapi/openapitools.json
 env
 __pycache__
