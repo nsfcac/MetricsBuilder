@@ -435,7 +435,15 @@ def process_metric_df_dict(df_dict: dict):
     for key, values in df_dict.items():
         if key != 'time':
             node = key.split('|')[0]
+            source = key.split('|')[1]
             sensor = key.split('|')[2].replace(' ', '_')
+
+            if source == 'systempowerconsumption':
+              sensor = 'SystemPowerMetrics'
+            if source == 'totalcpupower':
+              sensor = 'CPUPowerMetrics'
+            if source == 'totalmemorypower':
+              sensor = 'MemoryPowerMetrics'
 
             df_json.update({
                 node: {
@@ -511,7 +519,7 @@ def jobs_df_to_response(df: object):
         response (dict): response
     """
     columns = []
-    selected_columns = ['job_id', 'name', 'user_id', 'user_name', 'batch_host', 
+    selected_columns = ['job_id', 'name', 'job_state', 'user_id', 'cluster', 'partition', 'user_name', 'batch_host', 
                         'nodes', 'node_count', 'cpus', 'start_time', 'end_time']
     selected_df = df[selected_columns].copy()
     df_json = selected_df.set_index('job_id').to_dict(orient='index')

@@ -3,6 +3,7 @@ test.py
 # openapi/gen.sh
 openapi/openapitools.json
 env
+log
 __pycache__
 metrics_builder/shared
 metrics_builder/log
