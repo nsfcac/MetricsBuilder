@@ -3,7 +3,7 @@ import os
 bind = '0.0.0.0:5000'
 workers = 4
 preload_app = True
-timeout = 45
+timeout = 1200
 loglevel = 'error'
 accesslog = './log/mbapi_access.log'
 errorlog = './log/mbapi_error.log'

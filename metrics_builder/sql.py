@@ -147,3 +147,28 @@ def generate_node_jobs_sql(start: str, end: str, interval: str):
             GROUP BY time, nodeid \
             ORDER BY time;"
     return sql
+  
+
+def generate_nodes_state_sql(start: str, end: str, interval: str):
+    """gene_node_jobs_sql Generate Node-Jobs Sql
+
+    Generate SQL for querying node-jobs correlation
+
+    Args:
+        start (str): start time
+        end (str): end time
+        interval (str): interval for aggragation
+
+    Returns:
+        string: sql string
+    """
+    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) AS time, \
+            nodeid, jsonb_agg(reason) AS reason, \
+            jsonb_agg(reason_changed_at) AS reason_changed_at, \
+            jsonb_agg(reason_set_by_user) AS reason_set_by_user \
+            FROM slurm.nodes_state \
+            WHERE timestamp >= '{start}' \
+            AND timestamp <= '{end}' \
+            GROUP BY time, nodeid \
+            ORDER BY time;"
+    return sql 

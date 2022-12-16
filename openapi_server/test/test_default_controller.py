@@ -22,12 +22,12 @@ class TestDefaultController(BaseTestCase):
 
         Query Metrics for Web Applications
         """
-        query_string = [('start', '2022-04-16T10:00-05:00'),
-                        ('end', '2022-04-16T12:00-05:00'),
+        query_string = [('start', '2022-12-15T10:00-05:00'),
+                        ('end', '2022-12-15T12:00-05:00'),
                         ('interval', '5m'),
                         ('aggregation', 'max'),
                         ('nodelist', '10.101.23.[1-60],10.101.24.[1-60],10.101.25.[1-60],10.101.26.[1-60]'),
-                        ('metrics', ["System Power-iDRAC","CPU Power-iDRAC","Memory Power-iDRAC","NodeJobs Correlation-Slurm","Jobs Info-Slurm"]),
+                        ('metrics', ["System Power-iDRAC","CPU Power-iDRAC","Memory Power-iDRAC","NodeJobs Correlation-Slurm","Jobs Info-Slurm","Nodes State-Slurm"]),
                         ('compression', True)]
         headers = { 
             'Accept': 'application/json',

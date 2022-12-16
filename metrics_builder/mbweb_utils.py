@@ -99,6 +99,10 @@ def const_target(metric: str, idrac_schema: str, metric_fqdd: dict):
                     "type": "jobs",
                     # "nodes": nodeidlist,
                 })
+            elif metric_name == 'Nodes State':
+                target.append({
+                  "type": "nodes_state",
+                })
             else:
                 pass
             

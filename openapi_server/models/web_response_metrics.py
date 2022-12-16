@@ -15,30 +15,35 @@ class WebResponseMetrics(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, nodes_info=None, jobs_info=None, time_stamp=None):  # noqa: E501
+    def __init__(self, nodes_info=None, jobs_info=None, nodes_state=None, time_stamp=None):  # noqa: E501
         """WebResponseMetrics - a model defined in OpenAPI
 
         :param nodes_info: The nodes_info of this WebResponseMetrics.  # noqa: E501
         :type nodes_info: List[object]
         :param jobs_info: The jobs_info of this WebResponseMetrics.  # noqa: E501
         :type jobs_info: List[object]
+        :param nodes_state: The nodes_state of this WebResponseMetrics.  # noqa: E501
+        :type nodes_state: List[object]
         :param time_stamp: The time_stamp of this WebResponseMetrics.  # noqa: E501
         :type time_stamp: List[int]
         """
         self.openapi_types = {
             'nodes_info': List[object],
             'jobs_info': List[object],
+            'nodes_state': List[object],
             'time_stamp': List[int]
         }
 
         self.attribute_map = {
             'nodes_info': 'nodes_info',
             'jobs_info': 'jobs_info',
+            'nodes_state': 'nodes_state',
             'time_stamp': 'time_stamp'
         }
 
         self._nodes_info = nodes_info
         self._jobs_info = jobs_info
+        self._nodes_state = nodes_state
         self._time_stamp = time_stamp
 
     @classmethod
@@ -93,6 +98,27 @@ class WebResponseMetrics(Model):
         """
 
         self._jobs_info = jobs_info
+
+    @property
+    def nodes_state(self):
+        """Gets the nodes_state of this WebResponseMetrics.
+
+
+        :return: The nodes_state of this WebResponseMetrics.
+        :rtype: List[object]
+        """
+        return self._nodes_state
+
+    @nodes_state.setter
+    def nodes_state(self, nodes_state):
+        """Sets the nodes_state of this WebResponseMetrics.
+
+
+        :param nodes_state: The nodes_state of this WebResponseMetrics.
+        :type nodes_state: List[object]
+        """
+
+        self._nodes_state = nodes_state
 
     @property
     def time_stamp(self):

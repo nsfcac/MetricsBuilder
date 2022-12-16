@@ -58,6 +58,7 @@ def metricsbuilder(partition,
                                        compression)
         nodes_info = metrics['nodes_info']
         jobs_info = metrics['jobs_info']
+        nodes_state = metrics['nodes_state']
         time_stamp = metrics['time_stamp']
         
         if compression:
@@ -66,6 +67,7 @@ def metricsbuilder(partition,
 
         response = WebResponseMetrics(nodes_info = nodes_info, 
                                       jobs_info = jobs_info,
+                                      nodes_state = nodes_state,
                                       time_stamp = time_stamp)
     except Exception as e:
         log.error(f"Error of MetricsBuilder for web : {e}")

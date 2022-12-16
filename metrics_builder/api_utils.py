@@ -248,12 +248,16 @@ def query_tsdb_parallel(request: object, id_node_mapping: dict, connection: str)
 def aggregate_results(results: list):
     aggregated_data = {
         'nodes_info': {},
-        'jobs_info': {}
+        'jobs_info': {},
+        'nodes_state': {}
     }
 
     for record in results:
         if record['type'] == 'jobs':
             aggregated_data['jobs_info'] = record['result']
+        elif record['type'] == 'nodes_state':
+            aggregated_data['nodes_state'] = record['result']
+            # print(record)
         else:
             for node, metrics in record['result'].items():
                 if node not in aggregated_data['nodes_info']:
@@ -331,6 +335,15 @@ def query_tsdb(target: dict,
                                     id_node_mapping)
         # results = node_core
         results = {'type': 'node_core', 'result': node_core}
+        
+    if req_type == 'nodes_state':
+        nodes_state = query_nodes_state(engine, 
+                                        start, 
+                                        end, 
+                                        interval,
+                                        nodes,
+                                        id_node_mapping)
+        results = {'type': 'nodes_state', 'result': nodes_state}
 
     engine.dispose()
     return results
@@ -547,6 +560,66 @@ def query_node_core(engine: object,
     df = pd.read_sql_query(sql_str,con=engine)
     node_jobs = node_jobs_df_to_response(df, id_node_mapping)
     return node_jobs
+  
+
+def query_nodes_state(engine: object,
+                      start: str,
+                      end: str,
+                      interval: str,
+                      nodes: list,
+                      id_node_mapping: dict):
+    """query_nodes_state Query Nodes State
+
+    Query Nodes-State info from TSDB
+
+    Args:
+        engine (object): sqlalchemy engine
+        start (str): start of time range
+        end (str): end of time range
+        interval (str): time interval for aggregation
+
+    """
+    sql_str = sql.generate_nodes_state_sql(start, end, interval)
+    df = pd.read_sql_query(sql_str,con=engine)
+    
+    # Filter nodes
+    if nodes:
+        fi_df = df[df['nodeid'].isin(nodes)].copy()
+    else:
+        fi_df = df
+        
+    nodes_state = nodes_state_df_to_response(fi_df, id_node_mapping)
+    return nodes_state
+  
+
+def remove_state_duplication(row: object):
+  reason = row['reason'][0]
+  new_reason = [reason]
+  new_reason_changed_at = [row['reason_changed_at'][0]]
+  new_reason_set_by_user = [row['reason_set_by_user'][0]]
+  if len(row['reason']) > 1:
+    for idx, item in enumerate(row['reason'][1:]):
+      if item != reason:
+        new_reason.append(item)
+        new_reason_changed_at.append(row['reason_changed_at'][idx])
+        new_reason_set_by_user.append(row['reason_set_by_user'][idx])
+        reason = item
+
+  row['reason'] = new_reason
+  row['reason_changed_at'] = new_reason_changed_at
+  row['reason_set_by_user'] = new_reason_set_by_user
+  return row
+
+
+def nodes_state_df_to_response(df: object, id_node_mapping: dict):
+  nodes_state = {}
+  df.dropna(inplace=True)
+  df = df.apply(lambda x: remove_state_duplication(x), axis=1)
+  df['nodeid'] = df['nodeid'].apply(lambda x: id_node_mapping[x])
+  df = df.groupby('time').apply(lambda x: x[['nodeid', 'reason', 'reason_changed_at', 'reason_set_by_user']].to_dict(orient='records'))
+  df.index = (df.index.astype('int64')/(1000*1000*1000)).astype(int)
+  nodes_state_list = df.to_dict()
+  return nodes_state_list
 
 
 def node_jobs_df_to_response(df: object, id_node_mapping: dict):

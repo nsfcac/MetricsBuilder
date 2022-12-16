@@ -50,7 +50,7 @@ paths:
         name: start
         required: false
         schema:
-          example: 2022-04-16T10:00:00-05:00
+          example: 2022-12-15T10:00:00-05:00
           format: date-time
           type: string
         style: form
@@ -60,7 +60,7 @@ paths:
         name: end
         required: false
         schema:
-          example: 2022-04-16T12:00:00-05:00
+          example: 2022-12-15T12:00:00-05:00
           format: date-time
           type: string
         style: form
@@ -112,6 +112,7 @@ paths:
           - Memory Power-iDRAC
           - NodeJobs Correlation-Slurm
           - Jobs Info-Slurm
+          - Nodes State-Slurm
           items:
             enum:
             - System Power-iDRAC
@@ -123,6 +124,7 @@ paths:
             - Memory Usage-Slurm
             - NodeJobs Correlation-Slurm
             - Jobs Info-Slurm
+            - Nodes State-Slurm
             type: string
           type: array
         style: form
@@ -670,6 +672,9 @@ components:
       type: array
     WebResponseMetrics:
       example:
+        nodes_state:
+        - '{}'
+        - '{}'
         nodes_info:
         - '{}'
         - '{}'
@@ -689,6 +694,11 @@ components:
           items:
             type: object
           title: jobs_info
+          type: array
+        nodes_state:
+          items:
+            type: object
+          title: nodes_state
           type: array
         time_stamp:
           items:

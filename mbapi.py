@@ -3,6 +3,7 @@ import os
 import connexion
 
 from openapi_server import encoder
+from flask_cors import CORS
 
 
 abs_file_path = os.path.abspath(os.path.dirname(__file__))
@@ -12,7 +13,7 @@ app.app.json_encoder = encoder.JSONEncoder
 app.add_api('openapi.yaml',
             arguments={'title': 'MetricsBuilder API'},
             pythonic_params=True)
-
+CORS(app.app)
 crt = os.environ['FLASKCRT']
 key = os.environ['FLASKKEY']
 

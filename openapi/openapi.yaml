@@ -48,14 +48,14 @@ paths:
         in: query
         name: start
         schema:
-          example: '2022-04-16T10:00:00-05:00'
+          example: '2022-12-15T10:00:00-05:00'
           format: date-time
           type: string
       - description: End time of the time range
         in: query
         name: end
         schema:
-          example: '2022-04-16T12:00:00-05:00'
+          example: '2022-12-15T12:00:00-05:00'
           format: date-time
           type: string
       - description: Time interval for aggregating the metrics.
@@ -104,6 +104,7 @@ paths:
             - Memory Usage-Slurm
             - NodeJobs Correlation-Slurm
             - Jobs Info-Slurm
+            - Nodes State-Slurm
             type: string
           type: array
           default:
@@ -112,6 +113,7 @@ paths:
           - Memory Power-iDRAC
           - NodeJobs Correlation-Slurm
           - Jobs Info-Slurm
+          - Nodes State-Slurm
       - description: Return compressed data.
         in: query
         name: compression
@@ -497,6 +499,10 @@ components:
             type: object
           type: array
         jobs_info:
+          items:
+            type: object
+          type: array
+        nodes_state:
           items:
             type: object
           type: array
