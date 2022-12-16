@@ -15,7 +15,7 @@ class WebResponseMetrics(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, nodes_info=None, jobs_info=None, nodes_state=None, time_stamp=None):  # noqa: E501
+    def __init__(self, nodes_info=None, jobs_info=None, nodes_state=None, nodes_alloc=None, time_stamp=None):  # noqa: E501
         """WebResponseMetrics - a model defined in OpenAPI
 
         :param nodes_info: The nodes_info of this WebResponseMetrics.  # noqa: E501
@@ -24,6 +24,8 @@ class WebResponseMetrics(Model):
         :type jobs_info: List[object]
         :param nodes_state: The nodes_state of this WebResponseMetrics.  # noqa: E501
         :type nodes_state: List[object]
+        :param nodes_alloc: The nodes_alloc of this WebResponseMetrics.  # noqa: E501
+        :type nodes_alloc: List[object]
         :param time_stamp: The time_stamp of this WebResponseMetrics.  # noqa: E501
         :type time_stamp: List[int]
         """
@@ -31,6 +33,7 @@ class WebResponseMetrics(Model):
             'nodes_info': List[object],
             'jobs_info': List[object],
             'nodes_state': List[object],
+            'nodes_alloc': List[object],
             'time_stamp': List[int]
         }
 
@@ -38,12 +41,14 @@ class WebResponseMetrics(Model):
             'nodes_info': 'nodes_info',
             'jobs_info': 'jobs_info',
             'nodes_state': 'nodes_state',
+            'nodes_alloc': 'nodes_alloc',
             'time_stamp': 'time_stamp'
         }
 
         self._nodes_info = nodes_info
         self._jobs_info = jobs_info
         self._nodes_state = nodes_state
+        self._nodes_alloc = nodes_alloc
         self._time_stamp = time_stamp
 
     @classmethod
@@ -119,6 +124,27 @@ class WebResponseMetrics(Model):
         """
 
         self._nodes_state = nodes_state
+
+    @property
+    def nodes_alloc(self):
+        """Gets the nodes_alloc of this WebResponseMetrics.
+
+
+        :return: The nodes_alloc of this WebResponseMetrics.
+        :rtype: List[object]
+        """
+        return self._nodes_alloc
+
+    @nodes_alloc.setter
+    def nodes_alloc(self, nodes_alloc):
+        """Sets the nodes_alloc of this WebResponseMetrics.
+
+
+        :param nodes_alloc: The nodes_alloc of this WebResponseMetrics.
+        :type nodes_alloc: List[object]
+        """
+
+        self._nodes_alloc = nodes_alloc
 
     @property
     def time_stamp(self):

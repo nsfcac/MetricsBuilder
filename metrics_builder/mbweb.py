@@ -80,6 +80,8 @@ def metricsbuilder(partition,
         "targets": targets,
         'nodes': nodeidlist
     }
+    
+    # print(request)
 
     results = api_utils.query_tsdb_parallel(request, id_node_mapping, connection)
     time_stamp = api_utils.gen_epoch_timelist(start, end, interval)

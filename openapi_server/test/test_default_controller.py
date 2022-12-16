@@ -27,7 +27,7 @@ class TestDefaultController(BaseTestCase):
                         ('interval', '5m'),
                         ('aggregation', 'max'),
                         ('nodelist', '10.101.23.[1-60],10.101.24.[1-60],10.101.25.[1-60],10.101.26.[1-60]'),
-                        ('metrics', ["System Power-iDRAC","CPU Power-iDRAC","Memory Power-iDRAC","NodeJobs Correlation-Slurm","Jobs Info-Slurm","Nodes State-Slurm"]),
+                        ('metrics', ["System Power-iDRAC","CPU Power-iDRAC","Memory Power-iDRAC","NodeJobs Correlation-Slurm","Jobs Info-Slurm"]),
                         ('compression', True)]
         headers = { 
             'Accept': 'application/json',

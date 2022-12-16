@@ -171,4 +171,27 @@ def generate_nodes_state_sql(start: str, end: str, interval: str):
             AND timestamp <= '{end}' \
             GROUP BY time, nodeid \
             ORDER BY time;"
-    return sql 
+    return sql
+  
+  
+def generate_nodes_alloc_sql(start: str, end: str, interval: str):
+    """generate_nodes_alloc_sql Generate Node-Allocation Sql
+
+    Generate SQL for querying node allocation
+
+    Args:
+        start (str): start time
+        end (str): end time
+        interval (str): interval for aggragation
+
+    Returns:
+        string: sql string
+    """
+    sql = f"SELECT time_bucket_gapfill('{interval}', timestamp) AS time, \
+            nodeid, jsonb_agg(value) AS value \
+            FROM slurm.state \
+            WHERE timestamp >= '{start}' \
+            AND timestamp <= '{end}' \
+            GROUP BY time, nodeid \
+            ORDER BY time;"
+    return sql

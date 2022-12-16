@@ -59,15 +59,19 @@ def metricsbuilder(partition,
         nodes_info = metrics['nodes_info']
         jobs_info = metrics['jobs_info']
         nodes_state = metrics['nodes_state']
+        nodes_alloc = metrics['nodes_allocation']
         time_stamp = metrics['time_stamp']
         
         if compression:
             nodes_info = mbweb_utils.json_zip(nodes_info)
             jobs_info = mbweb_utils.json_zip(jobs_info)
+            nodes_state = mbweb_utils.json_zip(nodes_state)
+            nodes_alloc = mbweb_utils.json_zip(nodes_alloc)
 
         response = WebResponseMetrics(nodes_info = nodes_info, 
                                       jobs_info = jobs_info,
                                       nodes_state = nodes_state,
+                                      nodes_alloc = nodes_alloc,
                                       time_stamp = time_stamp)
     except Exception as e:
         log.error(f"Error of MetricsBuilder for web : {e}")

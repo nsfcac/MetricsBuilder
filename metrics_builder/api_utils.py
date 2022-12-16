@@ -249,7 +249,8 @@ def aggregate_results(results: list):
     aggregated_data = {
         'nodes_info': {},
         'jobs_info': {},
-        'nodes_state': {}
+        'nodes_state': {},
+        'nodes_allocation': {}
     }
 
     for record in results:
@@ -257,6 +258,8 @@ def aggregate_results(results: list):
             aggregated_data['jobs_info'] = record['result']
         elif record['type'] == 'nodes_state':
             aggregated_data['nodes_state'] = record['result']
+        elif record['type'] == 'nodes_allocation':
+            aggregated_data['nodes_allocation'] = record['result']
             # print(record)
         else:
             for node, metrics in record['result'].items():
@@ -344,6 +347,15 @@ def query_tsdb(target: dict,
                                         nodes,
                                         id_node_mapping)
         results = {'type': 'nodes_state', 'result': nodes_state}
+    
+    if req_type == 'nodes_allocation':
+        nodes_alloc = query_nodes_alloc(engine, 
+                                        start, 
+                                        end, 
+                                        interval,
+                                        nodes,
+                                        id_node_mapping)
+        results = {'type': 'nodes_allocation', 'result': nodes_alloc}
 
     engine.dispose()
     return results
@@ -390,6 +402,8 @@ def query_filter_metrics(engine: object,
                                          interval,
                                          aggregation,
                                          source)
+    
+    # print(sql_str)
     
     df = pd.read_sql_query(sql_str, con=engine)
 
@@ -582,6 +596,7 @@ def query_nodes_state(engine: object,
     sql_str = sql.generate_nodes_state_sql(start, end, interval)
     df = pd.read_sql_query(sql_str,con=engine)
     
+    # print(sql_str)
     # Filter nodes
     if nodes:
         fi_df = df[df['nodeid'].isin(nodes)].copy()
@@ -590,6 +605,40 @@ def query_nodes_state(engine: object,
         
     nodes_state = nodes_state_df_to_response(fi_df, id_node_mapping)
     return nodes_state
+  
+
+def query_nodes_alloc(engine: object,
+                      start: str,
+                      end: str,
+                      interval: str,
+                      nodes: list,
+                      id_node_mapping: dict):
+    """query_nodes_alloc Query Nodes Alloctation
+
+    Query Nodes-Alloctation info from TSDB
+
+    Args:
+        engine (object): sqlalchemy engine
+        start (str): start of time range
+        end (str): end of time range
+        interval (str): time interval for aggregation
+
+    """
+    sql_str = sql.generate_nodes_alloc_sql(start, end, interval)
+    df = pd.read_sql_query(sql_str,con=engine)
+    
+    # print(sql_str)
+    
+    # Filter nodes
+    if nodes:
+        fi_df = df[df['nodeid'].isin(nodes)].copy()
+    else:
+        fi_df = df
+        
+    # print(fi_df)
+        
+    nodes_alloc = nodes_alloc_df_to_response(fi_df, id_node_mapping)
+    return nodes_alloc
   
 
 def remove_state_duplication(row: object):
@@ -612,7 +661,6 @@ def remove_state_duplication(row: object):
 
 
 def nodes_state_df_to_response(df: object, id_node_mapping: dict):
-  nodes_state = {}
   df.dropna(inplace=True)
   df = df.apply(lambda x: remove_state_duplication(x), axis=1)
   df['nodeid'] = df['nodeid'].apply(lambda x: id_node_mapping[x])
@@ -620,6 +668,28 @@ def nodes_state_df_to_response(df: object, id_node_mapping: dict):
   df.index = (df.index.astype('int64')/(1000*1000*1000)).astype(int)
   nodes_state_list = df.to_dict()
   return nodes_state_list
+
+
+def remove_alloc_duplication(row: object):
+  value = row['value'][0]
+  new_value = [value]
+  if len(row['value']) > 1:
+    for item in row['value'][1:]:
+      if item != value:
+        new_value.append(item)
+  row['value'] = new_value
+  return row
+
+
+def nodes_alloc_df_to_response(df: object, id_node_mapping: dict):
+  nodes_state = {}
+  df.dropna(inplace=True)
+  df = df.apply(lambda x: remove_alloc_duplication(x), axis=1)
+  df['nodeid'] = df['nodeid'].apply(lambda x: id_node_mapping[x])
+  df = df.groupby('time').apply(lambda x: x[['nodeid', 'value']].to_dict(orient='records'))
+  df.index = (df.index.astype('int64')/(1000*1000*1000)).astype(int)
+  nodes_alloc = df.to_dict()
+  return nodes_alloc
 
 
 def node_jobs_df_to_response(df: object, id_node_mapping: dict):

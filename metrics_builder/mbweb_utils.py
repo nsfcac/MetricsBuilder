@@ -103,6 +103,10 @@ def const_target(metric: str, idrac_schema: str, metric_fqdd: dict):
                 target.append({
                   "type": "nodes_state",
                 })
+            elif metric_name == 'Nodes Allocation':
+                target.append({
+                  "type": "nodes_allocation",
+                })
             else:
                 pass
             

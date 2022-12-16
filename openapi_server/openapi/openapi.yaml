@@ -112,7 +112,6 @@ paths:
           - Memory Power-iDRAC
           - NodeJobs Correlation-Slurm
           - Jobs Info-Slurm
-          - Nodes State-Slurm
           items:
             enum:
             - System Power-iDRAC
@@ -125,6 +124,7 @@ paths:
             - NodeJobs Correlation-Slurm
             - Jobs Info-Slurm
             - Nodes State-Slurm
+            - Nodes Allocation-Slurm
             type: string
           type: array
         style: form
@@ -684,6 +684,9 @@ components:
         time_stamp:
         - 0
         - 0
+        nodes_alloc:
+        - '{}'
+        - '{}'
       properties:
         nodes_info:
           items:
@@ -699,6 +702,11 @@ components:
           items:
             type: object
           title: nodes_state
+          type: array
+        nodes_alloc:
+          items:
+            type: object
+          title: nodes_alloc
           type: array
         time_stamp:
           items:

@@ -105,6 +105,7 @@ paths:
             - NodeJobs Correlation-Slurm
             - Jobs Info-Slurm
             - Nodes State-Slurm
+            - Nodes Allocation-Slurm
             type: string
           type: array
           default:
@@ -113,7 +114,6 @@ paths:
           - Memory Power-iDRAC
           - NodeJobs Correlation-Slurm
           - Jobs Info-Slurm
-          - Nodes State-Slurm
       - description: Return compressed data.
         in: query
         name: compression
@@ -503,6 +503,10 @@ components:
             type: object
           type: array
         nodes_state:
+          items:
+            type: object
+          type: array
+        nodes_alloc:
           items:
             type: object
           type: array
